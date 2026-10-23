@@ -18,8 +18,8 @@ env:
   #   SUPABASE_PROJECT_REF — ID проекта (из адреса https://<ID>.supabase.co),
   #   SUPABASE_DB_HOST — адрес пула подключений (Supabase → Connect → Session pooler, например aws-0-eu-central-1.pooler.supabase.com)
   DB_HOST: ${{ vars.SUPABASE_DB_HOST }}
-  DB_PORT: '6543'
-  DB_USER: postgres.${{ vars.SUPABASE_PROJECT_REF }}
+  DB_PORT: '5432'
+  DB_USER: postgres.hsypubxczyvvfesgudj
 
 jobs:
   migrate:
