@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.env
+.env.*
+.DS_Store
+Thumbs.db
+data/*/build/
+app/public/img/
+__pycache__/
+app/src/lang/
+site/

@@ -1,0 +1,14 @@
+{
+  "_comment": "Изучаемые языки. code — код языка и имя раздела базы (schema), папки data/<code>, app/src/langs/<code>, аудио-репозитория. base — цепочка миграций базы (supabase/base/<base>). enabled: false — язык не собирается и не показывается.",
+  "langs": [
+    {
+      "code": "hy",
+      "base": "armenian",
+      "enabled": true,
+      "flag": "🇦🇲",
+      "name": { "ru": "Армянский", "en": "Armenian", "native": "Հայերեն" },
+      "timezone": "Asia/Yerevan",
+      "tts": "t5"
+    }
+  ]
+}

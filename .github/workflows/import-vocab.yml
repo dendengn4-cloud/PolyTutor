@@ -1,0 +1,84 @@
+name: Import Vocabulary (импорт словаря)
+
+# Собирает словарь каждого включённого языка (data/<код>/source/vocabulary.xlsx + правки) и загружает в его раздел базы.
+# Запускается при изменении словаря, правок или скриптов словаря, либо вручную (Actions → Run workflow;
+# поле «Язык» — только один язык, пусто — все).
+# Перед загрузкой применяет новые миграции базы — чтобы структура таблиц была актуальной.
+on:
+  push:
+    branches: [main]
+    paths: ['data/*/source/vocabulary.xlsx', 'data/*/source/colloquial.json', 'data/*/source/supplement.json', 'data/*/*.csv',
+            'data/*/*.txt', 'langs.json', 'scripts/build_vocab.py', 'scripts/load_vocab.sql', 'scripts/sqlrender.py',
+            '.github/workflows/import-vocab.yml']
+  workflow_dispatch:
+    inputs:
+      lang:
+        description: 'Код языка (hy, uz…); пусто — все языки'
+        default: ''
+
+# одна очередь с Deploy Supabase: миграции и импорт не выполняются одновременно
+concurrency:
+  group: supabase-deploy
+  cancel-in-progress: false
+
+env:
+  DB_HOST: ${{ vars.SUPABASE_DB_HOST }}
+  DB_PORT: '5432'
+  DB_USER: postgres.${{ vars.SUPABASE_PROJECT_REF }}
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Языки
+        run: |
+          L="${{ inputs.lang }}"
+          if [ -n "$L" ]; then python3 scripts/langs.py check "$L"; else L=$(python3 scripts/langs.py codes); fi
+          echo "LANG_LIST=$L" >> "$GITHUB_ENV"
+          echo "Языки: $L"
+
+      - name: Сборка словаря
+        run: |
+          pip install --quiet openpyxl==3.1.5
+          for L in $LANG_LIST; do
+            echo "## Словарь: $L" >> "$GITHUB_STEP_SUMMARY"
+            TUTOR_LANG="$L" python scripts/build_vocab.py
+            cat "data/$L/build/report.md" >> "$GITHUB_STEP_SUMMARY"
+          done
+
+      - name: Сборка строки подключения
+        env:
+          DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+        run: |
+          if [ -z "$DB_PASSWORD" ]; then
+            echo "::error::Не задан секрет SUPABASE_DB_PASSWORD"
+            exit 1
+          fi
+          ENC=$(python3 -c 'import os, urllib.parse; print(urllib.parse.quote(os.environ["DB_PASSWORD"].strip(), safe=""))')
+          echo "::add-mask::$ENC"
+          echo "SUPABASE_DB_URL=postgresql://${DB_USER}:${ENC}@${DB_HOST}:${DB_PORT}/postgres" >> "$GITHUB_ENV"
+
+      - name: Применение новых миграций
+        run: python3 scripts/migrate.py
+
+      - name: Загрузка в базу
+        run: |
+          for L in $LANG_LIST; do
+            echo "Загрузка: $L"
+            python3 scripts/sqlrender.py "$L" < scripts/load_vocab.sql > "/tmp/load_vocab_$L.sql"
+            psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -f "/tmp/load_vocab_$L.sql"
+          done
+
+      - name: Сохранение отчёта
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vocab-build-report
+          path: data/*/build/report.md
+          if-no-files-found: ignore

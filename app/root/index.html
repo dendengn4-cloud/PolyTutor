@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title>Language Tutor</title>
+    <!-- Стартовая страница: открывает изучаемый язык (./hy/, ./uz/ …) или показывает выбор.
+         Порядок: язык из ссылки (startapp=hy), затем последний выбранный, затем — если язык один — он сам. -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+      :root { color-scheme: light dark; }
+      body {
+        margin: 0; font: 16px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: var(--tg-theme-secondary-bg-color, #eef0f3); color: var(--tg-theme-text-color, #15171c);
+      }
+      main { max-width: 520px; margin: 0 auto; padding: 24px 16px 40px; }
+      h1 { font-size: 22px; margin: 8px 0 4px; }
+      p { margin: 0 0 18px; color: var(--tg-theme-hint-color, #6b7280); }
+      button {
+        display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: center; width: 100%;
+        margin: 0 0 10px; padding: 12px 14px; border: 0; border-radius: 16px; text-align: left; font: inherit;
+        background: var(--tg-theme-bg-color, #fff); color: inherit; cursor: pointer;
+      }
+      button:active { transform: scale(.98); }
+      .flag { font-size: 28px; line-height: 1; text-align: center; }
+      .native { font-size: 14px; color: var(--tg-theme-hint-color, #6b7280); }
+      .wait { text-align: center; padding-top: 30vh; color: var(--tg-theme-hint-color, #6b7280); }
+    </style>
+  </head>
+  <body>
+    <main id="app"><div class="wait">…</div></main>
+    <script>
+      (function () {
+        var KEY = 'tutor_lang';
+        var tg = window.Telegram && window.Telegram.WebApp;
+        if (tg) { try { tg.ready(); tg.expand(); } catch (e) {} }
+        var user = tg && tg.initDataUnsafe && tg.initDataUnsafe.user;
+        var ui = user && user.language_code ? user.language_code.slice(0, 2) : 'ru';
+        var T = {
+          ru: { title: 'Какой язык будем учить?', sub: 'Язык можно сменить в любой момент: Настройки → Изучаемый язык.' },
+          en: { title: 'Which language shall we learn?', sub: 'You can switch at any time: Settings → Language to learn.' },
+          hy: { title: 'Ո՞ր լեզուն ենք սովորելու', sub: 'Լեզուն կարելի է փոխել ցանկացած պահի՝ Կարգավորումներ → Ուսումնասիրվող լեզուն։' },
+          uz: { title: 'Qaysi tilni oʻrganamiz?', sub: 'Tilni istalgan payt almashtirish mumkin: Sozlamalar → Oʻrganiladigan til.' }
+        };
+        var tt = T[ui] || (ui === 'ru' ? T.ru : T.en);
+
+        function go(code) {
+          try { localStorage.setItem(KEY, code); } catch (e) {}
+          location.replace('./' + code + '/' + (location.hash || ''));
+        }
+        function nameOf(l) { return (l.name && (l.name[ui === 'ru' || ui === 'en' ? ui : 'ru'] || l.name.en)) || l.code; }
+        function show(langs) {
+          var root = document.getElementById('app');
+          root.innerHTML = '';
+          var h1 = document.createElement('h1'); h1.textContent = tt.title; root.appendChild(h1);
+          var p = document.createElement('p'); p.textContent = tt.sub; root.appendChild(p);
+          langs.forEach(function (l) {
+            var b = document.createElement('button'); b.type = 'button';
+            var f = document.createElement('span'); f.className = 'flag'; f.textContent = l.flag || '🌐';
+            var d = document.createElement('div');
+            var n = document.createElement('b'); n.textContent = nameOf(l);
+            var nn = document.createElement('div'); nn.className = 'native'; nn.textContent = l.name ? l.name.native : '';
+            d.appendChild(n); d.appendChild(nn); b.appendChild(f); b.appendChild(d);
+            b.onclick = function () { try { tg && tg.HapticFeedback && tg.HapticFeedback.selectionChanged(); } catch (e) {} go(l.code); };
+            root.appendChild(b);
+          });
+        }
+        function pick(langs, saved) {
+          var codes = langs.map(function (l) { return l.code; });
+          var start = tg && tg.initDataUnsafe && tg.initDataUnsafe.start_param;
+          var fromLink = start && /^[a-z]{2,3}/.exec(start);
+          if (fromLink && codes.indexOf(fromLink[0]) >= 0) return go(fromLink[0]);
+          if (saved && codes.indexOf(saved) >= 0) return go(saved);
+          if (codes.length === 1) return go(codes[0]);
+          show(langs);
+        }
+        function withSaved(cb) {
+          var local = null;
+          try { local = localStorage.getItem(KEY); } catch (e) {}
+          var cs = tg && tg.CloudStorage;
+          if (!cs || !cs.getItem || local) return cb(local);
+          var done = false;
+          var timer = setTimeout(function () { if (!done) { done = true; cb(null); } }, 1500);
+          try {
+            cs.getItem(KEY, function (err, v) { if (!done) { done = true; clearTimeout(timer); cb(err ? null : v); } });
+          } catch (e) { if (!done) { done = true; clearTimeout(timer); cb(null); } }
+        }
+        fetch('./langs.json', { cache: 'no-cache' })
+          .then(function (r) { return r.json(); })
+          .then(function (data) {
+            var langs = (data && data.langs) || [];
+            withSaved(function (saved) { pick(langs, saved); });
+          })
+          .catch(function () { document.getElementById('app').innerHTML = '<div class="wait">Network error</div>'; });
+      })();
+    </script>
+  </body>
+</html>

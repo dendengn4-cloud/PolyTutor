@@ -1,0 +1,124 @@
+# Озвучка слов и примеров без аудио одного языка (поле «Язык»): сначала весь словарь — несколько запусков, потом новые и исправленные.
+# У каждого языка свой репозиторий с аудио: переменная AUDIO_REPO с {lang}, например <логин>/audio-{lang} → <логин>/audio-hy.
+# Запуск вручную: Actions → «Озвучка» → Run workflow.
+#   1. собирает словарь и находит слова/примеры без аудио (scripts/tts.py);
+#   2. озвучивает их: espeak — eSpeak NG (бесплатно, без регистрации, «роботский» голос; можно в платном приложении);
+#      t5 — модель SpeechT5 для восточноармянского (бесплатно, без регистрации, голос естественнее, лицензия Apache-2.0);
+#      azure — Microsoft Azure (лучший голос; нужен аккаунт Azure и секреты AZURE_TTS_KEY, AZURE_TTS_REGION);
+#   3. если задан секрет AUDIO_REPO_TOKEN — кладёт файлы в репозиторий с аудио (переменная AUDIO_REPO, папка audio/) и
+#      отмечает их в data/<язык>/audio_voiced.txt, после чего запускает «Import Vocab» — в приложении появляются кнопки звука;
+#      без секрета — файлы можно скачать архивом (Artifacts) и загрузить в репозиторий с аудио вручную.
+name: Озвучка
+
+on:
+  workflow_dispatch:
+    inputs:
+      lang:
+        description: 'Язык (код из langs.json: hy, uz…)'
+        default: hy
+      engine:
+        description: 'Сервис: t5 — бесплатно, естественный голос; espeak — бесплатно, «робот»; azure — нужен ключ Azure'
+        default: t5
+        type: choice
+        options: [t5, espeak, azure]
+      voice:
+        description: 'Голос Microsoft (только для azure)'
+        default: hy-AM-AnahitNeural
+        type: choice
+        options: [hy-AM-AnahitNeural, hy-AM-HaykNeural]
+      limit:
+        description: 'Не больше файлов за запуск'
+        default: '3000'
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: tts
+  cancel-in-progress: false
+
+jobs:
+  tts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    env:
+      AUDIO_REPO_TOKEN: ${{ secrets.AUDIO_REPO_TOKEN }}
+      AUDIO_REPO_PATTERN: ${{ vars.AUDIO_REPO }}    # например: <логин>/audio-{lang}
+      TUTOR_LANG: ${{ inputs.lang }}
+      AZURE_TTS_KEY: ${{ secrets.AZURE_TTS_KEY }}
+      AZURE_TTS_REGION: ${{ vars.AZURE_TTS_REGION }}  # например: westeurope
+    steps:
+      # свежая версия ветки (а не та, что была в момент нажатия Run workflow): если запуск ждал в очереди,
+      # он увидит список уже озвученного предыдущим запуском и не будет озвучивать то же самое второй раз
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Язык и репозиторий с аудио
+        run: |
+          python3 scripts/langs.py check "$TUTOR_LANG"
+          echo "AUDIO_REPO=${AUDIO_REPO_PATTERN//\{lang\}/$TUTOR_LANG}" >> "$GITHUB_ENV"
+          echo "VOICED=data/$TUTOR_LANG/audio_voiced.txt" >> "$GITHUB_ENV"
+
+      - name: Зависимости
+        run: |
+          pip install openpyxl
+          case "${{ inputs.engine }}" in
+            espeak) sudo apt-get update -q && sudo apt-get install -y -q espeak-ng ffmpeg ;;
+            t5) sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
+                pip install torch --index-url https://download.pytorch.org/whl/cpu
+                pip install transformers sentencepiece huggingface_hub numpy ;;
+          esac
+
+      - name: Сборка словаря
+        run: python3 scripts/build_vocab.py
+
+      - name: Озвучка
+        run: |
+          python3 -u scripts/tts.py --out out/audio --engine "${{ inputs.engine }}" --voice "${{ inputs.voice }}" --limit "${{ inputs.limit }}" | tee tts.log
+          echo "## Озвучка" >> "$GITHUB_STEP_SUMMARY"
+          tail -n 3 tts.log >> "$GITHUB_STEP_SUMMARY"
+          echo "Файлов: $(ls out/audio | wc -l)" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Архив с файлами (если нет доступа к репозиторию с аудио)
+        if: env.AUDIO_REPO_TOKEN == ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: audio-and-list
+          path: |
+            out/audio
+            data/${{ inputs.lang }}/audio_voiced.txt
+
+      - name: Файлы → репозиторий с аудио
+        if: env.AUDIO_REPO_TOKEN != ''
+        run: |
+          [ -n "$(ls out/audio)" ] || { echo "Новых файлов нет"; exit 0; }
+          git clone --depth 1 "https://x-access-token:${AUDIO_REPO_TOKEN}@github.com/${AUDIO_REPO}.git" audio-repo
+          mkdir -p audio-repo/audio
+          cp out/audio/*.mp3 audio-repo/audio/
+          touch audio-repo/.nojekyll              # GitHub Pages публикует файлы как есть, без сборки Jekyll (быстрее)
+          cd audio-repo
+          git config user.name "tutor bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add audio .nojekyll
+          git commit -m "Озвучка ($TUTOR_LANG): $(ls ../out/audio | wc -l) файлов" || exit 0
+          git push
+
+      - name: Отметить озвученные файлы и обновить словарь
+        if: env.AUDIO_REPO_TOKEN != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "tutor bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add "$VOICED"
+          git commit -m "Озвучено ($TUTOR_LANG): $(ls out/audio | wc -l) файлов" || { echo "Список не изменился"; exit 0; }
+          git pull --rebase origin "${GITHUB_REF_NAME}" || true
+          git push
+          # коммит от GITHUB_TOKEN сам не запускает другие workflow — запускаем импорт словаря явно
+          gh workflow run import-vocab.yml --ref "${GITHUB_REF_NAME}" -f lang="$TUTOR_LANG"

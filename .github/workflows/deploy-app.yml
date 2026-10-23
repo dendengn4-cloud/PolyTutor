@@ -1,0 +1,72 @@
+name: Deploy App (приложение на GitHub Pages)
+
+# Собирает приложение для каждого включённого языка (langs.json) и публикует на GitHub Pages:
+#   https://<логин>.github.io/<репозиторий>/      — стартовая страница: открывает последний язык или показывает выбор
+#   https://<логин>.github.io/<репозиторий>/hy/   — приложение армянского языка, /uz/ — узбекского и т. д.
+# Запускается при изменениях в app/ или langs.json, либо вручную (Actions → Run workflow).
+on:
+  push:
+    branches: [main]
+    paths: ['app/**', 'langs.json', 'data/*/images.json', 'scripts/fetch_images.py', 'scripts/use_lang.mjs', 'scripts/langs.py',
+            '.github/workflows/deploy-app.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm install --no-audit --no-fund
+        working-directory: app
+
+      - name: Сборка по языкам
+        env:
+          # Публичный ключ Supabase (не секрет) и остальные настройки — Settings → Secrets and variables → Actions → Variables
+          VITE_SUPABASE_KEY: ${{ vars.SUPABASE_PUBLISHABLE_KEY }}
+          VITE_SUPABASE_URL: https://${{ vars.SUPABASE_PROJECT_REF }}.supabase.co
+          VITE_BOT_USERNAME: ${{ vars.BOT_USERNAME }}
+          VITE_AUDIO_BASE: ${{ vars.AUDIO_BASE }}
+        run: |
+          set -euo pipefail
+          rm -rf site && mkdir site
+          for L in $(python3 scripts/langs.py codes); do
+            echo "::group::Язык $L"
+            node scripts/use_lang.mjs "$L"
+            # иллюстрации к темам курсов этого языка (свободные изображения Wikimedia Commons; сбой сети сборку не останавливает)
+            rm -rf app/public/img
+            TUTOR_LANG="$L" python3 scripts/fetch_images.py
+            (cd app && npx vite build --outDir "../site/$L" --emptyOutDir)
+            echo "::endgroup::"
+            echo "- $L: собрано" >> "$GITHUB_STEP_SUMMARY"
+          done
+          cp app/root/index.html site/index.html
+          python3 scripts/langs.py site-json > site/langs.json
+          touch site/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

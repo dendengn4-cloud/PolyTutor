@@ -1,0 +1,80 @@
+name: Import Courses (импорт курсов)
+
+# Собирает курсы каждого включённого языка (data/<код>/source/grammar.xlsx, history.xlsx, civics.xlsx, culture.xlsx,
+# dialogs.json, data/<код>/quiz/questions.json) и загружает в его раздел базы.
+# Повторный запуск безопасен: темы и задания обновляются, прогресс пользователей сохраняется.
+# Запускается при изменении этих файлов или скрипта, либо вручную (Actions → Run workflow; «Язык» пусто — все).
+on:
+  push:
+    branches: [main]
+    paths: ['data/*/source/grammar.xlsx', 'data/*/source/history.xlsx', 'data/*/source/civics.xlsx', 'data/*/source/culture.xlsx',
+            'data/*/source/dialogs.json', 'data/*/quiz/**', 'langs.json', 'scripts/build_courses.py', 'scripts/sqlrender.py',
+            '.github/workflows/import-courses.yml']
+  workflow_dispatch:
+    inputs:
+      lang:
+        description: 'Код языка (hy, uz…); пусто — все языки'
+        default: ''
+
+concurrency:
+  group: supabase-deploy
+  cancel-in-progress: false
+
+env:
+  DB_HOST: ${{ vars.SUPABASE_DB_HOST }}
+  DB_PORT: '5432'
+  DB_USER: postgres.${{ vars.SUPABASE_PROJECT_REF }}
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Языки
+        run: |
+          L="${{ inputs.lang }}"
+          if [ -n "$L" ]; then python3 scripts/langs.py check "$L"; else L=$(python3 scripts/langs.py codes); fi
+          echo "LANG_LIST=$L" >> "$GITHUB_ENV"
+          echo "Языки: $L"
+
+      - name: Сборка курсов
+        run: |
+          pip install --quiet openpyxl==3.1.5
+          for L in $LANG_LIST; do
+            echo "## Курсы: $L" >> "$GITHUB_STEP_SUMMARY"
+            python scripts/build_courses.py "data/$L/source" "data/$L/build/courses.sql" | tee -a "$GITHUB_STEP_SUMMARY"
+          done
+
+      - name: Сборка строки подключения
+        env:
+          DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+        run: |
+          if [ -z "$DB_PASSWORD" ]; then
+            echo "::error::Не задан секрет SUPABASE_DB_PASSWORD"
+            exit 1
+          fi
+          ENC=$(python3 -c 'import os, urllib.parse; print(urllib.parse.quote(os.environ["DB_PASSWORD"].strip(), safe=""))')
+          echo "::add-mask::$ENC"
+          echo "SUPABASE_DB_URL=postgresql://${DB_USER}:${ENC}@${DB_HOST}:${DB_PORT}/postgres" >> "$GITHUB_ENV"
+
+      - name: Применение новых миграций
+        run: python3 scripts/migrate.py
+
+      - name: Загрузка в базу
+        run: |
+          for L in $LANG_LIST; do
+            echo "Загрузка: $L"
+            python3 scripts/sqlrender.py "$L" < "data/$L/build/courses.sql" > "/tmp/courses_$L.sql"
+            psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -f "/tmp/courses_$L.sql"
+          done
+
+      - name: Проверка
+        run: |
+          for L in $LANG_LIST; do
+            psql "$SUPABASE_DB_URL" -tA -c "select '$L ' || course_id || ': ' || count(*) || ' тем' from $L.course_units group by course_id order by 1" | tee -a "$GITHUB_STEP_SUMMARY"
+          done
