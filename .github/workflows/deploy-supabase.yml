@@ -19,7 +19,7 @@ env:
   #   SUPABASE_DB_HOST — адрес пула подключений (Supabase → Connect → Session pooler, например aws-0-eu-central-1.pooler.supabase.com)
   DB_HOST: ${{ vars.SUPABASE_DB_HOST }}
   DB_PORT: '5432'
-  DB_USER: postgres.hsypubxczyvvfesgudj
+  DB_USER: postgres.hsypubcxczyvvfesgudj
 
 jobs:
   migrate:
