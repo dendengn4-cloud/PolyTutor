@@ -160,7 +160,7 @@ function render() {
 function showError(err) {
   console.error(err);
   mount(h('div', { class: 'screen center' },
-    h('p', { class: 'err' }, `${t('loginFailed')}: ${err && (err.code || err.message) || err}`),
+    h('p', { class: 'err' }, `${t('loginFailed')}: ${err && (err.message || err.code) || err}`),   // с подробностями: код и текст ошибки сервера
     h('button', { class: 'btn', onClick: () => start() }, t('retry'))));
 }
 
