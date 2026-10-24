@@ -1,13 +1,15 @@
-# Озвучка слов и примеров без аудио одного языка (поле «Язык»): сначала весь словарь — несколько запусков, потом новые и исправленные.
-# У каждого языка свой репозиторий с аудио: переменная AUDIO_REPO с {lang}, например <логин>/audio-{lang} → <логин>/audio-hy.
-# Запуск вручную: Actions → «Озвучка» → Run workflow.
-#   1. собирает словарь и находит слова/примеры без аудио (scripts/tts.py);
-#   2. озвучивает их: espeak — eSpeak NG (бесплатно, без регистрации, «роботский» голос; можно в платном приложении);
-#      t5 — модель SpeechT5 для восточноармянского (бесплатно, без регистрации, голос естественнее, лицензия Apache-2.0);
-#      azure — Microsoft Azure (лучший голос; нужен аккаунт Azure и секреты AZURE_TTS_KEY, AZURE_TTS_REGION);
-#   3. если задан секрет AUDIO_REPO_TOKEN — кладёт файлы в репозиторий с аудио (переменная AUDIO_REPO, папка audio/) и
-#      отмечает их в data/<язык>/audio_voiced.txt, после чего запускает «Import Vocab» — в приложении появляются кнопки звука;
+# Озвучка слов и примеров без аудио одного языка (поле «Язык»). Запуск вручную: Actions → «Озвучка» → Run workflow.
+# У каждого языка свой репозиторий с аудио: переменная AUDIO_REPO с {lang}, например <логин>/PolyTutor-AUDIO-{lang}.
+#   1. собирает словарь языка и находит слова/примеры без аудио (scripts/langs/<язык>/tts.py);
+#   2. озвучивает их выбранным сервисом:
+#        армянский (hy): t5 — модель SpeechT5 (бесплатно, естественный голос); espeak — eSpeak NG («робот»);
+#                        azure — Microsoft Azure (нужны секреты AZURE_TTS_KEY и AZURE_TTS_REGION);
+#        узбекский (uz): gtts — Google (бесплатно, как исходные файлы); edge — Microsoft (бесплатно);
+#   3. если задан секрет AUDIO_REPO_TOKEN — кладёт файлы в репозиторий с аудио (папка audio/), отмечает их
+#      в data/<язык>/audio_voiced.txt и обновляет список файлов data/<язык>/audio_present.txt, затем запускает
+#      «Import Vocabulary» — в приложении появляются кнопки звука;
 #      без секрета — файлы можно скачать архивом (Artifacts) и загрузить в репозиторий с аудио вручную.
+# Узбекский: сначала «Копирование аудио» (готовая озвучка Uzbek Tutor), потом — Озвучка только недостающего.
 name: Озвучка
 
 on:
@@ -17,15 +19,13 @@ on:
         description: 'Язык (код из langs.json: hy, uz…)'
         default: hy
       engine:
-        description: 'Сервис: t5 — бесплатно, естественный голос; espeak — бесплатно, «робот»; azure — нужен ключ Azure'
+        description: 'Сервис: hy — t5 / espeak / azure; uz — gtts / edge'
         default: t5
         type: choice
-        options: [t5, espeak, azure]
+        options: [t5, espeak, azure, gtts, edge]
       voice:
-        description: 'Голос Microsoft (только для azure)'
-        default: hy-AM-AnahitNeural
-        type: choice
-        options: [hy-AM-AnahitNeural, hy-AM-HaykNeural]
+        description: 'Голос Microsoft (для azure / edge), пусто — голос по умолчанию для языка'
+        default: ''
       limit:
         description: 'Не больше файлов за запуск'
         default: '3000'
@@ -44,8 +44,11 @@ jobs:
     timeout-minutes: 340
     env:
       AUDIO_REPO_TOKEN: ${{ secrets.AUDIO_REPO_TOKEN }}
-      AUDIO_REPO_PATTERN: ${{ vars.AUDIO_REPO }}    # например: <логин>/audio-{lang}
+      AUDIO_REPO_PATTERN: ${{ vars.AUDIO_REPO }}    # например: <логин>/PolyTutor-AUDIO-{lang}
       TUTOR_LANG: ${{ inputs.lang }}
+      ENGINE: ${{ inputs.engine }}
+      VOICE: ${{ inputs.voice }}
+      LIMIT: ${{ inputs.limit }}
       AZURE_TTS_KEY: ${{ secrets.AZURE_TTS_KEY }}
       AZURE_TTS_REGION: ${{ vars.AZURE_TTS_REGION }}  # например: westeurope
     steps:
@@ -62,26 +65,30 @@ jobs:
       - name: Язык и репозиторий с аудио
         run: |
           python3 scripts/langs.py check "$TUTOR_LANG"
+          [ -f "scripts/langs/$TUTOR_LANG/tts.py" ] || { echo "::error::Нет scripts/langs/$TUTOR_LANG/tts.py"; exit 1; }
           echo "AUDIO_REPO=${AUDIO_REPO_PATTERN//\{lang\}/$TUTOR_LANG}" >> "$GITHUB_ENV"
           echo "VOICED=data/$TUTOR_LANG/audio_voiced.txt" >> "$GITHUB_ENV"
+          echo "PRESENT=data/$TUTOR_LANG/audio_present.txt" >> "$GITHUB_ENV"
 
       - name: Зависимости
         run: |
           pip install openpyxl
-          case "${{ inputs.engine }}" in
+          case "$ENGINE" in
             espeak) sudo apt-get update -q && sudo apt-get install -y -q espeak-ng ffmpeg ;;
             t5) sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
                 pip install torch --index-url https://download.pytorch.org/whl/cpu
                 pip install transformers sentencepiece huggingface_hub numpy ;;
+            gtts|edge) pip install gTTS edge-tts ;;
           esac
 
       - name: Сборка словаря
-        run: python3 scripts/build_vocab.py
+        run: python3 "scripts/langs/$TUTOR_LANG/build_vocab.py"
 
       - name: Озвучка
         run: |
-          python3 -u scripts/tts.py --out out/audio --engine "${{ inputs.engine }}" --voice "${{ inputs.voice }}" --limit "${{ inputs.limit }}" | tee tts.log
-          echo "## Озвучка" >> "$GITHUB_STEP_SUMMARY"
+          mkdir -p out/audio
+          python3 -u "scripts/langs/$TUTOR_LANG/tts.py" --out out/audio --engine "$ENGINE" ${VOICE:+--voice "$VOICE"} --limit "$LIMIT" | tee tts.log
+          echo "## Озвучка ($TUTOR_LANG)" >> "$GITHUB_STEP_SUMMARY"
           tail -n 3 tts.log >> "$GITHUB_STEP_SUMMARY"
           echo "Файлов: $(ls out/audio | wc -l)" >> "$GITHUB_STEP_SUMMARY"
 
@@ -102,6 +109,8 @@ jobs:
           mkdir -p audio-repo/audio
           cp out/audio/*.mp3 audio-repo/audio/
           touch audio-repo/.nojekyll              # GitHub Pages публикует файлы как есть, без сборки Jekyll (быстрее)
+          # список всех файлов в репозитории с аудио — по нему приложение включает кнопки звука
+          (cd audio-repo/audio && ls -1 *.mp3) | sort > "$PRESENT"
           cd audio-repo
           git config user.name "tutor bot"
           git config user.email "actions@users.noreply.github.com"
@@ -117,6 +126,7 @@ jobs:
           git config user.name "tutor bot"
           git config user.email "actions@users.noreply.github.com"
           git add "$VOICED"
+          [ -f "$PRESENT" ] && git add "$PRESENT"
           git commit -m "Озвучено ($TUTOR_LANG): $(ls out/audio | wc -l) файлов" || { echo "Список не изменился"; exit 0; }
           git pull --rebase origin "${GITHUB_REF_NAME}" || true
           git push

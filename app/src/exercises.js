@@ -1,6 +1,7 @@
 // Генерация упражнений из карточки слова (её отдаёт start_session).
 // Чистые функции без DOM — их легко проверить и переиспользовать в мобильном приложении.
 import { keyRu, keyUz, wordCount, uzSame } from './lang/normalize.js';
+import { mergeTile, isLetterTile, tileBase, tileTail, SUBS, isInfinitive, verbStem, SUFFIX } from './lang/script.js';
 
 // Типы по уровню слова (см. документ: «Упражнения»): от узнавания к вспоминанию
 export const TYPES_BY_LEVEL = [
@@ -51,8 +52,7 @@ function placeCorrect(correct, wrong, rnd) {
 }
 
 // ---------------------------------------------------------------- буквы
-// Плитки армянского слова: каждая буква отдельно, но «ու» — одна плитка (одна буква алфавита);
-// знаки ՞ ՛ ՜ прилипают к предыдущей букве (их не нужно собирать отдельно).
+// Плитки слова: каждая буква алфавита — одна плитка; какие знаки склеиваются — правила языка (lang/script.js).
 // Примеры в заданиях: короткие (до 3 слов) — всегда; длинные — только когда пользователь уже знает
 // большую часть остальных слов предложения (сервер присылает ready). Старые данные без ready — по длине.
 export function examplesFor(item) {
@@ -74,29 +74,15 @@ export function tilesOf(text) {
     const ch = chars[i];
     if (ch === ' ') { tiles.push({ space: true }); continue; }
     const last = tiles.length ? tiles[tiles.length - 1] : null;
-    // ու / Ու / ՈՒ — одна плитка
-    if ((ch === 'ւ' || ch === 'Ւ') && last && !last.space && /^[ոՈ]$/.test(last.ch)) { last.ch += ch; continue; }
-    if (/[՞՛՜]/.test(ch) && last && !last.space) { last.ch += ch; continue; }
+    if (mergeTile(ch, last)) { last.ch += ch; continue; }
     tiles.push({ ch });
   }
   return tiles;
 }
 
-const HY_LETTER = /^[ա-ևԱ-Ֆ]/;
-function isLetterTile(t) { return !t.space && HY_LETTER.test(t.ch); }
-// буква плитки без знаков ՞ ՛ ՜ (для сравнения и замены)
-export function tileBase(ch) { return String(ch || '').replace(/[՞՛՜]/g, ''); }
 
 // ---------------------------------------------------------------- найди ошибку
-// Реалистичные замены одной буквы (типичные ошибки): звонкие/глухие/придыхательные (բ պ փ, գ կ ք, դ տ թ,
-// ձ ծ ց, ջ ճ չ), ռ↔ր, ղ↔խ, ե↔է, ո↔օ, ու↔վ, հ↔խ
-const SUBS = {
-  'բ': ['պ', 'փ'], 'պ': ['բ', 'փ'], 'փ': ['պ'], 'գ': ['կ', 'ք'], 'կ': ['գ', 'ք'], 'ք': ['կ'],
-  'դ': ['տ', 'թ'], 'տ': ['դ', 'թ'], 'թ': ['տ'], 'ձ': ['ծ', 'ց'], 'ծ': ['ձ', 'ց'], 'ց': ['ծ'],
-  'ջ': ['ճ', 'չ'], 'ճ': ['ջ', 'չ'], 'չ': ['ճ'], 'ռ': ['ր'], 'ր': ['ռ'], 'ղ': ['խ'], 'խ': ['ղ', 'հ'], 'հ': ['խ'],
-  'ե': ['է'], 'է': ['ե'], 'ո': ['օ'], 'օ': ['ո'], 'ու': ['վ'], 'վ': ['ու'], 'ը': ['ե'],
-};
-
+// Реалистичные замены одной буквы — SUBS в lang/script.js
 export function distort(word, forbiddenKeys = new Set(), rnd = Math.random) {
   const tiles = tilesOf(word);
   const candidates = [];
@@ -107,7 +93,7 @@ export function distort(word, forbiddenKeys = new Set(), rnd = Math.random) {
     for (const rep of SUBS[base] || []) candidates.push({ i, rep: upper ? rep[0].toUpperCase() + rep.slice(1) : rep });
   });
   for (const c of shuffle(candidates, rnd)) {
-    const wrongTiles = tiles.map((t, i) => (i === c.i ? { ch: c.rep + t.ch.slice(tileBase(t.ch).length) } : t));
+    const wrongTiles = tiles.map((t, i) => (i === c.i ? { ch: c.rep + tileTail(t.ch) } : t));
     const text = wrongTiles.map((t) => (t.space ? ' ' : t.ch)).join('');
     const k = keyUz(text);
     if (k !== keyUz(word) && !forbiddenKeys.has(k)) return { tiles: wrongTiles, wrongIndex: c.i, text };
@@ -116,14 +102,7 @@ export function distort(word, forbiddenKeys = new Set(), rnd = Math.random) {
 }
 
 // ---------------------------------------------------------------- окончания и предложения
-// Падежные окончания армянского (после основы на согласный) и они же после мн. числа -եր / -ներ
-const SUFFIX_GROUP = {
-  'ի': 'gen', 'ին': 'dat', 'ից': 'abl', 'ով': 'ins', 'ում': 'loc',
-  'երի': 'gen', 'երին': 'dat', 'երից': 'abl', 'երով': 'ins', 'երում': 'loc',
-  'ների': 'gen', 'ներին': 'dat', 'ներից': 'abl', 'ներով': 'ins', 'ներում': 'loc',
-};
-const BASE_SUFFIXES = ['ի', 'ին', 'ից', 'ով', 'ում'];
-const PLURAL_SUFFIXES = { 'եր': ['երի', 'երին', 'երից', 'երով', 'երում'], 'ներ': ['ների', 'ներին', 'ներից', 'ներով', 'ներում'] };
+// Падежные окончания для «Выберите окончание» — SUFFIX в lang/script.js
 
 // Предложение → «фишки»-слова без знаков препинания по краям; конечный знак показывается отдельно
 export function chipsOf(sentence) {
@@ -151,7 +130,6 @@ function uniqueBy(list, keyFn, exclude) {
   return out;
 }
 
-function verbStem(uz) { return uz.replace(/(ել|ալ)$/, ''); }
 
 // Возвращает упражнение или null, если этот тип для слова построить нельзя
 export function buildExercise(item, type, opts = {}) {
@@ -206,7 +184,7 @@ export function buildExercise(item, type, opts = {}) {
       const cap = ex.blank_start === 0;
       const isStem = keyUz(answer) !== keyUz(item.uz);
       let pool = ds.map((d) => d.uz).filter((u) => !u.includes(' '));
-      if (isStem) pool = pool.filter((u) => /(ել|ալ)$/.test(u) && u.length >= 4).map(verbStem);
+      if (isStem) pool = pool.filter(isInfinitive).map(verbStem);
       const wrong = uniqueBy(shuffle(pool, rnd), keyUz, [keyUz(answer)])
         .filter((u) => keyUz(u).length >= 2).slice(0, 3)
         .map((u) => (cap ? firstUpper(u) : u.toLowerCase()));
@@ -264,16 +242,15 @@ export function buildExercise(item, type, opts = {}) {
         const stem = chars.slice(e.blank_start, e.blank_start + e.blank_len).join('');
         if (keyUz(stem) !== keyUz(item.uz)) continue;
         const rest = chars.slice(e.blank_start + e.blank_len).join('');
-        const m = rest.match(/^([ա-և]+)/);
-        if (!m || !SUFFIX_GROUP[m[1]]) continue;
-        if (!/[^աեէըիոօ]$/.test(stem)) continue;      // после гласной окончания другие (Աննայի) — только основы на согласный
+        const m = rest.match(SUFFIX.re);
+        if (!m || !SUFFIX.group[m[1].toLowerCase()]) continue;
+        if (!SUFFIX.stemOk(stem)) continue;
         found.push({ e, stem, suffix: m[1].toLowerCase(), before: chars.slice(0, e.blank_start).join(''), after: rest.slice(m[1].length) });
       }
       const f = shuffle(found, rnd)[0];
       if (!f) return null;
-      const group = SUFFIX_GROUP[f.suffix];
-      const pl = f.suffix.startsWith('ներ') ? 'ներ' : f.suffix.startsWith('եր') ? 'եր' : null;
-      const pool = (pl ? PLURAL_SUFFIXES[pl] : BASE_SUFFIXES).filter((s) => SUFFIX_GROUP[s] !== group);
+      const group = SUFFIX.group[f.suffix];
+      const pool = SUFFIX.pool(f.suffix).filter((s) => SUFFIX.group[s] !== group);
       const wrong = shuffle(pool, rnd).slice(0, 3);
       const { options, correctIndex } = placeCorrect(f.suffix, wrong, rnd);
       return { ...base, target: 'token', stem: f.stem, before: f.before, after: f.after, ru: f.e.ru,

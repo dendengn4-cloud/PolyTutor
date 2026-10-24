@@ -2,14 +2,14 @@
 import { rpc } from '../api.js';
 import { t } from '../i18n.js';
 import { h, mount, haptic, openLink } from '../ui.js';
-import { icon, art } from '../icons.js';
+import { icon, art, WELCOME_ART } from '../icons.js';
 
 const SLIDES = [
-  { art: 'cascade', key: 'w1' },
-  { art: 'jazzve', key: 'w2' },
-  { art: 'gate', key: 'w3' },
-  { art: 'church', key: 'wP', placement: true },
-  { art: 'eternity', key: 'w4' },
+  { art: WELCOME_ART.w1, key: 'w1' },
+  { art: WELCOME_ART.w2, key: 'w2' },
+  { art: WELCOME_ART.w3, key: 'w3' },
+  { art: WELCOME_ART.wP, key: 'wP', placement: true },
+  { art: WELCOME_ART.w4, key: 'w4' },
 ];
 
 export function renderWelcome(app, params = {}) {
@@ -34,7 +34,7 @@ export function renderWelcome(app, params = {}) {
     const points = (Array.isArray(list) ? list : []).map((p) => h('li', {}, icon('check'), h('span', {}, p)));
     const extra = [];
     if (s.placement) {
-      // уже знаете армянский? — тест уровня A1 сразу (сдали — откроется A2 и т. д.)
+      // уже знаете язык? — тест уровня A1 сразу (сдали — откроется A2 и т. д.)
       extra.push(h('button', { type: 'button', class: 'btn', onClick: async () => {
         haptic();
         if (!replay) app.me = await rpc('update_settings', { p_ui_lang: null, p_settings: { onboarded: true, remind } }).catch(() => app.me);

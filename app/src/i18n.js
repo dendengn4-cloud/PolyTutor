@@ -1,9 +1,12 @@
 // Тексты интерфейса на трёх языках. Новый язык = ещё один объект с теми же ключами.
-// Армянская версия: язык интерфейса ru / hy / en; армянский словарь — в i18n-hy.js (узбекский uz оставлен как в эталоне).
+// Polytutor: язык интерфейса — русский, английский или изучаемый язык (hy — i18n-hy.js, uz — объект uz ниже).
+// Тексты, которые зависят от изучаемого языка, — в app/src/langs/<код>/i18n-lang.js.
 import { hy } from './i18n-hy.js';
+import { LANG } from './lang/info.js';
+import { OVERRIDES } from './lang/i18n-lang.js';
 
 const ru = {
-  appName: 'Armenian Tutor',
+  appName: 'Polytutor',
   loading: 'Загрузка…',
   loginNeeded: 'Откройте приложение через бота в Telegram.',
   loginFailed: 'Не удалось войти',
@@ -118,7 +121,7 @@ const ru = {
 const uz = {
   ...ru,
   loading: 'Yuklanmoqda…',
-  loginNeeded: 'Ilovani Telegramdagi @uzbek_tutor_bot orqali oching.',
+  loginNeeded: 'Ilovani Telegramdagi bot orqali oching.',
   loginFailed: 'Kirib boʻlmadi',
   retry: 'Qayta urinish',
   back: 'Orqaga',
@@ -1554,12 +1557,14 @@ Object.assign(en, {
 });
 
 const dict = { ru, uz, hy, en };
+// тексты, которые зависят от изучаемого языка (lang/i18n-lang.js), — поверх общих
+for (const [l, o] of Object.entries(OVERRIDES)) if (dict[l]) Object.assign(dict[l], o);
 let lang = 'ru';
 
 export function setLang(l) { lang = dict[l] ? l : 'ru'; document.documentElement.lang = lang; }
 export function getLang() { return lang; }
-// Суффикс полей в базе: армянский текст лежит в колонках *_uz (имя схемы общее с узбекской версией)
-export function fieldLang(l = lang) { return l === 'hy' ? 'uz' : l; }
+// Суффикс полей в базе: текст на изучаемом языке лежит в колонках *_uz (имя схемы общее для всех языков)
+export function fieldLang(l = lang) { return l === LANG.code ? 'uz' : l; }
 export function t(key, ...args) {
   const v = dict[lang][key] ?? ru[key] ?? key;
   return typeof v === 'function' ? v(...args) : v;

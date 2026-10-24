@@ -9,6 +9,7 @@ import { topicImage } from '../images.js';
 import { renderDialog } from './dialog.js';
 import { grammarFormsBlock } from '../lang/grammar-forms.js';
 import { FEATURES } from '../lang/features.js';
+import { LANG } from '../lang/info.js';
 
 // Поле на нужном языке с запасным русским: pick(obj, 'title') → title_uz | title_ru
 export function pick(obj, base, lang = getLang()) {
@@ -114,8 +115,8 @@ export async function renderUnit(app, { id, lang }) {
   let done = new Set(u.tasks_done || []);
   let isRead = u.read;
 
-  // язык текста темы можно переключить прямо здесь: читать по-армянски — тоже практика
-  const langSeg = h('div', { class: 'segmented small-seg' }, [['ru', 'RU'], ['hy', 'HY'], ['en', 'EN']].map(([v, label]) =>
+  // язык текста темы можно переключить прямо здесь: читать на изучаемом языке — тоже практика
+  const langSeg = h('div', { class: 'segmented small-seg' }, [['ru', 'RU'], [LANG.code, LANG.code.toUpperCase()], ['en', 'EN']].map(([v, label]) =>
     h('button', { type: 'button', class: v === L ? 'active' : '', onClick: () => v !== L && app.replace('unit', { id, lang: v }) }, label)));
 
   const paragraphs = (text) => String(text || '').split(/\n+/).filter(Boolean).map((p) => h('p', {}, p));

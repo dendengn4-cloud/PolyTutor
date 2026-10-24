@@ -1,5 +1,6 @@
 // Генерация филворда — чистые функции без интерфейса (проверяются отдельно).
 import { shuffle, tilesOf } from '../../exercises.js';
+import { FILWORD_CELL } from '../../lang/script.js';
 
 // Случайный гамильтонов путь по сетке n×n (алгоритм «backbite»)
 export function randomPath(n, rnd = Math.random) {
@@ -31,7 +32,7 @@ export function randomPath(n, rnd = Math.random) {
 export function buildFilword(items, n, rnd = Math.random) {
   const cand = items
     .map((it) => ({ it, cells: tilesOf(it.uz) }))
-    .filter((x) => x.cells.length >= 3 && x.cells.length <= n + 2 && x.cells.every((c) => !c.space && /^[ա-ևԱ-Ֆ]+$/.test(c.ch)));
+    .filter((x) => x.cells.length >= 3 && x.cells.length <= n + 2 && x.cells.every((c) => !c.space && FILWORD_CELL.test(c.ch)));
   const total = n * n;
   for (let attempt = 0; attempt < 300; attempt++) {
     const pool = shuffle(cand, rnd);

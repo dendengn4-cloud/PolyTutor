@@ -9,17 +9,17 @@ import { play, wordAudio, exampleAudio } from '../audio.js';
 import { tilesOf } from '../exercises.js';
 import { conjSheet, declSheet, canConjugate, canDecline } from '../lang/conj.js';
 import { translitLine } from '../exercise-view.js';
+import { ALPHABET, COLLATE, FIRST_LETTER, tileBase } from '../lang/script.js';
+import { LANG } from '../lang/info.js';
 
 const LEVELS = ['A1', 'A2', 'B1', 'B2'];
-// Порядок армянского алфавита (36 букв Месропа Маштоца + օ, ֆ); «ու» и «և» — после «ո» и «ե» как в словарях
-const ALPHABET = ['ա', 'բ', 'գ', 'դ', 'ե', 'և', 'զ', 'է', 'ը', 'թ', 'ժ', 'ի', 'լ', 'խ', 'ծ', 'կ', 'հ', 'ձ', 'ղ', 'ճ', 'մ', 'յ', 'ն', 'շ',
-  'ո', 'ու', 'չ', 'պ', 'ջ', 'ռ', 'ս', 'վ', 'տ', 'ր', 'ց', 'փ', 'ք', 'օ', 'ֆ'];
+// Порядок алфавита, сортировка и первая буква — правила языка (lang/script.js)
 const PAGE = 300;
 
 function firstLetter(uz) {
-  const tile = tilesOf(String(uz).toLowerCase()).find((x) => !x.space && /[ա-և]/.test(x.ch));
+  const tile = tilesOf(String(uz).toLowerCase()).find((x) => !x.space && FIRST_LETTER.test(x.ch));
   if (!tile) return '#';
-  const ch = tile.ch.replace(/[՞՛՜]/g, '');
+  const ch = tileBase(tile.ch);
   return ALPHABET.includes(ch) ? ch : ch[0];
 }
 const letterRank = (l) => { const i = ALPHABET.indexOf(l); return i < 0 ? 99 : i; };
@@ -83,7 +83,7 @@ export async function renderDictionary(app, params = {}) {
     if (topicMode) keys.sort();
     if (group === 'abc' && !topicMode) {
       keys.sort((a, b) => letterRank(a) - letterRank(b));
-      for (const k of keys) groups.get(k).sort((a, b) => a.u.localeCompare(b.u, 'hy'));
+      for (const k of keys) groups.get(k).sort((a, b) => a.u.localeCompare(b.u, COLLATE));
     }
     let shown = 0;
     const out = [];
@@ -171,7 +171,7 @@ export async function wordSheet(app, id, onChanged) {
     h('div', { class: 'ex-ru muted' }, ex.ru)));
 
   sheet(
-    h('div', { class: 'label' }, `${w.cefr} · ${(getLang() === 'hy' && w.topic_uz) || (getLang() === 'en' && w.topic_en) || w.topic || ''}`),
+    h('div', { class: 'label' }, `${w.cefr} · ${(getLang() === LANG.code && w.topic_uz) || (getLang() === 'en' && w.topic_en) || w.topic || ''}`),
     h('div', { class: 'word-uz' }, w.uz, w.audio_ok && audioOn ? audioButton(() => play(wordAudio(w.id))) : null),
     translitLine(w.uz),
     h('div', { class: 'word-ru' }, w.ru),

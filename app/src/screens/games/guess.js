@@ -1,21 +1,21 @@
-// «Угадай слово»: перевод известен, армянское слово отгадывается по буквам; 6 жизней на слово.
+// «Угадай слово»: перевод известен, слово изучаемого языка отгадывается по буквам; 6 жизней на слово.
 import { t } from '../../i18n.js';
 import { h, mount, haptic } from '../../ui.js';
 import { icon } from '../../icons.js';
 import { shuffle, tilesOf } from '../../exercises.js';
 import { gameResult, setBest } from '../games.js';
+import { GUESS_KEYS, GUESS_WORD, tileBase } from '../../lang/script.js';
 
 const LIVES = 6;
 const WORDS = 10;
-const KEYS = ['ա', 'բ', 'գ', 'դ', 'ե', 'զ', 'է', 'ը', 'թ', 'ժ', 'ի', 'լ', 'խ', 'ծ', 'կ', 'հ', 'ձ', 'ղ', 'ճ', 'մ', 'յ', 'ն', 'շ',
-  'ո', 'չ', 'պ', 'ջ', 'ռ', 'ս', 'վ', 'տ', 'ր', 'ց', 'ու', 'փ', 'ք', 'օ', 'ֆ', 'և'];
+const KEYS = GUESS_KEYS;
 
-const norm = (ch) => ch.toLowerCase().replace(/[՞՛՜]/g, '');
+const norm = (ch) => tileBase(ch.toLowerCase());
 
 export function playGuess({ app, items, key, again }) {
   const words = shuffle(items.filter((it) => {
     const letters = tilesOf(it.uz).filter((x) => !x.space);
-    return letters.length >= 3 && letters.length <= 12 && letters.every((x) => /^[ա-ևԱ-Ֆ՞՛՜-]+$/.test(x.ch));
+    return letters.length >= 3 && letters.length <= 12 && letters.every((x) => GUESS_WORD.test(x.ch));
   })).slice(0, WORDS);
   let w = 0;
   let solved = 0;

@@ -7,6 +7,7 @@ import { h, mount, haptic } from '../ui.js';
 import { icon } from '../icons.js';
 import { keyUz } from '../lang/normalize.js';
 import { translitLine } from '../exercise-view.js';
+import { cleanWord } from '../lang/script.js';
 import { pick, unitWords } from './course.js';
 
 const shuffle = (a) => { const b = [...a]; for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b; };
@@ -46,8 +47,8 @@ export function renderDialog(app, u) {
       u.next_id ? h('button', { class: 'btn btn-secondary', type: 'button', onClick: () => app.replace('unit', { id: u.next_id }) }, t('nextUnit')) : h('span', {}))));
 }
 
-// армянское слово без знаков по краям (։ ՝ , « » и т. п.); ՞ и ՛ внутри слова остаются
-const edge = (w) => w.replace(/^[^ա-ֆԱ-Ֆ]+|[^ա-ֆԱ-Ֆ]+$/g, '');
+// слово без знаков препинания — правило языка (cleanWord в lang/script.js)
+const edge = cleanWord;
 
 // ---------------------------------------------------------------- упражнения
 function buildTasks(u) {

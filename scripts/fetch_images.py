@@ -19,7 +19,7 @@ import urllib.request
 from pathlib import Path
 
 API = 'https://commons.wikimedia.org/w/api.php'
-UA = 'ArmenianTutorBot/1.0 (Telegram Mini App images; https://github.com)'
+UA = 'PolytutorBot/1.0 (Telegram Mini App images; https://github.com)'
 FREE = re.compile(r'^(public domain|pd\b|pd-|cc0|cc[- ]by(-sa)?\b|cc[- ]by(-sa)?[- ]\d)', re.I)
 WIDTH = 1200
 

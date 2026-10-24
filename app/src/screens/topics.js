@@ -1,6 +1,7 @@
 import { rpc } from '../api.js';
 import { t, getLang } from '../i18n.js';
 import { h, mount, spinner } from '../ui.js';
+import { LANG } from '../lang/info.js';
 
 export async function renderTopics(app) {
   mount(spinner(t('loading')));
@@ -16,7 +17,7 @@ export async function renderTopics(app) {
       h('h2', {}, cefr),
       h('div', { class: 'topic-list' }, groups[cefr].map((tp) => {
         const pct = Math.round((tp.started / tp.total) * 100);
-        const name = (lang === 'hy' && tp.name_uz) || (lang === 'en' && tp.name_en) || tp.name;
+        const name = (lang === LANG.code && tp.name_uz) || (lang === 'en' && tp.name_en) || tp.name;
         return h('button', { class: 'topic', type: 'button', disabled: tp.started >= tp.total,
           onClick: () => app.go('learn', { mode: 'normal', topicId: tp.id }) },
           h('span', { class: 'topic-name' }, name),

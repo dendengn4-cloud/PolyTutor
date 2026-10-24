@@ -1,14 +1,32 @@
 {
-  "_comment": "Изучаемые языки. code — код языка и имя раздела базы (schema), папки data/<code>, app/src/langs/<code>, аудио-репозитория. base — цепочка миграций базы (supabase/base/<base>). enabled: false — язык не собирается и не показывается.",
+  "_comment": "Изучаемые языки. code — код языка и имя раздела базы (schema), папки data/<code>, app/src/langs/<code>, scripts/langs/<code>, аудио-репозитория. base — цепочка миграций базы (supabase/base/<base>). enabled: false — язык не собирается и не показывается. copy_marks_voiced — «Копирование аудио» отмечает скопированные файлы как озвученные (их текст совпадает с текущим).",
   "langs": [
     {
       "code": "hy",
       "base": "armenian",
       "enabled": true,
       "flag": "🇦🇲",
-      "name": { "ru": "Армянский", "en": "Armenian", "native": "Հայերեն" },
+      "name": {
+        "ru": "Армянский",
+        "en": "Armenian",
+        "native": "Հայերեն"
+      },
       "timezone": "Asia/Yerevan",
-      "tts": "t5"
+      "tts": "t5",
+      "copy_marks_voiced": true
+    },
+    {
+      "code": "uz",
+      "base": "uzbek",
+      "enabled": true,
+      "flag": "🇺🇿",
+      "name": {
+        "ru": "Узбекский",
+        "en": "Uzbek",
+        "native": "Oʻzbekcha"
+      },
+      "timezone": "Asia/Tashkent",
+      "tts": "gtts"
     }
   ]
 }

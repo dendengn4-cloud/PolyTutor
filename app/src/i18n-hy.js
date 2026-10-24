@@ -2,7 +2,7 @@
 // Ключи — те же, что у ru/en в i18n.js; чего здесь нет, берётся из русского.
 // В узбекской версии на этом месте был узбекский словарь (uz), он остаётся в i18n.js без изменений.
 export const hy = {
-  appName: 'Armenian Tutor',
+  appName: 'Polytutor',
   loading: 'Բեռնվում է…',
   loginNeeded: 'Բացեք հավելվածը Telegram-ի բոտի միջոցով։',
   loginFailed: 'Չհաջողվեց մուտք գործել',

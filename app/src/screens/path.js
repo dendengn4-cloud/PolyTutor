@@ -1,9 +1,10 @@
-// Вкладка «Путь»: карта тем от Еревана (A1) до Татева (B2), пунктирный маршрут, ворота-тесты между уровнями.
+// Вкладка «Путь»: карта тем от первого города (A1) до последнего (B2) — города и рисунки свои у каждого языка, пунктирный маршрут, ворота-тесты между уровнями.
 import { rpc } from '../api.js';
 import { t, getLang, formatDate } from '../i18n.js';
 import { h, mount, spinner, sheet, ring, haptic } from '../ui.js';
-import { icon, art, DECOR, CITY_ART } from '../icons.js';
+import { icon, art, DECOR, CITY_ART, FALLBACK_ART } from '../icons.js';
 import { allowed, lockedSheet } from './home.js';
+import { LANG } from '../lang/info.js';
 
 const LEVELS = ['A1', 'A2', 'B1', 'B2'];
 const PREV = { A2: 'A1', B1: 'A2', B2: 'B1' };
@@ -14,7 +15,7 @@ const GATE_H = 84;
 
 function topicName(tp) {
   const lang = getLang();
-  const name = ((lang === 'hy' && tp.name_uz) || (lang === 'en' && tp.name_en) || tp.name || '')
+  const name = ((lang === LANG.code && tp.name_uz) || (lang === 'en' && tp.name_en) || tp.name || '')
     .replace(/^(Soʻzlashuv nutqi\. |Spoken: )/, '');
   return name.charAt(0).toUpperCase() + name.slice(1);
 }
@@ -111,7 +112,7 @@ export async function renderPath(app) {
             onClick: () => { haptic(); app.go('unit', { id: st.id }); } },
             h('span', { class: 'station-ic' }, st.read ? icon('check') : st.locked ? icon('lock') : icon(st.course)),
             h('span', { class: 'station-t' }, h('span', { class: 'station-k' }, t(`recCourse_${st.course}`)),
-              h('span', { class: 'station-n' }, getLang() === 'hy' && st.title_uz ? st.title_uz : getLang() === 'en' && st.title_en ? st.title_en : st.title_ru))));
+              h('span', { class: 'station-n' }, getLang() === LANG.code && st.title_uz ? st.title_uz : getLang() === 'en' && st.title_en ? st.title_en : st.title_ru))));
         }
         // украшение между темами — с противоположной от маршрута стороны
         if (!st && k % 3 === 1 && i < lvTopics.length - 1) {
@@ -145,7 +146,7 @@ export async function renderPath(app) {
     // финиш
     const allDone = levels.B2 && levels.B2.state === 'passed';
     els.push(h('div', { class: 'finish', style: { top: `${y - 30}px` } },
-      art('eternity'), h('h3', {}, t('finishTitle')), h('p', { class: 'muted small' }, allDone ? t('finishDone') : t('finishText'))));
+      art(FALLBACK_ART), h('h3', {}, t('finishTitle')), h('p', { class: 'muted small' }, allDone ? t('finishDone') : t('finishText'))));
     points.push([cx, y - 30]);
     y += 140;
 

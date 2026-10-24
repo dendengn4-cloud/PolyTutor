@@ -8,10 +8,13 @@ import { diffChars, displayUz } from './lang/normalize.js';
 import { conjSheet, canConjugate, declSheet, canDecline } from './lang/conj.js';
 import { langKeyboard } from './lang/keyboard.js';
 import { translitFor } from './lang/translit.js';
+import { HAS_LETTER } from './lang/script.js';
 
-// Транскрипция под армянским словом/примером (кириллица для русского интерфейса, латиница для остальных)
+// Транскрипция под словом/примером, если она нужна языку (армянский: кириллица для русского интерфейса, латиница для
+// остальных); языки на латинице транскрипцию не показывают — translitFor возвращает пустую строку
 export function translitLine(text, cls = 'translit') {
-  return h('div', { class: cls }, translitFor(text, getLang()));
+  const tr = translitFor(text, getLang());
+  return tr ? h('div', { class: cls }, tr) : null;
 }
 
 export const PROMPT_KEY = {
@@ -152,7 +155,7 @@ export function renderExercise(ex, { audioEnabled, onAnswer, onNext }) {
   } else if (ex.type === 'find_error') {
     const tiles = ex.wrongTiles.map((tile, i) => tile.space
       ? h('span', { class: 'gap' })
-      : !/[ա-ևԱ-Ֆ]/.test(tile.ch)
+      : !HAS_LETTER.test(tile.ch)
       ? h('span', { class: 'punct' }, tile.ch)
       : h('button', { class: 'letter', type: 'button', onClick: () => {
           const correct = i === ex.wrongIndex;

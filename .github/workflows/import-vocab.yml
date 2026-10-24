@@ -1,6 +1,7 @@
 name: Import Vocabulary (импорт словаря)
 
-# Собирает словарь каждого включённого языка (data/<код>/source/vocabulary.xlsx + правки) и загружает в его раздел базы.
+# Собирает словарь каждого включённого языка (data/<код>/source/vocabulary.xlsx + правки; скрипты — scripts/langs/<код>/)
+# и загружает в его раздел базы.
 # Запускается при изменении словаря, правок или скриптов словаря, либо вручную (Actions → Run workflow;
 # поле «Язык» — только один язык, пусто — все).
 # Перед загрузкой применяет новые миграции базы — чтобы структура таблиц была актуальной.
@@ -8,7 +9,7 @@ on:
   push:
     branches: [main]
     paths: ['data/*/source/vocabulary.xlsx', 'data/*/source/colloquial.json', 'data/*/source/supplement.json', 'data/*/*.csv',
-            'data/*/*.txt', 'langs.json', 'scripts/build_vocab.py', 'scripts/load_vocab.sql', 'scripts/sqlrender.py',
+            'data/*/*.txt', 'langs.json', 'scripts/langs/*/build_vocab.py', 'scripts/langs/*/load_vocab.sql', 'scripts/sqlrender.py',
             '.github/workflows/import-vocab.yml']
   workflow_dispatch:
     inputs:
@@ -48,7 +49,7 @@ jobs:
           pip install --quiet openpyxl==3.1.5
           for L in $LANG_LIST; do
             echo "## Словарь: $L" >> "$GITHUB_STEP_SUMMARY"
-            TUTOR_LANG="$L" python scripts/build_vocab.py
+            python "scripts/langs/$L/build_vocab.py"
             cat "data/$L/build/report.md" >> "$GITHUB_STEP_SUMMARY"
           done
 
@@ -71,7 +72,7 @@ jobs:
         run: |
           for L in $LANG_LIST; do
             echo "Загрузка: $L"
-            python3 scripts/sqlrender.py "$L" < scripts/load_vocab.sql > "/tmp/load_vocab_$L.sql"
+            python3 scripts/sqlrender.py "$L" < "scripts/langs/$L/load_vocab.sql" > "/tmp/load_vocab_$L.sql"
             psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -f "/tmp/load_vocab_$L.sql"
           done
 

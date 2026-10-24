@@ -3,6 +3,7 @@ import { rpc } from '../api.js';
 import { t } from '../i18n.js';
 import { h, mount, spinner, haptic } from '../ui.js';
 import { icon } from '../icons.js';
+import { LANG } from '../lang/info.js';
 
 const COURSE = { grammar: 'secGrammar', history: 'secHistory', civics: 'secCivics', culture: 'secCulture' };
 
@@ -48,7 +49,7 @@ export async function renderReview(app, { unit } = {}) {
       h('ol', { class: 'q-opts', type: 'A' }, mixOrder(q.id, q.options.ru.length).map((k) =>
         h('li', { class: k === 0 ? 'ok' : '' }, q.options.ru[k], k === 0 ? ' ✓' : ''))),
       h('div', { class: 'quote small' }, icon('learn'), h('span', {}, `«${q.quote_ru}»`)),
-      h('details', {}, h('summary', { class: 'small muted' }, 'HY / EN'),
+      h('details', {}, h('summary', { class: 'small muted' }, `${LANG.code.toUpperCase()} / EN`),
         h('p', { class: 'small' }, h('b', {}, q.prompt_uz), h('br'), mixOrder(q.id, q.options.uz.length).map((k) => q.options.uz[k]).join(' · ')),
         h('p', { class: 'small' }, h('b', {}, q.prompt_en), h('br'), mixOrder(q.id, q.options.en.length).map((k) => q.options.en[k]).join(' · '))),
       h('div', { class: 'review-btns' },

@@ -8,7 +8,7 @@ on:
   push:
     branches: [main]
     paths: ['data/*/source/grammar.xlsx', 'data/*/source/history.xlsx', 'data/*/source/civics.xlsx', 'data/*/source/culture.xlsx',
-            'data/*/source/dialogs.json', 'data/*/quiz/**', 'langs.json', 'scripts/build_courses.py', 'scripts/sqlrender.py',
+            'data/*/source/dialogs.json', 'data/*/quiz/**', 'langs.json', 'scripts/langs/*/build_courses.py', 'scripts/sqlrender.py',
             '.github/workflows/import-courses.yml']
   workflow_dispatch:
     inputs:
@@ -47,7 +47,7 @@ jobs:
           pip install --quiet openpyxl==3.1.5
           for L in $LANG_LIST; do
             echo "## Курсы: $L" >> "$GITHUB_STEP_SUMMARY"
-            python scripts/build_courses.py "data/$L/source" "data/$L/build/courses.sql" | tee -a "$GITHUB_STEP_SUMMARY"
+            python "scripts/langs/$L/build_courses.py" "data/$L/source" "data/$L/build/courses.sql" | tee -a "$GITHUB_STEP_SUMMARY"
           done
 
       - name: Сборка строки подключения

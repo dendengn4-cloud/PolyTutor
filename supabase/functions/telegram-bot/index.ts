@@ -1,5 +1,5 @@
 // Edge Function: telegram-bot
-// Webhook бота Armenian Tutor (армянская версия Uzbek Tutor; имя бота задаётся в @BotFather).
+// Webhook бота Polytutor (один бот на все языки; имя бота задаётся в @BotFather).
 //   /start             — приветствие и кнопка «Открыть приложение»
 //   /help              — список команд
 //   /gencode T M N [U] — (только админ) N кодов подписки T (basic|advanced) на M месяцев (1,3,6,12),
@@ -32,12 +32,12 @@
 
 import { createClient } from "npm:@supabase/supabase-js@2";
 
-type Lang = "ru" | "hy" | "en";
+type Lang = "ru" | "hy" | "uz" | "en";
 
 const TEXT = {
   ru: {
     start: (name: string) =>
-      `Барев, ${name}! 👋\n\nЭто самоучитель армянского языка: 4 000+ слов с примерами, грамматика, история, обществознание и культура Армении.\n\nНажмите кнопку ниже, чтобы начать.`,
+      `Привет, ${name}! 👋\n\nЭто Polytutor — самоучители языков в Telegram: слова с примерами и озвучкой, грамматика с тестами, разговорная речь, история и культура.\n\nНажмите кнопку ниже и выберите язык.`,
     open: "Открыть приложение",
     help: "Команды:\n/start — открыть приложение\n/paysupport — помощь с оплатой\n/terms — условия подписки\n/id — мой Telegram ID\n/help — помощь",
     adminHelp: "\n\nАдминистратор:\n/gencode basic|advanced 1|3|6|12 количество [активаций]\nНапример: /gencode basic 1 5\n/refund ID_платежа — вернуть звёзды\n/grant ID|@username basic|advanced месяцев — выдать подписку\nНапример: /grant 123456789 advanced 1\n/alphacode количество [месяцев] — коды альфа-тестера («Продвинутая» + вся грамматика открыта)\n\nЯзык курса — первым словом: /grant uz 123456789 basic 1, /gencode uz basic 1 5 (без него — язык по умолчанию).",
@@ -65,7 +65,7 @@ const TEXT = {
   },
   hy: {
     start: (name: string) =>
-      `Բարև, ${name}։ 👋\n\nՍա հայերենի ինքնուսույց է՝ 4 000+ բառ օրինակներով, քերականություն, Հայաստանի պատմություն, հասարակագիտություն և մշակույթ։\n\nՍկսելու համար սեղմեք ներքևի կոճակը։`,
+      `Բարև, ${name}։ 👋\n\nՍա Polytutor-ն է՝ լեզուների ինքնուսույցներ Telegram-ում. բառեր՝ օրինակներով և ձայնագրությամբ, քերականություն՝ թեստերով, խոսակցական լեզու, պատմություն և մշակույթ։\n\nՍեղմեք ներքևի կոճակը և ընտրեք լեզուն։`,
     open: "Բացել հավելվածը",
     help: "Հրամաններ՝\n/start — բացել հավելվածը\n/paysupport — օգնություն վճարման հարցում\n/terms — բաժանորդագրության պայմաններ\n/id — իմ Telegram ID-ն\n/help — օգնություն",
     adminHelp: "\n\nԱդմինիստրատոր՝\n/gencode basic|advanced 1|3|6|12 քանակ [ակտիվացումներ]\n/refund ID — վերադարձնել աստղերը\n/grant ID|@username basic|advanced ամիս — տրամադրել բաժանորդագրություն\n/alphacode քանակ [ամիս] — ալֆա-փորձարկողի կոդեր",
@@ -91,9 +91,37 @@ const TEXT = {
       `Ստեղծված կոդեր՝ ${n}\nԲաժանորդագրություն՝ ${tier === "basic" ? "Հիմնական" : "Ընդլայնված"}, ${months} ամիս\nՅուրաքանչյուր կոդ՝ ${uses} անգամ\n\nԿոդերը ցուցադրվում են միայն մեկ անգամ՝ պահպանեք դրանք։`,
     error: "Չհաջողվեց կատարել հրամանը։ Փորձեք ավելի ուշ։",
   },
+  uz: {
+    start: (name: string) =>
+      `Assalomu alaykum, ${name}! 👋\n\nBu Polytutor — Telegramda tillarni mustaqil oʻrganish: misollar va ovozli soʻzlar, testli grammatika, soʻzlashuv nutqi, tarix va madaniyat.\n\nQuyidagi tugmani bosing va tilni tanlang.`,
+    open: "Ilovani ochish",
+    help: "Buyruqlar:\n/start — ilovani ochish\n/paysupport — toʻlov boʻyicha yordam\n/terms — obuna shartlari\n/id — mening Telegram ID\n/help — yordam",
+    adminHelp: "\n\nAdministrator:\n/gencode basic|advanced 1|3|6|12 soni [faollashtirish]\n/refund ID — yulduzlarni qaytarish\n/grant ID|@username basic|advanced oy — obuna berish\n/alphacode soni [oy] — alfa-tester kodlari",
+    tierName: (tier: string) => (tier === "basic" ? "Asosiy" : "Kengaytirilgan"),
+    invoiceTitle: (tier: string, months: number) => `«${tier === "basic" ? "Asosiy" : "Kengaytirilgan"}» obuna · ${months} oy`,
+    invoiceDesc: (tier: string, months: number) =>
+      tier === "basic"
+        ? `${months} oyga cheksiz soʻz oʻrganish, mashq, oʻyinlar va grammatika.`
+        : `${months} oyga «Asosiy»dagi hammasi + tarix, jamiyatshunoslik, madaniyat, filvord va kengaytirilgan statistika.`,
+    paid: (tier: string, until: string) => `Toʻlov qabul qilindi ✅\n«${tier === "basic" ? "Asosiy" : "Kengaytirilgan"}» obuna ${until} gacha amal qiladi.`,
+    payFailed: "Toʻlov qabul qilindi, lekin obunani avtomatik uzaytirib boʻlmadi. /paysupport ga yozing.",
+    paySupport: (admin: string) =>
+      `Toʻlov boʻyicha yordam.\n\nYulduzlar yechilgan, lekin obuna paydo boʻlmagan boʻlsa yoki bekor qilish kerak boʻlsa — administratorga yozing: ${admin}.\nToʻlov sanasini koʻrsating.`,
+    terms:
+      "Obuna shartlari\n\n• Obuna Telegram yulduzlari bilan 1, 3, 6 yoki 12 oyga toʻlanadi va avtomatik uzaytirilmaydi.\n• Xuddi shu darajadagi yangi toʻlov obunani tugash sanasidan uzaytiradi.\n• Doʻstingizni havolangiz orqali taklif qiling (Sozlamalar → Obuna): u birinchi toʻlovga −5% kupon oladi, siz esa u obuna boʻlganda −5% kupon olasiz. Kuponlar shaxsiy, muddatsiz; kupon tarif narxini (muddat chegirmasi bilan) yana 5% kamaytiradi; oddiy obunaga 1 ta, guruh obunasiga 3 tagacha (har biri bitta ishtirokchi ulushiga −5%).\n• Guruh obunasi uchun pul qaytarilmaydi. Agar yulduzlarni Telegram baribir qaytarsa, obuna xaridorda ham, guruh kodlarini faollashtirganlarda ham oʻchadi; davom etish uchun shaxsiy obuna rasmiylashtiring.\n• Savollar va qaytarish — /paysupport.",
+    refundUsage: "Format: /refund ID",
+    refundDone: (stars: number) => `Qaytarildi: ${stars} ⭐.`,
+    refundFail: (e: string) => `Qaytarib boʻlmadi: ${e}`,
+    refundGroup: "Bu guruh obunasi — shartlarga koʻra pul qaytarilmaydi.",
+    notAdmin: "Bu buyruq faqat administrator uchun.",
+    badArgs: "Format: /gencode basic|advanced 1|3|6|12 soni [faollashtirish]",
+    codes: (tier: string, months: number, n: number, uses: number) =>
+      `Yaratilgan kodlar: ${n}\nObuna: ${tier === "basic" ? "Asosiy" : "Kengaytirilgan"}, ${months} oy\nHar bir kod: ${uses} marta\n\nKodlar faqat bir marta koʻrsatiladi:`,
+    error: "Buyruqni bajarib boʻlmadi. Keyinroq urinib koʻring.",
+  },
   en: {
     start: (name: string) =>
-      `Barev, ${name}! 👋\n\nThis is an Armenian self-study app: 4,000+ words with examples, grammar, history, civics and culture of Armenia.\n\nTap the button below to start.`,
+      `Hi, ${name}! 👋\n\nThis is Polytutor — self-study language courses in Telegram: words with examples and audio, grammar with tests, everyday speech, history and culture.\n\nTap the button below and choose a language.`,
     open: "Open the app",
     help: "Commands:\n/start — open the app\n/paysupport — payment help\n/terms — subscription terms\n/id — my Telegram ID\n/help — help",
     adminHelp: "\n\nAdmin:\n/gencode basic|advanced 1|3|6|12 count [uses]\n/refund ID — refund stars\n/grant ID|@username basic|advanced months — grant a subscription\n/alphacode count [months] — alpha tester codes (Advanced + all grammar unlocked)",
@@ -125,18 +153,21 @@ const TEXT = {
 const GROUP_NOTE: Record<Lang, string> = {
   ru: "Групповая: вам подписка и 2 кода для друзей.",
   hy: "Խմբային՝ ձեզ բաժանորդագրություն և 2 կոդ ընկերների համար։",
+  uz: "Guruh: sizga obuna va doʻstlar uchun 2 ta kod.",
   en: "Group: your plan plus 2 codes for friends.",
 };
 // Групповая подписка отменена возвратом через Telegram → предложение личного тарифа
 const GROUP_ENDED: Record<Lang, (tier: string, months: number, stars: number) => string> = {
   ru: (tier, m, st) => `Групповая подписка отменена: за неё был оформлен возврат звёзд, поэтому доступ по ней закрыт.\n\nЧтобы продолжить, оформите личную подписку «${tier}» на ${m} мес. — ${st} ⭐ (Настройки → Подписка).`,
   hy: (tier, m, st) => `Խմբային բաժանորդագրությունը չեղարկվել է. դրա աստղերը վերադարձվել են, ուստի մուտքը փակված է։\n\nՇարունակելու համար ձևակերպեք «${tier}» անձնական բաժանորդագրություն ${m} ամսով — ${st} ⭐ (Կարգավորումներ → Բաժանորդագրություն)։`,
+  uz: (tier, m, st) => `Guruh obunasi bekor qilindi: u uchun yulduzlar qaytarildi, shuning uchun kirish yopildi.\n\nDavom etish uchun «${tier}» shaxsiy obunasini ${m} oyga rasmiylashtiring — ${st} ⭐ (Sozlamalar → Obuna).`,
   en: (tier, m, st) => `Your group plan was cancelled because its stars were refunded, so access through it has ended.\n\nTo continue, take a personal “${tier}” plan for ${m} mo. — ${st} ⭐ (Settings → Subscription).`,
 };
 // Реферальная программа: купоны −5%
 const COUPON_NOTE: Record<Lang, (n: number) => string> = {
   ru: (n) => `Применено купонов: ${n}.`,
   hy: (n) => `Կիրառված կտրոններ՝ ${n}։`,
+  uz: (n) => `Qoʻllangan kuponlar: ${n}.`,
   en: (n) => `Coupons applied: ${n}.`,
 };
 const REF_TEXT = {
@@ -148,6 +179,10 @@ const REF_TEXT = {
     welcome: "🎁 Դուք եկել եք ընկերոջ հրավերով՝ −5% կտրոն առաջին բաժանորդագրության համար։ Այն հավելվածում է՝ Կարգավորումներ → Բաժանորդագրություն։",
     earned: (n: number) => `🎉 Ձեր ընկերը բաժանորդագրվեց ձեր հղումով՝ ձեզ տրվեց −5% կտրոն։ Հասանելի կտրոններ՝ ${n}։\nԿիրառել՝ հավելված → Կարգավորումներ → Բաժանորդագրություն։`,
   },
+  uz: {
+    welcome: "🎁 Siz doʻstingiz taklifi bilan keldingiz — birinchi obuna toʻloviga −5% kupon. U ilovada: Sozlamalar → Obuna.",
+    earned: (n: number) => `🎉 Doʻstingiz havolangiz orqali obuna boʻldi — sizga −5% kupon berildi. Mavjud kuponlar: ${n}.\nQoʻllash: ilova → Sozlamalar → Obuna.`,
+  },
   en: {
     welcome: "🎁 You joined through a friend’s invite — you get a −5% coupon for your first subscription payment. Find it in the app: Settings → Subscription.",
     earned: (n: number) => `🎉 Your friend subscribed through your link — you’ve earned a −5% coupon. Coupons available: ${n}.\nUse it: app → Settings → Subscription.`,
@@ -157,15 +192,36 @@ const REF_TEXT = {
 const GROUP_CODES: Record<Lang, string> = {
   ru: "Коды для друзей (активировать в приложении: Подписка → Код подписки; также видны там же):",
   hy: "Կոդեր ընկերների համար (ակտիվացվում են հավելվածում՝ Բաժանորդագրություն → Բաժանորդագրության կոդ, տեսանելի են նաև այնտեղ)՝",
+  uz: "Doʻstlar uchun kodlar (ilovada faollashtiriladi: Obuna → Obuna kodi; ular u yerda ham koʻrinadi):",
   en: "Codes for friends (activate in the app: Subscription → Subscription code; also listed there):",
 };
 
+// Язык сообщений бота: язык интерфейса Telegram (ru / hy / uz), иначе английский
+export function asLang(v: unknown): Lang {
+  return v === "hy" || v === "uz" || v === "en" ? v : "ru";
+}
 function langOf(code?: string): Lang {
   if (!code) return "ru";
   if (code.startsWith("hy")) return "hy";
+  if (code.startsWith("uz")) return "uz";
   if (code.startsWith("ru")) return "ru";
   return "en";
 }
+
+// Изучаемые языки — названия для сообщений бота (поделиться, напоминание о первом уроке) и часовой пояс курса
+type CourseNames = { flag: string; tz: string; acc: Record<Lang, string>; gen: Record<Lang, string> };
+const COURSE: Record<string, CourseNames> = {
+  hy: { flag: "🇦🇲", tz: "Asia/Yerevan",
+        acc: { ru: "армянский", hy: "հայերեն", uz: "arman tilini", en: "Armenian" },
+        gen: { ru: "армянского", hy: "հայերենի", uz: "Arman tilidan", en: "Armenian" } },
+  uz: { flag: "🇺🇿", tz: "Asia/Tashkent",
+        acc: { ru: "узбекский", hy: "ուզբեկերեն", uz: "oʻzbek tilini", en: "Uzbek" },
+        gen: { ru: "узбекского", hy: "ուզբեկերենի", uz: "Oʻzbek tilidan", en: "Uzbek" } },
+};
+const NO_COURSE: CourseNames = { flag: "🌍", tz: "Asia/Tashkent",
+  acc: { ru: "языки", hy: "լեզուներ", uz: "tillarni", en: "languages" },
+  gen: { ru: "языка", hy: "լեզվի", uz: "Til", en: "language" } };
+export const courseOf = (schema: string): CourseNames => COURSE[schema] ?? NO_COURSE;
 
 function escapeHtml(s: string): string {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -196,9 +252,9 @@ function json(body: unknown, status = 200): Response {
   return new Response(JSON.stringify(body), { status, headers: { ...CORS, "Content-Type": "application/json; charset=utf-8" } });
 }
 
-function formatDate(iso: string, lang: Lang): string {
+function formatDate(iso: string, lang: Lang, tz = "Asia/Tashkent"): string {
   try {
-    return new Date(iso).toLocaleDateString(lang === "en" ? "en-GB" : lang === "hy" ? "hy-AM" : "ru-RU", { timeZone: "Asia/Yerevan" });
+    return new Date(iso).toLocaleDateString(lang === "en" ? "en-GB" : lang === "hy" ? "hy-AM" : lang === "uz" ? "uz-Latn-UZ" : "ru-RU", { timeZone: tz });
   } catch {
     return iso.slice(0, 10);
   }
@@ -278,7 +334,7 @@ async function createInvoice(req: Request, token: string): Promise<Response> {
   const { data: plan, error } = await db.rpc("stars_invoice_data", { p_user: auth.user.id, p_plan_id: planId, p_coupons: coupons });
   if (error) { console.error(error); return json({ error: "db_error" }, 500); }
   if (plan.error) return json({ error: plan.error }, 400);
-  const lang: Lang = plan.ui_lang === "hy" || plan.ui_lang === "en" ? plan.ui_lang : "ru";
+  const lang: Lang = asLang(plan.ui_lang);
   const t = TEXT[lang];
   const group = Number(plan.seats) > 1;
   const title = (t.invoiceTitle(plan.tier, plan.months) + (group ? " ×3" : "")).slice(0, 32);
@@ -297,10 +353,11 @@ async function createInvoice(req: Request, token: string): Promise<Response> {
 // ---------------------------------------------------------------- «Поделиться»: картинка + реферальная ссылка
 // POST …/telegram-bot/share (токен пользователя). Готовит сообщение с картинкой и кнопкой-ссылкой
 // (savePreparedInlineMessage); приложение открывает выбор чата через WebApp.shareMessage(id).
-const SHARE_TEXT: Record<Lang, { caption: (link: string) => string; button: string }> = {
-  ru: { caption: (l) => `Учу армянский в Telegram — присоединяйся! 🇦🇲\nПо моей ссылке — скидка 5% на подписку:\n${l}`, button: "Учить армянский" },
-  hy: { caption: (l) => `Telegram-ում հայերեն եմ սովորում՝ միացի՛ր։ 🇦🇲\nԻմ հղումով՝ 5% զեղչ բաժանորդագրության համար՝\n${l}`, button: "Սկսել սովորել" },
-  en: { caption: (l) => `I’m learning Armenian in Telegram — join me! 🇦🇲\nMy link gives you 5% off a subscription:\n${l}`, button: "Learn Armenian" },
+const SHARE_TEXT: Record<Lang, { caption: (link: string, c: CourseNames) => string; button: (c: CourseNames) => string }> = {
+  ru: { caption: (l, c) => `Учу ${c.acc.ru} в Telegram — присоединяйся! ${c.flag}\nПо моей ссылке — скидка 5% на подписку:\n${l}`, button: (c) => `Учить ${c.acc.ru}` },
+  hy: { caption: (l, c) => `Telegram-ում ${c.acc.hy} եմ սովորում՝ միացի՛ր։ ${c.flag}\nԻմ հղումով՝ 5% զեղչ բաժանորդագրության համար՝\n${l}`, button: () => "Սկսել սովորել" },
+  uz: { caption: (l, c) => `Telegramda ${c.acc.uz} oʻrganyapman — qoʻshil! ${c.flag}\nMening havolam orqali obunaga 5% chegirma:\n${l}`, button: () => "Oʻrganishni boshlash" },
+  en: { caption: (l, c) => `I’m learning ${c.acc.en} in Telegram — join me! ${c.flag}\nMy link gives you 5% off a subscription:\n${l}`, button: (c) => `Learn ${c.acc.en}` },
 };
 export function shareImageUrl(appUrl: string, image: string, lang: Lang): string {
   const base = appUrl.endsWith("/") ? appUrl : appUrl + "/";
@@ -317,7 +374,7 @@ async function prepareShare(req: Request, token: string, appUrl: string): Promis
   if (authErr || !auth?.user) return json({ error: "not_authenticated" }, 401);
   const { data: sd, error } = await db.rpc("ref_share_data", { p_user: auth.user.id });
   if (error || !sd?.code) return json({ error: "db_error" }, 500);
-  const lang: Lang = sd.lang === "hy" || sd.lang === "en" ? sd.lang : "ru";
+  const lang: Lang = asLang(sd.lang);
   const me = await tgApi(token, "getMe", {});
   const link = `https://t.me/${me?.result?.username}?start=ref_${schema}_${sd.code}`;
   const photo = shareImageUrl(appUrlFor(appUrl, schema), String(sd.image || "promo"), lang);
@@ -325,8 +382,8 @@ async function prepareShare(req: Request, token: string, appUrl: string): Promis
     user_id: sd.tg_id,
     result: {
       type: "photo", id: `share_${sd.code}`.slice(0, 64), photo_url: photo, thumbnail_url: photo,
-      caption: SHARE_TEXT[lang].caption(link),
-      reply_markup: { inline_keyboard: [[{ text: SHARE_TEXT[lang].button, url: link }]] },
+      caption: SHARE_TEXT[lang].caption(link, courseOf(schema)),
+      reply_markup: { inline_keyboard: [[{ text: SHARE_TEXT[lang].button(courseOf(schema)), url: link }]] },
     },
     allow_user_chats: true, allow_group_chats: true, allow_channel_chats: true,
   });
@@ -345,6 +402,7 @@ async function onPreCheckout(token: string, q: any): Promise<void> {
   const ok = !error && q.currency === "XTR" && data?.ok === true;
   if (!ok) console.error("pre_checkout rejected", error, JSON.stringify(data));
   const reason = lang === "hy" ? "Սակագինը փոխվել է։ Վերաբացեք հավելվածը և կրկին փորձեք։"
+    : lang === "uz" ? "Tarif oʻzgardi. Ilovani qayta oching va yana urinib koʻring."
     : lang === "en" ? "The plan has changed. Reopen the app and try again."
     : "Тариф изменился. Откройте приложение заново и повторите оплату.";
   await tgCall(token, "answerPreCheckoutQuery", ok
@@ -369,11 +427,11 @@ async function onPaid(token: string, msg: any): Promise<void> {
   }
   if (data.duplicate) return;
   const codes: string[] = Array.isArray(data.codes) ? data.codes : [];
-  await tgCall(token, "sendMessage", { chat_id: msg.chat.id, text: t.paid(data.tier, formatDate(data.ends_at, lang))
+  await tgCall(token, "sendMessage", { chat_id: msg.chat.id, text: t.paid(data.tier, formatDate(data.ends_at, lang, courseOf(schema).tz))
     + (codes.length ? `\n\n${GROUP_CODES[lang]}\n${codes.join("\n")}` : "") });
   // автору реферальной ссылки — сообщение о купоне
   if (data.referrer?.tg_id) {
-    const rl: Lang = data.referrer.lang === "hy" || data.referrer.lang === "en" ? data.referrer.lang : "ru";
+    const rl: Lang = asLang(data.referrer.lang);
     await tgCall(token, "sendMessage", { chat_id: data.referrer.tg_id, text: REF_TEXT[rl].earned(Number(data.referrer.coupons) || 1) });
   }
   await notifyAdmins(db, token, await adminCard(db, sp.telegram_payment_charge_id, `💫 <b>Новая оплата</b> [${schema}]`, true), true);
@@ -395,7 +453,7 @@ async function onRefunded(token: string, msg: any): Promise<void> {
   // групповая подписка: всем, у кого она отключилась, — предложение личного тарифа
   const appUrl = Deno.env.get("APP_URL");
   for (const o of data.offers ?? []) {
-    const ol: Lang = o.lang === "hy" || o.lang === "en" ? o.lang : "ru";
+    const ol: Lang = asLang(o.lang);
     await tgCall(token, "sendMessage", {
       chat_id: o.tg_id, text: GROUP_ENDED[ol](TEXT[ol].tierName(o.tier), Number(o.months), Number(o.stars)),
       ...(appUrl ? { reply_markup: { inline_keyboard: [[{ text: TEXT[ol].open, web_app: { url: appUrlFor(appUrl, schema) } }]] } } : {}),
@@ -470,7 +528,7 @@ const REMIND = {
     hi: (name: string) => `Привет${name ? `, ${name}` : ""}! 👋`,
     due: (n: number) => `Сегодня ждут повторения ${n} ${plural(n, "слово", "слова", "слов")}. 10 минут — и они останутся в памяти.`,
     fresh: "Самое время выучить новые слова — сеанс займёт около 10 минут.",
-    first: "Начните первый урок армянского — это около 10 минут.",
+    first: (c: CourseNames) => `Начните первый урок ${c.gen.ru} — это около 10 минут.`,
     rdToday: "Сегодня пятница — день повторения: сначала повторяем изученное, потом откроются новые слова.",
     rdTomorrow: "Завтра пятница — день повторения.",
     off: "Изменить время или отключить напоминания: Настройки в приложении.",
@@ -482,7 +540,7 @@ const REMIND = {
     hi: (name: string) => `Բարև${name ? `, ${name}` : ""}։ 👋`,
     due: (n: number) => `Այսօր կրկնության են սպասում ${n} բառ։ 10 րոպե՝ և դրանք կմնան հիշողության մեջ։`,
     fresh: "Նոր բառեր սովորելու ժամանակն է՝ պարապմունքը մոտ 10 րոպե է։",
-    first: "Սկսեք հայերենի առաջին դասը՝ մոտ 10 րոպե։",
+    first: (c: CourseNames) => `Սկսեք ${c.gen.hy} առաջին դասը՝ մոտ 10 րոպե։`,
     rdToday: "Այսօր ուրբաթ է՝ կրկնության օր. նախ կրկնում ենք սովորածը, հետո կբացվեն նոր բառերը։",
     rdTomorrow: "Վաղը ուրբաթ է՝ կրկնության օր։",
     off: "Փոխել ժամը կամ անջատել հիշեցումները՝ հավելվածի Կարգավորումներում։",
@@ -490,11 +548,23 @@ const REMIND = {
     open: "Բացել հավելվածը",
     tiers: { basic: "Հիմնական", advanced: "Ընդլայնված" } as Record<string, string>,
   },
+  uz: {
+    hi: (name: string) => `Salom${name ? `, ${name}` : ""}! 👋`,
+    due: (n: number) => `Bugun ${n} ta soʻz takrorlashni kutmoqda. 10 daqiqa — va ular xotirada qoladi.`,
+    fresh: "Yangi soʻzlarni oʻrganish vaqti — mashgʻulot taxminan 10 daqiqa.",
+    first: (c: CourseNames) => `${c.gen.uz} birinchi darsni boshlang — taxminan 10 daqiqa.`,
+    rdToday: "Bugun juma — takrorlash kuni: avval oʻrganilganlarni takrorlaymiz, keyin yangi soʻzlar ochiladi.",
+    rdTomorrow: "Ertaga juma — takrorlash kuni.",
+    off: "Vaqtni oʻzgartirish yoki eslatmalarni oʻchirish: ilovadagi Sozlamalar.",
+    subEnd: (tier: string, date: string) => `«${tier}» obunasi ${date} da tugaydi. Uzaytirish: ilovada Sozlamalar → Obuna.`,
+    open: "Ilovani ochish",
+    tiers: { basic: "Asosiy", advanced: "Kengaytirilgan" } as Record<string, string>,
+  },
   en: {
     hi: (name: string) => `Hi${name ? `, ${name}` : ""}! 👋`,
     due: (n: number) => `${n} ${n === 1 ? "word is" : "words are"} waiting for review today. 10 minutes — and they stay in your memory.`,
     fresh: "Time to learn some new words — a session takes about 10 minutes.",
-    first: "Start your first Armenian lesson — about 10 minutes.",
+    first: (c: CourseNames) => `Start your first ${c.gen.en} lesson — about 10 minutes.`,
     rdToday: "Today is Friday, review day: first we review, then new words unlock.",
     rdTomorrow: "Tomorrow is Friday, review day.",
     off: "Change the time or turn reminders off: Settings in the app.",
@@ -517,7 +587,7 @@ async function runReminders(req: Request, token: string, appUrl: string): Promis
   if (!data?.ok) return json({ error: data?.error ?? "forbidden" }, 403);
   let sent = 0, blocked = 0;
   for (const r of (data.items ?? []) as any[]) {
-    const L = REMIND[(r.lang === "hy" || r.lang === "en") ? r.lang : "ru" as "ru" | "hy" | "en"];
+    const L = REMIND[asLang(r.lang)];
     let text: string;
     if (typeof r.text === "string" && r.text) {
       text = r.text;                                  // готовый текст из базы (недельное сообщение)
@@ -527,7 +597,7 @@ async function runReminders(req: Request, token: string, appUrl: string): Promis
     } else {
       const lines = [L.hi(r.name ?? "")];
       if (r.review_day_today) lines.push(L.rdToday);
-      lines.push(r.due > 0 ? L.due(r.due) : r.started > 0 ? L.fresh : L.first);
+      lines.push(r.due > 0 ? L.due(r.due) : r.started > 0 ? L.fresh : L.first(courseOf(schema)));
       if (r.review_day_tomorrow) lines.push(L.rdTomorrow);
       lines.push("", L.off);
       text = lines.join("\n");
@@ -708,7 +778,7 @@ async function handler(req: Request): Promise<Response> {
     } else if (command === "/paysupport") {
       const { data } = await dbClient(DEFAULT_LANG).from("admins").select("tg_id").limit(1);
       const adminId = data?.[0]?.tg_id;
-      const link = adminId ? `<a href="tg://user?id=${adminId}">${lang === "en" ? "administrator" : lang === "hy" ? "ադմինիստրատոր" : "администратор"}</a>` : "—";
+      const link = adminId ? `<a href="tg://user?id=${adminId}">${lang === "en" || lang === "uz" ? "administrator" : lang === "hy" ? "ադմինիստրատոր" : "администратор"}</a>` : "—";
       await tgCall(token, "sendMessage", { chat_id: chatId, parse_mode: "HTML", text: escapeHtml(t.paySupport("{ADMIN}")).replace("{ADMIN}", link) });
     } else if (command === "/terms") {
       await tgCall(token, "sendMessage", { chat_id: chatId, text: t.terms });
@@ -751,7 +821,7 @@ async function handler(req: Request): Promise<Response> {
       });
     } else if (command === "/id") {
       await tgCall(token, "sendMessage", { chat_id: chatId, parse_mode: "HTML",
-        text: `${lang === "en" ? "Your Telegram ID" : lang === "hy" ? "Ձեր Telegram ID-ն" : "Ваш Telegram ID"}: <code>${from.id}</code>` });
+        text: `${lang === "en" ? "Your Telegram ID" : lang === "hy" ? "Ձեր Telegram ID-ն" : lang === "uz" ? "Sizning Telegram ID" : "Ваш Telegram ID"}: <code>${from.id}</code>` });
     } else if (command === "/grant") {
       if (!(await isAdmin())) {
         await tgCall(token, "sendMessage", { chat_id: chatId, text: t.notAdmin });

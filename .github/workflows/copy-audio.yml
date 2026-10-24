@@ -1,8 +1,10 @@
-# Копирование готовой озвучки из другого (публичного) репозитория с аудио — например, из армянского приложения:
-# newgden-ai/Armenian-audio → <логин>/audio-hy. Озвучивать заново не нужно: слова и номера файлов те же.
-# Запуск вручную: Actions → «Копирование аудио» → Run workflow. Повторный запуск докопирует только новые файлы.
+# Копирование готовой озвучки из другого (публичного) репозитория с аудио — из исходных приложений:
+#   армянский: язык hy, источник newgden-ai/Armenian-audio;  узбекский: язык uz, источник deniszhovt96-gif/uzbek-audio.
+# Озвучивать заново не нужно: слова и номера файлов те же. Повторный запуск докопирует только новые файлы.
+# Запуск вручную: Actions → «Копирование аудио» → Run workflow.
 #   1. копирует mp3, которых ещё нет, в репозиторий с аудио этого языка (переменная AUDIO_REPO, секрет AUDIO_REPO_TOKEN);
-#   2. отмечает все файлы, которые теперь есть в репозитории с аудио, в data/<язык>/audio_voiced.txt;
+#   2. записывает список всех файлов репозитория с аудио в data/<язык>/audio_present.txt, а для языков с
+#      "copy_marks_voiced": true в langs.json (армянский) — ещё и в data/<язык>/audio_voiced.txt;
 #   3. запускает «Import Vocabulary» — в приложении появляются кнопки звука.
 name: Копирование аудио
 
@@ -45,6 +47,7 @@ jobs:
           [ -n "$AUDIO_REPO_PATTERN" ] || { echo "::error::Не задана переменная AUDIO_REPO (например <логин>/audio-{lang})"; exit 1; }
           echo "AUDIO_REPO=${AUDIO_REPO_PATTERN//\{lang\}/$TUTOR_LANG}" >> "$GITHUB_ENV"
           echo "VOICED=data/$TUTOR_LANG/audio_voiced.txt" >> "$GITHUB_ENV"
+          echo "PRESENT=data/$TUTOR_LANG/audio_present.txt" >> "$GITHUB_ENV"
 
       - name: Копирование файлов
         run: |
@@ -68,11 +71,16 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           python3 - <<'PY'
-          import os
+          import json, os
           from pathlib import Path
+          files = {p.name for p in Path('audio-repo/audio').glob('*.mp3')}
+          Path(os.environ['PRESENT']).write_text(''.join(n + '\n' for n in sorted(files)), encoding='utf-8')
+          print(f'Файлов в репозитории с аудио: {len(files)}')
+          lang = next(l for l in json.load(open('langs.json'))['langs'] if l['code'] == os.environ['TUTOR_LANG'])
+          if not lang.get('copy_marks_voiced'):
+              raise SystemExit(0)
           voiced = Path(os.environ['VOICED'])
           have = set(voiced.read_text(encoding='utf-8').split()) if voiced.exists() else set()
-          files = {p.name for p in Path('audio-repo/audio').glob('*.mp3')}
           new = sorted(files - have)
           tail = voiced.read_bytes()[-1:] if voiced.exists() else b''
           with voiced.open('a', encoding='utf-8') as f:
@@ -84,7 +92,7 @@ jobs:
           PY
           git config user.name "tutor bot"
           git config user.email "actions@users.noreply.github.com"
-          git add "$VOICED"
+          git add "$PRESENT" "$VOICED"
           git commit -m "Озвучено ($TUTOR_LANG): копия из ${SOURCE}" || { echo "Список не изменился"; exit 0; }
           git pull --rebase origin "${GITHUB_REF_NAME}" || true
           git push
