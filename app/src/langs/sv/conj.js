@@ -12,6 +12,7 @@ import { langKeyboard } from './keyboard.js';
 import { NOUN_IDS, VERB_IDS } from './nouns.js';
 import { tx, verbRows, verbGroup, openVerbForms, VERB_DRILL, formOk } from './forms.js';
 import { declSheet as declSheetImpl } from './decl.js';
+import { reportSheet, flagButton } from './report.js';
 
 let appRef = null;
 export function setConjApp(a) { appRef = a; }
@@ -27,7 +28,7 @@ export const canDecline = (word) => FEATURES.MORPH && word && NOUN_IDS.has(Numbe
 export const declSheet = (noun, app = appRef) => declSheetImpl(noun, app);
 
 // ---------------------------------------------------------------- таблица
-function verbTable(m, open, state, redraw) {
+function verbTable(m, open, state, redraw, word) {
   const rows = verbRows(m);
   if (!rows.length) return h('p', { class: 'muted' }, '—');
   const studied = rows.filter((r) => !open || open.has(r.key));
@@ -39,6 +40,7 @@ function verbTable(m, open, state, redraw) {
       r.tr ? h('div', { class: 'conj-tr' }, r.tr) : null));
   const g = verbGroup(m.v);
   const out = [h('div', { class: 'conj-card' },
+    word ? flagButton(() => reportSheet({ word, kind: 'conj', title: tx('conjTitle'), rows: rows.filter((r) => ['inf', 'pres', 'pret', 'sup', 'imp'].includes(r.key)) })) : null,
     h('div', { class: 'conj-sub muted' }, tx('group', g)),
     studied.map((r) => row(r, false)),
     rest.length && state.showAll ? rest.map((r) => row(r, true)) : null)];
@@ -59,7 +61,7 @@ export async function conjSheet(verb, app = appRef) {
   const m = morphs[verb.id];
   const state = { showAll: false };
   const box = h('div', {});
-  const redraw = redrawer(box, () => verbTable(m, openVerbForms(st), state, redraw));
+  const redraw = redrawer(box, () => verbTable(m, openVerbForms(st), state, redraw, verb));
   redraw();
   const close = sheet(
     h('div', { class: 'label' }, tx('conjTitle')),
@@ -127,7 +129,7 @@ async function renderVerb(app, verb) {
   const can = VERB_DRILL.some((k) => open.has(k));
   const state = { showAll: false };
   const box = h('div', {});
-  const redraw = redrawer(box, () => verbTable(m, open, state, redraw));
+  const redraw = redrawer(box, () => verbTable(m, open, state, redraw, verb));
   redraw();
   mount(h('div', { class: 'screen' },
     h('div', { class: 'label' }, tx('conjTitle')),

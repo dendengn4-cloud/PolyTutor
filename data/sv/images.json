@@ -487,6 +487,79 @@
     "caption_uz": "Svensk polis",
     "caption_en": "Swedish police"
    }
+  ],
+  "21": [
+   {
+    "q": "Arbetsförmedlingen",
+    "must": [
+     "arbetsförmedlingen",
+     "arbetsformedlingen"
+    ],
+    "caption_ru": "Офис службы занятости Arbetsförmedlingen",
+    "caption_uz": "Arbetsförmedlingens kontor",
+    "caption_en": "An Arbetsförmedlingen office"
+   },
+   {
+    "q": "Kista Science Tower",
+    "must": [
+     "kista"
+    ],
+    "caption_ru": "Киста — деловой район Стокгольма",
+    "caption_uz": "Kista – Stockholms affärsdistrikt",
+    "caption_en": "Kista, a business district of Stockholm"
+   }
+  ],
+  "22": [
+   {
+    "q": "Hammarby sjöstad",
+    "must": [
+     "hammarby"
+    ],
+    "caption_ru": "Жилой район Хаммарбю-шёстад в Стокгольме",
+    "caption_uz": "Bostadsområdet Hammarby sjöstad i Stockholm",
+    "caption_en": "The Hammarby Sjöstad housing area in Stockholm"
+   },
+   {
+    "q": "Skatteskrapan Stockholm",
+    "must": [
+     "skatteskrapan"
+    ],
+    "caption_ru": "Здание «Скаттескрапан» в Стокгольме",
+    "caption_uz": "Skatteskrapan i Stockholm",
+    "caption_en": "The Skatteskrapan building in Stockholm"
+   }
+  ],
+  "23": [
+   {
+    "q": "Stockholmsmässan Älvsjö",
+    "must": [
+     "stockholmsmässan",
+     "stockholmsmassan"
+    ],
+    "caption_ru": "Стокгольмсмессан в Эльвшё — здесь прошёл первый экзамен",
+    "caption_uz": "Stockholmsmässan i Älvsjö – här skrevs det första provet",
+    "caption_en": "Stockholmsmässan in Älvsjö, where the first test was held"
+   },
+   {
+    "q": "Riksdagshuset Stockholm",
+    "must": [
+     "riksdag"
+    ],
+    "caption_ru": "Здание риксдага в Стокгольме",
+    "caption_uz": "Riksdagshuset i Stockholm",
+    "caption_en": "The Riksdag building in Stockholm"
+   }
+  ],
+  "24": [
+   {
+    "q": "Stockholm Public Library Stadsbiblioteket",
+    "must": [
+     "stadsbibliotek"
+    ],
+    "caption_ru": "Городская библиотека Стокгольма",
+    "caption_uz": "Stockholms stadsbibliotek",
+    "caption_en": "Stockholm Public Library"
+   }
   ]
  },
  "culture": {
@@ -725,6 +798,27 @@
     "caption_ru": "Дворец Дроттнингхольм",
     "caption_uz": "Drottningholms slott",
     "caption_en": "Drottningholm Palace"
+   }
+  ],
+  "21": [
+   {
+    "q": "Lilla torg Malmö",
+    "must": [
+     "malmö",
+     "malmo"
+    ],
+    "caption_ru": "Мальмё — столица Сконе",
+    "caption_uz": "Malmö – Skånes huvudstad",
+    "caption_en": "Malmö, the capital of Scania"
+   },
+   {
+    "q": "Mariehamn Åland",
+    "must": [
+     "mariehamn"
+    ],
+    "caption_ru": "Мариехамн, Аландские острова",
+    "caption_uz": "Mariehamn på Åland",
+    "caption_en": "Mariehamn, Åland"
    }
   ]
  }

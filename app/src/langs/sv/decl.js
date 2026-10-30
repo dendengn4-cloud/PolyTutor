@@ -6,17 +6,19 @@ import { h, mount, spinner, sheet, haptic } from '../ui.js';
 import { icon } from '../icons.js';
 import { langKeyboard } from './keyboard.js';
 import { tx, nounRows, openNounForms, NOUN_DRILL, formOk } from './forms.js';
+import { reportSheet, flagButton } from './report.js';
 
 const CEFRS = ['A1', 'A2', 'B1', 'B2'];
 const meaning = (v) => (getLang() === 'en' && v.e ? v.e : v.r);
 const loadMorph = (ids) => (ids.length ? rpc('get_morph', { p_ids: ids.slice(0, 60) }).catch(() => ({})) : Promise.resolve({}));
 const pill = (label, v, cls = '') => h('span', { class: `lvl-pill ${cls} ${v == null ? 'empty' : ''}` }, `${label} ${v == null ? '—' : v}`);
 
-function nounTable(m, open) {
+function nounTable(m, open, word) {
   const rows = nounRows(m);
   if (!rows.length) return h('p', { class: 'muted' }, '—');
   const n = m.n;
   return h('div', { class: 'conj-card' },
+    word ? flagButton(() => reportSheet({ word, kind: 'decl', title: tx('declTitle'), rows })) : null,
     h('div', { class: 'conj-sub muted' }, `${tx('gender')}: ${n.g} · ${tx('decl', n.decl)}`),
     rows.map((r) => {
       const closed = r.key !== 'sg' && open && !open.has(r.key);
@@ -32,7 +34,7 @@ export async function declSheet(noun, app) {
     h('div', { class: 'label' }, tx('declTitle')),
     h('h3', {}, noun.uz, h('span', { class: 'muted' }, ` — ${noun.ru}`)),
     app ? h('button', { class: 'btn btn-big', type: 'button', onClick: () => { close(); app.go('decl', { noun }); } }, icon('practice'), tx('trainDeclThis')) : null,
-    nounTable(morphs[noun.id], openNounForms(st)));
+    nounTable(morphs[noun.id], openNounForms(st), noun));
 }
 
 export async function renderDecl(app, params = {}) {
@@ -87,7 +89,7 @@ async function renderNoun(app, noun) {
     h('h1', {}, noun.uz), h('p', { class: 'muted' }, noun.ru),
     h('button', { class: 'btn', type: 'button', disabled: !open.size, onClick: () => app.go('decl', { train: true, nouns: [noun] }) }, icon('practice'), tx('trainDeclThis')),
     open.size ? null : h('p', { class: 'small muted' }, tx('noOpen')),
-    nounTable(morphs[noun.id], open)));
+    nounTable(morphs[noun.id], open, noun)));
 }
 
 // упражнение: по каждому существительному — открытые формы (опр. ед., мн., опр. мн.)
