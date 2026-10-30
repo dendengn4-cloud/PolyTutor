@@ -102,6 +102,13 @@ export function schemaOf(v: unknown): string {
   return LANG_RE.test(def) ? def : "hy";
 }
 
+// Случайный пароль (64 hex-символа): пароли в приложении не используются, вход — только через Telegram
+function randomSecret(): string {
+  const b = new Uint8Array(32);
+  crypto.getRandomValues(b);
+  return [...b].map((x) => x.toString(16).padStart(2, "0")).join("");
+}
+
 // Технический e-mail пользователя в Supabase Auth. Письма на него не отправляются.
 // Домен не менять: по этому адресу находятся уже созданные учётные записи учеников.
 function techEmail(tgId: number): string {
@@ -160,6 +167,10 @@ async function handler(req: Request): Promise<Response> {
       const { data: link, error: linkErr } = await admin.auth.admin.generateLink({ type: "magiclink", email });
       if (linkErr || !link?.user?.id) return json({ error: "auth_lookup_failed", detail: linkErr?.message }, 500);
       userId = link.user.id;
+      // Учётную запись с этим адресом мог заранее создать кто-то другой (обычной регистрацией по e-mail, если она
+      // включена в Supabase Auth). Новый случайный пароль закрывает такой доступ: входить можно только через Telegram.
+      const { error: pwErr } = await admin.auth.admin.updateUserById(userId, { password: randomSecret(), email_confirm: true });
+      if (pwErr) return json({ error: "auth_secure_failed", detail: pwErr.message }, 500);
     }
     const { error: insErr } = await admin.from("profiles").insert({
       id: userId,
@@ -192,6 +203,8 @@ async function handler(req: Request): Promise<Response> {
   if (otpErr || !verified?.session) return json({ error: "session_failed", detail: otpErr?.message }, 500);
 
   const s = verified.session;
+  // сессия должна принадлежать тому же человеку, что и профиль
+  if (s.user?.id !== userId) return json({ error: "session_mismatch" }, 500);
   return json({
     access_token: s.access_token,
     refresh_token: s.refresh_token,
