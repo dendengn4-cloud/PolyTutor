@@ -19,7 +19,7 @@ export function reportSheet({ word, kind, title, rows }) {
     if (!comment) { ta.focus(); return; }
     send.disabled = true;
     const row = person === null ? null : rows[person];
-    const res = await rpc('report_form', { p_word: word.id, p_kind: kind, p_item: row ? row.key : 'all', p_person: person,
+    const res = await rpc('report_form', { p_word: word.id, p_kind: kind, p_item: row ? row.label : t('repWhole'), p_person: null,
       p_form: row ? `${row.label}: ${row.form}` : rows.map((r) => `${r.label}: ${r.form}`).join('; ').slice(0, 300), p_comment: comment })
       .catch(() => ({ error: 'net' }));
     if (res && res.ok) {

@@ -5,6 +5,7 @@
 #        армянский (hy): t5 — модель SpeechT5 (бесплатно, естественный голос); espeak — eSpeak NG («робот»);
 #                        azure — Microsoft Azure (нужны секреты AZURE_TTS_KEY и AZURE_TTS_REGION);
 #        узбекский (uz): gtts — Google (бесплатно, как исходные файлы); edge — Microsoft (бесплатно);
+#        шведский (sv): edge — Microsoft (бесплатно, без регистрации, естественный голос); gtts — Google (бесплатно);
 #   3. если задан секрет AUDIO_REPO_TOKEN — кладёт файлы в репозиторий с аудио (папка audio/), отмечает их
 #      в data/<язык>/audio_voiced.txt и обновляет список файлов data/<язык>/audio_present.txt, затем запускает
 #      «Import Vocabulary» — в приложении появляются кнопки звука;
@@ -16,10 +17,10 @@ on:
   workflow_dispatch:
     inputs:
       lang:
-        description: 'Язык (код из langs.json: hy, uz…)'
+        description: 'Язык (код из langs.json: hy, uz, sv…)'
         default: hy
       engine:
-        description: 'Сервис: hy — t5 / espeak / azure; uz — gtts / edge'
+        description: 'Сервис: hy — t5 / espeak / azure; uz — gtts / edge; sv — edge / gtts'
         default: t5
         type: choice
         options: [t5, espeak, azure, gtts, edge]
@@ -34,8 +35,9 @@ permissions:
   contents: write
   actions: write
 
+# Разные языки озвучиваются параллельно; один и тот же язык — по очереди (не больше одного запуска в ожидании)
 concurrency:
-  group: tts
+  group: tts-${{ inputs.lang }}
   cancel-in-progress: false
 
 jobs:
