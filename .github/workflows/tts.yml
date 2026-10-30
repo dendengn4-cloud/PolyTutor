@@ -10,6 +10,8 @@
 #      в data/<язык>/audio_voiced.txt и обновляет список файлов data/<язык>/audio_present.txt, затем запускает
 #      «Import Vocabulary» — в приложении появляются кнопки звука;
 #      без секрета — файлы можно скачать архивом (Artifacts) и загрузить в репозиторий с аудио вручную.
+#   4. «Продолжать автоматически» (по умолчанию включено): после запуска сам начинается следующий (через «Паузу»),
+#      пока всё не будет озвучено.
 # Узбекский: сначала «Копирование аудио» (готовая озвучка Uzbek Tutor), потом — Озвучка только недостающего.
 name: Озвучка
 
@@ -30,6 +32,16 @@ on:
       limit:
         description: 'Не больше файлов за запуск'
         default: '3000'
+      auto:
+        description: 'Продолжать автоматически: после запуска сам начнётся следующий, пока всё не будет озвучено'
+        type: boolean
+        default: true
+      pause:
+        description: 'Пауза перед следующим автоматическим запуском, минут (бережно к бесплатному сервису)'
+        default: '10'
+      round:
+        description: 'Номер запуска в серии (заполняется автоматически; не больше 30)'
+        default: '1'
 
 permissions:
   contents: write
@@ -53,7 +65,16 @@ jobs:
       LIMIT: ${{ inputs.limit }}
       AZURE_TTS_KEY: ${{ secrets.AZURE_TTS_KEY }}
       AZURE_TTS_REGION: ${{ vars.AZURE_TTS_REGION }}  # например: westeurope
+      AUTO: ${{ inputs.auto }}
+      PAUSE: ${{ inputs.pause }}
+      ROUND: ${{ inputs.round }}
     steps:
+      - name: Пауза между автоматическими запусками
+        if: inputs.round != '1'
+        run: |
+          P=$(( ${PAUSE:-10} )); [ "$P" -gt 30 ] && P=30; [ "$P" -lt 0 ] && P=0
+          echo "Запуск ${ROUND} в серии — пауза ${P} мин"; sleep $(( P * 60 ))
+
       # свежая версия ветки (а не та, что была в момент нажатия Run workflow): если запуск ждал в очереди,
       # он увидит список уже озвученного предыдущим запуском и не будет озвучивать то же самое второй раз
       - uses: actions/checkout@v4
@@ -134,3 +155,22 @@ jobs:
           git push
           # коммит от GITHUB_TOKEN сам не запускает другие workflow — запускаем импорт словаря явно
           gh workflow run import-vocab.yml --ref "${GITHUB_REF_NAME}" -f lang="$TUTOR_LANG"
+
+      # Серия: если ещё есть что озвучивать и этот запуск что-то озвучил — запускаем следующий с теми же настройками.
+      # Останавливается, когда всё озвучено, если запуск ничего не смог озвучить, или после 30 запусков подряд.
+      - name: Следующий запуск
+        if: env.AUDIO_REPO_TOKEN != '' && inputs.auto
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          LEFT=$(grep -o 'Осталось: [0-9]*' tts.log | tail -1 | grep -o '[0-9]*' || echo 0)
+          NEW=$(ls out/audio 2>/dev/null | wc -l)
+          R=$(( ${ROUND:-1} ))
+          echo "Осталось: ${LEFT:-0}, озвучено сейчас: $NEW, запуск $R"
+          if [ "${LEFT:-0}" -gt 0 ] && [ "$NEW" -gt 0 ] && [ "$R" -lt 30 ]; then
+            gh workflow run tts.yml --ref "${GITHUB_REF_NAME}" -f lang="$TUTOR_LANG" -f engine="$ENGINE" -f voice="$VOICE" \
+              -f limit="$LIMIT" -f auto=true -f pause="$PAUSE" -f round="$(( R + 1 ))"
+            echo "- Следующий запуск ($(( R + 1 ))) начнётся через ${PAUSE} мин" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "- Серия озвучки завершена (осталось: ${LEFT:-0})" >> "$GITHUB_STEP_SUMMARY"
+          fi
