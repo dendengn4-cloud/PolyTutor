@@ -1,0 +1,82 @@
+name: Синхронизация со старыми приложениями
+
+# Раз в неделю переносит учебный прогресс и подписки из отдельных приложений (старые армянский и узбекский боты)
+# в разделы hy и uz. Старые базы только читаются (пользователь tutor_sync, см. scripts/sync/old_readonly_role.sql).
+# Кто ещё не заходил в Polytutor, получит свой снимок при первом входе.
+# Можно запустить вручную: Actions → «Синхронизация со старыми приложениями» → Run workflow.
+#
+# Настройка (Settings → Secrets and variables → Actions) — для каждого старого приложения:
+#   Variables: OLD_HY_PROJECT_REF, OLD_HY_DB_HOST (армянское), OLD_UZ_PROJECT_REF, OLD_UZ_DB_HOST (узбекское) —
+#              ID старого проекта и адрес его Session pooler (Connect → Session pooler);
+#   Secrets:   OLD_HY_DB_PASSWORD, OLD_UZ_DB_PASSWORD — пароль tutor_sync, который показал old_readonly_role.sql.
+# Язык без настроек пропускается.
+on:
+  schedule:
+    - cron: '23 2 * * 1'     # понедельник, 02:23 UTC (07:23 по Ташкенту)
+  workflow_dispatch:
+    inputs:
+      lang:
+        description: 'hy или uz; пусто — оба'
+        default: ''
+
+concurrency:
+  group: sync-old
+  cancel-in-progress: false
+
+env:
+  DB_HOST: ${{ vars.SUPABASE_DB_HOST }}
+  DB_PORT: '5432'
+  DB_USER: postgres.${{ vars.SUPABASE_PROJECT_REF }}
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Подключение к Polytutor
+        env:
+          DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+        run: |
+          if [ -z "$DB_PASSWORD" ]; then
+            echo "::error::Не задан секрет SUPABASE_DB_PASSWORD (Settings → Secrets and variables → Actions)"
+            exit 1
+          fi
+          ENC=$(python3 -c 'import os, urllib.parse; print(urllib.parse.quote(os.environ["DB_PASSWORD"].strip(), safe=""))')
+          echo "::add-mask::$ENC"
+          echo "SUPABASE_DB_URL=postgresql://${DB_USER}:${ENC}@${DB_HOST}:${DB_PORT}/postgres" >> "$GITHUB_ENV"
+
+      - name: Армянский (hy)
+        if: ${{ inputs.lang == '' || inputs.lang == 'hy' || github.event_name == 'schedule' }}
+        env:
+          OLD_REF: ${{ vars.OLD_HY_PROJECT_REF }}
+          OLD_HOST: ${{ vars.OLD_HY_DB_HOST }}
+          OLD_PASSWORD: ${{ secrets.OLD_HY_DB_PASSWORD }}
+        run: |
+          set -o pipefail
+          if [ -z "$OLD_REF" ] || [ -z "$OLD_HOST" ] || [ -z "$OLD_PASSWORD" ]; then
+            echo "::notice::Армянский пропущен: не заданы OLD_HY_PROJECT_REF, OLD_HY_DB_HOST или OLD_HY_DB_PASSWORD"
+            exit 0
+          fi
+          ENC=$(python3 -c 'import os, urllib.parse; print(urllib.parse.quote(os.environ["OLD_PASSWORD"].strip(), safe=""))')
+          echo "::add-mask::$ENC"
+          export OLD_DB_URL="postgresql://tutor_sync.${OLD_REF}:${ENC}@${OLD_HOST}:5432/postgres"
+          bash scripts/sync/sync_old.sh hy | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Узбекский (uz)
+        if: ${{ inputs.lang == '' || inputs.lang == 'uz' || github.event_name == 'schedule' }}
+        env:
+          OLD_REF: ${{ vars.OLD_UZ_PROJECT_REF }}
+          OLD_HOST: ${{ vars.OLD_UZ_DB_HOST }}
+          OLD_PASSWORD: ${{ secrets.OLD_UZ_DB_PASSWORD }}
+        run: |
+          set -o pipefail
+          if [ -z "$OLD_REF" ] || [ -z "$OLD_HOST" ] || [ -z "$OLD_PASSWORD" ]; then
+            echo "::notice::Узбекский пропущен: не заданы OLD_UZ_PROJECT_REF, OLD_UZ_DB_HOST или OLD_UZ_DB_PASSWORD"
+            exit 0
+          fi
+          ENC=$(python3 -c 'import os, urllib.parse; print(urllib.parse.quote(os.environ["OLD_PASSWORD"].strip(), safe=""))')
+          echo "::add-mask::$ENC"
+          export OLD_DB_URL="postgresql://tutor_sync.${OLD_REF}:${ENC}@${OLD_HOST}:5432/postgres"
+          bash scripts/sync/sync_old.sh uz | tee -a "$GITHUB_STEP_SUMMARY"
