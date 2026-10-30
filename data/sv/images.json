@@ -1,0 +1,731 @@
+{
+ "history": {
+  "1": [
+   {
+    "q": "Tanum rock carvings",
+    "must": [
+     "tanum"
+    ],
+    "caption_ru": "Наскальные рисунки Танума",
+    "caption_uz": "Hällristningarna i Tanum",
+    "caption_en": "Rock carvings at Tanum"
+   }
+  ],
+  "2": [
+   {
+    "q": "Gamla Uppsala mounds",
+    "must": [
+     "uppsala"
+    ],
+    "caption_ru": "Курганы Старой Уппсалы",
+    "caption_uz": "Gamla Uppsala högar",
+    "caption_en": "The mounds of Old Uppsala"
+   }
+  ],
+  "3": [
+   {
+    "q": "Birka Viking",
+    "must": [
+     "birka"
+    ],
+    "caption_ru": "Бирка — город викингов",
+    "caption_uz": "Vikingastaden Birka",
+    "caption_en": "The Viking town of Birka"
+   },
+   {
+    "q": "Rök runestone",
+    "must": [
+     "rök",
+     "rok"
+    ],
+    "caption_ru": "Рунический камень из Рёка",
+    "caption_uz": "Rökstenen",
+    "caption_en": "The Rök runestone"
+   }
+  ],
+  "4": [
+   {
+    "q": "Uppsala Cathedral",
+    "must": [
+     "uppsala"
+    ],
+    "caption_ru": "Уппсальский собор",
+    "caption_uz": "Uppsala domkyrka",
+    "caption_en": "Uppsala Cathedral"
+   }
+  ],
+  "5": [
+   {
+    "q": "Visby city wall",
+    "must": [
+     "visby"
+    ],
+    "caption_ru": "Городская стена Висбю",
+    "caption_uz": "Visby ringmur",
+    "caption_en": "The town wall of Visby"
+   }
+  ],
+  "6": [
+   {
+    "q": "Kalmar Castle",
+    "must": [
+     "kalmar"
+    ],
+    "caption_ru": "Кальмарский замок",
+    "caption_uz": "Kalmar slott",
+    "caption_en": "Kalmar Castle"
+   }
+  ],
+  "7": [
+   {
+    "q": "Gustav Vasa portrait",
+    "must": [
+     "vasa"
+    ],
+    "caption_ru": "Густав Васа",
+    "caption_uz": "Gustav Vasa",
+    "caption_en": "Gustav Vasa"
+   }
+  ],
+  "8": [
+   {
+    "q": "Vasa ship museum",
+    "must": [
+     "vasa"
+    ],
+    "caption_ru": "Корабль «Ваза»",
+    "caption_uz": "Regalskeppet Vasa",
+    "caption_en": "The warship Vasa"
+   }
+  ],
+  "9": [
+   {
+    "q": "Queen Christina of Sweden portrait",
+    "must": [
+     "christina",
+     "kristina"
+    ],
+    "caption_ru": "Королева Кристина",
+    "caption_uz": "Drottning Kristina",
+    "caption_en": "Queen Christina"
+   }
+  ],
+  "10": [
+   {
+    "q": "Charles XII of Sweden portrait",
+    "must": [
+     "charles",
+     "karl"
+    ],
+    "caption_ru": "Карл XII",
+    "caption_uz": "Karl XII",
+    "caption_en": "Charles XII"
+   }
+  ],
+  "11": [
+   {
+    "q": "Carl Linnaeus portrait",
+    "must": [
+     "linn"
+    ],
+    "caption_ru": "Карл Линней",
+    "caption_uz": "Carl von Linné",
+    "caption_en": "Carl Linnaeus"
+   }
+  ],
+  "12": [
+   {
+    "q": "Gustav III of Sweden portrait",
+    "must": [
+     "gustav"
+    ],
+    "caption_ru": "Густав III",
+    "caption_uz": "Gustav III",
+    "caption_en": "Gustav III"
+   }
+  ],
+  "13": [
+   {
+    "q": "Charles XIV John of Sweden",
+    "must": [
+     "karl",
+     "charles",
+     "bernadotte"
+    ],
+    "caption_ru": "Карл XIV Юхан (Бернадот)",
+    "caption_uz": "Karl XIV Johan",
+    "caption_en": "Charles XIV John"
+   }
+  ],
+  "14": [
+   {
+    "q": "Göta Canal",
+    "must": [
+     "göta",
+     "gota"
+    ],
+    "caption_ru": "Гёта-канал",
+    "caption_uz": "Göta kanal",
+    "caption_en": "The Göta Canal"
+   }
+  ],
+  "15": [
+   {
+    "q": "Swedish emigrants ship Gothenburg",
+    "must": [
+     "emigra"
+    ],
+    "caption_ru": "Шведские эмигранты",
+    "caption_uz": "Svenska emigranter",
+    "caption_en": "Swedish emigrants"
+   }
+  ],
+  "16": [
+   {
+    "q": "Alfred Nobel portrait",
+    "must": [
+     "nobel"
+    ],
+    "caption_ru": "Альфред Нобель",
+    "caption_uz": "Alfred Nobel",
+    "caption_en": "Alfred Nobel"
+   }
+  ],
+  "17": [
+   {
+    "q": "Riksdag building Stockholm",
+    "must": [
+     "riksdag"
+    ],
+    "caption_ru": "Здание риксдага",
+    "caption_uz": "Riksdagshuset",
+    "caption_en": "The Riksdag building"
+   }
+  ],
+  "18": [
+   {
+    "q": "Per Albin Hansson",
+    "must": [
+     "hansson"
+    ],
+    "caption_ru": "Пер Альбин Ханссон",
+    "caption_uz": "Per Albin Hansson",
+    "caption_en": "Per Albin Hansson"
+   }
+  ],
+  "19": [
+   {
+    "q": "Raoul Wallenberg",
+    "must": [
+     "wallenberg"
+    ],
+    "caption_ru": "Рауль Валленберг",
+    "caption_uz": "Raoul Wallenberg",
+    "caption_en": "Raoul Wallenberg"
+   }
+  ],
+  "20": [
+   {
+    "q": "Olof Palme",
+    "must": [
+     "palme"
+    ],
+    "caption_ru": "Улоф Пальме",
+    "caption_uz": "Olof Palme",
+    "caption_en": "Olof Palme"
+   }
+  ],
+  "21": [
+   {
+    "q": "Öresund Bridge",
+    "must": [
+     "öresund",
+     "oresund"
+    ],
+    "caption_ru": "Эресуннский мост",
+    "caption_uz": "Öresundsbron",
+    "caption_en": "The Öresund Bridge"
+   }
+  ],
+  "22": [
+   {
+    "q": "Stockholm Palace",
+    "must": [
+     "stockholm"
+    ],
+    "caption_ru": "Королевский дворец в Стокгольме",
+    "caption_uz": "Stockholms slott",
+    "caption_en": "Stockholm Palace"
+   }
+  ]
+ },
+ "civics": {
+  "1": [
+   {
+    "q": "Flag of Sweden",
+    "must": [
+     "sweden"
+    ],
+    "caption_ru": "Флаг Швеции",
+    "caption_uz": "Sveriges flagga",
+    "caption_en": "The flag of Sweden"
+   }
+  ],
+  "2": [
+   {
+    "q": "Riksdag chamber",
+    "must": [
+     "riksdag"
+    ],
+    "caption_ru": "Зал заседаний риксдага",
+    "caption_uz": "Riksdagens plenisal",
+    "caption_en": "The Riksdag chamber"
+   }
+  ],
+  "3": [
+   {
+    "q": "Rosenbad Stockholm",
+    "must": [
+     "rosenbad"
+    ],
+    "caption_ru": "Розенбад — здание правительства",
+    "caption_uz": "Rosenbad, regeringens kansli",
+    "caption_en": "Rosenbad, the government offices"
+   }
+  ],
+  "4": [
+   {
+    "q": "Swedish Freedom of the Press Act 1766",
+    "must": [
+     "1766"
+    ],
+    "caption_ru": "Закон о свободе печати 1766 г.",
+    "caption_uz": "Tryckfrihetsförordningen 1766",
+    "caption_en": "The Freedom of the Press Act of 1766"
+   }
+  ],
+  "5": [
+   {
+    "q": "Supreme Court of Sweden Bonde Palace",
+    "must": [
+     "bonde"
+    ],
+    "caption_ru": "Дворец Бунде — Верховный суд",
+    "caption_uz": "Bondeska palatset, Högsta domstolen",
+    "caption_en": "Bonde Palace, the Supreme Court"
+   }
+  ],
+  "6": [
+   {
+    "q": "Stockholm City Hall wedding",
+    "must": [
+     "stadshus",
+     "city hall"
+    ],
+    "caption_ru": "Ратуша Стокгольма",
+    "caption_uz": "Stockholms stadshus",
+    "caption_en": "Stockholm City Hall"
+   }
+  ],
+  "7": [
+   {
+    "q": "Stockholm office workers",
+    "must": [
+     "stockholm"
+    ],
+    "caption_ru": "Работа в Стокгольме",
+    "caption_uz": "Arbetsliv i Stockholm",
+    "caption_en": "Working life in Stockholm"
+   }
+  ],
+  "8": [
+   {
+    "q": "Swedish krona banknotes",
+    "must": [
+     "krona",
+     "kronor"
+    ],
+    "caption_ru": "Шведские кроны",
+    "caption_uz": "Svenska kronor",
+    "caption_en": "Swedish kronor"
+   }
+  ],
+  "9": [
+   {
+    "q": "Stockholm apartment buildings",
+    "must": [
+     "stockholm"
+    ],
+    "caption_ru": "Жилые дома в Стокгольме",
+    "caption_uz": "Bostadshus i Stockholm",
+    "caption_en": "Apartment buildings in Stockholm"
+   }
+  ],
+  "10": [
+   {
+    "q": "Karolinska University Hospital",
+    "must": [
+     "karolinska"
+    ],
+    "caption_ru": "Каролинская больница",
+    "caption_uz": "Karolinska universitetssjukhuset",
+    "caption_en": "Karolinska University Hospital"
+   }
+  ],
+  "11": [
+   {
+    "q": "Swedish school building",
+    "must": [
+     "skola",
+     "school"
+    ],
+    "caption_ru": "Шведская школа",
+    "caption_uz": "En svensk skola",
+    "caption_en": "A Swedish school"
+   }
+  ],
+  "12": [
+   {
+    "q": "Swedish family park",
+    "must": [
+     "sweden"
+    ],
+    "caption_ru": "Семья в Швеции",
+    "caption_uz": "Familj i Sverige",
+    "caption_en": "A family in Sweden"
+   }
+  ],
+  "13": [
+   {
+    "q": "Swedish road sign moose",
+    "must": [
+     "moose",
+     "älg",
+     "alg"
+    ],
+    "caption_ru": "Знак «Осторожно, лоси»",
+    "caption_uz": "Varningsskylt för älg",
+    "caption_en": "Elk warning sign"
+   }
+  ],
+  "14": [
+   {
+    "q": "Sveriges Riksbank building",
+    "must": [
+     "riksbank"
+    ],
+    "caption_ru": "Здание Риксбанка",
+    "caption_uz": "Riksbankens byggnad",
+    "caption_en": "The Riksbank building"
+   }
+  ],
+  "15": [
+   {
+    "q": "Stockholm Arlanda Airport",
+    "must": [
+     "arlanda"
+    ],
+    "caption_ru": "Аэропорт Арланда",
+    "caption_uz": "Arlanda flygplats",
+    "caption_en": "Arlanda Airport"
+   }
+  ],
+  "16": [
+   {
+    "q": "Stockholm Central Station",
+    "must": [
+     "central"
+    ],
+    "caption_ru": "Центральный вокзал Стокгольма",
+    "caption_uz": "Stockholms centralstation",
+    "caption_en": "Stockholm Central Station"
+   }
+  ],
+  "17": [
+   {
+    "q": "Swedish passport",
+    "must": [
+     "passport",
+     "pass"
+    ],
+    "caption_ru": "Шведский паспорт",
+    "caption_uz": "Svenskt pass",
+    "caption_en": "A Swedish passport"
+   }
+  ],
+  "18": [
+   {
+    "q": "Uppsala University Library Carolina Rediviva",
+    "must": [
+     "carolina"
+    ],
+    "caption_ru": "Библиотека Уппсальского университета",
+    "caption_uz": "Carolina Rediviva",
+    "caption_en": "Uppsala University Library"
+   }
+  ],
+  "19": [
+   {
+    "q": "Sami reindeer herding",
+    "must": [
+     "reindeer",
+     "ren"
+    ],
+    "caption_ru": "Саамское оленеводство",
+    "caption_uz": "Samisk renskötsel",
+    "caption_en": "Sámi reindeer herding"
+   }
+  ],
+  "20": [
+   {
+    "q": "Swedish police car",
+    "must": [
+     "polis",
+     "police"
+    ],
+    "caption_ru": "Шведская полиция",
+    "caption_uz": "Svensk polis",
+    "caption_en": "Swedish police"
+   }
+  ]
+ },
+ "culture": {
+  "1": [
+   {
+    "q": "Kanelbulle cinnamon bun",
+    "must": [
+     "kanelbull",
+     "cinnamon"
+    ],
+    "caption_ru": "Коричные булочки",
+    "caption_uz": "Kanelbullar",
+    "caption_en": "Cinnamon buns"
+   }
+  ],
+  "2": [
+   {
+    "q": "Swedish meatballs lingonberry",
+    "must": [
+     "meatball",
+     "köttbull"
+    ],
+    "caption_ru": "Фрикадельки с брусникой",
+    "caption_uz": "Köttbullar med lingon",
+    "caption_en": "Meatballs with lingonberries"
+   }
+  ],
+  "3": [
+   {
+    "q": "Swedish fika table",
+    "must": [
+     "fika"
+    ],
+    "caption_ru": "Фика",
+    "caption_uz": "Fika",
+    "caption_en": "Fika"
+   }
+  ],
+  "4": [
+   {
+    "q": "Red Swedish cottage Falu",
+    "must": [
+     "falu",
+     "stuga",
+     "cottage"
+    ],
+    "caption_ru": "Красный домик",
+    "caption_uz": "Röd stuga",
+    "caption_en": "A red cottage"
+   }
+  ],
+  "5": [
+   {
+    "q": "Carl Larsson home Sundborn",
+    "must": [
+     "sundborn",
+     "larsson"
+    ],
+    "caption_ru": "Дом Карла Ларссона в Сундборне",
+    "caption_uz": "Carl Larsson-gården i Sundborn",
+    "caption_en": "Carl Larsson's home in Sundborn"
+   }
+  ],
+  "6": [
+   {
+    "q": "Lucia procession Sweden",
+    "must": [
+     "lucia"
+    ],
+    "caption_ru": "Шествие Люсии",
+    "caption_uz": "Luciatåg",
+    "caption_en": "A Lucia procession"
+   }
+  ],
+  "7": [
+   {
+    "q": "Midsummer pole Sweden",
+    "must": [
+     "midsommar",
+     "midsummer",
+     "maypole"
+    ],
+    "caption_ru": "Мидсоммар",
+    "caption_uz": "Midsommarstång",
+    "caption_en": "A Midsummer pole"
+   }
+  ],
+  "8": [
+   {
+    "q": "Påskris Easter Sweden",
+    "must": [
+     "påsk",
+     "pask",
+     "easter"
+    ],
+    "caption_ru": "Пасхальные ветки",
+    "caption_uz": "Påskris",
+    "caption_en": "Easter twigs"
+   }
+  ],
+  "9": [
+   {
+    "q": "Kräftskiva crayfish party",
+    "must": [
+     "kräft",
+     "kraft",
+     "crayfish"
+    ],
+    "caption_ru": "Раковая вечеринка",
+    "caption_uz": "Kräftskiva",
+    "caption_en": "A crayfish party"
+   }
+  ],
+  "10": [
+   {
+    "q": "Semla bun",
+    "must": [
+     "semla",
+     "semlor"
+    ],
+    "caption_ru": "Семла",
+    "caption_uz": "Semla",
+    "caption_en": "A semla"
+   }
+  ],
+  "11": [
+   {
+    "q": "Swedish family outdoors",
+    "must": [
+     "sweden"
+    ],
+    "caption_ru": "Шведская семья",
+    "caption_uz": "En svensk familj",
+    "caption_en": "A Swedish family"
+   }
+  ],
+  "12": [
+   {
+    "q": "Swedish christening gown",
+    "must": [
+     "dop",
+     "christening",
+     "baptism"
+    ],
+    "caption_ru": "Крещение",
+    "caption_uz": "Dop",
+    "caption_en": "Baptism"
+   }
+  ],
+  "13": [
+   {
+    "q": "Swedish wedding church",
+    "must": [
+     "bröllop",
+     "wedding"
+    ],
+    "caption_ru": "Шведская свадьба",
+    "caption_uz": "Svenskt bröllop",
+    "caption_en": "A Swedish wedding"
+   }
+  ],
+  "14": [
+   {
+    "q": "Swedish student caps graduation",
+    "must": [
+     "student"
+    ],
+    "caption_ru": "Выпускники в белых фуражках",
+    "caption_uz": "Studenter med vita mössor",
+    "caption_en": "Graduates in white caps"
+   }
+  ],
+  "15": [
+   {
+    "q": "All Saints Day candles cemetery Sweden",
+    "must": [
+     "helgon",
+     "cemetery",
+     "kyrkogård"
+    ],
+    "caption_ru": "Свечи в День всех святых",
+    "caption_uz": "Ljus på alla helgons dag",
+    "caption_en": "Candles on All Saints' Day"
+   }
+  ],
+  "16": [
+   {
+    "q": "Astrid Lindgren",
+    "must": [
+     "lindgren"
+    ],
+    "caption_ru": "Астрид Линдгрен",
+    "caption_uz": "Astrid Lindgren",
+    "caption_en": "Astrid Lindgren"
+   }
+  ],
+  "17": [
+   {
+    "q": "Nyckelharpa",
+    "must": [
+     "nyckelharpa"
+    ],
+    "caption_ru": "Никельхарпа",
+    "caption_uz": "Nyckelharpa",
+    "caption_en": "The nyckelharpa"
+   }
+  ],
+  "18": [
+   {
+    "q": "Ingmar Bergman",
+    "must": [
+     "bergman"
+    ],
+    "caption_ru": "Ингмар Бергман",
+    "caption_uz": "Ingmar Bergman",
+    "caption_en": "Ingmar Bergman"
+   }
+  ],
+  "19": [
+   {
+    "q": "Dala horse",
+    "must": [
+     "dala"
+    ],
+    "caption_ru": "Далекарлийская лошадка",
+    "caption_uz": "Dalahäst",
+    "caption_en": "A Dala horse"
+   }
+  ],
+  "20": [
+   {
+    "q": "Drottningholm Palace",
+    "must": [
+     "drottningholm"
+    ],
+    "caption_ru": "Дворец Дроттнингхольм",
+    "caption_uz": "Drottningholms slott",
+    "caption_en": "Drottningholm Palace"
+   }
+  ]
+ }
+}

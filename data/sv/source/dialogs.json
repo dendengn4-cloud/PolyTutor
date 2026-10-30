@@ -1,0 +1,2766 @@
+[
+ {
+  "n": 1,
+  "cefr": "A1",
+  "section": "Знакомство и общение",
+  "title_ru": "Знакомство",
+  "title_uz": "Att presentera sig",
+  "title_en": "Getting Acquainted",
+  "intro_ru": "Анна учит шведский язык. На курсах SFI в Уппсале она знакомится с Эриком.",
+  "intro_uz": "Anna läser svenska. På sfi i Uppsala träffar hon Erik.",
+  "intro_en": "Anna is learning Swedish. At an SFI course in Uppsala she meets Erik.",
+  "speakers": {
+   "A": "Erik",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Hej!",
+    "ru": "Привет!",
+    "en": "Hi!"
+   },
+   {
+    "who": "B",
+    "uz": "Hej hej!",
+    "ru": "Привет!",
+    "en": "Hi there!"
+   },
+   {
+    "who": "A",
+    "uz": "Jag heter Erik. Vad heter du?",
+    "ru": "Меня зовут Эрик. А тебя как зовут?",
+    "en": "My name is Erik. What's your name?"
+   },
+   {
+    "who": "B",
+    "uz": "Jag heter Anna. Trevligt att träffas!",
+    "ru": "Меня зовут Анна. Приятно познакомиться!",
+    "en": "My name is Anna. Nice to meet you!"
+   },
+   {
+    "who": "A",
+    "uz": "Detsamma. Var kommer du ifrån?",
+    "ru": "Мне тоже. Откуда ты?",
+    "en": "Likewise. Where are you from?"
+   },
+   {
+    "who": "B",
+    "uz": "Jag kommer från Ryssland, från Moskva. Och du?",
+    "ru": "Я из России, из Москвы. А ты?",
+    "en": "I'm from Russia, from Moscow. And you?"
+   },
+   {
+    "who": "A",
+    "uz": "Jag är från Uppsala. Pratar du svenska?",
+    "ru": "Я из Уппсалы. Ты говоришь по-шведски?",
+    "en": "I'm from Uppsala. Do you speak Swedish?"
+   },
+   {
+    "who": "B",
+    "uz": "Lite grann. Jag pluggar varje dag.",
+    "ru": "Немножко. Я занимаюсь каждый день.",
+    "en": "A little. I study every day."
+   }
+  ],
+  "vocab": [
+   "hej",
+   "trevligt att träffas",
+   "komma",
+   "varifrån",
+   "svenska",
+   "lite",
+   "varje dag"
+  ],
+  "note_ru": "В Швеции почти всегда говорят «du» — «ты», даже незнакомым. «Hej» подходит для любого случая. «Trevligt att träffas» — «приятно познакомиться», ответ — «detsamma» («взаимно»). «Plugga» — разговорное «учиться, зубрить».",
+  "note_uz": "I Sverige säger man nästan alltid du, även till främlingar. «Hej» passar i alla situationer. «Trevligt att träffas» besvaras med «detsamma». «Plugga» är vardagligt för att studera.",
+  "note_en": "In Sweden people almost always say \"du\" (informal \"you\"), even to strangers. \"Hej\" works in any situation. \"Trevligt att träffas\" (nice to meet you) is answered with \"detsamma\" (likewise). \"Plugga\" is colloquial for \"to study\"."
+ },
+ {
+  "n": 2,
+  "cefr": "A1",
+  "section": "Покупки и еда",
+  "title_ru": "Фика в кафе",
+  "title_uz": "Fika på kaféet",
+  "title_en": "Fika at the café",
+  "intro_ru": "Анна и Эрик заходят в кафе после занятий.",
+  "intro_uz": "Anna och Erik går till ett kafé efter lektionen.",
+  "intro_en": "Anna and Erik go to a café after class.",
+  "speakers": {
+   "A": "Personal",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Hej! Vad får det lov att vara?",
+    "ru": "Здравствуйте! Что желаете?",
+    "en": "Hi! What would you like?"
+   },
+   {
+    "who": "B",
+    "uz": "En kaffe och en kanelbulle, tack.",
+    "ru": "Кофе и коричную булочку, пожалуйста.",
+    "en": "A coffee and a cinnamon bun, please."
+   },
+   {
+    "who": "A",
+    "uz": "Vill du ha mjölk i kaffet?",
+    "ru": "Вам кофе с молоком?",
+    "en": "Would you like milk in your coffee?"
+   },
+   {
+    "who": "B",
+    "uz": "Ja, gärna. Lite mjölk.",
+    "ru": "Да, пожалуйста. Немного молока.",
+    "en": "Yes, please. A little milk."
+   },
+   {
+    "who": "A",
+    "uz": "Något mer?",
+    "ru": "Что-нибудь ещё?",
+    "en": "Anything else?"
+   },
+   {
+    "who": "B",
+    "uz": "Nej tack, det är bra så. Vad kostar det?",
+    "ru": "Нет, спасибо, этого достаточно. Сколько это стоит?",
+    "en": "No thanks, that's fine. How much is it?"
+   },
+   {
+    "who": "A",
+    "uz": "Det blir sextiofem kronor. Kort eller Swish?",
+    "ru": "С вас шестьдесят пять крон. Картой или по Swish?",
+    "en": "That's sixty-five kronor. Card or Swish?"
+   },
+   {
+    "who": "B",
+    "uz": "Kort, tack.",
+    "ru": "Картой, пожалуйста.",
+    "en": "Card, please."
+   }
+  ],
+  "vocab": [
+   "kaffe",
+   "en kanelbulle",
+   "mjölk",
+   "en krona",
+   "ett kort",
+   "ett kafé",
+   "betala"
+  ],
+  "note_ru": "«Vad får det lov att vara?» — вежливое «что желаете?» продавца. «Ja, gärna» — «да, с удовольствием». «Det är bra så» — «больше ничего не нужно». Наличными в Швеции платят редко: чаще картой или по Swish.",
+  "note_uz": "«Vad får det lov att vara?» är en artig fråga från personalen. «Ja, gärna» betyder ja tack. «Det är bra så» betyder att man inte vill ha mer. Kontanter används sällan – oftast betalar man med kort eller Swish.",
+  "note_en": "\"Vad får det lov att vara?\" is a polite \"What would you like?\" from staff. \"Ja, gärna\" means \"yes, please\". \"Det är bra så\" means you don't want anything more. Cash is rarely used in Sweden – people usually pay by card or Swish."
+ },
+ {
+  "n": 3,
+  "cefr": "A1",
+  "section": "Город и транспорт",
+  "title_ru": "Как пройти на вокзал?",
+  "title_uz": "Var ligger stationen?",
+  "title_en": "Where is the station?",
+  "intro_ru": "Анна ищет центральный вокзал и спрашивает дорогу у прохожей.",
+  "intro_uz": "Anna letar efter centralstationen och frågar en kvinna om vägen.",
+  "intro_en": "Anna is looking for the central station and asks a woman for directions.",
+  "speakers": {
+   "A": "Anna",
+   "B": "Kvinna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Ursäkta, var ligger centralstationen?",
+    "ru": "Извините, где центральный вокзал?",
+    "en": "Excuse me, where is the central station?"
+   },
+   {
+    "who": "B",
+    "uz": "Gå rakt fram och sedan till vänster.",
+    "ru": "Идите прямо, а потом налево.",
+    "en": "Go straight ahead and then left."
+   },
+   {
+    "who": "A",
+    "uz": "Är det långt?",
+    "ru": "Это далеко?",
+    "en": "Is it far?"
+   },
+   {
+    "who": "B",
+    "uz": "Nej, det tar fem minuter att gå.",
+    "ru": "Нет, пешком пять минут.",
+    "en": "No, it's a five-minute walk."
+   },
+   {
+    "who": "A",
+    "uz": "Finns det en buss dit?",
+    "ru": "Туда ходит автобус?",
+    "en": "Is there a bus there?"
+   },
+   {
+    "who": "B",
+    "uz": "Ja, buss nummer två, men det går fortare att gå.",
+    "ru": "Да, автобус номер два, но пешком быстрее.",
+    "en": "Yes, bus number two, but it's quicker to walk."
+   },
+   {
+    "who": "A",
+    "uz": "Tack så mycket!",
+    "ru": "Большое спасибо!",
+    "en": "Thank you very much!"
+   },
+   {
+    "who": "B",
+    "uz": "Ingen orsak. Ha en bra dag!",
+    "ru": "Не за что. Хорошего дня!",
+    "en": "You're welcome. Have a nice day!"
+   }
+  ],
+  "vocab": [
+   "ursäkta",
+   "en station",
+   "rakt fram",
+   "till vänster",
+   "till höger",
+   "långt bort",
+   "en buss"
+  ],
+  "note_ru": "«Ursäkta» — «извините», чтобы обратиться к незнакомому. Направления: rakt fram — прямо, till vänster — налево, till höger — направо. «Ingen orsak» и «varsågod» — ответы на «спасибо».",
+  "note_uz": "«Ursäkta» använder man för att tilltala en främling. Riktningar: rakt fram, till vänster, till höger. «Ingen orsak» och «varsågod» är svar på «tack».",
+  "note_en": "\"Ursäkta\" is used to address a stranger. Directions: rakt fram – straight ahead, till vänster – left, till höger – right. \"Ingen orsak\" and \"varsågod\" are replies to \"thank you\"."
+ },
+ {
+  "n": 4,
+  "cefr": "A1",
+  "section": "Покупки и еда",
+  "title_ru": "В продуктовом магазине",
+  "title_uz": "I mataffären",
+  "title_en": "At the grocery shop",
+  "intro_ru": "Анна покупает продукты к ужину в магазине у дома.",
+  "intro_uz": "Anna handlar mat till middagen i affären nära hemmet.",
+  "intro_en": "Anna is buying food for dinner at the shop near her home.",
+  "speakers": {
+   "A": "Anna",
+   "B": "Kassör"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Hej! Har ni färsk fisk?",
+    "ru": "Здравствуйте! У вас есть свежая рыба?",
+    "en": "Hi! Do you have fresh fish?"
+   },
+   {
+    "who": "B",
+    "uz": "Ja, lax och torsk finns i kylen där borta.",
+    "ru": "Да, лосось и треска в холодильнике вон там.",
+    "en": "Yes, salmon and cod are in the fridge over there."
+   },
+   {
+    "who": "A",
+    "uz": "Bra. Och var hittar jag mjölk och bröd?",
+    "ru": "Хорошо. А где найти молоко и хлеб?",
+    "en": "Good. And where can I find milk and bread?"
+   },
+   {
+    "who": "B",
+    "uz": "Mjölken står längst bak, brödet vid ingången.",
+    "ru": "Молоко в глубине магазина, хлеб у входа.",
+    "en": "The milk is at the back, the bread by the entrance."
+   },
+   {
+    "who": "A",
+    "uz": "Tack. Behöver jag en påse?",
+    "ru": "Спасибо. Мне нужен пакет?",
+    "en": "Thanks. Do I need a bag?"
+   },
+   {
+    "who": "B",
+    "uz": "En påse kostar tre kronor. Vill du ha en?",
+    "ru": "Пакет стоит три кроны. Хотите?",
+    "en": "A bag costs three kronor. Would you like one?"
+   },
+   {
+    "who": "A",
+    "uz": "Ja, tack. Kan jag betala med kort?",
+    "ru": "Да, пожалуйста. Можно заплатить картой?",
+    "en": "Yes, please. Can I pay by card?"
+   },
+   {
+    "who": "B",
+    "uz": "Självklart. Kvittot?",
+    "ru": "Конечно. Чек нужен?",
+    "en": "Of course. Receipt?"
+   }
+  ],
+  "vocab": [
+   "en fisk",
+   "en lax",
+   "mjölk",
+   "ett bröd",
+   "en påse",
+   "betala",
+   "ett kvitto"
+  ],
+  "note_ru": "Пакеты в шведских магазинах платные, многие приходят со своей сумкой. «Självklart» — «конечно, само собой». Свои покупки на ленту кладут сами, а после кассы сами же упаковывают.",
+  "note_uz": "Påsar kostar pengar i svenska affärer, och många tar med en egen kasse. «Självklart» betyder naturligtvis. Man lägger själv upp varorna på bandet och packar själv efter kassan.",
+  "note_en": "Bags cost money in Swedish shops, and many people bring their own. \"Självklart\" means \"of course\". You put your items on the belt yourself and pack them yourself after the till."
+ },
+ {
+  "n": 5,
+  "cefr": "A1",
+  "section": "Знакомство и общение",
+  "title_ru": "Моя семья",
+  "title_uz": "Min familj",
+  "title_en": "My family",
+  "intro_ru": "Сара показывает Анне фотографии своей семьи.",
+  "intro_uz": "Sara visar Anna bilder på sin familj.",
+  "intro_en": "Sara shows Anna photos of her family.",
+  "speakers": {
+   "A": "Anna",
+   "B": "Sara"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Vilka är det på bilden?",
+    "ru": "Кто на фотографии?",
+    "en": "Who is in the picture?"
+   },
+   {
+    "who": "B",
+    "uz": "Det är min man, Johan, och våra barn.",
+    "ru": "Это мой муж Юхан и наши дети.",
+    "en": "That's my husband, Johan, and our children."
+   },
+   {
+    "who": "A",
+    "uz": "Hur många barn har ni?",
+    "ru": "Сколько у вас детей?",
+    "en": "How many children do you have?"
+   },
+   {
+    "who": "B",
+    "uz": "Två, en son och en dotter. Leo är sju och Ella är fyra.",
+    "ru": "Двое: сын и дочь. Лео семь лет, а Элле четыре.",
+    "en": "Two, a son and a daughter. Leo is seven and Ella is four."
+   },
+   {
+    "who": "A",
+    "uz": "Vad söta de är! Har du syskon?",
+    "ru": "Какие милые! А у тебя есть братья или сёстры?",
+    "en": "How sweet they are! Do you have siblings?"
+   },
+   {
+    "who": "B",
+    "uz": "Ja, en bror. Han bor i Göteborg. Har du syskon?",
+    "ru": "Да, брат. Он живёт в Гётеборге. А у тебя?",
+    "en": "Yes, a brother. He lives in Gothenburg. Do you have siblings?"
+   },
+   {
+    "who": "A",
+    "uz": "Jag har en syster. Hon bor kvar i Moskva med mina föräldrar.",
+    "ru": "У меня есть сестра. Она живёт в Москве с моими родителями.",
+    "en": "I have a sister. She still lives in Moscow with my parents."
+   },
+   {
+    "who": "B",
+    "uz": "Vad roligt! Du får visa bilder på dem någon gång.",
+    "ru": "Как здорово! Покажи мне как-нибудь их фото.",
+    "en": "How nice! You must show me pictures of them some time."
+   }
+  ],
+  "vocab": [
+   "en man",
+   "ett barn",
+   "en son",
+   "en dotter",
+   "en bror",
+   "en syster",
+   "en förälder",
+   "en bild"
+  ],
+  "note_ru": "«Syskon» — общее слово для братьев и сестёр. «Farmor» — бабушка по отцу (папина мама), «mormor» — по матери (мамина мама); так же «farfar» и «morfar». Двоюродный брат или сестра — «kusin».",
+  "note_uz": "Syskon är ett gemensamt ord för bröder och systrar. Farmor är pappas mamma och mormor mammas mamma, farfar och morfar på samma sätt.",
+  "note_en": "\"Syskon\" is a single word for brothers and sisters. \"Farmor\" is your father's mother and \"mormor\" your mother's mother; \"farfar\" and \"morfar\" work the same way."
+ },
+ {
+  "n": 6,
+  "cefr": "A1",
+  "section": "Город и транспорт",
+  "title_ru": "Билет на автобус",
+  "title_uz": "En bussbiljett",
+  "title_en": "A bus ticket",
+  "intro_ru": "Анне нужно доехать до больницы. Она спрашивает водителя автобуса.",
+  "intro_uz": "Anna ska åka till sjukhuset. Hon frågar busschauffören.",
+  "intro_en": "Anna needs to get to the hospital. She asks the bus driver.",
+  "speakers": {
+   "A": "Anna",
+   "B": "Chaufför"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Hej, går den här bussen till sjukhuset?",
+    "ru": "Здравствуйте, этот автобус идёт до больницы?",
+    "en": "Hi, does this bus go to the hospital?"
+   },
+   {
+    "who": "B",
+    "uz": "Ja, det gör den.",
+    "ru": "Да, идёт.",
+    "en": "Yes, it does."
+   },
+   {
+    "who": "A",
+    "uz": "Kan jag köpa en biljett här?",
+    "ru": "Можно купить билет здесь?",
+    "en": "Can I buy a ticket here?"
+   },
+   {
+    "who": "B",
+    "uz": "Nej, tyvärr. Du köper biljetten i appen eller med kort vid dörren.",
+    "ru": "Нет, к сожалению. Билет покупают в приложении или картой у двери.",
+    "en": "No, sorry. You buy the ticket in the app or by card at the door."
+   },
+   {
+    "who": "A",
+    "uz": "Okej. Hur länge gäller biljetten?",
+    "ru": "Хорошо. Сколько действует билет?",
+    "en": "OK. How long is the ticket valid?"
+   },
+   {
+    "who": "B",
+    "uz": "I sjuttiofem minuter. Du kan byta buss.",
+    "ru": "Семьдесят пять минут. Можно пересаживаться.",
+    "en": "For seventy-five minutes. You can change buses."
+   },
+   {
+    "who": "A",
+    "uz": "Var ska jag gå av?",
+    "ru": "Где мне выходить?",
+    "en": "Where should I get off?"
+   },
+   {
+    "who": "B",
+    "uz": "Vid hållplatsen Akademiska sjukhuset. Det tar tio minuter.",
+    "ru": "На остановке «Академическая больница». Ехать десять минут.",
+    "en": "At the Akademiska sjukhuset stop. It takes ten minutes."
+   }
+  ],
+  "vocab": [
+   "en buss",
+   "ett sjukhus",
+   "en biljett",
+   "köpa",
+   "en app",
+   "byta",
+   "en hållplats"
+  ],
+  "note_ru": "Во многих городах водители не продают билеты: их покупают в приложении местного транспорта или прикладывают банковскую карту. «Tyvärr» — «к сожалению». «Gå av» — выходить, «stiga på» — садиться в транспорт.",
+  "note_uz": "I många städer säljer chaufförerna inga biljetter: man köper dem i trafikbolagets app eller blippar sitt bankkort. «Gå av» och «stiga på» används om bussar och tåg.",
+  "note_en": "In many cities drivers don't sell tickets: you buy them in the local transport app or tap your bank card. \"Gå av\" means to get off, \"stiga på\" to get on."
+ },
+ {
+  "n": 7,
+  "cefr": "A1",
+  "section": "Знакомство и общение",
+  "title_ru": "Который час?",
+  "title_uz": "Vad är klockan?",
+  "title_en": "What time is it?",
+  "intro_ru": "Анна и Эрик договариваются встретиться в выходные.",
+  "intro_uz": "Anna och Erik bestämmer träff till helgen.",
+  "intro_en": "Anna and Erik arrange to meet at the weekend.",
+  "speakers": {
+   "A": "Erik",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Vad gör du på lördag?",
+    "ru": "Что ты делаешь в субботу?",
+    "en": "What are you doing on Saturday?"
+   },
+   {
+    "who": "B",
+    "uz": "Ingenting särskilt. Varför?",
+    "ru": "Ничего особенного. А что?",
+    "en": "Nothing special. Why?"
+   },
+   {
+    "who": "A",
+    "uz": "Vi kan gå på bio. Filmen börjar halv åtta.",
+    "ru": "Можем сходить в кино. Фильм начинается в половине восьмого.",
+    "en": "We could go to the cinema. The film starts at half past seven."
+   },
+   {
+    "who": "B",
+    "uz": "Halv åtta? Är det sju och trettio?",
+    "ru": "«Halv åtta» — это семь тридцать?",
+    "en": "\"Halv åtta\"? Is that seven thirty?"
+   },
+   {
+    "who": "A",
+    "uz": "Ja, precis. Vi ses kvart över sju utanför bion.",
+    "ru": "Да, точно. Встретимся в четверть восьмого у кинотеатра.",
+    "en": "Yes, exactly. Let's meet at quarter past seven outside the cinema."
+   },
+   {
+    "who": "B",
+    "uz": "Bra. Vad är klockan nu förresten?",
+    "ru": "Отлично. Кстати, сколько сейчас времени?",
+    "en": "Great. By the way, what time is it now?"
+   },
+   {
+    "who": "A",
+    "uz": "Den är fem i tre.",
+    "ru": "Без пяти три.",
+    "en": "It's five to three."
+   },
+   {
+    "who": "B",
+    "uz": "Oj, jag måste gå! Vi ses på lördag!",
+    "ru": "Ой, мне пора! Увидимся в субботу!",
+    "en": "Oh, I have to go! See you on Saturday!"
+   }
+  ],
+  "vocab": [
+   "lördag",
+   "ingenting",
+   "en bio",
+   "en film",
+   "börja",
+   "en kvart",
+   "en klocka",
+   "måste"
+  ],
+  "note_ru": "Внимание: «halv åtta» — это 7:30, а не 8:30! Шведы считают полчаса до следующего часа. «Kvart över sju» — 7:15, «kvart i åtta» — 7:45, «fem i tre» — 2:55. «Vi ses» — «увидимся».",
+  "note_uz": "Obs! «Halv åtta» är 7.30. «Kvart över sju» är 7.15, «kvart i åtta» 7.45 och «fem i tre» 2.55. «Vi ses» betyder att man träffas snart igen.",
+  "note_en": "Note: \"halv åtta\" is 7:30, not 8:30! Swedes count the half hour towards the next hour. \"Kvart över sju\" is 7:15, \"kvart i åtta\" 7:45, \"fem i tre\" 2:55. \"Vi ses\" means \"see you\"."
+ },
+ {
+  "n": 8,
+  "cefr": "A1",
+  "section": "Знакомство и общение",
+  "title_ru": "Погода",
+  "title_uz": "Vädret",
+  "title_en": "The weather",
+  "intro_ru": "Анна впервые проводит зиму в Швеции и говорит с соседом о погоде.",
+  "intro_uz": "Anna är i Sverige sin första vinter och pratar med grannen om vädret.",
+  "intro_en": "Anna is spending her first winter in Sweden and talks to her neighbour about the weather.",
+  "speakers": {
+   "A": "Granne Lars",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "God morgon! Kallt i dag, va?",
+    "ru": "Доброе утро! Холодно сегодня, да?",
+    "en": "Good morning! Cold today, isn't it?"
+   },
+   {
+    "who": "B",
+    "uz": "Ja, väldigt kallt! Hur många grader är det?",
+    "ru": "Да, очень холодно! Сколько градусов?",
+    "en": "Yes, very cold! How many degrees is it?"
+   },
+   {
+    "who": "A",
+    "uz": "Minus tolv. Och det ska snöa i eftermiddag.",
+    "ru": "Минус двенадцать. А днём обещают снег.",
+    "en": "Minus twelve. And it's supposed to snow this afternoon."
+   },
+   {
+    "who": "B",
+    "uz": "Det blir så mörkt så tidigt också.",
+    "ru": "И темнеет так рано.",
+    "en": "It gets dark so early, too."
+   },
+   {
+    "who": "A",
+    "uz": "Ja, solen går ner vid tre nu. Men i juni är det ljust hela natten.",
+    "ru": "Да, солнце сейчас садится в три. Зато в июне светло всю ночь.",
+    "en": "Yes, the sun sets at three now. But in June it's light all night."
+   },
+   {
+    "who": "B",
+    "uz": "Det låter fint. Jag behöver nog en varmare jacka.",
+    "ru": "Звучит здорово. Мне, наверное, нужна куртка потеплее.",
+    "en": "That sounds nice. I probably need a warmer jacket."
+   },
+   {
+    "who": "A",
+    "uz": "Det finns inget dåligt väder, bara dåliga kläder!",
+    "ru": "Нет плохой погоды, есть только плохая одежда!",
+    "en": "There's no bad weather, only bad clothing!"
+   },
+   {
+    "who": "B",
+    "uz": "Det ska jag komma ihåg!",
+    "ru": "Это я запомню!",
+    "en": "I'll remember that!"
+   }
+  ],
+  "vocab": [
+   "kall",
+   "en grad",
+   "snö",
+   "mörk",
+   "en sol",
+   "ljus",
+   "en jacka",
+   "väder"
+  ],
+  "note_ru": "«Va?» в конце фразы — как русское «да?» или «правда?». О погоде шведы говорят охотно — это безопасная тема для разговора с незнакомыми. «Det ska snöa» — «обещают снег».",
+  "note_uz": "«Va?» i slutet av en mening betyder ungefär «eller hur?». Vädret är ett tryggt samtalsämne med främlingar. «Det ska snöa» betyder att det har förutsagts snö.",
+  "note_en": "\"Va?\" at the end of a sentence is like \"isn't it?\". Swedes like talking about the weather – it's a safe topic with strangers. \"Det ska snöa\" means snow is forecast."
+ },
+ {
+  "n": 9,
+  "cefr": "A2",
+  "section": "Здоровье",
+  "title_ru": "Звонок на 1177",
+  "title_uz": "Att ringa 1177",
+  "title_en": "Calling 1177",
+  "intro_ru": "У Анны высокая температура и болит горло. Она звонит по номеру 1177.",
+  "intro_uz": "Anna har hög feber och ont i halsen. Hon ringer 1177.",
+  "intro_en": "Anna has a high temperature and a sore throat. She calls 1177.",
+  "speakers": {
+   "A": "Sjuksköterska",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "1177 Vårdguiden, du pratar med Karin. Vad gäller det?",
+    "ru": "1177, справочная служба, вы говорите с Карин. По какому вопросу?",
+    "en": "1177 Health Care Guide, you're speaking to Karin. What is it about?"
+   },
+   {
+    "who": "B",
+    "uz": "Hej. Jag har feber och väldigt ont i halsen.",
+    "ru": "Здравствуйте. У меня температура и очень болит горло.",
+    "en": "Hello. I have a fever and a very sore throat."
+   },
+   {
+    "who": "A",
+    "uz": "Hur länge har du haft feber?",
+    "ru": "Как долго у вас температура?",
+    "en": "How long have you had a fever?"
+   },
+   {
+    "who": "B",
+    "uz": "Sedan i går kväll. Trettionio grader.",
+    "ru": "Со вчерашнего вечера. Тридцать девять градусов.",
+    "en": "Since last night. Thirty-nine degrees."
+   },
+   {
+    "who": "A",
+    "uz": "Har du svårt att andas eller svälja?",
+    "ru": "Вам трудно дышать или глотать?",
+    "en": "Do you have difficulty breathing or swallowing?"
+   },
+   {
+    "who": "B",
+    "uz": "Det gör ont att svälja, men jag kan andas.",
+    "ru": "Больно глотать, но дышать могу.",
+    "en": "It hurts to swallow, but I can breathe."
+   },
+   {
+    "who": "A",
+    "uz": "Jag bokar en tid åt dig på vårdcentralen i morgon klockan nio.",
+    "ru": "Я запишу вас в поликлинику на завтра на девять часов.",
+    "en": "I'll book you an appointment at the health centre tomorrow at nine."
+   },
+   {
+    "who": "B",
+    "uz": "Tack. Vad ska jag göra i kväll?",
+    "ru": "Спасибо. А что мне делать сегодня вечером?",
+    "en": "Thank you. What should I do tonight?"
+   },
+   {
+    "who": "A",
+    "uz": "Drick mycket och vila. Ring 112 om du får svårt att andas.",
+    "ru": "Пейте много и отдыхайте. Если станет трудно дышать — звоните 112.",
+    "en": "Drink plenty and rest. Call 112 if you have difficulty breathing."
+   },
+   {
+    "who": "B",
+    "uz": "Okej, tack för hjälpen.",
+    "ru": "Хорошо, спасибо за помощь.",
+    "en": "OK, thanks for your help."
+   }
+  ],
+  "vocab": [
+   "feber",
+   "en hals",
+   "en sjuksköterska",
+   "boka",
+   "en vårdcentral",
+   "vila",
+   "en läkare"
+  ],
+  "note_ru": "«Ha ont i halsen» — «болит горло», «ont i huvudet» — «болит голова». По номеру 1177 отвечают медсёстры: они советуют и могут записать к врачу. При угрозе жизни звонят 112.",
+  "note_uz": "«Ha ont i halsen» och «ont i huvudet» är vanliga uttryck. På 1177 svarar sjuksköterskor som ger råd och kan boka tid. Vid fara för livet ringer man 112.",
+  "note_en": "\"Ha ont i halsen\" means to have a sore throat, \"ont i huvudet\" a headache. Nurses answer 1177: they give advice and can book appointments. In a life-threatening situation call 112."
+ },
+ {
+  "n": 10,
+  "cefr": "A2",
+  "section": "Здоровье",
+  "title_ru": "В аптеке",
+  "title_uz": "På apoteket",
+  "title_en": "At the pharmacy",
+  "intro_ru": "Анна приходит в аптеку за лекарством по рецепту.",
+  "intro_uz": "Anna går till apoteket för att hämta ut sin medicin.",
+  "intro_en": "Anna goes to the pharmacy to collect her prescription.",
+  "speakers": {
+   "A": "Farmaceut",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Hej, hur kan jag hjälpa dig?",
+    "ru": "Здравствуйте, чем могу помочь?",
+    "en": "Hi, how can I help you?"
+   },
+   {
+    "who": "B",
+    "uz": "Hej. Jag ska hämta ut ett recept.",
+    "ru": "Здравствуйте. Я хочу получить лекарство по рецепту.",
+    "en": "Hi. I'd like to collect a prescription."
+   },
+   {
+    "who": "A",
+    "uz": "Har du legitimation?",
+    "ru": "У вас есть удостоверение личности?",
+    "en": "Do you have ID?"
+   },
+   {
+    "who": "B",
+    "uz": "Ja, här är mitt id-kort.",
+    "ru": "Да, вот моё удостоверение.",
+    "en": "Yes, here's my ID card."
+   },
+   {
+    "who": "A",
+    "uz": "Tack. Det är penicillin. Du tar en tablett tre gånger om dagen i tio dagar.",
+    "ru": "Спасибо. Это пенициллин. Принимайте по одной таблетке три раза в день десять дней.",
+    "en": "Thanks. It's penicillin. Take one tablet three times a day for ten days."
+   },
+   {
+    "who": "B",
+    "uz": "Ska jag ta dem före eller efter maten?",
+    "ru": "До еды или после?",
+    "en": "Should I take them before or after food?"
+   },
+   {
+    "who": "A",
+    "uz": "Gärna i samband med måltid. Och ta alla tabletter, även om du mår bättre.",
+    "ru": "Лучше во время еды. И выпейте все таблетки, даже если станет лучше.",
+    "en": "Preferably with a meal. And take all the tablets, even if you feel better."
+   },
+   {
+    "who": "B",
+    "uz": "Okej. Har ni något mot hosta också?",
+    "ru": "Хорошо. У вас есть что-нибудь от кашля?",
+    "en": "OK. Do you have anything for a cough too?"
+   },
+   {
+    "who": "A",
+    "uz": "Ja, den här hostmedicinen är receptfri.",
+    "ru": "Да, вот это средство от кашля продаётся без рецепта.",
+    "en": "Yes, this cough medicine is available without a prescription."
+   },
+   {
+    "who": "B",
+    "uz": "Då tar jag den också. Tack!",
+    "ru": "Тогда возьму и его. Спасибо!",
+    "en": "Then I'll take that too. Thanks!"
+   }
+  ],
+  "vocab": [
+   "ett apotek",
+   "ett recept",
+   "en tablett",
+   "hosta",
+   "en medicin",
+   "ett id kort"
+  ],
+  "note_ru": "Рецепты в Швеции электронные: в аптеке достаточно предъявить удостоверение личности. «Receptfri» — «без рецепта». «Må bättre» — «чувствовать себя лучше».",
+  "note_uz": "Recept är elektroniska i Sverige: på apoteket visar man bara legitimation. Receptfritt betyder att man inte behöver recept. «Må bättre» betyder att känna sig friskare.",
+  "note_en": "Prescriptions in Sweden are electronic: at the pharmacy you just show ID. \"Receptfri\" means available without a prescription. \"Må bättre\" means to feel better."
+ },
+ {
+  "n": 11,
+  "cefr": "A2",
+  "section": "Быт и услуги",
+  "title_ru": "В налоговом управлении",
+  "title_uz": "På Skatteverket",
+  "title_en": "At the Tax Agency",
+  "intro_ru": "Анна недавно переехала в Швецию и пришла зарегистрироваться в Skatteverket.",
+  "intro_uz": "Anna har nyss flyttat till Sverige och ska folkbokföra sig på Skatteverket.",
+  "intro_en": "Anna has recently moved to Sweden and has come to register with the Tax Agency.",
+  "speakers": {
+   "A": "Handläggare",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Nummer fyrtiotvå, välkommen. Vad kan jag hjälpa till med?",
+    "ru": "Номер сорок два, добро пожаловать. Чем могу помочь?",
+    "en": "Number forty-two, welcome. How can I help?"
+   },
+   {
+    "who": "B",
+    "uz": "Jag har flyttat till Sverige och vill folkbokföra mig.",
+    "ru": "Я переехала в Швецию и хочу зарегистрироваться.",
+    "en": "I've moved to Sweden and want to register as a resident."
+   },
+   {
+    "who": "A",
+    "uz": "Har du med dig pass och uppehållstillstånd?",
+    "ru": "У вас с собой паспорт и вид на жительство?",
+    "en": "Do you have your passport and residence permit with you?"
+   },
+   {
+    "who": "B",
+    "uz": "Ja, här. Och här är mitt anställningsavtal.",
+    "ru": "Да, вот. А вот мой трудовой договор.",
+    "en": "Yes, here. And here's my employment contract."
+   },
+   {
+    "who": "A",
+    "uz": "Bra. Vilken adress bor du på?",
+    "ru": "Хорошо. По какому адресу вы живёте?",
+    "en": "Good. What address do you live at?"
+   },
+   {
+    "who": "B",
+    "uz": "Storgatan 5 i Uppsala. Jag hyr i andra hand.",
+    "ru": "Сторгатан, 5, в Уппсале. Я снимаю квартиру в субаренду.",
+    "en": "Storgatan 5 in Uppsala. I'm subletting."
+   },
+   {
+    "who": "A",
+    "uz": "Då behöver jag ett intyg från den du hyr av.",
+    "ru": "Тогда мне нужна справка от того, у кого вы снимаете.",
+    "en": "Then I need a certificate from the person you rent from."
+   },
+   {
+    "who": "B",
+    "uz": "Det har jag med mig. När får jag mitt personnummer?",
+    "ru": "Она у меня с собой. Когда я получу personnummer?",
+    "en": "I have it with me. When will I get my personnummer?"
+   },
+   {
+    "who": "A",
+    "uz": "Beslutet kommer med posten, oftast inom några veckor.",
+    "ru": "Решение придёт по почте, обычно в течение нескольких недель.",
+    "en": "The decision will come by post, usually within a few weeks."
+   },
+   {
+    "who": "B",
+    "uz": "Perfekt. Tack så mycket!",
+    "ru": "Отлично. Большое спасибо!",
+    "en": "Perfect. Thank you very much!"
+   }
+  ],
+  "vocab": [
+   "ett pass",
+   "ett uppehållstillstånd",
+   "en adress",
+   "en hyra",
+   "ett intyg",
+   "ett personnummer",
+   "ett anställningsavtal"
+  ],
+  "note_ru": "В отделениях Skatteverket берут номерок и ждут вызова. Для регистрации нужно лично прийти с паспортом. «Hyra i andra hand» — снимать в субаренду. «Ett intyg» — справка.",
+  "note_uz": "På servicekontoret tar man en nummerlapp och väntar. För folkbokföring måste man komma personligen med pass. «Hyra i andra hand» betyder att man hyr av någon som själv hyr.",
+  "note_en": "At the service office you take a queue ticket and wait. To register you must come in person with your passport. \"Hyra i andra hand\" means to sublet from someone who rents. \"Ett intyg\" is a certificate."
+ },
+ {
+  "n": 12,
+  "cefr": "A2",
+  "section": "Быт и услуги",
+  "title_ru": "В банке",
+  "title_uz": "På banken",
+  "title_en": "At the bank",
+  "intro_ru": "Анна получила personnummer и пришла в банк открыть счёт и получить BankID.",
+  "intro_uz": "Anna har fått personnummer och går till banken för att öppna ett konto och skaffa BankID.",
+  "intro_en": "Anna has got her personnummer and goes to the bank to open an account and get BankID.",
+  "speakers": {
+   "A": "Banktjänsteman",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Välkommen! Har du bokat tid?",
+    "ru": "Добро пожаловать! Вы записаны?",
+    "en": "Welcome! Do you have an appointment?"
+   },
+   {
+    "who": "B",
+    "uz": "Ja, klockan två. Jag vill öppna ett konto.",
+    "ru": "Да, на два часа. Я хочу открыть счёт.",
+    "en": "Yes, at two o'clock. I'd like to open an account."
+   },
+   {
+    "who": "A",
+    "uz": "Då behöver jag din legitimation och ditt anställningsavtal.",
+    "ru": "Тогда мне нужны ваше удостоверение и трудовой договор.",
+    "en": "Then I need your ID and your employment contract."
+   },
+   {
+    "who": "B",
+    "uz": "Varsågod. Kan jag få ett bankkort också?",
+    "ru": "Пожалуйста. Можно мне ещё банковскую карту?",
+    "en": "Here you are. Can I get a bank card too?"
+   },
+   {
+    "who": "A",
+    "uz": "Ja, kortet kommer med posten om en vecka.",
+    "ru": "Да, карта придёт по почте через неделю.",
+    "en": "Yes, the card will come by post in a week."
+   },
+   {
+    "who": "B",
+    "uz": "Och hur skaffar jag BankID?",
+    "ru": "А как получить BankID?",
+    "en": "And how do I get BankID?"
+   },
+   {
+    "who": "A",
+    "uz": "Du laddar ner appen, och jag hjälper dig att aktivera den här.",
+    "ru": "Вы скачиваете приложение, а я помогу вам активировать его здесь.",
+    "en": "You download the app, and I'll help you activate it here."
+   },
+   {
+    "who": "B",
+    "uz": "Bra. Kan jag använda Swish sedan?",
+    "ru": "Отлично. Потом я смогу пользоваться Swish?",
+    "en": "Great. Can I use Swish afterwards?"
+   },
+   {
+    "who": "A",
+    "uz": "Ja, när du har BankID kan du koppla Swish till ditt nummer. Men lämna aldrig ut dina koder!",
+    "ru": "Да, когда у вас будет BankID, вы сможете подключить Swish к своему номеру. Но никогда никому не сообщайте коды!",
+    "en": "Yes, once you have BankID you can link Swish to your number. But never give out your codes!"
+   },
+   {
+    "who": "B",
+    "uz": "Förstått. Tack för hjälpen!",
+    "ru": "Поняла. Спасибо за помощь!",
+    "en": "Understood. Thanks for your help!"
+   }
+  ],
+  "vocab": [
+   "en bank",
+   "ett konto",
+   "ett bankkort",
+   "en vecka",
+   "en app",
+   "ett telefonnummer",
+   "en kod"
+  ],
+  "note_ru": "«Varsågod» — «пожалуйста», когда что-то даёшь. Банк и BankID — ключ ко всем электронным услугам в Швеции. Никогда не открывайте BankID по просьбе незнакомого человека по телефону.",
+  "note_uz": "«Varsågod» säger man när man ger något. Bankkonto och BankID är nyckeln till alla e-tjänster i Sverige. Öppna aldrig BankID när en okänd person ber om det i telefon.",
+  "note_en": "\"Varsågod\" is said when handing something over. A bank account and BankID are the key to all e-services in Sweden. Never open BankID when a stranger asks you to on the phone."
+ },
+ {
+  "n": 13,
+  "cefr": "A2",
+  "section": "Быт и услуги",
+  "title_ru": "Поиск квартиры",
+  "title_uz": "Att leta lägenhet",
+  "title_en": "Looking for a flat",
+  "intro_ru": "Анна звонит по объявлению о сдаче квартиры.",
+  "intro_uz": "Anna ringer om en annons om en lägenhet att hyra.",
+  "intro_en": "Anna calls about an advert for a flat to rent.",
+  "speakers": {
+   "A": "Anna",
+   "B": "Hyresvärd"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Hej, jag ringer om lägenheten på Kungsgatan. Är den ledig?",
+    "ru": "Здравствуйте, я звоню насчёт квартиры на Кунгсгатан. Она свободна?",
+    "en": "Hi, I'm calling about the flat on Kungsgatan. Is it available?"
+   },
+   {
+    "who": "B",
+    "uz": "Ja, den är ledig från första mars.",
+    "ru": "Да, свободна с первого марта.",
+    "en": "Yes, it's available from the first of March."
+   },
+   {
+    "who": "A",
+    "uz": "Hur stor är den?",
+    "ru": "Какая у неё площадь?",
+    "en": "How big is it?"
+   },
+   {
+    "who": "B",
+    "uz": "Två rum och kök, fyrtiofem kvadratmeter.",
+    "ru": "Две комнаты и кухня, сорок пять квадратных метров.",
+    "en": "Two rooms and a kitchen, forty-five square metres."
+   },
+   {
+    "who": "A",
+    "uz": "Vad är hyran?",
+    "ru": "Какая плата за аренду?",
+    "en": "What is the rent?"
+   },
+   {
+    "who": "B",
+    "uz": "Åtta tusen kronor i månaden, med värme och vatten.",
+    "ru": "Восемь тысяч крон в месяц, с отоплением и водой.",
+    "en": "Eight thousand kronor a month, including heating and water."
+   },
+   {
+    "who": "A",
+    "uz": "Ingår el och internet?",
+    "ru": "Электричество и интернет включены?",
+    "en": "Are electricity and internet included?"
+   },
+   {
+    "who": "B",
+    "uz": "Nej, det betalar du själv. Vill du komma och titta?",
+    "ru": "Нет, их вы оплачиваете сами. Хотите прийти посмотреть?",
+    "en": "No, you pay for those yourself. Would you like to come and have a look?"
+   },
+   {
+    "who": "A",
+    "uz": "Gärna. Passar det på lördag?",
+    "ru": "С удовольствием. В субботу удобно?",
+    "en": "I'd love to. Does Saturday suit you?"
+   },
+   {
+    "who": "B",
+    "uz": "Ja, klockan elva. Ta med legitimation, så skriver vi kontrakt om du vill ha den.",
+    "ru": "Да, в одиннадцать. Возьмите удостоверение — если понравится, подпишем договор.",
+    "en": "Yes, at eleven. Bring ID, and we'll sign a contract if you want it."
+   }
+  ],
+  "vocab": [
+   "en lägenhet",
+   "ett rum",
+   "ett kök",
+   "en hyra",
+   "en månad",
+   "vatten",
+   "lördag"
+  ],
+  "note_ru": "«Två rum och kök» (2 rok) — квартира из двух комнат и кухни; в объявлениях пишут «2 rok». «Ingår» — «включено в цену». Не платите заранее, не увидев квартиру и договор.",
+  "note_uz": "«Två rum och kök» förkortas 2 rok i annonser. «Ingår» betyder att det finns med i priset. Betala aldrig i förskott innan du har sett lägenheten och kontraktet.",
+  "note_en": "\"Två rum och kök\" (two rooms and a kitchen) is shortened to \"2 rok\" in adverts. \"Ingår\" means included in the price. Never pay in advance before you have seen the flat and the contract."
+ },
+ {
+  "n": 14,
+  "cefr": "A2",
+  "section": "Покупки и еда",
+  "title_ru": "Обед дня",
+  "title_uz": "Dagens lunch",
+  "title_en": "Lunch of the day",
+  "intro_ru": "Анна и коллега Мария обедают в ресторане недалеко от работы.",
+  "intro_uz": "Anna och kollegan Maria äter lunch på en restaurang nära jobbet.",
+  "intro_en": "Anna and her colleague Maria have lunch at a restaurant near work.",
+  "speakers": {
+   "A": "Servitör",
+   "B": "Maria",
+   "C": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Hej! Vad vill ni äta i dag?",
+    "ru": "Здравствуйте! Что будете есть сегодня?",
+    "en": "Hi! What would you like to eat today?"
+   },
+   {
+    "who": "B",
+    "uz": "Vad är dagens lunch?",
+    "ru": "Какой сегодня обед дня?",
+    "en": "What's the lunch of the day?"
+   },
+   {
+    "who": "A",
+    "uz": "Köttbullar med potatismos eller ugnsbakad lax. Vegetariskt alternativ är linsgryta.",
+    "ru": "Фрикадельки с пюре или запечённый лосось. Вегетарианский вариант — рагу из чечевицы.",
+    "en": "Meatballs with mashed potatoes or baked salmon. The vegetarian option is lentil stew."
+   },
+   {
+    "who": "B",
+    "uz": "Jag tar laxen, tack.",
+    "ru": "Я возьму лосося, пожалуйста.",
+    "en": "I'll have the salmon, please."
+   },
+   {
+    "who": "C",
+    "uz": "Och jag tar köttbullarna. Ingår sallad och kaffe?",
+    "ru": "А я — фрикадельки. Салат и кофе входят?",
+    "en": "And I'll have the meatballs. Are salad and coffee included?"
+   },
+   {
+    "who": "A",
+    "uz": "Ja, sallad, bröd och kaffe ingår. Ta själv vid buffén.",
+    "ru": "Да, салат, хлеб и кофе входят. Берите сами у стойки.",
+    "en": "Yes, salad, bread and coffee are included. Help yourself at the buffet."
+   },
+   {
+    "who": "C",
+    "uz": "Vad kostar det?",
+    "ru": "Сколько это стоит?",
+    "en": "How much is it?"
+   },
+   {
+    "who": "A",
+    "uz": "Hundratjugo kronor. Vill ni betala tillsammans eller var för sig?",
+    "ru": "Сто двадцать крон. Будете платить вместе или отдельно?",
+    "en": "A hundred and twenty kronor. Would you like to pay together or separately?"
+   },
+   {
+    "who": "B",
+    "uz": "Var för sig, tack.",
+    "ru": "Отдельно, пожалуйста.",
+    "en": "Separately, please."
+   },
+   {
+    "who": "C",
+    "uz": "Det smakar jättegott!",
+    "ru": "Очень вкусно!",
+    "en": "It tastes really good!"
+   }
+  ],
+  "vocab": [
+   "en lunch",
+   "köttbullar",
+   "en lax",
+   "ett bröd",
+   "kaffe",
+   "betala",
+   "en kollega"
+  ],
+  "note_ru": "«Dagens lunch» — недорогой обед дня, обычно с 11 до 14 часов. В Швеции принято платить каждому за себя — «var för sig». «Jättegott» — «очень вкусно» (jätte- значит «очень, гигантски»).",
+  "note_uz": "Dagens lunch serveras oftast mellan 11 och 14. I Sverige är det vanligt att var och en betalar för sig. «Jätte-» förstärker ett ord: jättegott, jättebra.",
+  "note_en": "The lunch of the day is usually served between 11 and 2. In Sweden it is common for everyone to pay for themselves – \"var för sig\". \"Jätte-\" intensifies a word: jättegott (really tasty), jättebra (really good)."
+ },
+ {
+  "n": 15,
+  "cefr": "A2",
+  "section": "Праздники и гости",
+  "title_ru": "Приглашение на Мидсоммар",
+  "title_uz": "Inbjudan till midsommar",
+  "title_en": "An invitation to Midsummer",
+  "intro_ru": "Сара приглашает Анну отпраздновать Мидсоммар на даче своей семьи.",
+  "intro_uz": "Sara bjuder Anna att fira midsommar i familjens sommarstuga.",
+  "intro_en": "Sara invites Anna to celebrate Midsummer at her family's summer cottage.",
+  "speakers": {
+   "A": "Sara",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Vad gör du på midsommarafton?",
+    "ru": "Что ты делаешь в канун Мидсоммара?",
+    "en": "What are you doing on Midsummer Eve?"
+   },
+   {
+    "who": "B",
+    "uz": "Jag har inga planer än.",
+    "ru": "У меня пока нет планов.",
+    "en": "I have no plans yet."
+   },
+   {
+    "who": "A",
+    "uz": "Vill du fira med oss i stugan? Vi är i Dalarna.",
+    "ru": "Хочешь отпраздновать с нами на даче? Мы в Даларне.",
+    "en": "Would you like to celebrate with us at the cottage? We're in Dalarna."
+   },
+   {
+    "who": "B",
+    "uz": "Gärna! Vad gör man på midsommar?",
+    "ru": "С удовольствием! А что делают на Мидсоммар?",
+    "en": "I'd love to! What do people do at Midsummer?"
+   },
+   {
+    "who": "A",
+    "uz": "Vi klär midsommarstången, dansar runt den och äter sill och jordgubbar.",
+    "ru": "Мы украшаем майский шест, танцуем вокруг него и едим селёдку с клубникой.",
+    "en": "We decorate the maypole, dance around it and eat herring and strawberries."
+   },
+   {
+    "who": "B",
+    "uz": "Ska jag ta med något?",
+    "ru": "Мне что-нибудь привезти?",
+    "en": "Should I bring anything?"
+   },
+   {
+    "who": "A",
+    "uz": "Kanske en tårta eller blommor till kransen.",
+    "ru": "Может быть, торт или цветы для венка.",
+    "en": "Maybe a cake or flowers for the wreath."
+   },
+   {
+    "who": "B",
+    "uz": "Vad har man på sig?",
+    "ru": "Как одеваются?",
+    "en": "What do people wear?"
+   },
+   {
+    "who": "A",
+    "uz": "Något ljust och sommarigt, och en varm tröja till kvällen. Det kan bli kallt.",
+    "ru": "Что-нибудь светлое и летнее, и тёплый свитер на вечер. Может быть холодно.",
+    "en": "Something light and summery, and a warm jumper for the evening. It can get cold."
+   },
+   {
+    "who": "B",
+    "uz": "Tack för inbjudan! Jag ser fram emot det.",
+    "ru": "Спасибо за приглашение! Жду с нетерпением.",
+    "en": "Thanks for the invitation! I'm looking forward to it."
+   }
+  ],
+  "vocab": [
+   "midsommar",
+   "fira",
+   "dansa",
+   "en sill",
+   "en jordgubbe",
+   "en tårta",
+   "en blomma",
+   "en tröja"
+  ],
+  "note_ru": "«Ta med» — «взять с собой, принести». «Jag ser fram emot det» — «жду с нетерпением». Даже летом вечера в Швеции бывают прохладными, поэтому берут свитер.",
+  "note_uz": "«Ta med» betyder att ha med sig något. «Jag ser fram emot det» betyder att man längtar efter något. Även på sommaren kan kvällarna vara svala.",
+  "note_en": "\"Ta med\" means to bring along. \"Jag ser fram emot det\" means \"I'm looking forward to it\". Even in summer Swedish evenings can be cool, so people bring a jumper."
+ },
+ {
+  "n": 16,
+  "cefr": "A2",
+  "section": "Город и транспорт",
+  "title_ru": "На поезде",
+  "title_uz": "På tåget",
+  "title_en": "On the train",
+  "intro_ru": "Анна едет на поезде из Стокгольма в Гётеборг. Контролёр проверяет билеты.",
+  "intro_uz": "Anna åker tåg från Stockholm till Göteborg. Konduktören kontrollerar biljetterna.",
+  "intro_en": "Anna is taking the train from Stockholm to Gothenburg. The conductor checks the tickets.",
+  "speakers": {
+   "A": "Konduktör",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "God morgon! Biljetterna, tack.",
+    "ru": "Доброе утро! Ваши билеты, пожалуйста.",
+    "en": "Good morning! Tickets, please."
+   },
+   {
+    "who": "B",
+    "uz": "Här är den, i mobilen.",
+    "ru": "Вот он, в телефоне.",
+    "en": "Here it is, on my phone."
+   },
+   {
+    "who": "A",
+    "uz": "Tack. Du sitter på fel plats. Din plats är i vagn fem.",
+    "ru": "Спасибо. Вы сидите не на своём месте. Ваше место в пятом вагоне.",
+    "en": "Thanks. You're in the wrong seat. Your seat is in carriage five."
+   },
+   {
+    "who": "B",
+    "uz": "Oj, förlåt! Var är vagn fem?",
+    "ru": "Ой, простите! Где пятый вагон?",
+    "en": "Oh, sorry! Where is carriage five?"
+   },
+   {
+    "who": "A",
+    "uz": "Två vagnar bakåt. Det är ingen fara.",
+    "ru": "Через два вагона назад. Ничего страшного.",
+    "en": "Two carriages back. No problem."
+   },
+   {
+    "who": "B",
+    "uz": "När kommer vi fram till Göteborg?",
+    "ru": "Когда мы прибудем в Гётеборг?",
+    "en": "When do we arrive in Gothenburg?"
+   },
+   {
+    "who": "A",
+    "uz": "Klockan tolv och tjugo, om tåget är i tid.",
+    "ru": "В двенадцать двадцать, если поезд не опоздает.",
+    "en": "At twelve twenty, if the train is on time."
+   },
+   {
+    "who": "B",
+    "uz": "Finns det en restaurangvagn?",
+    "ru": "В поезде есть вагон-ресторан?",
+    "en": "Is there a restaurant car?"
+   },
+   {
+    "who": "A",
+    "uz": "Ja, bistron är i vagn tre. Den har öppet hela resan.",
+    "ru": "Да, бистро в третьем вагоне. Оно открыто всю поездку.",
+    "en": "Yes, the bistro is in carriage three. It's open the whole journey."
+   },
+   {
+    "who": "B",
+    "uz": "Tack! Trevlig resa!",
+    "ru": "Спасибо! Хорошей дороги!",
+    "en": "Thanks! Have a good trip!"
+   }
+  ],
+  "vocab": [
+   "ett tåg",
+   "en biljett",
+   "en plats",
+   "en vagn",
+   "förlåt",
+   "en resa",
+   "en mobil"
+  ],
+  "note_ru": "«Det är ingen fara» — «ничего страшного». «Komma fram» — «прибыть». Поезда в Швеции иногда опаздывают; если задержка больше часа, можно получить компенсацию.",
+  "note_uz": "«Det är ingen fara» betyder att det inte gör något. «Komma fram» betyder att anlända. Om tåget är mer än en timme försenat kan man få ersättning.",
+  "note_en": "\"Det är ingen fara\" means \"no problem\". \"Komma fram\" means to arrive. If a train is delayed by more than an hour you can get compensation."
+ },
+ {
+  "n": 17,
+  "cefr": "B1",
+  "section": "Работа и учёба",
+  "title_ru": "Собеседование",
+  "title_uz": "En anställningsintervju",
+  "title_en": "A job interview",
+  "intro_ru": "Анна пришла на собеседование в IT-компанию в Уппсале.",
+  "intro_uz": "Anna är på anställningsintervju på ett IT-företag i Uppsala.",
+  "intro_en": "Anna is at a job interview at an IT company in Uppsala.",
+  "speakers": {
+   "A": "Chef Lena",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Välkommen, Anna. Berätta lite om dig själv.",
+    "ru": "Добро пожаловать, Анна. Расскажите немного о себе.",
+    "en": "Welcome, Anna. Tell me a little about yourself."
+   },
+   {
+    "who": "B",
+    "uz": "Jag är utbildad systemutvecklare och har jobbat i fem år i Moskva.",
+    "ru": "Я по образованию разработчик программного обеспечения и пять лет работала в Москве.",
+    "en": "I'm a trained software developer and worked for five years in Moscow."
+   },
+   {
+    "who": "A",
+    "uz": "Varför vill du jobba hos oss?",
+    "ru": "Почему вы хотите работать у нас?",
+    "en": "Why do you want to work for us?"
+   },
+   {
+    "who": "B",
+    "uz": "Ni arbetar med appar för vården, och det tycker jag är meningsfullt.",
+    "ru": "Вы делаете приложения для здравоохранения, и мне это кажется осмысленным.",
+    "en": "You work on apps for health care, and I find that meaningful."
+   },
+   {
+    "who": "A",
+    "uz": "Hur är din svenska? Vi pratar mest svenska på mötena.",
+    "ru": "А как ваш шведский? На совещаниях мы в основном говорим по-шведски.",
+    "en": "How is your Swedish? We mostly speak Swedish at meetings."
+   },
+   {
+    "who": "B",
+    "uz": "Jag läser sfi på kvällarna och förstår det mesta. Jag lär mig snabbt.",
+    "ru": "Я учусь на курсах SFI по вечерам и понимаю почти всё. Я быстро учусь.",
+    "en": "I study SFI in the evenings and understand most things. I learn quickly."
+   },
+   {
+    "who": "A",
+    "uz": "Vad är dina starka sidor?",
+    "ru": "В чём ваши сильные стороны?",
+    "en": "What are your strengths?"
+   },
+   {
+    "who": "B",
+    "uz": "Jag är noggrann och tycker om att samarbeta i grupp.",
+    "ru": "Я внимательна к деталям и люблю работать в команде.",
+    "en": "I'm thorough and I like working in a team."
+   },
+   {
+    "who": "A",
+    "uz": "Och svaga sidor?",
+    "ru": "А слабые стороны?",
+    "en": "And weaknesses?"
+   },
+   {
+    "who": "B",
+    "uz": "Ibland vill jag göra allt perfekt, så jag behöver lära mig att prioritera.",
+    "ru": "Иногда я хочу сделать всё идеально, поэтому мне надо учиться расставлять приоритеты.",
+    "en": "Sometimes I want everything to be perfect, so I need to learn to prioritise."
+   },
+   {
+    "who": "A",
+    "uz": "Tack, Anna. Vi hör av oss inom två veckor.",
+    "ru": "Спасибо, Анна. Мы свяжемся с вами в течение двух недель.",
+    "en": "Thank you, Anna. We'll get back to you within two weeks."
+   },
+   {
+    "who": "B",
+    "uz": "Tack för att jag fick komma. Ha en bra dag!",
+    "ru": "Спасибо, что пригласили. Хорошего дня!",
+    "en": "Thank you for having me. Have a nice day!"
+   }
+  ],
+  "vocab": [
+   "arbeta",
+   "ett möte",
+   "snabbt",
+   "en vecka",
+   "ett företag",
+   "en chef",
+   "ett arbete"
+  ],
+  "note_ru": "На шведском собеседовании ценят скромность и умение работать в команде, а не хвастовство. «Vi hör av oss» — «мы с вами свяжемся». «Starka och svaga sidor» — сильные и слабые стороны.",
+  "note_uz": "På en svensk intervju uppskattar man ödmjukhet och samarbetsförmåga, inte skryt. «Vi hör av oss» betyder att man kontaktar personen senare.",
+  "note_en": "At a Swedish interview modesty and the ability to work in a team are valued, not boasting. \"Vi hör av oss\" means \"we'll be in touch\". \"Starka och svaga sidor\" are strengths and weaknesses."
+ },
+ {
+  "n": 18,
+  "cefr": "B1",
+  "section": "Работа и учёба",
+  "title_ru": "Первый день на работе",
+  "title_uz": "Första dagen på jobbet",
+  "title_en": "The first day at work",
+  "intro_ru": "Анну взяли на работу. Коллега Юхан показывает ей офис.",
+  "intro_uz": "Anna har fått jobbet. Kollegan Johan visar henne kontoret.",
+  "intro_en": "Anna got the job. Her colleague Johan shows her around the office.",
+  "speakers": {
+   "A": "Johan",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Välkommen till oss! Jag ska visa dig runt.",
+    "ru": "Добро пожаловать к нам! Я покажу тебе офис.",
+    "en": "Welcome! I'll show you around."
+   },
+   {
+    "who": "B",
+    "uz": "Tack, vad snällt.",
+    "ru": "Спасибо, очень мило.",
+    "en": "Thanks, that's kind."
+   },
+   {
+    "who": "A",
+    "uz": "Här är ditt skrivbord. Datorn är klar, och lösenordet får du av IT.",
+    "ru": "Вот твой стол. Компьютер готов, а пароль даст отдел IT.",
+    "en": "Here's your desk. The computer is ready, and IT will give you the password."
+   },
+   {
+    "who": "B",
+    "uz": "Var ligger köket?",
+    "ru": "Где кухня?",
+    "en": "Where's the kitchen?"
+   },
+   {
+    "who": "A",
+    "uz": "Där borta. Vi fikar klockan tio och klockan tre. Kom med!",
+    "ru": "Вон там. Фика у нас в десять и в три. Присоединяйся!",
+    "en": "Over there. We have fika at ten and at three. Join us!"
+   },
+   {
+    "who": "B",
+    "uz": "Gärna. Måste man ta med något till fikat?",
+    "ru": "С удовольствием. Нужно что-то приносить на фику?",
+    "en": "Gladly. Do you have to bring anything to fika?"
+   },
+   {
+    "who": "A",
+    "uz": "Nej, men på fredagar turas vi om att köpa bullar.",
+    "ru": "Нет, но по пятницам мы по очереди покупаем булочки.",
+    "en": "No, but on Fridays we take turns buying buns."
+   },
+   {
+    "who": "B",
+    "uz": "Vilka tider jobbar man här?",
+    "ru": "Какой здесь рабочий график?",
+    "en": "What are the working hours here?"
+   },
+   {
+    "who": "A",
+    "uz": "Vi har flextid. Man jobbar fyrtio timmar i veckan och kommer mellan sju och nio.",
+    "ru": "У нас гибкий график. Работают сорок часов в неделю, приходят между семью и девятью.",
+    "en": "We have flexitime. You work forty hours a week and arrive between seven and nine."
+   },
+   {
+    "who": "B",
+    "uz": "Och om man är sjuk?",
+    "ru": "А если заболеешь?",
+    "en": "And if you're ill?"
+   },
+   {
+    "who": "A",
+    "uz": "Då sjukanmäler du dig till chefen före klockan nio och i systemet.",
+    "ru": "Тогда сообщаешь начальнице до девяти и отмечаешь в системе.",
+    "en": "Then you report sick to the boss before nine and in the system."
+   },
+   {
+    "who": "B",
+    "uz": "Okej, då vet jag. Tack för rundturen!",
+    "ru": "Хорошо, теперь знаю. Спасибо за экскурсию!",
+    "en": "OK, now I know. Thanks for the tour!"
+   }
+  ],
+  "vocab": [
+   "en dator",
+   "ett lösenord",
+   "ett kök",
+   "fredag",
+   "en timme",
+   "sjuk",
+   "en chef",
+   "en kollega"
+  ],
+  "note_ru": "«Flextid» — гибкий график. «Turas om» — «делать по очереди». О болезни сообщают в первый же день — это называется «sjukanmäla sig».",
+  "note_uz": "Flextid betyder att man själv kan välja när man börjar och slutar inom vissa ramar. «Turas om» betyder att göra något i tur och ordning. Man sjukanmäler sig första sjukdagen.",
+  "note_en": "\"Flextid\" is flexitime. \"Turas om\" means to take turns. You report sick (sjukanmäla sig) on the first day of illness."
+ },
+ {
+  "n": 19,
+  "cefr": "B1",
+  "section": "Работа и учёба",
+  "title_ru": "Запись на SFI",
+  "title_uz": "Anmälan till sfi",
+  "title_en": "Signing up for SFI",
+  "intro_ru": "Анна приходит в центр образования для взрослых, чтобы перейти на следующий курс SFI.",
+  "intro_uz": "Anna kommer till vuxenutbildningen för att byta till nästa sfi-kurs.",
+  "intro_en": "Anna comes to the adult education centre to move up to the next SFI course.",
+  "speakers": {
+   "A": "Studievägledare",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Hej, vad kan jag hjälpa dig med?",
+    "ru": "Здравствуйте, чем могу помочь?",
+    "en": "Hi, what can I help you with?"
+   },
+   {
+    "who": "B",
+    "uz": "Jag har klarat kurs C och vill börja på kurs D.",
+    "ru": "Я сдала курс C и хочу перейти на курс D.",
+    "en": "I've passed course C and want to start course D."
+   },
+   {
+    "who": "A",
+    "uz": "Grattis! Vill du läsa på dagtid eller på kvällen?",
+    "ru": "Поздравляю! Вы хотите учиться днём или вечером?",
+    "en": "Congratulations! Would you like to study in the daytime or in the evening?"
+   },
+   {
+    "who": "B",
+    "uz": "På kvällen, eftersom jag jobbar på dagarna.",
+    "ru": "Вечером, потому что днём я работаю.",
+    "en": "In the evening, because I work during the day."
+   },
+   {
+    "who": "A",
+    "uz": "Det finns en kvällsgrupp på måndagar och onsdagar.",
+    "ru": "Есть вечерняя группа по понедельникам и средам.",
+    "en": "There's an evening group on Mondays and Wednesdays."
+   },
+   {
+    "who": "B",
+    "uz": "Passar perfekt. Kostar det något?",
+    "ru": "Подходит идеально. Это платно?",
+    "en": "That suits me perfectly. Does it cost anything?"
+   },
+   {
+    "who": "A",
+    "uz": "Nej, sfi är gratis. Men du behöver köpa en bok.",
+    "ru": "Нет, SFI бесплатно. Но нужно купить учебник.",
+    "en": "No, SFI is free. But you need to buy a book."
+   },
+   {
+    "who": "B",
+    "uz": "Vad gör jag efter kurs D?",
+    "ru": "А что мне делать после курса D?",
+    "en": "What do I do after course D?"
+   },
+   {
+    "who": "A",
+    "uz": "Då kan du läsa svenska som andraspråk på komvux. Det behövs för många utbildningar.",
+    "ru": "Тогда можно учить шведский как второй язык в komvux. Это нужно для многих программ обучения.",
+    "en": "Then you can study Swedish as a second language at komvux. It's needed for many programmes."
+   },
+   {
+    "who": "B",
+    "uz": "Behöver jag betyg från sfi för medborgarskap?",
+    "ru": "Нужна ли оценка SFI для гражданства?",
+    "en": "Do I need an SFI grade for citizenship?"
+   },
+   {
+    "who": "A",
+    "uz": "Betyg från kurs D är ett av sätten att visa dina kunskaper i svenska. Kolla på Migrationsverkets webbplats.",
+    "ru": "Оценка за курс D — один из способов подтвердить знание шведского. Проверьте на сайте Migrationsverket.",
+    "en": "A grade from course D is one way to show your knowledge of Swedish. Check on the Migration Agency's website."
+   },
+   {
+    "who": "B",
+    "uz": "Tack, det var till stor hjälp!",
+    "ru": "Спасибо, вы очень помогли!",
+    "en": "Thanks, that was a great help!"
+   }
+  ],
+  "vocab": [
+   "en kurs",
+   "måndag",
+   "onsdag",
+   "gratis",
+   "en bok",
+   "svenska",
+   "ett betyg"
+  ],
+  "note_ru": "«Klara en kurs» — сдать курс. «Grattis» — «поздравляю». «Komvux» — муниципальное образование для взрослых. Правила гражданства менялись в 2026 г., поэтому проверяйте их на сайте Migrationsverket.",
+  "note_uz": "«Klara en kurs» betyder att bli godkänd. «Grattis» är kort för gratulerar. Komvux är kommunal vuxenutbildning. Reglerna för medborgarskap ändrades 2026, så kontrollera dem hos Migrationsverket.",
+  "note_en": "\"Klara en kurs\" means to pass a course. \"Grattis\" is short for congratulations. Komvux is municipal adult education. Citizenship rules changed in 2026, so check them with the Migration Agency."
+ },
+ {
+  "n": 20,
+  "cefr": "B1",
+  "section": "Быт и услуги",
+  "title_ru": "Сосед и прачечная",
+  "title_uz": "Grannen och tvättstugan",
+  "title_en": "The neighbour and the laundry room",
+  "intro_ru": "Сосед Анны недоволен, что она стирала в его время. Они выясняют недоразумение.",
+  "intro_uz": "Annas granne är missnöjd för att hon tvättade på hans tid. De reder ut missförståndet.",
+  "intro_en": "Anna's neighbour is unhappy that she did her washing during his slot. They clear up the misunderstanding.",
+  "speakers": {
+   "A": "Granne Per",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Ursäkta, var det du som tvättade i går kväll?",
+    "ru": "Извините, это вы вчера вечером стирали?",
+    "en": "Excuse me, was it you who did the washing last night?"
+   },
+   {
+    "who": "B",
+    "uz": "Ja, det var jag. Är det något problem?",
+    "ru": "Да, я. Что-то не так?",
+    "en": "Yes, it was me. Is there a problem?"
+   },
+   {
+    "who": "A",
+    "uz": "Jag hade bokat tvättstugan mellan sex och nio.",
+    "ru": "Я записался в прачечную с шести до девяти.",
+    "en": "I had booked the laundry room from six to nine."
+   },
+   {
+    "who": "B",
+    "uz": "Åh, förlåt! Jag trodde att det var ledigt, för ingen var där.",
+    "ru": "Ой, простите! Я думала, что свободно, потому что там никого не было.",
+    "en": "Oh, sorry! I thought it was free, because nobody was there."
+   },
+   {
+    "who": "A",
+    "uz": "Man måste boka på tavlan i entrén, även om ingen är där.",
+    "ru": "Нужно записываться на доске у входа, даже если там никого нет.",
+    "en": "You have to book on the board in the entrance, even if nobody is there."
+   },
+   {
+    "who": "B",
+    "uz": "Det visste jag inte. Jag är ny här. Hur fungerar det?",
+    "ru": "Я не знала. Я тут новенькая. Как это работает?",
+    "en": "I didn't know that. I'm new here. How does it work?"
+   },
+   {
+    "who": "A",
+    "uz": "Du sätter ditt lås vid den tid du vill ha. Om du inte kommer inom en halvtimme får någon annan ta tiden.",
+    "ru": "Вешаете свой замочек на нужное время. Если не придёте в течение получаса, время может занять другой.",
+    "en": "You put your lock on the time you want. If you don't come within half an hour, someone else may take the slot."
+   },
+   {
+    "who": "B",
+    "uz": "Okej. Och ska man städa efter sig?",
+    "ru": "Понятно. А убирать за собой нужно?",
+    "en": "OK. And should you clean up after yourself?"
+   },
+   {
+    "who": "A",
+    "uz": "Ja, torka av maskinerna och rensa filtret i torktumlaren.",
+    "ru": "Да, протереть машины и почистить фильтр в сушилке.",
+    "en": "Yes, wipe the machines and clean the filter in the tumble dryer."
+   },
+   {
+    "who": "B",
+    "uz": "Det ska jag göra. Förlåt igen för i går.",
+    "ru": "Так и сделаю. Ещё раз простите за вчерашнее.",
+    "en": "I'll do that. Sorry again about yesterday."
+   },
+   {
+    "who": "A",
+    "uz": "Ingen fara. Välkommen till huset!",
+    "ru": "Ничего страшного. Добро пожаловать в наш дом!",
+    "en": "No problem. Welcome to the building!"
+   },
+   {
+    "who": "B",
+    "uz": "Tack! Säg till om du behöver hjälp med något.",
+    "ru": "Спасибо! Скажите, если вам понадобится помощь.",
+    "en": "Thanks! Let me know if you need help with anything."
+   }
+  ],
+  "vocab": [
+   "en granne",
+   "boka",
+   "ett lås",
+   "städa",
+   "en tvättmaskin",
+   "ett hus",
+   "en dörr"
+  ],
+  "note_ru": "Прачечная (tvättstuga) — частая тема конфликтов между соседями, поэтому правила соблюдают строго. «Reda ut ett missförstånd» — разобраться в недоразумении. «Säg till» — «скажи, дай знать».",
+  "note_uz": "Tvättstugan är ett vanligt ämne för konflikter mellan grannar, och därför följer man reglerna noga. «Säg till» betyder att man ska meddela.",
+  "note_en": "The laundry room is a common source of conflict between neighbours, so the rules are followed strictly. \"Säg till\" means \"let me know\"."
+ },
+ {
+  "n": 21,
+  "cefr": "B1",
+  "section": "Быт и услуги",
+  "title_ru": "Разговор в детском саду",
+  "title_uz": "Samtal på förskolan",
+  "title_en": "A talk at the preschool",
+  "intro_ru": "Сын Анны Миша начинает ходить в детский сад. Анна говорит с воспитательницей.",
+  "intro_uz": "Annas son Misja ska börja på förskolan. Anna pratar med förskolläraren.",
+  "intro_en": "Anna's son Misha is starting preschool. Anna talks to the teacher.",
+  "speakers": {
+   "A": "Förskollärare Eva",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Välkomna! Det här blir Misjas avdelning.",
+    "ru": "Добро пожаловать! Это будет группа Миши.",
+    "en": "Welcome! This will be Misha's group."
+   },
+   {
+    "who": "B",
+    "uz": "Tack. Han är lite nervös, han kan inte så mycket svenska än.",
+    "ru": "Спасибо. Он немного волнуется, он пока плохо знает шведский.",
+    "en": "Thanks. He's a bit nervous; he doesn't know much Swedish yet."
+   },
+   {
+    "who": "A",
+    "uz": "Det brukar gå fort för barnen. Vi har inskolning i två veckor.",
+    "ru": "У детей это обычно быстро. У нас две недели адаптации.",
+    "en": "It usually goes quickly for children. We have a two-week settling-in period."
+   },
+   {
+    "who": "B",
+    "uz": "Vad innebär inskolningen?",
+    "ru": "Что значит адаптация?",
+    "en": "What does the settling-in involve?"
+   },
+   {
+    "who": "A",
+    "uz": "De första dagarna är du med här, sedan stannar han lite längre själv varje dag.",
+    "ru": "Первые дни вы находитесь здесь вместе с ним, потом он каждый день остаётся сам немного дольше.",
+    "en": "The first days you stay here too, then he stays a little longer on his own each day."
+   },
+   {
+    "who": "B",
+    "uz": "Vad behöver han ha med sig?",
+    "ru": "Что ему нужно взять с собой?",
+    "en": "What does he need to bring?"
+   },
+   {
+    "who": "A",
+    "uz": "Ombyteskläder, regnkläder och stövlar. Vi är ute varje dag, i alla väder.",
+    "ru": "Сменную одежду, непромокаемую одежду и сапоги. Мы гуляем каждый день, в любую погоду.",
+    "en": "A change of clothes, rain gear and boots. We go outside every day, in all weathers."
+   },
+   {
+    "who": "B",
+    "uz": "Även när det regnar?",
+    "ru": "Даже когда идёт дождь?",
+    "en": "Even when it rains?"
+   },
+   {
+    "who": "A",
+    "uz": "Ja, och barnen sover ofta i vagnen ute. Det är vanligt här.",
+    "ru": "Да, и малыши часто спят в коляске на улице. Здесь это обычное дело.",
+    "en": "Yes, and the children often sleep in their prams outside. It's normal here."
+   },
+   {
+    "who": "B",
+    "uz": "Han är allergisk mot nötter.",
+    "ru": "У него аллергия на орехи.",
+    "en": "He's allergic to nuts."
+   },
+   {
+    "who": "A",
+    "uz": "Tack för att du säger det. Vi skriver det i hans papper och informerar köket.",
+    "ru": "Спасибо, что сказали. Мы запишем это в его документы и предупредим кухню.",
+    "en": "Thank you for telling us. We'll write it in his file and inform the kitchen."
+   },
+   {
+    "who": "B",
+    "uz": "Vad bra. Då känner jag mig lugnare.",
+    "ru": "Как хорошо. Теперь мне спокойнее.",
+    "en": "Good. Now I feel calmer."
+   }
+  ],
+  "vocab": [
+   "en förskola",
+   "ett barn",
+   "en vecka",
+   "regn",
+   "sova",
+   "en allergi",
+   "ett kök"
+  ],
+  "note_ru": "«Inskolning» — период привыкания к детскому саду, когда родитель сначала остаётся с ребёнком. Шведские дети много времени проводят на улице в любую погоду. Об аллергии обязательно нужно сообщить.",
+  "note_uz": "Inskolning är tiden då barnet vänjer sig vid förskolan med en förälder i närheten. Svenska barn är mycket ute oavsett väder. Allergier ska man alltid berätta om.",
+  "note_en": "\"Inskolning\" is the settling-in period when the child gets used to preschool with a parent nearby. Swedish children spend a lot of time outdoors whatever the weather. Allergies must always be mentioned."
+ },
+ {
+  "n": 22,
+  "cefr": "B1",
+  "section": "Праздники и гости",
+  "title_ru": "В гостях на Рождество",
+  "title_uz": "På julbesök",
+  "title_en": "A Christmas visit",
+  "intro_ru": "Семья Сары пригласила Анну на рождественский ужин в сочельник.",
+  "intro_uz": "Saras familj har bjudit Anna på julbord på julafton.",
+  "intro_en": "Sara's family has invited Anna to Christmas dinner on Christmas Eve.",
+  "speakers": {
+   "A": "Saras mamma Birgitta",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "God jul, Anna! Välkommen in!",
+    "ru": "Счастливого Рождества, Анна! Проходи!",
+    "en": "Merry Christmas, Anna! Come in!"
+   },
+   {
+    "who": "B",
+    "uz": "God jul! Tack för inbjudan. Här är en liten present och lite glögg.",
+    "ru": "Счастливого Рождества! Спасибо за приглашение. Вот небольшой подарок и немного глёгга.",
+    "en": "Merry Christmas! Thanks for the invitation. Here's a small present and some glögg."
+   },
+   {
+    "who": "A",
+    "uz": "Vad snällt av dig! Häng av dig jackan och ta av skorna, så går vi till bordet.",
+    "ru": "Как мило с твоей стороны! Раздевайся, снимай обувь, и пойдём к столу.",
+    "en": "How kind of you! Hang up your jacket and take off your shoes, and we'll go to the table."
+   },
+   {
+    "who": "B",
+    "uz": "Oj, vilket stort bord! Hur ska man äta?",
+    "ru": "Ой, какой большой стол! Как правильно есть?",
+    "en": "Oh, what a big table! How should you eat?"
+   },
+   {
+    "who": "A",
+    "uz": "Man börjar med sillen, sedan lax, sedan skinka och köttbullar, och sist efterrätten.",
+    "ru": "Начинают с селёдки, потом лосось, потом ветчина и фрикадельки, а в конце десерт.",
+    "en": "You start with the herring, then salmon, then ham and meatballs, and dessert last."
+   },
+   {
+    "who": "B",
+    "uz": "Och vad är det här, i skålen?",
+    "ru": "А что это в миске?",
+    "en": "And what's this in the bowl?"
+   },
+   {
+    "who": "A",
+    "uz": "Risgrynsgröt. Om du hittar mandeln, gifter du dig nästa år!",
+    "ru": "Рисовая каша. Если найдёшь миндаль — выйдешь замуж в следующем году!",
+    "en": "Rice pudding. If you find the almond, you'll get married next year!"
+   },
+   {
+    "who": "B",
+    "uz": "Då äter jag försiktigt!",
+    "ru": "Тогда буду есть осторожно!",
+    "en": "Then I'll eat carefully!"
+   },
+   {
+    "who": "A",
+    "uz": "Klockan tre tittar vi på Kalle Anka. Det gör nästan alla svenskar.",
+    "ru": "В три часа мы смотрим «Дональда Дака». Так делают почти все шведы.",
+    "en": "At three o'clock we watch Donald Duck. Almost all Swedes do."
+   },
+   {
+    "who": "B",
+    "uz": "Jag har hört om det! Kommer tomten också?",
+    "ru": "Я слышала об этом! А Юльтомте тоже придёт?",
+    "en": "I've heard about that! Does Santa come too?"
+   },
+   {
+    "who": "A",
+    "uz": "Ja, efter middagen kommer tomten med julklappar till barnen.",
+    "ru": "Да, после ужина приходит Юльтомте с подарками для детей.",
+    "en": "Yes, after dinner Santa comes with presents for the children."
+   },
+   {
+    "who": "B",
+    "uz": "Vad mysigt! Det här blir min första svenska jul.",
+    "ru": "Как уютно! Это будет моё первое шведское Рождество.",
+    "en": "How cosy! This will be my first Swedish Christmas."
+   }
+  ],
+  "vocab": [
+   "jul",
+   "en present",
+   "ett bord",
+   "en sill",
+   "en skinka",
+   "köttbullar",
+   "en tomte"
+  ],
+  "note_ru": "Рождество празднуют 24 декабря. Блюда шведского рождественского стола едят в определённом порядке. «Häng av dig» — «раздевайся» (повесь куртку). В гости обычно приносят небольшой подарок.",
+  "note_uz": "Julen firas på julafton den 24 december. Julbordet äts i en viss ordning. «Häng av dig» betyder att man ska hänga upp jackan. Man tar ofta med en liten present.",
+  "note_en": "Christmas is celebrated on 24 December. The Christmas table is eaten in a certain order. \"Häng av dig\" means \"hang up your coat\". Guests usually bring a small present."
+ },
+ {
+  "n": 23,
+  "cefr": "B1",
+  "section": "Быт и услуги",
+  "title_ru": "Протекает кран",
+  "title_uz": "Kranen läcker",
+  "title_en": "The tap is leaking",
+  "intro_ru": "У Анны на кухне протекает кран. Она звонит в управляющую компанию.",
+  "intro_uz": "Kranen i Annas kök läcker. Hon ringer till hyresvärden.",
+  "intro_en": "The tap in Anna's kitchen is leaking. She calls the landlord.",
+  "speakers": {
+   "A": "Kundtjänst",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Bostadsbolaget, du pratar med Ahmed. Vad gäller det?",
+    "ru": "Жилищная компания, вы говорите с Ахмедом. По какому вопросу?",
+    "en": "Housing company, you're speaking to Ahmed. What is it about?"
+   },
+   {
+    "who": "B",
+    "uz": "Hej, jag bor på Storgatan 5. Kranen i köket läcker.",
+    "ru": "Здравствуйте, я живу на Сторгатан, 5. На кухне протекает кран.",
+    "en": "Hi, I live at Storgatan 5. The kitchen tap is leaking."
+   },
+   {
+    "who": "A",
+    "uz": "Hur mycket läcker det? Är det akut?",
+    "ru": "Сильно протекает? Это срочно?",
+    "en": "How badly is it leaking? Is it urgent?"
+   },
+   {
+    "who": "B",
+    "uz": "Det droppar hela tiden, men det rinner inte ut på golvet.",
+    "ru": "Всё время капает, но на пол не течёт.",
+    "en": "It drips all the time, but it doesn't run onto the floor."
+   },
+   {
+    "who": "A",
+    "uz": "Okej. Då gör jag en felanmälan, och en reparatör kommer i veckan.",
+    "ru": "Хорошо. Тогда я оформлю заявку о неисправности, и мастер придёт на этой неделе.",
+    "en": "OK. Then I'll register a fault report, and a repairman will come this week."
+   },
+   {
+    "who": "B",
+    "uz": "Måste jag vara hemma?",
+    "ru": "Мне нужно быть дома?",
+    "en": "Do I have to be at home?"
+   },
+   {
+    "who": "A",
+    "uz": "Nej, han kan gå in med huvudnyckel om du godkänner det.",
+    "ru": "Нет, он может войти с общим ключом, если вы разрешите.",
+    "en": "No, he can go in with a master key if you allow it."
+   },
+   {
+    "who": "B",
+    "uz": "Det går bra. Kostar det något?",
+    "ru": "Хорошо. Это платно?",
+    "en": "That's fine. Does it cost anything?"
+   },
+   {
+    "who": "A",
+    "uz": "Nej, det ingår i hyran. Hyresvärden ansvarar för underhållet.",
+    "ru": "Нет, это входит в квартплату. За ремонт отвечает владелец.",
+    "en": "No, it's included in the rent. The landlord is responsible for maintenance."
+   },
+   {
+    "who": "B",
+    "uz": "Vad gör jag om det börjar läcka mer?",
+    "ru": "А что делать, если начнёт течь сильнее?",
+    "en": "What should I do if it starts leaking more?"
+   },
+   {
+    "who": "A",
+    "uz": "Stäng av vattnet under diskbänken och ring vår jour. Numret står i trapphuset.",
+    "ru": "Перекройте воду под мойкой и звоните в нашу аварийную службу. Номер есть на лестнице.",
+    "en": "Turn off the water under the sink and call our emergency line. The number is in the stairwell."
+   },
+   {
+    "who": "B",
+    "uz": "Tack, då vet jag. Hej då!",
+    "ru": "Спасибо, теперь знаю. До свидания!",
+    "en": "Thanks, now I know. Bye!"
+   }
+  ],
+  "vocab": [
+   "ett kök",
+   "vatten",
+   "ett golv",
+   "en nyckel",
+   "en hyra",
+   "stänga av",
+   "en hyresvärd"
+  ],
+  "note_ru": "«Felanmälan» — заявка о неисправности, её можно подать по телефону или на сайте. Ремонт в арендованной квартире — обязанность владельца. «Jour» — дежурная аварийная служба.",
+  "note_uz": "En felanmälan kan man göra per telefon eller på webben. Hyresvärden ansvarar för underhållet i en hyresrätt. Jouren är den akuta tjänsten utanför kontorstid.",
+  "note_en": "A fault report (felanmälan) can be made by phone or online. The landlord is responsible for maintenance in a rented flat. \"Jour\" is the emergency service outside office hours."
+ },
+ {
+  "n": 24,
+  "cefr": "B1",
+  "section": "Здоровье",
+  "title_ru": "У врача в поликлинике",
+  "title_uz": "Hos läkaren på vårdcentralen",
+  "title_en": "At the doctor's at the health centre",
+  "intro_ru": "У Анны уже месяц болит спина. Она пришла к врачу.",
+  "intro_uz": "Anna har haft ont i ryggen i en månad. Hon är hos läkaren.",
+  "intro_en": "Anna has had back pain for a month. She is at the doctor's.",
+  "speakers": {
+   "A": "Läkare",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Hej Anna, vad kan jag hjälpa dig med i dag?",
+    "ru": "Здравствуйте, Анна, чем могу помочь сегодня?",
+    "en": "Hi Anna, what can I help you with today?"
+   },
+   {
+    "who": "B",
+    "uz": "Jag har haft ont i ryggen i ungefär en månad.",
+    "ru": "У меня около месяца болит спина.",
+    "en": "I've had back pain for about a month."
+   },
+   {
+    "who": "A",
+    "uz": "Var gör det ont, och när?",
+    "ru": "Где болит и когда?",
+    "en": "Where does it hurt, and when?"
+   },
+   {
+    "who": "B",
+    "uz": "Längst ner i ryggen, mest på morgonen och när jag sitter länge.",
+    "ru": "Внизу спины, больше всего утром и когда долго сижу.",
+    "en": "At the bottom of my back, mostly in the morning and when I sit for a long time."
+   },
+   {
+    "who": "A",
+    "uz": "Har du lyft något tungt eller ramlat?",
+    "ru": "Вы поднимали что-то тяжёлое или падали?",
+    "en": "Have you lifted anything heavy or fallen?"
+   },
+   {
+    "who": "B",
+    "uz": "Nej, men jag sitter vid datorn hela dagarna.",
+    "ru": "Нет, но я целыми днями сижу за компьютером.",
+    "en": "No, but I sit at the computer all day."
+   },
+   {
+    "who": "A",
+    "uz": "Det verkar vara musklerna. Jag skriver en remiss till en fysioterapeut.",
+    "ru": "Похоже, это мышцы. Я выпишу направление к физиотерапевту.",
+    "en": "It seems to be the muscles. I'll write a referral to a physiotherapist."
+   },
+   {
+    "who": "B",
+    "uz": "Behöver jag vara sjukskriven?",
+    "ru": "Мне нужен больничный?",
+    "en": "Do I need to be on sick leave?"
+   },
+   {
+    "who": "A",
+    "uz": "Nej, det är bättre att röra på sig. Ta pauser och promenera varje dag.",
+    "ru": "Нет, лучше двигаться. Делайте перерывы и гуляйте каждый день.",
+    "en": "No, it's better to keep moving. Take breaks and walk every day."
+   },
+   {
+    "who": "B",
+    "uz": "Okej. Vad kostar besöket?",
+    "ru": "Хорошо. Сколько стоит приём?",
+    "en": "OK. How much does the visit cost?"
+   },
+   {
+    "who": "A",
+    "uz": "Patientavgiften betalar du i receptionen eller får en faktura hem.",
+    "ru": "Плату за приём вы вносите в регистратуре или получите счёт домой.",
+    "en": "You pay the patient fee at reception or receive an invoice at home."
+   },
+   {
+    "who": "B",
+    "uz": "Tack så mycket för hjälpen.",
+    "ru": "Большое спасибо за помощь.",
+    "en": "Thank you very much for your help."
+   }
+  ],
+  "vocab": [
+   "ont i ryggen",
+   "en läkare",
+   "en dator",
+   "en dag",
+   "en månad",
+   "promenera"
+  ],
+  "note_ru": "«Remiss» — направление к другому специалисту. «Sjukskriven» — на больничном. За приём платят небольшую сумму (patientavgift), а годовые расходы ограничены потолком (högkostnadsskydd).",
+  "note_uz": "En remiss skickar patienten vidare till en annan vårdgivare. Sjukskriven betyder att man är ledig från jobbet på grund av sjukdom. Patientavgiften är låg, och det finns ett högkostnadsskydd.",
+  "note_en": "A \"remiss\" is a referral to another specialist. \"Sjukskriven\" means on sick leave. Visits cost a small patient fee, and annual costs are capped (högkostnadsskydd)."
+ },
+ {
+  "n": 25,
+  "cefr": "B2",
+  "section": "Знакомство и общение",
+  "title_ru": "Разговор о выборах",
+  "title_uz": "Ett samtal om valet",
+  "title_en": "A conversation about the election",
+  "intro_ru": "Анна и её коллега Ларс обсуждают за обедом шведскую политику и выборы.",
+  "intro_uz": "Anna och hennes kollega Lars pratar om svensk politik och valet över lunchen.",
+  "intro_en": "Anna and her colleague Lars discuss Swedish politics and the election over lunch.",
+  "speakers": {
+   "A": "Lars",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Har du följt valdebatten på tv?",
+    "ru": "Ты следила за предвыборными дебатами по телевизору?",
+    "en": "Have you followed the election debate on TV?"
+   },
+   {
+    "who": "B",
+    "uz": "Lite grann. Men jag förstår inte riktigt hur systemet fungerar.",
+    "ru": "Немножко. Но я не совсем понимаю, как работает система.",
+    "en": "A little. But I don't quite understand how the system works."
+   },
+   {
+    "who": "A",
+    "uz": "Man röstar på ett parti, och mandaten i riksdagen fördelas efter hur många röster partiet får.",
+    "ru": "Голосуют за партию, а места в риксдаге распределяются по числу голосов партии.",
+    "en": "You vote for a party, and the seats in the Riksdag are shared out according to how many votes the party gets."
+   },
+   {
+    "who": "B",
+    "uz": "Och vad är fyraprocentsspärren?",
+    "ru": "А что такое четырёхпроцентный барьер?",
+    "en": "And what is the four per cent threshold?"
+   },
+   {
+    "who": "A",
+    "uz": "Ett parti måste få minst fyra procent för att komma in i riksdagen.",
+    "ru": "Партия должна набрать минимум четыре процента, чтобы попасть в риксдаг.",
+    "en": "A party must get at least four per cent to get into the Riksdag."
+   },
+   {
+    "who": "B",
+    "uz": "Får jag rösta, fast jag inte är svensk medborgare?",
+    "ru": "А я могу голосовать, хоть я и не гражданка Швеции?",
+    "en": "Can I vote, even though I'm not a Swedish citizen?"
+   },
+   {
+    "who": "A",
+    "uz": "Inte i riksdagsvalet. Men i kommun- och regionvalet får du rösta om du har varit folkbokförd här i tre år.",
+    "ru": "На выборах в риксдаг — нет. Но на выборах в коммуну и регион можешь, если зарегистрирована здесь три года.",
+    "en": "Not in the Riksdag election. But in the municipal and regional elections you can vote if you've been registered here for three years."
+   },
+   {
+    "who": "B",
+    "uz": "Intressant. I mitt hemland var det annorlunda.",
+    "ru": "Интересно. На моей родине было по-другому.",
+    "en": "Interesting. It was different in my home country."
+   },
+   {
+    "who": "A",
+    "uz": "Det viktiga här är att valet är hemligt. Ingen får veta vad du röstar på.",
+    "ru": "Здесь важно, что голосование тайное. Никто не имеет права знать, за кого ты голосуешь.",
+    "en": "The important thing here is that voting is secret. Nobody may know what you vote for."
+   },
+   {
+    "who": "B",
+    "uz": "Men folk pratar ju ganska öppet om politik på jobbet.",
+    "ru": "Но ведь люди довольно открыто говорят о политике на работе.",
+    "en": "But people talk quite openly about politics at work."
+   },
+   {
+    "who": "A",
+    "uz": "Vissa gör det, andra tycker att det är privat. Man respekterar båda.",
+    "ru": "Кто-то говорит, а кто-то считает это личным делом. Уважают и тех, и других.",
+    "en": "Some do, others think it's private. Both are respected."
+   },
+   {
+    "who": "B",
+    "uz": "Jag ska läsa mer om partierna, så att jag kan rösta när det är dags.",
+    "ru": "Почитаю побольше о партиях, чтобы проголосовать, когда придёт время.",
+    "en": "I'll read more about the parties so that I can vote when the time comes."
+   },
+   {
+    "who": "A",
+    "uz": "Bra idé. Valmyndigheten har information på många språk.",
+    "ru": "Хорошая мысль. У избирательного ведомства есть информация на многих языках.",
+    "en": "Good idea. The Election Authority has information in many languages."
+   }
+  ],
+  "vocab": [
+   "ett val",
+   "ett parti",
+   "rösta",
+   "en röst",
+   "en medborgare",
+   "politik",
+   "en kommun",
+   "privat"
+  ],
+  "note_ru": "«Mandat» — депутатское место. «Fyraprocentsspärren» — четырёхпроцентный барьер. О своих политических взглядах в Швеции можно говорить открыто, но многие считают это личным делом. «Ju» в середине фразы подчёркивает очевидное: «ведь».",
+  "note_uz": "Ett mandat är en plats i riksdagen. Många talar öppet om politik, men andra ser det som privat. Ordet «ju» visar att något är självklart.",
+  "note_en": "A \"mandat\" is a seat in the Riksdag. Many people talk openly about politics, but others see it as private. The word \"ju\" signals that something is obvious, like \"after all\"."
+ },
+ {
+  "n": 26,
+  "cefr": "B2",
+  "section": "Праздники и гости",
+  "title_ru": "Раковая вечеринка",
+  "title_uz": "På kräftskiva",
+  "title_en": "At a crayfish party",
+  "intro_ru": "В августе коллеги пригласили Анну на раковую вечеринку. Она впервые на таком празднике.",
+  "intro_uz": "I augusti har kollegerna bjudit Anna på kräftskiva. Det är hennes första.",
+  "intro_en": "In August Anna's colleagues have invited her to a crayfish party. It's her first one.",
+  "speakers": {
+   "A": "Maria",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Här, ta en hatt! Alla har pappershatt på kräftskivan.",
+    "ru": "Вот, надевай шляпу! На раковой вечеринке все в бумажных шляпах.",
+    "en": "Here, take a hat! Everyone wears a paper hat at a crayfish party."
+   },
+   {
+    "who": "B",
+    "uz": "Vad roligt! Och varför hänger det lyktor som ser ut som månen?",
+    "ru": "Как забавно! А почему висят фонарики, похожие на луну?",
+    "en": "How fun! And why are there lanterns that look like the moon?"
+   },
+   {
+    "who": "A",
+    "uz": "Det är tradition. Förr fiskade man kräftor på natten med lykta.",
+    "ru": "Это традиция. Раньше раков ловили ночью с фонарём.",
+    "en": "It's a tradition. People used to catch crayfish at night with a lantern."
+   },
+   {
+    "who": "B",
+    "uz": "Hur äter man kräftor? Jag har aldrig gjort det.",
+    "ru": "Как едят раков? Я никогда не пробовала.",
+    "en": "How do you eat crayfish? I've never done it."
+   },
+   {
+    "who": "A",
+    "uz": "Man bryter av stjärten, drar bort skalet och suger på klorna. Med händerna!",
+    "ru": "Отламываешь хвост, снимаешь панцирь и высасываешь клешни. Руками!",
+    "en": "You break off the tail, pull off the shell and suck the claws. With your hands!"
+   },
+   {
+    "who": "B",
+    "uz": "Det blir kladdigt. Vad dricker man till?",
+    "ru": "Будет липко. А что пьют к ним?",
+    "en": "It'll get messy. What do you drink with them?"
+   },
+   {
+    "who": "A",
+    "uz": "Öl eller snaps, och den som inte dricker alkohol tar must eller vatten.",
+    "ru": "Пиво или шнапс, а кто не пьёт алкоголь — муст или воду.",
+    "en": "Beer or schnapps, and those who don't drink alcohol have must or water."
+   },
+   {
+    "who": "B",
+    "uz": "Bra att det finns alkoholfritt. Varför sjunger alla plötsligt?",
+    "ru": "Хорошо, что есть безалкогольное. А почему все вдруг запели?",
+    "en": "Good that there's something alcohol-free. Why is everyone suddenly singing?"
+   },
+   {
+    "who": "A",
+    "uz": "Innan man skålar sjunger man en snapsvisa. Den mest kända är «Helan går».",
+    "ru": "Перед тем как выпить, поют шнапсовую песенку. Самая известная — «Helan går».",
+    "en": "Before toasting, people sing a schnapps song. The best known is \"Helan går\"."
+   },
+   {
+    "who": "B",
+    "uz": "Kan du lära mig texten?",
+    "ru": "Научишь меня словам?",
+    "en": "Can you teach me the words?"
+   },
+   {
+    "who": "A",
+    "uz": "Absolut, den står i häftet framför dig. Vi sjunger tillsammans!",
+    "ru": "Конечно, они в книжечке перед тобой. Поём вместе!",
+    "en": "Absolutely, it's in the booklet in front of you. Let's sing together!"
+   },
+   {
+    "who": "B",
+    "uz": "Skål! Det här är verkligen en svensk tradition jag gillar.",
+    "ru": "Ваше здоровье! Вот эта шведская традиция мне правда нравится.",
+    "en": "Cheers! This is really a Swedish tradition I like."
+   }
+  ],
+  "vocab": [
+   "en måne",
+   "öl",
+   "vatten",
+   "sjunga",
+   "en tradition",
+   "en natt"
+  ],
+  "note_ru": "«Skål!» — тост, «ваше здоровье». Перед тостом смотрят друг другу в глаза. На шведских праздниках нормально не пить алкоголь — всегда есть безалкогольные напитки. «Kladdigt» — «липко, грязно».",
+  "note_uz": "«Skål!» säger man när man höjer glaset och tittar varandra i ögonen. Det är helt okej att inte dricka alkohol på svenska fester. «Kladdigt» betyder smetigt.",
+  "note_en": "\"Skål!\" means \"cheers\"; people look each other in the eye. It is completely fine not to drink alcohol at Swedish parties. \"Kladdigt\" means sticky or messy."
+ },
+ {
+  "n": 27,
+  "cefr": "B2",
+  "section": "Город и транспорт",
+  "title_ru": "Штраф за парковку",
+  "title_uz": "En parkeringsbot",
+  "title_en": "A parking fine",
+  "intro_ru": "Анна нашла штраф за парковку на своей машине и обсуждает это с соседом Пером.",
+  "intro_uz": "Anna har fått en parkeringsbot på bilen och pratar med grannen Per om det.",
+  "intro_en": "Anna has found a parking fine on her car and talks to her neighbour Per about it.",
+  "speakers": {
+   "A": "Anna",
+   "B": "Per"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Titta, jag har fått en lapp på bilen! Sjuhundra kronor!",
+    "ru": "Смотри, мне на машину повесили квитанцию! Семьсот крон!",
+    "en": "Look, I've got a ticket on my car! Seven hundred kronor!"
+   },
+   {
+    "who": "B",
+    "uz": "Aj då. Var stod du parkerad?",
+    "ru": "Ой. Где ты припарковалась?",
+    "en": "Oh dear. Where were you parked?"
+   },
+   {
+    "who": "A",
+    "uz": "Här på gatan, som vanligt. Jag har ju boendeparkering.",
+    "ru": "Здесь, на улице, как обычно. У меня же разрешение на парковку для жителей.",
+    "en": "Here on the street, as usual. I have a residents' parking permit, after all."
+   },
+   {
+    "who": "B",
+    "uz": "Det är städdag i dag. Kolla skylten – på tisdagar mellan åtta och tolv får man inte stå här.",
+    "ru": "Сегодня день уборки улиц. Посмотри на знак — по вторникам с восьми до двенадцати здесь нельзя стоять.",
+    "en": "It's street-cleaning day today. Check the sign – on Tuesdays between eight and twelve you can't park here."
+   },
+   {
+    "who": "A",
+    "uz": "Det har jag missat helt. Kan jag överklaga?",
+    "ru": "Я совсем это упустила. Можно обжаловать?",
+    "en": "I completely missed that. Can I appeal?"
+   },
+   {
+    "who": "B",
+    "uz": "Du kan bestrida avgiften, men om skylten är tydlig vinner du nog inte.",
+    "ru": "Можно оспорить штраф, но если знак понятный, вряд ли выиграешь.",
+    "en": "You can contest the fee, but if the sign is clear you probably won't win."
+   },
+   {
+    "who": "A",
+    "uz": "Vad händer om jag inte betalar?",
+    "ru": "А что будет, если я не заплачу?",
+    "en": "What happens if I don't pay?"
+   },
+   {
+    "who": "B",
+    "uz": "Då blir det dyrare, och till slut kan det gå till Kronofogden. Det vill du inte.",
+    "ru": "Тогда будет дороже, а в конце концов дело может попасть к приставам. Тебе это не надо.",
+    "en": "Then it gets more expensive, and eventually it may go to the Enforcement Authority. You don't want that."
+   },
+   {
+    "who": "A",
+    "uz": "Nej, verkligen inte. Då betalar jag direkt via appen.",
+    "ru": "Нет, точно нет. Тогда сразу оплачу через приложение.",
+    "en": "No, definitely not. Then I'll pay right away via the app."
+   },
+   {
+    "who": "B",
+    "uz": "Klokt. Och ladda ner kommunens parkeringsapp, den påminner dig om städdagar.",
+    "ru": "Разумно. И скачай городское приложение для парковки — оно напоминает о днях уборки.",
+    "en": "Wise. And download the municipality's parking app; it reminds you about cleaning days."
+   },
+   {
+    "who": "A",
+    "uz": "Bra tips. Vintertid är det väl ännu krångligare med snöröjningen?",
+    "ru": "Хороший совет. А зимой, наверное, ещё сложнее из-за уборки снега?",
+    "en": "Good tip. In winter it's probably even more complicated with snow clearing?"
+   },
+   {
+    "who": "B",
+    "uz": "Precis, då flyttar man bilen när plogbilen ska komma. Annars kan den bli bortforslad.",
+    "ru": "Точно, тогда машину переставляют, когда должен приехать снегоочиститель. Иначе её могут эвакуировать.",
+    "en": "Exactly, then you move the car when the snowplough is due. Otherwise it can be towed away."
+   }
+  ],
+  "vocab": [
+   "en bil",
+   "en gata",
+   "parkera",
+   "tisdag",
+   "betala",
+   "en app",
+   "en kommun"
+  ],
+  "note_ru": "«Boendeparkering» — разрешение на парковку для жителей района. В дни уборки улиц (städdag) машины нужно убирать. Неоплаченный штраф может попасть в Kronofogden, а это испортит кредитную историю.",
+  "note_uz": "Boendeparkering är ett tillstånd för dem som bor i området. På städdagar måste bilarna flyttas. En obetald avgift kan hamna hos Kronofogden.",
+  "note_en": "\"Boendeparkering\" is a residents' parking permit. On street-cleaning days cars must be moved. An unpaid fine can end up with the Enforcement Authority, which harms your credit record."
+ },
+ {
+  "n": 28,
+  "cefr": "B2",
+  "section": "Город и транспорт",
+  "title_ru": "Потерянный рюкзак",
+  "title_uz": "Den borttappade ryggsäcken",
+  "title_en": "The lost rucksack",
+  "intro_ru": "Анна забыла рюкзак в электричке и обращается в бюро находок.",
+  "intro_uz": "Anna har glömt sin ryggsäck på pendeltåget och vänder sig till hittegodset.",
+  "intro_en": "Anna left her rucksack on the commuter train and contacts lost property.",
+  "speakers": {
+   "A": "Anna",
+   "B": "Hittegods"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Hej, jag glömde min ryggsäck på pendeltåget i morse.",
+    "ru": "Здравствуйте, я сегодня утром забыла рюкзак в электричке.",
+    "en": "Hi, I left my rucksack on the commuter train this morning."
+   },
+   {
+    "who": "B",
+    "uz": "Vilket tåg var det, och vid vilken tid?",
+    "ru": "Какой это был поезд и в какое время?",
+    "en": "Which train was it, and at what time?"
+   },
+   {
+    "who": "A",
+    "uz": "Tåget från Uppsala som kom till Stockholm C kvart över åtta.",
+    "ru": "Поезд из Уппсалы, который прибыл на Центральный вокзал Стокгольма в четверть девятого.",
+    "en": "The train from Uppsala that arrived at Stockholm Central at quarter past eight."
+   },
+   {
+    "who": "B",
+    "uz": "Kan du beskriva ryggsäcken?",
+    "ru": "Можете описать рюкзак?",
+    "en": "Can you describe the rucksack?"
+   },
+   {
+    "who": "A",
+    "uz": "Den är mörkblå med ett rött band. I den ligger en dator, en plånbok och en bok på svenska.",
+    "ru": "Тёмно-синий с красной лентой. В нём ноутбук, кошелёк и книга на шведском.",
+    "en": "It's dark blue with a red strap. Inside are a laptop, a wallet and a book in Swedish."
+   },
+   {
+    "who": "B",
+    "uz": "Ett ögonblick, jag kollar i systemet... Nej, tyvärr har inget sådant lämnats in än.",
+    "ru": "Минуточку, проверю в системе… Нет, к сожалению, пока ничего такого не сдавали.",
+    "en": "One moment, I'll check the system... No, unfortunately nothing like that has been handed in yet."
+   },
+   {
+    "who": "A",
+    "uz": "Åh nej. Vad ska jag göra nu?",
+    "ru": "О нет. Что мне теперь делать?",
+    "en": "Oh no. What should I do now?"
+   },
+   {
+    "who": "B",
+    "uz": "Fyll i en efterlysning på vår webbplats. Då får du ett mejl om den dyker upp.",
+    "ru": "Заполните заявку о пропаже на нашем сайте. Если рюкзак найдётся, вы получите письмо.",
+    "en": "Fill in a lost-item report on our website. Then you'll get an email if it turns up."
+   },
+   {
+    "who": "A",
+    "uz": "Ska jag spärra mitt bankkort?",
+    "ru": "Мне заблокировать банковскую карту?",
+    "en": "Should I block my bank card?"
+   },
+   {
+    "who": "B",
+    "uz": "Ja, gör det direkt för säkerhets skull. Och om id-kortet är borta kan du göra en polisanmälan.",
+    "ru": "Да, сделайте это сразу на всякий случай. А если пропало удостоверение, можно подать заявление в полицию.",
+    "en": "Yes, do it right away to be safe. And if your ID card is gone, you can file a police report."
+   },
+   {
+    "who": "A",
+    "uz": "Tack, det gör jag. Brukar saker komma tillbaka?",
+    "ru": "Спасибо, так и сделаю. Вещи обычно возвращаются?",
+    "en": "Thanks, I'll do that. Do things usually come back?"
+   },
+   {
+    "who": "B",
+    "uz": "Ofta, faktiskt. Folk i Sverige lämnar ofta in det de hittar. Lycka till!",
+    "ru": "Часто, на самом деле. В Швеции люди обычно сдают найденное. Удачи!",
+    "en": "Often, actually. People in Sweden often hand in what they find. Good luck!"
+   }
+  ],
+  "vocab": [
+   "ett tåg",
+   "en dator",
+   "en plånbok",
+   "en bok",
+   "ett bankkort",
+   "ett id kort",
+   "polisen",
+   "lycka till"
+  ],
+  "note_ru": "«Hittegods» — бюро находок. «Spärra kortet» — заблокировать карту. «Polisanmälan» — заявление в полицию, его можно подать на сайте polisen.se. В Швеции найденные вещи часто сдают.",
+  "note_uz": "Hittegods är där borttappade saker samlas. «Spärra kortet» gör man via banken. En polisanmälan kan man göra på polisen.se.",
+  "note_en": "\"Hittegods\" is lost property. \"Spärra kortet\" means to block your card. A police report (polisanmälan) can be filed on polisen.se. In Sweden found items are often handed in."
+ },
+ {
+  "n": 29,
+  "cefr": "B2",
+  "section": "Покупки и еда",
+  "title_ru": "Возврат товара",
+  "title_uz": "Att lämna tillbaka en vara",
+  "title_en": "Returning an item",
+  "intro_ru": "Анна купила куртку, но молния сломалась через неделю. Она возвращается в магазин.",
+  "intro_uz": "Anna köpte en jacka, men blixtlåset gick sönder efter en vecka. Hon går tillbaka till butiken.",
+  "intro_en": "Anna bought a jacket, but the zip broke after a week. She goes back to the shop.",
+  "speakers": {
+   "A": "Anna",
+   "B": "Expedit"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Hej, jag köpte den här jackan förra veckan, och blixtlåset har redan gått sönder.",
+    "ru": "Здравствуйте, я купила эту куртку на прошлой неделе, а молния уже сломалась.",
+    "en": "Hi, I bought this jacket last week, and the zip has already broken."
+   },
+   {
+    "who": "B",
+    "uz": "Oj, det var tråkigt. Har du kvittot kvar?",
+    "ru": "Ой, как неприятно. Чек у вас сохранился?",
+    "en": "Oh, that's a shame. Do you still have the receipt?"
+   },
+   {
+    "who": "A",
+    "uz": "Ja, här är det, och jag betalade med kort.",
+    "ru": "Да, вот он, и я платила картой.",
+    "en": "Yes, here it is, and I paid by card."
+   },
+   {
+    "who": "B",
+    "uz": "Tack. Vill du ha en ny jacka eller pengarna tillbaka?",
+    "ru": "Спасибо. Хотите новую куртку или вернуть деньги?",
+    "en": "Thanks. Would you like a new jacket or your money back?"
+   },
+   {
+    "who": "A",
+    "uz": "Har ni samma jacka i storlek M?",
+    "ru": "У вас есть такая же куртка размера M?",
+    "en": "Do you have the same jacket in size M?"
+   },
+   {
+    "who": "B",
+    "uz": "Tyvärr inte just nu. Den kommer in om två veckor.",
+    "ru": "К сожалению, сейчас нет. Поступит через две недели.",
+    "en": "Unfortunately not right now. It will come in in two weeks."
+   },
+   {
+    "who": "A",
+    "uz": "Då vill jag hellre ha pengarna tillbaka.",
+    "ru": "Тогда я лучше верну деньги.",
+    "en": "Then I'd rather have my money back."
+   },
+   {
+    "who": "B",
+    "uz": "Det går bra. Pengarna kommer tillbaka på kortet inom några dagar.",
+    "ru": "Хорошо. Деньги вернутся на карту в течение нескольких дней.",
+    "en": "That's fine. The money will go back onto your card within a few days."
+   },
+   {
+    "who": "A",
+    "uz": "Tack. Får man alltid lämna tillbaka varor i Sverige?",
+    "ru": "Спасибо. В Швеции всегда можно вернуть товар?",
+    "en": "Thanks. Can you always return items in Sweden?"
+   },
+   {
+    "who": "B",
+    "uz": "Om varan är trasig har du rätt att reklamera i tre år. Öppet köp är däremot något butiken erbjuder frivilligt.",
+    "ru": "Если товар бракованный, у вас есть право на претензию в течение трёх лет. А возврат исправного товара — это добровольная услуга магазина.",
+    "en": "If the item is faulty you have the right to complain for three years. A return of an undamaged item, on the other hand, is something the shop offers voluntarily."
+   },
+   {
+    "who": "A",
+    "uz": "Och om man handlar på nätet?",
+    "ru": "А если покупаешь в интернете?",
+    "en": "And if you shop online?"
+   },
+   {
+    "who": "B",
+    "uz": "Då har du fjorton dagars ångerrätt enligt lag. Konsumentverket har mer information.",
+    "ru": "Тогда по закону у вас есть четырнадцать дней на отказ от покупки. Подробнее — у Агентства по защите потребителей.",
+    "en": "Then you have fourteen days' right of withdrawal by law. The Consumer Agency has more information."
+   }
+  ],
+  "vocab": [
+   "en jacka",
+   "ett kvitto",
+   "ett kort",
+   "pengar",
+   "en storlek",
+   "en vecka",
+   "en affär"
+  ],
+  "note_ru": "«Reklamation» — претензия на бракованный товар, на неё есть право три года. «Öppet köp» — возможность вернуть исправный товар, магазин предлагает её сам. При покупке в интернете действует право отказа (ångerrätt) 14 дней.",
+  "note_uz": "Att reklamera betyder att klaga på en felaktig vara; det får man göra i tre år. Öppet köp är frivilligt för butiken. Vid köp på nätet gäller 14 dagars ångerrätt.",
+  "note_en": "\"Reklamera\" means to complain about a faulty item; you have three years to do so. \"Öppet köp\" (returning an undamaged item) is voluntary for the shop. For online purchases there is a 14-day right of withdrawal."
+ },
+ {
+  "n": 30,
+  "cefr": "B2",
+  "section": "Быт и услуги",
+  "title_ru": "Слишком высокая аренда",
+  "title_uz": "För hög hyra",
+  "title_en": "Rent that is too high",
+  "intro_ru": "Анна снимает квартиру в субаренду и подозревает, что платит слишком много. Она советуется с подругой-юристом Ниной.",
+  "intro_uz": "Anna hyr i andra hand och misstänker att hon betalar för mycket. Hon frågar sin väninna Nina, som är jurist.",
+  "intro_en": "Anna is subletting and suspects she is paying too much. She asks her friend Nina, who is a lawyer.",
+  "speakers": {
+   "A": "Anna",
+   "B": "Nina"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Jag betalar elvatusen i månaden för en etta. Är det inte väldigt mycket?",
+    "ru": "Я плачу одиннадцать тысяч в месяц за однокомнатную квартиру. Это не слишком много?",
+    "en": "I pay eleven thousand a month for a one-room flat. Isn't that a lot?"
+   },
+   {
+    "who": "B",
+    "uz": "Det låter högt. Hyr du i andra hand av någon som själv hyr?",
+    "ru": "Звучит дорого. Ты снимаешь у человека, который сам арендует?",
+    "en": "That sounds high. Are you subletting from someone who rents themselves?"
+   },
+   {
+    "who": "A",
+    "uz": "Ja, han har ett förstahandskontrakt och har flyttat till Göteborg.",
+    "ru": "Да, у него договор из первых рук, а сам он переехал в Гётеборг.",
+    "en": "Yes, he has a first-hand contract and has moved to Gothenburg."
+   },
+   {
+    "who": "B",
+    "uz": "Då får han bara ta ut ungefär samma hyra som han själv betalar, plus lite för möblerna.",
+    "ru": "Тогда он может брать примерно столько же, сколько платит сам, плюс немного за мебель.",
+    "en": "Then he may only charge roughly the same rent as he pays himself, plus a little for the furniture."
+   },
+   {
+    "who": "A",
+    "uz": "Jag vet inte vad han betalar. Hur tar jag reda på det?",
+    "ru": "Я не знаю, сколько он платит. Как это узнать?",
+    "en": "I don't know what he pays. How do I find out?"
+   },
+   {
+    "who": "B",
+    "uz": "Du kan fråga hyresvärden, eller jämföra med liknande lägenheter i huset.",
+    "ru": "Можно спросить владельца дома или сравнить с похожими квартирами в доме.",
+    "en": "You can ask the landlord, or compare with similar flats in the building."
+   },
+   {
+    "who": "A",
+    "uz": "Har hyresvärden godkänt andrahandsuthyrningen förresten?",
+    "ru": "Кстати, владелец вообще разрешил субаренду?",
+    "en": "Has the landlord actually approved the sublet, by the way?"
+   },
+   {
+    "who": "B",
+    "uz": "Det är viktigt att kolla. Annars riskerar ni båda problem.",
+    "ru": "Это важно проверить. Иначе у вас обоих могут быть проблемы.",
+    "en": "That's important to check. Otherwise you could both get into trouble."
+   },
+   {
+    "who": "A",
+    "uz": "Och om hyran är för hög, vad kan jag göra?",
+    "ru": "А если плата слишком высокая, что я могу сделать?",
+    "en": "And if the rent is too high, what can I do?"
+   },
+   {
+    "who": "B",
+    "uz": "Du kan ansöka hos hyresnämnden om att få tillbaka det du har betalat för mycket. Det kostar inget att ansöka.",
+    "ru": "Можно подать заявление в арендную комиссию, чтобы вернуть переплату. Подача бесплатна.",
+    "en": "You can apply to the Rent Tribunal to get back what you've overpaid. It costs nothing to apply."
+   },
+   {
+    "who": "A",
+    "uz": "Men då blir han kanske arg och säger upp mig.",
+    "ru": "Но тогда он, может, рассердится и выгонит меня.",
+    "en": "But then he might get angry and give me notice."
+   },
+   {
+    "who": "B",
+    "uz": "Det är en risk. Men du har rätt till uppsägningstid, och lagen står på din sida. Prata först lugnt med honom.",
+    "ru": "Это риск. Но у тебя есть право на срок уведомления, и закон на твоей стороне. Сначала спокойно поговори с ним.",
+    "en": "That's a risk. But you have a right to a notice period, and the law is on your side. Talk to him calmly first."
+   },
+   {
+    "who": "A",
+    "uz": "Det låter klokt. Jag tar ett samtal med honom i helgen.",
+    "ru": "Звучит разумно. Поговорю с ним на выходных.",
+    "en": "That sounds sensible. I'll have a talk with him at the weekend."
+   },
+   {
+    "who": "B",
+    "uz": "Bra. Hör av dig om du behöver hjälp med ansökan.",
+    "ru": "Хорошо. Дай знать, если понадобится помощь с заявлением.",
+    "en": "Good. Let me know if you need help with the application."
+   }
+  ],
+  "vocab": [
+   "en hyra",
+   "en lägenhet",
+   "en hyresvärd",
+   "en månad",
+   "en lag",
+   "en ansökan"
+  ],
+  "note_ru": "«Etta» — однокомнатная квартира, «tvåa» — двухкомнатная. Субарендатор может вернуть переплату через hyresnämnden. «Säga upp» — расторгнуть договор. «Hör av dig» — «дай о себе знать».",
+  "note_uz": "En etta är en lägenhet med ett rum, en tvåa har två rum. Den som hyr i andra hand kan få tillbaka för hög hyra via hyresnämnden. «Hör av dig» betyder att man ska höra av sig.",
+  "note_en": "An \"etta\" is a one-room flat, a \"tvåa\" a two-room flat. A subtenant can recover excessive rent through the Rent Tribunal. \"Säga upp\" means to terminate a contract. \"Hör av dig\" means \"get in touch\"."
+ }
+]

@@ -27,6 +27,19 @@
       },
       "timezone": "Asia/Tashkent",
       "tts": "gtts"
+    },
+    {
+      "code": "sv",
+      "base": "swedish",
+      "enabled": true,
+      "flag": "🇸🇪",
+      "name": {
+        "ru": "Шведский",
+        "en": "Swedish",
+        "native": "Svenska"
+      },
+      "timezone": "Europe/Stockholm",
+      "tts": "edge"
     }
   ]
 }

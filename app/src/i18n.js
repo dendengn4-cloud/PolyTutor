@@ -1,7 +1,8 @@
 // Тексты интерфейса на трёх языках. Новый язык = ещё один объект с теми же ключами.
-// Polytutor: язык интерфейса — русский, английский или изучаемый язык (hy — i18n-hy.js, uz — объект uz ниже).
+// Polytutor: язык интерфейса — русский, английский или изучаемый язык (hy — i18n-hy.js, sv — i18n-sv.js, uz — объект uz ниже).
 // Тексты, которые зависят от изучаемого языка, — в app/src/langs/<код>/i18n-lang.js.
 import { hy } from './i18n-hy.js';
+import { sv } from './i18n-sv.js';
 import { LANG } from './lang/info.js';
 import { OVERRIDES } from './lang/i18n-lang.js';
 
@@ -1556,7 +1557,7 @@ Object.assign(en, {
   courseLangCurrent: 'current',
 });
 
-const dict = { ru, uz, hy, en };
+const dict = { ru, uz, hy, sv, en };
 // тексты, которые зависят от изучаемого языка (lang/i18n-lang.js), — поверх общих
 for (const [l, o] of Object.entries(OVERRIDES)) if (dict[l]) Object.assign(dict[l], o);
 let lang = 'ru';
@@ -1574,6 +1575,6 @@ export function tierName(tier) {
 }
 // армянский формат даты — ДД.ММ.ГГГГ (как в ru-RU; hy-AM в части браузеров даёт М/Д/ГГГГ)
 export function formatDate(iso) {
-  const locale = lang === 'en' ? 'en-GB' : lang === 'hy' ? 'ru-RU' : lang === 'uz' ? 'uz-Latn-UZ' : 'ru-RU';
+  const locale = lang === 'en' ? 'en-GB' : lang === 'hy' ? 'ru-RU' : lang === 'uz' ? 'uz-Latn-UZ' : lang === 'sv' ? 'sv-SE' : 'ru-RU';
   try { return new Date(iso).toLocaleDateString(locale); } catch { return String(iso).slice(0, 10); }
 }

@@ -1,0 +1,47 @@
+# Самые нужные разговорные фразы — отдельная тема на A1 («Разговорная речь. Самое нужное»).
+# Остальная разговорная лексика из colloquial.json — одной темой в начале A2. Одна строка — один ID.
+20001 # tjena
+20002 # tja
+20003 # hallå
+20004 # läget?
+20005 # hur är läget?
+20006 # lugnt
+20008 # hejsan
+20009 # hej hej
+20010 # ses!
+20011 # hörs!
+20012 # ha det bra
+20013 # ha det
+20014 # trevlig helg
+20015 # tackar
+20017 # tack för maten
+20018 # ingen fara
+20019 # inga problem
+20024 # va?
+20025 # japp
+20026 # jo
+20027 # nä
+20029 # visst
+20030 # okej
+20032 # låter bra
+20034 # vet inte
+20039 # oj
+20040 # aj
+20041 # usch
+20043 # wow
+20044 # vad kul!
+20045 # kul
+20050 # jätte-
+20052 # tråkigt
+20056 # mysigt
+20066 # eller hur?
+20068 # mej
+20069 # dej
+20070 # sej
+20071 # dom
+20072 # nån
+20073 # nåt
+20074 # nåra
+20075 # sån
+20076 # såna
+20077 # sa

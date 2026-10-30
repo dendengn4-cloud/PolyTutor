@@ -32,7 +32,7 @@
 
 import { createClient } from "npm:@supabase/supabase-js@2";
 
-type Lang = "ru" | "hy" | "uz" | "en";
+type Lang = "ru" | "hy" | "uz" | "sv" | "en";
 
 const TEXT = {
   ru: {
@@ -119,6 +119,34 @@ const TEXT = {
       `Yaratilgan kodlar: ${n}\nObuna: ${tier === "basic" ? "Asosiy" : "Kengaytirilgan"}, ${months} oy\nHar bir kod: ${uses} marta\n\nKodlar faqat bir marta koʻrsatiladi:`,
     error: "Buyruqni bajarib boʻlmadi. Keyinroq urinib koʻring.",
   },
+  sv: {
+    start: (name: string) =>
+      `Hej, ${name}! 👋\n\nDet här är Polytutor – självstudiekurser i språk i Telegram: ord med exempel och ljud, grammatik med tester, talspråk, historia och kultur.\n\nTryck på knappen nedan och välj språk.`,
+    open: "Öppna appen",
+    help: "Kommandon:\n/start – öppna appen\n/paysupport – hjälp med betalning\n/terms – villkor för prenumeration\n/id – mitt Telegram-ID\n/help – hjälp",
+    adminHelp: "\n\nAdministratör:\n/gencode basic|advanced 1|3|6|12 antal [aktiveringar]\n/refund ID – återbetala stjärnor\n/grant ID|@username basic|advanced månader – ge en prenumeration\n/alphacode antal [månader] – koder för alfatestare",
+    tierName: (tier: string) => (tier === "basic" ? "Bas" : "Avancerad"),
+    invoiceTitle: (tier: string, months: number) => `Prenumeration ${tier === "basic" ? "Bas" : "Avancerad"} · ${months} mån.`,
+    invoiceDesc: (tier: string, months: number) =>
+      tier === "basic"
+        ? `Obegränsad ordinlärning, träning, spel och grammatik i ${months} mån.`
+        : `Allt i Bas + historia, samhällskunskap, kultur, ordletare och utökad statistik i ${months} mån.`,
+    paid: (tier: string, until: string) => `Betalningen är mottagen ✅\nPrenumerationen ${tier === "basic" ? "Bas" : "Avancerad"} gäller till ${until}.`,
+    payFailed: "Betalningen är mottagen, men prenumerationen kunde inte förlängas automatiskt. Skriv /paysupport.",
+    paySupport: (admin: string) =>
+      `Hjälp med betalning.\n\nOm stjärnorna har dragits men prenumerationen inte syns, eller om du vill avbryta – skriv till administratören: ${admin}.\nAnge datum för betalningen. Gruppprenumerationer återbetalas inte.`,
+    terms:
+      "Villkor för prenumeration\n\n• Prenumerationen betalas med Telegram-stjärnor för 1, 3, 6 eller 12 månader och förnyas inte automatiskt.\n• En ny betalning på samma nivå förlänger prenumerationen från dess slutdatum. Om båda gäller används Avancerad först, och Bas fortsätter efter den under den återstående tiden.\n• Bjud in en vän med din länk (Inställningar → Prenumeration): hen får en kupong på −5 % på sin första betalning, och du får en kupong på −5 % när hen skaffar prenumeration. Kupongerna är personliga och går aldrig ut; en kupong sänker priset (redan med rabatt för perioden) med ytterligare 5 %; 1 kupong per vanlig prenumeration, upp till 3 per gruppprenumeration (varje −5 % på en deltagares andel).\n• Gruppprenumerationer återbetalas inte. Om Telegram ändå återbetalar stjärnorna avslutas prenumerationen för köparen och för alla som har aktiverat gruppens koder; för att fortsätta kan du skaffa en egen prenumeration.\n• Frågor och återbetalningar – /paysupport.",
+    refundUsage: "Format: /refund ID",
+    refundDone: (stars: number) => `Återbetalt: ${stars} ⭐.`,
+    refundFail: (e: string) => `Återbetalningen misslyckades: ${e}`,
+    refundGroup: "Det här är en gruppprenumeration – enligt villkoren återbetalas den inte. Ingen återbetalning gjordes.",
+    notAdmin: "Kommandot är bara för administratörer.",
+    badArgs: "Format: /gencode basic|advanced 1|3|6|12 antal [aktiveringar]",
+    codes: (tier: string, months: number, n: number, uses: number) =>
+      `Skapade koder: ${n}\nPrenumeration: ${tier === "basic" ? "Bas" : "Avancerad"}, ${months} mån.\nAktiveringar per kod: ${uses}\n\nKoderna visas bara en gång – spara dem:`,
+    error: "Kommandot kunde inte utföras. Försök igen senare.",
+  },
   en: {
     start: (name: string) =>
       `Hi, ${name}! 👋\n\nThis is Polytutor — self-study language courses in Telegram: words with examples and audio, grammar with tests, everyday speech, history and culture.\n\nTap the button below and choose a language.`,
@@ -154,6 +182,7 @@ const GROUP_NOTE: Record<Lang, string> = {
   ru: "Групповая: вам подписка и 2 кода для друзей.",
   hy: "Խմբային՝ ձեզ բաժանորդագրություն և 2 կոդ ընկերների համար։",
   uz: "Guruh: sizga obuna va doʻstlar uchun 2 ta kod.",
+  sv: "Grupp: en prenumeration till dig och 2 koder till vänner.",
   en: "Group: your plan plus 2 codes for friends.",
 };
 // Групповая подписка отменена возвратом через Telegram → предложение личного тарифа
@@ -161,6 +190,7 @@ const GROUP_ENDED: Record<Lang, (tier: string, months: number, stars: number) =>
   ru: (tier, m, st) => `Групповая подписка отменена: за неё был оформлен возврат звёзд, поэтому доступ по ней закрыт.\n\nЧтобы продолжить, оформите личную подписку «${tier}» на ${m} мес. — ${st} ⭐ (Настройки → Подписка).`,
   hy: (tier, m, st) => `Խմբային բաժանորդագրությունը չեղարկվել է. դրա աստղերը վերադարձվել են, ուստի մուտքը փակված է։\n\nՇարունակելու համար ձևակերպեք «${tier}» անձնական բաժանորդագրություն ${m} ամսով — ${st} ⭐ (Կարգավորումներ → Բաժանորդագրություն)։`,
   uz: (tier, m, st) => `Guruh obunasi bekor qilindi: u uchun yulduzlar qaytarildi, shuning uchun kirish yopildi.\n\nDavom etish uchun «${tier}» shaxsiy obunasini ${m} oyga rasmiylashtiring — ${st} ⭐ (Sozlamalar → Obuna).`,
+  sv: (tier, m, st) => `Gruppprenumerationen har avslutats eftersom stjärnorna för den återbetalades, så åtkomsten via den har upphört.\n\nFör att fortsätta kan du skaffa en egen prenumeration ${tier} för ${m} mån. – ${st} ⭐ (Inställningar → Prenumeration).`,
   en: (tier, m, st) => `Your group plan was cancelled because its stars were refunded, so access through it has ended.\n\nTo continue, take a personal “${tier}” plan for ${m} mo. — ${st} ⭐ (Settings → Subscription).`,
 };
 // Реферальная программа: купоны −5%
@@ -168,6 +198,7 @@ const COUPON_NOTE: Record<Lang, (n: number) => string> = {
   ru: (n) => `Применено купонов: ${n}.`,
   hy: (n) => `Կիրառված կտրոններ՝ ${n}։`,
   uz: (n) => `Qoʻllangan kuponlar: ${n}.`,
+  sv: (n) => `Använda kuponger: ${n}.`,
   en: (n) => `Coupons applied: ${n}.`,
 };
 const REF_TEXT = {
@@ -183,6 +214,10 @@ const REF_TEXT = {
     welcome: "🎁 Siz doʻstingiz taklifi bilan keldingiz — birinchi obuna toʻloviga −5% kupon. U ilovada: Sozlamalar → Obuna.",
     earned: (n: number) => `🎉 Doʻstingiz havolangiz orqali obuna boʻldi — sizga −5% kupon berildi. Mavjud kuponlar: ${n}.\nQoʻllash: ilova → Sozlamalar → Obuna.`,
   },
+  sv: {
+    welcome: "🎁 Du kom hit via en väns inbjudan – du får en kupong på −5 % på din första betalning. Du hittar den i appen: Inställningar → Prenumeration.",
+    earned: (n: number) => `🎉 Din vän skaffade prenumeration via din länk – du har fått en kupong på −5 %. Tillgängliga kuponger: ${n}.\nAnvänd den: appen → Inställningar → Prenumeration.`,
+  },
   en: {
     welcome: "🎁 You joined through a friend’s invite — you get a −5% coupon for your first subscription payment. Find it in the app: Settings → Subscription.",
     earned: (n: number) => `🎉 Your friend subscribed through your link — you’ve earned a −5% coupon. Coupons available: ${n}.\nUse it: app → Settings → Subscription.`,
@@ -193,17 +228,19 @@ const GROUP_CODES: Record<Lang, string> = {
   ru: "Коды для друзей (активировать в приложении: Подписка → Код подписки; также видны там же):",
   hy: "Կոդեր ընկերների համար (ակտիվացվում են հավելվածում՝ Բաժանորդագրություն → Բաժանորդագրության կոդ, տեսանելի են նաև այնտեղ)՝",
   uz: "Doʻstlar uchun kodlar (ilovada faollashtiriladi: Obuna → Obuna kodi; ular u yerda ham koʻrinadi):",
+  sv: "Koder till vänner (aktiveras i appen: Prenumeration → Prenumerationskod; de visas också där):",
   en: "Codes for friends (activate in the app: Subscription → Subscription code; also listed there):",
 };
 
-// Язык сообщений бота: язык интерфейса Telegram (ru / hy / uz), иначе английский
+// Язык сообщений бота: язык интерфейса Telegram (ru / hy / uz / sv), иначе английский
 export function asLang(v: unknown): Lang {
-  return v === "hy" || v === "uz" || v === "en" ? v : "ru";
+  return v === "hy" || v === "uz" || v === "sv" || v === "en" ? v : "ru";
 }
 function langOf(code?: string): Lang {
   if (!code) return "ru";
   if (code.startsWith("hy")) return "hy";
   if (code.startsWith("uz")) return "uz";
+  if (code.startsWith("sv")) return "sv";
   if (code.startsWith("ru")) return "ru";
   return "en";
 }
@@ -212,15 +249,18 @@ function langOf(code?: string): Lang {
 type CourseNames = { flag: string; tz: string; acc: Record<Lang, string>; gen: Record<Lang, string> };
 const COURSE: Record<string, CourseNames> = {
   hy: { flag: "🇦🇲", tz: "Asia/Yerevan",
-        acc: { ru: "армянский", hy: "հայերեն", uz: "arman tilini", en: "Armenian" },
-        gen: { ru: "армянского", hy: "հայերենի", uz: "Arman tilidan", en: "Armenian" } },
+        acc: { ru: "армянский", hy: "հայերեն", uz: "arman tilini", sv: "armeniska", en: "Armenian" },
+        gen: { ru: "армянского", hy: "հայերենի", uz: "Arman tilidan", sv: "armeniska", en: "Armenian" } },
   uz: { flag: "🇺🇿", tz: "Asia/Tashkent",
-        acc: { ru: "узбекский", hy: "ուզբեկերեն", uz: "oʻzbek tilini", en: "Uzbek" },
-        gen: { ru: "узбекского", hy: "ուզբեկերենի", uz: "Oʻzbek tilidan", en: "Uzbek" } },
+        acc: { ru: "узбекский", hy: "ուզբեկերեն", uz: "oʻzbek tilini", sv: "uzbekiska", en: "Uzbek" },
+        gen: { ru: "узбекского", hy: "ուզբեկերենի", uz: "Oʻzbek tilidan", sv: "uzbekiska", en: "Uzbek" } },
+  sv: { flag: "🇸🇪", tz: "Europe/Stockholm",
+        acc: { ru: "шведский", hy: "շվեդերեն", uz: "shved tilini", sv: "svenska", en: "Swedish" },
+        gen: { ru: "шведского", hy: "շվեդերենի", uz: "Shved tilidan", sv: "svenska", en: "Swedish" } },
 };
 const NO_COURSE: CourseNames = { flag: "🌍", tz: "Asia/Tashkent",
-  acc: { ru: "языки", hy: "լեզուներ", uz: "tillarni", en: "languages" },
-  gen: { ru: "языка", hy: "լեզվի", uz: "Til", en: "language" } };
+  acc: { ru: "языки", hy: "լեզուներ", uz: "tillarni", sv: "språk", en: "languages" },
+  gen: { ru: "языка", hy: "լեզվի", uz: "Til", sv: "språk", en: "language" } };
 export const courseOf = (schema: string): CourseNames => COURSE[schema] ?? NO_COURSE;
 
 function escapeHtml(s: string): string {
@@ -254,7 +294,7 @@ function json(body: unknown, status = 200): Response {
 
 function formatDate(iso: string, lang: Lang, tz = "Asia/Tashkent"): string {
   try {
-    return new Date(iso).toLocaleDateString(lang === "en" ? "en-GB" : lang === "hy" ? "hy-AM" : lang === "uz" ? "uz-Latn-UZ" : "ru-RU", { timeZone: tz });
+    return new Date(iso).toLocaleDateString(lang === "en" ? "en-GB" : lang === "hy" ? "hy-AM" : lang === "uz" ? "uz-Latn-UZ" : lang === "sv" ? "sv-SE" : "ru-RU", { timeZone: tz });
   } catch {
     return iso.slice(0, 10);
   }
@@ -357,6 +397,7 @@ const SHARE_TEXT: Record<Lang, { caption: (link: string, c: CourseNames) => stri
   ru: { caption: (l, c) => `Учу ${c.acc.ru} в Telegram — присоединяйся! ${c.flag}\nПо моей ссылке — скидка 5% на подписку:\n${l}`, button: (c) => `Учить ${c.acc.ru}` },
   hy: { caption: (l, c) => `Telegram-ում ${c.acc.hy} եմ սովորում՝ միացի՛ր։ ${c.flag}\nԻմ հղումով՝ 5% զեղչ բաժանորդագրության համար՝\n${l}`, button: () => "Սկսել սովորել" },
   uz: { caption: (l, c) => `Telegramda ${c.acc.uz} oʻrganyapman — qoʻshil! ${c.flag}\nMening havolam orqali obunaga 5% chegirma:\n${l}`, button: () => "Oʻrganishni boshlash" },
+  sv: { caption: (l, c) => `Jag lär mig ${c.acc.sv} i Telegram – häng med! ${c.flag}\nMed min länk får du 5 % rabatt på prenumerationen:\n${l}`, button: (c) => `Lär dig ${c.acc.sv}` },
   en: { caption: (l, c) => `I’m learning ${c.acc.en} in Telegram — join me! ${c.flag}\nMy link gives you 5% off a subscription:\n${l}`, button: (c) => `Learn ${c.acc.en}` },
 };
 export function shareImageUrl(appUrl: string, image: string, lang: Lang): string {
@@ -559,6 +600,18 @@ const REMIND = {
     subEnd: (tier: string, date: string) => `«${tier}» obunasi ${date} da tugaydi. Uzaytirish: ilovada Sozlamalar → Obuna.`,
     open: "Ilovani ochish",
     tiers: { basic: "Asosiy", advanced: "Kengaytirilgan" } as Record<string, string>,
+  },
+  sv: {
+    hi: (name: string) => `Hej${name ? `, ${name}` : ""}! 👋`,
+    due: (n: number) => `I dag väntar ${n} ord på repetition. 10 minuter – så stannar de i minnet.`,
+    fresh: "Dags att lära dig nya ord – ett pass tar ungefär 10 minuter.",
+    first: (c: CourseNames) => `Börja din första lektion i ${c.gen.sv} – ungefär 10 minuter.`,
+    rdToday: "I dag är det fredag, repetitionsdag: först repeterar vi, sedan låses nya ord upp.",
+    rdTomorrow: "I morgon är det fredag, repetitionsdag.",
+    off: "Ändra tiden eller stäng av påminnelserna: Inställningar i appen.",
+    subEnd: (tier: string, date: string) => `Prenumerationen ${tier} slutar ${date}. Du kan förlänga den i appen: Inställningar → Prenumeration.`,
+    open: "Öppna appen",
+    tiers: { basic: "Bas", advanced: "Avancerad" } as Record<string, string>,
   },
   en: {
     hi: (name: string) => `Hi${name ? `, ${name}` : ""}! 👋`,

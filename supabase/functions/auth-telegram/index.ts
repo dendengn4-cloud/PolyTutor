@@ -103,6 +103,7 @@ export function schemaOf(v: unknown): string {
 }
 
 // Технический e-mail пользователя в Supabase Auth. Письма на него не отправляются.
+// Домен не менять: по этому адресу находятся уже созданные учётные записи учеников.
 function techEmail(tgId: number): string {
   return `tg${tgId}@telegram.lang-tutor.app`;
 }
@@ -134,7 +135,12 @@ async function handler(req: Request): Promise<Response> {
   // 1. профиль по tg_id
   const { data: existing, error: selErr } = await admin
     .from("profiles").select("id").eq("tg_id", tg.id).maybeSingle();
-  if (selErr) return json({ error: "db_error", detail: selErr.message }, 500);
+  if (selErr) {
+    // в тексте ошибки — подсказка сервера (какие разделы базы он видит) и ID проекта, чтобы сразу было видно причину
+    const ref = new URL(url).hostname.split(".")[0];
+    const detail = [selErr.message, selErr.hint, `project ${ref}`].filter(Boolean).join(" | ");
+    return json({ error: "db_error", detail }, 500);
+  }
 
   let userId = existing?.id as string | undefined;
 

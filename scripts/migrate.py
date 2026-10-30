@@ -96,7 +96,24 @@ create table if not exists supabase_migrations.schema_migrations (version text p
             n += 1
         print(f'[{code}] новых миграций: {n}', flush=True)
         total += n
+    expose_schemas()
     print(f'Готово. Всего применено: {total}')
+
+
+def expose_schemas():
+    """Список разделов, которые видит Data API (PostgREST), записан в базе (роль authenticator) и главнее
+    поля Exposed schemas в панели Supabase. Записываем туда все включённые языки, чтобы новый язык сразу работал."""
+    langs_file = Path(os.environ.get('LANGS_FILE') or ROOT / 'langs.json')
+    codes = [l['code'] for l in json.loads(langs_file.read_text(encoding='utf-8'))['langs'] if l.get('enabled')]
+    value = ', '.join(['public', 'graphql_public'] + codes)
+    sql = (f"alter role authenticator set pgrst.db_schemas = '{value}';\n"
+           "notify pgrst, 'reload config';\nnotify pgrst, 'reload schema';\n")
+    p = subprocess.run(psql_base() + ['-f', '-'], input=sql, text=True, capture_output=True)
+    if p.returncode != 0:
+        print(f'ВНИМАНИЕ: не удалось записать список разделов Data API ({p.stderr.strip()}). '
+              f'Выполните в SQL Editor: {sql}', flush=True)
+    else:
+        print(f'Разделы Data API: {value}', flush=True)
 
 
 if __name__ == '__main__':
