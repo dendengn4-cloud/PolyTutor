@@ -23,13 +23,29 @@ const INTENSITY = {
   intense: { session_size: 60, new_max: 30 },
 };
 
-// Персонаж языка (avatars/<код>.jpg в корне сайта); если картинки нет — флаг
+// Персонаж языка (app/public/avatars/<код>.jpg — есть в сборке каждого языка); если картинки нет — флаг
 function langAvatar(l) {
   const box = h('span', { class: 'tile-icon lang-flag' });
-  const img = h('img', { class: 'lang-ava', alt: l.flag || '', src: `../avatars/${l.code}.jpg`,
+  const img = h('img', { class: 'lang-ava', alt: l.flag || '', src: `avatars/${l.code}.jpg`,
     onError: () => { img.remove(); box.textContent = l.flag || '🌐'; } });
   box.append(img);
   return box;
+}
+
+// Раздел администратора: свёрнут, раскрывается по нажатию на заголовок (состояние — до закрытия приложения)
+let adminOpen = false;
+function adminSection(app, items) {
+  const body = h('div', { class: 'admin-body' }, items);
+  body.hidden = !adminOpen;
+  const chev = icon('chevron', `ic chev ${adminOpen ? 'up' : 'down'}`);
+  const head = h('button', { class: 'admin-head', type: 'button', 'aria-expanded': String(adminOpen), onClick: () => {
+    adminOpen = !adminOpen;
+    body.hidden = !adminOpen;
+    head.setAttribute('aria-expanded', String(adminOpen));
+    chev.setAttribute('class', `ic chev ${adminOpen ? 'up' : 'down'}`);
+    haptic();
+  } }, h('span', {}, t('adminSection')), chev);
+  return [head, body];
 }
 
 export async function renderSettings(app, params = {}) {
@@ -147,8 +163,7 @@ export async function renderSettings(app, params = {}) {
         h('div', {}, h('b', {}, t('communityTitle')), h('div', { class: 'small muted' }, t('communityText'))),
         icon('chevron', 'ic chev'))] : null,
 
-    me.is_admin ? [
-      h('h2', {}, t('adminSection')),
+    me.is_admin ? adminSection(app, [
       h('button', { class: 'card sub-card', type: 'button', onClick: () => app.go('review') },
         h('span', { class: 'tile-icon gold' }, icon('test')),
         h('div', {}, h('b', {}, t('reviewTitle')), h('div', { class: 'small muted' }, t('reviewShort'))),
@@ -168,7 +183,11 @@ export async function renderSettings(app, params = {}) {
       h('button', { class: 'card sub-card', type: 'button', onClick: () => app.go('announce') },
         h('span', { class: 'tile-icon gold' }, icon('chat')),
         h('div', {}, h('b', {}, t('annTitle')), h('div', { class: 'small muted' }, t('annShort'))),
-        icon('chevron', 'ic chev'))] : null,
+        icon('chevron', 'ic chev')),
+      h('button', { class: 'card sub-card', type: 'button', onClick: () => app.go('codes') },
+        h('span', { class: 'tile-icon gold' }, icon('star')),
+        h('div', {}, h('b', {}, t('codesTitle')), h('div', { class: 'small muted' }, t('codesShort'))),
+        icon('chevron', 'ic chev'))]) : null,
 
     h('h2', {}, t('subscription')),
     h('button', { class: 'card sub-card', type: 'button', onClick: () => app.go('subscription') },

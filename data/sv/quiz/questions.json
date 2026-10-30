@@ -14418,6 +14418,870 @@
   "quote_ru": "Kvinnofridslinjen 020-50 50 50"
  },
  {
+  "course": "civics",
+  "n": 21,
+  "k": 1,
+  "q_ru": "Как называется государственная служба занятости?",
+  "options_ru": [
+   "Arbetsförmedlingen",
+   "Skatteverket",
+   "Försäkringskassan",
+   "Migrationsverket"
+  ],
+  "q_uz": "Vad heter den statliga myndigheten för arbetsförmedling?",
+  "options_uz": [
+   "Arbetsförmedlingen",
+   "Skatteverket",
+   "Försäkringskassan",
+   "Migrationsverket"
+  ],
+  "q_en": "What is the public employment service called?",
+  "options_en": [
+   "Arbetsförmedlingen",
+   "Skatteverket",
+   "Försäkringskassan",
+   "Migrationsverket"
+  ],
+  "quote_ru": "Работу в Швеции ищут через государственную службу занятости Arbetsförmedlingen"
+ },
+ {
+  "course": "civics",
+  "n": 21,
+  "k": 2,
+  "q_ru": "Что подписывают перед началом работы?",
+  "options_ru": [
+   "Трудовой договор (anställningsavtal)",
+   "Налоговую декларацию",
+   "Договор аренды",
+   "Заявление в профсоюз"
+  ],
+  "q_uz": "Vad skriver man under innan arbetet börjar?",
+  "options_uz": [
+   "Ett anställningsavtal",
+   "En deklaration",
+   "Ett hyreskontrakt",
+   "En ansökan till facket"
+  ],
+  "q_en": "What do you sign before starting work?",
+  "options_en": [
+   "An employment contract",
+   "A tax return",
+   "A rental contract",
+   "A union application"
+  ],
+  "quote_ru": "Перед началом работы заключают трудовой договор (anställningsavtal)."
+ },
+ {
+  "course": "civics",
+  "n": 21,
+  "k": 3,
+  "q_ru": "Сколько может длиться испытательный срок?",
+  "options_ru": [
+   "До шести месяцев",
+   "До одного месяца",
+   "До двух лет",
+   "Он не ограничен"
+  ],
+  "q_uz": "Hur lång kan en provanställning vara?",
+  "options_uz": [
+   "Högst sex månader",
+   "Högst en månad",
+   "Högst två år",
+   "Den är obegränsad"
+  ],
+  "q_en": "How long can a probationary period last?",
+  "options_en": [
+   "Up to six months",
+   "Up to one month",
+   "Up to two years",
+   "It is unlimited"
+  ],
+  "quote_ru": "испытательного срока (provanställning) до шести месяцев"
+ },
+ {
+  "course": "civics",
+  "n": 21,
+  "k": 4,
+  "q_ru": "Кто устанавливает уровень зарплат в Швеции?",
+  "options_ru": [
+   "Коллективные договоры",
+   "Закон о минимальной зарплате",
+   "Arbetsförmedlingen",
+   "Коммуна"
+  ],
+  "q_uz": "Vem bestämmer lönenivåerna i Sverige?",
+  "options_uz": [
+   "Kollektivavtalen",
+   "En lag om minimilön",
+   "Arbetsförmedlingen",
+   "Kommunen"
+  ],
+  "q_en": "Who sets pay levels in Sweden?",
+  "options_en": [
+   "Collective agreements",
+   "A minimum wage law",
+   "Arbetsförmedlingen",
+   "The municipality"
+  ],
+  "quote_ru": "Минимальной зарплаты по закону в Швеции нет — её устанавливают коллективные договоры."
+ },
+ {
+  "course": "civics",
+  "n": 21,
+  "k": 5,
+  "q_ru": "Сколько дней оплачиваемого отпуска гарантирует закон?",
+  "options_ru": [
+   "25 дней в год",
+   "15 дней в год",
+   "30 дней в год",
+   "20 дней в год"
+  ],
+  "q_uz": "Hur många dagars betald semester ger lagen?",
+  "options_uz": [
+   "25 dagar per år",
+   "15 dagar per år",
+   "30 dagar per år",
+   "20 dagar per år"
+  ],
+  "q_en": "How many days of paid holiday does the law guarantee?",
+  "options_en": [
+   "25 days a year",
+   "15 days a year",
+   "30 days a year",
+   "20 days a year"
+  ],
+  "quote_ru": "право на 25 дней оплачиваемого отпуска в год"
+ },
+ {
+  "course": "civics",
+  "n": 21,
+  "k": 6,
+  "q_ru": "Кто удерживает налог с зарплаты?",
+  "options_ru": [
+   "Работодатель",
+   "Сам работник раз в месяц",
+   "Профсоюз",
+   "Банк"
+  ],
+  "q_uz": "Vem drar av skatten på lönen?",
+  "options_uz": [
+   "Arbetsgivaren",
+   "Den anställda själv varje månad",
+   "Facket",
+   "Banken"
+  ],
+  "q_en": "Who deducts tax from wages?",
+  "options_en": [
+   "The employer",
+   "The employee each month",
+   "The union",
+   "The bank"
+  ],
+  "quote_ru": "Налог с зарплаты удерживает работодатель и перечисляет его в Skatteverket"
+ },
+ {
+  "course": "civics",
+  "n": 21,
+  "k": 7,
+  "q_ru": "Как обычно обращаются к руководителю на собеседовании?",
+  "options_ru": [
+   "По имени и на «ты»",
+   "По фамилии и на «вы»",
+   "По должности",
+   "Только «господин директор»"
+  ],
+  "q_uz": "Hur tilltalar man oftast chefen på en intervju?",
+  "options_uz": [
+   "Med förnamn och du",
+   "Med efternamn och ni",
+   "Med titel",
+   "Bara ”herr direktör”"
+  ],
+  "q_en": "How is the manager usually addressed at an interview?",
+  "options_en": [
+   "By first name and \"du\"",
+   "By surname and \"ni\"",
+   "By job title",
+   "Only \"Mr Director\""
+  ],
+  "quote_ru": "к руководителю обращаются по имени и на «ты»"
+ },
+ {
+  "course": "civics",
+  "n": 21,
+  "k": 8,
+  "q_ru": "Обязательно ли вступать в профсоюз и a-kassa?",
+  "options_ru": [
+   "Нет, это добровольно",
+   "Да, по закону",
+   "Только на постоянной работе",
+   "Только иностранцам"
+  ],
+  "q_uz": "Måste man gå med i facket och a-kassan?",
+  "options_uz": [
+   "Nej, det är frivilligt",
+   "Ja, enligt lag",
+   "Bara vid tillsvidareanställning",
+   "Bara utländska arbetstagare"
+  ],
+  "q_en": "Must you join a union and an a-kassa?",
+  "options_en": [
+   "No, it is voluntary",
+   "Yes, by law",
+   "Only in permanent jobs",
+   "Only foreigners"
+  ],
+  "quote_ru": "Вступать в профсоюз и в кассу страхования по безработице (a-kassa) добровольно."
+ },
+ {
+  "course": "civics",
+  "n": 22,
+  "k": 1,
+  "q_ru": "Кто выдаёт personnummer?",
+  "options_ru": [
+   "Skatteverket",
+   "Migrationsverket",
+   "Банк",
+   "Коммуна"
+  ],
+  "q_uz": "Vem ger personnummer?",
+  "options_uz": [
+   "Skatteverket",
+   "Migrationsverket",
+   "Banken",
+   "Kommunen"
+  ],
+  "q_en": "Who issues the personal number?",
+  "options_en": [
+   "The Tax Agency",
+   "The Migration Agency",
+   "The bank",
+   "The municipality"
+  ],
+  "quote_ru": "личным номером (personnummer), который выдаёт Skatteverket"
+ },
+ {
+  "course": "civics",
+  "n": 22,
+  "k": 2,
+  "q_ru": "Из чего состоит personnummer?",
+  "options_ru": [
+   "Из даты рождения и четырёх цифр",
+   "Из имени и даты рождения",
+   "Из десяти случайных цифр",
+   "Из номера паспорта"
+  ],
+  "q_uz": "Vad består personnumret av?",
+  "options_uz": [
+   "Födelsedatum och fyra siffror",
+   "Namn och födelsedatum",
+   "Tio slumpmässiga siffror",
+   "Passnumret"
+  ],
+  "q_en": "What does the personal number consist of?",
+  "options_en": [
+   "Date of birth and four digits",
+   "Name and date of birth",
+   "Ten random digits",
+   "The passport number"
+  ],
+  "quote_ru": "Personnummer состоит из даты рождения и четырёх цифр"
+ },
+ {
+  "course": "civics",
+  "n": 22,
+  "k": 3,
+  "q_ru": "Для чего нужен BankID?",
+  "options_ru": [
+   "Для банка, сайтов ведомств и записи к врачу",
+   "Только для оплаты в магазине",
+   "Для проезда в транспорте",
+   "Для голосования"
+  ],
+  "q_uz": "Vad används BankID till?",
+  "options_uz": [
+   "Banken, myndigheters sajter och vårdbokningar",
+   "Bara för att betala i butik",
+   "För resor i kollektivtrafiken",
+   "För att rösta"
+  ],
+  "q_en": "What is BankID used for?",
+  "options_en": [
+   "The bank, government sites and booking healthcare",
+   "Only paying in shops",
+   "Public transport",
+   "Voting"
+  ],
+  "quote_ru": "электронное удостоверение для банка, государственных сайтов и записи к врачу"
+ },
+ {
+  "course": "civics",
+  "n": 22,
+  "k": 4,
+  "q_ru": "Как называется очередь на квартиры?",
+  "options_ru": [
+   "Bostadskö",
+   "Förstahandskontrakt",
+   "Hyra",
+   "Folkbokföring"
+  ],
+  "q_uz": "Vad heter kön till lägenheter?",
+  "options_uz": [
+   "Bostadskö",
+   "Förstahandskontrakt",
+   "Hyra",
+   "Folkbokföring"
+  ],
+  "q_en": "What is the queue for flats called?",
+  "options_en": [
+   "Bostadskö",
+   "Förstahandskontrakt",
+   "Hyra",
+   "Folkbokföring"
+  ],
+  "quote_ru": "стоят в очереди (bostadskö)"
+ },
+ {
+  "course": "civics",
+  "n": 22,
+  "k": 5,
+  "q_ru": "Куда обращаются за медицинским советом?",
+  "options_ru": [
+   "1177",
+   "112",
+   "114 14",
+   "11 414"
+  ],
+  "q_uz": "Vart vänder man sig för sjukvårdsrådgivning?",
+  "options_uz": [
+   "1177",
+   "112",
+   "114 14",
+   "11 414"
+  ],
+  "q_en": "Where do you turn for healthcare advice?",
+  "options_en": [
+   "1177",
+   "112",
+   "114 14",
+   "11 414"
+  ],
+  "quote_ru": "Медицинская справочная служба — сайт и телефон 1177"
+ },
+ {
+  "course": "civics",
+  "n": 22,
+  "k": 6,
+  "q_ru": "Какой номер набирают в экстренном случае?",
+  "options_ru": [
+   "112",
+   "1177",
+   "911",
+   "113 13"
+  ],
+  "q_uz": "Vilket nummer ringer man vid nödfall?",
+  "options_uz": [
+   "112",
+   "1177",
+   "911",
+   "113 13"
+  ],
+  "q_en": "Which number do you call in an emergency?",
+  "options_en": [
+   "112",
+   "1177",
+   "911",
+   "113 13"
+  ],
+  "quote_ru": "В экстренных случаях звонят 112."
+ },
+ {
+  "course": "civics",
+  "n": 22,
+  "k": 7,
+  "q_ru": "С какого возраста школа обязательна?",
+  "options_ru": [
+   "С шести лет",
+   "С одного года",
+   "С восьми лет",
+   "С десяти лет"
+  ],
+  "q_uz": "Från vilken ålder är skolan obligatorisk?",
+  "options_uz": [
+   "Från sex år",
+   "Från ett år",
+   "Från åtta år",
+   "Från tio år"
+  ],
+  "q_en": "From what age is school compulsory?",
+  "options_en": [
+   "From age six",
+   "From age one",
+   "From age eight",
+   "From age ten"
+  ],
+  "quote_ru": "школа обязательна с шести лет (förskoleklass) до девятого класса"
+ },
+ {
+  "course": "civics",
+  "n": 22,
+  "k": 8,
+  "q_ru": "Как обычно платят квартплату?",
+  "options_ru": [
+   "Заранее за месяц",
+   "В конце года",
+   "Раз в неделю",
+   "После выезда"
+  ],
+  "q_uz": "Hur betalar man oftast hyran?",
+  "options_uz": [
+   "I förskott för en månad",
+   "I slutet av året",
+   "En gång i veckan",
+   "Efter utflyttningen"
+  ],
+  "q_en": "How is rent usually paid?",
+  "options_en": [
+   "A month in advance",
+   "At the end of the year",
+   "Once a week",
+   "After moving out"
+  ],
+  "quote_ru": "Квартплату (hyra) обычно платят заранее за месяц."
+ },
+ {
+  "course": "civics",
+  "n": 23,
+  "k": 1,
+  "q_ru": "Кто организует экзамен на гражданство?",
+  "options_ru": [
+   "UHR",
+   "Migrationsverket",
+   "Skatteverket",
+   "Коммуна"
+  ],
+  "q_uz": "Vem anordnar medborgarskapsprovet?",
+  "options_uz": [
+   "UHR",
+   "Migrationsverket",
+   "Skatteverket",
+   "Kommunen"
+  ],
+  "q_en": "Who organises the citizenship test?",
+  "options_en": [
+   "UHR",
+   "The Migration Agency",
+   "The Tax Agency",
+   "The municipality"
+  ],
+  "quote_ru": "Его организует Совет по высшему образованию (UHR)"
+ },
+ {
+  "course": "civics",
+  "n": 23,
+  "k": 2,
+  "q_ru": "Когда прошёл первый экзамен по обществознанию?",
+  "options_ru": [
+   "15 августа 2026 г.",
+   "6 июня 2026 г.",
+   "1 января 2026 г.",
+   "15 августа 2025 г."
+  ],
+  "q_uz": "När skrevs det första provet i samhällskunskap?",
+  "options_uz": [
+   "Den 15 augusti 2026",
+   "Den 6 juni 2026",
+   "Den 1 januari 2026",
+   "Den 15 augusti 2025"
+  ],
+  "q_en": "When was the first civics test held?",
+  "options_en": [
+   "15 August 2026",
+   "6 June 2026",
+   "1 January 2026",
+   "15 August 2025"
+  ],
+  "quote_ru": "Первый экзамен по обществознанию прошёл 15 августа 2026 г. в Стокгольме."
+ },
+ {
+  "course": "civics",
+  "n": 23,
+  "k": 3,
+  "q_ru": "Сколько вопросов засчитывалось на первом экзамене?",
+  "options_ru": [
+   "40",
+   "60",
+   "28",
+   "100"
+  ],
+  "q_uz": "Hur många frågor räknades på det första provet?",
+  "options_uz": [
+   "40",
+   "60",
+   "28",
+   "100"
+  ],
+  "q_en": "How many questions counted in the first test?",
+  "options_en": [
+   "40",
+   "60",
+   "28",
+   "100"
+  ],
+  "quote_ru": "участники ответили на 60 вопросов, но засчитывались только 40"
+ },
+ {
+  "course": "civics",
+  "n": 23,
+  "k": 4,
+  "q_ru": "Сколько баллов нужно было для сдачи?",
+  "options_ru": [
+   "28 из 40",
+   "20 из 40",
+   "35 из 40",
+   "40 из 60"
+  ],
+  "q_uz": "Hur många poäng krävdes för godkänt?",
+  "options_uz": [
+   "28 av 40",
+   "20 av 40",
+   "35 av 40",
+   "40 av 60"
+  ],
+  "q_en": "How many points were needed to pass?",
+  "options_en": [
+   "28 of 40",
+   "20 of 40",
+   "35 of 40",
+   "40 of 60"
+  ],
+  "quote_ru": "для сдачи нужно было набрать 28 баллов из 40, то есть 70%"
+ },
+ {
+  "course": "civics",
+  "n": 23,
+  "k": 5,
+  "q_ru": "Кто разрабатывает экзамен по обществознанию?",
+  "options_ru": [
+   "Гётеборгский университет",
+   "Уппсальский университет",
+   "Риксдаг",
+   "Skolverket"
+  ],
+  "q_uz": "Vem tar fram provet i samhällskunskap?",
+  "options_uz": [
+   "Göteborgs universitet",
+   "Uppsala universitet",
+   "Riksdagen",
+   "Skolverket"
+  ],
+  "q_en": "Who develops the civics test?",
+  "options_en": [
+   "The University of Gothenburg",
+   "Uppsala University",
+   "The Riksdag",
+   "Skolverket"
+  ],
+  "quote_ru": "Экзамен по обществознанию разрабатывает Гётеборгский университет."
+ },
+ {
+  "course": "civics",
+  "n": 23,
+  "k": 6,
+  "q_ru": "Сколько стоят экзамены после первого?",
+  "options_ru": [
+   "2000 крон",
+   "Бесплатно",
+   "500 крон",
+   "10 000 крон"
+  ],
+  "q_uz": "Vad kostar proven efter det första?",
+  "options_uz": [
+   "2 000 kronor",
+   "Ingenting",
+   "500 kronor",
+   "10 000 kronor"
+  ],
+  "q_en": "What do tests after the first one cost?",
+  "options_en": [
+   "2,000 kronor",
+   "Nothing",
+   "500 kronor",
+   "10,000 kronor"
+  ],
+  "quote_ru": "следующие стоят 2000 крон"
+ },
+ {
+  "course": "civics",
+  "n": 23,
+  "k": 7,
+  "q_ru": "Что нужно для записи на экзамен?",
+  "options_ru": [
+   "Направление (anvisningsbrev) от Migrationsverket",
+   "Справка с работы",
+   "Паспорт страны рождения",
+   "Оценка SFI"
+  ],
+  "q_uz": "Vad behövs för att anmäla sig till provet?",
+  "options_uz": [
+   "Ett anvisningsbrev från Migrationsverket",
+   "Ett arbetsgivarintyg",
+   "Pass från födelselandet",
+   "Ett sfi-betyg"
+  ],
+  "q_en": "What is needed to register for the test?",
+  "options_en": [
+   "A referral letter from the Migration Agency",
+   "A certificate from work",
+   "A passport from the country of birth",
+   "An SFI grade"
+  ],
+  "quote_ru": "Для записи нужно направление (anvisningsbrev) от Migrationsverket"
+ },
+ {
+  "course": "civics",
+  "n": 23,
+  "k": 8,
+  "q_ru": "Отменено ли требование знать шведский язык?",
+  "options_ru": [
+   "Нет, его подтверждают иначе, например оценкой SFI",
+   "Да, полностью",
+   "Да, для всех старше 18 лет",
+   "Да, до 2030 г."
+  ],
+  "q_uz": "Har kravet på kunskaper i svenska tagits bort?",
+  "options_uz": [
+   "Nej, de visas på annat sätt, till exempel med sfi-betyg",
+   "Ja, helt",
+   "Ja, för alla över 18 år",
+   "Ja, fram till 2030"
+  ],
+  "q_en": "Has the requirement to know Swedish been removed?",
+  "options_en": [
+   "No, it is shown in other ways, for example an SFI grade",
+   "Yes, completely",
+   "Yes, for everyone over 18",
+   "Yes, until 2030"
+  ],
+  "quote_ru": "требование знать шведский при этом не отменено"
+ },
+ {
+  "course": "civics",
+  "n": 24,
+  "k": 1,
+  "q_ru": "Кто организует SFI?",
+  "options_ru": [
+   "Коммуна",
+   "Migrationsverket",
+   "Университет",
+   "Arbetsförmedlingen"
+  ],
+  "q_uz": "Vem anordnar sfi?",
+  "options_uz": [
+   "Kommunen",
+   "Migrationsverket",
+   "Universitetet",
+   "Arbetsförmedlingen"
+  ],
+  "q_en": "Who organises SFI?",
+  "options_en": [
+   "The municipality",
+   "The Migration Agency",
+   "A university",
+   "Arbetsförmedlingen"
+  ],
+  "quote_ru": "бесплатные курсы шведского языка для взрослых, которые организует коммуна"
+ },
+ {
+  "course": "civics",
+  "n": 24,
+  "k": 2,
+  "q_ru": "Сколько стоит учёба в SFI?",
+  "options_ru": [
+   "Бесплатно",
+   "2000 крон за курс",
+   "500 крон в месяц",
+   "Платит работодатель"
+  ],
+  "q_uz": "Vad kostar sfi?",
+  "options_uz": [
+   "Ingenting",
+   "2 000 kronor per kurs",
+   "500 kronor i månaden",
+   "Arbetsgivaren betalar"
+  ],
+  "q_en": "What does SFI cost?",
+  "options_en": [
+   "Nothing",
+   "2,000 kronor per course",
+   "500 kronor a month",
+   "The employer pays"
+  ],
+  "quote_ru": "SFI (svenska för invandrare) — бесплатные курсы шведского языка"
+ },
+ {
+  "course": "civics",
+  "n": 24,
+  "k": 3,
+  "q_ru": "С какого возраста можно начать SFI?",
+  "options_ru": [
+   "С 1 июля года, когда исполняется 16",
+   "С 18 лет",
+   "С 20 лет",
+   "С 14 лет"
+  ],
+  "q_uz": "Från vilken ålder kan man börja sfi?",
+  "options_uz": [
+   "Från 1 juli det år man fyller 16",
+   "Från 18 år",
+   "Från 20 år",
+   "Från 14 år"
+  ],
+  "q_en": "From what age can you start SFI?",
+  "options_en": [
+   "From 1 July of the year you turn 16",
+   "From 18",
+   "From 20",
+   "From 14"
+  ],
+  "quote_ru": "Учиться можно с 1 июля того года, когда исполняется 16 лет"
+ },
+ {
+  "course": "civics",
+  "n": 24,
+  "k": 4,
+  "q_ru": "Сколько учебных путей в SFI?",
+  "options_ru": [
+   "Три",
+   "Два",
+   "Четыре",
+   "Один"
+  ],
+  "q_uz": "Hur många studievägar finns i sfi?",
+  "options_uz": [
+   "Tre",
+   "Två",
+   "Fyra",
+   "En"
+  ],
+  "q_en": "How many study paths does SFI have?",
+  "options_en": [
+   "Three",
+   "Two",
+   "Four",
+   "One"
+  ],
+  "quote_ru": "В SFI три учебных пути."
+ },
+ {
+  "course": "civics",
+  "n": 24,
+  "k": 5,
+  "q_ru": "Какой курс SFI самый высокий?",
+  "options_ru": [
+   "D",
+   "A",
+   "C",
+   "E"
+  ],
+  "q_uz": "Vilken är den högsta kursen i sfi?",
+  "options_uz": [
+   "D",
+   "A",
+   "C",
+   "E"
+  ],
+  "q_en": "Which is the highest SFI course?",
+  "options_en": [
+   "D",
+   "A",
+   "C",
+   "E"
+  ],
+  "quote_ru": "Оценка за самый высокий курс D помогает подтвердить знание шведского"
+ },
+ {
+  "course": "civics",
+  "n": 24,
+  "k": 6,
+  "q_ru": "Сколько времени даётся на учёбу в обычном случае?",
+  "options_ru": [
+   "Три года",
+   "Один год",
+   "Шесть лет",
+   "Без ограничений"
+  ],
+  "q_uz": "Hur lång är studietiden i normalfallet?",
+  "options_uz": [
+   "Tre år",
+   "Ett år",
+   "Sex år",
+   "Obegränsad"
+  ],
+  "q_en": "How long is the normal study period?",
+  "options_en": [
+   "Three years",
+   "One year",
+   "Six years",
+   "Unlimited"
+  ],
+  "quote_ru": "На учёбу отводится три года с момента зачисления"
+ },
+ {
+  "course": "civics",
+  "n": 24,
+  "k": 7,
+  "q_ru": "Даёт ли SFI право на пособие CSN?",
+  "options_ru": [
+   "Нет",
+   "Да, всегда",
+   "Только на курсе D",
+   "Только до 20 лет"
+  ],
+  "q_uz": "Ger sfi rätt till studiestöd från CSN?",
+  "options_uz": [
+   "Nej",
+   "Ja, alltid",
+   "Bara på kurs D",
+   "Bara till 20 års ålder"
+  ],
+  "q_en": "Does SFI entitle you to CSN student aid?",
+  "options_en": [
+   "No",
+   "Yes, always",
+   "Only in course D",
+   "Only until age 20"
+  ],
+  "quote_ru": "Учёба в SFI не даёт права на учебное пособие CSN."
+ },
+ {
+  "course": "civics",
+  "n": 24,
+  "k": 8,
+  "q_ru": "Что изучают после SFI?",
+  "options_ru": [
+   "Шведский как второй язык в Komvux",
+   "Курс E в SFI",
+   "Ничего, SFI — последний этап",
+   "Только английский"
+  ],
+  "q_uz": "Vad läser man efter sfi?",
+  "options_uz": [
+   "Svenska som andraspråk på Komvux",
+   "Kurs E i sfi",
+   "Ingenting, sfi är sista steget",
+   "Bara engelska"
+  ],
+  "q_en": "What do you study after SFI?",
+  "options_en": [
+   "Swedish as a second language at Komvux",
+   "Course E in SFI",
+   "Nothing, SFI is the last step",
+   "Only English"
+  ],
+  "quote_ru": "после SFI продолжают учить «шведский как второй язык» (svenska som andraspråk) в Komvux"
+ },
+ {
   "course": "culture",
   "n": 1,
   "k": 1,
@@ -18736,5 +19600,221 @@
    "In Copenhagen"
   ],
   "quote_ru": "Премию мира вручают в Осло, в Норвегии."
+ },
+ {
+  "course": "culture",
+  "n": 21,
+  "k": 1,
+  "q_ru": "Как называется стандартный шведский язык?",
+  "options_ru": [
+   "Rikssvenska",
+   "Skånska",
+   "Gutniska",
+   "Förortssvenska"
+  ],
+  "q_uz": "Vad heter standardsvenskan?",
+  "options_uz": [
+   "Rikssvenska",
+   "Skånska",
+   "Gutniska",
+   "Förortssvenska"
+  ],
+  "q_en": "What is standard Swedish called?",
+  "options_en": [
+   "Rikssvenska",
+   "Skånska",
+   "Gutniska",
+   "Förortssvenska"
+  ],
+  "quote_ru": "звучит стандартный язык (rikssvenska)"
+ },
+ {
+  "course": "culture",
+  "n": 21,
+  "k": 2,
+  "q_ru": "Где шведский — единственный официальный язык?",
+  "options_ru": [
+   "На Аландских островах",
+   "В Финляндии в целом",
+   "В Норвегии",
+   "В Дании"
+  ],
+  "q_uz": "Var är svenska det enda officiella språket?",
+  "options_uz": [
+   "På Åland",
+   "I hela Finland",
+   "I Norge",
+   "I Danmark"
+  ],
+  "q_en": "Where is Swedish the only official language?",
+  "options_en": [
+   "In Åland",
+   "In all of Finland",
+   "In Norway",
+   "In Denmark"
+  ],
+  "quote_ru": "на Аландских островах он единственный официальный язык"
+ },
+ {
+  "course": "culture",
+  "n": 21,
+  "k": 3,
+  "q_ru": "Как произносят r в сконском диалекте?",
+  "options_ru": [
+   "В глубине горла",
+   "Кончиком языка",
+   "Не произносят совсем",
+   "Как английский r"
+  ],
+  "q_uz": "Hur uttalas r på skånska?",
+  "options_uz": [
+   "Längst bak i halsen",
+   "Med tungspetsen",
+   "Inte alls",
+   "Som engelskt r"
+  ],
+  "q_en": "How is r pronounced in Scanian?",
+  "options_en": [
+   "At the back of the throat",
+   "With the tip of the tongue",
+   "Not at all",
+   "Like an English r"
+  ],
+  "quote_ru": "звук r там произносят в глубине горла"
+ },
+ {
+  "course": "culture",
+  "n": 21,
+  "k": 4,
+  "q_ru": "Для скольких жителей Финляндии шведский — родной язык?",
+  "options_ru": [
+   "Примерно для 5%",
+   "Примерно для 50%",
+   "Примерно для 25%",
+   "Меньше чем для 1%"
+  ],
+  "q_uz": "För hur många av Finlands invånare är svenska modersmål?",
+  "options_uz": [
+   "Ungefär 5 procent",
+   "Ungefär 50 procent",
+   "Ungefär 25 procent",
+   "Under 1 procent"
+  ],
+  "q_en": "For how many of Finland's inhabitants is Swedish the mother tongue?",
+  "options_en": [
+   "About 5 per cent",
+   "About 50 per cent",
+   "About 25 per cent",
+   "Under 1 per cent"
+  ],
+  "quote_ru": "родной язык примерно 5% жителей Финляндии"
+ },
+ {
+  "course": "culture",
+  "n": 21,
+  "k": 5,
+  "q_ru": "Что означает semla в Финляндии?",
+  "options_ru": [
+   "Обычную булочку",
+   "Пирожное со сливками",
+   "Пирог",
+   "Блин"
+  ],
+  "q_uz": "Vad betyder semla i Finland?",
+  "options_uz": [
+   "En vanlig fralla",
+   "En gräddbulle",
+   "En paj",
+   "En pannkaka"
+  ],
+  "q_en": "What does semla mean in Finland?",
+  "options_en": [
+   "An ordinary bread roll",
+   "A cream bun",
+   "A pie",
+   "A pancake"
+  ],
+  "quote_ru": "semla там означает обычную булочку"
+ },
+ {
+  "course": "culture",
+  "n": 21,
+  "k": 6,
+  "q_ru": "Чего нет в финляндском шведском?",
+  "options_ru": [
+   "Различия двух музыкальных ударений",
+   "Буквы å",
+   "Определённой формы",
+   "Глаголов на -a"
+  ],
+  "q_uz": "Vad saknar finlandssvenskan?",
+  "options_uz": [
+   "Skillnaden mellan de två ordaccenterna",
+   "Bokstaven å",
+   "Bestämd form",
+   "Verb på -a"
+  ],
+  "q_en": "What does Finland Swedish lack?",
+  "options_en": [
+   "The distinction between the two word accents",
+   "The letter å",
+   "The definite form",
+   "Verbs in -a"
+  ],
+  "quote_ru": "в нём нет различия двух музыкальных ударений"
+ },
+ {
+  "course": "culture",
+  "n": 21,
+  "k": 7,
+  "q_ru": "Как называется многонациональный молодёжный вариант шведского?",
+  "options_ru": [
+   "Förortssvenska",
+   "Rikssvenska",
+   "Finlandssvenska",
+   "Norrländska"
+  ],
+  "q_uz": "Vad kallas en flerspråkig ungdomsvarietet av svenska?",
+  "options_uz": [
+   "Förortssvenska",
+   "Rikssvenska",
+   "Finlandssvenska",
+   "Norrländska"
+  ],
+  "q_en": "What is a multilingual youth variety of Swedish called?",
+  "options_en": [
+   "Förortssvenska",
+   "Rikssvenska",
+   "Finlandssvenska",
+   "Norrländska"
+  ],
+  "quote_ru": "«шведский пригородов» (förortssvenska)"
+ },
+ {
+  "course": "culture",
+  "n": 21,
+  "k": 8,
+  "q_ru": "Как шведы относятся к диалектам?",
+  "options_ru": [
+   "Многие гордятся своим говором",
+   "Их считают ошибкой",
+   "Их запрещают в школе",
+   "Их не понимают"
+  ],
+  "q_uz": "Hur ser svenskar på dialekter?",
+  "options_uz": [
+   "Många är stolta över sitt mål",
+   "De räknas som fel",
+   "De är förbjudna i skolan",
+   "Ingen förstår dem"
+  ],
+  "q_en": "How do Swedes view dialects?",
+  "options_en": [
+   "Many are proud of their dialect",
+   "They are seen as wrong",
+   "They are banned at school",
+   "Nobody understands them"
+  ],
+  "quote_ru": "многие шведы гордятся своим говором"
  }
 ]

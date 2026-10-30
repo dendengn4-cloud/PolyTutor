@@ -93,7 +93,7 @@ export async function renderDecl(app, params = {}) {
           h('div', { class: 'dict-main' }, h('b', {}, v.u), h('div', { class: 'small muted' }, meaning(v)),
             v.l != null || v.d != null ? h('div', { class: 'pill-row' }, pill(t('lvWord'), v.l), pill(t('lvDecl'), v.d, 'gold')) : null),
           icon('chevron', 'ic chev')))));
-    }));
+    }).filter(Boolean));
   };
   const search = h('input', { class: 'answer-input dict-search', type: 'search', placeholder: t('dictSearch'),
     onInput: () => { q = search.value.trim(); draw(); } });

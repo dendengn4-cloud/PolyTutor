@@ -693,3 +693,20 @@ Object.assign(sv, {
   forAllLangs: 'Alla språk',
   allLangsHint: 'Prenumerationen gäller i alla appens språk – även i dem du börjar med senare. Tiden räknas separat i varje språk: finns det redan en prenumeration där börjar den nya efter den.',
 });
+
+// ---------------------------------------------------------------- администратор: коды подписки
+Object.assign(sv, {
+  codesTitle: 'Prenumerationskoder', codesShort: 'Skapa koder som aktiverar en prenumeration',
+  codesSub: (lang) => `Koden aktiveras i avsnittet ”${lang}”: Prenumeration → Prenumerationskod. Tiden räknas från aktiveringen.`,
+  codesTier: 'Nivå', codesMonths: 'Period', codesCount: 'Antal koder (högst 50)', codesUses: 'Aktiveringar per kod',
+  codesUsesShort: (n) => `${n} aktiveringar`, codesCreate: 'Skapa koder', codesCopyAll: 'Kopiera alla', codesErr: (e) => `Misslyckades: ${e}`, copied: 'Kopierat',
+});
+
+// ---------------------------------------------------------------- пробный экзамен на гражданство (шведский курс)
+Object.assign(sv, {
+  examTitle: 'Provexamen för medborgarskap', examShort: '40 frågor om kursens teman, 70 % för godkänt',
+  examRight: 'Rätt', examWrong: (a) => `Fel. Rätt svar: ${a}`, examScore: (n) => `rätt: ${n}`,
+  examPassed: 'Godkänt!', examFailed: 'Inte godkänt än', examResult: (a, b, p) => `${a} av ${b} – ${p} % (70 % krävs)`,
+  examNote: 'Det här är träning på kursens teman: det riktiga provet anordnas av UHR med andra frågor.', examReview: 'Repetera', examAgain: 'Nytt prov',
+  examEmpty: 'Frågorna är inte klara än.',
+});

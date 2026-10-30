@@ -89,6 +89,11 @@ export async function renderCourse(app, { course, tab = 'units' }) {
     h('div', { class: 'track', style: { margin: '6px 0 14px' } },
       h('div', { class: 'fill strong', style: { width: `${units.length ? Math.round((read / units.length) * 100) : 0}%` } })),
     preview,
+    // пробный экзамен на гражданство (шведский курс обществознания)
+    course === 'civics' && FEATURES.CIVICS_EXAM ? h('button', { class: 'card sub-card exam-card', type: 'button', onClick: () => app.go('exam') },
+      h('span', { class: 'tile-icon gold' }, icon('test')),
+      h('div', {}, h('b', {}, t('examTitle')), h('div', { class: 'small muted' }, t('examShort'))),
+      icon('chevron', 'ic chev')) : null,
     tabs,
     h('div', { style: { height: '12px' } }),
     body));

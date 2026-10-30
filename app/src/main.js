@@ -28,6 +28,8 @@ import { renderAnalytics } from './screens/analytics.js';
 import { renderFormReports } from './screens/formreports.js';
 import { renderSisterApps } from './screens/sisterapps.js';
 import { renderAnnounce, showAnnouncement } from './screens/announce.js';
+import { renderCodes } from './screens/codes.js';
+import { renderExam } from './screens/exam.js';
 
 const TABS = ['home', 'path', 'settings'];
 
@@ -89,6 +91,8 @@ const SCREENS = {
   wordcheck: renderWordCheck,
   review: renderReview,
   announce: renderAnnounce,
+  codes: renderCodes,
+  exam: renderExam,
   dictionary: renderDictionary,
   wordflags: renderWordFlags,
   welcome: renderWelcome,
@@ -129,16 +133,17 @@ function updateTabbar() {
   });
 }
 
-// Запасная стрелка «назад» в самом приложении — если клиент Telegram не показывает свою (старые версии, веб)
-function fallbackBack(webApp) {
-  const native = webApp && webApp.BackButton && (!webApp.isVersionAtLeast || webApp.isVersionAtLeast('6.1'));
+// Стрелка «назад» в самом приложении — всегда, когда есть куда вернуться (у шторок — свой крестик).
+// Кнопка Telegram в заголовке тоже работает, но есть не во всех клиентах и не всем заметна.
+function fallbackBack() {
   let btn = document.getElementById('fallback-back');
-  if (native) { if (btn) btn.hidden = true; return; }
   if (!btn) {
     btn = h('button', { id: 'fallback-back', class: 'fallback-back', type: 'button', 'aria-label': t('back'), onClick: () => app.back() }, icon('chevron'));
     document.body.append(btn);
   }
-  btn.hidden = app.stack.length <= 1 && !sheetCount();
+  const show = app.stack.length > 1;
+  btn.hidden = !show;
+  document.body.classList.toggle('has-back', show);
 }
 
 // Кнопка «Назад» видна, если есть куда вернуться или открыта шторка
@@ -148,7 +153,7 @@ function updateBack() {
     if (app.stack.length > 1 || sheetCount()) webApp.BackButton.show();
     else webApp.BackButton.hide();
   }
-  fallbackBack(webApp);
+  fallbackBack();
 }
 onSheetsChange(updateBack);
 

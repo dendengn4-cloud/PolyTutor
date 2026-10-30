@@ -57,7 +57,7 @@
           var p = document.createElement('p'); p.textContent = tt.sub; root.appendChild(p);
           langs.forEach(function (l) {
             var b = document.createElement('button'); b.type = 'button';
-            var f = document.createElement('img'); f.className = 'ava'; f.alt = l.flag || ''; f.src = 'avatars/' + l.code + '.jpg';
+            var f = document.createElement('img'); f.className = 'ava'; f.alt = l.flag || ''; f.src = l.code + '/avatars/' + l.code + '.jpg';
             f.onerror = function () { var s = document.createElement('span'); s.className = 'flag'; s.textContent = l.flag || '🌐'; f.replaceWith(s); };
             var d = document.createElement('div');
             var n = document.createElement('b'); n.textContent = nameOf(l);

@@ -1624,6 +1624,49 @@ Object.assign(en, {
   allLangsHint: 'The plan works in every language of the app — including ones you start later. Each language counts its own term: if you already have a plan there, the new one starts after it.',
 });
 
+// ---------------------------------------------------------------- администратор: коды подписки
+Object.assign(ru, {
+  codesTitle: 'Коды подписки', codesShort: 'Создать коды для активации подписки',
+  codesSub: (lang) => `Код активируется в разделе «${lang}»: Подписка → Код подписки. Срок отсчитывается с момента активации.`,
+  codesTier: 'Уровень', codesMonths: 'Срок', codesCount: 'Сколько кодов (до 50)', codesUses: 'Активаций на код',
+  codesUsesShort: (n) => `${n} активаций`, codesCreate: 'Создать коды', codesCopyAll: 'Скопировать все', codesErr: (e) => `Не удалось: ${e}`, copied: 'Скопировано',
+});
+Object.assign(uz, {
+  codesTitle: 'Obuna kodlari', codesShort: 'Obunani faollashtirish uchun kodlar yaratish',
+  codesSub: (lang) => `Kod «${lang}» boʻlimida faollashtiriladi: Obuna → Obuna kodi. Muddat faollashtirilgan paytdan hisoblanadi.`,
+  codesTier: 'Daraja', codesMonths: 'Muddat', codesCount: 'Nechta kod (50 tagacha)', codesUses: 'Bitta kodga faollashtirish',
+  codesUsesShort: (n) => `${n} marta`, codesCreate: 'Kodlarni yaratish', codesCopyAll: 'Hammasini nusxalash', codesErr: (e) => `Boʻlmadi: ${e}`, copied: 'Nusxalandi',
+});
+Object.assign(en, {
+  codesTitle: 'Subscription codes', codesShort: 'Create codes that activate a plan',
+  codesSub: (lang) => `A code is activated in the “${lang}” section: Subscription → Subscription code. The term starts on activation.`,
+  codesTier: 'Plan', codesMonths: 'Term', codesCount: 'How many codes (up to 50)', codesUses: 'Activations per code',
+  codesUsesShort: (n) => `${n} activations`, codesCreate: 'Create codes', codesCopyAll: 'Copy all', codesErr: (e) => `Failed: ${e}`, copied: 'Copied',
+});
+
+// ---------------------------------------------------------------- пробный экзамен на гражданство (шведский курс)
+Object.assign(ru, {
+  examTitle: 'Пробный экзамен на гражданство', examShort: '40 вопросов по темам курса, для сдачи — 70%',
+  examRight: 'Верно', examWrong: (a) => `Неверно. Правильно: ${a}`, examScore: (n) => `верно: ${n}`,
+  examPassed: 'Экзамен сдан!', examFailed: 'Пока не сдан', examResult: (a, b, p) => `${a} из ${b} — ${p}% (нужно 70%)`,
+  examNote: 'Это тренажёр по темам курса: настоящий экзамен проводит UHR, вопросы там другие.', examReview: 'Повторите', examAgain: 'Новый экзамен',
+  examEmpty: 'Вопросы ещё не готовы.',
+});
+Object.assign(uz, {
+  examTitle: 'Fuqarolik boʻyicha sinov imtihoni', examShort: 'Kurs mavzulari boʻyicha 40 savol, oʻtish uchun — 70%',
+  examRight: 'Toʻgʻri', examWrong: (a) => `Notoʻgʻri. Toʻgʻrisi: ${a}`, examScore: (n) => `toʻgʻri: ${n}`,
+  examPassed: 'Imtihondan oʻtdingiz!', examFailed: 'Hozircha oʻtmadingiz', examResult: (a, b, p) => `${a} / ${b} — ${p}% (70% kerak)`,
+  examNote: 'Bu kurs mavzulari boʻyicha mashq: haqiqiy imtihonni UHR oʻtkazadi, savollar boshqacha.', examReview: 'Takrorlang', examAgain: 'Yangi imtihon',
+  examEmpty: 'Savollar hali tayyor emas.',
+});
+Object.assign(en, {
+  examTitle: 'Practice citizenship test', examShort: '40 questions on the course topics, 70% to pass',
+  examRight: 'Correct', examWrong: (a) => `Wrong. Correct answer: ${a}`, examScore: (n) => `correct: ${n}`,
+  examPassed: 'Test passed!', examFailed: 'Not passed yet', examResult: (a, b, p) => `${a} of ${b} — ${p}% (70% needed)`,
+  examNote: 'This is practice on the course topics: the real test is run by UHR with different questions.', examReview: 'Review', examAgain: 'New test',
+  examEmpty: 'The questions are not ready yet.',
+});
+
 const dict = { ru, uz, hy, sv, en };
 // тексты, которые зависят от изучаемого языка (lang/i18n-lang.js), — поверх общих
 for (const [l, o] of Object.entries(OVERRIDES)) if (dict[l]) Object.assign(dict[l], o);

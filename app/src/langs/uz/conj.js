@@ -143,7 +143,7 @@ export async function renderConj(app, params = {}) {
               ? h('div', { class: 'pill-row' }, pill(t('lvWord'), v.l), pill(t('lvForm'), v.f, 'gold'), pill(t('lvTable'), v.t, 'gold'))
               : null),
           icon('chevron', 'ic chev')))));
-    }));
+    }).filter(Boolean));
   };
   const search = h('input', { class: 'answer-input dict-search', type: 'search', placeholder: t('dictSearch'),
     onInput: () => { q = search.value.trim(); draw(); } });

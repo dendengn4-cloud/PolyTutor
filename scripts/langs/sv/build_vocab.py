@@ -22,6 +22,9 @@
 """
 from __future__ import annotations
 
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import sv_forms  # noqa: E402
 import csv
 import json
 import re
@@ -421,6 +424,26 @@ def read_pos():
         return {int(r["id"]): r["pos"].strip() for r in csv.DictReader(f) if r.get("id")}
 
 
+def write_sv_ids(data):
+    """app/src/langs/sv/nouns.js: id слов с таблицами форм — кнопки «Склонение» (NOUN_IDS) и «Спряжение» (VERB_IDS)."""
+    nouns, verbs = [], []
+    for d in data:
+        if d["canonical"]:
+            continue
+        m = sv_forms.word_morph(d["uz_disp"], d["ru"])
+        if m and "n" in m:
+            nouns.append(d["id"])
+        elif m and "v" in m:
+            verbs.append(d["id"])
+    text = ("// Создаётся scripts/langs/sv/build_vocab.py (формы — sv_forms.py) — вручную не править.\n"
+            "// id существительных и глаголов, для которых приложение показывает таблицы форм.\n"
+            f"export const NOUN_IDS = new Set([{','.join(map(str, sorted(nouns)))}]);\n"
+            f"export const VERB_IDS = new Set([{','.join(map(str, sorted(verbs)))}]);\n")
+    path = ROOT / "app" / "src" / "langs" / LANG_CODE / "nouns.js"
+    if not path.exists() or path.read_text(encoding="utf-8") != text:
+        path.write_text(text, encoding="utf-8")
+
+
 def write_nouns_js(pos_map):
     """app/src/nouns.js: id существительных из data/pos.csv — по ним приложение показывает кнопку «Склонение»."""
     ids = sorted(i for i, p in pos_map.items() if p == "n")
@@ -471,6 +494,14 @@ def read_noun_forms():
     return out
 
 
+def sv_morph(d, verb_forms) -> str:
+    """Колонка words.morph: шведские формы (scripts/langs/sv/sv_forms.py) + русские переводы форм глагола из verb_forms.csv."""
+    if d["canonical"]:
+        return ""
+    m = sv_forms.word_morph(d["uz_disp"], d["ru"], verb_forms.get(d["id"]))
+    return json.dumps(m, ensure_ascii=False, separators=(",", ":")) if m else ""
+
+
 def csv_array(items) -> str:
     """Массив Postgres в текстовом формате для COPY CSV: {"a","b"}."""
     esc = ['"' + str(x).replace("\\", "\\\\").replace('"', '\\"') + '"' for x in items]
@@ -481,7 +512,6 @@ def csv_array(items) -> str:
 def main():
     data = read_source()
     pos_map = read_pos()
-    write_nouns_js(pos_map)
     verb_forms = read_verb_forms()
     noun_forms = read_noun_forms()
     data, uz_changed = apply_word_fixes(data)
@@ -650,6 +680,7 @@ def main():
                 no = ""
             tr = topic_tr.get(t["name"], {})
             w.writerow([t["id"], no, t["name"], tr.get("name_uz", ""), tr.get("name_en", ""), t["cefr"], t["sort"]])
+    write_sv_ids(data)
     with open(OUT / "words.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["id", "topic_id", "cefr", "uz", "ru", "uz_key", "accept_ru", "accept_uz",
@@ -667,10 +698,7 @@ def main():
                         d["canonical"] if d["canonical"] else "", audio, d["sort_key"],
                         d.get("register", "lit"), display_uz(d["literary"]) if d.get("literary") else "",
                         d.get("note", ""), d.get("en", ""), d.get("pos", ""),
-                        json.dumps(verb_forms[d["id"]], ensure_ascii=False, separators=(",", ":"))
-                        if d["class"] == "verb" and d["id"] in verb_forms
-                        else json.dumps(noun_forms[d["id"]], ensure_ascii=False, separators=(",", ":"))
-                        if d.get("pos") == "n" and d["id"] in noun_forms else "",
+                        sv_morph(d, verb_forms),
                         syn.get(d["id"], ""), d.get("tr_lat", ""), d.get("tr_cyr", "")])
     with open(OUT / "examples.csv", "w", newline="", encoding="utf-8") as f:
         link_examples(examples, data)

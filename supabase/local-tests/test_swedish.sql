@@ -91,5 +91,48 @@ begin
   raise notice 'ok: сообщение недели, слова для тестов (%)', n;
 end $$;
 
+-- формы слов: глаголы и существительные с формами, потолок по темам
+set role authenticated;
+set request.jwt.claim.sub = 'a1a1a1a1-0000-0000-0000-000000000001';
+do $$ declare v jsonb; n jsonb; m jsonb; vs int; vb int; vh int; begin
+  v := public.get_verbs(); n := public.get_nouns();
+  if jsonb_array_length(v->'verbs') < 400 then raise exception 'FAIL: мало глаголов с формами: %', jsonb_array_length(v->'verbs'); end if;
+  if jsonb_array_length(n->'nouns') < 1900 then raise exception 'FAIL: мало существительных с формами: %', jsonb_array_length(n->'nouns'); end if;
+  select (x->>'i')::int into vs from jsonb_array_elements(v->'verbs') x where x->>'u' = 'skriva';
+  select (x->>'i')::int into vb from jsonb_array_elements(n->'nouns') x where x->>'u' = 'en bok';
+  select (x->>'i')::int into vh from jsonb_array_elements(n->'nouns') x where x->>'u' = 'ett hus';
+  m := public.get_morph(jsonb_build_array(vs, vb, vh));
+  if (select count(*) from jsonb_each(m)) <> 3 then raise exception 'FAIL: get_morph: %', m; end if;
+  if m->vs::text->'v'->>'pret' <> 'skrev' then raise exception 'FAIL: skriva'; end if;
+  if m->vb::text->'n'->>'pl' <> 'böcker' then raise exception 'FAIL: bok'; end if;
+  if m->vh::text->'n'->>'defpl' <> 'husen' then raise exception 'FAIL: hus'; end if;
+  if (v->'state'->>'conj_cap')::int < 1 then raise exception 'FAIL: conj_cap'; end if;
+  if public.answer_morph(vs, 'form', 4, 5)->>'ok' <> 'true' then raise exception 'FAIL: answer_morph'; end if;
+  raise notice 'ok: формы слов (% гл., % сущ.)', jsonb_array_length(v->'verbs'), jsonb_array_length(n->'nouns');
+end $$;
+reset role;
+
 delete from public.profiles where id = 'a1a1a1a1-0000-0000-0000-000000000001';
 select 'swedish checks passed' as result;
+
+
+-- пробный экзамен: без подписки — закрыт, с подпиской — 40 вопросов обществознания
+insert into public.profiles (id, tg_id, first_name, ui_lang) values ('a1a1a1a1-0000-0000-0000-0000000000e1', 990201, 'Exam', 'ru') on conflict do nothing;
+update public.unit_tasks set status = 'approved' where kind = 'choice' and unit_id in (select id from public.course_units where course_id = 'civics');
+set role authenticated;
+set request.jwt.claim.sub = 'a1a1a1a1-0000-0000-0000-0000000000e1';
+do $$ begin
+  if public.civics_exam()->>'error' <> 'locked_tier' then raise exception 'FAIL: экзамен без подписки'; end if;
+end $$;
+reset role;
+insert into public.subscriptions (user_id, tier, starts_at, ends_at, source) values ('a1a1a1a1-0000-0000-0000-0000000000e1', 'advanced', now() - interval '1 day', now() + interval '1 day', 'manual');
+set role authenticated;
+do $$ declare e jsonb; q jsonb; begin
+  e := public.civics_exam();
+  if jsonb_array_length(e->'questions') <> 40 then raise exception 'FAIL: вопросов %', jsonb_array_length(e->'questions'); end if;
+  q := e->'questions'->0;
+  if (q->>'c')::int not between 0 and 3 or jsonb_array_length(q->'o_ru') <> 4 then raise exception 'FAIL: вопрос %', q; end if;
+  raise notice 'ok: пробный экзамен (40 вопросов)';
+end $$;
+reset role;
+delete from public.profiles where id = 'a1a1a1a1-0000-0000-0000-0000000000e1';

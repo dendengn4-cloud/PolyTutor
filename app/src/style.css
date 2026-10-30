@@ -915,6 +915,8 @@ mark { background: var(--gold-soft); color: inherit; border-radius: 4px; padding
 .fallback-back { position: fixed; z-index: 50; left: 12px; top: calc(8px + env(safe-area-inset-top, 0px)); width: 36px; height: 36px;
   border: 0; border-radius: 18px; background: var(--surface); box-shadow: var(--shadow); color: var(--fg, inherit); display: grid; place-items: center; }
 .fallback-back .ic { width: 20px; height: 20px; transform: rotate(180deg); }
+.fallback-back[hidden] { display: none; }
+.has-back .screen { padding-top: calc(54px + env(safe-area-inset-top, 0px)); }
 .skip-btn { display: block; margin: 10px auto 0; border: 0; background: transparent; color: var(--muted); font-size: 14px; text-decoration: underline; padding: 8px; }
 
 /* администратор: список других приложений */
@@ -925,3 +927,25 @@ mark { background: var(--gold-soft); color: inherit; border-radius: 4px; padding
 .tile-icon.lang-flag { font-size: 22px; line-height: 1; overflow: hidden; border-radius: 50%; padding: 0; }
 .lang-ava { width: 100%; height: 100%; object-fit: cover; display: block; }
 .sub-card.active { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+/* ---- шведские формы слов: подпись над формой, всё по левому краю */
+.conj-row.sv-row { display: grid; grid-template-columns: 1fr; gap: 2px; padding: 7px 0; }
+.sv-row .sv-label { font-size: 13px; color: var(--muted); display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.sv-row .conj-cell b { margin-left: 0; text-align: left; white-space: normal; font-size: 17px; }
+.sv-row.not-studied { opacity: .55; }
+.sv-drill { margin-top: 10px; }
+.sv-drill .answer-input { margin-top: 4px; }
+.answer-input.ok { border-color: var(--ok); }
+.answer-input.bad { border-color: var(--err, #d33); }
+.sv-word { font-size: 26px; font-weight: 750; margin-top: 6px; letter-spacing: -0.01em; }
+/* раздел администратора в настройках: заголовок-переключатель */
+.admin-head { display: flex; align-items: center; justify-content: space-between; width: 100%; border: 0; background: transparent;
+  padding: 18px 2px 8px; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.admin-head .ic { width: 18px; height: 18px; }
+.admin-head .ic.down { transform: rotate(90deg); }
+.admin-head .ic.up { transform: rotate(-90deg); }
+.admin-body[hidden] { display: none; }
+.admin-body { display: grid; gap: 10px; }
+.two-inputs { align-items: end; }
+.two-inputs label { display: block; }
+[hidden] { display: none !important; }
