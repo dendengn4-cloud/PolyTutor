@@ -87,7 +87,7 @@ export function sheet(...content) {
   };
   back.addEventListener('click', (e) => { if (e.target === back) close(); });
   back.append(h('div', { class: 'sheet' },
-    h('button', { class: 'sheet-close', type: 'button', 'aria-label': '×', onClick: close }, '×'),
+    h('button', { class: 'sheet-close', type: 'button', 'aria-label': '×', onClick: close }, icon('close')),
     h('div', { class: 'sheet-grip' }), ...content));
   document.body.append(back);
   openSheets.push(close);

@@ -23,6 +23,15 @@ const INTENSITY = {
   intense: { session_size: 60, new_max: 30 },
 };
 
+// Персонаж языка (avatars/<код>.jpg в корне сайта); если картинки нет — флаг
+function langAvatar(l) {
+  const box = h('span', { class: 'tile-icon lang-flag' });
+  const img = h('img', { class: 'lang-ava', alt: l.flag || '', src: `../avatars/${l.code}.jpg`,
+    onError: () => { img.remove(); box.textContent = l.flag || '🌐'; } });
+  box.append(img);
+  return box;
+}
+
 export async function renderSettings(app, params = {}) {
   // после изменения настройки — перерисовка на месте: без экрана загрузки и без прокрутки наверх
   const keep = Boolean(params.keep && app.me);
@@ -55,7 +64,7 @@ export async function renderSettings(app, params = {}) {
     h('p', { class: 'small muted' }, t('courseLangSheet')),
     ...LANGS.map((l) => h('button', { class: `card sub-card ${l.code === LANG.code ? 'active' : ''}`, type: 'button',
       onClick: () => { if (l.code !== LANG.code) { haptic('success'); switchLang(l.code); } } },
-      h('span', { class: 'tile-icon lang-flag' }, l.flag || '🌐'),
+      langAvatar(l),
       h('div', {}, h('b', {}, langName(l, ui)), h('div', { class: 'small muted' }, l.code === LANG.code ? `${l.name.native} · ${t('courseLangCurrent')}` : l.name.native)),
       l.code === LANG.code ? icon('check', 'ic chev') : icon('chevron', 'ic chev'))));
   };
@@ -66,7 +75,7 @@ export async function renderSettings(app, params = {}) {
     LANGS.length > 1 ? [
       h('h2', {}, t('courseLang')),
       h('button', { class: 'card sub-card', type: 'button', onClick: courseLangSheet },
-        h('span', { class: 'tile-icon lang-flag' }, LANG.flag || '🌐'),
+        langAvatar(LANG),
         h('div', {}, h('b', {}, langName(LANG, ui)), h('div', { class: 'small muted' }, LANG.name.native)),
         icon('chevron', 'ic chev'))] : null,
 

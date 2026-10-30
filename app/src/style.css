@@ -181,6 +181,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .btn-ghost { background: transparent; color: var(--accent); padding: 10px; }
 .btn-small { width: auto; display: inline-flex; padding: 8px 14px; font-size: 14px; margin: 0; border-radius: 11px; }
 .btn .ic { width: 20px; height: 20px; }
+.btn { text-align: center; }
 
 .chip {
   display: inline-flex; align-items: center; gap: 5px; font-size: 12.5px; padding: 4px 10px; border-radius: 999px;
@@ -357,9 +358,10 @@ button { font: inherit; color: inherit; cursor: pointer; }
 /* крестик «закрыть» — всегда виден, даже в длинной шторке */
 .sheet-close {
   position: sticky; top: 0; float: right; z-index: 2; width: 34px; height: 34px; margin: -2px -6px 0 0;
-  border: 0; border-radius: 50%; background: var(--line); color: var(--text); font-size: 22px; line-height: 34px;
-  cursor: pointer;
+  border: 0; border-radius: 50%; background: var(--line); color: var(--text); padding: 0;
+  display: grid; place-items: center; cursor: pointer;
 }
+.sheet-close .ic { width: 18px; height: 18px; stroke-width: 2.2; }
 .sheet-grip { width: 40px; height: 5px; border-radius: 9px; background: var(--line); margin: 0 auto 14px; }
 @keyframes sheet-up { from { transform: translateY(40px); opacity: .6; } to { transform: none; opacity: 1; } }
 
@@ -604,7 +606,7 @@ tr:last-child td { border-bottom: 0; }
 .course-head h1 { margin: 0; }
 .unit-list { display: grid; gap: 10px; }
 .unit-card {
-  display: grid; grid-template-columns: 40px 1fr 18px; gap: 12px; align-items: start; width: 100%; text-align: left; border: 0;
+  display: grid; grid-template-columns: 40px 1fr 18px; gap: 12px; align-items: center; width: 100%; text-align: left; border: 0;
   background: var(--surface); border-radius: 18px; padding: 14px; box-shadow: var(--shadow);
 }
 .unit-card .chev { width: 18px; height: 18px; color: var(--muted); align-self: center; }
@@ -769,6 +771,8 @@ mark { background: var(--gold-soft); color: inherit; border-radius: 4px; padding
 .lvl-pill.empty { background: var(--surface-2); color: var(--muted); }
 .two-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 10px 0; }
 .two-btns .btn { margin: 0; font-size: 15px; padding-left: 8px; padding-right: 8px; }
+/* в половине ширины текст переносится: значок над текстом, всё по центру */
+.two-btns .btn { flex-direction: column; gap: 4px; line-height: 1.2; }
 .center-text { text-align: center; }
 .conj-card { position: relative; }
 .conj-cell { display: flex; flex-direction: column; min-width: 0; }
@@ -918,5 +922,6 @@ mark { background: var(--gold-soft); color: inherit; border-radius: 4px; padding
 .sa-row + .sa-row { border-top: 1px solid var(--line); }
 
 /* изучаемый язык: флаг вместо значка */
-.tile-icon.lang-flag { font-size: 22px; line-height: 1; }
+.tile-icon.lang-flag { font-size: 22px; line-height: 1; overflow: hidden; border-radius: 50%; padding: 0; }
+.lang-ava { width: 100%; height: 100%; object-fit: cover; display: block; }
 .sub-card.active { outline: 2px solid var(--accent); outline-offset: -2px; }

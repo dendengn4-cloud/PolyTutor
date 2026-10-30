@@ -17,12 +17,13 @@
       h1 { font-size: 22px; margin: 8px 0 4px; }
       p { margin: 0 0 18px; color: var(--tg-theme-hint-color, #6b7280); }
       button {
-        display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: center; width: 100%;
+        display: grid; grid-template-columns: 56px 1fr; gap: 14px; align-items: center; width: 100%;
         margin: 0 0 10px; padding: 12px 14px; border: 0; border-radius: 16px; text-align: left; font: inherit;
         background: var(--tg-theme-bg-color, #fff); color: inherit; cursor: pointer;
       }
       button:active { transform: scale(.98); }
       .flag { font-size: 28px; line-height: 1; text-align: center; }
+      .ava { width: 56px; height: 56px; border-radius: 50%; display: block; object-fit: cover; }
       .native { font-size: 14px; color: var(--tg-theme-hint-color, #6b7280); }
       .wait { text-align: center; padding-top: 30vh; color: var(--tg-theme-hint-color, #6b7280); }
     </style>
@@ -56,7 +57,8 @@
           var p = document.createElement('p'); p.textContent = tt.sub; root.appendChild(p);
           langs.forEach(function (l) {
             var b = document.createElement('button'); b.type = 'button';
-            var f = document.createElement('span'); f.className = 'flag'; f.textContent = l.flag || '🌐';
+            var f = document.createElement('img'); f.className = 'ava'; f.alt = l.flag || ''; f.src = 'avatars/' + l.code + '.jpg';
+            f.onerror = function () { var s = document.createElement('span'); s.className = 'flag'; s.textContent = l.flag || '🌐'; f.replaceWith(s); };
             var d = document.createElement('div');
             var n = document.createElement('b'); n.textContent = nameOf(l);
             var nn = document.createElement('div'); nn.className = 'native'; nn.textContent = l.name ? l.name.native : '';

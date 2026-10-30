@@ -185,6 +185,20 @@ const GROUP_NOTE: Record<Lang, string> = {
   sv: "Grupp: en prenumeration till dig och 2 koder till vänner.",
   en: "Group: your plan plus 2 codes for friends.",
 };
+// Подписка «Все языки» (тариф с all_langs = true)
+const ALL_NOTE: Record<Lang, string> = {
+  ru: "Все языки: подписка действует во всех языках приложения.",
+  hy: "Բոլոր լեզուները՝ բաժանորդագրությունը գործում է հավելվածի բոլոր լեզուներում։",
+  uz: "Barcha tillar: obuna ilovadagi barcha tillarda amal qiladi.",
+  sv: "Alla språk: prenumerationen gäller i alla appens språk.",
+  en: "All languages: the plan works in every language of the app.",
+};
+async function planIsAllLangs(db: any, planId: number): Promise<boolean> {
+  if (!Number.isInteger(planId)) return false;
+  const { data } = await db.from("plans").select("all_langs").eq("id", planId).maybeSingle();
+  return data?.all_langs === true;
+}
+
 // Групповая подписка отменена возвратом через Telegram → предложение личного тарифа
 const GROUP_ENDED: Record<Lang, (tier: string, months: number, stars: number) => string> = {
   ru: (tier, m, st) => `Групповая подписка отменена: за неё был оформлен возврат звёзд, поэтому доступ по ней закрыт.\n\nЧтобы продолжить, оформите личную подписку «${tier}» на ${m} мес. — ${st} ⭐ (Настройки → Подписка).`,
@@ -377,11 +391,12 @@ async function createInvoice(req: Request, token: string): Promise<Response> {
   const lang: Lang = asLang(plan.ui_lang);
   const t = TEXT[lang];
   const group = Number(plan.seats) > 1;
-  const title = (t.invoiceTitle(plan.tier, plan.months) + (group ? " ×3" : "")).slice(0, 32);
+  const allLangs = await planIsAllLangs(db, planId);
+  const title = (t.invoiceTitle(plan.tier, plan.months) + (group ? " ×3" : "") + (allLangs ? " 🌍" : "")).slice(0, 32);
   const couponNote = plan.coupons > 0 ? COUPON_NOTE[lang](plan.coupons) + " " : "";
   const res = await tgApi(token, "createInvoiceLink", {
     title,
-    description: (couponNote + (group ? GROUP_NOTE[lang] + " " : "") + t.invoiceDesc(plan.tier, plan.months)).slice(0, 255),
+    description: (couponNote + (group ? GROUP_NOTE[lang] + " " : "") + (allLangs ? ALL_NOTE[lang] + " " : "") + t.invoiceDesc(plan.tier, plan.months)).slice(0, 255),
     payload: `${schema}|` + (plan.coupons > 0 ? `p:${plan.plan_id}:${auth.user.id}:${plan.coupons}` : `p:${plan.plan_id}:${auth.user.id}`),
     currency: "XTR",
     prices: [{ label: title, amount: plan.stars }],
@@ -468,7 +483,9 @@ async function onPaid(token: string, msg: any): Promise<void> {
   }
   if (data.duplicate) return;
   const codes: string[] = Array.isArray(data.codes) ? data.codes : [];
+  const allLangs = await planIsAllLangs(db, Number(payload.split(":")[1]));
   await tgCall(token, "sendMessage", { chat_id: msg.chat.id, text: t.paid(data.tier, formatDate(data.ends_at, lang, courseOf(schema).tz))
+    + (allLangs ? `\n${ALL_NOTE[lang]}` : "")
     + (codes.length ? `\n\n${GROUP_CODES[lang]}\n${codes.join("\n")}` : "") });
   // автору реферальной ссылки — сообщение о купоне
   if (data.referrer?.tg_id) {

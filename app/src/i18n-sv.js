@@ -687,3 +687,9 @@ Object.assign(sv, {
   annActive: 'visas', annHidden: 'dolt', annHide: 'Dölj', annShow: 'Visa igen',
   annSeen: (n) => `har sett: ${n}`, annScopeAll: 'till alla språk', annModalTitle: 'Meddelande',
 });
+
+// ---------------------------------------------------------------- подписка «Все языки»
+Object.assign(sv, {
+  forAllLangs: 'Alla språk',
+  allLangsHint: 'Prenumerationen gäller i alla appens språk – även i dem du börjar med senare. Tiden räknas separat i varje språk: finns det redan en prenumeration där börjar den nya efter den.',
+});

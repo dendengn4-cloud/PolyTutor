@@ -1610,6 +1610,20 @@ Object.assign(en, {
   annSeen: (n) => `seen: ${n}`, annScopeAll: 'to all languages', annModalTitle: 'Message',
 });
 
+// ---------------------------------------------------------------- подписка «Все языки»
+Object.assign(ru, {
+  forAllLangs: 'Все языки',
+  allLangsHint: 'Подписка действует во всех языках приложения — и в тех, что вы начнёте позже. Срок в каждом языке считается отдельно: если там уже есть подписка, новая начнётся после неё.',
+});
+Object.assign(uz, {
+  forAllLangs: 'Barcha tillar',
+  allLangsHint: 'Obuna ilovadagi barcha tillarda amal qiladi — keyinroq boshlaganlaringizda ham. Har bir tilda muddat alohida hisoblanadi: u yerda obuna boʻlsa, yangisi undan keyin boshlanadi.',
+});
+Object.assign(en, {
+  forAllLangs: 'All languages',
+  allLangsHint: 'The plan works in every language of the app — including ones you start later. Each language counts its own term: if you already have a plan there, the new one starts after it.',
+});
+
 const dict = { ru, uz, hy, sv, en };
 // тексты, которые зависят от изучаемого языка (lang/i18n-lang.js), — поверх общих
 for (const [l, o] of Object.entries(OVERRIDES)) if (dict[l]) Object.assign(dict[l], o);

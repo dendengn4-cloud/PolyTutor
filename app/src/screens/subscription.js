@@ -18,23 +18,29 @@ export async function renderSubscription(app, params = {}) {
   const next = (queue || []).filter((q) => q.tier !== me.tier);
   let tier = params.tier || (me.tier === 'advanced' ? 'advanced' : me.tier === 'basic' ? 'basic' : 'basic');
   let months = params.months || 3;
-  let seats = params.seats || 1;            // 1 — для себя, 3 — группа из трёх человек (−15%)
+  // для себя (один язык) · все языки · группа из трёх человек (−15%)
+  let mode = params.mode || (params.seats === 3 ? 'group' : 'me');
+  const hasAll = plans.some((p) => p.all_langs);
+  if (mode === 'all' && !hasAll) mode = 'me';
 
   const fmt = (n) => Number(n).toLocaleString('ru-RU');
   const status = h('p', { class: 'small' });
 
   let drawn = false;
   const draw = () => {
-    const list = plans.filter((p) => p.tier === tier && (p.seats || 1) === seats).sort((a, b) => a.months - b.months);
-    const monthly = plans.find((p) => p.tier === tier && (p.seats || 1) === 1 && p.months === 1);
+    const seats = mode === 'group' ? 3 : 1;
+    const all = mode === 'all';
+    const list = plans.filter((p) => p.tier === tier && (p.seats || 1) === seats && !!p.all_langs === all).sort((a, b) => a.months - b.months);
+    const monthly = plans.find((p) => p.tier === tier && (p.seats || 1) === 1 && !!p.all_langs === all && p.months === 1);
     let chosen = list.find((p) => p.months === months) || list[0];
     if (chosen) months = chosen.months;
 
     const tierSeg = h('div', { class: 'segmented' }, ['basic', 'advanced'].map((tr) =>
       h('button', { type: 'button', class: tr === tier ? 'active' : '', onClick: () => { tier = tr; haptic(); draw(); } }, tierName(tr))));
 
-    const seatSeg = h('div', { class: 'segmented' }, [[1, t('forMe')], [3, t('forGroup')]].map(([v, l]) =>
-      h('button', { type: 'button', class: v === seats ? 'active' : '', onClick: () => { seats = v; haptic(); draw(); } }, l)));
+    const modes = [['me', t('forMe')], ...(hasAll ? [['all', t('forAllLangs')]] : []), ['group', t('forGroup')]];
+    const seatSeg = h('div', { class: 'segmented' }, modes.map(([v, l]) =>
+      h('button', { type: 'button', class: v === mode ? 'active' : '', onClick: () => { mode = v; haptic(); draw(); } }, l)));
 
     const features = h('ul', { class: 'feature-list' }, (t(tier === 'basic' ? 'featBasic' : 'featAdvanced') || []).map((f) =>
       h('li', {}, icon('check'), h('span', {}, f))));
@@ -81,6 +87,7 @@ export async function renderSubscription(app, params = {}) {
       tierSeg,
       seatSeg,
       seats > 1 ? h('p', { class: 'small muted' }, t('groupHint')) : null,
+      all ? h('p', { class: 'small muted' }, t('allLangsHint')) : null,
       h('div', { class: 'card' }, features),
       options,
       couponBox,
@@ -133,7 +140,7 @@ export async function renderSubscription(app, params = {}) {
           const fresh = await rpc('get_me').catch(() => null);
           if (fresh && (fresh.tier !== me.tier || fresh.tier_ends_at !== before)) break;
         }
-        renderSubscription(app, { tier, months, seats, useCoupons });
+        renderSubscription(app, { tier, months, mode, useCoupons });
       } else if (result === 'failed') {
         haptic('error');
         status.textContent = `${t('payError')} ${t('payFailedHint')}`;

@@ -1,0 +1,70 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { width: 1080px; height: var(--H); overflow: hidden; font-family: "Inter", "Segoe UI", system-ui, sans-serif, "Noto Color Emoji"; }
+  .bg { position: relative; width: 1080px; height: var(--H); overflow: hidden;
+    background: radial-gradient(1200px 700px at 85% -5%, #1fa3ad 0%, rgba(31,163,173,0) 60%),
+                radial-gradient(900px 700px at -10% 105%, #c8962e55 0%, rgba(200,150,46,0) 60%),
+                linear-gradient(160deg, #0b4f56 0%, #0e7c86 55%, #0a5c64 100%); color: #fff; }
+  .ring { position: absolute; border-radius: 50%; border: 3px solid rgba(255,255,255,.12); }
+  .head { position: absolute; left: 76px; right: 76px; top: 96px; }
+  .brand { display: inline-flex; align-items: center; gap: 14px; background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.25);
+    padding: 10px 22px 10px 12px; border-radius: 40px; font-weight: 700; font-size: 30px; letter-spacing: .2px; }
+  .brand .emblem { width: 52px; height: 52px; }
+  .cta .who { display: flex; align-items: center; gap: 18px; }
+  .cta .who .emblem { width: 92px; height: 92px; flex: none; filter: drop-shadow(0 0 0 #e8f3f4); box-shadow: 0 0 0 4px #e8f3f4; border-radius: 50%; }
+  h1 { font-size: 80px; line-height: 1.02; font-weight: 800; margin-top: 34px; letter-spacing: -1.5px; }
+  h1 em { font-style: normal; color: #ffd27a; }
+  .sub { font-size: 32px; opacity: .92; margin-top: 22px; line-height: 1.25; }
+  .chips { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+  .chip { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.28); border-radius: 18px; padding: 10px 18px; font-size: 25px; font-weight: 600; }
+  .chip b { color: #ffd27a; }
+  .phones { position: absolute; left: 0; right: 0; }
+  .phone { position: absolute; width: 330px; border-radius: 46px; background: #0d1416; padding: 12px; box-shadow: 0 30px 60px rgba(0,0,0,.35); }
+  .phone img { display: block; width: 100%; border-radius: 36px; }
+  .phone.l { transform: rotate(-8deg); } .phone.r { transform: rotate(8deg); } .phone.c { z-index: 2; width: 360px; }
+  .cta { z-index: 5; position: absolute; left: 76px; right: 76px; display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    background: #fff; color: #0b4f56; border-radius: 34px; padding: 26px 30px; box-shadow: 0 18px 40px rgba(0,0,0,.25); }
+  .cta b { font-size: 40px; display: block; } .cta span { font-size: 26px; color: #4b6b6e; }
+  .cta .btn { background: #c8962e; color: #fff; font-weight: 800; font-size: 30px; padding: 18px 28px; border-radius: 24px; white-space: nowrap; }
+</style></head>
+<body>
+<div class="bg">
+  <div class="ring" style="right:-140px;top:260px;width:560px;height:560px"></div><div class="ring" style="left:-200px;bottom:240px;width:460px;height:460px"></div>
+  <div class="head">
+    <div class="brand"><svg class="emblem" viewBox="0 0 64 64"><circle cx="32" cy="32" r="31" fill="#fff"/><path fill="#0e7c86" d="M16 20a6 6 0 0 1 6-6h20a6 6 0 0 1 6 6v14a6 6 0 0 1-6 6H30l-9 8v-8h1a6 6 0 0 1-6-6z"/><circle cx="25" cy="27" r="2.6" fill="#fff"/><circle cx="32" cy="27" r="2.6" fill="#fff"/><circle cx="39" cy="27" r="2.6" fill="#c8962e"/></svg>Polytutor</div>
+    <h1 id="h1"></h1>
+    <div class="sub" id="sub"></div>
+    <div class="chips" id="chips"></div>
+  </div>
+  <div class="phones" id="phones">
+    <div class="phone l" style="left:70px"><img data-src="left"></div>
+    <div class="phone c" style="left:360px"><img data-src="center"></div>
+    <div class="phone r" style="left:680px"><img data-src="right"></div>
+  </div>
+  <div class="cta" id="cta"><div class="who"><svg class="emblem big" viewBox="0 0 64 64"><circle cx="32" cy="32" r="31" fill="#fff"/><path fill="#0e7c86" d="M16 20a6 6 0 0 1 6-6h20a6 6 0 0 1 6 6v14a6 6 0 0 1-6 6H30l-9 8v-8h1a6 6 0 0 1-6-6z"/><circle cx="25" cy="27" r="2.6" fill="#fff"/><circle cx="32" cy="27" r="2.6" fill="#fff"/><circle cx="39" cy="27" r="2.6" fill="#c8962e"/></svg><div><b id="cta1"></b><span id="cta2"></span></div></div><div class="btn" id="cta3"></div></div>
+</div>
+<script>
+  const T = {
+    ru: { h1: 'Языки — <em>по&nbsp;10&nbsp;минут</em><br>в&nbsp;день', sub: 'Самоучитель прямо в Telegram. Ничего не нужно устанавливать.',
+      chips: ['🇦🇲 Армянский', '🇺🇿 Узбекский', '🇸🇪 Шведский', '<b>4 000+</b> слов в каждом языке', 'Грамматика · культура · история'],
+      cta1: 'Polytutor', cta2: 'В Telegram · начать можно бесплатно', cta3: 'Открыть →' },
+    en: { h1: 'Languages,<br><em>10&nbsp;minutes</em> a&nbsp;day', sub: 'A full course right inside Telegram. Nothing to install.',
+      chips: ['🇦🇲 Armenian', '🇺🇿 Uzbek', '🇸🇪 Swedish', '<b>4,000+</b> words in each language', 'Grammar · culture · history'],
+      cta1: 'Polytutor', cta2: 'In Telegram · start for free', cta3: 'Open →' },
+  };
+  const q = new URLSearchParams(location.search);
+  const L = T[q.get('lang') || 'ru']; const H = Number(q.get('h') || 1350);
+  document.documentElement.style.setProperty('--H', H + 'px');
+  h1.innerHTML = L.h1; sub.textContent = L.sub; chips.innerHTML = L.chips.map((c) => `<span class="chip">${c}</span>`).join('');
+  cta1.textContent = L.cta1; cta2.textContent = L.cta2; cta3.textContent = L.cta3;
+  // раскладка: телефоны и кнопка — по высоте кадра
+  document.querySelectorAll('img[data-src]').forEach((i) => { i.src = i.dataset.src + (q.get('lang') === 'en' ? '-en' : '') + '.png'; });
+  const story = H > 1500;
+  phones.style.top = (story ? 860 : 700) + 'px';
+  document.querySelectorAll('.phone').forEach((p) => { if (!p.classList.contains('c')) p.style.top = '60px'; });
+  cta.style.bottom = (story ? 150 : 64) + 'px';
+  if (story) { document.querySelector('.head').style.top = '190px'; }
+</script>
+</body></html>

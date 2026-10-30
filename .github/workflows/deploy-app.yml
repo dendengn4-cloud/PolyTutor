@@ -54,6 +54,7 @@ jobs:
             echo "- $L: собрано" >> "$GITHUB_STEP_SUMMARY"
           done
           cp app/root/index.html site/index.html
+          cp -r app/root/avatars site/avatars
           python3 scripts/langs.py site-json > site/langs.json
           touch site/.nojekyll
 

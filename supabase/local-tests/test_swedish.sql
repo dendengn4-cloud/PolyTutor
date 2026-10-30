@@ -30,7 +30,7 @@ end $$;
 
 -- ---------------------------------------------------------------- цены, язык, часовой пояс
 do $$ begin
-  if (select price_uzs from public.plans where tier = 'basic' and months = 1 and seats = 1) <> 89 then raise exception 'FAIL: цена в кронах'; end if;
+  if (select price_uzs from public.plans where tier = 'basic' and months = 1 and seats = 1 and not all_langs) <> 89 then raise exception 'FAIL: цена в кронах'; end if;
   if (select value #>> '{}' from public.app_config where key = 'target_language') <> 'sv' then raise exception 'FAIL: target_language'; end if;
   raise notice 'ok: цены и настройки';
 end $$;
