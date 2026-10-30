@@ -1,7 +1,7 @@
 // Точка входа: вход через Telegram, три вкладки (Дом, Путь, Настройки), стек экранов, кнопка «Назад» Telegram.
 import { login, rpc, tg, ApiError } from './api.js';
 import { setLang, t } from './i18n.js';
-import { h, mount, spinner, haptic, onSheetsChange, sheetCount, closeTopSheet, closeAllSheets } from './ui.js';
+import { h, mount, spinner, haptic, sheet, onSheetsChange, sheetCount, closeTopSheet, closeAllSheets } from './ui.js';
 import { icon } from './icons.js';
 import { initTheme, applyTheme } from './theme.js';
 import { renderHome } from './screens/home.js';
@@ -27,6 +27,7 @@ import { renderDecl } from './lang/decl.js';
 import { renderAnalytics } from './screens/analytics.js';
 import { renderFormReports } from './screens/formreports.js';
 import { renderSisterApps } from './screens/sisterapps.js';
+import { renderAnnounce, showAnnouncement } from './screens/announce.js';
 
 const TABS = ['home', 'path', 'settings'];
 
@@ -87,6 +88,7 @@ const SCREENS = {
   unittest: renderUnitTest,
   wordcheck: renderWordCheck,
   review: renderReview,
+  announce: renderAnnounce,
   dictionary: renderDictionary,
   wordflags: renderWordFlags,
   welcome: renderWelcome,
@@ -185,7 +187,11 @@ async function start() {
     rpc('apply_referral', { p_code: startParam && /^ref_/i.test(startParam) ? startParam : null }).catch(() => null);
     // первый вход — короткое знакомство с приложением
     if (!(app.me && app.me.settings && app.me.settings.onboarded)) app.tab('welcome');
-    else app.home();
+    else {
+      app.home();
+      // сообщение администратора (если есть новое) — поверх главного экрана; при первом входе — после знакомства
+      showAnnouncement(sheet).catch(() => null);
+    }
   } catch (err) {
     showError(err instanceof ApiError ? err : new ApiError(String(err)));
   }

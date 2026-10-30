@@ -29,6 +29,7 @@ export async function renderReview(app, { unit } = {}) {
         h('div', { class: 'stat' }, h('b', {}, String(s.draft)), h('span', {}, t('reviewDraft'))),
         h('div', { class: 'stat' }, h('b', {}, String(s.approved)), h('span', {}, t('reviewApproved'))),
         h('div', { class: 'stat' }, h('b', {}, String(s.rejected)), h('span', {}, t('reviewRejected')))),
+      s.draft ? approveAllButton(app, s.draft) : null,
       h('div', { class: 'unit-list' }, rows)));
     return;
   }
@@ -66,6 +67,28 @@ export async function renderReview(app, { unit } = {}) {
       app.replace('review', { unit });
     } }, icon('check'), t('approveAllDrafts')),
     ...cards));
+}
+
+// «Одобрить все» (все непроверенные вопросы всех тем): первое нажатие — просьба подтвердить, второе — одобрение
+function approveAllButton(app, n) {
+  let armed = false, timer = 0;
+  const label = h('span', {}, t('approveAllEverything', n));
+  const btn = h('button', { class: 'btn btn-secondary', type: 'button', onClick: async () => {
+    if (!armed) {
+      armed = true;
+      label.textContent = t('approveAllConfirm', n);
+      btn.classList.add('btn-ok');
+      timer = setTimeout(() => { armed = false; label.textContent = t('approveAllEverything', n); btn.classList.remove('btn-ok'); }, 5000);
+      return;
+    }
+    clearTimeout(timer);
+    btn.disabled = true;
+    const r = await rpc('admin_approve_all_questions');
+    if (r && r.error) throw new Error(r.error);
+    haptic('success');
+    app.replace('review', {});
+  } }, icon('check'), label);
+  return btn;
 }
 
 // Стабильный порядок вариантов для вопроса (один и тот же при каждом открытии)

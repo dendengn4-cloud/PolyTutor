@@ -155,6 +155,10 @@ export async function renderSettings(app, params = {}) {
       h('button', { class: 'card sub-card', type: 'button', onClick: () => app.go('analytics') },
         h('span', { class: 'tile-icon gold' }, icon('chart')),
         h('div', {}, h('b', {}, t('anTitle')), h('div', { class: 'small muted' }, t('anShort'))),
+        icon('chevron', 'ic chev')),
+      h('button', { class: 'card sub-card', type: 'button', onClick: () => app.go('announce') },
+        h('span', { class: 'tile-icon gold' }, icon('chat')),
+        h('div', {}, h('b', {}, t('annTitle')), h('div', { class: 'small muted' }, t('annShort'))),
         icon('chevron', 'ic chev'))] : null,
 
     h('h2', {}, t('subscription')),

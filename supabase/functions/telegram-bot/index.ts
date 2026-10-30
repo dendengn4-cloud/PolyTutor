@@ -559,6 +559,91 @@ async function notifyFlags(req: Request, token: string): Promise<Response> {
   return json({ ok: true, sent: items.length });
 }
 
+// ---------------------------------------------------------------- сообщение пользователям (администратор)
+// POST …/telegram-bot/announce, заголовок Authorization: Bearer <токен администратора>,
+// тело {"lang":"uz","target":"this"|"all","banner":true,"chat":true,"text":"…","offset":0}.
+// banner — сообщение покажется в приложении при входе (у пользователей этого языка или всех языков);
+// chat — текст уходит в чат с ботом всем, кто не заблокировал бота (один раз на человека, даже если он учит
+// несколько языков). Рассылка идёт частями (~120 с на вызов): ответ {done:false, next_offset} — приложение
+// вызывает снова с этим offset; баннер записывается только при первом вызове (offset 0).
+type Recipient = { tg_id: number; schema: string; ui_lang: unknown };
+async function recipientsOf(schemas: string[]): Promise<Recipient[]> {
+  const seen = new Set<number>();
+  const out: Recipient[] = [];
+  for (const schema of schemas) {
+    const db = dbClient(schema);
+    for (let from = 0; ; from += 1000) {
+      const { data, error } = await db.from("profiles").select("tg_id, ui_lang")
+        .eq("bot_blocked", false).not("tg_id", "is", null).order("tg_id").range(from, from + 999);
+      if (error) throw error;
+      for (const r of (data ?? []) as any[]) {
+        const id = Number(r.tg_id);
+        if (!Number.isFinite(id) || seen.has(id)) continue;
+        seen.add(id);
+        out.push({ tg_id: id, schema, ui_lang: r.ui_lang });
+      }
+      if (!data || data.length < 1000) break;
+    }
+  }
+  return out;
+}
+
+async function announce(req: Request, token: string, appUrl: string): Promise<Response> {
+  const started = Date.now();
+  const jwt = (req.headers.get("Authorization") || "").replace(/^Bearer\s+/i, "");
+  if (!jwt) return json({ error: "not_authenticated" }, 401);
+  let body: any = {};
+  try { body = await req.json(); } catch { /* пусто */ }
+  const schema = schemaOf(body.lang);
+  const db = dbClient(schema);
+  const { data: auth, error: authErr } = await db.auth.getUser(jwt);
+  if (authErr || !auth?.user) return json({ error: "not_authenticated" }, 401);
+  const { data: me } = await db.from("profiles").select("tg_id").eq("id", auth.user.id).maybeSingle();
+  const { data: adm } = me?.tg_id ? await db.from("admins").select("tg_id").eq("tg_id", me.tg_id).maybeSingle() : { data: null };
+  if (!adm) return json({ error: "forbidden" }, 403);
+
+  const text = typeof body.text === "string" ? body.text.trim() : "";
+  if (!text || text.length > 2000) return json({ error: "bad_text" }, 400);
+  const banner = body.banner === true, chat = body.chat === true;
+  if (!banner && !chat) return json({ error: "nothing_to_do" }, 400);
+  const known = await knownLangs();
+  const all = body.target === "all";
+  const schemas = all ? known : [schema];
+  const offset = Math.max(0, Math.floor(Number(body.offset) || 0));
+
+  let banners = 0;
+  if (banner && offset === 0) {
+    for (const s of schemas) {
+      const { error } = await dbClient(s).from("announcements").insert({ body: text, scope: all ? "all" : "lang", created_by: me!.tg_id });
+      if (error) { console.error("announce insert", s, error); return json({ error: "db_error", lang: s, banners }, 500); }
+      banners++;
+    }
+  }
+  if (!chat) return json({ ok: true, done: true, banners, sent: 0, blocked: 0, failed: 0, total: 0 });
+
+  const list = await recipientsOf(schemas);
+  let sent = 0, blocked = 0, failed = 0, i = offset;
+  for (; i < list.length; i++) {
+    if (Date.now() - started > 120_000) break;          // лимит времени функции — продолжение следующим вызовом
+    const r = list[i];
+    const L = REMIND[asLang(r.ui_lang)];
+    const payload = { chat_id: r.tg_id, text, reply_markup: { inline_keyboard: [[{ text: L.open, web_app: { url: appUrlFor(appUrl, r.schema) } }]] } };
+    let res = await tgApi(token, "sendMessage", payload);
+    if (res?.error_code === 429) {                       // слишком часто — ждём, сколько просит Telegram, и повторяем
+      await new Promise((ok) => setTimeout(ok, (Number(res?.parameters?.retry_after) || 3) * 1000));
+      res = await tgApi(token, "sendMessage", payload);
+    }
+    if (res?.ok) sent++;
+    else if (res?.error_code === 403) {
+      blocked++;
+      for (const s of schemas) await dbClient(s).rpc("set_bot_blocked", { p_tg_id: r.tg_id, p_blocked: true });
+    } else failed++;
+    await new Promise((ok) => setTimeout(ok, 40));     // не больше ~25 сообщений в секунду
+  }
+  const done = i >= list.length;
+  return json({ ok: true, done, next_offset: done ? null : i, banners, sent, blocked, failed, total: list.length });
+}
+
 // ---------------------------------------------------------------- напоминания
 function plural(n: number, one: string, few: string, many: string): string {
   const a = n % 10, b = n % 100;
@@ -743,6 +828,9 @@ async function handler(req: Request): Promise<Response> {
       console.error("flags error", e);
       return json({ error: "server_error" }, 500);
     }
+  }
+  if (new URL(req.url).pathname.endsWith("/announce")) {
+    try { return await announce(req, token, appUrl); } catch (e) { console.error("announce error", e); return json({ error: "server_error" }, 500); }
   }
   if (new URL(req.url).pathname.endsWith("/share")) {
     try { return await prepareShare(req, token, appUrl); } catch (e) { console.error("share error", e); return json({ error: "server_error" }, 500); }

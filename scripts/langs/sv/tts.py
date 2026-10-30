@@ -93,7 +93,7 @@ def main():
     done, failed = [], []
     for k, (name, text) in enumerate(items[: a.limit], start=1):
         path = out / name
-        for attempt in range(4):
+        for attempt in range(6):          # Microsoft временно отвечает «No audio was received» — это лимит, не текст
             try:
                 if engine == "gtts":
                     say_gtts(text, path)
@@ -104,13 +104,16 @@ def main():
                 done.append(name)
                 break
             except Exception as e:  # noqa: BLE001 — сеть, лимит запросов: ждём и пробуем снова
+                if attempt == 5:
+                    print(f"  {name}: {e} — пропущен, будет озвучен при следующем запуске")
+                    break
                 wait = 5 * (attempt + 1) + random.random() * 3
                 print(f"  {name}: {e} — повтор через {wait:.0f} c")
                 time.sleep(wait)
-        else:
+        if name not in done:
             failed.append(name)
-        if engine == "gtts":
-            time.sleep(0.4 + random.random() * 0.4)     # бережно к бесплатному сервису
+        # бережно к бесплатному сервису
+        time.sleep((0.4 if engine == "gtts" else 0.15) + random.random() * 0.4)
         if k % 50 == 0:
             print(f"  {k}/{min(len(items), a.limit)}")
             # сохраняем по ходу: если запуск прервётся, готовое не потеряется

@@ -1557,6 +1557,59 @@ Object.assign(en, {
   courseLangCurrent: 'current',
 });
 
+// ---------------------------------------------------------------- администратор: «одобрить все», сообщения пользователям
+Object.assign(ru, {
+  approveAllEverything: (n) => `Одобрить все непроверенные во всех темах (${n})`,
+  approveAllConfirm: (n) => `Нажмите ещё раз — одобрить ${n}`,
+  annTitle: 'Сообщение пользователям', annShort: 'В приложении при входе или в чате с ботом',
+  annSub: 'Сообщение в приложении появится у каждого пользователя один раз при следующем входе. Сообщение в чат приходит от бота всем, кто его не заблокировал (каждому один раз, даже если он учит несколько языков).',
+  annWho: 'Кому', annThis: 'Этот язык', annAll: 'Все языки',
+  annHow: 'Где показать', annBanner: 'В приложении', annChat: 'В чате с ботом', annBoth: 'Везде',
+  annText: 'Текст сообщения (до 2000 знаков)', annEmpty: 'Введите текст сообщения.',
+  annSend: 'Отправить', annConfirm: 'Нажмите ещё раз, чтобы отправить',
+  annSending: (n, total) => `Отправка в чат: ${n} из ${total}…`,
+  annDone: (s, banner, chat) => ['Готово.', banner ? `В приложении: языков — ${s.banners}.` : '',
+    chat ? `В чат: доставлено ${s.sent} из ${s.total}, заблокировали бота ${s.blocked}, ошибок ${s.failed}.` : ''].filter(Boolean).join(' '),
+  annErr: (code) => `Не удалось отправить: ${code}`,
+  annRecent: 'Последние сообщения в приложении (этот язык)', annNone: 'Сообщений пока нет.',
+  annActive: 'показывается', annHidden: 'скрыто', annHide: 'Скрыть', annShow: 'Показывать снова',
+  annSeen: (n) => `видели: ${n}`, annScopeAll: 'во все языки', annModalTitle: 'Сообщение',
+});
+Object.assign(uz, {
+  approveAllEverything: (n) => `Barcha mavzulardagi tekshirilmaganlarni tasdiqlash (${n})`,
+  approveAllConfirm: (n) => `Yana bir bor bosing — ${n} ta tasdiqlanadi`,
+  annTitle: 'Foydalanuvchilarga xabar', annShort: 'Ilovaga kirganda yoki bot chatida',
+  annSub: 'Ilovadagi xabar har bir foydalanuvchiga keyingi kirishda bir marta chiqadi. Chatdagi xabar botni bloklamaganlarning hammasiga boradi (bir necha til oʻrgansa ham bir marta).',
+  annWho: 'Kimga', annThis: 'Shu til', annAll: 'Barcha tillar',
+  annHow: 'Qayerda', annBanner: 'Ilovada', annChat: 'Bot chatida', annBoth: 'Hammasida',
+  annText: 'Xabar matni (2000 belgigacha)', annEmpty: 'Xabar matnini kiriting.',
+  annSend: 'Yuborish', annConfirm: 'Yuborish uchun yana bir bor bosing',
+  annSending: (n, total) => `Chatga yuborilmoqda: ${n} / ${total}…`,
+  annDone: (s, banner, chat) => ['Tayyor.', banner ? `Ilovada: tillar — ${s.banners}.` : '',
+    chat ? `Chatga: yetkazildi ${s.sent} / ${s.total}, botni bloklagan ${s.blocked}, xato ${s.failed}.` : ''].filter(Boolean).join(' '),
+  annErr: (code) => `Yuborib boʻlmadi: ${code}`,
+  annRecent: 'Ilovadagi soʻnggi xabarlar (shu til)', annNone: 'Hozircha xabar yoʻq.',
+  annActive: 'koʻrsatilmoqda', annHidden: 'yashirilgan', annHide: 'Yashirish', annShow: 'Yana koʻrsatish',
+  annSeen: (n) => `koʻrganlar: ${n}`, annScopeAll: 'barcha tillarga', annModalTitle: 'Xabar',
+});
+Object.assign(en, {
+  approveAllEverything: (n) => `Approve all unreviewed in all topics (${n})`,
+  approveAllConfirm: (n) => `Tap again to approve ${n}`,
+  annTitle: 'Message to users', annShort: 'In the app on launch or in the bot chat',
+  annSub: 'An in-app message appears once for every user the next time they open the app. A chat message is sent by the bot to everyone who hasn’t blocked it (once per person, even if they learn several languages).',
+  annWho: 'To', annThis: 'This language', annAll: 'All languages',
+  annHow: 'Where', annBanner: 'In the app', annChat: 'In the bot chat', annBoth: 'Both',
+  annText: 'Message text (up to 2000 characters)', annEmpty: 'Enter the message text.',
+  annSend: 'Send', annConfirm: 'Tap again to send',
+  annSending: (n, total) => `Sending to chat: ${n} of ${total}…`,
+  annDone: (s, banner, chat) => ['Done.', banner ? `In the app: ${s.banners} language(s).` : '',
+    chat ? `Chat: delivered ${s.sent} of ${s.total}, blocked the bot ${s.blocked}, errors ${s.failed}.` : ''].filter(Boolean).join(' '),
+  annErr: (code) => `Could not send: ${code}`,
+  annRecent: 'Recent in-app messages (this language)', annNone: 'No messages yet.',
+  annActive: 'shown', annHidden: 'hidden', annHide: 'Hide', annShow: 'Show again',
+  annSeen: (n) => `seen: ${n}`, annScopeAll: 'to all languages', annModalTitle: 'Message',
+});
+
 const dict = { ru, uz, hy, sv, en };
 // тексты, которые зависят от изучаемого языка (lang/i18n-lang.js), — поверх общих
 for (const [l, o] of Object.entries(OVERRIDES)) if (dict[l]) Object.assign(dict[l], o);

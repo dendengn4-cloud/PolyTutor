@@ -668,3 +668,22 @@ export const sv = {
   courseLangCurrent: 'nu',
   featureUnavailable: 'Det här avsnittet finns inte i den svenska kursen.',
 };
+
+// ---------------------------------------------------------------- администратор: «одобрить все», сообщения пользователям
+Object.assign(sv, {
+  approveAllEverything: (n) => `Godkänn alla ogranskade i alla teman (${n})`,
+  approveAllConfirm: (n) => `Tryck igen för att godkänna ${n}`,
+  annTitle: 'Meddelande till användarna', annShort: 'I appen vid start eller i chatten med boten',
+  annSub: 'Ett meddelande i appen visas en gång för varje användare nästa gång appen öppnas. Ett chattmeddelande skickas av boten till alla som inte har blockerat den (en gång per person, även om hen lär sig flera språk).',
+  annWho: 'Till', annThis: 'Det här språket', annAll: 'Alla språk',
+  annHow: 'Var', annBanner: 'I appen', annChat: 'I botchatten', annBoth: 'Båda',
+  annText: 'Meddelandets text (högst 2000 tecken)', annEmpty: 'Skriv meddelandets text.',
+  annSend: 'Skicka', annConfirm: 'Tryck igen för att skicka',
+  annSending: (n, total) => `Skickar till chatten: ${n} av ${total}…`,
+  annDone: (s, banner, chat) => ['Klart.', banner ? `I appen: ${s.banners} språk.` : '',
+    chat ? `Chatt: levererat ${s.sent} av ${s.total}, har blockerat boten ${s.blocked}, fel ${s.failed}.` : ''].filter(Boolean).join(' '),
+  annErr: (code) => `Kunde inte skicka: ${code}`,
+  annRecent: 'Senaste meddelanden i appen (det här språket)', annNone: 'Inga meddelanden än.',
+  annActive: 'visas', annHidden: 'dolt', annHide: 'Dölj', annShow: 'Visa igen',
+  annSeen: (n) => `har sett: ${n}`, annScopeAll: 'till alla språk', annModalTitle: 'Meddelande',
+});

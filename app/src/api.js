@@ -104,6 +104,20 @@ export async function notifyFlags() {
 }
 
 // «Поделиться»: бот готовит сообщение с картинкой и реферальной ссылкой → id для WebApp.shareMessage
+// Сообщение пользователям (только администратор): {target:'this'|'all', banner, chat, text, offset}
+// → {done, next_offset, banners, sent, blocked, failed, total}
+export async function postAnnouncement(args) {
+  if (!session) await login();
+  const res = await fetch(`${SUPABASE_URL}/functions/v1/telegram-bot/announce`, {
+    method: 'POST',
+    headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${session.access_token}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ lang: DB_SCHEMA, ...args }),
+  }).catch((err) => { throw new ApiError('network', err && err.message); });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok || !data.ok) throw new ApiError(data.error || `http_${res.status}`);
+  return data;
+}
+
 export async function prepareShare() {
   if (!session) await login();
   const res = await fetch(`${SUPABASE_URL}/functions/v1/telegram-bot/share`, {
