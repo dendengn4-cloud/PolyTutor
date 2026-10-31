@@ -96,15 +96,43 @@ export async function renderAnnounce(app) {
     data.items.length ? data.items.map(item) : h('div', { class: 'card empty' }, h('p', {}, t('annNone')))));
 }
 
-// Показ сообщения пользователю при входе в приложение — один раз: сразу отмечается как показанное,
-// поэтому закрытие любым способом (кнопка, ×, нажатие мимо окна) больше его не покажет.
+// Показ сообщений пользователю при входе в приложение. Непрочитанные (до 10) — карусель от старого к новому:
+// «Назад» / «Дальше», «Закрыть все». Все показанные сразу отмечаются прочитанными, поэтому закрытие любым способом
+// (кнопка, ×, нажатие мимо окна) больше их не покажет. Сообщение «во все языки» отмечается во всех языках —
+// в другом языке оно уже не появится.
 export async function showAnnouncement(sheet) {
-  const a = await rpc('get_announcement').catch(() => null);
-  if (!a || !a.id) return;
-  rpc('mark_announcement_seen', { p_id: a.id }).catch(() => null);
+  let list = await rpc('get_announcements').catch(() => null);
+  if (!Array.isArray(list)) {
+    // база ещё без get_announcements — прежний показ одного сообщения
+    const a = await rpc('get_announcement').catch(() => null);
+    if (!a || !a.id) return;
+    rpc('mark_announcement_seen', { p_id: a.id }).catch(() => null);
+    list = [a];
+  } else {
+    if (!list.length) return;
+    rpc('mark_announcements_seen', { p_ids: list.map((a) => a.id) }).catch(() => null);
+  }
+  const many = list.length > 1;
+  let i = 0;
   let close = () => {};
-  close = sheet(
-    h('h2', {}, icon('sparkle'), ' ', t('annModalTitle')),
-    h('p', { style: { whiteSpace: 'pre-wrap' } }, a.body),
-    h('button', { class: 'btn', type: 'button', onClick: () => close() }, t('wDone')));
+  const box = h('div', { class: 'ann-carousel' });
+  const draw = () => {
+    const a = list[i];
+    const last = i === list.length - 1;
+    box.replaceChildren(
+      h('div', { class: 'row ann-head' },
+        h('h2', {}, icon('sparkle'), ' ', t('annModalTitle')),
+        many ? h('span', { class: 'chip' }, t('annCount', i + 1, list.length)) : null),
+      a.created_at ? h('div', { class: 'tiny muted' }, formatDate(a.created_at)) : null,
+      h('p', { style: { whiteSpace: 'pre-wrap' } }, a.body),
+      many ? h('div', { class: 'ann-dots' }, list.map((_, k) => h('span', { class: `ann-dot ${k === i ? 'on' : ''}` }))) : null,
+      many
+        ? h('div', { class: 'two-btns' },
+          i > 0 ? h('button', { class: 'btn btn-secondary', type: 'button', onClick: () => { i--; draw(); } }, t('annPrev')) : null,
+          h('button', { class: 'btn', type: 'button', onClick: () => { if (last) close(); else { i++; draw(); } } }, last ? t('wDone') : t('annNext')))
+        : h('button', { class: 'btn', type: 'button', onClick: () => close() }, t('wDone')),
+      many && !last ? h('button', { class: 'btn btn-ghost ann-close-all', type: 'button', onClick: () => close() }, t('annCloseAll')) : null);
+  };
+  draw();
+  close = sheet(box);
 }

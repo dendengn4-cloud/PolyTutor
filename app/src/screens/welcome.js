@@ -1,19 +1,24 @@
-// Знакомство с приложением: 4 коротких экрана при первом входе. Из «Настроек» открывается как «Как пользоваться».
+// Знакомство с приложением: короткие экраны при первом входе. Из «Настроек» открывается как «Как пользоваться» —
+// там есть ещё экран о режимах внимания (Обычный / Фокусировка / Максимальная фокусировка).
 import { rpc } from '../api.js';
 import { t } from '../i18n.js';
 import { h, mount, haptic, openLink } from '../ui.js';
 import { icon, art, WELCOME_ART } from '../icons.js';
+import { focusMode } from '../focus.js';
 
 const SLIDES = [
   { art: WELCOME_ART.w1, key: 'w1' },
   { art: WELCOME_ART.w2, key: 'w2' },
   { art: WELCOME_ART.w3, key: 'w3' },
   { art: WELCOME_ART.wP, key: 'wP', placement: true },
+  { art: WELCOME_ART.w2, key: 'wF', modes: true, replayOnly: true },
   { art: WELCOME_ART.w4, key: 'w4' },
 ];
+const MODES = ['off', 'focus', 'max'];
 
 export function renderWelcome(app, params = {}) {
   const replay = Boolean(params.replay);
+  const slides = SLIDES.filter((s) => replay || !s.replayOnly);
   let i = 0;
   let remind = !(app.me && app.me.settings && app.me.settings.remind === false);
 
@@ -28,8 +33,8 @@ export function renderWelcome(app, params = {}) {
   };
 
   const draw = () => {
-    const s = SLIDES[i];
-    const last = i === SLIDES.length - 1;
+    const s = slides[i];
+    const last = i === slides.length - 1;
     const list = t(`${s.key}Points`);
     const points = (Array.isArray(list) ? list : []).map((p) => h('li', {}, icon('check'), h('span', {}, p)));
     const extra = [];
@@ -41,6 +46,15 @@ export function renderWelcome(app, params = {}) {
         app.tab('home');
         app.go('test', { cefr: 'A1' });
       } }, icon('test'), t('wPTest')));
+    }
+    if (s.modes) {
+      // режимы внимания: чем отличаются; текущий отмечен
+      const now = focusMode(app.me);
+      const modes = t('wFModes');
+      extra.push(...MODES.map((m) => h('div', { class: `card focus-guide ${m === now ? 'current' : ''}` },
+        h('div', { class: 'row focus-guide-head' }, h('b', {}, t(`focus_${m}`)), m === now ? h('span', { class: 'chip accent' }, t('wFNow')) : null),
+        h('ul', { class: 'feature-list' }, ((modes && modes[m]) || []).map((p) => h('li', {}, icon('check'), h('span', {}, p)))))));
+      extra.push(h('button', { type: 'button', class: 'btn btn-secondary', onClick: () => { haptic(); app.back(); } }, icon('settings'), t('wFChange')));
     }
     if (last) {
       // напоминания — сразу здесь, чтобы не искать в настройках
@@ -54,7 +68,7 @@ export function renderWelcome(app, params = {}) {
       }
     }
     mount(h('div', { class: 'screen welcome' },
-      h('div', { class: 'dots' }, SLIDES.map((_, k) => h('i', { class: k === i ? 'on' : '' }))),
+      h('div', { class: 'dots' }, slides.map((_, k) => h('i', { class: k === i ? 'on' : '' }))),
       h('div', { class: 'welcome-art' }, art(s.art)),
       h('h1', {}, t(`${s.key}Title`)),
       h('p', { class: 'muted' }, t(`${s.key}Text`)),

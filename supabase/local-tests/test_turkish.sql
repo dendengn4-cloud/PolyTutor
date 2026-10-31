@@ -101,3 +101,64 @@ do $$ begin
   if (select count(*) from public.course_units where course_id = 'grammar' and example_pattern is not null) <> 33 then raise exception 'FAIL: шаблоны грамматики'; end if;
   raise notice 'ok: часовой пояс, разговорные темы, шаблоны грамматики';
 end $$;
+
+-- ---------------------------------------------------------------- формы глагола и существительного
+reset role;
+insert into public.course_progress (user_id, unit_id, read_at)
+select 'a1a1a1a1-0000-0000-0000-000000000001', u.id, now() from public.course_units u
+ where u.course_id = 'grammar' and u.source_no in (3, 9)
+on conflict do nothing;
+select set_config('t.gid', (select id from public.words where uz = 'gelmek' and canonical_id is null limit 1)::text, false),
+       set_config('t.nid', (select id from public.words where uz = 'kitap' and canonical_id is null limit 1)::text, false);
+set role authenticated;
+set request.jwt.claim.sub = 'a1a1a1a1-0000-0000-0000-000000000001';
+do $$
+declare v jsonb; n jsonb; m jsonb; gid int := current_setting('t.gid')::int; nid int := current_setting('t.nid')::int; r jsonb;
+begin
+  v := public.get_verbs();
+  if not (v->'state'->'grammar' @> '[3]'::jsonb) then raise exception 'FAIL: тема 3 не открыла формы: %', v->'state'; end if;
+  if jsonb_array_length(v->'verbs') < 400 then raise exception 'FAIL: глаголов мало: %', jsonb_array_length(v->'verbs'); end if;
+  n := public.get_nouns();
+  if jsonb_array_length(n->'nouns') < 1500 then raise exception 'FAIL: существительных мало: %', jsonb_array_length(n->'nouns'); end if;
+  m := public.get_morph(jsonb_build_array(gid, nid));
+  if m->(gid::text)->'v'->'pres'->>0 <> 'geliyorum' then raise exception 'FAIL: gelmek pres: %', m->(gid::text); end if;
+  if m->(gid::text)->'v'->'aor'->>2 <> 'gelir' then raise exception 'FAIL: gelmek aor: %', m->(gid::text)->'v'->'aor'; end if;
+  if m->(nid::text)->'n'->'sg'->>1 <> 'kitabı' then raise exception 'FAIL: kitap acc: %', m->(nid::text); end if;
+  r := public.answer_morph(gid, 'form', 1, 1);
+  if r->>'level' is null then raise exception 'FAIL: answer_morph: %', r; end if;
+  r := public.answer_morph(nid, 'decl', 3, 4);
+  raise notice 'ok: формы (глаголов %, существительных %), уровень формы %', jsonb_array_length(v->'verbs'), jsonb_array_length(n->'nouns'), r->>'level';
+end $$;
+
+-- ---------------------------------------------------------------- сообщения: карусель, «во все языки» — один раз
+reset role;
+insert into public.announcements (body, scope) values ('Тест: старое', 'lang'), ('Тест: всем', 'all'), ('Тест: новое', 'lang');
+set role authenticated;
+set request.jwt.claim.sub = 'a1a1a1a1-0000-0000-0000-000000000001';
+do $$
+declare l jsonb;
+begin
+  l := public.get_announcements();
+  if jsonb_array_length(l) <> 3 or l->0->>'body' <> 'Тест: старое' or l->2->>'body' <> 'Тест: новое' then
+    raise exception 'FAIL: карусель от старого к новому: %', l; end if;
+  perform public.mark_announcements_seen(array(select (x->>'id')::bigint from jsonb_array_elements(l) x));
+  if jsonb_array_length(public.get_announcements()) <> 0 then raise exception 'FAIL: прочитанные снова показаны'; end if;
+end $$;
+-- та же рассылка «во все языки» пришла в этот язык ещё раз (как если бы это был другой язык) — не показывается
+reset role;
+insert into public.announcements (body, scope, grp)
+select 'Тест: всем', 'all', grp from public.announcements where body = 'Тест: всем' limit 1;
+insert into public.profiles (id, tg_id, first_name) values ('a1a1a1a1-0000-0000-0000-000000000002', 990002, 'New')
+on conflict (id) do nothing;
+set role authenticated;
+set request.jwt.claim.sub = 'a1a1a1a1-0000-0000-0000-000000000001';
+do $$ begin
+  if jsonb_array_length(public.get_announcements()) <> 0 then raise exception 'FAIL: рассылка «во все языки» показана второй раз'; end if;
+end $$;
+set request.jwt.claim.sub = 'a1a1a1a1-0000-0000-0000-000000000002';
+do $$ declare l jsonb; begin
+  l := public.get_announcements();
+  if jsonb_array_length(l) <> 3 then raise exception 'FAIL: новый пользователь видит (одна рассылка — один раз): %', l; end if;
+  raise notice 'ok: сообщения — карусель и показ рассылки один раз';
+end $$;
+reset role;

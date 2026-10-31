@@ -672,8 +672,9 @@ async function announce(req: Request, token: string, appUrl: string): Promise<Re
 
   let banners = 0;
   if (banner && offset === 0) {
+    const grp = crypto.randomUUID();                     // один ключ рассылки во всех языках — человек увидит её один раз
     for (const s of schemas) {
-      const { error } = await dbClient(s).from("announcements").insert({ body: text, scope: all ? "all" : "lang", created_by: me!.tg_id });
+      const { error } = await dbClient(s).from("announcements").insert({ body: text, scope: all ? "all" : "lang", grp, created_by: me!.tg_id });
       if (error) { console.error("announce insert", s, error); return json({ error: "db_error", lang: s, banners }, 500); }
       banners++;
     }

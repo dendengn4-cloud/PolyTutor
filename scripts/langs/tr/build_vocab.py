@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import sys as _sys, os as _os
 _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import tr_forms  # noqa: E402
 import csv
 import json
 import re
@@ -488,8 +489,30 @@ def read_noun_forms():
 
 
 def tr_morph(d) -> str:
-    """Колонка words.morph: у турецкой версии таблицы форм строит приложение по правилам — в базе пусто."""
-    return ""
+    """Колонка words.morph: формы глагола {"v": …} или существительного {"n": …} (scripts/langs/tr/tr_forms.py)."""
+    if d["canonical"]:
+        return ""
+    m = tr_forms.word_morph(d["uz_disp"], d["class"] == "verb", d.get("pos") == "n")
+    return json.dumps(m, ensure_ascii=False, separators=(",", ":")) if m else ""
+
+
+def write_tr_ids(data):
+    """app/src/langs/tr/nouns.js: id слов с таблицами форм — кнопки «Формы глагола» (VERB_IDS) и «Формы существительного» (NOUN_IDS)."""
+    nouns, verbs = [], []
+    for d in data:
+        if d["canonical"]:
+            continue
+        if d["class"] == "verb" and tr_forms.verb_forms(d["uz_disp"]):
+            verbs.append(d["id"])
+        elif d.get("pos") == "n" and tr_forms.noun_forms(d["uz_disp"]):
+            nouns.append(d["id"])
+    text = ("// Создаётся scripts/langs/tr/build_vocab.py (формы — tr_forms.py) — вручную не править.\n"
+            "// id существительных и глаголов, для которых приложение показывает таблицы форм.\n"
+            f"export const NOUN_IDS = new Set([{','.join(map(str, sorted(nouns)))}]);\n"
+            f"export const VERB_IDS = new Set([{','.join(map(str, sorted(verbs)))}]);\n")
+    path = ROOT / "app" / "src" / "langs" / LANG_CODE / "nouns.js"
+    if not path.exists() or path.read_text(encoding="utf-8") != text:
+        path.write_text(text, encoding="utf-8")
 
 
 def csv_array(items) -> str:
@@ -571,7 +594,7 @@ def main():
         d["class"] = word_class(d["uz_key"], d["ru"], d.get("en", ""))
         d["pos"] = pos_map.get(d["id"], "v" if d["class"] == "verb" else "")
         if d["class"] == "verb" and d["pos"] not in ("", "v"):
-            d["class"] = "other"                      # tomoq, barmoq, qaymoq… — существительные
+            d["pos"] = "v"                            # перевод — глагол (su dökmek «обливать»): глагол, хотя понятие было существительным
         if not d["uz_key"] or not d["ru_vars"]:
             problems.append(f"Слово {d['id']}: пустой ключ ({d['uz']!r} / {d['ru']!r})")
         if CYRILLIC.search(d["uz"]):
@@ -668,6 +691,7 @@ def main():
                 no = ""
             tr = topic_tr.get(t["name"], {})
             w.writerow([t["id"], no, t["name"], tr.get("name_uz", ""), tr.get("name_en", ""), t["cefr"], t["sort"]])
+    write_tr_ids(data)
     with open(OUT / "words.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["id", "topic_id", "cefr", "uz", "ru", "uz_key", "accept_ru", "accept_uz",

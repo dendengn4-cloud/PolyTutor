@@ -379,6 +379,12 @@ export const sv = {
   w3Title: 'Vägen från Stockholm till Kiruna',
   w3Text: 'Temana ligger på en karta. Mellan nivåerna finns ett test.',
   w3Points: ['Nivåtest: 35 frågor, 80 % krävs', 'Klarar du det öppnas nästa nivå', 'Kan du redan ett tema? Snabbkontrollen markerar kända ord direkt'],
+  wFTitle: "Fokuslägen", wFText: "De hjälper dig att hålla fokus när du övar. Välj läge i Inställningar → ”Fokusläge” och byt när du vill — dina framsteg påverkas inte.", wFNow: "nu", wFChange: "Välj läge i inställningarna",
+  wFModes: {
+    off: ["Passet går i ett svep, utan pauser", "Det vanliga utseendet och animationerna", "Sviten bryts om du missar en dag"],
+    focus: ["Passet delas upp i korta block om 5 ord med en paus efter varje: ”5 till” eller ”Avsluta”", "Ett mjukt ljud och vibration efter varje svar (ljudet kan stängas av)", "Olika typer av övningar i rad — samma upprepas inte", "Mjuk svit: en missad dag bryter den inte", "I ämnena kommer det viktigaste först som en lista, detaljer bakom ”Mer information”", "Valfri 60-sekunderstimer per block, utan straff"],
+    max: ["Allt som finns i Fokus", "Ett lugnt tema: färg bara där den betyder något — det brådskande syns, resten är dämpat", "Inga dekorationer, skuggor eller skarpa animationer", "Meddelanden visas direkt på skärmen, inte i popup-fönster", "Större knappar och mer luft mellan delarna"],
+  },
   w4Title: 'Hjälp oss att bli bättre',
   w4Text: 'Appen testas. Har du hittat ett fel eller fått en idé – skriv i appens grupp.',
   wRemind: 'Påminn mig varje dag',
@@ -686,6 +692,7 @@ Object.assign(sv, {
   annRecent: 'Senaste meddelanden i appen (det här språket)', annNone: 'Inga meddelanden än.',
   annActive: 'visas', annHidden: 'dolt', annHide: 'Dölj', annShow: 'Visa igen',
   annSeen: (n) => `har sett: ${n}`, annScopeAll: 'till alla språk', annModalTitle: 'Meddelande',
+  annCount: (i, n) => `${i} av ${n}`, annNext: 'Nästa', annPrev: 'Tillbaka', annCloseAll: 'Stäng alla',
 });
 
 // ---------------------------------------------------------------- подписка «Все языки»

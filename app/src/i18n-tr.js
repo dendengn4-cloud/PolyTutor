@@ -379,6 +379,12 @@ export const tr = {
   w3Title: 'İstanbul’dan Kapadokya’ya yol',
   w3Text: 'Konular bir haritada. Seviyeler arasında bir sınav var.',
   w3Points: ['Seviye sınavı: 35 soru, %80 gerekir', 'Geçince sonraki seviye açılır', 'Bir konuyu zaten biliyor musunuz? Hızlı kontrol bilinen kelimeleri hemen işaretler'],
+  wFTitle: "Dikkat modları", wFText: "Çalışırken dikkatinizi toplamanıza yardım eder. Mod Ayarlar → “Dikkat modu” bölümünden seçilir ve istediğiniz zaman değiştirilir — ilerlemeniz değişmez.", wFNow: "şu an", wFChange: "Modu ayarlardan seç",
+  wFModes: {
+    off: ["Ders tek seferde, ara vermeden ilerler", "Alışılmış görünüm ve animasyonlar", "Bir gün atlarsanız gün serisi bozulur"],
+    focus: ["Ders 5 kelimelik kısa bloklara bölünür, her bloktan sonra mola: “5 tane daha” ya da “Bitir”", "Her cevaptan sonra yumuşak bir ses ve titreşim (ses kapatılabilir)", "Farklı türde alıştırmalar art arda — aynısı tekrarlanmaz", "Yumuşak seri: atlanan tek bir gün seriyi bozmaz", "Konularda önce özet madde madde, ayrıntılar “Ayrıntılar” düğmesinde", "İsteğe bağlı: blok başına 60 saniyelik zamanlayıcı, ceza yok"],
+    max: ["“Odaklanma” modundaki her şey", "Sakin tema: renk yalnızca anlam taşıdığı yerde — acil olan öne çıkar, gerisi soluk", "Süs, gölge ve sert animasyon yok", "Mesajlar açılır pencerede değil, ekranın kendisinde", "Daha büyük düğmeler, öğeler arasında daha çok boşluk"],
+  },
   w4Title: 'Daha iyi olmamıza yardım edin',
   w4Text: 'Uygulama test ediliyor. Bir hata bulduysanız ya da bir fikriniz varsa uygulamanın grubuna yazın.',
   wRemind: 'Her gün hatırlat',
@@ -686,6 +692,7 @@ Object.assign(tr, {
   annRecent: 'Uygulamadaki son mesajlar (bu dil)', annNone: 'Henüz mesaj yok.',
   annActive: 'gösteriliyor', annHidden: 'gizli', annHide: 'Gizle', annShow: 'Yeniden göster',
   annSeen: (n) => `gören: ${n}`, annScopeAll: 'bütün dillere', annModalTitle: 'Mesaj',
+  annCount: (i, n) => `${i} / ${n}`, annNext: 'Sonraki', annPrev: 'Geri', annCloseAll: 'Hepsini kapat',
 });
 
 // ---------------------------------------------------------------- подписка «Все языки»

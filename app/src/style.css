@@ -1053,3 +1053,29 @@ mark { background: var(--gold-soft); color: inherit; border-radius: 4px; padding
 [data-focus="max"] .chip.gold { background: var(--surface-2); color: var(--muted); }
 [data-focus="max"] .fs-dot.done { background: var(--calm); }
 .focus-modes .radio .small { font-weight: 400; }
+
+/* турецкие формы: лица в строке времени, падежи × ед./мн. число */
+.tr-persons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px 12px; }
+.tr-person { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tr-person b { font-weight: 600; }
+.conj-row.tr-grid, .tr-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr) minmax(0, 1.2fr); column-gap: 10px; align-items: baseline; padding: 6px 0; }
+.tr-grid .sv-label { font-size: 13px; color: var(--muted); display: flex; gap: 4px; flex-wrap: wrap; }
+.tr-grid b { margin-left: 0 !important; text-align: left !important; white-space: normal !important; overflow-wrap: break-word; font-size: 15px; }
+.tr-grid b.not-studied, .tr-grid.not-studied { opacity: .55; }
+.tr-head { border-bottom: 1px solid var(--line, rgba(127,127,127,.1)); }
+.tr-poss-head { margin-top: 14px; display: flex; gap: 6px; align-items: center; }
+
+/* сообщения пользователям: карусель непрочитанных */
+.ann-head { justify-content: space-between; align-items: center; gap: 8px; padding-right: 48px; }
+.ann-head h2 { margin: 0; }
+.ann-dots { display: flex; justify-content: center; gap: 6px; margin: 6px 0 2px; }
+.ann-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); opacity: .35; }
+.ann-dot.on { background: var(--accent); opacity: 1; }
+.two-btns > .btn:only-child { grid-column: 1 / -1; }
+.ann-close-all { width: 100%; }
+
+/* «Как пользоваться»: режимы внимания */
+.focus-guide { text-align: left; }
+.focus-guide.current { border: 1.5px solid var(--accent); }
+.focus-guide-head { justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 4px; }
+.focus-guide .feature-list { margin: 4px 0 0; }

@@ -1040,6 +1040,12 @@ Object.assign(ru, {
   w2Points: ['Слово проходит 15 уровней: повторы через 1, 2, 4, 7… дней', 'Ошибка — слово вернётся раньше', 'Пятница — день повторения: сначала повторяем, потом новые слова'],
   w3Title: 'Путь от Еревана до Татева', w3Text: 'Темы расположены на карте. Между уровнями — тест.',
   w3Points: ['Тест уровня: 35 вопросов, нужно 80% верных', 'Сдали — открывается следующий уровень', 'Знаете тему? Экспресс-проверка сразу отметит знакомые слова'],
+  wFTitle: "Режимы внимания", wFText: "Помогают держать внимание на занятиях. Режим выбирается в Настройках → «Режим внимания» и меняется в любой момент — прогресс от этого не меняется.", wFNow: "сейчас", wFChange: "Выбрать режим в настройках",
+  wFModes: {
+    off: ["Сеанс идёт целиком, без пауз", "Привычное оформление и анимации", "Серия дней прерывается, если пропустить день"],
+    focus: ["Сеанс разбит на короткие блоки по 5 слов, после блока — передышка: «Ещё 5» или «Закончить»", "Мягкий звук и вибрация после каждого ответа (звук можно выключить)", "Задания разных типов подряд — одно и то же не повторяется", "Мягкая серия: один пропущенный день её не обрывает", "В темах сначала главное списком, подробности — по кнопке «Подробнее»", "По желанию — таймер 60 секунд на блок, без штрафов"],
+    max: ["Всё, что есть в «Фокусировке»", "Спокойная тема: цвет только по смыслу — срочное выделено, остальное приглушено", "Без украшений, теней и резких анимаций", "Сообщения — прямо на экране, а не во всплывающих окнах", "Крупнее кнопки и больше воздуха между элементами"],
+  },
   w4Title: 'Помогите сделать лучше', w4Text: 'Приложение сейчас в тестировании. Нашли ошибку в слове или есть идея — напишите в группе приложения.',
   wRemind: 'Напоминать каждый день', wRemindHint: 'Бот напишет вечером, если вы ещё не занимались. Время — в настройках.',
   wJoinGroup: 'Группа приложения', wStart: 'Начать', wDone: 'Понятно', wSkip: 'Пропустить',
@@ -1069,6 +1075,12 @@ Object.assign(uz, {
   w2Points: ['Soʻz 15 darajadan oʻtadi: 1, 2, 4, 7… kundan keyin takrorlash', 'Xato qilsangiz — soʻz tezroq qaytadi', 'Juma — takrorlash kuni: avval takrorlaymiz, keyin yangi soʻzlar'],
   w3Title: 'Toshkentdan Xivagacha yoʻl', w3Text: 'Mavzular xaritada joylashgan. Darajalar orasida — test.',
   w3Points: ['Daraja testi: 35 savol, 80% toʻgʻri javob kerak', 'Topshirsangiz — keyingi daraja ochiladi', 'Mavzuni bilasizmi? Tezkor tekshiruv tanish soʻzlarni darhol belgilaydi'],
+  wFTitle: "Diqqat rejimlari", wFText: "Mashgʻulotlarda diqqatni ushlab turishga yordam beradi. Rejim Sozlamalar → «Diqqat rejimi»da tanlanadi va istalgan vaqtda oʻzgartiriladi — natijalaringiz oʻzgarmaydi.", wFNow: "hozir", wFChange: "Rejimni sozlamalarda tanlash",
+  wFModes: {
+    off: ["Mashgʻulot toʻxtovsiz, boshidan oxirigacha", "Odatiy koʻrinish va animatsiyalar", "Bir kun oʻtkazib yuborilsa, kunlar seriyasi uziladi"],
+    focus: ["Mashgʻulot 5 soʻzdan iborat qisqa bloklarga boʻlinadi, har blokdan keyin dam: «Yana 5 ta» yoki «Tugatish»", "Har bir javobdan keyin yumshoq ovoz va tebranish (ovozni oʻchirish mumkin)", "Turli xil topshiriqlar ketma-ket — bir xili takrorlanmaydi", "Yumshoq seriya: bitta oʻtkazib yuborilgan kun uni uzmaydi", "Mavzularda avval asosiysi roʻyxat koʻrinishida, batafsil — «Batafsil» tugmasi bilan", "Xohishga koʻra — blok uchun 60 soniyalik taymer, jarimasiz"],
+    max: ["«Diqqatni jamlash» rejimidagi hamma narsa", "Sokin mavzu: rang faqat maʼno uchun — shoshilinch ajratilgan, qolgani xira", "Bezaklar, soyalar va keskin animatsiyalarsiz", "Xabarlar qalqib chiquvchi oynada emas, ekranning oʻzida", "Tugmalar kattaroq, elementlar orasida koʻproq joy"],
+  },
   w4Title: 'Yaxshilashga yordam bering', w4Text: 'Ilova hozir sinovda. Soʻzda xato topsangiz yoki gʻoyangiz boʻlsa — ilova guruhiga yozing.',
   wRemind: 'Har kuni eslatish', wRemindHint: 'Hali shugʻullanmagan boʻlsangiz, bot kechqurun yozadi. Vaqt — sozlamalarda.',
   wJoinGroup: 'Ilova guruhi', wStart: 'Boshlash', wDone: 'Tushunarli', wSkip: 'Oʻtkazib yuborish',
@@ -1098,6 +1110,12 @@ Object.assign(en, {
   w2Points: ['Each word goes through 15 levels: reviews after 1, 2, 4, 7… days', 'Make a mistake — the word comes back sooner', 'Friday is review day: review first, then new words'],
   w3Title: 'The road from Yerevan to Tatev', w3Text: 'Topics are laid out on a map. Between levels there is a test.',
   w3Points: ['Level test: 35 questions, 80% needed', 'Pass it — the next level opens', 'Already know a topic? The quick check marks familiar words at once'],
+  wFTitle: "Attention modes", wFText: "They help you stay focused while you practise. Choose a mode in Settings → “Attention mode” and change it any time — your progress stays the same.", wFNow: "now", wFChange: "Choose a mode in Settings",
+  wFModes: {
+    off: ["The session runs in one go, without breaks", "The usual look and animations", "The streak breaks if you miss a day"],
+    focus: ["The session is split into short blocks of 5 words with a break after each: “5 more” or “Finish”", "A soft sound and vibration after every answer (the sound can be turned off)", "Varied exercise types in a row — the same one is not repeated", "A gentle streak: one missed day does not break it", "Topics show the key points first as a list, details behind “More details”", "Optional 60-second timer per block, no penalties"],
+    max: ["Everything in Focus", "A calm theme: colour only where it means something — urgent items stand out, the rest is muted", "No decorations, shadows or sharp animations", "Messages appear on the screen itself, not in pop-ups", "Bigger buttons and more space between elements"],
+  },
   w4Title: 'Help us improve', w4Text: 'The app is in testing. Found a mistake or have an idea — write in the app’s group.',
   wRemind: 'Remind me every day', wRemindHint: 'The bot writes in the evening if you haven’t studied yet. Time — in settings.',
   wJoinGroup: 'App group', wStart: 'Start', wDone: 'Got it', wSkip: 'Skip',
@@ -1582,6 +1600,7 @@ Object.assign(ru, {
   annRecent: 'Последние сообщения в приложении (этот язык)', annNone: 'Сообщений пока нет.',
   annActive: 'показывается', annHidden: 'скрыто', annHide: 'Скрыть', annShow: 'Показывать снова',
   annSeen: (n) => `видели: ${n}`, annScopeAll: 'во все языки', annModalTitle: 'Сообщение',
+  annCount: (i, n) => `${i} из ${n}`, annNext: 'Дальше', annPrev: 'Назад', annCloseAll: 'Закрыть все',
 });
 Object.assign(uz, {
   approveAllEverything: (n) => `Barcha mavzulardagi tekshirilmaganlarni tasdiqlash (${n})`,
@@ -1599,6 +1618,7 @@ Object.assign(uz, {
   annRecent: 'Ilovadagi soʻnggi xabarlar (shu til)', annNone: 'Hozircha xabar yoʻq.',
   annActive: 'koʻrsatilmoqda', annHidden: 'yashirilgan', annHide: 'Yashirish', annShow: 'Yana koʻrsatish',
   annSeen: (n) => `koʻrganlar: ${n}`, annScopeAll: 'barcha tillarga', annModalTitle: 'Xabar',
+  annCount: (i, n) => `${i} / ${n}`, annNext: 'Keyingisi', annPrev: 'Orqaga', annCloseAll: 'Hammasini yopish',
 });
 Object.assign(en, {
   approveAllEverything: (n) => `Approve all unreviewed in all topics (${n})`,
@@ -1616,6 +1636,7 @@ Object.assign(en, {
   annRecent: 'Recent in-app messages (this language)', annNone: 'No messages yet.',
   annActive: 'shown', annHidden: 'hidden', annHide: 'Hide', annShow: 'Show again',
   annSeen: (n) => `seen: ${n}`, annScopeAll: 'to all languages', annModalTitle: 'Message',
+  annCount: (i, n) => `${i} of ${n}`, annNext: 'Next', annPrev: 'Back', annCloseAll: 'Close all',
 });
 
 // ---------------------------------------------------------------- подписка «Все языки»
