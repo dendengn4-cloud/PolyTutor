@@ -4,13 +4,13 @@ import { h, mount, haptic } from '../../ui.js';
 import { icon } from '../../icons.js';
 import { shuffle, tilesOf } from '../../exercises.js';
 import { gameResult, setBest } from '../games.js';
-import { GUESS_KEYS, GUESS_WORD, tileBase } from '../../lang/script.js';
+import { GUESS_KEYS, GUESS_WORD, tileBase, COLLATE } from '../../lang/script.js';
 
 const LIVES = 6;
 const WORDS = 10;
 const KEYS = GUESS_KEYS;
 
-const norm = (ch) => tileBase(ch.toLowerCase());
+const norm = (ch) => tileBase(ch.toLocaleLowerCase(COLLATE));
 
 export function playGuess({ app, items, key, again }) {
   const words = shuffle(items.filter((it) => {

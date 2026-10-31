@@ -1,0 +1,813 @@
+{
+ "history": {
+  "1": [
+   {
+    "q": "Gobekli Tepe pillars",
+    "must": [
+     "gobekli"
+    ],
+    "caption_ru": "Столбы Гёбекли-Тепе",
+    "caption_uz": "Göbeklitepe dikilitaşları",
+    "caption_en": "The pillars of Göbekli Tepe"
+   }
+  ],
+  "2": [
+   {
+    "q": "Hattusa Lion Gate",
+    "must": [
+     "hattusa"
+    ],
+    "caption_ru": "Львиные ворота Хаттуши",
+    "caption_uz": "Hattuşa Aslanlı Kapı",
+    "caption_en": "The Lion Gate of Hattusa"
+   }
+  ],
+  "3": [
+   {
+    "q": "Troy archaeological site walls",
+    "must": [
+     "troy"
+    ],
+    "caption_ru": "Стены древней Трои",
+    "caption_uz": "Truva antik kenti surları",
+    "caption_en": "The walls of ancient Troy"
+   }
+  ],
+  "4": [
+   {
+    "q": "Mausoleum at Halicarnassus Bodrum",
+    "must": [
+     "halicarnassus"
+    ],
+    "caption_ru": "Мавзолей в Галикарнасе (Бодрум)",
+    "caption_uz": "Halikarnas Mozolesi (Bodrum)",
+    "caption_en": "The Mausoleum at Halicarnassus (Bodrum)"
+   }
+  ],
+  "5": [
+   {
+    "q": "Hagia Sophia exterior Istanbul",
+    "must": [
+     "hagia sophia"
+    ],
+    "caption_ru": "Собор Святой Софии",
+    "caption_uz": "Ayasofya",
+    "caption_en": "Hagia Sophia"
+   }
+  ],
+  "6": [
+   {
+    "q": "Orkhon inscriptions Kul Tigin",
+    "must": [
+     "orkhon"
+    ],
+    "caption_ru": "Орхонские надписи",
+    "caption_uz": "Orhun Yazıtları",
+    "caption_en": "The Orkhon inscriptions"
+   }
+  ],
+  "7": [
+   {
+    "q": "Divrigi Great Mosque portal",
+    "must": [
+     "divri"
+    ],
+    "caption_ru": "Портал Великой мечети Дивриги",
+    "caption_uz": "Divriği Ulu Camii taçkapısı",
+    "caption_en": "The portal of the Divriği Great Mosque"
+   }
+  ],
+  "8": [
+   {
+    "q": "Bursa Green Mosque",
+    "must": [
+     "bursa"
+    ],
+    "caption_ru": "Зелёная мечеть в Бурсе",
+    "caption_uz": "Bursa Yeşil Cami",
+    "caption_en": "The Green Mosque in Bursa"
+   }
+  ],
+  "9": [
+   {
+    "q": "Rumelihisari fortress Bosphorus",
+    "must": [
+     "rumeli"
+    ],
+    "caption_ru": "Крепость Румелихисар",
+    "caption_uz": "Rumeli Hisarı",
+    "caption_en": "Rumeli Fortress"
+   }
+  ],
+  "10": [
+   {
+    "q": "Suleymaniye Mosque Istanbul",
+    "must": [
+     "suleymaniye"
+    ],
+    "caption_ru": "Мечеть Сулеймание",
+    "caption_uz": "Süleymaniye Camii",
+    "caption_en": "The Süleymaniye Mosque"
+   }
+  ],
+  "11": [
+   {
+    "q": "Topkapi Palace Imperial Council hall",
+    "must": [
+     "topkap"
+    ],
+    "caption_ru": "Дворец Топкапы",
+    "caption_uz": "Topkapı Sarayı",
+    "caption_en": "Topkapı Palace"
+   }
+  ],
+  "12": [
+   {
+    "q": "Ahmed III fountain Topkapi",
+    "must": [
+     "fountain"
+    ],
+    "caption_ru": "Фонтан Ахмеда III",
+    "caption_uz": "III. Ahmet Çeşmesi",
+    "caption_en": "The Fountain of Ahmed III"
+   }
+  ],
+  "13": [
+   {
+    "q": "Dolmabahce Palace",
+    "must": [
+     "dolmabah"
+    ],
+    "caption_ru": "Дворец Долмабахче",
+    "caption_uz": "Dolmabahçe Sarayı",
+    "caption_en": "Dolmabahçe Palace"
+   }
+  ],
+  "14": [
+   {
+    "q": "Ottoman Parliament 1908",
+    "must": [
+     "1908"
+    ],
+    "caption_ru": "Открытие парламента в 1908 году",
+    "caption_uz": "1908'de Meclis'in açılışı",
+    "caption_en": "The opening of parliament in 1908"
+   }
+  ],
+  "15": [
+   {
+    "q": "Canakkale Martyrs Memorial",
+    "must": [
+     "çanakkale",
+     "canakkale",
+     "martyrs"
+    ],
+    "caption_ru": "Мемориал павшим в Чанаккале",
+    "caption_uz": "Çanakkale Şehitler Abidesi",
+    "caption_en": "The Çanakkale Martyrs' Memorial"
+   }
+  ],
+  "16": [
+   {
+    "q": "Dumlupinar monument",
+    "must": [
+     "dumlup"
+    ],
+    "caption_ru": "Монумент в Думлупынаре",
+    "caption_uz": "Dumlupınar Anıtı",
+    "caption_en": "The Dumlupınar Monument"
+   }
+  ],
+  "17": [
+   {
+    "q": "First Grand National Assembly building Ankara",
+    "must": [
+     "assembly"
+    ],
+    "caption_ru": "Здание первого Меджлиса в Анкаре",
+    "caption_uz": "Birinci Meclis binası, Ankara",
+    "caption_en": "The first Assembly building in Ankara"
+   }
+  ],
+  "18": [
+   {
+    "q": "Anitkabir Ankara",
+    "must": [
+     "anitkabir"
+    ],
+    "caption_ru": "Аныткабир — мавзолей Ататюрка",
+    "caption_uz": "Anıtkabir",
+    "caption_en": "Anıtkabir, Atatürk's mausoleum"
+   },
+   {
+    "q": "Ataturk teaching new alphabet 1928",
+    "must": [
+     "alphabet"
+    ],
+    "caption_ru": "Ататюрк объясняет новый алфавит",
+    "caption_uz": "Atatürk yeni harfleri öğretiyor",
+    "caption_en": "Atatürk teaching the new alphabet"
+   }
+  ],
+  "19": [
+   {
+    "q": "Ismet Inonu",
+    "must": [
+     "inonu"
+    ],
+    "caption_ru": "Исмет Инёню",
+    "caption_uz": "İsmet İnönü",
+    "caption_en": "İsmet İnönü"
+   }
+  ],
+  "20": [
+   {
+    "q": "Bosphorus Bridge 1973",
+    "must": [
+     "bosphorus",
+     "15 july",
+     "temmuz"
+    ],
+    "caption_ru": "Босфорский мост (1973)",
+    "caption_uz": "15 Temmuz Şehitler Köprüsü (1973)",
+    "caption_en": "The Bosphorus Bridge (1973)"
+   }
+  ],
+  "21": [
+   {
+    "q": "Ataturk Dam",
+    "must": [
+     "atatürk dam",
+     "ataturk dam",
+     "atatürk baraj"
+    ],
+    "caption_ru": "Плотина Ататюрка",
+    "caption_uz": "Atatürk Barajı",
+    "caption_en": "The Atatürk Dam"
+   }
+  ],
+  "22": [
+   {
+    "q": "Marmaray tunnel train",
+    "must": [
+     "marmaray"
+    ],
+    "caption_ru": "Мармарай — тоннель под Босфором",
+    "caption_uz": "Marmaray",
+    "caption_en": "Marmaray, the tunnel under the Bosphorus"
+   }
+  ]
+ },
+ "civics": {
+  "1": [
+   {
+    "q": "Flag of Turkey",
+    "must": [
+     "flag"
+    ],
+    "caption_ru": "Флаг Турции",
+    "caption_uz": "Türk bayrağı",
+    "caption_en": "The flag of Turkey"
+   }
+  ],
+  "2": [
+   {
+    "q": "Grand National Assembly of Turkey building",
+    "must": [
+     "assembly"
+    ],
+    "caption_ru": "Здание Великого национального собрания",
+    "caption_uz": "TBMM binası",
+    "caption_en": "The Grand National Assembly building"
+   }
+  ],
+  "3": [
+   {
+    "q": "Ankara Kizilay square",
+    "must": [
+     "ankara"
+    ],
+    "caption_ru": "Анкара — столица",
+    "caption_uz": "Başkent Ankara",
+    "caption_en": "Ankara, the capital"
+   }
+  ],
+  "4": [
+   {
+    "q": "Taksim Republic Monument",
+    "must": [
+     "republic"
+    ],
+    "caption_ru": "Монумент Республики на Таксиме",
+    "caption_uz": "Taksim Cumhuriyet Anıtı",
+    "caption_en": "The Republic Monument in Taksim"
+   }
+  ],
+  "5": [
+   {
+    "q": "Istanbul Courthouse Caglayan",
+    "must": [
+     "courthouse"
+    ],
+    "caption_ru": "Дворец правосудия в Стамбуле",
+    "caption_uz": "İstanbul Adalet Sarayı",
+    "caption_en": "The Istanbul Courthouse"
+   }
+  ],
+  "6": [
+   {
+    "q": "Turkish wedding ceremony municipality",
+    "must": [
+     "wedding"
+    ],
+    "caption_ru": "Свадебная церемония",
+    "caption_uz": "Nikâh töreni",
+    "caption_en": "A wedding ceremony"
+   }
+  ],
+  "7": [
+   {
+    "q": "Istanbul Levent business district",
+    "must": [
+     "levent"
+    ],
+    "caption_ru": "Деловой район Левент",
+    "caption_uz": "Levent iş merkezi",
+    "caption_en": "The Levent business district"
+   }
+  ],
+  "8": [
+   {
+    "q": "Turkish lira banknotes",
+    "must": [
+     "lira"
+    ],
+    "caption_ru": "Турецкие лиры",
+    "caption_uz": "Türk lirası",
+    "caption_en": "Turkish lira"
+   }
+  ],
+  "9": [
+   {
+    "q": "Istanbul apartment buildings",
+    "must": [
+     "apartment"
+    ],
+    "caption_ru": "Многоквартирные дома в Стамбуле",
+    "caption_uz": "İstanbul'da apartmanlar",
+    "caption_en": "Apartment buildings in Istanbul"
+   }
+  ],
+  "10": [
+   {
+    "q": "Ankara City Hospital",
+    "must": [
+     "hospital"
+    ],
+    "caption_ru": "Городская больница",
+    "caption_uz": "Şehir hastanesi",
+    "caption_en": "A city hospital"
+   }
+  ],
+  "11": [
+   {
+    "q": "Turkish primary school students",
+    "must": [
+     "school"
+    ],
+    "caption_ru": "Турецкие школьники",
+    "caption_uz": "Türk okul öğrencileri",
+    "caption_en": "Turkish schoolchildren"
+   }
+  ],
+  "12": [
+   {
+    "q": "SGK building",
+    "must": [
+     "sgk"
+    ],
+    "caption_ru": "Здание соцстраха SGK",
+    "caption_uz": "SGK binası",
+    "caption_en": "The SGK social security building"
+   }
+  ],
+  "13": [
+   {
+    "q": "Istanbul traffic",
+    "must": [
+     "traffic"
+    ],
+    "caption_ru": "Дорожное движение в Стамбуле",
+    "caption_uz": "İstanbul trafiği",
+    "caption_en": "Traffic in Istanbul"
+   }
+  ],
+  "14": [
+   {
+    "q": "Grand Bazaar Istanbul",
+    "must": [
+     "bazaar"
+    ],
+    "caption_ru": "Гранд-базар",
+    "caption_uz": "Kapalıçarşı",
+    "caption_en": "The Grand Bazaar"
+   }
+  ],
+  "15": [
+   {
+    "q": "Istanbul Airport terminal",
+    "must": [
+     "airport"
+    ],
+    "caption_ru": "Аэропорт Стамбула",
+    "caption_uz": "İstanbul Havalimanı",
+    "caption_en": "Istanbul Airport"
+   }
+  ],
+  "16": [
+   {
+    "q": "Turkish passport",
+    "must": [
+     "passport"
+    ],
+    "caption_ru": "Турецкий паспорт",
+    "caption_uz": "Türk pasaportu",
+    "caption_en": "A Turkish passport"
+   }
+  ],
+  "17": [
+   {
+    "q": "Istanbul Maslak skyline",
+    "must": [
+     "maslak"
+    ],
+    "caption_ru": "Деловой квартал Маслак",
+    "caption_uz": "Maslak",
+    "caption_en": "The Maslak business district"
+   }
+  ],
+  "18": [
+   {
+    "q": "Turkish identity card",
+    "must": [
+     "identity"
+    ],
+    "caption_ru": "Турецкая идентификационная карта",
+    "caption_uz": "T.C. kimlik kartı",
+    "caption_en": "A Turkish identity card"
+   }
+  ],
+  "19": [
+   {
+    "q": "Turkish tea glasses",
+    "must": [
+     "tea"
+    ],
+    "caption_ru": "Турецкий чай",
+    "caption_uz": "Türk çayı",
+    "caption_en": "Turkish tea"
+   }
+  ],
+  "20": [
+   {
+    "q": "PTT post office Turkey",
+    "must": [
+     "ptt"
+    ],
+    "caption_ru": "Отделение почты PTT",
+    "caption_uz": "PTT şubesi",
+    "caption_en": "A PTT post office"
+   }
+  ],
+  "21": [
+   {
+    "q": "Ankara University",
+    "must": [
+     "university"
+    ],
+    "caption_ru": "Анкарский университет",
+    "caption_uz": "Ankara Üniversitesi",
+    "caption_en": "Ankara University"
+   }
+  ],
+  "22": [
+   {
+    "q": "Istanbul ferry Kadikoy",
+    "must": [
+     "ferry"
+    ],
+    "caption_ru": "Паром в Кадыкёй",
+    "caption_uz": "Kadıköy vapuru",
+    "caption_en": "The Kadıköy ferry"
+   }
+  ],
+  "23": [
+   {
+    "q": "AFAD emergency assembly area",
+    "must": [
+     "afad"
+    ],
+    "caption_ru": "Пункт сбора AFAD",
+    "caption_uz": "AFAD toplanma alanı",
+    "caption_en": "An AFAD assembly area"
+   }
+  ],
+  "24": [
+   {
+    "q": "Istanbul Galata Tower view",
+    "must": [
+     "galata"
+    ],
+    "caption_ru": "Вид на Галатскую башню",
+    "caption_uz": "Galata Kulesi",
+    "caption_en": "The Galata Tower"
+   }
+  ]
+ },
+ "culture": {
+  "1": [
+   {
+    "q": "Turkish coffee cup",
+    "must": [
+     "coffee"
+    ],
+    "caption_ru": "Турецкий кофе",
+    "caption_uz": "Türk kahvesi",
+    "caption_en": "Turkish coffee"
+   }
+  ],
+  "2": [
+   {
+    "q": "Turkish kebab",
+    "must": [
+     "kebab"
+    ],
+    "caption_ru": "Кебаб",
+    "caption_uz": "Kebap",
+    "caption_en": "Kebab"
+   }
+  ],
+  "3": [
+   {
+    "q": "Turkish breakfast",
+    "must": [
+     "breakfast"
+    ],
+    "caption_ru": "Турецкий завтрак",
+    "caption_uz": "Türk kahvaltısı",
+    "caption_en": "A Turkish breakfast"
+   },
+   {
+    "q": "Simit seller Istanbul",
+    "must": [
+     "simit"
+    ],
+    "caption_ru": "Продавец симитов",
+    "caption_uz": "Simitçi",
+    "caption_en": "A simit seller"
+   }
+  ],
+  "4": [
+   {
+    "q": "Spice Bazaar Istanbul",
+    "must": [
+     "spice"
+    ],
+    "caption_ru": "Египетский базар",
+    "caption_uz": "Mısır Çarşısı",
+    "caption_en": "The Spice Bazaar"
+   }
+  ],
+  "5": [
+   {
+    "q": "Cemberlitas Hamami",
+    "must": [
+     "hamam",
+     "bath"
+    ],
+    "caption_ru": "Турецкая баня",
+    "caption_uz": "Türk hamamı",
+    "caption_en": "A Turkish bath"
+   }
+  ],
+  "6": [
+   {
+    "q": "Ramadan mahya mosque",
+    "must": [
+     "mahya"
+    ],
+    "caption_ru": "Махья — надпись между минаретами",
+    "caption_uz": "Mahya",
+    "caption_en": "A mahya between minarets"
+   }
+  ],
+  "7": [
+   {
+    "q": "Eid al-Adha Turkey",
+    "must": [
+     "eid"
+    ],
+    "caption_ru": "Курбан-байрам",
+    "caption_uz": "Kurban Bayramı",
+    "caption_en": "Kurban Bayramı"
+   }
+  ],
+  "8": [
+   {
+    "q": "Republic Day celebration Turkey",
+    "must": [
+     "republic day"
+    ],
+    "caption_ru": "День Республики",
+    "caption_uz": "Cumhuriyet Bayramı",
+    "caption_en": "Republic Day"
+   }
+  ],
+  "9": [
+   {
+    "q": "Hidirellez",
+    "must": [
+     "hıdırellez",
+     "hidirellez"
+    ],
+    "caption_ru": "Праздник Хыдырэллез",
+    "caption_uz": "Hıdırellez",
+    "caption_en": "The Hıdırellez festival"
+   }
+  ],
+  "10": [
+   {
+    "q": "Turkish delight lokum",
+    "must": [
+     "lokum"
+    ],
+    "caption_ru": "Лукум",
+    "caption_uz": "Lokum",
+    "caption_en": "Turkish delight"
+   },
+   {
+    "q": "Baklava",
+    "must": [
+     "baklava"
+    ],
+    "caption_ru": "Пахлава",
+    "caption_uz": "Baklava",
+    "caption_en": "Baklava"
+   }
+  ],
+  "11": [
+   {
+    "q": "Turkish family dinner",
+    "must": [
+     "family"
+    ],
+    "caption_ru": "Семейный ужин",
+    "caption_uz": "Aile sofrası",
+    "caption_en": "A family meal"
+   }
+  ],
+  "12": [
+   {
+    "q": "Nazar boncuk baby",
+    "must": [
+     "nazar"
+    ],
+    "caption_ru": "Назар на детской одежде",
+    "caption_uz": "Bebek ve nazar boncuğu",
+    "caption_en": "A nazar bead for a baby"
+   }
+  ],
+  "13": [
+   {
+    "q": "Kina gecesi henna night",
+    "must": [
+     "kına",
+     "kina",
+     "henna"
+    ],
+    "caption_ru": "Вечер хны",
+    "caption_uz": "Kına gecesi",
+    "caption_en": "A henna night"
+   }
+  ],
+  "14": [
+   {
+    "q": "Nazar boncugu tree",
+    "must": [
+     "nazar"
+    ],
+    "caption_ru": "Назар-бонджуки",
+    "caption_uz": "Nazar boncukları",
+    "caption_en": "Nazar beads"
+   }
+  ],
+  "15": [
+   {
+    "q": "Eyup cemetery Istanbul",
+    "must": [
+     "eyüp",
+     "eyup"
+    ],
+    "caption_ru": "Кладбище Эюп",
+    "caption_uz": "Eyüp Mezarlığı",
+    "caption_en": "Eyüp Cemetery"
+   }
+  ],
+  "16": [
+   {
+    "q": "Yunus Emre",
+    "must": [
+     "yunus"
+    ],
+    "caption_ru": "Юнус Эмре",
+    "caption_uz": "Yunus Emre",
+    "caption_en": "Yunus Emre"
+   }
+  ],
+  "17": [
+   {
+    "q": "Baglama saz instrument",
+    "must": [
+     "bağlama",
+     "baglama",
+     "saz"
+    ],
+    "caption_ru": "Саз (баглама)",
+    "caption_uz": "Bağlama",
+    "caption_en": "The bağlama (saz)"
+   },
+   {
+    "q": "Whirling dervishes sema",
+    "must": [
+     "dervish"
+    ],
+    "caption_ru": "Кружащиеся дервиши",
+    "caption_uz": "Semazenler",
+    "caption_en": "Whirling dervishes"
+   }
+  ],
+  "18": [
+   {
+    "q": "Yesilcam street Beyoglu",
+    "must": [
+     "yeşilçam",
+     "yesilcam"
+    ],
+    "caption_ru": "Улица Ешильчам",
+    "caption_uz": "Yeşilçam Sokağı",
+    "caption_en": "Yeşilçam Street"
+   }
+  ],
+  "19": [
+   {
+    "q": "Iznik tiles",
+    "must": [
+     "iznik"
+    ],
+    "caption_ru": "Изникские изразцы",
+    "caption_uz": "İznik çinileri",
+    "caption_en": "İznik tiles"
+   },
+   {
+    "q": "Ebru marbling",
+    "must": [
+     "ebru"
+    ],
+    "caption_ru": "Эбру",
+    "caption_uz": "Ebru",
+    "caption_en": "Ebru marbling"
+   }
+  ],
+  "20": [
+   {
+    "q": "Cappadocia balloons",
+    "must": [
+     "cappadocia"
+    ],
+    "caption_ru": "Воздушные шары над Каппадокией",
+    "caption_uz": "Kapadokya balonları",
+    "caption_en": "Balloons over Cappadocia"
+   },
+   {
+    "q": "Pamukkale travertines",
+    "must": [
+     "pamukkale"
+    ],
+    "caption_ru": "Травертины Памуккале",
+    "caption_uz": "Pamukkale travertenleri",
+    "caption_en": "The Pamukkale travertines"
+   }
+  ],
+  "21": [
+   {
+    "q": "Black Sea Turkey village Rize",
+    "must": [
+     "rize"
+    ],
+    "caption_ru": "Черноморская деревня в Ризе",
+    "caption_uz": "Rize'de bir Karadeniz köyü",
+    "caption_en": "A Black Sea village in Rize"
+   }
+  ]
+ }
+}

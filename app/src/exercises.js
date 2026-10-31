@@ -1,7 +1,10 @@
 // Генерация упражнений из карточки слова (её отдаёт start_session).
 // Чистые функции без DOM — их легко проверить и переиспользовать в мобильном приложении.
 import { keyRu, keyUz, wordCount, uzSame } from './lang/normalize.js';
-import { mergeTile, isLetterTile, tileBase, tileTail, SUBS, isInfinitive, verbStem, SUFFIX } from './lang/script.js';
+import { mergeTile, isLetterTile, tileBase, tileTail, SUBS, isInfinitive, verbStem, SUFFIX, COLLATE } from './lang/script.js';
+// строчные/прописные — по правилам изучаемого языка (в турецком I ↔ ı, İ ↔ i); у остальных языков — как обычно
+const lower = (s) => String(s).toLocaleLowerCase(COLLATE);
+const upper = (s) => String(s).toLocaleUpperCase(COLLATE);
 
 // Типы по уровню слова (см. документ: «Упражнения»): от узнавания к вспоминанию
 export const TYPES_BY_LEVEL = [
@@ -88,9 +91,9 @@ export function distort(word, forbiddenKeys = new Set(), rnd = Math.random) {
   const candidates = [];
   tiles.forEach((t, i) => {
     if (t.space) return;
-    const base = tileBase(t.ch).toLowerCase();
-    const upper = t.ch[0] !== t.ch[0].toLowerCase();
-    for (const rep of SUBS[base] || []) candidates.push({ i, rep: upper ? rep[0].toUpperCase() + rep.slice(1) : rep });
+    const base = lower(tileBase(t.ch));
+    const isUpper = t.ch[0] !== lower(t.ch[0]);
+    for (const rep of SUBS[base] || []) candidates.push({ i, rep: isUpper ? upper(rep[0]) + rep.slice(1) : rep });
   });
   for (const c of shuffle(candidates, rnd)) {
     const wrongTiles = tiles.map((t, i) => (i === c.i ? { ch: c.rep + tileTail(t.ch) } : t));
@@ -116,7 +119,7 @@ export function chipsOf(sentence) {
 }
 
 // ---------------------------------------------------------------- построение упражнения
-function firstUpper(s) { return s ? s[0].toUpperCase() + s.slice(1) : s; }
+function firstUpper(s) { return s ? upper(s[0]) + s.slice(1) : s; }
 
 function uniqueBy(list, keyFn, exclude) {
   const seen = new Set(exclude);
@@ -187,7 +190,7 @@ export function buildExercise(item, type, opts = {}) {
       if (isStem) pool = pool.filter(isInfinitive).map(verbStem);
       const wrong = uniqueBy(shuffle(pool, rnd), keyUz, [keyUz(answer)])
         .filter((u) => keyUz(u).length >= 2).slice(0, 3)
-        .map((u) => (cap ? firstUpper(u) : u.toLowerCase()));
+        .map((u) => (cap ? firstUpper(u) : lower(u)));
       if (wrong.length < 3) return null;
       const { options, correctIndex } = placeCorrect(answer, wrong, rnd);
       return { ...base, target: 'blank', ...fill, answer, options, correctIndex };
@@ -243,14 +246,14 @@ export function buildExercise(item, type, opts = {}) {
         if (keyUz(stem) !== keyUz(item.uz)) continue;
         const rest = chars.slice(e.blank_start + e.blank_len).join('');
         const m = rest.match(SUFFIX.re);
-        if (!m || !SUFFIX.group[m[1].toLowerCase()]) continue;
+        if (!m || !SUFFIX.group[lower(m[1])]) continue;
         if (!SUFFIX.stemOk(stem)) continue;
-        found.push({ e, stem, suffix: m[1].toLowerCase(), before: chars.slice(0, e.blank_start).join(''), after: rest.slice(m[1].length) });
+        found.push({ e, stem, suffix: lower(m[1]), before: chars.slice(0, e.blank_start).join(''), after: rest.slice(m[1].length) });
       }
       const f = shuffle(found, rnd)[0];
       if (!f) return null;
       const group = SUFFIX.group[f.suffix];
-      const pool = SUFFIX.pool(f.suffix).filter((s) => SUFFIX.group[s] !== group);
+      const pool = SUFFIX.pool(f.suffix, f.stem).filter((s) => SUFFIX.group[s] !== group);
       const wrong = shuffle(pool, rnd).slice(0, 3);
       const { options, correctIndex } = placeCorrect(f.suffix, wrong, rnd);
       return { ...base, target: 'token', stem: f.stem, before: f.before, after: f.after, ru: f.e.ru,

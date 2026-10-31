@@ -10,6 +10,7 @@ import { renderDialog } from './dialog.js';
 import { grammarFormsBlock } from '../lang/grammar-forms.js';
 import { FEATURES } from '../lang/features.js';
 import { LANG } from '../lang/info.js';
+import { dateLabel } from '../datelabel.js';
 
 // Поле на нужном языке с запасным русским: pick(obj, 'title') → title_uz | title_ru
 export function pick(obj, base, lang = getLang()) {
@@ -41,7 +42,7 @@ export async function renderCourse(app, { course, tab = 'units' }) {
       const head = u.cefr !== lastCefr ? h('div', { class: 'lv-head' }, h('b', {}, u.cefr || ''),
         h('span', { class: 'muted small' }, t('nTopics', units.filter((x) => x.cefr === u.cefr).length))) : null;
       lastCefr = u.cefr;
-      const meta = course === 'history' ? (pick(u, 'period') || u.period) : pick(sections[u.section_id], 'title');
+      const meta = course === 'history' ? dateLabel(u.period, getLang()) : pick(sections[u.section_id], 'title');
       return [head, h('button', { class: `unit-card ${u.locked ? 'locked' : ''} ${u.read ? 'read' : ''}`, type: 'button',
         onClick: () => { haptic(); app.go('unit', { id: u.id }); } },
         h('span', { class: 'unit-n' }, u.read ? icon('check') : u.locked ? icon('lock') : String(u.n)),
@@ -57,7 +58,7 @@ export async function renderCourse(app, { course, tab = 'units' }) {
     body = h('div', { class: 'timeline' }, (data.timeline || []).map((e) =>
       h('div', { class: 'tl-item' },
         h('span', { class: 'tl-dot' }),
-        h('div', {}, h('div', { class: 'tl-date' }, e.date), h('div', {}, pick(e, 'text'))))));
+        h('div', {}, h('div', { class: 'tl-date' }, dateLabel(e.date, getLang())), h('div', {}, pick(e, 'text'))))));
   } else if (tab === 'contacts') {
     body = h('div', {},
       h('div', { class: 'card note' }, icon('civics'), h('span', {}, t('civicsDisclaimer'))),
@@ -193,7 +194,7 @@ export async function renderUnit(app, { id, lang }) {
     h('button', { class: 'btn', type: 'button', onClick: () => app.go('unittest', { id, title: pick(u, 'title', L) }) },
       testInfo.best_score != null ? t('unitTestAgain') : t('unitTestStart'))) : null;
 
-  const meta = u.course_id === 'history' ? (pick(u, 'period', L) || u.period) : pick(u.section, 'title', L);
+  const meta = u.course_id === 'history' ? dateLabel(u.period, L) : pick(u.section, 'title', L);
   mount(h('div', { class: 'screen' },
     h('div', { class: 'row', style: { justifyContent: 'space-between' } },
       h('span', { class: 'row', style: { gap: '6px' } }, u.cefr ? h('span', { class: 'chip' }, u.cefr) : null, meta ? h('span', { class: 'chip accent' }, meta) : null), langSeg),

@@ -1,6 +1,6 @@
 // Генерация филворда — чистые функции без интерфейса (проверяются отдельно).
 import { shuffle, tilesOf } from '../../exercises.js';
-import { FILWORD_CELL } from '../../lang/script.js';
+import { FILWORD_CELL, COLLATE } from '../../lang/script.js';
 
 // Случайный гамильтонов путь по сетке n×n (алгоритм «backbite»)
 export function randomPath(n, rnd = Math.random) {
@@ -41,7 +41,7 @@ export function buildFilword(items, n, rnd = Math.random) {
     let left = total;
     for (const x of pool) {
       const len = x.cells.length;
-      const key = x.it.uz.toLowerCase();
+      const key = x.it.uz.toLocaleLowerCase(COLLATE);
       if (usedUz.has(key) || len > left || (left - len > 0 && left - len < 3)) continue;
       chosen.push(x);
       usedUz.add(key);
@@ -56,7 +56,7 @@ export function buildFilword(items, n, rnd = Math.random) {
     for (const x of chosen) {
       const seg = path.slice(pos, pos + x.cells.length);
       if (rnd() < 0.5) seg.reverse();
-      seg.forEach((cell, k) => { grid[cell] = x.cells[k].ch.toLowerCase(); });
+      seg.forEach((cell, k) => { grid[cell] = x.cells[k].ch.toLocaleLowerCase(COLLATE); });
       words.push({ item: x.it, cells: seg });
       pos += x.cells.length;
     }

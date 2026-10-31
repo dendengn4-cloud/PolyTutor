@@ -711,3 +711,6 @@ Object.assign(sv, {
   examNote: 'Det här är träning på kursens teman: det riktiga provet anordnas av UHR med andra frågor.', examReview: 'Repetera', examAgain: 'Nytt prov',
   examEmpty: 'Frågorna är inte klara än.',
 });
+
+// готовящиеся языки в выборе языка
+Object.assign(sv, { langSoon: 'snart' });

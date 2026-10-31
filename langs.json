@@ -40,6 +40,58 @@
       },
       "timezone": "Europe/Stockholm",
       "tts": "edge"
+    },
+    {
+      "code": "tr",
+      "base": "turkish",
+      "enabled": true,
+      "flag": "🇹🇷",
+      "name": {
+        "ru": "Турецкий",
+        "en": "Turkish",
+        "native": "Türkçe"
+      },
+      "timezone": "Europe/Istanbul",
+      "tts": "edge"
+    }
+  ],
+  "_comment_soon": "Языки, которые готовятся: показываются в выборе языка с пометкой «скоро» (без перехода). Картинка — app/public/avatars/<code>.jpg.",
+  "soon": [
+    {
+      "code": "kk",
+      "flag": "🇰🇿",
+      "name": {
+        "ru": "Казахский",
+        "en": "Kazakh",
+        "native": "Қазақша"
+      }
+    },
+    {
+      "code": "ka",
+      "flag": "🇬🇪",
+      "name": {
+        "ru": "Грузинский",
+        "en": "Georgian",
+        "native": "ქართული"
+      }
+    },
+    {
+      "code": "th",
+      "flag": "🇹🇭",
+      "name": {
+        "ru": "Тайский",
+        "en": "Thai",
+        "native": "ภาษาไทย"
+      }
+    },
+    {
+      "code": "ko",
+      "flag": "🇰🇷",
+      "name": {
+        "ru": "Корейский",
+        "en": "Korean",
+        "native": "한국어"
+      }
     }
   ]
 }

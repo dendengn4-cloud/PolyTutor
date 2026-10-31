@@ -17,7 +17,7 @@ const LEVELS = ['A1', 'A2', 'B1', 'B2'];
 const PAGE = 300;
 
 function firstLetter(uz) {
-  const tile = tilesOf(String(uz).toLowerCase()).find((x) => !x.space && FIRST_LETTER.test(x.ch));
+  const tile = tilesOf(String(uz).toLocaleLowerCase(COLLATE)).find((x) => !x.space && FIRST_LETTER.test(x.ch));
   if (!tile) return '#';
   const ch = tileBase(tile.ch);
   return ALPHABET.includes(ch) ? ch : ch[0];
@@ -37,7 +37,7 @@ function wordRow(w, onOpen) {
   return h('button', { class: `dict-row ${st || 'none'}`, type: 'button', onClick: () => onOpen(w.i) },
     h('div', { class: 'dict-main' },
       h('b', {}, w.u), w.g ? h('span', { class: 'chip tiny-chip gold' }, t('colloquialShort')) : null,
-      h('div', { class: 'small muted' }, w.r)),
+      h('div', { class: 'small muted' }, getLang() === 'en' && w.e ? w.e : w.r)),
     st ? h('span', { class: `lvl-pill ${st}`, title: `${w.l}/15` }, String(w.l)) : null);
 }
 
@@ -61,7 +61,7 @@ export async function renderDictionary(app, params = {}) {
 
   const list = h('div', { class: 'dict-list' });
   const search = h('input', { class: 'answer-input dict-search', type: 'search', placeholder: t('dictSearch'),
-    onInput: () => { query = search.value.trim().toLowerCase(); draw(); } });
+    onInput: () => { query = search.value.trim().toLocaleLowerCase(COLLATE); draw(); } });
 
   const seg = (items, current, onPick) => h('div', { class: 'segmented' }, items.map(([value, label]) =>
     h('button', { type: 'button', class: value === current ? 'active' : '', onClick: () => value !== current && onPick(value) }, label)));
@@ -71,7 +71,7 @@ export async function renderDictionary(app, params = {}) {
   function draw() {
     let rows = words;
     if (filter === 'started') rows = rows.filter((w) => w.l != null);
-    if (query) rows = rows.filter((w) => w.u.toLowerCase().includes(query) || w.r.toLowerCase().includes(query));
+    if (query) rows = rows.filter((w) => w.u.toLocaleLowerCase(COLLATE).includes(query) || w.r.toLowerCase().includes(query.toLowerCase()) || (w.e || '').toLowerCase().includes(query.toLowerCase()));
     const groups = new Map();
     const keyOf = topicMode ? (w) => w.c : group === 'abc' ? (w) => firstLetter(w.u) : (w) => w.t;
     for (const w of rows) {
@@ -93,7 +93,7 @@ export async function renderDictionary(app, params = {}) {
       if (shown >= limit) { more += g.length; continue; }
       const tn = topics[k];
       const tname = Array.isArray(tn) ? tn[{ ru: 0, uz: 1, en: 2 }[getLang()] || 0] || tn[0] : tn || '';
-      const title = topicMode ? `${k} · ${t(`city${k}`)}` : group === 'abc' ? k.toUpperCase() : tname;
+      const title = topicMode ? `${k} · ${t(`city${k}`)}` : group === 'abc' ? k.toLocaleUpperCase(COLLATE) : tname;
       out.push(h('div', { class: 'dict-group' }, h('div', { class: 'label' }, title, h('span', { class: 'muted' }, ` · ${g.length}`)),
         h('div', { class: 'card dict-card' }, g.map((w) => wordRow(w, open)))));
       shown += g.length;

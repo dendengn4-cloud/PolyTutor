@@ -1,10 +1,13 @@
 // Переключение изучаемого языка. Каждый язык — своя страница рядом: ../hy/, ../uz/ …
 // Выбор запоминается (localStorage и облако Telegram), стартовая страница (app/root/index.html) открывает его сразу.
-import { LANG, LANGS } from './lang/info.js';
+import * as INFO from './lang/info.js';
 
 const KEY = 'tutor_lang';
+const { LANG, LANGS } = INFO;
+// готовящиеся языки (langs.json → soon): в выборе языка с пометкой «скоро», без перехода
+const SOON = INFO.SOON || [];
 
-export { LANG, LANGS };
+export { LANG, LANGS, SOON };
 
 export function langName(l, ui) {
   return (l.name && (l.name[ui] || l.name.en)) || l.code;

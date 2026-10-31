@@ -926,6 +926,9 @@ mark { background: var(--gold-soft); color: inherit; border-radius: 4px; padding
 /* изучаемый язык: флаг вместо значка */
 .tile-icon.lang-flag { font-size: 22px; line-height: 1; overflow: hidden; border-radius: 50%; padding: 0; }
 .lang-ava { width: 100%; height: 100%; object-fit: cover; display: block; }
+.soon-lang { opacity: .62; cursor: default; }
+.soon-lang .lang-ava { filter: grayscale(.35); }
+.soon-chip { margin-left: 8px; vertical-align: 2px; }
 .sub-card.active { outline: 2px solid var(--accent); outline-offset: -2px; }
 
 /* ---- шведские формы слов: подпись над формой, всё по левому краю */

@@ -5,7 +5,7 @@ import { icon } from '../icons.js';
 import { applyTheme, currentTheme } from '../theme.js';
 import { lockedSheet } from './home.js';
 import { FEATURES } from '../lang/features.js';
-import { LANG, LANGS, langName, switchLang } from '../langswitch.js';
+import { LANG, LANGS, SOON, langName, switchLang } from '../langswitch.js';
 
 // Превью тем: фон, карточка, акцент, текст
 const SWATCH = {
@@ -82,7 +82,11 @@ export async function renderSettings(app, params = {}) {
       onClick: () => { if (l.code !== LANG.code) { haptic('success'); switchLang(l.code); } } },
       langAvatar(l),
       h('div', {}, h('b', {}, langName(l, ui)), h('div', { class: 'small muted' }, l.code === LANG.code ? `${l.name.native} · ${t('courseLangCurrent')}` : l.name.native)),
-      l.code === LANG.code ? icon('check', 'ic chev') : icon('chevron', 'ic chev'))));
+      l.code === LANG.code ? icon('check', 'ic chev') : icon('chevron', 'ic chev'))),
+    ...SOON.map((l) => h('div', { class: 'card sub-card soon-lang', 'aria-disabled': 'true' },
+      langAvatar(l),
+      h('div', {}, h('b', {}, langName(l, ui), h('span', { class: 'chip tiny-chip soon-chip' }, t('langSoon'))),
+        h('div', { class: 'small muted' }, l.name.native)))));
   };
 
   mount(h('div', { class: 'screen' },

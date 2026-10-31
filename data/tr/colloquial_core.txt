@@ -1,0 +1,47 @@
+# Самые нужные разговорные фразы — отдельная тема на A1 («Разговорная речь. Самое нужное»).
+# Остальная разговорная лексика из colloquial.json — одной темой в начале A2. Одна строка — один ID.
+20001 # selam
+20002 # naber?
+20003 # iyidir
+20004 # senden?
+20005 # nasıl gidiyor?
+20006 # idare eder
+20009 # bay bay
+20010 # kendine iyi bak
+20012 # kolay gelsin
+20014 # hoş bulduk
+20015 # sağ ol
+20016 # sağ olun
+20017 # eline sağlık
+20018 # ne demek
+20019 # bir bakar mısınız?
+20024 # geçmiş olsun
+20025 # tamam
+20026 # tamamdır
+20027 # olur
+20028 # aynen
+20029 # tabii ki
+20033 # yok
+20034 # yo
+20037 # fark etmez
+20039 # vay be!
+20041 # süper
+20042 # yaa
+20043 # of ya
+20046 # maşallah
+20047 # çok şükür
+20059 # aferin
+20061 # bravo
+20062 # şey
+20064 # işte
+20068 # hadi
+20069 # neyse
+20071 # napıyorsun?
+20073 # nası?
+20074 # geliyom
+20075 # bilmiyom
+20076 # nerdesin?
+20078 # bi'
+20080 # napalım?
+20082 # n'oldu?
+20083 # niye?

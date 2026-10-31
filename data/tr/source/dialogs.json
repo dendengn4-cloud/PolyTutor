@@ -1,0 +1,2788 @@
+[
+ {
+  "n": 1,
+  "cefr": "A1",
+  "section": "Знакомство и общение",
+  "title_ru": "Знакомство",
+  "title_uz": "Tanışma",
+  "title_en": "Getting Acquainted",
+  "intro_ru": "Анна учит турецкий язык. На языковых курсах в Стамбуле она знакомится с Эмре.",
+  "intro_uz": "Anna Türkçe öğreniyor. İstanbul'daki dil kursunda Emre ile tanışıyor.",
+  "intro_en": "Anna is learning Turkish. At a language course in Istanbul she meets Emre.",
+  "speakers": {
+   "A": "Emre",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Merhaba!",
+    "ru": "Привет!",
+    "en": "Hi!"
+   },
+   {
+    "who": "B",
+    "uz": "Merhaba!",
+    "ru": "Привет!",
+    "en": "Hi!"
+   },
+   {
+    "who": "A",
+    "uz": "Benim adım Emre. Senin adın ne?",
+    "ru": "Меня зовут Эмре. А тебя как зовут?",
+    "en": "My name is Emre. What's your name?"
+   },
+   {
+    "who": "B",
+    "uz": "Benim adım Anna. Memnun oldum!",
+    "ru": "Меня зовут Анна. Очень приятно!",
+    "en": "My name is Anna. Nice to meet you!"
+   },
+   {
+    "who": "A",
+    "uz": "Ben de memnun oldum. Nerelisin?",
+    "ru": "Мне тоже приятно. Ты откуда?",
+    "en": "Nice to meet you too. Where are you from?"
+   },
+   {
+    "who": "B",
+    "uz": "Rusyalıyım, Moskovalıyım. Ya sen?",
+    "ru": "Я из России, из Москвы. А ты?",
+    "en": "I'm from Russia, from Moscow. And you?"
+   },
+   {
+    "who": "A",
+    "uz": "Ben İstanbulluyum. Türkçe biliyor musun?",
+    "ru": "Я из Стамбула. Ты знаешь турецкий?",
+    "en": "I'm from Istanbul. Do you know Turkish?"
+   },
+   {
+    "who": "B",
+    "uz": "Biraz biliyorum. Her gün çalışıyorum.",
+    "ru": "Немного знаю. Занимаюсь каждый день.",
+    "en": "I know a little. I study every day."
+   }
+  ],
+  "vocab": [
+   "merhaba",
+   "memnun oldum",
+   "ad",
+   "Türkçe",
+   "her gün",
+   "çalışmak"
+  ],
+  "note_ru": "«Memnun oldum» — «очень приятно», ответ — «Ben de memnun oldum». Вопрос «Nerelisin?» — «откуда ты?», ответ строится с суффиксом -lı/-li/-lu/-lü: Rusyalıyım, İstanbulluyum. С незнакомыми и старшими говорят «siz», между ровесниками — «sen».",
+  "note_uz": "\"Memnun oldum\" sözüne \"Ben de memnun oldum\" diye cevap verilir. \"Nerelisin?\" sorusunun cevabı -lı/-li/-lu/-lü ekiyle kurulur: Rusyalıyım, İstanbulluyum. Yabancılara ve büyüklere \"siz\", yaşıtlara \"sen\" denir.",
+  "note_en": "\"Memnun oldum\" (nice to meet you) is answered with \"Ben de memnun oldum\". \"Nerelisin?\" (where are you from?) is answered with the suffix -lı/-li/-lu/-lü: Rusyalıyım, İstanbulluyum. Strangers and elders are addressed as \"siz\", people of your age as \"sen\"."
+ },
+ {
+  "n": 2,
+  "cefr": "A1",
+  "section": "Покупки и еда",
+  "title_ru": "Чай в кафе",
+  "title_uz": "Kafede çay",
+  "title_en": "Tea at the café",
+  "intro_ru": "После занятий Анна и Эмре заходят в кафе.",
+  "intro_uz": "Dersten sonra Anna ile Emre bir kafeye giriyor.",
+  "intro_en": "After class Anna and Emre go into a café.",
+  "speakers": {
+   "A": "Garson",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Hoş geldiniz! Ne alırsınız?",
+    "ru": "Добро пожаловать! Что будете?",
+    "en": "Welcome! What will you have?"
+   },
+   {
+    "who": "B",
+    "uz": "Bir çay ve bir simit lütfen.",
+    "ru": "Один чай и один симит, пожалуйста.",
+    "en": "A tea and a simit, please."
+   },
+   {
+    "who": "A",
+    "uz": "Çay açık mı olsun, demli mi?",
+    "ru": "Чай послабее или покрепче?",
+    "en": "Would you like the tea light or strong?"
+   },
+   {
+    "who": "B",
+    "uz": "Açık olsun, şekersiz.",
+    "ru": "Послабее, без сахара.",
+    "en": "Light, without sugar."
+   },
+   {
+    "who": "A",
+    "uz": "Başka bir şey ister misiniz?",
+    "ru": "Хотите что-нибудь ещё?",
+    "en": "Would you like anything else?"
+   },
+   {
+    "who": "B",
+    "uz": "Hayır, teşekkürler. Hesap ne kadar?",
+    "ru": "Нет, спасибо. Сколько с меня?",
+    "en": "No, thanks. How much is the bill?"
+   },
+   {
+    "who": "A",
+    "uz": "Toplam altmış lira. Nakit mi, kartla mı?",
+    "ru": "Всего шестьдесят лир. Наличными или картой?",
+    "en": "Sixty lira in total. Cash or card?"
+   },
+   {
+    "who": "B",
+    "uz": "Kartla, lütfen.",
+    "ru": "Картой, пожалуйста.",
+    "en": "By card, please."
+   }
+  ],
+  "vocab": [
+   "çay",
+   "simit",
+   "lütfen",
+   "şeker",
+   "hesap",
+   "nakit"
+  ],
+  "note_ru": "«Hoş geldiniz» — «добро пожаловать», на него отвечают «Hoş bulduk». Чай подают в маленьких стаканчиках-тюльпанах; «açık» — светлый, слабый, «demli» — крепкий. «Hesap» — счёт; «ne kadar?» — «сколько?».",
+  "note_uz": "\"Hoş geldiniz\" sözüne \"Hoş bulduk\" diye karşılık verilir. Çay ince belli bardakta gelir; \"açık\" hafif, \"demli\" koyu demektir. \"Ne kadar?\" fiyat sorar.",
+  "note_en": "\"Hoş geldiniz\" (welcome) is answered with \"Hoş bulduk\". Tea comes in small tulip-shaped glasses; \"açık\" means light and \"demli\" strong. \"Hesap\" is the bill; \"ne kadar?\" asks the price."
+ },
+ {
+  "n": 3,
+  "cefr": "A1",
+  "section": "Город и транспорт",
+  "title_ru": "Как пройти к метро?",
+  "title_uz": "Metro nerede?",
+  "title_en": "Where is the metro?",
+  "intro_ru": "Анна ищет станцию метро и спрашивает дорогу у прохожей.",
+  "intro_uz": "Anna metro istasyonunu arıyor ve yoldan geçen bir kadına soruyor.",
+  "intro_en": "Anna is looking for the metro station and asks a passer-by for directions.",
+  "speakers": {
+   "A": "Anna",
+   "B": "Kadın"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Affedersiniz, metro istasyonu nerede?",
+    "ru": "Извините, где станция метро?",
+    "en": "Excuse me, where is the metro station?"
+   },
+   {
+    "who": "B",
+    "uz": "Düz gidin, sonra sağa dönün.",
+    "ru": "Идите прямо, потом поверните направо.",
+    "en": "Go straight on, then turn right."
+   },
+   {
+    "who": "A",
+    "uz": "Uzak mı?",
+    "ru": "Это далеко?",
+    "en": "Is it far?"
+   },
+   {
+    "who": "B",
+    "uz": "Hayır, yakın. Beş dakika yürüyerek.",
+    "ru": "Нет, близко. Пять минут пешком.",
+    "en": "No, it's close. Five minutes on foot."
+   },
+   {
+    "who": "A",
+    "uz": "Eczanenin yanında mı?",
+    "ru": "Рядом с аптекой?",
+    "en": "Is it next to the pharmacy?"
+   },
+   {
+    "who": "B",
+    "uz": "Evet, eczanenin karşısında. Büyük bir tabela var.",
+    "ru": "Да, напротив аптеки. Там большая вывеска.",
+    "en": "Yes, opposite the pharmacy. There's a big sign."
+   },
+   {
+    "who": "A",
+    "uz": "Çok teşekkür ederim!",
+    "ru": "Большое спасибо!",
+    "en": "Thank you very much!"
+   },
+   {
+    "who": "B",
+    "uz": "Rica ederim. İyi günler!",
+    "ru": "Не за что. Хорошего дня!",
+    "en": "You're welcome. Have a nice day!"
+   }
+  ],
+  "vocab": [
+   "affedersiniz",
+   "düz",
+   "sağ",
+   "uzak",
+   "yakın",
+   "karşı",
+   "rica ederim"
+  ],
+  "note_ru": "«Affedersiniz» — «извините», чтобы обратиться к незнакомому. Направления: sağ — право, sol — лево, düz — прямо; «sağa dönün» — «поверните направо». На «teşekkür ederim» отвечают «rica ederim» — «не за что».",
+  "note_uz": "\"Affedersiniz\" bir yabancıya seslenmek için kullanılır. Yönler: sağ, sol, düz; \"sağa dönün\". \"Teşekkür ederim\" sözüne \"rica ederim\" diye cevap verilir.",
+  "note_en": "\"Affedersiniz\" (excuse me) is used to address a stranger. Directions: sağ — right, sol — left, düz — straight on; \"sağa dönün\" — \"turn right\". \"Teşekkür ederim\" is answered with \"rica ederim\" (you're welcome)."
+ },
+ {
+  "n": 4,
+  "cefr": "A1",
+  "section": "Покупки и еда",
+  "title_ru": "В магазине у дома",
+  "title_uz": "Bakkalda",
+  "title_en": "At the corner shop",
+  "intro_ru": "Анна покупает продукты к завтраку в бакале — маленьком магазине у дома.",
+  "intro_uz": "Anna kahvaltı için evin yanındaki bakkaldan alışveriş yapıyor.",
+  "intro_en": "Anna is buying food for breakfast at the bakkal, the little shop near her home.",
+  "speakers": {
+   "A": "Anna",
+   "B": "Bakkal"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Günaydın! Ekmek var mı?",
+    "ru": "Доброе утро! Хлеб есть?",
+    "en": "Good morning! Do you have bread?"
+   },
+   {
+    "who": "B",
+    "uz": "Günaydın! Var, taze ekmek. Kaç tane?",
+    "ru": "Доброе утро! Есть, свежий. Сколько штук?",
+    "en": "Good morning! Yes, fresh bread. How many?"
+   },
+   {
+    "who": "A",
+    "uz": "İki tane, lütfen. Bir de peynir istiyorum.",
+    "ru": "Две, пожалуйста. И ещё я хочу сыра.",
+    "en": "Two, please. And I'd like some cheese too."
+   },
+   {
+    "who": "B",
+    "uz": "Beyaz peynir mi, kaşar mı?",
+    "ru": "Белый сыр или кашар?",
+    "en": "White cheese or kaşar?"
+   },
+   {
+    "who": "A",
+    "uz": "Beyaz peynir. Yarım kilo.",
+    "ru": "Белый сыр. Полкило.",
+    "en": "White cheese. Half a kilo."
+   },
+   {
+    "who": "B",
+    "uz": "Başka? Zeytin, yumurta?",
+    "ru": "Ещё что-нибудь? Оливки, яйца?",
+    "en": "Anything else? Olives, eggs?"
+   },
+   {
+    "who": "A",
+    "uz": "On yumurta. Hepsi ne kadar?",
+    "ru": "Десяток яиц. Сколько всё стоит?",
+    "en": "Ten eggs. How much is it all?"
+   },
+   {
+    "who": "B",
+    "uz": "Yüz kırk lira. Afiyet olsun!",
+    "ru": "Сто сорок лир. Приятного аппетита!",
+    "en": "A hundred and forty lira. Enjoy!"
+   }
+  ],
+  "vocab": [
+   "ekmek",
+   "taze",
+   "peynir",
+   "zeytin",
+   "yumurta",
+   "kahvaltı"
+  ],
+  "note_ru": "«Var mı?» — «есть?», ответ «var» (есть) или «yok» (нет). «Kaç tane?» — «сколько штук?». Beyaz peynir — солёный белый сыр, kaşar — жёлтый. «Afiyet olsun» — «приятного аппетита», так говорят и продавцы.",
+  "note_uz": "\"Var mı?\" sorusuna \"var\" ya da \"yok\" diye cevap verilir. \"Kaç tane?\" adet sorar. Beyaz peynir tuzlu ve beyazdır, kaşar sarıdır. \"Afiyet olsun\" esnaf tarafından da söylenir.",
+  "note_en": "\"Var mı?\" means \"is there?\", answered \"var\" (yes) or \"yok\" (no). \"Kaç tane?\" asks \"how many?\". Beyaz peynir is a salty white cheese, kaşar a yellow one. \"Afiyet olsun\" (enjoy your meal) is said by shopkeepers too."
+ },
+ {
+  "n": 5,
+  "cefr": "A1",
+  "section": "Знакомство и общение",
+  "title_ru": "Моя семья",
+  "title_uz": "Benim ailem",
+  "title_en": "My family",
+  "intro_ru": "Подруга Зейнеп показывает Анне фотографии своей семьи.",
+  "intro_uz": "Arkadaşı Zeynep, Anna'ya ailesinin fotoğraflarını gösteriyor.",
+  "intro_en": "Her friend Zeynep shows Anna photos of her family.",
+  "speakers": {
+   "A": "Anna",
+   "B": "Zeynep"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Bu fotoğrafta kim var?",
+    "ru": "Кто на этой фотографии?",
+    "en": "Who is in this photo?"
+   },
+   {
+    "who": "B",
+    "uz": "Bunlar annem ve babam. Ankara'da oturuyorlar.",
+    "ru": "Это мои мама и папа. Они живут в Анкаре.",
+    "en": "These are my mum and dad. They live in Ankara."
+   },
+   {
+    "who": "A",
+    "uz": "Kardeşin var mı?",
+    "ru": "У тебя есть братья или сёстры?",
+    "en": "Do you have any brothers or sisters?"
+   },
+   {
+    "who": "B",
+    "uz": "Evet, bir ağabeyim ve bir kız kardeşim var.",
+    "ru": "Да, у меня есть старший брат и младшая сестра.",
+    "en": "Yes, I have an older brother and a younger sister."
+   },
+   {
+    "who": "A",
+    "uz": "Ağabeyin ne iş yapıyor?",
+    "ru": "Чем занимается твой старший брат?",
+    "en": "What does your older brother do?"
+   },
+   {
+    "who": "B",
+    "uz": "O doktor. Evli, iki çocuğu var.",
+    "ru": "Он врач. Женат, у него двое детей.",
+    "en": "He's a doctor. He's married with two children."
+   },
+   {
+    "who": "A",
+    "uz": "Ne güzel! Kız kardeşin kaç yaşında?",
+    "ru": "Как здорово! Сколько лет твоей сестре?",
+    "en": "How lovely! How old is your sister?"
+   },
+   {
+    "who": "B",
+    "uz": "On sekiz yaşında. Üniversitede okuyor.",
+    "ru": "Восемнадцать. Учится в университете.",
+    "en": "Eighteen. She's at university."
+   }
+  ],
+  "vocab": [
+   "aile",
+   "anne",
+   "baba",
+   "kız kardeş",
+   "ağabey",
+   "çocuk",
+   "kaç yaşında"
+  ],
+  "note_ru": "«Kardeş» — брат или сестра без указания пола; «kız kardeş» — сестра, «erkek kardeş» — брат. Старшего брата называют ağabey (abi), старшую сестру — abla. «Var mı?» в значении «у тебя есть?»: Kardeşin var mı?",
+  "note_uz": "\"Kardeş\" cinsiyet belirtmez; \"kız kardeş\" ve \"erkek kardeş\" denir. Büyük erkek kardeşe ağabey (abi), büyük kız kardeşe abla denir. Sahiplik \"var\" ile anlatılır: Kardeşin var mı?",
+  "note_en": "\"Kardeş\" means a sibling of either sex; \"kız kardeş\" is a sister and \"erkek kardeş\" a brother. An older brother is ağabey (abi), an older sister abla. Possession is expressed with \"var\": Kardeşin var mı? (Do you have a sibling?)"
+ },
+ {
+  "n": 6,
+  "cefr": "A1",
+  "section": "Город и транспорт",
+  "title_ru": "Проезд в автобусе",
+  "title_uz": "Otobüste",
+  "title_en": "On the bus",
+  "intro_ru": "Анне нужно доехать до больницы. Она спрашивает водителя автобуса.",
+  "intro_uz": "Anna hastaneye gitmek istiyor. Otobüs şoförüne soruyor.",
+  "intro_en": "Anna needs to get to the hospital. She asks the bus driver.",
+  "speakers": {
+   "A": "Anna",
+   "B": "Şoför"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Pardon, bu otobüs hastaneye gidiyor mu?",
+    "ru": "Простите, этот автобус идёт до больницы?",
+    "en": "Excuse me, does this bus go to the hospital?"
+   },
+   {
+    "who": "B",
+    "uz": "Evet, gidiyor. İstanbulkart'ınız var mı?",
+    "ru": "Да, идёт. У вас есть «Истанбулкарт»?",
+    "en": "Yes, it does. Do you have an İstanbulkart?"
+   },
+   {
+    "who": "A",
+    "uz": "Evet, var. Kaç durak?",
+    "ru": "Да, есть. Сколько остановок?",
+    "en": "Yes, I do. How many stops?"
+   },
+   {
+    "who": "B",
+    "uz": "Altı durak. Hastane durağında inin.",
+    "ru": "Шесть остановок. Выходите на остановке «Больница».",
+    "en": "Six stops. Get off at the hospital stop."
+   },
+   {
+    "who": "A",
+    "uz": "Bana söyler misiniz, lütfen?",
+    "ru": "Скажете мне, пожалуйста?",
+    "en": "Could you tell me, please?"
+   },
+   {
+    "who": "B",
+    "uz": "Tamam, söylerim. Oturun.",
+    "ru": "Хорошо, скажу. Садитесь.",
+    "en": "All right, I'll tell you. Have a seat."
+   },
+   {
+    "who": "A",
+    "uz": "Kartta para az kaldı. Nereden doldurabilirim?",
+    "ru": "На карте мало денег. Где можно пополнить?",
+    "en": "There's little money left on the card. Where can I top it up?"
+   },
+   {
+    "who": "B",
+    "uz": "Durakta makine var. Orada doldurabilirsiniz.",
+    "ru": "На остановке есть автомат. Там можно пополнить.",
+    "en": "There's a machine at the stop. You can top it up there."
+   }
+  ],
+  "vocab": [
+   "otobüs",
+   "hastane",
+   "durak",
+   "inmek",
+   "para",
+   "doldurmak"
+  ],
+  "note_ru": "В Стамбуле за проезд платят картой İstanbulkart: её прикладывают к валидатору при входе. Пополнить карту можно в автоматах у остановок и в киосках. «İnin» — «выходите», от глагола inmek. В других городах свои карты.",
+  "note_uz": "İstanbul'da ulaşımda İstanbulkart kullanılır: binerken okutulur. Kart duraklardaki makinelerden ve büfelerden doldurulur. \"İnin\" inmek fiilindendir. Diğer şehirlerin kendi kartları vardır.",
+  "note_en": "In Istanbul fares are paid with the İstanbulkart: you tap it on the reader when boarding. It can be topped up at machines by the stops and at kiosks. \"İnin\" (get off) comes from the verb inmek. Other cities have their own cards."
+ },
+ {
+  "n": 7,
+  "cefr": "A1",
+  "section": "Знакомство и общение",
+  "title_ru": "Который час?",
+  "title_uz": "Saat kaç?",
+  "title_en": "What time is it?",
+  "intro_ru": "Анна и Эмре договариваются встретиться в выходные.",
+  "intro_uz": "Anna ile Emre hafta sonu buluşmak için sözleşiyor.",
+  "intro_en": "Anna and Emre arrange to meet at the weekend.",
+  "speakers": {
+   "A": "Emre",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Cumartesi ne yapıyorsun?",
+    "ru": "Что ты делаешь в субботу?",
+    "en": "What are you doing on Saturday?"
+   },
+   {
+    "who": "B",
+    "uz": "Bir planım yok. Neden?",
+    "ru": "У меня нет планов. А что?",
+    "en": "I have no plans. Why?"
+   },
+   {
+    "who": "A",
+    "uz": "Boğaz'da yürüyüş yapalım mı?",
+    "ru": "Давай погуляем у Босфора?",
+    "en": "Shall we go for a walk by the Bosphorus?"
+   },
+   {
+    "who": "B",
+    "uz": "Harika! Saat kaçta?",
+    "ru": "Отлично! Во сколько?",
+    "en": "Great! At what time?"
+   },
+   {
+    "who": "A",
+    "uz": "Saat on birde, iskelenin önünde.",
+    "ru": "В одиннадцать, у пристани.",
+    "en": "At eleven, in front of the pier."
+   },
+   {
+    "who": "B",
+    "uz": "Tamam. Şimdi saat kaç?",
+    "ru": "Хорошо. А сейчас который час?",
+    "en": "OK. What time is it now?"
+   },
+   {
+    "who": "A",
+    "uz": "Saat dört buçuk.",
+    "ru": "Половина пятого.",
+    "en": "Half past four."
+   },
+   {
+    "who": "B",
+    "uz": "Eyvah, dersim var! Görüşürüz!",
+    "ru": "Ой, у меня урок! Увидимся!",
+    "en": "Oh no, I have a class! See you!"
+   }
+  ],
+  "vocab": [
+   "cumartesi",
+   "saat",
+   "harika",
+   "ders",
+   "görüşürüz",
+   "şimdi"
+  ],
+  "note_ru": "«Saat kaç?» — «который час?», «Saat kaçta?» — «во сколько?». Ответ на второй вопрос — с окончанием -da/-de/-ta/-te: saat on birde. «Buçuk» — «половина»: dört buçuk — половина пятого. «Görüşürüz» — «увидимся».",
+  "note_uz": "\"Saat kaç?\" şimdiki saati, \"Saat kaçta?\" bir olayın saatini sorar; cevabı -da/-de ekiyle verilir: saat on birde. \"Buçuk\" yarım demektir. \"Görüşürüz\" vedalaşma sözüdür.",
+  "note_en": "\"Saat kaç?\" asks what time it is; \"Saat kaçta?\" asks at what time. The answer takes -da/-de/-ta/-te: saat on birde (at eleven). \"Buçuk\" means half: dört buçuk is half past four. \"Görüşürüz\" means \"see you\"."
+ },
+ {
+  "n": 8,
+  "cefr": "A1",
+  "section": "Знакомство и общение",
+  "title_ru": "Погода",
+  "title_uz": "Hava durumu",
+  "title_en": "The weather",
+  "intro_ru": "Анна впервые проводит лето в Турции и говорит с соседкой о погоде.",
+  "intro_uz": "Anna ilk yazını Türkiye'de geçiriyor ve komşusuyla hava hakkında konuşuyor.",
+  "intro_en": "Anna is spending her first summer in Turkey and talks to her neighbour about the weather.",
+  "speakers": {
+   "A": "Komşu Fatma",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Günaydın kızım! Bugün hava çok sıcak.",
+    "ru": "Доброе утро, дочка! Сегодня очень жарко.",
+    "en": "Good morning, dear! It's very hot today."
+   },
+   {
+    "who": "B",
+    "uz": "Günaydın! Evet, otuz beş derece!",
+    "ru": "Доброе утро! Да, тридцать пять градусов!",
+    "en": "Good morning! Yes, thirty-five degrees!"
+   },
+   {
+    "who": "A",
+    "uz": "Rusya'da yazın hava nasıl?",
+    "ru": "А какая погода летом в России?",
+    "en": "What's the weather like in Russia in summer?"
+   },
+   {
+    "who": "B",
+    "uz": "Daha serin. Kışın çok soğuk ve kar yağıyor.",
+    "ru": "Прохладнее. Зимой очень холодно, идёт снег.",
+    "en": "Cooler. In winter it's very cold and it snows."
+   },
+   {
+    "who": "A",
+    "uz": "Burada kışın yağmur yağar, kar az.",
+    "ru": "Здесь зимой идут дожди, снега мало.",
+    "en": "Here it rains in winter, there's little snow."
+   },
+   {
+    "who": "B",
+    "uz": "Yarın hava nasıl olacak?",
+    "ru": "Какая погода будет завтра?",
+    "en": "What will the weather be like tomorrow?"
+   },
+   {
+    "who": "A",
+    "uz": "Biraz rüzgârlı olacak, ama güneşli.",
+    "ru": "Будет немного ветрено, но солнечно.",
+    "en": "It'll be a bit windy, but sunny."
+   },
+   {
+    "who": "B",
+    "uz": "Güzel. Denize gideceğim!",
+    "ru": "Хорошо. Пойду на море!",
+    "en": "Good. I'll go to the sea!"
+   }
+  ],
+  "vocab": [
+   "hava",
+   "sıcak",
+   "soğuk",
+   "kar",
+   "yağmur",
+   "rüzgâr",
+   "güneşli",
+   "derece"
+  ],
+  "note_ru": "Пожилые соседи ласково называют девушек «kızım» — «дочка», юношей «oğlum» — «сынок». «Yağmur yağıyor» — «идёт дождь», «kar yağıyor» — «идёт снег». «Yazın» — летом, «kışın» — зимой.",
+  "note_uz": "Yaşlı komşular gençlere sevgiyle \"kızım\", \"oğlum\" der. \"Yağmur yağıyor\", \"kar yağıyor\" denir. \"Yazın\" ve \"kışın\" mevsim zarflarıdır.",
+  "note_en": "Older neighbours affectionately call young women \"kızım\" (my daughter) and young men \"oğlum\" (my son). \"Yağmur yağıyor\" means \"it's raining\" and \"kar yağıyor\" \"it's snowing\". \"Yazın\" means in summer, \"kışın\" in winter."
+ },
+ {
+  "n": 9,
+  "cefr": "A2",
+  "section": "Здоровье",
+  "title_ru": "Запись к врачу",
+  "title_uz": "Doktordan randevu",
+  "title_en": "A doctor's appointment",
+  "intro_ru": "У Анны высокая температура и болит горло. Она звонит в справочную MHRS, чтобы записаться к врачу.",
+  "intro_uz": "Anna'nın ateşi yüksek ve boğazı ağrıyor. Doktordan randevu almak için MHRS'yi arıyor.",
+  "intro_en": "Anna has a high temperature and a sore throat. She calls MHRS to book a doctor's appointment.",
+  "speakers": {
+   "A": "Operatör",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Merkezi Hekim Randevu Sistemi, buyurun.",
+    "ru": "Центральная система записи к врачу, слушаю вас.",
+    "en": "Central Doctor Appointment System, how can I help?"
+   },
+   {
+    "who": "B",
+    "uz": "Merhaba, doktordan randevu almak istiyorum.",
+    "ru": "Здравствуйте, я хочу записаться к врачу.",
+    "en": "Hello, I'd like to book a doctor's appointment."
+   },
+   {
+    "who": "A",
+    "uz": "Kimlik numaranızı alabilir miyim?",
+    "ru": "Можно ваш идентификационный номер?",
+    "en": "May I have your ID number?"
+   },
+   {
+    "who": "B",
+    "uz": "Yabancıyım. İkamet kartımda numara var: 99…",
+    "ru": "Я иностранка. На моём виде на жительство есть номер: 99…",
+    "en": "I'm a foreigner. There's a number on my residence card: 99…"
+   },
+   {
+    "who": "A",
+    "uz": "Teşekkürler. Şikâyetiniz ne?",
+    "ru": "Спасибо. На что жалуетесь?",
+    "en": "Thank you. What's the problem?"
+   },
+   {
+    "who": "B",
+    "uz": "Ateşim var, boğazım çok ağrıyor.",
+    "ru": "У меня температура, сильно болит горло.",
+    "en": "I have a temperature and a very sore throat."
+   },
+   {
+    "who": "A",
+    "uz": "Aile hekiminiz yarın sabah dokuzda müsait.",
+    "ru": "Ваш семейный врач свободен завтра в девять утра.",
+    "en": "Your family doctor is free tomorrow at nine a.m."
+   },
+   {
+    "who": "B",
+    "uz": "Bugün olmaz mı? Çok kötüyüm.",
+    "ru": "А сегодня нельзя? Мне очень плохо.",
+    "en": "Isn't today possible? I feel very bad."
+   },
+   {
+    "who": "A",
+    "uz": "Bugün dolu. Çok kötüyseniz acile gidin ya da 112'yi arayın.",
+    "ru": "Сегодня всё занято. Если очень плохо, идите в неотложку или звоните 112.",
+    "en": "Today is full. If you feel very bad, go to the emergency room or call 112."
+   },
+   {
+    "who": "B",
+    "uz": "Anladım. Yarın sabah gelirim. Teşekkürler.",
+    "ru": "Поняла. Приду завтра утром. Спасибо.",
+    "en": "I see. I'll come tomorrow morning. Thank you."
+   }
+  ],
+  "vocab": [
+   "randevu",
+   "doktor",
+   "ateş",
+   "boğaz",
+   "acil",
+   "yabancı"
+  ],
+  "note_ru": "Записаться к врачу в Турции можно через систему MHRS: по телефону 182, на сайте или в приложении. У каждого жителя есть семейный врач (aile hekimi). Иностранцы используют номер с вида на жительство (начинается с 99). Скорая помощь — 112.",
+  "note_uz": "Türkiye'de randevu MHRS üzerinden alınır: 182'yi arayarak, internetten ya da uygulamadan. Herkesin bir aile hekimi vardır. Yabancılar ikamet kartındaki 99 ile başlayan numarayı kullanır. Acil yardım numarası 112'dir.",
+  "note_en": "In Turkey doctor's appointments are booked through MHRS: by calling 182, online or in the app. Everyone has a family doctor (aile hekimi). Foreigners use the number on their residence card (it starts with 99). The emergency number is 112."
+ },
+ {
+  "n": 10,
+  "cefr": "A2",
+  "section": "Здоровье",
+  "title_ru": "В аптеке",
+  "title_uz": "Eczanede",
+  "title_en": "At the pharmacy",
+  "intro_ru": "Анна приходит в аптеку с рецептом от врача.",
+  "intro_uz": "Anna doktorun yazdığı reçeteyle eczaneye geliyor.",
+  "intro_en": "Anna comes to the pharmacy with a prescription from the doctor.",
+  "speakers": {
+   "A": "Eczacı",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Buyurun, nasıl yardımcı olabilirim?",
+    "ru": "Слушаю, чем могу помочь?",
+    "en": "Yes, how can I help?"
+   },
+   {
+    "who": "B",
+    "uz": "Doktor bana ilaç yazdı. E-reçete numarası bu.",
+    "ru": "Врач выписал мне лекарство. Вот номер электронного рецепта.",
+    "en": "The doctor prescribed me some medicine. This is the e-prescription number."
+   },
+   {
+    "who": "A",
+    "uz": "Bir dakika… Evet, antibiyotik ve boğaz spreyi.",
+    "ru": "Минутку… Да, антибиотик и спрей для горла.",
+    "en": "One moment… Yes, an antibiotic and a throat spray."
+   },
+   {
+    "who": "B",
+    "uz": "Antibiyotiği nasıl kullanayım?",
+    "ru": "Как принимать антибиотик?",
+    "en": "How should I take the antibiotic?"
+   },
+   {
+    "who": "A",
+    "uz": "Günde iki kere, sabah ve akşam, yemekten sonra.",
+    "ru": "Два раза в день, утром и вечером, после еды.",
+    "en": "Twice a day, morning and evening, after meals."
+   },
+   {
+    "who": "B",
+    "uz": "Kaç gün?",
+    "ru": "Сколько дней?",
+    "en": "For how many days?"
+   },
+   {
+    "who": "A",
+    "uz": "Yedi gün. Kendinizi iyi hissetseniz de bırakmayın.",
+    "ru": "Семь дней. Не бросайте, даже если почувствуете себя хорошо.",
+    "en": "Seven days. Don't stop even if you feel well."
+   },
+   {
+    "who": "B",
+    "uz": "Anladım. Sigortam var. Ne kadar ödeyeceğim?",
+    "ru": "Понятно. У меня есть страховка. Сколько я заплачу?",
+    "en": "I see. I have insurance. How much will I pay?"
+   },
+   {
+    "who": "A",
+    "uz": "Sigorta ödüyor, sadece katkı payı: kırk lira. Geçmiş olsun!",
+    "ru": "Платит страховка, только доплата: сорок лир. Выздоравливайте!",
+    "en": "Insurance pays, only the co-payment: forty lira. Get well soon!"
+   },
+   {
+    "who": "B",
+    "uz": "Buyurun. Sağ olun!",
+    "ru": "Вот, пожалуйста. Спасибо!",
+    "en": "Here you are. Thank you!"
+   }
+  ],
+  "vocab": [
+   "eczane",
+   "ilaç",
+   "reçete",
+   "sabah",
+   "akşam",
+   "sigorta",
+   "ödemek"
+  ],
+  "note_ru": "Рецепты в Турции электронные: аптекарь находит их по номеру. Аптеки (eczane) отмечены красной буквой E; ночью работает дежурная аптека (nöbetçi eczane), её адрес висит на двери каждой аптеки. Больному желают «Geçmiş olsun» — «скорее поправляйтесь».",
+  "note_uz": "Türkiye'de reçeteler elektroniktir, eczacı numarayla bulur. Eczaneler kırmızı E harfiyle gösterilir; gece nöbetçi eczane açıktır, adresi her eczanenin kapısında asılıdır. Hasta olana \"Geçmiş olsun\" denir.",
+  "note_en": "Prescriptions in Turkey are electronic: the pharmacist finds them by number. Pharmacies (eczane) are marked with a red letter E; at night a duty pharmacy (nöbetçi eczane) is open, and its address is posted on the door of every pharmacy. To someone ill you say \"Geçmiş olsun\" — \"get well soon\"."
+ },
+ {
+  "n": 11,
+  "cefr": "A2",
+  "section": "Быт и услуги",
+  "title_ru": "Вид на жительство",
+  "title_uz": "İkamet izni",
+  "title_en": "A residence permit",
+  "intro_ru": "Анна пришла в миграционную службу на собеседование по виду на жительство.",
+  "intro_uz": "Anna ikamet izni için Göç İdaresi'ndeki randevusuna geldi.",
+  "intro_en": "Anna has come to the migration office for her residence permit appointment.",
+  "speakers": {
+   "A": "Memur",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Günaydın. Randevu belgeniz yanınızda mı?",
+    "ru": "Доброе утро. Подтверждение записи у вас с собой?",
+    "en": "Good morning. Do you have your appointment document with you?"
+   },
+   {
+    "who": "B",
+    "uz": "Evet, buyurun. Pasaportum ve fotoğraflarım da burada.",
+    "ru": "Да, пожалуйста. Мой паспорт и фотографии тоже здесь.",
+    "en": "Yes, here you are. My passport and photos are here too."
+   },
+   {
+    "who": "A",
+    "uz": "Hangi tür ikamet izni istiyorsunuz?",
+    "ru": "Какой вид разрешения вы хотите?",
+    "en": "What type of residence permit are you applying for?"
+   },
+   {
+    "who": "B",
+    "uz": "Kısa dönem. Bir yıl dil kursuna gideceğim.",
+    "ru": "Краткосрочное. Я год буду ходить на языковые курсы.",
+    "en": "Short-term. I'll attend a language course for a year."
+   },
+   {
+    "who": "A",
+    "uz": "Kira sözleşmeniz ve sağlık sigortanız var mı?",
+    "ru": "У вас есть договор аренды и медицинская страховка?",
+    "en": "Do you have a rental contract and health insurance?"
+   },
+   {
+    "who": "B",
+    "uz": "Var. Bunlar da notere onaylatıldı.",
+    "ru": "Есть. Они тоже заверены у нотариуса.",
+    "en": "Yes. They have been certified by a notary too."
+   },
+   {
+    "who": "A",
+    "uz": "Güzel. Adres kaydının nasıl yapıldığını biliyor musunuz?",
+    "ru": "Хорошо. Вы знаете, как регистрируют адрес?",
+    "en": "Good. Do you know how to register your address?"
+   },
+   {
+    "who": "B",
+    "uz": "Hayır, henüz bilmiyorum. Nereye gitmeliyim?",
+    "ru": "Нет, пока не знаю. Куда мне идти?",
+    "en": "No, I don't know yet. Where should I go?"
+   },
+   {
+    "who": "A",
+    "uz": "Kart posta ile adresinize gelecek. Sonra yirmi gün içinde nüfus müdürlüğüne gidin.",
+    "ru": "Карту пришлют почтой на ваш адрес. Потом в течение двадцати дней сходите в отдел регистрации населения.",
+    "en": "The card will be posted to your address. Then go to the civil registry office within twenty days."
+   },
+   {
+    "who": "B",
+    "uz": "Anladım. Çok teşekkür ederim.",
+    "ru": "Поняла. Большое спасибо.",
+    "en": "I see. Thank you very much."
+   }
+  ],
+  "vocab": [
+   "ikamet izni",
+   "pasaport",
+   "fotoğraf",
+   "kira",
+   "sözleşme",
+   "adres"
+  ],
+  "note_ru": "Иностранцы, живущие в Турции дольше 90 дней, получают вид на жительство (ikamet izni). Заявление подают онлайн, затем приходят в Göç İdaresi с документами. Карту присылают почтой; после этого адрес регистрируют в nüfus müdürlüğü.",
+  "note_uz": "Türkiye'de 90 günden uzun kalan yabancılar ikamet izni alır. Başvuru internetten yapılır, sonra belgelerle Göç İdaresi'ne gidilir. Kart postayla gelir; ardından adres nüfus müdürlüğünde kaydedilir.",
+  "note_en": "Foreigners staying in Turkey longer than 90 days get a residence permit (ikamet izni). The application is filed online, then you go to the migration office (Göç İdaresi) with documents. The card is sent by post; after that the address is registered at the civil registry office (nüfus müdürlüğü)."
+ },
+ {
+  "n": 12,
+  "cefr": "A2",
+  "section": "Быт и услуги",
+  "title_ru": "В банке",
+  "title_uz": "Bankada",
+  "title_en": "At the bank",
+  "intro_ru": "Анна получила вид на жительство и пришла в банк открыть счёт.",
+  "intro_uz": "Anna ikamet iznini aldı ve hesap açmak için bankaya geldi.",
+  "intro_en": "Anna has received her residence permit and has come to the bank to open an account.",
+  "speakers": {
+   "A": "Banka memuru",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Hoş geldiniz. Sıra numaranız kaç?",
+    "ru": "Добро пожаловать. Какой у вас номер очереди?",
+    "en": "Welcome. What's your queue number?"
+   },
+   {
+    "who": "B",
+    "uz": "Yüz on iki. Hesap açtırmak istiyorum.",
+    "ru": "Сто двенадцать. Я хочу открыть счёт.",
+    "en": "One hundred and twelve. I'd like to open an account."
+   },
+   {
+    "who": "A",
+    "uz": "Tabii. Pasaportunuz ve ikamet kartınız lütfen.",
+    "ru": "Конечно. Ваш паспорт и вид на жительство, пожалуйста.",
+    "en": "Of course. Your passport and residence card, please."
+   },
+   {
+    "who": "B",
+    "uz": "Buyurun. Vergi numaram da var.",
+    "ru": "Пожалуйста. У меня есть и налоговый номер.",
+    "en": "Here you are. I also have a tax number."
+   },
+   {
+    "who": "A",
+    "uz": "Çok iyi. Türk lirası hesabı mı, döviz hesabı mı?",
+    "ru": "Отлично. Счёт в турецких лирах или валютный?",
+    "en": "Very good. A Turkish lira account or a foreign currency account?"
+   },
+   {
+    "who": "B",
+    "uz": "Türk lirası. Maaşım buraya yatacak.",
+    "ru": "В лирах. Сюда будет приходить зарплата.",
+    "en": "Turkish lira. My salary will be paid into it."
+   },
+   {
+    "who": "A",
+    "uz": "Banka kartınız beş iş günü içinde hazır olur.",
+    "ru": "Банковская карта будет готова через пять рабочих дней.",
+    "en": "Your bank card will be ready within five working days."
+   },
+   {
+    "who": "B",
+    "uz": "Mobil bankacılık da kullanabilir miyim?",
+    "ru": "Можно пользоваться и мобильным банком?",
+    "en": "Can I use mobile banking too?"
+   },
+   {
+    "who": "A",
+    "uz": "Evet, şifreniz telefonunuza SMS ile gelecek.",
+    "ru": "Да, пароль придёт вам на телефон по SMS.",
+    "en": "Yes, your password will come to your phone by SMS."
+   },
+   {
+    "who": "B",
+    "uz": "Harika. Teşekkür ederim.",
+    "ru": "Отлично. Спасибо.",
+    "en": "Great. Thank you."
+   }
+  ],
+  "vocab": [
+   "banka",
+   "hesap",
+   "maaş",
+   "şifre",
+   "telefon",
+   "kart",
+   "vergi"
+  ],
+  "note_ru": "В банках и учреждениях берут талон с номером очереди (sıra numarası) в автомате у входа. Для открытия счёта иностранцу нужны паспорт и налоговый номер (vergi numarası), который выдают в налоговой бесплатно; у владельцев ВНЖ он есть на карте. «Hesap açtırmak» — «открыть счёт» (букв. «попросить открыть»).",
+  "note_uz": "Bankalarda ve dairelerde girişteki makineden sıra numarası alınır. Yabancının hesap açması için pasaport ve vergi dairesinden ücretsiz alınan vergi numarası gerekir; ikamet kartı olanlarda bu numara kartta yazılıdır. \"Hesap açtırmak\" ettirgen bir fiildir.",
+  "note_en": "In banks and offices you take a queue ticket (sıra numarası) from the machine at the entrance. To open an account a foreigner needs a passport and a tax number (vergi numarası), issued free at the tax office; residence permit holders have it on their card. \"Hesap açtırmak\" means \"to have an account opened\"."
+ },
+ {
+  "n": 13,
+  "cefr": "A2",
+  "section": "Быт и услуги",
+  "title_ru": "Поиск квартиры",
+  "title_uz": "Ev aramak",
+  "title_en": "Looking for a flat",
+  "intro_ru": "Анна ищет квартиру и звонит риелтору по объявлению.",
+  "intro_uz": "Anna ev arıyor ve bir ilan için emlakçıyı arıyor.",
+  "intro_en": "Anna is looking for a flat and calls an estate agent about an advert.",
+  "speakers": {
+   "A": "Anna",
+   "B": "Emlakçı"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Merhaba, internetteki kiralık daire için arıyorum.",
+    "ru": "Здравствуйте, я звоню по поводу квартиры в аренду из интернета.",
+    "en": "Hello, I'm calling about the flat for rent on the internet."
+   },
+   {
+    "who": "B",
+    "uz": "Merhaba. Kadıköy'deki iki artı bir mi?",
+    "ru": "Здравствуйте. Двухкомнатная с гостиной в Кадыкёе?",
+    "en": "Hello. The two-plus-one in Kadıköy?"
+   },
+   {
+    "who": "A",
+    "uz": "Evet. Kirası ne kadar?",
+    "ru": "Да. Сколько стоит аренда?",
+    "en": "Yes. How much is the rent?"
+   },
+   {
+    "who": "B",
+    "uz": "Aylık yirmi beş bin lira, aidat dahil değil.",
+    "ru": "Двадцать пять тысяч лир в месяц, без платы за содержание дома.",
+    "en": "Twenty-five thousand lira a month, not including the service charge."
+   },
+   {
+    "who": "A",
+    "uz": "Depozito ne kadar?",
+    "ru": "А какой залог?",
+    "en": "How much is the deposit?"
+   },
+   {
+    "who": "B",
+    "uz": "İki kira depozito, bir kira da komisyon.",
+    "ru": "Залог — две месячные платы, и ещё одна — комиссия.",
+    "en": "Two months' rent as deposit, and one month's rent as commission."
+   },
+   {
+    "who": "A",
+    "uz": "Ev eşyalı mı?",
+    "ru": "Квартира с мебелью?",
+    "en": "Is the flat furnished?"
+   },
+   {
+    "who": "B",
+    "uz": "Hayır, boş. Ama mutfak hazır, kombi yeni.",
+    "ru": "Нет, пустая. Но кухня оборудована, котёл новый.",
+    "en": "No, it's unfurnished. But the kitchen is fitted and the boiler is new."
+   },
+   {
+    "who": "A",
+    "uz": "Yarın akşam görebilir miyim?",
+    "ru": "Можно посмотреть завтра вечером?",
+    "en": "Can I see it tomorrow evening?"
+   },
+   {
+    "who": "B",
+    "uz": "Olur, saat yedide apartmanın önünde buluşalım.",
+    "ru": "Можно, встретимся в семь у дома.",
+    "en": "Sure, let's meet at seven in front of the building."
+   }
+  ],
+  "vocab": [
+   "daire",
+   "kira",
+   "mutfak",
+   "eşyalı",
+   "boş",
+   "yarın"
+  ],
+  "note_ru": "Квартиры в Турции описывают формулой «комнаты + гостиная»: 2+1 — две спальни и гостиная. «Aidat» — ежемесячный взнос на содержание дома (уборка, лифт, охрана). Риелтор (emlakçı) обычно берёт комиссию в размере месячной аренды плюс НДС.",
+  "note_uz": "Türkiye'de evler \"oda + salon\" diye anlatılır: 2+1 iki oda bir salon demektir. Aidat apartmanın temizlik, asansör, güvenlik gibi aylık giderleridir. Emlakçı genellikle bir aylık kira artı KDV komisyon alır.",
+  "note_en": "Flats in Turkey are described as \"rooms + living room\": 2+1 means two bedrooms and a living room. \"Aidat\" is the monthly service charge for the building (cleaning, lift, security). An estate agent (emlakçı) usually takes a month's rent plus VAT as commission."
+ },
+ {
+  "n": 14,
+  "cefr": "A2",
+  "section": "Покупки и еда",
+  "title_ru": "Обед в локанте",
+  "title_uz": "Lokantada öğle yemeği",
+  "title_en": "Lunch at a lokanta",
+  "intro_ru": "Анна и коллега Элиф обедают в локанте недалеко от работы.",
+  "intro_uz": "Anna ile iş arkadaşı Elif işyerinin yakınındaki bir lokantada öğle yemeği yiyor.",
+  "intro_en": "Anna and her colleague Elif have lunch at a lokanta near work.",
+  "speakers": {
+   "A": "Garson",
+   "B": "Elif",
+   "C": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Hoş geldiniz! Bugün kuru fasulye, karnıyarık ve tavuk sote var.",
+    "ru": "Добро пожаловать! Сегодня есть фасоль, карныярык и тушёная курица.",
+    "en": "Welcome! Today we have white beans, karnıyarık and chicken sauté."
+   },
+   {
+    "who": "B",
+    "uz": "Bana kuru fasulye ve pilav lütfen.",
+    "ru": "Мне фасоль и плов, пожалуйста.",
+    "en": "White beans and rice for me, please."
+   },
+   {
+    "who": "C",
+    "uz": "Karnıyarık nedir?",
+    "ru": "Что такое карныярык?",
+    "en": "What is karnıyarık?"
+   },
+   {
+    "who": "A",
+    "uz": "Kıymayla doldurulmuş patlıcan. Çok lezzetli!",
+    "ru": "Баклажан, фаршированный мясным фаршем. Очень вкусно!",
+    "en": "Aubergine stuffed with minced meat. Very tasty!"
+   },
+   {
+    "who": "C",
+    "uz": "O zaman karnıyarık alayım. Acı mı?",
+    "ru": "Тогда я возьму карныярык. Он острый?",
+    "en": "Then I'll have the karnıyarık. Is it spicy?"
+   },
+   {
+    "who": "A",
+    "uz": "Hayır, acı değil. Yanında cacık ister misiniz?",
+    "ru": "Нет, не острый. Хотите к нему джаджик?",
+    "en": "No, it isn't spicy. Would you like some cacık with it?"
+   },
+   {
+    "who": "C",
+    "uz": "Evet, lütfen. Bir de su.",
+    "ru": "Да, пожалуйста. И ещё воды.",
+    "en": "Yes, please. And some water."
+   },
+   {
+    "who": "B",
+    "uz": "Afiyet olsun, Anna! Burada yemekler ev yemeği gibi.",
+    "ru": "Приятного аппетита, Анна! Здесь еда как домашняя.",
+    "en": "Enjoy, Anna! The food here is like home cooking."
+   },
+   {
+    "who": "C",
+    "uz": "Gerçekten çok güzel. Hesabı ayrı ödeyelim mi?",
+    "ru": "Правда очень вкусно. Заплатим по отдельности?",
+    "en": "It really is very good. Shall we pay separately?"
+   },
+   {
+    "who": "B",
+    "uz": "Olmaz, bugün benden! Sen bir dahaki sefere ısmarlarsın.",
+    "ru": "Ни в коем случае, сегодня я угощаю! В следующий раз угостишь ты.",
+    "en": "No way, today it's on me! You can treat me next time."
+   }
+  ],
+  "vocab": [
+   "öğle yemeği",
+   "patlıcan",
+   "acı",
+   "su",
+   "lezzetli"
+  ],
+  "note_ru": "Локанта — простой ресторан с готовыми блюдами на витрине: выбирают, показывая пальцем. В Турции редко делят счёт: обычно один угощает («bugün benden» — «сегодня за мой счёт»), а в следующий раз угощает другой. Cacık — холодный йогурт с огурцом.",
+  "note_uz": "Lokanta, hazır yemeklerin vitrinde durduğu sade bir yerdir; yemek gösterilerek seçilir. Türkiye'de hesap az bölünür: genellikle biri ısmarlar (\"bugün benden\"), sonra sıra öbürüne gelir. Cacık salatalıklı soğuk yoğurttur.",
+  "note_en": "A lokanta is a simple restaurant with ready-made dishes in a display: you choose by pointing. The bill is rarely split in Turkey: usually one person treats (\"bugün benden\" — \"today it's on me\"), and next time the other does. Cacık is cold yoghurt with cucumber."
+ },
+ {
+  "n": 15,
+  "cefr": "A2",
+  "section": "Праздники и гости",
+  "title_ru": "Приглашение на байрам",
+  "title_uz": "Bayram daveti",
+  "title_en": "An invitation for the holiday",
+  "intro_ru": "Подруга Зейнеп приглашает Анну провести Рамазан-байрам с её семьёй.",
+  "intro_uz": "Zeynep, Anna'yı Ramazan Bayramı'nı ailesiyle geçirmeye davet ediyor.",
+  "intro_en": "Zeynep invites Anna to spend the Ramadan holiday with her family.",
+  "speakers": {
+   "A": "Zeynep",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Anna, bayramda ne yapıyorsun?",
+    "ru": "Анна, что ты делаешь на байрам?",
+    "en": "Anna, what are you doing for the holiday?"
+   },
+   {
+    "who": "B",
+    "uz": "Bilmiyorum. Herkes memleketine gidiyor.",
+    "ru": "Не знаю. Все уезжают на родину.",
+    "en": "I don't know. Everyone is going back to their home towns."
+   },
+   {
+    "who": "A",
+    "uz": "Bize gel! Annemler seni çok merak ediyor.",
+    "ru": "Приезжай к нам! Мои родители очень хотят с тобой познакомиться.",
+    "en": "Come to us! My parents are very curious about you."
+   },
+   {
+    "who": "B",
+    "uz": "Çok teşekkür ederim! Ne götüreyim?",
+    "ru": "Большое спасибо! Что мне принести?",
+    "en": "Thank you so much! What should I bring?"
+   },
+   {
+    "who": "A",
+    "uz": "Bir kutu çikolata ya da tatlı yeter.",
+    "ru": "Хватит коробки шоколада или сладостей.",
+    "en": "A box of chocolates or sweets will do."
+   },
+   {
+    "who": "B",
+    "uz": "Bayramda ne yapılır?",
+    "ru": "Что делают на байрам?",
+    "en": "What do people do at the holiday?"
+   },
+   {
+    "who": "A",
+    "uz": "Sabah büyüklerin elini öperiz, sonra akrabaları ziyaret ederiz.",
+    "ru": "Утром мы целуем руку старшим, а потом ходим в гости к родственникам.",
+    "en": "In the morning we kiss the elders' hands, then we visit relatives."
+   },
+   {
+    "who": "B",
+    "uz": "El öpmek nasıl? Ben de yapmalı mıyım?",
+    "ru": "Как целуют руку? Мне тоже нужно?",
+    "en": "How do you kiss someone's hand? Should I do it too?"
+   },
+   {
+    "who": "A",
+    "uz": "Eli öpüp alnına koyarsın. Ama zorunlu değil, merak etme.",
+    "ru": "Целуешь руку и прикладываешь ко лбу. Но это не обязательно, не волнуйся.",
+    "en": "You kiss the hand and touch it to your forehead. But it's not compulsory, don't worry."
+   },
+   {
+    "who": "B",
+    "uz": "Tamam, deneyeceğim. İyi bayramlar!",
+    "ru": "Хорошо, попробую. С праздником!",
+    "en": "All right, I'll try. Happy holiday!"
+   }
+  ],
+  "vocab": [
+   "bayram",
+   "davet",
+   "akraba",
+   "tatlı",
+   "çikolata",
+   "merak etme"
+  ],
+  "note_ru": "На Рамазан-байрам (его называют и Şeker Bayramı — «праздник сладостей») младшие целуют руку старшим и прикладывают её ко лбу; в ответ дети получают сладости или деньги. Поздравляют словами «İyi bayramlar» или «Bayramınız kutlu olsun». В гости приносят сладости или шоколад.",
+  "note_uz": "Ramazan Bayramı'nda (Şeker Bayramı) küçükler büyüklerin elini öpüp alnına koyar; çocuklara şeker ya da para verilir. \"İyi bayramlar\" ya da \"Bayramınız kutlu olsun\" denir. Misafirliğe tatlı ya da çikolata götürülür.",
+  "note_en": "At the Ramadan holiday (also called Şeker Bayramı, the \"sweets holiday\") younger people kiss elders' hands and touch them to their foreheads; children get sweets or money in return. Greetings are \"İyi bayramlar\" or \"Bayramınız kutlu olsun\". Sweets or chocolates are brought when visiting."
+ },
+ {
+  "n": 16,
+  "cefr": "A2",
+  "section": "Город и транспорт",
+  "title_ru": "На скоростном поезде",
+  "title_uz": "Hızlı trende",
+  "title_en": "On the high-speed train",
+  "intro_ru": "Анна едет на скоростном поезде из Анкары в Стамбул. Контролёр проверяет билеты.",
+  "intro_uz": "Anna Ankara'dan İstanbul'a hızlı trenle gidiyor. Kondüktör biletleri kontrol ediyor.",
+  "intro_en": "Anna is travelling from Ankara to Istanbul by high-speed train. The conductor checks tickets.",
+  "speakers": {
+   "A": "Kondüktör",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "İyi günler, biletinizi görebilir miyim?",
+    "ru": "Добрый день, можно ваш билет?",
+    "en": "Good afternoon, may I see your ticket?"
+   },
+   {
+    "who": "B",
+    "uz": "Tabii, telefonumda. Buyurun.",
+    "ru": "Конечно, он в телефоне. Пожалуйста.",
+    "en": "Of course, it's on my phone. Here you are."
+   },
+   {
+    "who": "A",
+    "uz": "Teşekkürler. Ama bu sizin koltuğunuz değil, siz 6. vagondasınız.",
+    "ru": "Спасибо. Но это не ваше место, у вас 6-й вагон.",
+    "en": "Thank you. But this isn't your seat, you're in carriage 6."
+   },
+   {
+    "who": "B",
+    "uz": "Ah, özür dilerim! Hangi taraf?",
+    "ru": "Ой, простите! В какую сторону?",
+    "en": "Oh, I'm sorry! Which way?"
+   },
+   {
+    "who": "A",
+    "uz": "Arka tarafta, iki vagon sonra.",
+    "ru": "Назад, через два вагона.",
+    "en": "Towards the back, two carriages down."
+   },
+   {
+    "who": "B",
+    "uz": "Tren İstanbul'a saat kaçta varıyor?",
+    "ru": "Во сколько поезд прибывает в Стамбул?",
+    "en": "What time does the train arrive in Istanbul?"
+   },
+   {
+    "who": "A",
+    "uz": "Söğütlüçeşme'ye saat on dört otuzda.",
+    "ru": "На Сёютлючешме в четырнадцать тридцать.",
+    "en": "At Söğütlüçeşme at fourteen thirty."
+   },
+   {
+    "who": "B",
+    "uz": "Trende yemek var mı?",
+    "ru": "В поезде есть еда?",
+    "en": "Is there food on the train?"
+   },
+   {
+    "who": "A",
+    "uz": "Evet, kafe vagonu dördüncü vagonda. İyi yolculuklar!",
+    "ru": "Да, вагон-кафе — четвёртый. Хорошей дороги!",
+    "en": "Yes, the café car is carriage four. Have a good trip!"
+   },
+   {
+    "who": "B",
+    "uz": "Çok teşekkürler!",
+    "ru": "Большое спасибо!",
+    "en": "Thank you very much!"
+   }
+  ],
+  "vocab": [
+   "tren",
+   "bilet",
+   "koltuk",
+   "vagon",
+   "varmak",
+   "iyi yolculuklar",
+   "özür dilerim"
+  ],
+  "note_ru": "Скоростные поезда YHT компании TCDD соединяют Анкару, Стамбул, Конью, Эскишехир и другие города. Билеты покупают на сайте или в приложении и показывают в телефоне. «İyi yolculuklar» — «хорошей дороги». Время в поездах и на вокзалах называют по 24-часовой системе.",
+  "note_uz": "TCDD'nin YHT hızlı trenleri Ankara, İstanbul, Konya, Eskişehir ve başka şehirleri bağlar. Biletler internetten ya da uygulamadan alınır, telefonda gösterilir. \"İyi yolculuklar\" denir. İstasyonlarda saat 24 saat sistemiyle söylenir.",
+  "note_en": "TCDD's YHT high-speed trains link Ankara, Istanbul, Konya, Eskişehir and other cities. Tickets are bought online or in the app and shown on your phone. \"İyi yolculuklar\" means \"have a good trip\". Train times are given in the 24-hour system."
+ },
+ {
+  "n": 17,
+  "cefr": "B1",
+  "section": "Работа и учёба",
+  "title_ru": "Собеседование",
+  "title_uz": "İş görüşmesi",
+  "title_en": "A job interview",
+  "intro_ru": "Анна пришла на собеседование в IT-компанию в Стамбуле.",
+  "intro_uz": "Anna İstanbul'daki bir bilişim şirketine iş görüşmesine geldi.",
+  "intro_en": "Anna has come to a job interview at an IT company in Istanbul.",
+  "speakers": {
+   "A": "Müdür Selin Hanım",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Hoş geldiniz Anna Hanım, oturun lütfen. Biraz kendinizden bahseder misiniz?",
+    "ru": "Добро пожаловать, Анна-ханым, садитесь, пожалуйста. Расскажете немного о себе?",
+    "en": "Welcome, Ms Anna, please sit down. Could you tell me a little about yourself?"
+   },
+   {
+    "who": "B",
+    "uz": "Tabii. Moskova'da bilgisayar mühendisliği okudum, beş yıl yazılımcı olarak çalıştım.",
+    "ru": "Конечно. Я училась на инженера-программиста в Москве, пять лет работала разработчиком.",
+    "en": "Of course. I studied computer engineering in Moscow and worked as a software developer for five years."
+   },
+   {
+    "who": "A",
+    "uz": "Neden Türkiye'de çalışmak istiyorsunuz?",
+    "ru": "Почему вы хотите работать в Турции?",
+    "en": "Why do you want to work in Turkey?"
+   },
+   {
+    "who": "B",
+    "uz": "İki yıldır İstanbul'da yaşıyorum ve burada kalmak istiyorum. Şirketinizin projeleri de çok ilgimi çekiyor.",
+    "ru": "Я два года живу в Стамбуле и хочу остаться. И проекты вашей компании мне очень интересны.",
+    "en": "I've been living in Istanbul for two years and want to stay. Your company's projects also interest me a lot."
+   },
+   {
+    "who": "A",
+    "uz": "Türkçeniz çok iyi. Ekipte genellikle Türkçe konuşuyoruz, sorun olur mu?",
+    "ru": "У вас очень хороший турецкий. В команде мы обычно говорим по-турецки, это не проблема?",
+    "en": "Your Turkish is very good. We usually speak Turkish in the team, would that be a problem?"
+   },
+   {
+    "who": "B",
+    "uz": "Hayır, tam tersine, dilimi geliştirmek istiyorum.",
+    "ru": "Нет, наоборот, я хочу улучшить язык.",
+    "en": "No, quite the opposite, I want to improve my language."
+   },
+   {
+    "who": "A",
+    "uz": "Güçlü yönleriniz neler?",
+    "ru": "Каковы ваши сильные стороны?",
+    "en": "What are your strengths?"
+   },
+   {
+    "who": "B",
+    "uz": "Sorumluluk sahibiyim, ekip çalışmasını seviyorum ve hızlı öğreniyorum.",
+    "ru": "Я ответственная, люблю работать в команде и быстро учусь.",
+    "en": "I'm responsible, I like teamwork and I learn quickly."
+   },
+   {
+    "who": "A",
+    "uz": "Çalışma izniniz var mı?",
+    "ru": "У вас есть разрешение на работу?",
+    "en": "Do you have a work permit?"
+   },
+   {
+    "who": "B",
+    "uz": "Henüz yok, ama işveren başvurursa alabilirim.",
+    "ru": "Пока нет, но я могу его получить, если подаст работодатель.",
+    "en": "Not yet, but I can get one if the employer applies."
+   },
+   {
+    "who": "A",
+    "uz": "Anladım. Maaş beklentiniz nedir?",
+    "ru": "Понятно. Какие у вас ожидания по зарплате?",
+    "en": "I see. What are your salary expectations?"
+   },
+   {
+    "who": "B",
+    "uz": "Piyasa koşullarına uygun bir maaş bekliyorum, ama esneğim.",
+    "ru": "Я рассчитываю на зарплату по рынку, но готова к обсуждению.",
+    "en": "I expect a salary in line with the market, but I'm flexible."
+   }
+  ],
+  "vocab": [
+   "iş görüşmesi",
+   "şirket",
+   "mühendis",
+   "ekip",
+   "maaş",
+   "işveren"
+  ],
+  "note_ru": "К женщинам вежливо обращаются по имени с «Hanım» (Anna Hanım), к мужчинам — с «Bey» (Emre Bey). Иностранцу разрешение на работу (çalışma izni) оформляет работодатель через Министерство труда. «Bahsetmek» требует исходного падежа: kendinizden bahsedin — «расскажите о себе».",
+  "note_uz": "Kadınlara adıyla birlikte \"Hanım\", erkeklere \"Bey\" denir. Yabancının çalışma iznine işveren Çalışma Bakanlığı'na başvurur. \"Bahsetmek\" ayrılma hâli ister: kendinizden bahsedin.",
+  "note_en": "Women are politely addressed by first name plus \"Hanım\" (Anna Hanım), men by first name plus \"Bey\" (Emre Bey). A foreigner's work permit (çalışma izni) is applied for by the employer through the Ministry of Labour. \"Bahsetmek\" (to talk about) takes the ablative: kendinizden bahsedin — \"tell us about yourself\"."
+ },
+ {
+  "n": 18,
+  "cefr": "B1",
+  "section": "Работа и учёба",
+  "title_ru": "Первый день на работе",
+  "title_uz": "İşte ilk gün",
+  "title_en": "The first day at work",
+  "intro_ru": "Анну взяли на работу. Коллега Мерт показывает ей офис.",
+  "intro_uz": "Anna işe alındı. İş arkadaşı Mert ona ofisi gezdiriyor.",
+  "intro_en": "Anna has been hired. Her colleague Mert shows her around the office.",
+  "speakers": {
+   "A": "Mert",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Hoş geldin Anna! Kolay gelsin. Seni ofise gezdireyim.",
+    "ru": "Добро пожаловать, Анна! Удачи в работе. Давай покажу тебе офис.",
+    "en": "Welcome, Anna! Good luck with the work. Let me show you around the office."
+   },
+   {
+    "who": "B",
+    "uz": "Hoş bulduk! Çok heyecanlıyım.",
+    "ru": "Спасибо! Я очень волнуюсь.",
+    "en": "Thank you! I'm very excited."
+   },
+   {
+    "who": "A",
+    "uz": "Burası senin masan. Bilgisayarın hazır, şifreni IT bölümü verecek.",
+    "ru": "Вот твой стол. Компьютер готов, пароль даст IT-отдел.",
+    "en": "This is your desk. Your computer is ready; the IT department will give you your password."
+   },
+   {
+    "who": "B",
+    "uz": "Toplantılar nerede yapılıyor?",
+    "ru": "Где проходят совещания?",
+    "en": "Where are meetings held?"
+   },
+   {
+    "who": "A",
+    "uz": "Büyük toplantı odası koridorun sonunda. Her pazartesi saat onda ekip toplantısı var.",
+    "ru": "Большая переговорная в конце коридора. Каждый понедельник в десять — совещание команды.",
+    "en": "The big meeting room is at the end of the corridor. There's a team meeting every Monday at ten."
+   },
+   {
+    "who": "B",
+    "uz": "Öğle yemeği için nereye gidiyorsunuz?",
+    "ru": "Куда вы ходите обедать?",
+    "en": "Where do you go for lunch?"
+   },
+   {
+    "who": "A",
+    "uz": "Şirketin yemekhanesi var, ücretsiz. Ya da yemek kartıyla dışarıda yiyebilirsin.",
+    "ru": "У компании есть столовая, бесплатная. Или можешь поесть снаружи по карте питания.",
+    "en": "The company has a canteen, it's free. Or you can eat out with a meal card."
+   },
+   {
+    "who": "B",
+    "uz": "Çay molası var mı?",
+    "ru": "Есть перерыв на чай?",
+    "en": "Is there a tea break?"
+   },
+   {
+    "who": "A",
+    "uz": "Tabii! Çaycı her saat gelir. Türkiye'de çaysız iş olmaz.",
+    "ru": "Конечно! Чайщик приходит каждый час. В Турции без чая работы не бывает.",
+    "en": "Of course! The tea man comes every hour. In Turkey there's no work without tea."
+   },
+   {
+    "who": "B",
+    "uz": "Çok güzel. İzin günleri nasıl?",
+    "ru": "Здорово. А как с выходными и отпуском?",
+    "en": "Lovely. How about days off?"
+   },
+   {
+    "who": "A",
+    "uz": "Hafta sonu tatil. Yıllık izin on dört gün, insan kaynaklarından öğrenebilirsin.",
+    "ru": "В выходные отдыхаем. Ежегодный отпуск — четырнадцать дней, подробнее узнаешь в отделе кадров.",
+    "en": "Weekends are off. Annual leave is fourteen days; you can find out more from HR."
+   },
+   {
+    "who": "B",
+    "uz": "Teşekkür ederim, Mert. Çok yardımcı oldun.",
+    "ru": "Спасибо, Мерт. Ты мне очень помог.",
+    "en": "Thank you, Mert. You've been very helpful."
+   }
+  ],
+  "vocab": [
+   "ofis",
+   "masa",
+   "bilgisayar",
+   "toplantı",
+   "koridor",
+   "ücretsiz",
+   "izin günü"
+  ],
+  "note_ru": "«Kolay gelsin» — «пусть будет легко», так говорят работающему человеку; ответ — «Sağ ol». «Hoş geldin» / «Hoş bulduk» звучат и в первый день на работе. Минимальный ежегодный отпуск по закону — 14 дней при стаже от года до пяти лет. Во многих офисах есть чайщик (çaycı), разносящий чай.",
+  "note_uz": "Çalışan birine \"Kolay gelsin\" denir, cevabı \"Sağ ol\"dur. İşe ilk gün de \"Hoş geldin – Hoş bulduk\" denir. Kanuna göre bir ile beş yıl arası kıdemde yıllık izin en az 14 gündür. Birçok ofiste çay dağıtan bir çaycı vardır.",
+  "note_en": "\"Kolay gelsin\" (\"may it be easy\") is said to someone at work; the reply is \"Sağ ol\". \"Hoş geldin\" / \"Hoş bulduk\" are also said on a first day at work. By law the minimum annual leave is 14 days for one to five years' service. Many offices have a tea man (çaycı) who brings round tea."
+ },
+ {
+  "n": 19,
+  "cefr": "B1",
+  "section": "Работа и учёба",
+  "title_ru": "Запись на языковые курсы",
+  "title_uz": "Dil kursuna kayıt",
+  "title_en": "Signing up for a language course",
+  "intro_ru": "Анна приходит в университетский центр турецкого языка (TÖMER), чтобы записаться на следующий уровень.",
+  "intro_uz": "Anna bir üst kura yazılmak için üniversitenin Türkçe öğretim merkezine (TÖMER) geliyor.",
+  "intro_en": "Anna comes to the university's Turkish language centre (TÖMER) to sign up for the next level.",
+  "speakers": {
+   "A": "Kayıt görevlisi",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Merhaba, nasıl yardımcı olabilirim?",
+    "ru": "Здравствуйте, чем могу помочь?",
+    "en": "Hello, how can I help?"
+   },
+   {
+    "who": "B",
+    "uz": "Merhaba. A2 kurunu bitirdim, B1'e yazılmak istiyorum.",
+    "ru": "Здравствуйте. Я закончила курс A2 и хочу записаться на B1.",
+    "en": "Hello. I've finished the A2 course and want to enrol in B1."
+   },
+   {
+    "who": "A",
+    "uz": "Sertifikanız yanınızda mı?",
+    "ru": "Сертификат у вас с собой?",
+    "en": "Do you have your certificate with you?"
+   },
+   {
+    "who": "B",
+    "uz": "Evet, buyurun. Seviye sınavına girmem gerekiyor mu?",
+    "ru": "Да, пожалуйста. Мне нужно сдавать тест на уровень?",
+    "en": "Yes, here you are. Do I need to take a placement test?"
+   },
+   {
+    "who": "A",
+    "uz": "Hayır, bizim sertifikamız varsa gerekmez. Sabah mı akşam mı tercih edersiniz?",
+    "ru": "Нет, если у вас наш сертификат, не нужно. Вы предпочитаете утро или вечер?",
+    "en": "No, if you have our certificate you don't need to. Do you prefer mornings or evenings?"
+   },
+   {
+    "who": "B",
+    "uz": "Akşam, çünkü gündüz çalışıyorum.",
+    "ru": "Вечер, потому что днём я работаю.",
+    "en": "Evenings, because I work during the day."
+   },
+   {
+    "who": "A",
+    "uz": "Akşam grubu haftada üç gün, saat on sekizden yirmi bire kadar.",
+    "ru": "Вечерняя группа — три раза в неделю, с восемнадцати до двадцати одного.",
+    "en": "The evening group is three days a week, from six to nine p.m."
+   },
+   {
+    "who": "B",
+    "uz": "Kurs ne kadar sürüyor ve ücreti ne kadar?",
+    "ru": "Сколько длится курс и сколько стоит?",
+    "en": "How long does the course last and how much does it cost?"
+   },
+   {
+    "who": "A",
+    "uz": "İki ay sürüyor. Ücreti web sitemizde yazıyor; ödemeyi bankaya yapıyorsunuz.",
+    "ru": "Два месяца. Цена указана на нашем сайте; оплата через банк.",
+    "en": "It lasts two months. The fee is on our website; you pay at the bank."
+   },
+   {
+    "who": "B",
+    "uz": "Kursun sonunda sınav var mı?",
+    "ru": "В конце курса есть экзамен?",
+    "en": "Is there an exam at the end of the course?"
+   },
+   {
+    "who": "A",
+    "uz": "Evet, sınavı geçerseniz B1 sertifikası alırsınız. Bu sertifika üniversite başvurusunda da işe yarar.",
+    "ru": "Да, если сдадите, получите сертификат B1. Он пригодится и при поступлении в университет.",
+    "en": "Yes, if you pass you'll get a B1 certificate. It's also useful when applying to university."
+   },
+   {
+    "who": "B",
+    "uz": "Harika. Kaydımı şimdi yapabilir miyiz?",
+    "ru": "Отлично. Можем оформить запись прямо сейчас?",
+    "en": "Great. Can we do my registration now?"
+   }
+  ],
+  "vocab": [
+   "kurs",
+   "sınav",
+   "ücret",
+   "üniversite",
+   "kayıt"
+  ],
+  "note_ru": "TÖMER — центры обучения турецкому языку при университетах (Анкарский, Стамбульский, Газийский и др.); их сертификаты C1 часто требуются иностранцам для учёбы в турецких вузах. Уровни соответствуют шкале CEFR (A1–C2). «-dan … -a kadar» — «с … до».",
+  "note_uz": "TÖMER üniversitelerin Türkçe öğretim merkezleridir (Ankara, İstanbul, Gazi ve diğerleri); C1 sertifikaları yabancıların Türk üniversitelerinde okuması için çoğu zaman istenir. Seviyeler Avrupa çerçevesine (A1–C2) göredir. \"-dan … -a kadar\" yapısı aralık bildirir.",
+  "note_en": "TÖMER are university Turkish-language centres (Ankara, Istanbul, Gazi and others); their C1 certificates are often required for foreigners to study at Turkish universities. Levels follow the CEFR scale (A1–C2). \"-dan … -a kadar\" means \"from … to\"."
+ },
+ {
+  "n": 20,
+  "cefr": "B1",
+  "section": "Быт и услуги",
+  "title_ru": "Шумный сосед",
+  "title_uz": "Gürültücü komşu",
+  "title_en": "A noisy neighbour",
+  "intro_ru": "Сосед сверху каждую ночь шумит. Анна идёт поговорить с управляющим домом.",
+  "intro_uz": "Üst kattaki komşu her gece gürültü yapıyor. Anna apartman yöneticisiyle konuşmaya gidiyor.",
+  "intro_en": "The upstairs neighbour makes noise every night. Anna goes to talk to the building manager.",
+  "speakers": {
+   "A": "Yönetici Hakan Bey",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Buyurun Anna Hanım, bir sorun mu var?",
+    "ru": "Слушаю вас, Анна-ханым, что-то случилось?",
+    "en": "Yes, Ms Anna, is there a problem?"
+   },
+   {
+    "who": "B",
+    "uz": "Hakan Bey, üst kattaki komşu her gece çok gürültü yapıyor.",
+    "ru": "Хакан-бей, сосед сверху каждую ночь сильно шумит.",
+    "en": "Mr Hakan, the upstairs neighbour makes a lot of noise every night."
+   },
+   {
+    "who": "A",
+    "uz": "Ne tür bir gürültü?",
+    "ru": "Какой шум?",
+    "en": "What kind of noise?"
+   },
+   {
+    "who": "B",
+    "uz": "Yüksek sesle müzik ve gece yarısından sonra mobilya sesi. Uyuyamıyorum.",
+    "ru": "Громкая музыка и после полуночи звуки двигаемой мебели. Я не могу спать.",
+    "en": "Loud music and furniture noises after midnight. I can't sleep."
+   },
+   {
+    "who": "A",
+    "uz": "Onunla konuştunuz mu?",
+    "ru": "Вы с ним говорили?",
+    "en": "Have you spoken to him?"
+   },
+   {
+    "who": "B",
+    "uz": "Bir kere kapısını çaldım, ama açmadı.",
+    "ru": "Один раз постучала в дверь, но он не открыл.",
+    "en": "I knocked on his door once, but he didn't open."
+   },
+   {
+    "who": "A",
+    "uz": "Anlıyorum. Yeni taşındılar, belki kuralları bilmiyorlar. Ben onlarla konuşurum.",
+    "ru": "Понимаю. Они недавно переехали, может, не знают правил. Я с ними поговорю.",
+    "en": "I understand. They've just moved in; maybe they don't know the rules. I'll talk to them."
+   },
+   {
+    "who": "B",
+    "uz": "Çok iyi olur. Apartmanda sessizlik saatleri var mı?",
+    "ru": "Это было бы очень хорошо. В доме есть часы тишины?",
+    "en": "That would be very good. Are there quiet hours in the building?"
+   },
+   {
+    "who": "A",
+    "uz": "Evet, yönetim planına göre gece on birden sabah yediye kadar.",
+    "ru": "Да, по уставу дома — с одиннадцати вечера до семи утра.",
+    "en": "Yes, according to the building rules, from eleven at night to seven in the morning."
+   },
+   {
+    "who": "B",
+    "uz": "Peki, devam ederse ne yapabilirim?",
+    "ru": "А если это продолжится, что я могу сделать?",
+    "en": "And if it continues, what can I do?"
+   },
+   {
+    "who": "A",
+    "uz": "Önce tutanak tutarız. Olmazsa polisi ya da zabıtayı arayabilirsiniz.",
+    "ru": "Сначала составим акт. Если не поможет, можно вызвать полицию или муниципальную стражу.",
+    "en": "First we'll write a report. If that doesn't work, you can call the police or the municipal police."
+   },
+   {
+    "who": "B",
+    "uz": "Teşekkür ederim, Hakan Bey. Umarım konuşmanız yeter.",
+    "ru": "Спасибо, Хакан-бей. Надеюсь, вашего разговора будет достаточно.",
+    "en": "Thank you, Mr Hakan. I hope your talk will be enough."
+   }
+  ],
+  "vocab": [
+   "komşu",
+   "müzik",
+   "mobilya",
+   "kural",
+   "polis",
+   "uyumak",
+   "apartman"
+  ],
+  "note_ru": "В турецких многоквартирных домах (apartman) есть управляющий (yönetici), которого выбирают жильцы, и устав дома (yönetim planı). По закону о проступках за шум, мешающий соседям, может быть наложен штраф. Zabıta — муниципальная служба порядка.",
+  "note_uz": "Türk apartmanlarında kat maliklerinin seçtiği bir yönetici ve bir yönetim planı vardır. Kabahatler Kanunu'na göre komşuları rahatsız eden gürültüye para cezası verilebilir. Zabıta belediyenin düzen birimidir.",
+  "note_en": "Turkish apartment buildings (apartman) have a manager (yönetici) elected by the owners and a set of building rules (yönetim planı). Under the Misdemeanours Law, noise that disturbs neighbours can be fined. Zabıta is the municipal police."
+ },
+ {
+  "n": 21,
+  "cefr": "B1",
+  "section": "Быт и услуги",
+  "title_ru": "Разговор в детском саду",
+  "title_uz": "Anaokulunda görüşme",
+  "title_en": "A talk at the nursery school",
+  "intro_ru": "Сын Анны Миша начинает ходить в детский сад. Анна говорит с воспитательницей.",
+  "intro_uz": "Anna'nın oğlu Mişa anaokuluna başlıyor. Anna öğretmeniyle konuşuyor.",
+  "intro_en": "Anna's son Misha is starting nursery school. Anna talks to his teacher.",
+  "speakers": {
+   "A": "Öğretmen Ayşe Hanım",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Hoş geldiniz! Mişa bugün ilk gününde çok iyiydi.",
+    "ru": "Добро пожаловать! Миша сегодня в первый день держался очень хорошо.",
+    "en": "Welcome! Misha did very well on his first day today."
+   },
+   {
+    "who": "B",
+    "uz": "Ne güzel! Sabah biraz ağladı, endişelendim.",
+    "ru": "Как хорошо! Утром он немного плакал, я волновалась.",
+    "en": "How lovely! He cried a bit in the morning, I was worried."
+   },
+   {
+    "who": "A",
+    "uz": "Normal, ilk günler herkes ağlar. Sonra arkadaşlarıyla oyun oynadı.",
+    "ru": "Это нормально, в первые дни все плачут. Потом он играл с друзьями.",
+    "en": "That's normal, everyone cries in the first days. Then he played with his friends."
+   },
+   {
+    "who": "B",
+    "uz": "Türkçesi az, anlaşabiliyor mu?",
+    "ru": "Он мало знает турецкий, он может объясниться?",
+    "en": "His Turkish is limited, can he make himself understood?"
+   },
+   {
+    "who": "A",
+    "uz": "Çocuklar çok çabuk öğrenir. Bir ay sonra sizden iyi konuşacak!",
+    "ru": "Дети учатся очень быстро. Через месяц он будет говорить лучше вас!",
+    "en": "Children learn very fast. In a month he'll speak better than you!"
+   },
+   {
+    "who": "B",
+    "uz": "Umarım! Öğle yemeğini yedi mi?",
+    "ru": "Надеюсь! Он пообедал?",
+    "en": "I hope so! Did he eat his lunch?"
+   },
+   {
+    "who": "A",
+    "uz": "Çorbasını içti, ama sebzeleri yemedi. Alerjisi var mı?",
+    "ru": "Суп съел, а овощи не стал. У него есть аллергия?",
+    "en": "He had his soup, but didn't eat the vegetables. Does he have any allergies?"
+   },
+   {
+    "who": "B",
+    "uz": "Evet, fındığa alerjisi var. Formda yazdım.",
+    "ru": "Да, у него аллергия на фундук. Я написала в анкете.",
+    "en": "Yes, he's allergic to hazelnuts. I wrote it on the form."
+   },
+   {
+    "who": "A",
+    "uz": "Gördüm, mutfağa da söyledik. Yarın yedek kıyafet getirebilir misiniz?",
+    "ru": "Я видела, на кухню мы тоже сообщили. Можете завтра принести сменную одежду?",
+    "en": "I saw it, and we've told the kitchen too. Could you bring a change of clothes tomorrow?"
+   },
+   {
+    "who": "B",
+    "uz": "Tabii. Okul saat kaçta bitiyor?",
+    "ru": "Конечно. Во сколько заканчивается садик?",
+    "en": "Of course. What time does the school day end?"
+   },
+   {
+    "who": "A",
+    "uz": "Saat on yedide. Geç kalacaksanız lütfen arayın.",
+    "ru": "В семнадцать. Если опоздаете, пожалуйста, позвоните.",
+    "en": "At five p.m. If you'll be late, please call."
+   },
+   {
+    "who": "B",
+    "uz": "Tamam. Her şey için çok teşekkür ederim.",
+    "ru": "Хорошо. Большое спасибо за всё.",
+    "en": "All right. Thank you very much for everything."
+   }
+  ],
+  "vocab": [
+   "anaokulu",
+   "öğretmen",
+   "oğul",
+   "ağlamak",
+   "oyun",
+   "çorba",
+   "sebze",
+   "alerji"
+  ],
+  "note_ru": "В Турции детский сад (anaokulu) бывает государственным при школе или частным (kreş — ясли). С 5 лет можно идти в подготовительный класс. Воспитательницу дети зовут «öğretmenim» — «мой учитель». Фундук — главный орех Турции, поэтому об аллергии на него важно предупредить.",
+  "note_uz": "Türkiye'de anaokulları okula bağlı devlet okulu ya da özel olabilir (kreş daha küçükler içindir). 5 yaşından itibaren ana sınıfına gidilebilir. Çocuklar öğretmene \"öğretmenim\" der. Fındık Türkiye'nin başlıca kuruyemişidir, bu yüzden fındık alerjisi mutlaka söylenmelidir.",
+  "note_en": "In Turkey nursery schools (anaokulu) are either state-run, attached to a school, or private (a kreş is for younger children). From age 5 children can attend a pre-school class. Children call the teacher \"öğretmenim\" (\"my teacher\"). Hazelnuts are Turkey's main nut, so a hazelnut allergy must be mentioned."
+ },
+ {
+  "n": 22,
+  "cefr": "B1",
+  "section": "Праздники и гости",
+  "title_ru": "В гостях на Курбан-байрам",
+  "title_uz": "Kurban Bayramı'nda misafirlik",
+  "title_en": "A visit at Kurban Bayramı",
+  "intro_ru": "Семья Зейнеп пригласила Анну на праздничный обед в первый день Курбан-байрама.",
+  "intro_uz": "Zeynep'in ailesi Anna'yı Kurban Bayramı'nın ilk günü yemeğe davet etti.",
+  "intro_en": "Zeynep's family has invited Anna to a festive lunch on the first day of Kurban Bayramı.",
+  "speakers": {
+   "A": "Zeynep'in annesi Gülay Hanım",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Hoş geldin kızım, bayramın mübarek olsun!",
+    "ru": "Добро пожаловать, дочка, с праздником!",
+    "en": "Welcome, dear, blessed holiday to you!"
+   },
+   {
+    "who": "B",
+    "uz": "Hoş bulduk! Sizin de bayramınız mübarek olsun. Bu tatlı sizin için.",
+    "ru": "Спасибо! И вас с праздником. Эти сладости для вас.",
+    "en": "Thank you! A blessed holiday to you too. These sweets are for you."
+   },
+   {
+    "who": "A",
+    "uz": "Ah, zahmet etmişsin! Gel, otur. Kolonya ister misin?",
+    "ru": "Ах, не стоило беспокоиться! Проходи, садись. Хочешь одеколона?",
+    "en": "Oh, you shouldn't have! Come and sit down. Would you like some cologne?"
+   },
+   {
+    "who": "B",
+    "uz": "Evet, lütfen. Bu bir gelenek mi?",
+    "ru": "Да, пожалуйста. Это такая традиция?",
+    "en": "Yes, please. Is it a tradition?"
+   },
+   {
+    "who": "A",
+    "uz": "Evet, misafire kolonya ve şeker ikram edilir.",
+    "ru": "Да, гостя угощают одеколоном и конфетами.",
+    "en": "Yes, guests are offered cologne and sweets."
+   },
+   {
+    "who": "B",
+    "uz": "Bugün kurban kesildi mi?",
+    "ru": "Сегодня приносили жертву?",
+    "en": "Was an animal sacrificed today?"
+   },
+   {
+    "who": "A",
+    "uz": "Evet, sabah bayram namazından sonra. Etin bir kısmını komşulara ve ihtiyacı olanlara dağıttık.",
+    "ru": "Да, утром после праздничной молитвы. Часть мяса мы раздали соседям и нуждающимся.",
+    "en": "Yes, this morning after the holiday prayer. We gave part of the meat to neighbours and people in need."
+   },
+   {
+    "who": "B",
+    "uz": "Ne güzel bir gelenek. Bütün aile burada mı?",
+    "ru": "Какая прекрасная традиция. Вся семья здесь?",
+    "en": "What a beautiful tradition. Is the whole family here?"
+   },
+   {
+    "who": "A",
+    "uz": "Neredeyse! Dedesi yolda, akşama torunlar da gelecek. Buyurun, sofra hazır.",
+    "ru": "Почти! Дедушка в дороге, к вечеру приедут и внуки. Прошу, стол накрыт.",
+    "en": "Almost! Grandpa is on his way, and the grandchildren will come in the evening. Please, the table is ready."
+   },
+   {
+    "who": "B",
+    "uz": "Her şey çok güzel görünüyor. Bu yemeğin adı ne?",
+    "ru": "Всё выглядит очень красиво. Как называется это блюдо?",
+    "en": "Everything looks lovely. What is this dish called?"
+   },
+   {
+    "who": "A",
+    "uz": "Kavurma, bayram sabahı kurban etinden yapılır. Afiyet olsun!",
+    "ru": "Кавурма, её делают утром в праздник из жертвенного мяса. Приятного аппетита!",
+    "en": "Kavurma, it's made from the sacrificial meat on the holiday morning. Enjoy!"
+   },
+   {
+    "who": "B",
+    "uz": "Ellerinize sağlık, çok lezzetli olmuş!",
+    "ru": "Золотые руки, очень вкусно получилось!",
+    "en": "Bless your hands, it turned out delicious!"
+   }
+  ],
+  "vocab": [
+   "misafir",
+   "gelenek",
+   "et",
+   "sofra",
+   "torun"
+  ],
+  "note_ru": "«Zahmet etmişsin» — «зачем ты беспокоилась», так благодарят за подарок. На праздник гостям предлагают одеколон для рук и конфеты. Хозяйку хвалят словами «Ellerinize sağlık» — «здоровья вашим рукам». Мясо жертвенного животного делят на три части: семье, родственникам и соседям, нуждающимся.",
+  "note_uz": "Hediyeye \"Zahmet etmişsin\" diye teşekkür edilir. Bayramda misafire kolonya ve şeker ikram edilir. Ev sahibine \"Ellerinize sağlık\" denir. Kurban eti üçe bölünür: aileye, akraba ve komşulara, ihtiyaç sahiplerine.",
+  "note_en": "\"Zahmet etmişsin\" (\"you shouldn't have gone to the trouble\") is how you thank someone for a gift. At the holiday guests are offered cologne for their hands and sweets. The host is praised with \"Ellerinize sağlık\" (\"health to your hands\"). The sacrificial meat is divided into three parts: for the family, for relatives and neighbours, and for those in need."
+ },
+ {
+  "n": 23,
+  "cefr": "B1",
+  "section": "Быт и услуги",
+  "title_ru": "Сломался котёл",
+  "title_uz": "Kombi arızalandı",
+  "title_en": "The boiler has broken down",
+  "intro_ru": "Зимой у Анны перестал работать газовый котёл. Она звонит в сервис.",
+  "intro_uz": "Kışın Anna'nın kombisi çalışmaz oldu. Teknik servisi arıyor.",
+  "intro_en": "In winter Anna's gas boiler has stopped working. She calls the service centre.",
+  "speakers": {
+   "A": "Teknik servis",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Teknik servis, buyurun.",
+    "ru": "Сервисная служба, слушаю.",
+    "en": "Service centre, how can I help?"
+   },
+   {
+    "who": "B",
+    "uz": "Merhaba, kombim çalışmıyor. Ne sıcak su var ne kalorifer.",
+    "ru": "Здравствуйте, у меня не работает котёл. Нет ни горячей воды, ни отопления.",
+    "en": "Hello, my boiler isn't working. There's no hot water and no heating."
+   },
+   {
+    "who": "A",
+    "uz": "Ekranda bir hata kodu görüyor musunuz?",
+    "ru": "Вы видите на экране код ошибки?",
+    "en": "Do you see an error code on the display?"
+   },
+   {
+    "who": "B",
+    "uz": "Evet, F28 yazıyor ve kırmızı ışık yanıyor.",
+    "ru": "Да, написано F28 и горит красная лампочка.",
+    "en": "Yes, it says F28 and a red light is on."
+   },
+   {
+    "who": "A",
+    "uz": "Bu genellikle gaz gelmediği anlamına geliyor. Ocak çalışıyor mu?",
+    "ru": "Обычно это значит, что не поступает газ. Плита работает?",
+    "en": "That usually means no gas is coming through. Is the hob working?"
+   },
+   {
+    "who": "B",
+    "uz": "Bir dakika… Hayır, ocak da yanmıyor.",
+    "ru": "Минутку… Нет, плита тоже не зажигается.",
+    "en": "Just a moment… No, the hob won't light either."
+   },
+   {
+    "who": "A",
+    "uz": "O zaman sorun kombide değil. Doğalgaz kartınızda kontör kalmış mı?",
+    "ru": "Тогда проблема не в котле. На вашей газовой карте остались единицы?",
+    "en": "Then the problem isn't the boiler. Is there credit left on your gas card?"
+   },
+   {
+    "who": "B",
+    "uz": "Kartlı sayaç yok, faturalı. Faturayı da ödedim.",
+    "ru": "Карточного счётчика нет, оплата по счёту. Счёт я оплатила.",
+    "en": "There's no card meter, it's billed. And I've paid the bill."
+   },
+   {
+    "who": "A",
+    "uz": "Belki bölgede bir arıza var. 187 Doğalgaz Acil'i arayın, onlar kontrol eder.",
+    "ru": "Возможно, в районе авария. Позвоните в аварийную газовую службу 187, они проверят.",
+    "en": "Perhaps there's a fault in the area. Call the gas emergency line 187; they'll check."
+   },
+   {
+    "who": "B",
+    "uz": "Gaz kokusu yok ama. Bu da önemli mi?",
+    "ru": "Но запаха газа нет. Это тоже важно?",
+    "en": "But there's no smell of gas. Does that matter too?"
+   },
+   {
+    "who": "A",
+    "uz": "Koku olursa hemen pencereleri açın, elektrik düğmelerine dokunmayın ve 187'yi arayın.",
+    "ru": "Если появится запах, сразу откройте окна, не трогайте выключатели и звоните 187.",
+    "en": "If there's a smell, open the windows at once, don't touch the light switches and call 187."
+   },
+   {
+    "who": "B",
+    "uz": "Anladım, çok teşekkür ederim. Hemen arıyorum.",
+    "ru": "Поняла, большое спасибо. Сейчас же позвоню.",
+    "en": "I see, thank you very much. I'll call right away."
+   }
+  ],
+  "vocab": [
+   "sıcak",
+   "ekran",
+   "gaz",
+   "ocak",
+   "pencere",
+   "elektrik"
+  ],
+  "note_ru": "Большинство квартир в Турции отапливаются собственным газовым котлом (kombi). Аварийная газовая служба — 187, звонок бесплатный. При запахе газа нельзя включать свет и пользоваться открытым огнём. В некоторых домах стоят карточные счётчики, их пополняют заранее.",
+  "note_uz": "Türkiye'de evlerin çoğu bireysel doğalgaz kombisiyle ısınır. Doğalgaz acil hattı 187'dir ve ücretsizdir. Gaz kokusu varken ışık yakılmaz, ateş kullanılmaz. Bazı evlerde önceden yüklenen kartlı sayaçlar vardır.",
+  "note_en": "Most flats in Turkey are heated by their own gas boiler (kombi). The gas emergency line is 187 and is free. If you smell gas, don't switch on lights or use a naked flame. Some homes have card meters that are topped up in advance."
+ },
+ {
+  "n": 24,
+  "cefr": "B1",
+  "section": "Здоровье",
+  "title_ru": "У врача в больнице",
+  "title_uz": "Hastanede doktorda",
+  "title_en": "At the doctor's at the hospital",
+  "intro_ru": "У Анны уже месяц болит спина. Она пришла к врачу в государственную больницу.",
+  "intro_uz": "Anna'nın bir aydır sırtı ağrıyor. Devlet hastanesinde doktora geldi.",
+  "intro_en": "Anna has had back pain for a month. She has come to a doctor at a state hospital.",
+  "speakers": {
+   "A": "Doktor",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Geçmiş olsun. Şikâyetiniz nedir?",
+    "ru": "Выздоравливайте. На что жалуетесь?",
+    "en": "Get well soon. What's the problem?"
+   },
+   {
+    "who": "B",
+    "uz": "Bir aydır sırtım ağrıyor, özellikle sabahları.",
+    "ru": "Уже месяц болит спина, особенно по утрам.",
+    "en": "My back has been hurting for a month, especially in the mornings."
+   },
+   {
+    "who": "A",
+    "uz": "Ağrı bacağınıza vuruyor mu?",
+    "ru": "Боль отдаёт в ногу?",
+    "en": "Does the pain spread to your leg?"
+   },
+   {
+    "who": "B",
+    "uz": "Bazen sol bacağıma gidiyor ve uyuşuyor.",
+    "ru": "Иногда уходит в левую ногу, и она немеет.",
+    "en": "Sometimes it goes to my left leg and it goes numb."
+   },
+   {
+    "who": "A",
+    "uz": "Ne iş yapıyorsunuz? Uzun süre oturuyor musunuz?",
+    "ru": "Кем вы работаете? Долго сидите?",
+    "en": "What do you do for a living? Do you sit for long periods?"
+   },
+   {
+    "who": "B",
+    "uz": "Evet, bütün gün bilgisayar başındayım.",
+    "ru": "Да, я весь день за компьютером.",
+    "en": "Yes, I'm at the computer all day."
+   },
+   {
+    "who": "A",
+    "uz": "Şimdi sizi muayene edeyim. Öne doğru eğilin… Burası ağrıyor mu?",
+    "ru": "Сейчас я вас осмотрю. Наклонитесь вперёд… Здесь болит?",
+    "en": "Now let me examine you. Bend forward… Does it hurt here?"
+   },
+   {
+    "who": "B",
+    "uz": "Evet, tam orası!",
+    "ru": "Да, именно там!",
+    "en": "Yes, right there!"
+   },
+   {
+    "who": "A",
+    "uz": "Bir MR çektirelim. Randevuyu sekreterden alın. Bu arada size ağrı kesici yazıyorum.",
+    "ru": "Сделаем МРТ. Запишитесь у регистратора. Пока я выпишу вам обезболивающее.",
+    "en": "Let's have an MRI done. Get the appointment from the secretary. Meanwhile I'll prescribe you a painkiller."
+   },
+   {
+    "who": "B",
+    "uz": "Spor yapabilir miyim?",
+    "ru": "Мне можно заниматься спортом?",
+    "en": "Can I do sport?"
+   },
+   {
+    "who": "A",
+    "uz": "Ağır kaldırmayın, ama yürüyüş ve yüzme iyi gelir. Her saat kalkıp biraz hareket edin.",
+    "ru": "Не поднимайте тяжёлое, а вот ходьба и плавание полезны. Каждый час вставайте и немного двигайтесь.",
+    "en": "Don't lift heavy things, but walking and swimming will do you good. Get up and move a little every hour."
+   },
+   {
+    "who": "B",
+    "uz": "Anladım. MR sonucu çıkınca sonuçla birlikte tekrar kontrole gelirim.",
+    "ru": "Поняла. Когда будет результат МРТ, приду с ним снова на контроль.",
+    "en": "I see. When the MRI result is ready, I'll come back with it for a check-up."
+   }
+  ],
+  "vocab": [
+   "sırt ağrısı",
+   "ağrı kesici",
+   "spor",
+   "yüzmek",
+   "sonuç"
+  ],
+  "note_ru": "В государственной больнице на приём записываются через MHRS; с ВНЖ и страховкой SGK лечение по большей части бесплатно. «Geçmiş olsun» врачи тоже говорят пациенту. «Ağrı … vuruyor» — «боль отдаёт в …». Результаты анализов приходят в e-Nabız.",
+  "note_uz": "Devlet hastanesinde randevu MHRS'den alınır; ikamet izni ve SGK sigortası olanlar için tedavinin çoğu ücretsizdir. Doktorlar da hastaya \"Geçmiş olsun\" der. \"Ağrı … vuruyor\" ağrının yayıldığını anlatır. Tahlil sonuçları e-Nabız'a gelir.",
+  "note_en": "At state hospitals appointments are made through MHRS; with a residence permit and SGK insurance most treatment is free. Doctors also say \"Geçmiş olsun\" to patients. \"Ağrı … vuruyor\" means \"the pain radiates to …\". Test results appear in e-Nabız."
+ },
+ {
+  "n": 25,
+  "cefr": "B2",
+  "section": "Знакомство и общение",
+  "title_ru": "Разговор о выборах",
+  "title_uz": "Seçimler üzerine bir sohbet",
+  "title_en": "A conversation about the elections",
+  "intro_ru": "Анна и её коллега Кемаль обсуждают за обедом турецкую политику и выборы.",
+  "intro_uz": "Anna ile iş arkadaşı Kemal öğle yemeğinde Türk siyasetini ve seçimleri konuşuyor.",
+  "intro_en": "Anna and her colleague Kemal discuss Turkish politics and elections over lunch.",
+  "speakers": {
+   "A": "Kemal",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Gelecek seçimlerde oy kullanacak mısın, Anna?",
+    "ru": "Ты будешь голосовать на следующих выборах, Анна?",
+    "en": "Are you going to vote in the next elections, Anna?"
+   },
+   {
+    "who": "B",
+    "uz": "Yabancı olduğum için oy kullanamıyorum. Türkiye'de yabancılar yerel seçimlerde de oy veremiyor, değil mi?",
+    "ru": "Я иностранка, поэтому не могу голосовать. В Турции иностранцы не голосуют даже на местных выборах, верно?",
+    "en": "As a foreigner I can't vote. In Turkey foreigners can't vote even in local elections, can they?"
+   },
+   {
+    "who": "A",
+    "uz": "Doğru, sadece vatandaşlar oy kullanır. Ama katılım çok yüksektir, yüzde seksenden fazla.",
+    "ru": "Верно, голосуют только граждане. Зато явка очень высокая — больше восьмидесяти процентов.",
+    "en": "That's right, only citizens vote. But turnout is very high — over eighty per cent."
+   },
+   {
+    "who": "B",
+    "uz": "Bu çok etkileyici! Bizde bu kadar yüksek değil. Neden bu kadar çok insan oy veriyor?",
+    "ru": "Это впечатляет! У нас не так много. Почему так много людей голосуют?",
+    "en": "That's very impressive! It's not that high where I come from. Why do so many people vote?"
+   },
+   {
+    "who": "A",
+    "uz": "Bence insanlar siyaseti çok tartışır, her masada konuşulur. Bir de seçimler hep pazar günü yapılır.",
+    "ru": "По-моему, люди много спорят о политике, о ней говорят за каждым столом. И ещё выборы всегда проходят в воскресенье.",
+    "en": "I think people argue about politics a lot; it's discussed at every table. And elections are always held on a Sunday."
+   },
+   {
+    "who": "B",
+    "uz": "Sistem nasıl işliyor? Cumhurbaşkanını doğrudan mı seçiyorsunuz?",
+    "ru": "Как устроена система? Вы выбираете президента напрямую?",
+    "en": "How does the system work? Do you elect the president directly?"
+   },
+   {
+    "who": "A",
+    "uz": "Evet, 2017 referandumundan beri cumhurbaşkanlığı hükümet sistemi var. Cumhurbaşkanını ve milletvekillerini aynı gün seçiyoruz.",
+    "ru": "Да, после референдума 2017 года у нас президентская система правления. Президента и депутатов мы избираем в один день.",
+    "en": "Yes, since the 2017 referendum we've had a presidential system of government. We elect the president and MPs on the same day."
+   },
+   {
+    "who": "B",
+    "uz": "Bir aday yüzde ellinin üstüne çıkmazsa ne oluyor?",
+    "ru": "А что будет, если ни один кандидат не наберёт больше пятидесяти процентов?",
+    "en": "And what happens if no candidate gets over fifty per cent?"
+   },
+   {
+    "who": "A",
+    "uz": "İki hafta sonra ikinci tur yapılıyor. Geçen seçimlerde de öyle oldu.",
+    "ru": "Через две недели проводят второй тур. Так было и на прошлых выборах.",
+    "en": "A second round is held two weeks later. That's what happened in the last elections too."
+   },
+   {
+    "who": "B",
+    "uz": "Meclis'te kaç milletvekili var?",
+    "ru": "Сколько депутатов в парламенте?",
+    "en": "How many MPs are there in parliament?"
+   },
+   {
+    "who": "A",
+    "uz": "Altı yüz. Bir partinin Meclis'e girmesi için ülke genelinde yüzde yedi oy alması gerekiyor.",
+    "ru": "Шестьсот. Чтобы пройти в парламент, партии нужно набрать семь процентов по стране.",
+    "en": "Six hundred. A party needs seven per cent of the national vote to enter parliament."
+   },
+   {
+    "who": "B",
+    "uz": "İlginç. Ben de haberleri Türkçe takip etmeye çalışıyorum, ama siyasi kelimeler zor.",
+    "ru": "Интересно. Я тоже стараюсь следить за новостями по-турецки, но политическая лексика трудная.",
+    "en": "Interesting. I'm trying to follow the news in Turkish too, but political vocabulary is hard."
+   },
+   {
+    "who": "A",
+    "uz": "Merak etme, bir sonraki seçimde sana her şeyi anlatırım. Ama tartışmaya hazır ol!",
+    "ru": "Не волнуйся, на следующих выборах я тебе всё расскажу. Но будь готова к спорам!",
+    "en": "Don't worry, at the next election I'll explain everything. But be ready for arguments!"
+   }
+  ],
+  "vocab": [
+   "seçim",
+   "oy",
+   "vatandaş",
+   "cumhurbaşkanı",
+   "milletvekili",
+   "aday",
+   "parti",
+   "haber"
+  ],
+  "note_ru": "В Турции голосуют с 18 лет только граждане; иностранцы, даже с долгим ВНЖ, на выборах не голосуют. Избирательный порог для партий — 7 %. Выборы проводят в воскресенье, и в этот день продажа алкоголя запрещена. О политике в Турции говорят охотно, но с малознакомыми людьми лучше быть осторожнее.",
+  "note_uz": "Türkiye'de 18 yaşından itibaren yalnızca vatandaşlar oy kullanır; uzun süre oturan yabancılar da oy veremez. Seçim barajı yüzde 7'dir. Seçimler pazar günü yapılır ve o gün alkol satışı yasaktır. Türkiye'de siyaset çok konuşulur, ama az tanıdığınız kişilerle dikkatli olmak iyidir.",
+  "note_en": "In Turkey only citizens aged 18 and over vote; foreigners, even long-term residents, cannot. The electoral threshold for parties is 7%. Elections are held on Sundays, and alcohol sales are banned that day. Politics is discussed eagerly in Turkey, but it's wise to be careful with people you don't know well."
+ },
+ {
+  "n": 26,
+  "cefr": "B2",
+  "section": "Праздники и гости",
+  "title_ru": "Вечер хны",
+  "title_uz": "Kına gecesi",
+  "title_en": "The henna night",
+  "intro_ru": "Коллега Анны Дениз выходит замуж. Анна впервые пришла на вечер хны и расспрашивает подругу Зейнеп.",
+  "intro_uz": "Anna'nın iş arkadaşı Deniz evleniyor. Anna ilk kez bir kına gecesine geldi ve arkadaşı Zeynep'e soruyor.",
+  "intro_en": "Anna's colleague Deniz is getting married. Anna is at a henna night for the first time and asks her friend Zeynep about it.",
+  "speakers": {
+   "A": "Zeynep",
+   "B": "Anna"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Bak, gelin geliyor! Kırmızı bohçalı elbisesi ne güzel, değil mi?",
+    "ru": "Смотри, идёт невеста! Какое красивое красное платье, правда?",
+    "en": "Look, here comes the bride! Isn't her red dress beautiful?"
+   },
+   {
+    "who": "B",
+    "uz": "Çok güzel! Neden kırmızı giyiyor? Düğünde beyaz giymeyecek mi?",
+    "ru": "Очень красивое! Почему она в красном? На свадьбе она не будет в белом?",
+    "en": "Very beautiful! Why is she wearing red? Won't she wear white at the wedding?"
+   },
+   {
+    "who": "A",
+    "uz": "Düğünde beyaz giyecek. Kırmızı kına gecesinin rengi, mutluluğu ve bereketi simgeliyor.",
+    "ru": "На свадьбе будет в белом. А красный — цвет вечера хны, он символизирует счастье и изобилие.",
+    "en": "She'll wear white at the wedding. Red is the colour of the henna night; it symbolises happiness and abundance."
+   },
+   {
+    "who": "B",
+    "uz": "Peki, şimdi ne olacak?",
+    "ru": "А что сейчас будет?",
+    "en": "And what happens now?"
+   },
+   {
+    "who": "A",
+    "uz": "Gelin ortaya oturacak, kızlar ellerinde mumlarla etrafında dönecek ve türkü söyleyecek.",
+    "ru": "Невеста сядет в центре, девушки со свечами в руках будут ходить вокруг неё и петь народные песни.",
+    "en": "The bride will sit in the middle, and the girls will circle around her with candles in their hands, singing folk songs."
+   },
+   {
+    "who": "B",
+    "uz": "Türküler neden bu kadar hüzünlü? Gelin ağlıyor gibi!",
+    "ru": "Почему песни такие грустные? Невеста как будто плачет!",
+    "en": "Why are the songs so sad? The bride seems to be crying!"
+   },
+   {
+    "who": "A",
+    "uz": "Gelinin baba evinden ayrılışını anlatıyorlar. Eskiden ağlamak bir gelenekti, şimdi biraz da şaka gibi.",
+    "ru": "В них поётся о том, как невеста покидает отчий дом. Раньше плакать было обычаем, а теперь это отчасти шутка.",
+    "en": "They tell of the bride leaving her father's house. Crying used to be a tradition; now it's partly a joke."
+   },
+   {
+    "who": "B",
+    "uz": "Kınayı kim yakıyor?",
+    "ru": "А кто наносит хну?",
+    "en": "And who applies the henna?"
+   },
+   {
+    "who": "A",
+    "uz": "Mutlu evliliği olan bir kadın, genellikle damadın annesi ya da bir akraba. Gelinin avucuna kına koyar, üstüne altın bırakır.",
+    "ru": "Женщина со счастливым браком, обычно мать жениха или родственница. Она кладёт хну на ладонь невесты, а сверху — золотую монету.",
+    "en": "A woman with a happy marriage, usually the groom's mother or a relative. She puts henna on the bride's palm and places a gold coin on top."
+   },
+   {
+    "who": "B",
+    "uz": "Gelin hemen avucunu açmıyor, değil mi?",
+    "ru": "А невеста не сразу раскрывает ладонь, да?",
+    "en": "The bride doesn't open her hand straight away, does she?"
+   },
+   {
+    "who": "A",
+    "uz": "Hayır! Kayınvalide altın verene kadar avucunu kapalı tutar. Ondan sonra eğlence başlar, herkes oynar.",
+    "ru": "Нет! Она держит ладонь сжатой, пока свекровь не даст золото. После этого начинается веселье, все танцуют.",
+    "en": "No! She keeps her hand closed until her mother-in-law gives the gold. After that the fun begins and everyone dances."
+   },
+   {
+    "who": "B",
+    "uz": "Ne kadar güzel bir gelenek. Hediye olarak ne getirmeliydim?",
+    "ru": "Какая прекрасная традиция. Что мне нужно было принести в подарок?",
+    "en": "What a lovely tradition. What should I have brought as a gift?"
+   },
+   {
+    "who": "A",
+    "uz": "Kına gecesinde gerek yok. Düğünde çeyrek altın ya da zarfta para takarsın.",
+    "ru": "На вечер хны не нужно. На свадьбе прикрепишь золотую монету или деньги в конверте.",
+    "en": "There's no need at the henna night. At the wedding you'll pin on a gold coin or money in an envelope."
+   },
+   {
+    "who": "B",
+    "uz": "Tamam, not ettim. Hadi biz de oynayalım!",
+    "ru": "Хорошо, запомнила. Давай и мы потанцуем!",
+    "en": "OK, noted. Come on, let's dance too!"
+   }
+  ],
+  "vocab": [
+   "gelin",
+   "damat",
+   "düğün",
+   "elbise",
+   "mum",
+   "altın",
+   "kayınvalide",
+   "gelenek"
+  ],
+  "note_ru": "Вечер хны (kına gecesi) — женский праздник накануне свадьбы. Невеста в красном платье и под красной вуалью, ей поют грустные песни о расставании с домом. Хну обычно наносит женщина, счастливая в браке. «Oynamak» в значении «танцевать» — разговорное: на праздниках «oynuyoruz».",
+  "note_uz": "Kına gecesi düğünden önceki kadınlar eğlencesidir. Gelin kırmızı elbise ve kırmızı duvak giyer, baba evinden ayrılışı anlatan hüzünlü türküler söylenir. Kınayı genellikle mutlu evliliği olan bir kadın yakar. Eğlencelerde \"oynamak\" dans etmek anlamında kullanılır.",
+  "note_en": "The henna night (kına gecesi) is a women's celebration before the wedding. The bride wears a red dress and red veil, and sad songs about leaving home are sung. The henna is usually applied by a happily married woman. \"Oynamak\" is used colloquially to mean \"to dance\" at celebrations."
+ },
+ {
+  "n": 27,
+  "cefr": "B2",
+  "section": "Город и транспорт",
+  "title_ru": "Штраф за парковку",
+  "title_uz": "Park cezası",
+  "title_en": "A parking fine",
+  "intro_ru": "Анна нашла на своей машине уведомление о штрафе и обсуждает это с соседом Ахметом.",
+  "intro_uz": "Anna arabasında bir ceza tutanağı buldu ve bunu komşusu Ahmet'le konuşuyor.",
+  "intro_en": "Anna has found a fine notice on her car and discusses it with her neighbour Ahmet.",
+  "speakers": {
+   "A": "Anna",
+   "B": "Ahmet"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Ahmet Bey, bakın, arabamın camında park cezası var!",
+    "ru": "Ахмет-бей, смотрите, на стекле моей машины штраф за парковку!",
+    "en": "Mr Ahmet, look, there's a parking fine on my car's windscreen!"
+   },
+   {
+    "who": "B",
+    "uz": "Geçmiş olsun. Nereye park ettiniz?",
+    "ru": "Сочувствую. Где вы припарковались?",
+    "en": "Sorry to hear that. Where did you park?"
+   },
+   {
+    "who": "A",
+    "uz": "Fırının önüne, sadece on dakika. Ama yerde sarı çizgi olduğunu fark etmedim.",
+    "ru": "У пекарни, всего на десять минут. Я не заметила жёлтую линию на асфальте.",
+    "en": "In front of the bakery, only for ten minutes. But I didn't notice the yellow line on the ground."
+   },
+   {
+    "who": "B",
+    "uz": "Sarı çizgi park yasağı demek. Maalesef on dakika da olsa ceza yazılır.",
+    "ru": "Жёлтая линия означает запрет парковки. К сожалению, даже за десять минут штрафуют.",
+    "en": "A yellow line means no parking. Unfortunately you get fined even for ten minutes."
+   },
+   {
+    "who": "A",
+    "uz": "Ceza ne kadar? Tutanağı tam anlayamıyorum.",
+    "ru": "Какой штраф? Я не совсем понимаю протокол.",
+    "en": "How much is the fine? I don't fully understand the notice."
+   },
+   {
+    "who": "B",
+    "uz": "Bakayım… Trafik polisi yazmış. On beş gün içinde öderseniz yüzde yirmi beş indirim var.",
+    "ru": "Дайте посмотреть… Выписала дорожная полиция. Если заплатите в течение пятнадцати дней, скидка двадцать пять процентов.",
+    "en": "Let me see… The traffic police wrote it. If you pay within fifteen days, there's a twenty-five per cent discount."
+   },
+   {
+    "who": "A",
+    "uz": "Gerçekten mi? Bu iyi bir haber. Nereden ödeyebilirim?",
+    "ru": "Правда? Это хорошая новость. Где можно оплатить?",
+    "en": "Really? That's good news. Where can I pay?"
+   },
+   {
+    "who": "B",
+    "uz": "e-Devlet'ten, bankanızın uygulamasından ya da vergi dairesinden. Tutanağın numarası yeter.",
+    "ru": "Через e-Devlet, в приложении банка или в налоговой. Достаточно номера протокола.",
+    "en": "On e-Devlet, through your bank's app or at the tax office. The notice number is enough."
+   },
+   {
+    "who": "A",
+    "uz": "Peki, itiraz edebilir miyim? Orada tabela yoktu.",
+    "ru": "А могу я его оспорить? Там не было знака.",
+    "en": "And can I appeal? There was no sign there."
+   },
+   {
+    "who": "B",
+    "uz": "Edebilirsiniz, on beş gün içinde sulh ceza hâkimliğine dilekçe verirsiniz. Ama sarı çizgi tabela yerine geçer, kazanmanız zor.",
+    "ru": "Можете: в течение пятнадцати дней подаёте заявление мировому судье. Но жёлтая линия заменяет знак, выиграть трудно.",
+    "en": "You can: within fifteen days you submit a petition to the magistrates' court. But the yellow line counts as a sign, so it's hard to win."
+   },
+   {
+    "who": "A",
+    "uz": "O zaman indirimli öderim, daha mantıklı.",
+    "ru": "Тогда заплачу со скидкой, это разумнее.",
+    "en": "Then I'll pay with the discount; it makes more sense."
+   },
+   {
+    "who": "B",
+    "uz": "Bence de. Bir dahaki sefere otoparka bırakın, şu köşede bir İSPARK var.",
+    "ru": "Я тоже так думаю. В следующий раз оставляйте машину на стоянке, вон на углу есть ИСПАРК.",
+    "en": "I agree. Next time leave it in a car park; there's an İSPARK on that corner."
+   },
+   {
+    "who": "A",
+    "uz": "Teşekkürler, Ahmet Bey. Artık her yerde sarı çizgiye bakacağım!",
+    "ru": "Спасибо, Ахмет-бей. Теперь буду везде смотреть на жёлтые линии!",
+    "en": "Thank you, Mr Ahmet. From now on I'll look for yellow lines everywhere!"
+   }
+  ],
+  "vocab": [
+   "araba",
+   "park etmek",
+   "ceza",
+   "indirim",
+   "itiraz etmek",
+   "otopark",
+   "trafik"
+  ],
+  "note_ru": "Штрафы за нарушения ПДД в Турции можно оплатить через e-Devlet, банк или налоговую; при оплате в течение 15 дней со дня уведомления действует скидка 25 %. Обжаловать штраф можно в течение 15 дней у мирового судьи по уголовным делам (sulh ceza hâkimliği). İSPARK — муниципальные стоянки Стамбула.",
+  "note_uz": "Türkiye'de trafik cezaları e-Devlet, banka ya da vergi dairesinden ödenir; tebliğden itibaren 15 gün içinde ödemede yüzde 25 indirim vardır. Cezaya 15 gün içinde sulh ceza hâkimliğinde itiraz edilebilir. İSPARK İstanbul Büyükşehir Belediyesi'nin otoparklarıdır.",
+  "note_en": "Traffic fines in Turkey can be paid via e-Devlet, a bank or the tax office; paying within 15 days of notification gives a 25% discount. A fine can be appealed within 15 days at the criminal magistrates' court (sulh ceza hâkimliği). İSPARK is Istanbul's municipal car park company."
+ },
+ {
+  "n": 28,
+  "cefr": "B2",
+  "section": "Город и транспорт",
+  "title_ru": "Забытая сумка",
+  "title_uz": "Unutulan çanta",
+  "title_en": "The forgotten bag",
+  "intro_ru": "Анна забыла сумку в Мармарае и обращается в бюро находок.",
+  "intro_uz": "Anna çantasını Marmaray'da unuttu ve kayıp eşya bürosuna başvuruyor.",
+  "intro_en": "Anna has left her bag on the Marmaray train and goes to the lost property office.",
+  "speakers": {
+   "A": "Anna",
+   "B": "Kayıp eşya görevlisi"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Merhaba, dün akşam Marmaray'da çantamı unuttum. Buraya getirilmiş olabilir mi?",
+    "ru": "Здравствуйте, вчера вечером я забыла сумку в Мармарае. Её могли принести сюда?",
+    "en": "Hello, I left my bag on the Marmaray last night. Could it have been brought here?"
+   },
+   {
+    "who": "B",
+    "uz": "Olabilir. Saat kaçta ve hangi istasyonda indiniz?",
+    "ru": "Возможно. Во сколько и на какой станции вы вышли?",
+    "en": "It's possible. What time was it and at which station did you get off?"
+   },
+   {
+    "who": "A",
+    "uz": "Saat yirmi bir civarında Üsküdar'da indim. Çanta oturduğum yerin üstündeki rafta kaldı.",
+    "ru": "Около двадцати одного часа, вышла в Ускюдаре. Сумка осталась на полке над моим местом.",
+    "en": "Around nine p.m.; I got off at Üsküdar. The bag was left on the rack above my seat."
+   },
+   {
+    "who": "B",
+    "uz": "Çantayı tarif edebilir misiniz? Rengi, markası?",
+    "ru": "Можете описать сумку? Цвет, марку?",
+    "en": "Can you describe the bag? Its colour, brand?"
+   },
+   {
+    "who": "A",
+    "uz": "Lacivert bir sırt çantası, ön cebinde küçük bir anahtarlık asılı, nazar boncuklu.",
+    "ru": "Тёмно-синий рюкзак, на переднем кармане висит маленький брелок с назаром.",
+    "en": "A navy blue rucksack, with a small key ring with a nazar bead hanging on the front pocket."
+   },
+   {
+    "who": "B",
+    "uz": "İçinde ne vardı?",
+    "ru": "Что было внутри?",
+    "en": "What was inside?"
+   },
+   {
+    "who": "A",
+    "uz": "Dizüstü bilgisayarım, şarj aleti, bir kitap ve cüzdanım. Cüzdanda ikamet kartım var.",
+    "ru": "Мой ноутбук, зарядка, книга и кошелёк. В кошельке мой вид на жительство.",
+    "en": "My laptop, a charger, a book and my wallet. My residence card is in the wallet."
+   },
+   {
+    "who": "B",
+    "uz": "Bir dakika, sisteme bakıyorum… Dün gece Üsküdar'da lacivert bir sırt çantası teslim edilmiş.",
+    "ru": "Минутку, смотрю в системе… Вчера вечером в Ускюдаре сдали тёмно-синий рюкзак.",
+    "en": "One moment, I'm checking the system… A navy blue rucksack was handed in at Üsküdar last night."
+   },
+   {
+    "who": "A",
+    "uz": "Çok şükür! Hemen alabilir miyim?",
+    "ru": "Слава богу! Можно забрать прямо сейчас?",
+    "en": "Thank goodness! Can I collect it right away?"
+   },
+   {
+    "who": "B",
+    "uz": "Kimliğinizi göstermeniz ve bir tutanak imzalamanız gerekiyor. İkamet kartınız çantadaysa pasaportunuz da olur.",
+    "ru": "Вам нужно предъявить удостоверение и подписать акт. Если вид на жительство в сумке, подойдёт и паспорт.",
+    "en": "You need to show your ID and sign a record. If your residence card is in the bag, your passport will do too."
+   },
+   {
+    "who": "A",
+    "uz": "Pasaportum yanımda, buyurun.",
+    "ru": "Паспорт у меня с собой, пожалуйста.",
+    "en": "I have my passport with me, here you are."
+   },
+   {
+    "who": "B",
+    "uz": "Teşekkürler. İçindekileri kontrol edin lütfen, eksik bir şey var mı?",
+    "ru": "Спасибо. Проверьте, пожалуйста, содержимое — ничего не пропало?",
+    "en": "Thank you. Please check the contents — is anything missing?"
+   },
+   {
+    "who": "A",
+    "uz": "Hayır, her şey yerinde! Çantayı getiren kişiye teşekkür etmek isterdim.",
+    "ru": "Нет, всё на месте! Я бы хотела поблагодарить того, кто принёс сумку.",
+    "en": "No, everything's here! I'd like to thank the person who brought the bag."
+   },
+   {
+    "who": "B",
+    "uz": "Maalesef adını bilmiyoruz. Ama iyi insanlar hâlâ var, değil mi?",
+    "ru": "К сожалению, мы не знаем его имени. Но хорошие люди ещё есть, правда?",
+    "en": "Unfortunately we don't know their name. But there are still good people, aren't there?"
+   }
+  ],
+  "vocab": [
+   "çanta",
+   "unutmak",
+   "sırt çantası",
+   "cüzdan",
+   "şarj aleti"
+  ],
+  "note_ru": "Мармарай — пригородная железная дорога, проходящая под Босфором. Найденные в транспорте вещи сдают в бюро находок (kayıp eşya bürosu) оператора; через некоторое время их передают в общий склад. «Çok şükür» — «слава богу», возглас облегчения.",
+  "note_uz": "Marmaray Boğaz'ın altından geçen banliyö hattıdır. Toplu taşımada bulunan eşyalar işletmenin kayıp eşya bürosuna teslim edilir; bir süre sonra genel depoya gönderilir. \"Çok şükür\" rahatlama sözüdür.",
+  "note_en": "Marmaray is a commuter rail line that runs under the Bosphorus. Items found on public transport are handed to the operator's lost property office (kayıp eşya bürosu); after a while they are sent to a central depot. \"Çok şükür\" (\"thank goodness\") expresses relief."
+ },
+ {
+  "n": 29,
+  "cefr": "B2",
+  "section": "Покупки и еда",
+  "title_ru": "Возврат товара",
+  "title_uz": "Ürün iadesi",
+  "title_en": "Returning an item",
+  "intro_ru": "Анна купила куртку, но через неделю сломалась молния. Она возвращается в магазин.",
+  "intro_uz": "Anna bir ceket aldı, ama bir hafta sonra fermuarı bozuldu. Mağazaya geri geliyor.",
+  "intro_en": "Anna bought a jacket, but the zip broke after a week. She goes back to the shop.",
+  "speakers": {
+   "A": "Anna",
+   "B": "Satış danışmanı"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Merhaba, geçen hafta bu ceketi buradan aldım, ama fermuarı bozuldu.",
+    "ru": "Здравствуйте, на прошлой неделе я купила у вас эту куртку, но сломалась молния.",
+    "en": "Hello, I bought this jacket here last week, but the zip has broken."
+   },
+   {
+    "who": "B",
+    "uz": "Geçmiş olsun. Fişiniz yanınızda mı?",
+    "ru": "Сочувствую. Чек у вас с собой?",
+    "en": "Sorry about that. Do you have your receipt with you?"
+   },
+   {
+    "who": "A",
+    "uz": "Evet, buyurun. Sadece iki kere giydim.",
+    "ru": "Да, пожалуйста. Я надевала её всего два раза.",
+    "en": "Yes, here you are. I've only worn it twice."
+   },
+   {
+    "who": "B",
+    "uz": "Bakayım… Evet, fermuar kopmuş. Tamir için servise gönderebiliriz.",
+    "ru": "Дайте посмотреть… Да, молния порвалась. Можем отправить в ремонт.",
+    "en": "Let me see… Yes, the zip has come apart. We can send it for repair."
+   },
+   {
+    "who": "A",
+    "uz": "Tamir ne kadar sürer?",
+    "ru": "Сколько длится ремонт?",
+    "en": "How long does the repair take?"
+   },
+   {
+    "who": "B",
+    "uz": "Genellikle on beş ile yirmi iş günü arası.",
+    "ru": "Обычно от пятнадцати до двадцати рабочих дней.",
+    "en": "Usually between fifteen and twenty working days."
+   },
+   {
+    "who": "A",
+    "uz": "Bu çok uzun, kış geliyor. Para iadesi ya da değişim istiyorum.",
+    "ru": "Это слишком долго, скоро зима. Я хочу вернуть деньги или обменять.",
+    "en": "That's too long, winter is coming. I'd like a refund or an exchange."
+   },
+   {
+    "who": "B",
+    "uz": "Anlıyorum, ama şirket politikamıza göre kusurlu ürün önce tamire gidiyor.",
+    "ru": "Понимаю, но по правилам нашей компании бракованный товар сначала отправляют в ремонт.",
+    "en": "I understand, but under our company policy faulty goods go for repair first."
+   },
+   {
+    "who": "A",
+    "uz": "Tüketici kanununa göre ayıplı malda seçim hakkı tüketicinindir. İade, değişim, indirim ya da ücretsiz onarım isteyebilirim.",
+    "ru": "По закону о защите прав потребителей при товаре с дефектом выбор за покупателем. Я могу потребовать возврат, обмен, скидку или бесплатный ремонт.",
+    "en": "Under consumer law, with defective goods the choice belongs to the consumer. I can ask for a refund, exchange, discount or free repair."
+   },
+   {
+    "who": "B",
+    "uz": "Haklısınız, bir dakika, müdürle konuşayım…",
+    "ru": "Вы правы, минутку, поговорю с управляющим…",
+    "en": "You're right, one moment, let me talk to the manager…"
+   },
+   {
+    "who": "B",
+    "uz": "Müdürümüz onayladı. Aynı modelden yenisini verebiliriz, isterseniz başka bir ürün de seçebilirsiniz.",
+    "ru": "Управляющий одобрил. Можем дать новую такую же, а если хотите, выберите другой товар.",
+    "en": "Our manager has approved it. We can give you a new one of the same model, or you can choose another item if you like."
+   },
+   {
+    "who": "A",
+    "uz": "Aynı modelden yenisi olsun, bedeni M.",
+    "ru": "Пусть будет новая такая же, размер M.",
+    "en": "A new one of the same model, please, size M."
+   },
+   {
+    "who": "B",
+    "uz": "Buyurun. Yine bir sorun olursa Tüketici Hakem Heyeti'ne de başvurabilirsiniz, ama umarım gerek kalmaz.",
+    "ru": "Пожалуйста. Если снова будет проблема, можно обратиться и в Комиссию по потребительским спорам, но надеюсь, не придётся.",
+    "en": "Here you are. If there's another problem you can also apply to the Consumer Arbitration Committee, but I hope it won't be necessary."
+   },
+   {
+    "who": "A",
+    "uz": "Ben de umarım. Yardımınız için teşekkürler.",
+    "ru": "Я тоже надеюсь. Спасибо за помощь.",
+    "en": "I hope so too. Thanks for your help."
+   }
+  ],
+  "vocab": [
+   "ceket",
+   "fiş",
+   "tamir",
+   "değişim",
+   "ürün",
+   "tüketici",
+   "beden"
+  ],
+  "note_ru": "По турецкому закону о защите прав потребителей (№ 6502) при дефектном товаре (ayıplı mal) покупатель сам выбирает: возврат денег, обмен, скидку или бесплатный ремонт. Споры на небольшие суммы бесплатно рассматривают комиссии по потребительским спорам (Tüketici Hakem Heyeti). Обмен товара без дефекта зависит от правил магазина.",
+  "note_uz": "6502 sayılı Tüketicinin Korunması Hakkında Kanun'a göre ayıplı malda tüketici seçimlik haklarından birini kullanır: iade, değişim, indirim ya da ücretsiz onarım. Belirli tutarın altındaki uyuşmazlıklara Tüketici Hakem Heyetleri ücretsiz bakar. Ayıpsız ürünün değişimi mağazanın politikasına bağlıdır.",
+  "note_en": "Under Turkey's Consumer Protection Law (No. 6502), with defective goods (ayıplı mal) the buyer chooses: a refund, exchange, discount or free repair. Disputes below a set amount are heard free of charge by Consumer Arbitration Committees (Tüketici Hakem Heyeti). Exchanging non-defective goods depends on the shop's policy."
+ },
+ {
+  "n": 30,
+  "cefr": "B2",
+  "section": "Быт и услуги",
+  "title_ru": "Повышение аренды",
+  "title_uz": "Kira artışı",
+  "title_en": "A rent increase",
+  "intro_ru": "Хозяин квартиры хочет сильно повысить аренду. Анна советуется с подругой-юристом Нурай.",
+  "intro_uz": "Ev sahibi kirayı çok artırmak istiyor. Anna avukat arkadaşı Nuray'a danışıyor.",
+  "intro_en": "Anna's landlord wants to raise the rent sharply. She consults her lawyer friend Nuray.",
+  "speakers": {
+   "A": "Anna",
+   "B": "Nuray"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "Nuray, ev sahibim mesaj attı. Kirayı iki katına çıkarmak istiyor!",
+    "ru": "Нурай, хозяин квартиры написал. Он хочет повысить аренду в два раза!",
+    "en": "Nuray, my landlord has texted. He wants to double the rent!"
+   },
+   {
+    "who": "B",
+    "uz": "Sakin ol. Sözleşmen ne zaman bitiyor?",
+    "ru": "Успокойся. Когда кончается твой договор?",
+    "en": "Calm down. When does your contract end?"
+   },
+   {
+    "who": "A",
+    "uz": "Gelecek ay bir yılı doluyor. Sözleşmede artış hakkında bir şey yazmıyor.",
+    "ru": "В следующем месяце будет год. В договоре ничего не сказано о повышении.",
+    "en": "It will be a year next month. The contract says nothing about increases."
+   },
+   {
+    "who": "B",
+    "uz": "Konut kiralarında artış genellikle bir önceki yılın on iki aylık TÜFE ortalamasıyla sınırlı.",
+    "ru": "Повышение аренды жилья обычно ограничено средним индексом потребительских цен за предыдущие двенадцать месяцев.",
+    "en": "Increases in residential rent are generally capped at the twelve-month average consumer price index of the previous year."
+   },
+   {
+    "who": "A",
+    "uz": "Yani ev sahibi istediği kadar artıramaz mı?",
+    "ru": "То есть хозяин не может повышать сколько захочет?",
+    "en": "So the landlord can't raise it as much as he wants?"
+   },
+   {
+    "who": "B",
+    "uz": "Kanuna göre artıramaz. Ama beş yıl geçtikten sonra rayiç bedele göre dava açabilir. Senin durumunda bu yok.",
+    "ru": "По закону — не может. Но через пять лет он может подать иск о рыночной цене. В твоём случае этого нет.",
+    "en": "By law, he can't. But after five years he can sue for the market rate. That doesn't apply in your case."
+   },
+   {
+    "who": "A",
+    "uz": "Peki, beni evden çıkarabilir mi? Çok endişeliyim.",
+    "ru": "А он может меня выселить? Я очень волнуюсь.",
+    "en": "And can he evict me? I'm very worried."
+   },
+   {
+    "who": "B",
+    "uz": "Sözleşme süresi bitince kendiliğinden yenilenir. Ev sahibi ancak kanundaki sebeplerle, mesela kendisi oturacaksa, tahliye isteyebilir.",
+    "ru": "По окончании срока договор продлевается автоматически. Хозяин может потребовать освобождения только по причинам из закона — например, если будет жить сам.",
+    "en": "When the term ends the contract renews automatically. The landlord can only demand eviction for reasons in the law — for example, if he'll live there himself."
+   },
+   {
+    "who": "A",
+    "uz": "Ne yapmalıyım? Ona ne cevap vereyim?",
+    "ru": "Что мне делать? Что ему ответить?",
+    "en": "What should I do? What should I reply?"
+   },
+   {
+    "who": "B",
+    "uz": "Kibarca yaz: kanuni artış oranını kabul ettiğini, ama fazlasını ödemeyeceğini söyle. Yazışmaları sakla.",
+    "ru": "Напиши вежливо: что ты согласна на повышение по закону, но больше платить не будешь. Сохраняй переписку.",
+    "en": "Write politely: say that you accept the legal increase rate, but won't pay more. Keep the messages."
+   },
+   {
+    "who": "A",
+    "uz": "Ya ısrar ederse?",
+    "ru": "А если он будет настаивать?",
+    "en": "And if he insists?"
+   },
+   {
+    "who": "B",
+    "uz": "Önce arabulucuya gitmek zorunlu. Kira uyuşmazlıklarında dava açmadan önce arabuluculuk şart.",
+    "ru": "Сначала обязательно идти к медиатору. В спорах об аренде медиация обязательна до подачи иска.",
+    "en": "First you must go to a mediator. In rental disputes mediation is mandatory before filing a lawsuit."
+   },
+   {
+    "who": "A",
+    "uz": "Bunu hiç bilmiyordum. Çok teşekkürler, Nuray, bana cesaret verdin.",
+    "ru": "Я этого совсем не знала. Большое спасибо, Нурай, ты меня приободрила.",
+    "en": "I didn't know that at all. Thank you so much, Nuray, you've given me courage."
+   },
+   {
+    "who": "B",
+    "uz": "Rica ederim. Ama gerçek bir sorun olursa birlikte bir avukata gidelim, ben de tavsiye ederim.",
+    "ru": "Не за что. Но если будет серьёзная проблема, сходим вместе к адвокату, я посоветую.",
+    "en": "You're welcome. But if there's a real problem, let's go to a lawyer together; I'll recommend one."
+   }
+  ],
+  "vocab": [
+   "ev sahibi",
+   "kira",
+   "sözleşme",
+   "kanun",
+   "dava",
+   "avukat",
+   "mesaj"
+  ],
+  "note_ru": "Аренду жилья в Турции регулирует Кодекс обязательств (Türk Borçlar Kanunu). Ежегодное повышение ограничено средним 12-месячным индексом потребительских цен (TÜFE); раз в пять лет арендодатель может требовать пересмотра по рыночной цене через суд. С 2023 года в спорах об аренде обязательна досудебная медиация (arabuluculuk). Правила менялись, поэтому перед спором стоит проверить актуальную редакцию закона.",
+  "note_uz": "Türkiye'de konut kiraları Türk Borçlar Kanunu ile düzenlenir. Yıllık artış on iki aylık TÜFE ortalamasıyla sınırlıdır; beş yılda bir ev sahibi mahkeme yoluyla rayiç bedel tespiti isteyebilir. 2023'ten beri kira uyuşmazlıklarında dava öncesi arabuluculuk zorunludur. Kurallar değiştiği için uyuşmazlıktan önce kanunun güncel hâline bakmak gerekir.",
+  "note_en": "Residential rents in Turkey are governed by the Turkish Code of Obligations (Türk Borçlar Kanunu). Annual increases are capped at the 12-month average consumer price index (TÜFE); every five years the landlord can seek a court review at the market rate. Since 2023 pre-trial mediation (arabuluculuk) has been mandatory in rental disputes. The rules have changed over time, so check the current version of the law before a dispute."
+ }
+]

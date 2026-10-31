@@ -1,8 +1,9 @@
 // Тексты интерфейса на трёх языках. Новый язык = ещё один объект с теми же ключами.
-// Polytutor: язык интерфейса — русский, английский или изучаемый язык (hy — i18n-hy.js, sv — i18n-sv.js, uz — объект uz ниже).
+// Polytutor: язык интерфейса — русский, английский или изучаемый язык (hy — i18n-hy.js, sv — i18n-sv.js, tr — i18n-tr.js, uz — объект uz ниже).
 // Тексты, которые зависят от изучаемого языка, — в app/src/langs/<код>/i18n-lang.js.
 import { hy } from './i18n-hy.js';
 import { sv } from './i18n-sv.js';
+import { tr } from './i18n-tr.js';
 import { LANG } from './lang/info.js';
 import { OVERRIDES } from './lang/i18n-lang.js';
 
@@ -779,6 +780,13 @@ Object.assign(ru, {
   reviewDraft: 'на проверке', reviewApproved: 'одобрено', reviewRejected: 'отклонено',
   status_draft: 'на проверке', status_approved: 'одобрен', status_rejected: 'отклонён',
   approve: 'Одобрить', reject: 'Отклонить', approveAllDrafts: 'Одобрить все непроверенные в теме',
+});
+Object.assign(en, {
+  reviewHint: 'Questions are based on the topic texts; each has a quote from the topic. Users see only approved questions. A question changed in the file comes back here.',
+  reviewCounts: (d, a, r) => `in review: ${d} · approved: ${a} · rejected: ${r}`,
+  reviewDraft: 'in review', reviewApproved: 'approved', reviewRejected: 'rejected',
+  approveAllDrafts: 'Approve all unreviewed in the topic',
+  cefrCount: (s, t) => `${s} / ${t}`, testQ: (i, n) => `${i} / ${n}`,
 });
 Object.assign(uz, {
   unitTest: 'Mavzu boʻyicha test', unitTestHint: (n) => `Mavzu matni boʻyicha ${n} ta savol — oʻzingizni tekshiring`,
@@ -1670,7 +1678,11 @@ Object.assign(en, {
   examEmpty: 'The questions are not ready yet.',
 });
 
-const dict = { ru, uz, hy, sv, en };
+// готовящиеся языки в выборе языка
+Object.assign(ru, { langSoon: 'скоро' });
+Object.assign(uz, { langSoon: 'tez orada' });
+Object.assign(en, { langSoon: 'coming soon' });
+const dict = { ru, uz, hy, sv, tr, en };
 // тексты, которые зависят от изучаемого языка (lang/i18n-lang.js), — поверх общих
 for (const [l, o] of Object.entries(OVERRIDES)) if (dict[l]) Object.assign(dict[l], o);
 let lang = 'ru';
@@ -1688,6 +1700,6 @@ export function tierName(tier) {
 }
 // армянский формат даты — ДД.ММ.ГГГГ (как в ru-RU; hy-AM в части браузеров даёт М/Д/ГГГГ)
 export function formatDate(iso) {
-  const locale = lang === 'en' ? 'en-GB' : lang === 'hy' ? 'ru-RU' : lang === 'uz' ? 'uz-Latn-UZ' : lang === 'sv' ? 'sv-SE' : 'ru-RU';
+  const locale = lang === 'en' ? 'en-GB' : lang === 'hy' ? 'ru-RU' : lang === 'uz' ? 'uz-Latn-UZ' : lang === 'sv' ? 'sv-SE' : lang === 'tr' ? 'tr-TR' : 'ru-RU';
   try { return new Date(iso).toLocaleDateString(locale); } catch { return String(iso).slice(0, 10); }
 }
