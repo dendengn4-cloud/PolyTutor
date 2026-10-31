@@ -1,7 +1,7 @@
 // Точка входа: вход через Telegram, три вкладки (Дом, Путь, Настройки), стек экранов, кнопка «Назад» Telegram.
 import { login, rpc, tg, ApiError } from './api.js';
 import { setLang, t } from './i18n.js';
-import { h, mount, spinner, haptic, sheet, onSheetsChange, sheetCount, closeTopSheet, closeAllSheets } from './ui.js';
+import { h, mount, spinner, haptic, sheet, onSheetsChange, sheetCount, closeTopSheet, closeAllSheets, restoreView, cancelRestore, endRestore } from './ui.js';
 import { icon } from './icons.js';
 import { initTheme, applyTheme } from './theme.js';
 import { renderHome } from './screens/home.js';
@@ -48,24 +48,35 @@ export const app = {
   go(screen, params = {}) {
     closeAllSheets();
     this.leave();
+    cancelRestore();
+    // запоминаем, где был экран: «Назад» вернёт на то же место
+    const cur = this.stack[this.stack.length - 1];
+    if (cur) { cur.y = window.scrollY; cur.node = document.getElementById('app').firstElementChild; }
     this.stack.push({ screen, params });
     render();
   },
   back() {
     if (closeTopSheet()) return;           // сначала закрываем открытую шторку
     this.leave();
-    if (this.stack.length > 1) this.stack.pop();
+    if (this.stack.length > 1) {
+      this.stack.pop();
+      const top = this.stack[this.stack.length - 1];
+      restoreView(top.node, top.y);
+      top.node = null;
+    }
     render();
   },
   // заменить текущий экран (без добавления в историю)
   replace(screen, params = {}) {
     closeAllSheets();
     this.leave();
+    cancelRestore();
     this.stack[this.stack.length - 1] = { screen, params };
     render();
   },
   tab(name) {
     this.leave();
+    cancelRestore();
     this.stack = [{ screen: name, params: {} }];
     render();
   },
@@ -161,7 +172,7 @@ function render() {
   const { screen, params } = app.stack[app.stack.length - 1];
   updateBack();
   updateTabbar();
-  Promise.resolve(SCREENS[screen](app, params)).then(updateTabbar).catch(showError);
+  Promise.resolve(SCREENS[screen](app, params)).then(() => { updateTabbar(); endRestore(); }).catch((e) => { cancelRestore(); showError(e); });
 }
 
 function showError(err) {

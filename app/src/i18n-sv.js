@@ -696,6 +696,7 @@ Object.assign(sv, {
 
 // ---------------------------------------------------------------- администратор: коды подписки
 Object.assign(sv, {
+  codesScope: 'Gäller i', codesThisLang: 'Det här språket', codesAllHint: 'Koden aktiveras i det här språket, och prenumerationen visas i alla appens språk – även i dem som påbörjas senare.',
   codesTitle: 'Prenumerationskoder', codesShort: 'Skapa koder som aktiverar en prenumeration',
   codesSub: (lang) => `Koden aktiveras i avsnittet ”${lang}”: Prenumeration → Prenumerationskod. Tiden räknas från aktiveringen.`,
   codesTier: 'Nivå', codesMonths: 'Period', codesCount: 'Antal koder (högst 50)', codesUses: 'Aktiveringar per kod',

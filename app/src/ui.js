@@ -28,9 +28,40 @@ function append(el, children) {
 export function mount(el, opts = {}) {
   const root = document.getElementById('app');
   const y = window.scrollY;
+  if (restore) {
+    // возврат «Назад»: старый экран уже на месте — индикатор загрузки не показываем, новый экран ставим на ту же высоту
+    if (isSpinner(el)) return;
+    if (el.classList) el.classList.add('no-anim');
+    root.replaceChildren(el);
+    window.scrollTo(0, restore.y);
+    restore.mounted = true;
+    if (restore.done) restore = null;
+    return;
+  }
   if (opts.keepScroll && el.classList) el.classList.add('no-anim');   // без мигания при перерисовке
   root.replaceChildren(el);
   window.scrollTo(0, opts.keepScroll ? y : 0);
+}
+
+// Возврат на предыдущий экран без скачков: сразу показываем его прежний вид на прежней высоте,
+// затем экран обновляется (mount) и остаётся на той же высоте.
+let restore = null;
+const isSpinner = (el) => !!(el && el.firstElementChild && el.firstElementChild.classList
+  && el.firstElementChild.classList.contains('spinner'));
+export function restoreView(node, y) {
+  restore = { y: y || 0, mounted: false, done: false };
+  if (!node) return;
+  node.classList.add('no-anim');
+  document.getElementById('app').replaceChildren(node);
+  window.scrollTo(0, restore.y);
+}
+export const isRestoring = () => restore !== null;
+export function cancelRestore() { restore = null; }
+// экран дорисован: ещё раз ставим высоту (картинки и разметка могли изменить длину страницы)
+export function endRestore() {
+  if (!restore) return;
+  restore.done = true;
+  if (restore.mounted) { window.scrollTo(0, restore.y); restore = null; }
 }
 
 // Открыть ссылку: t.me — внутри Telegram, остальные — во внешнем браузере

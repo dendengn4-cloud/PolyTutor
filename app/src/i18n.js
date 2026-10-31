@@ -1626,18 +1626,21 @@ Object.assign(en, {
 
 // ---------------------------------------------------------------- администратор: коды подписки
 Object.assign(ru, {
+  codesScope: 'Где действует', codesThisLang: 'Этот язык', codesAllHint: 'Код активируется в этом языке, а подписка появится во всех языках приложения — и в тех, что человек начнёт позже.',
   codesTitle: 'Коды подписки', codesShort: 'Создать коды для активации подписки',
   codesSub: (lang) => `Код активируется в разделе «${lang}»: Подписка → Код подписки. Срок отсчитывается с момента активации.`,
   codesTier: 'Уровень', codesMonths: 'Срок', codesCount: 'Сколько кодов (до 50)', codesUses: 'Активаций на код',
   codesUsesShort: (n) => `${n} активаций`, codesCreate: 'Создать коды', codesCopyAll: 'Скопировать все', codesErr: (e) => `Не удалось: ${e}`, copied: 'Скопировано',
 });
 Object.assign(uz, {
+  codesScope: 'Qayerda amal qiladi', codesThisLang: 'Shu til', codesAllHint: 'Kod shu tilda faollashtiriladi, obuna esa ilovaning barcha tillarida paydo boʻladi — keyin boshlanadiganlarida ham.',
   codesTitle: 'Obuna kodlari', codesShort: 'Obunani faollashtirish uchun kodlar yaratish',
   codesSub: (lang) => `Kod «${lang}» boʻlimida faollashtiriladi: Obuna → Obuna kodi. Muddat faollashtirilgan paytdan hisoblanadi.`,
   codesTier: 'Daraja', codesMonths: 'Muddat', codesCount: 'Nechta kod (50 tagacha)', codesUses: 'Bitta kodga faollashtirish',
   codesUsesShort: (n) => `${n} marta`, codesCreate: 'Kodlarni yaratish', codesCopyAll: 'Hammasini nusxalash', codesErr: (e) => `Boʻlmadi: ${e}`, copied: 'Nusxalandi',
 });
 Object.assign(en, {
+  codesScope: 'Valid in', codesThisLang: 'This language', codesAllHint: 'The code is activated in this language, and the plan appears in every language of the app — including ones started later.',
   codesTitle: 'Subscription codes', codesShort: 'Create codes that activate a plan',
   codesSub: (lang) => `A code is activated in the “${lang}” section: Subscription → Subscription code. The term starts on activation.`,
   codesTier: 'Plan', codesMonths: 'Term', codesCount: 'How many codes (up to 50)', codesUses: 'Activations per code',

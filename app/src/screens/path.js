@@ -1,7 +1,7 @@
 // Вкладка «Путь»: карта тем от первого города (A1) до последнего (B2) — города и рисунки свои у каждого языка, пунктирный маршрут, ворота-тесты между уровнями.
 import { rpc } from '../api.js';
 import { t, getLang, formatDate } from '../i18n.js';
-import { h, mount, spinner, sheet, ring, haptic } from '../ui.js';
+import { h, mount, spinner, sheet, ring, haptic, isRestoring } from '../ui.js';
 import { icon, art, DECOR, CITY_ART, FALLBACK_ART } from '../icons.js';
 import { allowed, lockedSheet } from './home.js';
 import { LANG } from '../lang/info.js';
@@ -216,7 +216,7 @@ export async function renderPath(app) {
   const onResize = () => { const sy = window.scrollY; layout(); window.scrollTo(0, sy); };
   window.addEventListener('resize', onResize);
   app.cleanup = () => window.removeEventListener('resize', onResize);
-  if (currentY) window.scrollTo(0, Math.max(0, wrap.offsetTop + currentY - window.innerHeight / 2));
+  if (currentY && !isRestoring()) window.scrollTo(0, Math.max(0, wrap.offsetTop + currentY - window.innerHeight / 2));
 }
 
 // Кривая Катмулла — Рома → кубические Безье: плавный маршрут через все точки
