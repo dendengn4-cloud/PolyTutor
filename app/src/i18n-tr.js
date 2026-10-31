@@ -705,3 +705,28 @@ Object.assign(tr, {
 
 // готовящиеся языки в выборе языка
 Object.assign(tr, { langSoon: 'yakında' });
+
+// режим внимания (СДВГ)
+Object.assign(tr, {
+  focusTitle: "Dikkat modu",
+  focus_off: "Normal",
+  focus_off_hint: "Alışılmış çalışmalar ve görünüm.",
+  focus_focus: "Odaklanma",
+  focus_focus_hint: "5 kelimelik kısa bloklar, her cevapta ses ve titreşim, art arda farklı alıştırma türleri, esnek seri, konularda önce ana fikir.",
+  focus_max: "Tam odaklanma",
+  focus_max_hint: "“Odaklanma”daki her şey ve sakin bir tema: anlamlı renkler, süs, açılır pencere ve sert animasyon yok.",
+  focusSound: "Cevap sesi",
+  focusSoundHint: "Her cevaptan sonra kısa, yumuşak bir ses.",
+  focusTimerLabel: "60 saniyelik zamanlayıcı",
+  focusTimerHint: "Bir bloğu bir dakikada bitirmeye çalışın. Ceza yok — sadece eğlence için.",
+  focusThemeNote: "“Tam odaklanma”da görünüm sakindir: aşağıda seçtiğiniz temaya göre açık ya da koyu.",
+  focusOvertime: "acele yok",
+  focusBlockDone: "Blok tamamlandı!",
+  focusStop: "Bitir",
+  focusMoreText: "Ayrıntılar",
+  focusStreakStat: "çalışılan gün",
+  focusInTime: (s) => `${s} saniyede bitti`,
+  focusTime: (s) => `Blok ${s} saniye sürdü`,
+  focusMore: (n) => `${n} tane daha`,
+  focusStreak: (n) => `Çalışılan gün: ${n}`,
+});

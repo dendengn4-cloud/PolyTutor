@@ -3,6 +3,7 @@ import { t, setLang, tierName, formatDate } from '../i18n.js';
 import { h, mount, spinner, haptic, openLink, sheet } from '../ui.js';
 import { icon } from '../icons.js';
 import { applyTheme, currentTheme } from '../theme.js';
+import { focusMode, applyFocus } from '../focus.js';
 import { lockedSheet } from './home.js';
 import { FEATURES } from '../lang/features.js';
 import { LANG, LANGS, SOON, langName, switchLang } from '../langswitch.js';
@@ -63,6 +64,18 @@ export async function renderSettings(app, params = {}) {
   const colloqFirst = settings.colloquial_first === true;
   const weekGoal = Number(settings.week_goal || 5);
 
+  const focus = focusMode(me);
+  const focusSoundOn = settings.focus_sound !== false;
+  const focusTimerOn = Boolean(settings.focus_timer);
+  const saveFocus = async (args) => {
+    const r = await rpc('set_focus', { p_mode: null, p_sound: null, p_timer: null, ...args });
+    if (r && r.settings) app.me.settings = r.settings;
+    applyFocus(focusMode(app.me));
+    applyTheme(currentTheme());
+    haptic('success');
+    renderSettings(app, { keep: true });
+  };
+
   const save = async (lang, patch) => {
     app.me = await rpc('update_settings', { p_ui_lang: lang, p_settings: patch });
     if (lang) setLang(lang);
@@ -102,7 +115,21 @@ export async function renderSettings(app, params = {}) {
     h('h2', {}, t('language')),
     seg([['ru', 'Русский'], [LANG.code, LANG.name.native], ['en', 'English']], me.ui_lang, (v) => save(v, null)),
 
+    // ---------------------------------------------------------------- режим внимания (СДВГ)
+    h('h2', {}, t('focusTitle')),
+    h('div', { class: 'radio-list focus-modes' }, ['off', 'focus', 'max'].map((v) =>
+      h('button', { type: 'button', class: `radio ${v === focus ? 'active' : ''}`, onClick: () => v !== focus && saveFocus({ p_mode: v }) },
+        h('span', { class: 'spacer' }, h('b', {}, t(`focus_${v}`)), h('div', { class: 'small muted' }, t(`focus_${v}_hint`)))))),
+    focus !== 'off' ? h('div', { class: 'card remind-card' },
+      h('button', { type: 'button', class: `remind-toggle ${focusSoundOn ? 'on' : ''}`, onClick: () => saveFocus({ p_sound: !focusSoundOn }) },
+        h('div', {}, h('b', {}, t('focusSound')), h('div', { class: 'small muted' }, t('focusSoundHint'))),
+        h('span', { class: `switch ${focusSoundOn ? 'on' : ''}` }, h('i'))),
+      h('button', { type: 'button', class: `remind-toggle ${focusTimerOn ? 'on' : ''}`, onClick: () => saveFocus({ p_timer: !focusTimerOn }) },
+        h('div', {}, h('b', {}, t('focusTimerLabel')), h('div', { class: 'small muted' }, t('focusTimerHint'))),
+        h('span', { class: `switch ${focusTimerOn ? 'on' : ''}` }, h('i')))) : null,
+
     h('h2', {}, t('theme')),
+    focus === 'max' ? h('p', { class: 'small muted' }, t('focusThemeNote')) : null,
     h('div', { class: 'themes' }, Object.entries(SWATCH).map(([name, [bg, card, accent, text]]) =>
       h('button', { type: 'button', class: `theme-opt ${name === currentTheme() ? 'active' : ''}`, onClick: () => {
         if (name === currentTheme()) return;

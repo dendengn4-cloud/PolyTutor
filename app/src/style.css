@@ -952,3 +952,104 @@ mark { background: var(--gold-soft); color: inherit; border-radius: 4px; padding
 .two-inputs { align-items: end; }
 .two-inputs label { display: block; }
 [hidden] { display: none !important; }
+
+/* =============================================================================
+   Режимы внимания (СДВГ): data-focus="focus" | "max" на <html> (app/src/focus.js)
+   ============================================================================= */
+/* смысловые цвета: срочное (повторение, сроки) и спокойное (учёба); в обычных темах — как раньше */
+:root { --urgent: var(--gold); --urgent-soft: var(--gold-soft); --calm: var(--accent); --calm-soft: var(--accent-soft); }
+
+/* ---- занятие блоками: шкала шагов, таймер, пауза */
+.focus-steps { flex: 1; display: flex; gap: 6px; align-items: center; }
+.fs-dot { flex: 1; max-width: 34px; height: 8px; border-radius: 4px; background: var(--line); transition: background .4s var(--ease); }
+.fs-dot.done { background: var(--calm); }
+.fs-dot.now { background: var(--calm-soft); box-shadow: inset 0 0 0 2px var(--calm); }
+.focus-timer { flex: none; font-variant-numeric: tabular-nums; font-weight: 700; color: var(--muted); min-width: 44px; text-align: right; }
+.focus-pause .btn { margin-top: 10px; }
+.focus-session .feedback.show.good { animation: focus-pop .35s var(--ease); }
+@keyframes focus-pop { 0% { transform: scale(.97); opacity: .4; } 60% { transform: scale(1.015); opacity: 1; } 100% { transform: none; } }
+
+/* ---- темы: сначала выжимка, подробности по кнопке */
+.focus-bullets { margin: 4px 0 0; padding-left: 20px; display: grid; gap: 8px; }
+.focus-bullets li { line-height: 1.5; }
+.detailed.focus-hidden { display: none; }
+.chip.calm-chip { background: var(--calm-soft); color: var(--calm); }
+.inline-notice { border-left: 4px solid var(--calm); }
+
+/* ---- «Максимальная фокусировка»: спокойные темы с цветами по смыслу */
+[data-theme="focus"] {
+  --bg: #eceae4;              /* нейтральный тёплый серо-бежевый холст */
+  --surface: #f7f6f2;
+  --surface-2: #e4e2db;
+  --text: #2a2c30;
+  --muted: #6d6f74;
+  --line: #d9d6ce;
+  --accent: #2f7f86;          /* бирюзовый — учёба, спокойные действия */
+  --accent-2: #3b949b;
+  --accent-text: #ffffff;
+  --accent-soft: rgba(47, 127, 134, 0.12);
+  --gold: #7a8494;            /* приглушённый сине-серый вместо «золота» */
+  --gold-soft: rgba(122, 132, 148, 0.14);
+  --ok: #3d8a63;
+  --ok-soft: rgba(61, 138, 99, 0.12);
+  --err: #c0562c;             /* ошибка — тёплый оранжево-красный, не кричащий */
+  --err-soft: rgba(192, 86, 44, 0.11);
+  --warn: #b5651d;
+  --urgent: #c2662a;          /* оранжевый — срочное: повторение, сроки, тест */
+  --urgent-soft: rgba(194, 102, 42, 0.13);
+  --calm: #2f7f86;
+  --calm-soft: rgba(47, 127, 134, 0.12);
+  --shadow: none;
+}
+[data-theme="focus-dark"] {
+  --bg: #1c1e22;              /* мягкие градации серого, без чистого чёрного */
+  --surface: #25282d;
+  --surface-2: #2e3238;
+  --text: #d6d8dc;            /* не слепящий белый */
+  --muted: #959aa3;
+  --line: #363a41;
+  --accent: #5fb3b3;
+  --accent-2: #74c2c2;
+  --accent-text: #11201f;
+  --accent-soft: rgba(95, 179, 179, 0.14);
+  --gold: #8c96a6;
+  --gold-soft: rgba(140, 150, 166, 0.16);
+  --ok: #6fb98f;
+  --ok-soft: rgba(111, 185, 143, 0.13);
+  --err: #e08a5f;
+  --err-soft: rgba(224, 138, 95, 0.13);
+  --warn: #d9a05b;
+  --urgent: #e0975f;
+  --urgent-soft: rgba(224, 151, 95, 0.15);
+  --calm: #5fb3b3;
+  --calm-soft: rgba(95, 179, 179, 0.14);
+  --shadow: none;
+}
+
+/* без визуального мусора: украшения, декоративные круги, пульсация */
+[data-focus="max"] .decor,
+[data-focus="max"] .hero::after { display: none !important; }
+[data-focus="max"] .node.current { animation: none; box-shadow: 0 0 0 4px var(--calm-soft); }
+[data-focus="max"] .card, [data-focus="max"] .tile { box-shadow: none; border: 1px solid var(--line); }
+/* спокойные переходы: без подпрыгиваний и тряски, плавное появление */
+[data-focus="max"] .screen { animation: focus-fade .45s ease-out; }
+@keyframes focus-fade { from { opacity: 0; } to { opacity: 1; } }
+[data-focus="max"] .option.right, [data-focus="max"] .option.wrong, [data-focus="max"] .pair-btn.bad,
+[data-focus="max"] .focus-session .feedback.show.good, [data-focus="max"] .feedback.show { animation: focus-fade .35s ease-out; }
+[data-focus="max"] .btn:active, [data-focus="max"] .tile:active, [data-focus="max"] .option:active,
+[data-focus="max"] .node:active, [data-focus="max"] .letter:active { transform: none; }
+[data-focus="max"] .sheet, [data-focus="max"] .sheet-back { animation-duration: .4s; }
+/* чёткая иерархия: крупнее элементы управления и отступы */
+[data-focus="max"] .btn { min-height: 52px; font-size: 17px; }
+[data-focus="max"] .btn-big { min-height: 58px; font-size: 18px; }
+[data-focus="max"] .option { padding: 16px 18px; font-size: 18px; }
+[data-focus="max"] .screen > * + * { margin-top: 14px; }
+[data-focus="max"] h2 { margin-top: 26px; }
+[data-focus="max"] .tile { min-height: 104px; }
+/* цвет по смыслу: срочное — оранжевый, учёба — бирюзовый */
+[data-focus="max"] .tile.is-due .tile-icon { background: var(--urgent-soft); color: var(--urgent); }
+[data-focus="max"] .plan-num.is-due b { color: var(--urgent); }
+[data-focus="max"] .tile.gold .tile-icon, [data-focus="max"] .tile-icon.gold { background: var(--surface-2); color: var(--muted); }
+[data-focus="max"] .chip.gold { background: var(--surface-2); color: var(--muted); }
+[data-focus="max"] .fs-dot.done { background: var(--calm); }
+.focus-modes .radio .small { font-weight: 400; }

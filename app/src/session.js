@@ -19,7 +19,9 @@ export class Session {
       this.state.set(it.id, { level: it.level, stage: it.stage, lastType: null, retries: 0, shown: it.stage !== 'new' });
     }
     this.sentencePool = data.items.flatMap((it) => (it.examples || []).map((e) => e.ru));
-    this.queue = buildQueue(data.items);
+    // режим «Фокусировка»: блоки по opts.focusBlock слов с паузой между ними
+    this.queue = opts.focusBlock ? buildFocusQueue(data.items, opts.focusBlock) : buildQueue(data.items);
+    this.lastType = null;
     this.pending = [];
     this.seq = (Math.floor(Date.now() / 1000) % 1000000) * 1000;
     this.stats = { answers: 0, correct: 0, newShown: 0, reviewed: new Set() };
@@ -27,19 +29,31 @@ export class Session {
     this.saveFailed = false;
   }
 
-  get total() { return this.queue.length + this.stats.answers + this.stats.newShown; }
+  get total() { return this.queue.filter((q) => q.kind !== 'pause').length + this.stats.answers + this.stats.newShown; }
+  // задания до ближайшей паузы (для шкалы блока в режиме фокуса)
+  get blockLeft() { const i = this.queue.findIndex((q) => q.kind === 'pause'); return i < 0 ? this.queue.length : i; }
+  // остались ли задания после текущей паузы
+  get hasMore() { return this.queue.some((q) => q.kind !== 'pause'); }
   get done() { return this.stats.answers + this.stats.newShown; }
   isEmpty() { return this.queue.length === 0; }
 
   // Следующее задание: {kind:'card', item} или {kind:'ex', ex, attempt}
   next() {
-    const task = this.queue.shift();
+    let task = this.queue.shift();
+    // пауза в конце очереди или две паузы подряд не нужны
+    // и пауза ради одного-двух повторов ошибок в самом конце — тоже
+    const tailOnlyRetries = () => { const rest = this.queue.filter((q) => q.kind !== 'pause'); return rest.length <= 2 && rest.every((q) => q.attempt === 'retry'); };
+    while (task && task.kind === 'pause' && (!this.hasMore || (this.queue[0] && this.queue[0].kind === 'pause') || tailOnlyRetries())) task = this.queue.shift();
     if (!task) return null;
+    if (task.kind === 'pause') return { kind: 'pause' };
     const item = this.items.get(task.wordId);
     const st = this.state.get(task.wordId);
     if (task.kind === 'card') return { kind: 'card', item };
-    const ex = pickExercise(item, st.level, st.lastType, { audio: this.opts.audio, sentencePool: this.sentencePool });
+    // в режиме фокуса — два задания одного типа подряд не идут (даже у разных слов)
+    const ex = pickExercise(item, st.level, st.lastType, { audio: this.opts.audio, sentencePool: this.sentencePool,
+      avoid: this.opts.focusBlock ? this.lastType : null });
     st.lastType = ex.type;
+    this.lastType = ex.type;
     return { kind: 'ex', ex, attempt: task.attempt, item };
   }
 
@@ -82,7 +96,10 @@ export class Session {
   }
 
   insertAt(gap, task) {
-    const pos = Math.min(gap, this.queue.length);
+    // режим фокуса: повтор — в пределах текущего блока (до паузы); если до конца блока меньше 2 заданий —
+    // слово вернётся уже в следующем блоке, а не сразу же подряд
+    const limit = this.opts.focusBlock && this.blockLeft >= 2 ? this.blockLeft : this.queue.length;
+    const pos = Math.min(gap, limit);
     this.queue.splice(pos, 0, task);
   }
 
@@ -125,6 +142,25 @@ export class Session {
 
 function randomGap() {
   return RETRY_GAP[0] + Math.floor(Math.random() * (RETRY_GAP[1] - RETRY_GAP[0] + 1));
+}
+
+// Режим «Фокусировка»: блоки по n слов. Повторения — блоками по n; новые слова — n карточек и задания по ним.
+// После каждого блока — пауза {kind:'pause'} («Ещё 5» / «Закончить»).
+export function buildFocusQueue(items, n) {
+  const reviews = items.filter((i) => i.stage !== 'new');
+  const news = items.filter((i) => i.stage === 'new');
+  const queue = [];
+  for (let b = 0; b < reviews.length; b += n) {
+    for (const w of reviews.slice(b, b + n)) queue.push({ kind: 'ex', wordId: w.id, attempt: 'first' });
+    queue.push({ kind: 'pause' });
+  }
+  for (let b = 0; b < news.length; b += n) {
+    const group = news.slice(b, b + n);
+    for (const w of group) queue.push({ kind: 'card', wordId: w.id });
+    for (const w of group) queue.push({ kind: 'ex', wordId: w.id, attempt: 'first' });
+    queue.push({ kind: 'pause' });
+  }
+  return queue;
 }
 
 // Порядок: 3 повторения для разминки → новые слова группами по 5

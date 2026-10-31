@@ -105,6 +105,21 @@ export function closeTopSheet() {
 }
 export function closeAllSheets() { while (closeTopSheet()) { /* по одной */ } }
 
+// Сообщение без всплывающего окна (режим «Максимальная фокусировка»): спокойная карточка вверху экрана.
+// Возвращает функцию закрытия — как sheet().
+export function inlineNotice(...children) {
+  const card = h('div', { class: 'card inline-notice' }, ...children);
+  // главный экран мог ещё загружаться — ждём, пока на нём появится содержимое (не экран загрузки)
+  let tries = 0;
+  const place = () => {
+    const screen = document.querySelector('.screen');
+    if (screen && !screen.querySelector('.spinner') && !card.isConnected) screen.prepend(card);
+    else if (!card.isConnected && tries++ < 40) setTimeout(place, 150);
+  };
+  place();
+  return () => card.remove();
+}
+
 export function sheet(...content) {
   const back = h('div', { class: 'sheet-back' });
   let closed = false;

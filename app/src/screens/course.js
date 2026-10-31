@@ -11,6 +11,7 @@ import { grammarFormsBlock } from '../lang/grammar-forms.js';
 import { FEATURES } from '../lang/features.js';
 import { LANG } from '../lang/info.js';
 import { dateLabel } from '../datelabel.js';
+import { focusOn } from '../focus.js';
 
 // Поле на нужном языке с запасным русским: pick(obj, 'title') → title_uz | title_ru
 export function pick(obj, base, lang = getLang()) {
@@ -126,11 +127,17 @@ export async function renderUnit(app, { id, lang }) {
     h('button', { type: 'button', class: v === L ? 'active' : '', onClick: () => v !== L && app.replace('unit', { id, lang: v }) }, label)));
 
   const paragraphs = (text) => String(text || '').split(/\n+/).filter(Boolean).map((p) => h('p', {}, p));
-  const detailed = h('div', { class: 'detailed collapsed' }, paragraphs(pick(u, 'detailed', L)));
-  const expandBtn = h('button', { class: 'btn btn-ghost btn-small', type: 'button', onClick: () => {
-    detailed.classList.remove('collapsed');
+  // режим фокуса: сначала выжимка пунктами, подробный текст — целиком скрыт до нажатия
+  const focus = focusOn(app.me);
+  const bullets = (text) => {
+    const parts = String(text || '').replace(/\s+/g, ' ').split(/(?<=[.!?…])\s+(?=[«"(A-ZА-ЯЁÇĞİÖŞÜÅÄÖ0-9])/).map((x) => x.trim()).filter(Boolean);
+    return parts.length > 1 ? h('ul', { class: 'focus-bullets' }, parts.map((x) => h('li', {}, x))) : paragraphs(text);
+  };
+  const detailed = h('div', { class: `detailed ${focus ? 'focus-hidden' : 'collapsed'}` }, paragraphs(pick(u, 'detailed', L)));
+  const expandBtn = h('button', { class: `btn ${focus ? 'btn-secondary' : 'btn-ghost btn-small'}`, type: 'button', onClick: () => {
+    detailed.classList.remove('collapsed', 'focus-hidden');
     expandBtn.remove();
-  } }, t('readMore'));
+  } }, focus ? t('focusMoreText') : t('readMore'));
 
   // примеры из словаря (грамматика)
   const exBox = h('div', { class: 'card' });
@@ -201,7 +208,7 @@ export async function renderUnit(app, { id, lang }) {
     h('h1', { style: { marginTop: '12px' } }, pick(u, 'title', L)),
     figure,
     u.course_id === 'civics' ? h('div', { class: 'card note' }, icon('civics'), h('span', { class: 'small' }, t('civicsDisclaimer'))) : null,
-    h('div', { class: 'card express' }, h('div', { class: 'label' }, t('unitExpress')), paragraphs(pick(u, 'express', L))),
+    h('div', { class: 'card express' }, h('div', { class: 'label' }, t('unitExpress')), focus ? bullets(pick(u, 'express', L)) : paragraphs(pick(u, 'express', L))),
     FEATURES.GRAMMAR_FORMS ? grammarFormsBlock(u) : null,
     h('h2', {}, t('unitDetailed')),
     h('div', { class: 'card' }, detailed, expandBtn),

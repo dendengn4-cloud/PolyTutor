@@ -6,6 +6,7 @@ import { icon } from '../icons.js';
 import { nextButton } from '../recommend.js';
 import { Session } from '../session.js';
 import { renderCard, renderExercise } from '../exercise-view.js';
+import { focusOn, focusSound, focusTimer, answerSound, FOCUS_BLOCK, FOCUS_TIMER } from '../focus.js';
 
 export async function renderLearn(app, { mode = 'normal', topicId = null }) {
   mount(spinner(t('loading')));
@@ -36,15 +37,40 @@ export async function renderLearn(app, { mode = 'normal', topicId = null }) {
   }
 
   const audioEnabled = !(app.me.settings && app.me.settings.audio_exercises === false);
-  const session = new Session(data, { audio: audioEnabled });
+  const focus = focusOn(app.me);
+  const sound = focusSound(app.me);
+  const timerOn = focusTimer(app.me);
+  const session = new Session(data, { audio: audioEnabled, focusBlock: focus ? FOCUS_BLOCK : 0 });
+  // режим фокуса: счёт заданий в текущем блоке и таймер блока
+  const block = { done: 0, answers: 0, correct: 0, startedAt: Date.now(), n: 0 };
+  let tick = null;
+  const stopTick = () => { if (tick) { clearInterval(tick); tick = null; } };
   const webApp = tg();
   if (webApp && webApp.enableClosingConfirmation) webApp.enableClosingConfirmation();
   app.cleanup = () => {
+    stopTick();
     session.flush();
     if (webApp && webApp.disableClosingConfirmation) webApp.disableClosingConfirmation();
   };
 
+  const timerText = () => {
+    const left = FOCUS_TIMER - Math.floor((Date.now() - block.startedAt) / 1000);
+    return left >= 0 ? `0:${String(left).padStart(2, '0')}` : t('focusOvertime');
+  };
   const frame = (content) => {
+    if (focus) {
+      // шкала из шагов текущего блока: ● пройдено, ◉ сейчас, ○ впереди
+      const size = block.done + session.blockLeft + 1;
+      const steps = h('div', { class: 'focus-steps', 'aria-label': `${block.done + 1}/${size}` },
+        Array.from({ length: Math.min(size, 14) }, (_, i) => h('span', { class: `fs-dot ${i < block.done ? 'done' : i === block.done ? 'now' : ''}` })));
+      const timer = timerOn ? h('span', { class: 'focus-timer' }, timerText()) : null;
+      stopTick();
+      if (timer) tick = setInterval(() => { timer.textContent = timerText(); }, 1000);
+      return h('div', { class: 'screen session focus-session' },
+        h('div', { class: 'session-top' }, steps, timer),
+        session.saveFailed ? h('p', { class: 'warn small' }, t('saveError')) : null,
+        content);
+    }
     const pct = Math.round((session.done / Math.max(session.total, 1)) * 100);
     return h('div', { class: 'screen session' },
       h('div', { class: 'session-top' },
@@ -54,21 +80,48 @@ export async function renderLearn(app, { mode = 'normal', topicId = null }) {
       content);
   };
 
+  // пауза между блоками: «Ещё 5» или «Закончить»
+  const pause = () => {
+    stopTick();
+    const secs = Math.round((Date.now() - block.startedAt) / 1000);
+    block.n++;
+    mount(h('div', { class: 'screen focus-pause' },
+      h('div', { class: 'card result-hero' },
+        h('div', { class: 'result-icon ok' }, icon('check')),
+        h('h1', {}, t('focusBlockDone')),
+        block.answers ? h('p', { class: 'muted' }, t('doneStats', block.correct, block.answers)) : null,
+        timerOn ? h('p', { class: 'muted' }, secs <= FOCUS_TIMER ? t('focusInTime', secs) : t('focusTime', secs)) : null),
+      h('button', { class: 'btn btn-big', type: 'button', onClick: () => {
+        Object.assign(block, { done: 0, answers: 0, correct: 0, startedAt: Date.now() });
+        step();
+      } }, t('focusMore', FOCUS_BLOCK)),
+      h('button', { class: 'btn btn-secondary', type: 'button', onClick: () => finish() }, t('focusStop'))));
+  };
+
   const step = () => {
     const task = session.next();
     if (!task) return finish();
+    if (task.kind === 'pause') return pause();
+    const done = () => { block.done++; step(); };
     if (task.kind === 'card') {
       session.cardShown(task.item);
-      return mount(frame(renderCard(task.item, { audioEnabled, onNext: step })));
+      return mount(frame(renderCard(task.item, { audioEnabled, onNext: done })));
     }
     return mount(frame(renderExercise(task.ex, {
       audioEnabled,
-      onAnswer: (answerText) => session.answer(task, answerText).correct,
-      onNext: step,
+      onAnswer: (answerText) => {
+        const ok = session.answer(task, answerText).correct;
+        block.answers++;
+        if (ok) block.correct++;
+        if (sound) answerSound(ok);
+        return ok;
+      },
+      onNext: done,
     })));
   };
 
   async function finish() {
+    stopTick();
     mount(spinner(t('loading')));
     const r = await session.finish();
     app.cleanup && app.cleanup();

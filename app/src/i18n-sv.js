@@ -714,3 +714,28 @@ Object.assign(sv, {
 
 // готовящиеся языки в выборе языка
 Object.assign(sv, { langSoon: 'snart' });
+
+// режим внимания (СДВГ)
+Object.assign(sv, {
+  focusTitle: "Fokusläge",
+  focus_off: "Vanligt",
+  focus_off_hint: "De vanliga passen och utseendet.",
+  focus_focus: "Fokus",
+  focus_focus_hint: "Korta block om 5 ord, ljud och vibration vid varje svar, olika övningstyper i följd, en mild serie, det viktigaste först i temana.",
+  focus_max: "Maximalt fokus",
+  focus_max_hint: "Allt i Fokus plus ett lugnt tema: färger med betydelse, utan dekorationer, popup-fönster och skarpa animationer.",
+  focusSound: "Ljud vid svar",
+  focusSoundHint: "En kort, mjuk signal efter varje svar.",
+  focusTimerLabel: "Timer 60 sekunder",
+  focusTimerHint: "Försök klara ett block på en minut. Inga straff – bara för skojs skull.",
+  focusThemeNote: "I Maximalt fokus är utseendet lugnt: ljust eller mörkt beroende på temat du väljer nedan.",
+  focusOvertime: "ingen brådska",
+  focusBlockDone: "Blocket är klart!",
+  focusStop: "Avsluta",
+  focusMoreText: "Mer information",
+  focusStreakStat: "dagar med övning",
+  focusInTime: (s) => `Klart på ${s} s`,
+  focusTime: (s) => `Blocket tog ${s} s`,
+  focusMore: (n) => `${n} till`,
+  focusStreak: (n) => `Dagar med övning: ${n}`,
+});

@@ -3,6 +3,7 @@ import { rpc, tg } from '../api.js';
 import { t, tierName, formatDate } from '../i18n.js';
 import { h, mount, spinner, sheet, haptic, openLink } from '../ui.js';
 import { icon } from '../icons.js';
+import { focusMode } from '../focus.js';
 import { recommendCard } from '../recommend.js';
 import { FEATURES } from '../lang/features.js';
 
@@ -22,6 +23,12 @@ export async function renderHome(app) {
   const [me, home, stats, rec, week] = await Promise.all([app.refreshMe(), rpc('get_home'), rpc('get_stats', { p_days: 14 }),
     rpc('get_next_step').catch(() => null), rpc('get_week').catch(() => null)]);
   app.homeData = home;
+  // режим фокуса: мягкая серия — один пропущенный день серию не обрывает
+  const focus = focusMode(me);
+  if (focus !== 'off') {
+    const soft = await rpc('soft_streak').catch(() => null);
+    if (soft && !soft.error) home.streak = soft.streak;
+  }
 
   // ---------------------------------------------------------------- профиль
   const user = tg() && tg().initDataUnsafe && tg().initDataUnsafe.user;
@@ -39,13 +46,16 @@ export async function renderHome(app) {
       h('div', { class: 'profile-name' }, t('hello', name)),
       h('div', { class: 'profile-chips' },
         h('span', { class: 'chip accent' }, icon('map'), t('levelChip', home.unlocked)),
-        home.streak > 0 ? h('span', { class: 'chip gold' }, icon('flame'), t('streakChip', home.streak)) : null,
+        home.streak > 0
+          ? (focus === 'off' ? h('span', { class: 'chip gold' }, icon('flame'), t('streakChip', home.streak))
+            : h('span', { class: 'chip calm-chip' }, icon('check'), t('focusStreak', home.streak)))
+          : null,
         week && !week.error ? h('button', { class: `chip week-chip ${(week.days || []).length >= week.goal ? 'gold' : ''}`, type: 'button',
           onClick: () => weekSheet(week) }, icon('target'), t('weekChip', (week.days || []).length, week.goal)) : null,
         tierChip)));
 
   // ---------------------------------------------------------------- план на сегодня
-  const num = (value, label) => h('div', { class: 'plan-num' }, h('b', {}, String(value)), h('span', {}, label));
+  const num = (value, label, cls = '') => h('div', { class: `plan-num ${cls}` }, h('b', {}, String(value)), h('span', {}, label));
   let plan;
   if (home.daily_limit_reached) {
     plan = h('div', { class: 'card hero' },
@@ -70,7 +80,7 @@ export async function renderHome(app) {
       home.need_test && home.plan_review === 0
         ? h('div', {}, h('h3', {}, t('needTestTitle', home.unlocked)), h('p', { class: 'muted small' }, t('needTestText', home.unlocked)))
         : hasPlan
-          ? h('div', { class: 'plan-nums' }, num(home.plan_new, t('planNew')), num(home.plan_review, t('planReview')),
+          ? h('div', { class: 'plan-nums' }, num(home.plan_new, t('planNew')), num(home.plan_review, t('planReview'), home.plan_review > 0 ? 'is-due' : ''),
               home.sessions_limit > 0 ? num(`${home.sessions_used}/${home.sessions_limit}`, t('planSessions')) : null)
           : h('p', {}, t('todayNothing')),
       hasPlan || !home.need_test
@@ -101,7 +111,7 @@ export async function renderHome(app) {
 
   const tiles = h('div', { class: 'tiles' },
     tile('learn', t('secLearn'), () => app.go('learn', { mode: 'normal' })),
-    tile('review', t('secReview'), () => app.go('learn', { mode: 'review' })),
+    tile('review', t('secReview'), () => app.go('learn', { mode: 'review' }), { cls: home.due_total > 0 ? 'is-due' : '' }),
     tile('practice', t('secPractice'), gated('practice', () => app.go('practice')), { badge: lockBadge('practice') }),
     tile('games', t('secGames'), gated('games', () => app.go('games')), { badge: lockBadge('games'), cls: 'c-games' }),
     tile('sparkle', t('secQuiz'), () => app.go('wordcheck', { mode: 'review' }), { cls: 'gold' }),
@@ -150,7 +160,8 @@ export async function renderHome(app) {
   // просьба об отзыве: один раз, когда человек уже позанимался (40+ слов)
   const settingsNow = (me && me.settings) || {};
   let feedbackCard = null;
-  if (!settingsNow.feedback_asked && home.words_started >= 40 && app.info && app.info.community_url) {
+  // в «Максимальной фокусировке» просьб и всплывающих карточек нет
+  if (focus !== 'max' && !settingsNow.feedback_asked && home.words_started >= 40 && app.info && app.info.community_url) {
     const dismiss = () => { feedbackCard.remove(); rpc('update_settings', { p_ui_lang: null, p_settings: { feedback_asked: true } }).catch(() => {}); };
     feedbackCard = h('div', { class: 'card feedback-card' },
       h('div', { class: 'row' }, h('span', { class: 'tile-icon gold' }, icon('users')),
@@ -177,7 +188,7 @@ export async function renderHome(app) {
     h('div', { class: 'stats' },
       stat(home.words_started, t('statStarted')),
       stat(home.words_basic, t('statBasic')),
-      stat(home.streak, t('statStreak'))),
+      stat(home.streak, focus === 'off' ? t('statStreak') : t('focusStreakStat'))),
     h('div', { class: 'card' }, cefrRows,
       h('div', { class: 'legend' },
         h('span', {}, h('i', { class: 'dot', style: { background: 'var(--accent-soft)' } }), t('legendStarted')),

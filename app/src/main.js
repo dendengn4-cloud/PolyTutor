@@ -1,9 +1,10 @@
 // Точка входа: вход через Telegram, три вкладки (Дом, Путь, Настройки), стек экранов, кнопка «Назад» Telegram.
 import { login, rpc, tg, ApiError } from './api.js';
 import { setLang, t } from './i18n.js';
-import { h, mount, spinner, haptic, sheet, onSheetsChange, sheetCount, closeTopSheet, closeAllSheets, restoreView, cancelRestore, endRestore } from './ui.js';
+import { h, mount, spinner, haptic, sheet, inlineNotice, onSheetsChange, sheetCount, closeTopSheet, closeAllSheets, restoreView, cancelRestore, endRestore } from './ui.js';
 import { icon } from './icons.js';
-import { initTheme, applyTheme } from './theme.js';
+import { initTheme, applyTheme, currentTheme } from './theme.js';
+import { initFocus, applyFocus, focusMode, currentFocus } from './focus.js';
 import { renderHome } from './screens/home.js';
 import { renderPath } from './screens/path.js';
 import { renderLearn } from './screens/learn.js';
@@ -39,7 +40,9 @@ export const app = {
   async refreshMe() {
     this.me = await rpc('get_me');
     setLang(this.me && this.me.ui_lang);
-    if (this.me && this.me.settings && this.me.settings.theme) applyTheme(this.me.settings.theme);
+    // режим внимания — до темы: в «Максимальной фокусировке» тема своя
+    applyFocus(focusMode(this.me));
+    applyTheme((this.me && this.me.settings && this.me.settings.theme) || currentTheme());
     return this.me;
   },
   leave() {
@@ -183,6 +186,7 @@ function showError(err) {
 }
 
 async function start() {
+  initFocus();
   initTheme();
   const webApp = tg();
   if (!webApp) {
@@ -206,7 +210,7 @@ async function start() {
     else {
       app.home();
       // сообщение администратора (если есть новое) — поверх главного экрана; при первом входе — после знакомства
-      showAnnouncement(sheet).catch(() => null);
+      showAnnouncement(currentFocus() === 'max' ? inlineNotice : sheet).catch(() => null);
     }
   } catch (err) {
     showError(err instanceof ApiError ? err : new ApiError(String(err)));

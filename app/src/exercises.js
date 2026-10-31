@@ -287,8 +287,9 @@ export function buildExercise(item, type, opts = {}) {
 // Подбор упражнения: тип по уровню, не повторяя прошлый тип этого слова; с запасными вариантами
 export function pickExercise(item, level, lastType, opts = {}) {
   const rnd = opts.rnd || Math.random;
-  const primary = shuffle(opts.types || typesForLevel(level), rnd).filter((t) => t !== lastType);
-  const fallback = ['uz_ru_choice', 'ru_uz_choice', 'ru_uz_input', 'uz_ru_input'].filter((t) => t !== lastType);
+  const ok = (t) => t !== lastType && t !== opts.avoid;
+  const primary = shuffle(opts.types || typesForLevel(level), rnd).filter(ok);
+  const fallback = ['uz_ru_choice', 'ru_uz_choice', 'ru_uz_input', 'uz_ru_input'].filter(ok);
   for (const type of [...primary, ...fallback]) {
     const ex = buildExercise(item, type, opts);
     if (ex) return ex;
