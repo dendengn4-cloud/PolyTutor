@@ -1,6 +1,7 @@
 // Знакомство с приложением: короткие экраны при первом входе. Из «Настроек» открывается как «Как пользоваться» —
 // там есть ещё экран о режимах внимания (Обычный / Фокусировка / Максимальная фокусировка).
 import { rpc } from '../api.js';
+import { COMMUNITY_URL } from '../config.js';
 import { t } from '../i18n.js';
 import { h, mount, haptic, openLink } from '../ui.js';
 import { icon, art, WELCOME_ART } from '../icons.js';
@@ -89,8 +90,8 @@ export function renderWelcome(app, params = {}) {
         h('span', { class: 'tile-icon' }, icon('clock')),
         h('div', {}, h('b', {}, t('wRemind')), h('div', { class: 'small muted' }, t('wRemindHint'))),
         h('span', { class: `switch ${remind ? 'on' : ''}` }, h('i'))));
-      if (app.info && app.info.community_url) {
-        extra.push(h('button', { type: 'button', class: 'btn btn-secondary', onClick: () => openLink(app.info.community_url) },
+      if (COMMUNITY_URL) {
+        extra.push(h('button', { type: 'button', class: 'btn btn-secondary', onClick: () => openLink(COMMUNITY_URL) },
           icon('users'), t('wJoinGroup')));
       }
     }

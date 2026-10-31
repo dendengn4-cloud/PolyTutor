@@ -1,4 +1,5 @@
 import { rpc } from '../api.js';
+import { COMMUNITY_URL } from '../config.js';
 import { t, setLang, tierName, formatDate } from '../i18n.js';
 import { h, mount, spinner, haptic, openLink, sheet } from '../ui.js';
 import { icon } from '../icons.js';
@@ -176,9 +177,9 @@ export async function renderSettings(app, params = {}) {
       h('div', {}, h('b', {}, t('guideTitle')), h('div', { class: 'small muted' }, t('guideShort'))),
       icon('chevron', 'ic chev')),
 
-    app.info && app.info.community_url ? [
+    COMMUNITY_URL ? [
       h('h2', {}, t('community')),
-      h('button', { class: 'card sub-card', type: 'button', onClick: () => openLink(app.info.community_url) },
+      h('button', { class: 'card sub-card', type: 'button', onClick: () => openLink(COMMUNITY_URL) },
         h('span', { class: 'tile-icon' }, icon('users')),
         h('div', {}, h('b', {}, t('communityTitle')), h('div', { class: 'small muted' }, t('communityText'))),
         icon('chevron', 'ic chev'))] : null,

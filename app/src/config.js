@@ -11,3 +11,6 @@ export const BOT_USERNAME = (env.VITE_BOT_USERNAME || '').replace(/^@/, '');
 export const AUDIO_BASE = env.VITE_AUDIO_BASE ? env.VITE_AUDIO_BASE.replaceAll('{lang}', LANG.code).replace(/\/?$/, '/') : '';
 // Раздел базы (schema) изучаемого языка: все запросы к базе идут в него
 export const DB_SCHEMA = LANG.code;
+
+// Группа приложения в Telegram — одна на все языки (кнопка «Группа» на «Доме», в «Настройках» и в знакомстве)
+export const COMMUNITY_URL = 'https://t.me/+luNI8b4qZ1Y4MTA6';

@@ -1,5 +1,6 @@
 // Вкладка «Дом»: профиль, план на сегодня, разделы, активность, прогресс по уровням.
 import { rpc, tg } from '../api.js';
+import { COMMUNITY_URL } from '../config.js';
 import { t, tierName, formatDate } from '../i18n.js';
 import { h, mount, spinner, sheet, haptic, openLink } from '../ui.js';
 import { icon } from '../icons.js';
@@ -161,13 +162,13 @@ export async function renderHome(app) {
   const settingsNow = (me && me.settings) || {};
   let feedbackCard = null;
   // в «Максимальной фокусировке» просьб и всплывающих карточек нет
-  if (focus !== 'max' && !settingsNow.feedback_asked && home.words_started >= 40 && app.info && app.info.community_url) {
+  if (focus !== 'max' && !settingsNow.feedback_asked && home.words_started >= 40 && COMMUNITY_URL) {
     const dismiss = () => { feedbackCard.remove(); rpc('update_settings', { p_ui_lang: null, p_settings: { feedback_asked: true } }).catch(() => {}); };
     feedbackCard = h('div', { class: 'card feedback-card' },
       h('div', { class: 'row' }, h('span', { class: 'tile-icon gold' }, icon('users')),
         h('div', {}, h('b', {}, t('fbTitle')), h('div', { class: 'small muted' }, t('fbText')))),
       h('div', { class: 'flag-btns' },
-        h('button', { class: 'btn btn-small', type: 'button', onClick: () => { openLink(app.info.community_url); dismiss(); } }, t('fbGo')),
+        h('button', { class: 'btn btn-small', type: 'button', onClick: () => { openLink(COMMUNITY_URL); dismiss(); } }, t('fbGo')),
         h('button', { class: 'btn btn-small btn-secondary', type: 'button', onClick: dismiss }, t('fbLater'))));
   }
 
@@ -195,8 +196,8 @@ export async function renderHome(app) {
         h('span', {}, h('i', { class: 'dot', style: { background: 'var(--accent)' } }), t('legendLearned'))),
       h('button', { class: 'link-row', type: 'button', onClick: () => app.go('progress') },
         icon('progress'), h('span', { class: 'spacer' }, t('moreStats')), icon('chevron'))),
-    app.info && app.info.community_url
-      ? h('button', { class: 'card sub-card community', type: 'button', onClick: () => openLink(app.info.community_url) },
+    COMMUNITY_URL
+      ? h('button', { class: 'card sub-card community', type: 'button', onClick: () => openLink(COMMUNITY_URL) },
           h('span', { class: 'tile-icon' }, icon('users')),
           h('div', {}, h('b', {}, t('communityTitle')), h('div', { class: 'small muted' }, t('communityText'))),
           icon('chevron', 'ic chev'))
