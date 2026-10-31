@@ -129,3 +129,16 @@ export async function prepareShare() {
   if (!res.ok || !data.id) throw new ApiError(data.error || `http_${res.status}`);
   return data;
 }
+
+// Детский режим, «Забыли код?»: бот присылает в Telegram код сброса ПИН-кода → {ok} или ApiError
+export async function requestKidsReset() {
+  if (!session) await login();
+  const res = await fetch(`${SUPABASE_URL}/functions/v1/telegram-bot/kids-reset`, {
+    method: 'POST',
+    headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${session.access_token}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ lang: DB_SCHEMA }),
+  }).catch((err) => { throw new ApiError('network', err && err.message); });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok || !data.ok) throw new ApiError(data.error || `http_${res.status}`);
+  return data;
+}

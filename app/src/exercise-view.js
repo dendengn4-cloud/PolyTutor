@@ -9,6 +9,8 @@ import { conjSheet, canConjugate, declSheet, canDecline } from './lang/conj.js';
 import { langKeyboard } from './lang/keyboard.js';
 import { translitFor } from './lang/translit.js';
 import { HAS_LETTER } from './lang/script.js';
+import { wordPic, picBox } from './pics/index.js';
+import { currentLook } from './look.js';
 
 // Транскрипция под словом/примером, если она нужна языку (армянский: кириллица для русского интерфейса, латиница для
 // остальных); языки на латинице транскрипцию не показывают — translitFor возвращает пустую строку
@@ -22,7 +24,7 @@ export const PROMPT_KEY = {
   fill_choice: 'exFillChoice', fill_input: 'exFillInput', find_error: 'exFindError',
   ru_uz_input: 'exRuUzInput', uz_ru_input: 'exUzRuInput', dictation: 'exDictation',
   sentence_choice: 'exSentenceChoice', sentence_build: 'exSentenceBuild', suffix_choice: 'exSuffix',
-  audio_sentence: 'exAudioSentence', fix_error: 'exFixError',
+  audio_sentence: 'exAudioSentence', fix_error: 'exFixError', pic_choice: 'exPic',
 };
 
 // ---------------------------------------------------------------- карточка нового слова
@@ -36,6 +38,7 @@ export function renderCard(item, { audioEnabled, onNext }) {
   return h('div', {},
     h('div', { class: 'label' }, t('newWord')),
     h('div', { class: 'card word-card' },
+      wordPic(item, { size: 'lg' }),
       h('div', { class: 'word-uz' }, item.uz, item.audio_ok && audioEnabled ? audioButton(() => play(wordAudio(item.id))) : null),
       translitLine(item.uz),
       h('div', { class: 'word-ru' }, item.ru),
@@ -86,7 +89,7 @@ export function renderExercise(ex, { audioEnabled, onAnswer, onNext }) {
       parts.push(h('div', { class: 'right-answer' }, right));
     }
     if ((ex.type === 'audio_sentence' || ex.type === 'sentence_build') && ex.ru) parts.push(h('div', { class: 'small' }, ex.ru));
-    parts.push(h('div', { class: 'pair' }, `${word.uz} — ${word.ru}`,
+    parts.push(h('div', { class: 'pair' }, wordPic(word, { size: 'sm' }), `${word.uz} — ${word.ru}`,
       word.audio_ok && audioEnabled ? audioButton(() => play(wordAudio(word.id))) : null,
       ex.example && ex.exampleAudio && audioEnabled ? audioButton(exAudio) : null,
       canConjugate(word) ? h('button', { class: 'chip-btn conj-chip', type: 'button', onClick: () => conjSheet(word, null) }, t('conjBtn'))
@@ -137,7 +140,18 @@ export function renderExercise(ex, { audioEnabled, onAnswer, onNext }) {
   }
 
   // ---- ответ
-  if (ex.options) {
+  if (ex.type === 'pic_choice') {
+    const look = currentLook();
+    const buttons = ex.options.map((opt, i) =>
+      h('button', { class: 'option pic-option', type: 'button', 'aria-label': opt, onClick: () => submit(opt, {
+        mark: (correct) => {
+          buttons[ex.correctIndex].classList.add('right');
+          if (!correct) buttons[i].classList.add('wrong');
+          buttons.forEach((b, k) => { b.disabled = true; b.append(h('span', { class: 'pic-cap' }, ex.options[k])); });
+        },
+      }) }, picBox(ex.pics[i], look.pics_style, look.pics_bg, 'opt')));
+    body.append(h('div', { class: 'options pic-options' }, buttons));
+  } else if (ex.options) {
     const labels = ex.type === 'suffix_choice' ? ex.suffixes.map((s) => `-${s}`) : ex.options;
     const buttons = ex.options.map((opt, i) =>
       h('button', { class: 'option', type: 'button', onClick: () => submit(opt, {

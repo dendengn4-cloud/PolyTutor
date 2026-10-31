@@ -83,7 +83,7 @@ function extSection(app, x) {
     h('div', { class: 'bar-day' }, String(w.week).slice(8, 10) + '.' + String(w.week).slice(5, 7)))));
 
   // точность по видам заданий
-  const names = t('exNames') || {};
+  const names = { pic_choice: t('exPic'), ...(t('exNames') || {}) };
   const types = (x.by_type || []).filter((r) => r.total >= 3).map((r) => {
     const pct = Math.round((r.correct / r.total) * 100);
     return h('div', { class: 'acc-row' },

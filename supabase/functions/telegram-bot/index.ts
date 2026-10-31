@@ -14,6 +14,7 @@
 // Оплата звёздами:
 //   POST …/telegram-bot/invoice  (из приложения, с токеном пользователя) → ссылка на счёт
 //   POST …/telegram-bot/flags    (из приложения после пометки слова) → уведомление администраторам о новых пометках
+//   POST …/telegram-bot/kids-reset (из приложения: код сброса ПИН-кода детского режима)
 //   POST …/telegram-bot/cron     (раз в час из GitHub Actions, заголовок X-Cron-Token — одноразовый пропуск из базы)
 //                                 → напоминания: ежедневное в выбранный час, день повторения, конец подписки
 //   pre_checkout_query → проверка тарифа и цены; successful_payment → продление подписки
@@ -647,6 +648,33 @@ async function recipientsOf(schemas: string[]): Promise<Recipient[]> {
   return out;
 }
 
+// POST …/telegram-bot/kids-reset, заголовок Authorization: Bearer <токен пользователя>, {"lang": "<код>"}:
+// «Забыли код?» в детском режиме — бот присылает взрослому код сброса ПИН-кода (действует 15 минут).
+const KIDS_RESET: Record<Lang, (code: string) => string> = {
+  ru: (c) => `Код для сброса ПИН-кода детского режима: ${c}\nДействует 15 минут. Если вы его не запрашивали — просто не отвечайте.`,
+  hy: (c) => `Մանկական ռեժիմի PIN-կոդի վերականգնման կոդը՝ ${c}\nԳործում է 15 րոպե։ Եթե չեք խնդրել՝ պարզապես անտեսեք։`,
+  uz: (c) => `Bolalar rejimi PIN-kodini tiklash kodi: ${c}\n15 daqiqa amal qiladi. Agar soʻramagan boʻlsangiz — eʼtibor bermang.`,
+  sv: (c) => `Kod för att återställa barnlägets PIN-kod: ${c}\nGäller i 15 minuter. Om du inte bad om den kan du strunta i det här.`,
+  tr: (c) => `Çocuk modu PIN kodunu sıfırlama kodu: ${c}\n15 dakika geçerlidir. Siz istemediyseniz bu mesajı dikkate almayın.`,
+  en: (c) => `Code to reset the kids mode PIN: ${c}\nValid for 15 minutes. If you did not ask for it, just ignore this message.`,
+};
+async function kidsReset(req: Request, token: string): Promise<Response> {
+  const jwt = (req.headers.get("Authorization") || "").replace(/^Bearer\s+/i, "");
+  if (!jwt) return json({ error: "not_authenticated" }, 401);
+  let body: any = {};
+  try { body = await req.json(); } catch { /* пусто */ }
+  const db = dbClient(schemaOf(body.lang));
+  const { data: auth, error: authErr } = await db.auth.getUser(jwt);
+  if (authErr || !auth?.user) return json({ error: "not_authenticated" }, 401);
+  const { data: res, error } = await db.rpc("kids_reset_code", { p_user: auth.user.id });
+  if (error) { console.error("kids_reset_code", error); return json({ error: "db_error" }, 500); }
+  if (!res?.ok) return json({ error: res?.error || "no_pin" }, 400);
+  const { data: me } = await db.from("profiles").select("ui_lang").eq("id", auth.user.id).maybeSingle();
+  const sent = await tgApi(token, "sendMessage", { chat_id: res.tg_id, text: KIDS_RESET[asLang(me?.ui_lang)](res.code) });
+  if (!sent?.ok) return json({ error: "send_failed" }, 502);
+  return json({ ok: true });
+}
+
 async function announce(req: Request, token: string, appUrl: string): Promise<Response> {
   const started = Date.now();
   const jwt = (req.headers.get("Authorization") || "").replace(/^Bearer\s+/i, "");
@@ -900,6 +928,9 @@ async function handler(req: Request): Promise<Response> {
       console.error("flags error", e);
       return json({ error: "server_error" }, 500);
     }
+  }
+  if (new URL(req.url).pathname.endsWith("/kids-reset")) {
+    try { return await kidsReset(req, token); } catch (e) { console.error("kids-reset error", e); return json({ error: "server_error" }, 500); }
   }
   if (new URL(req.url).pathname.endsWith("/announce")) {
     try { return await announce(req, token, appUrl); } catch (e) { console.error("announce error", e); return json({ error: "server_error" }, 500); }

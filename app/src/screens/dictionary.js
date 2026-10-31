@@ -3,6 +3,7 @@
 // неиспользуемое (→ B2); пометки пользователей проверяют администраторы.
 import { rpc, notifyFlags } from '../api.js';
 import { t, formatDate, getLang } from '../i18n.js';
+import { wordPic } from '../pics/index.js';
 import { h, mount, spinner, sheet, haptic, audioButton } from '../ui.js';
 import { icon } from '../icons.js';
 import { play, wordAudio, exampleAudio } from '../audio.js';
@@ -35,6 +36,7 @@ function stageOf(l) {
 function wordRow(w, onOpen) {
   const st = stageOf(w.l);
   return h('button', { class: `dict-row ${st || 'none'}`, type: 'button', onClick: () => onOpen(w.i) },
+    wordPic({ ru: w.r }, { size: 'sm' }),
     h('div', { class: 'dict-main' },
       h('b', {}, w.u), w.g ? h('span', { class: 'chip tiny-chip gold' }, t('colloquialShort')) : null,
       h('div', { class: 'small muted' }, getLang() === 'en' && w.e ? w.e : w.r)),
@@ -171,6 +173,7 @@ export async function wordSheet(app, id, onChanged) {
     h('div', { class: 'ex-ru muted' }, ex.ru)));
 
   sheet(
+    wordPic(w, { size: 'lg' }),
     h('div', { class: 'label' }, `${w.cefr} · ${(getLang() === LANG.code && w.topic_uz) || (getLang() === 'en' && w.topic_en) || w.topic || ''}`),
     h('div', { class: 'word-uz' }, w.uz, w.audio_ok && audioOn ? audioButton(() => play(wordAudio(w.id))) : null),
     translitLine(w.uz),

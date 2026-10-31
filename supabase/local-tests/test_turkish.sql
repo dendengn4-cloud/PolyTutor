@@ -158,7 +158,47 @@ end $$;
 set request.jwt.claim.sub = 'a1a1a1a1-0000-0000-0000-000000000002';
 do $$ declare l jsonb; begin
   l := public.get_announcements();
-  if jsonb_array_length(l) <> 3 then raise exception 'FAIL: новый пользователь видит (одна рассылка — один раз): %', l; end if;
-  raise notice 'ok: сообщения — карусель и показ рассылки один раз';
+  if jsonb_array_length(l) <> 0 then raise exception 'FAIL: зарегистрировавшийся после сообщений их видит: %', l; end if;
+  raise notice 'ok: сообщения — карусель, рассылка один раз, новым пользователям старые не показываются';
+end $$;
+reset role;
+
+-- ---------------------------------------------------------------- оформление и детский режим
+set role authenticated;
+set request.jwt.claim.sub = 'a1a1a1a1-0000-0000-0000-000000000001';
+do $$
+declare r jsonb; w jsonb; st jsonb; uid uuid := 'a1a1a1a1-0000-0000-0000-000000000001';
+begin
+  r := public.set_look('{"radius": 99, "icons": 2, "pics": true, "pics_style": "wc", "pics_bg": "sticker", "kids_style": "paper", "x": 1}');
+  if r->'settings'->>'radius' <> '11' or r->'settings'->>'pics_bg' <> 'sticker' or r->'settings' ? 'x' then raise exception 'FAIL: set_look %', r->'settings'; end if;
+  if (public.kids_enable('12a4')->>'error') <> 'bad_pin' then raise exception 'FAIL: плохой ПИН принят'; end if;
+  r := public.kids_enable('1234');
+  if not (r->'me'->'settings'->>'kids')::boolean then raise exception 'FAIL: kids не включён'; end if;
+  if (public.kids_check('0000')->>'ok')::boolean then raise exception 'FAIL: неверный ПИН принят'; end if;
+  if not (public.kids_check('1234')->>'ok')::boolean then raise exception 'FAIL: верный ПИН не принят'; end if;
+  w := public.kids_words(array['кошка', 'яблоко', 'дом', 'нет такого слова']);
+  if jsonb_array_length(w) < 3 then raise exception 'FAIL: kids_words %', w; end if;
+  perform public.kids_answer((w->0->>'i')::int, true, 20, false);
+  perform public.kids_answer((w->0->>'i')::int, true, 20, true);
+  st := public.kids_stats();
+  if (st->>'words')::int <> 1 or (st->>'blocks')::int <> 1 or (st->>'streak')::int <> 1 or jsonb_array_length(st->'week') <> 7 then
+    raise exception 'FAIL: kids_stats %', st; end if;
+  if (public.kids_disable('9999')->>'ok')::boolean then raise exception 'FAIL: выключение без ПИН'; end if;
+  r := public.kids_disable('1234');
+  if (r->'me'->'settings'->>'kids')::boolean then raise exception 'FAIL: kids не выключен'; end if;
+  raise notice 'ok: оформление, детский режим (ПИН, слова %, успехи)', jsonb_array_length(w);
+end $$;
+-- «Забыли код?»: бот берёт код сброса, пользователь задаёт новый ПИН
+set role authenticated;
+select public.kids_enable('1234') is not null;
+reset role;
+select set_config('t.code', public.kids_reset_code('a1a1a1a1-0000-0000-0000-000000000001')->>'code', false);
+set role authenticated;
+do $$ begin
+  if (public.kids_reset('000000x', '5555')->>'error') is null then raise exception 'FAIL: неверный код сброса принят'; end if;
+  if not (public.kids_reset(current_setting('t.code'), '5555')->>'ok')::boolean then raise exception 'FAIL: сброс ПИН'; end if;
+  if not (public.kids_check('5555')->>'ok')::boolean then raise exception 'FAIL: новый ПИН не работает'; end if;
+  perform public.kids_disable('5555');
+  raise notice 'ok: сброс ПИН через бота';
 end $$;
 reset role;

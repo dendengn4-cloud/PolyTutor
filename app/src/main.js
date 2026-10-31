@@ -5,6 +5,7 @@ import { h, mount, spinner, haptic, sheet, inlineNotice, onSheetsChange, sheetCo
 import { icon } from './icons.js';
 import { initTheme, applyTheme, currentTheme } from './theme.js';
 import { initFocus, applyFocus, focusMode, currentFocus } from './focus.js';
+import { initLook, applyLook, lookOf } from './look.js';
 import { renderHome } from './screens/home.js';
 import { renderPath } from './screens/path.js';
 import { renderLearn } from './screens/learn.js';
@@ -31,6 +32,7 @@ import { renderSisterApps } from './screens/sisterapps.js';
 import { renderAnnounce, showAnnouncement } from './screens/announce.js';
 import { renderCodes } from './screens/codes.js';
 import { renderExam } from './screens/exam.js';
+import { kidsOn, kidsUnlocked, kidsPinScreen, renderKidsHome, renderKidsPlay, renderKidsAlbum, renderKidsStats } from './screens/kids.js';
 
 const TABS = ['home', 'path', 'settings'];
 
@@ -43,6 +45,7 @@ export const app = {
     // режим внимания — до темы: в «Максимальной фокусировке» тема своя
     applyFocus(focusMode(this.me));
     applyTheme((this.me && this.me.settings && this.me.settings.theme) || currentTheme());
+    applyLook(lookOf(this.me));
     return this.me;
   },
   leave() {
@@ -116,7 +119,13 @@ const SCREENS = {
   analytics: renderAnalytics,
   formreports: renderFormReports,
   sisterapps: renderSisterApps,
+  kids: renderKidsHome,
+  kidsplay: renderKidsPlay,
+  kidsalbum: renderKidsAlbum,
+  kidsstats: renderKidsStats,
 };
+// детский режим: только эти экраны; «Настройки» — после ПИН-кода
+const KIDS_SCREENS = new Set(['kids', 'kidsplay', 'kidsalbum', 'kidsstats', 'settings']);
 
 // ---------------------------------------------------------------- нижняя навигация
 let tabbar = null;
@@ -137,7 +146,7 @@ function ensureTabbar() {
 function updateTabbar() {
   const bar = ensureTabbar();
   const top = app.stack[app.stack.length - 1];
-  const visible = app.stack.length === 1 && TABS.includes(top.screen);
+  const visible = app.stack.length === 1 && TABS.includes(top.screen) && !kidsOn(app.me);
   bar.style.display = visible ? '' : 'none';
   document.getElementById('app').classList.toggle('with-tabs', visible);
   const labels = { home: 'tabHome', path: 'tabPath', settings: 'tabSettings' };
@@ -172,9 +181,19 @@ function updateBack() {
 onSheetsChange(updateBack);
 
 function render() {
+  const kids = kidsOn(app.me);
+  if (kids) document.documentElement.dataset.kids = '1'; else delete document.documentElement.dataset.kids;
+  if (kids && !KIDS_SCREENS.has(app.stack[app.stack.length - 1].screen)) {
+    app.stack = app.stack.length > 1 && app.stack[0].screen === 'kids' ? app.stack.slice(0, 1) : [{ screen: 'kids', params: {} }];
+  }
   const { screen, params } = app.stack[app.stack.length - 1];
   updateBack();
   updateTabbar();
+  if (kids && screen === 'settings' && !kidsUnlocked()) {
+    // настройки в детском режиме — только взрослому, по ПИН-коду
+    kidsPinScreen(app, () => render());
+    return;
+  }
   Promise.resolve(SCREENS[screen](app, params)).then(() => { updateTabbar(); endRestore(); }).catch((e) => { cancelRestore(); showError(e); });
 }
 
@@ -188,6 +207,7 @@ function showError(err) {
 async function start() {
   initFocus();
   initTheme();
+  initLook();
   const webApp = tg();
   if (!webApp) {
     mount(h('div', { class: 'screen center' }, h('h1', {}, t('appName')), h('p', { class: 'muted' }, t('loginNeeded'))));
@@ -210,7 +230,7 @@ async function start() {
     else {
       app.home();
       // сообщение администратора (если есть новое) — поверх главного экрана; при первом входе — после знакомства
-      showAnnouncement(currentFocus() === 'max' ? inlineNotice : sheet).catch(() => null);
+      if (!kidsOn(app.me)) showAnnouncement(currentFocus() === 'max' ? inlineNotice : sheet).catch(() => null);
     }
   } catch (err) {
     showError(err instanceof ApiError ? err : new ApiError(String(err)));

@@ -23,10 +23,10 @@ on:
         description: 'Язык (код из langs.json: hy, uz, sv, tr…)'
         default: hy
       engine:
-        description: 'Сервис: hy — t5 / espeak / azure; uz — gtts / edge; sv, tr — edge / gtts'
-        default: t5
+        description: 'Сервис: auto — как в langs.json (hy — t5, uz — gtts, sv и tr — edge); hy — t5 / espeak / azure; uz — gtts / edge; sv, tr — edge / gtts'
+        default: auto
         type: choice
-        options: [t5, espeak, azure, gtts, edge]
+        options: [auto, t5, espeak, azure, gtts, edge]
       voice:
         description: 'Голос Microsoft (для azure / edge), пусто — голос по умолчанию для языка'
         default: ''
@@ -90,6 +90,17 @@ jobs:
         run: |
           python3 scripts/langs.py check "$TUTOR_LANG"
           [ -f "scripts/langs/$TUTOR_LANG/tts.py" ] || { echo "::error::Нет scripts/langs/$TUTOR_LANG/tts.py"; exit 1; }
+          # сервис: auto (или не подходящий этому языку) — тот, что указан для языка в langs.json
+          OK=$(python3 "scripts/langs/$TUTOR_LANG/tts.py" --help | tr -d '\n' | grep -o -- '--engine {[^}]*}' | head -1 | grep -o '{.*}' | tr -d '{} ' | tr ',' ' ')
+          DEF=$(python3 -c 'import json,sys; L=[x for x in json.load(open("langs.json"))["langs"] if x["code"]==sys.argv[1]]; print(L[0].get("tts",""))' "$TUTOR_LANG")
+          E="$ENGINE"
+          if [ "$E" = "auto" ] || ! echo " $OK " | grep -q " $E "; then
+            [ "$E" != "auto" ] && echo "::warning::Сервис «$E» не подходит языку $TUTOR_LANG (подходят: $OK) — беру «$DEF» из langs.json"
+            E="$DEF"
+          fi
+          echo " $OK " | grep -q " $E " || { echo "::error::Нет подходящего сервиса озвучки для $TUTOR_LANG (подходят: $OK)"; exit 1; }
+          echo "ENGINE=$E" >> "$GITHUB_ENV"
+          echo "Сервис озвучки: $E"
           echo "AUDIO_REPO=${AUDIO_REPO_PATTERN//\{lang\}/$TUTOR_LANG}" >> "$GITHUB_ENV"
           echo "VOICED=data/$TUTOR_LANG/audio_voiced.txt" >> "$GITHUB_ENV"
           echo "PRESENT=data/$TUTOR_LANG/audio_present.txt" >> "$GITHUB_ENV"
@@ -110,6 +121,7 @@ jobs:
 
       - name: Озвучка
         run: |
+          set -o pipefail                         # ошибка tts.py не должна теряться в «| tee»
           mkdir -p out/audio
           python3 -u "scripts/langs/$TUTOR_LANG/tts.py" --out out/audio --engine "$ENGINE" ${VOICE:+--voice "$VOICE"} --limit "$LIMIT" | tee tts.log
           echo "## Озвучка ($TUTOR_LANG)" >> "$GITHUB_STEP_SUMMARY"
@@ -149,6 +161,7 @@ jobs:
         run: |
           git config user.name "tutor bot"
           git config user.email "actions@users.noreply.github.com"
+          [ -f "$VOICED" ] || { echo "Список озвученного ещё не создан — нечего отмечать"; exit 0; }
           git add "$VOICED"
           [ -f "$PRESENT" ] && git add "$PRESENT"
           git commit -m "Озвучено ($TUTOR_LANG): $(ls out/audio | wc -l) файлов" || { echo "Список не изменился"; exit 0; }

@@ -4,7 +4,10 @@ import { rpc } from '../api.js';
 import { t } from '../i18n.js';
 import { h, mount, haptic, openLink } from '../ui.js';
 import { icon, art, WELCOME_ART } from '../icons.js';
-import { focusMode } from '../focus.js';
+import { focusMode, applyFocus } from '../focus.js';
+import { applyTheme, currentTheme } from '../theme.js';
+import { themePicker, lookControls, saveLook } from './look-ui.js';
+import { currentLook } from '../look.js';
 
 const SLIDES = [
   { art: WELCOME_ART.w1, key: 'w1' },
@@ -12,18 +15,21 @@ const SLIDES = [
   { art: WELCOME_ART.w3, key: 'w3' },
   { art: WELCOME_ART.wP, key: 'wP', placement: true },
   { art: WELCOME_ART.w2, key: 'wF', modes: true, replayOnly: true },
+  { art: WELCOME_ART.w1, key: 'wL', look: true, firstOnly: true },
   { art: WELCOME_ART.w4, key: 'w4' },
 ];
 const MODES = ['off', 'focus', 'max'];
 
 export function renderWelcome(app, params = {}) {
   const replay = Boolean(params.replay);
-  const slides = SLIDES.filter((s) => replay || !s.replayOnly);
+  const slides = SLIDES.filter((s) => (replay ? !s.firstOnly : !s.replayOnly));
   let i = 0;
   let remind = !(app.me && app.me.settings && app.me.settings.remind === false);
 
   const finish = async () => {
     haptic('success');
+    // новым пользователям картинки к словам включены, если на экране «Под себя» их не выключили
+    if (!replay && !(app.me && app.me.settings && 'pics' in app.me.settings)) await saveLook(app, { pics: true });
     if (!replay) {
       app.me = await rpc('update_settings', { p_ui_lang: null, p_settings: { onboarded: true, remind } }).catch(() => app.me);
       app.home();
@@ -46,6 +52,27 @@ export function renderWelcome(app, params = {}) {
         app.tab('home');
         app.go('test', { cefr: 'A1' });
       } }, icon('test'), t('wPTest')));
+    }
+    if (s.look) {
+      // «Под себя»: тема, углы, иконки, картинки, режим внимания — всё потом есть в Настройках
+      const now = focusMode(app.me);
+      const setFocus = async (v) => {
+        const r = await rpc('set_focus', { p_mode: v, p_sound: null, p_timer: null }).catch(() => null);
+        if (r && r.settings) app.me.settings = r.settings;
+        applyFocus(focusMode(app.me));
+        applyTheme(currentTheme());
+        haptic('success');
+        draw();
+      };
+      if (!(app.me && app.me.settings && 'pics' in app.me.settings) && !currentLook().pics) saveLook(app, { pics: true });
+      extra.push(
+        h('div', { class: 'label' }, t('lookTheme')),
+        themePicker((name) => { rpc('update_settings', { p_ui_lang: null, p_settings: { theme: name } }).then((me) => { if (me && me.settings) app.me = me; }).catch(() => null); draw(); }),
+        lookControls(app, { onChange: draw }),
+        h('div', { class: 'label' }, t('focusTitle')),
+        h('div', { class: 'radio-list focus-modes' }, MODES.map((m) =>
+          h('button', { type: 'button', class: `radio ${m === now ? 'active' : ''}`, onClick: () => m !== now && setFocus(m) },
+            h('span', { class: 'spacer' }, h('b', {}, t(`focus_${m}`)), h('div', { class: 'small muted' }, t(`focus_${m}_hint`)))))));
     }
     if (s.modes) {
       // режимы внимания: чем отличаются; текущий отмечен

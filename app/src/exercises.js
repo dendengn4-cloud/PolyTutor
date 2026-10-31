@@ -1,6 +1,8 @@
 // Генерация упражнений из карточки слова (её отдаёт start_session).
 // Чистые функции без DOM — их легко проверить и переиспользовать в мобильном приложении.
 import { keyRu, keyUz, wordCount, uzSame } from './lang/normalize.js';
+import { picOf } from './pics/draw.js';
+import { currentLook } from './look.js';
 import { mergeTile, isLetterTile, tileBase, tileTail, SUBS, isInfinitive, verbStem, SUFFIX, COLLATE } from './lang/script.js';
 // строчные/прописные — по правилам изучаемого языка (в турецком I ↔ ı, İ ↔ i); у остальных языков — как обычно
 const lower = (s) => String(s).toLocaleLowerCase(COLLATE);
@@ -8,9 +10,9 @@ const upper = (s) => String(s).toLocaleUpperCase(COLLATE);
 
 // Типы по уровню слова (см. документ: «Упражнения»): от узнавания к вспоминанию
 export const TYPES_BY_LEVEL = [
-  ['uz_ru_choice'],                                                                  // 0 → 1
-  ['ru_uz_choice', 'audio_choice'],                                                  // 1 → 2
-  ['letters', 'fill_choice', 'find_error', 'uz_ru_choice', 'sentence_choice', 'suffix_choice'],   // 2 → 3
+  ['uz_ru_choice', 'pic_choice'],                                                    // 0 → 1
+  ['ru_uz_choice', 'audio_choice', 'pic_choice'],                                    // 1 → 2
+  ['letters', 'fill_choice', 'find_error', 'uz_ru_choice', 'sentence_choice', 'suffix_choice', 'pic_choice'],   // 2 → 3
   ['letters', 'fill_choice', 'find_error', 'ru_uz_choice', 'sentence_choice', 'sentence_build', 'suffix_choice'], // 3 → 4
   ['ru_uz_input', 'uz_ru_input', 'fill_input', 'dictation', 'letters', 'fix_error', 'sentence_build', 'audio_sentence'], // 4+
 ];
@@ -152,6 +154,24 @@ export function buildExercise(item, type, opts = {}) {
       if (wrong.length < 3) return null;
       const { options, correctIndex } = placeCorrect(item.ru, wrong, rnd);
       return { ...base, target: 'ru', prompt: item.uz, promptKind: 'uz', audio: audioOn, options, correctIndex };
+    }
+    case 'pic_choice': {
+      // «Выберите картинку»: слово → 4 картинки. Только при включённых картинках и если у слова и вариантов есть рисунок.
+      if (!(opts.pics !== undefined ? opts.pics : currentLook().pics)) return null;   // картинки выключены — задания нет
+      const key = picOf(item);
+      if (!key) return null;
+      const seen = new Set([key]);
+      const wrong = [];
+      for (const d of shuffle(ds, rnd)) {
+        const k = picOf(d);
+        if (!k || seen.has(k) || item.accept_ru.includes(keyRu(d.ru))) continue;
+        seen.add(k); wrong.push(d);
+        if (wrong.length === 3) break;
+      }
+      if (wrong.length < 3) return null;
+      const { options, correctIndex } = placeCorrect(item.ru, wrong.map((d) => d.ru), rnd);
+      const pics = options.map((o) => (o === item.ru ? key : picOf(wrong.find((d) => d.ru === o))));
+      return { ...base, target: 'ru', prompt: item.uz, promptKind: 'uz', audio: audioOn, options, correctIndex, pics };
     }
     case 'ru_uz_choice':
     case 'audio_choice': {
