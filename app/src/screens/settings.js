@@ -42,6 +42,22 @@ function adminSection(app, items) {
   return [head, body];
 }
 
+// «Оформление»: свёрнуто, раскрывается по нажатию на заголовок (состояние — до закрытия приложения)
+let lookOpen = false;
+function lookSection(items) {
+  const body = h('div', { class: 'look-body' }, items);
+  body.hidden = !lookOpen;
+  const chev = icon('chevron', `ic chev ${lookOpen ? 'up' : 'down'}`);
+  const head = h('button', { class: 'admin-head look-head', type: 'button', 'aria-expanded': String(lookOpen), onClick: () => {
+    lookOpen = !lookOpen;
+    body.hidden = !lookOpen;
+    head.setAttribute('aria-expanded', String(lookOpen));
+    chev.setAttribute('class', `ic chev ${lookOpen ? 'up' : 'down'}`);
+    haptic();
+  } }, h('span', {}, t('lookTitle')), chev);
+  return [head, body];
+}
+
 export async function renderSettings(app, params = {}) {
   // после изменения настройки — перерисовка на месте: без экрана загрузки и без прокрутки наверх
   const keep = Boolean(params.keep && app.me);
@@ -121,12 +137,13 @@ export async function renderSettings(app, params = {}) {
         h('div', {}, h('b', {}, t('focusTimerLabel')), h('div', { class: 'small muted' }, t('focusTimerHint'))),
         h('span', { class: `switch ${focusTimerOn ? 'on' : ''}` }, h('i')))) : null,
 
-    // ---------------------------------------------------------------- оформление
-    h('h2', {}, t('lookTitle')),
-    h('div', { class: 'label' }, t('lookTheme')),
-    focus === 'max' ? h('p', { class: 'small muted' }, t('focusThemeNote')) : null,
-    themePicker((name) => save(null, { theme: name })),
-    lookControls(app, { onChange: () => renderSettings(app, { keep: true }) }),
+    // ---------------------------------------------------------------- оформление (свёрнуто по умолчанию)
+    lookSection([
+      h('div', { class: 'label' }, t('lookTheme')),
+      focus === 'max' ? h('p', { class: 'small muted' }, t('focusThemeNote')) : null,
+      themePicker((name) => save(null, { theme: name })),
+      lookControls(app, { onChange: () => renderSettings(app, { keep: true }) }),
+    ]),
 
     // ---------------------------------------------------------------- детский режим
     h('h2', {}, t('kidsTitle')),

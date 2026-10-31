@@ -4,6 +4,7 @@
 import { hy } from './i18n-hy.js';
 import { sv } from './i18n-sv.js';
 import { tr } from './i18n-tr.js';
+import { ko } from './i18n-ko.js';
 import { LANG } from './lang/info.js';
 import { OVERRIDES } from './lang/i18n-lang.js';
 
@@ -2064,7 +2065,7 @@ Object.assign(en, {
   kidsWeekDays: ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
 });
 if (en.exNames) en.exNames.pic_choice = "Choose the picture";
-const dict = { ru, uz, hy, sv, tr, en };
+const dict = { ru, uz, hy, sv, tr, ko, en };
 // тексты, которые зависят от изучаемого языка (lang/i18n-lang.js), — поверх общих
 for (const [l, o] of Object.entries(OVERRIDES)) if (dict[l]) Object.assign(dict[l], o);
 let lang = 'ru';
@@ -2082,6 +2083,6 @@ export function tierName(tier) {
 }
 // армянский формат даты — ДД.ММ.ГГГГ (как в ru-RU; hy-AM в части браузеров даёт М/Д/ГГГГ)
 export function formatDate(iso) {
-  const locale = lang === 'en' ? 'en-GB' : lang === 'hy' ? 'ru-RU' : lang === 'uz' ? 'uz-Latn-UZ' : lang === 'sv' ? 'sv-SE' : lang === 'tr' ? 'tr-TR' : 'ru-RU';
+  const locale = lang === 'en' ? 'en-GB' : lang === 'hy' ? 'ru-RU' : lang === 'uz' ? 'uz-Latn-UZ' : lang === 'sv' ? 'sv-SE' : lang === 'tr' ? 'tr-TR' : lang === 'ko' ? 'ko-KR' : 'ru-RU';
   try { return new Date(iso).toLocaleDateString(locale); } catch { return String(iso).slice(0, 10); }
 }

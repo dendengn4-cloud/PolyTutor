@@ -10,8 +10,10 @@ import { play, wordAudio, exampleAudio } from '../audio.js';
 import { tilesOf } from '../exercises.js';
 import { conjSheet, declSheet, canConjugate, canDecline } from '../lang/conj.js';
 import { translitLine } from '../exercise-view.js';
-import { ALPHABET, COLLATE, FIRST_LETTER, tileBase } from '../lang/script.js';
+import * as SCRIPT from '../lang/script.js';
 import { LANG } from '../lang/info.js';
+
+const { ALPHABET, COLLATE, FIRST_LETTER, tileBase } = SCRIPT;
 
 const LEVELS = ['A1', 'A2', 'B1', 'B2'];
 // Порядок алфавита, сортировка и первая буква — правила языка (lang/script.js)
@@ -21,6 +23,7 @@ function firstLetter(uz) {
   const tile = tilesOf(String(uz).toLocaleLowerCase(COLLATE)).find((x) => !x.space && FIRST_LETTER.test(x.ch));
   if (!tile) return '#';
   const ch = tileBase(tile.ch);
+  if (SCRIPT.letterOf) return SCRIPT.letterOf(ch);      // корейский: первая буква слога (한 → ㅎ)
   return ALPHABET.includes(ch) ? ch : ch[0];
 }
 const letterRank = (l) => { const i = ALPHABET.indexOf(l); return i < 0 ? 99 : i; };

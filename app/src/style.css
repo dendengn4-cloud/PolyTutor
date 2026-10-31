@@ -1215,3 +1215,4 @@ html[data-kids] body { background: var(--bg); color: var(--text); }
 .kids-pin-screen { display: grid; gap: 10px; align-content: start; padding-top: 24px; }
 .kids-lock { width: 64px; height: 64px; border-radius: 20px; background: var(--k-lilac-soft, #ECE6FF); color: var(--k-lilac, #8A6CF0); display: grid; place-items: center; margin: 0 auto; }
 .kids-lock .ic { width: 30px; height: 30px; }
+.look-body[hidden] { display: none; }
