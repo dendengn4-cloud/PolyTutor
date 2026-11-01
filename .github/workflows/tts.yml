@@ -7,6 +7,7 @@
 #        узбекский (uz): gtts — Google (бесплатно, как исходные файлы); edge — Microsoft (бесплатно);
 #        шведский (sv): edge — Microsoft (бесплатно, без регистрации, естественный голос); gtts — Google (бесплатно);
 #        турецкий (tr): edge — Microsoft (бесплатно, без регистрации, голос tr-TR-EmelNeural); gtts — Google (бесплатно);
+#        корейский (ko): edge — Microsoft (бесплатно, без регистрации, голос ko-KR-SunHiNeural); gtts — Google (бесплатно);
 #   3. если задан секрет AUDIO_REPO_TOKEN — кладёт файлы в репозиторий с аудио (папка audio/), отмечает их
 #      в data/<язык>/audio_voiced.txt и обновляет список файлов data/<язык>/audio_present.txt, затем запускает
 #      «Import Vocabulary» — в приложении появляются кнопки звука;
@@ -20,10 +21,10 @@ on:
   workflow_dispatch:
     inputs:
       lang:
-        description: 'Язык (код из langs.json: hy, uz, sv, tr…)'
+        description: 'Язык (код из langs.json: hy, uz, sv, tr, ko…)'
         default: hy
       engine:
-        description: 'Сервис: auto — как в langs.json (hy — t5, uz — gtts, sv и tr — edge); hy — t5 / espeak / azure; uz — gtts / edge; sv, tr — edge / gtts'
+        description: 'Сервис: auto — как в langs.json (hy — t5, uz — gtts, sv, tr и ko — edge); hy — t5 / espeak / azure; uz — gtts / edge; sv, tr, ko — edge / gtts'
         default: auto
         type: choice
         options: [auto, t5, espeak, azure, gtts, edge]

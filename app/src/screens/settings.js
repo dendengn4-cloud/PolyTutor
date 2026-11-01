@@ -42,21 +42,24 @@ function adminSection(app, items) {
   return [head, body];
 }
 
-// «Оформление»: свёрнуто, раскрывается по нажатию на заголовок (состояние — до закрытия приложения)
-let lookOpen = false;
-function lookSection(items) {
+// Свёрнутые разделы («Оформление», детский режим, интенсивность, напоминания, разговорная речь):
+// раскрываются по нажатию на заголовок; состояние хранится до закрытия приложения
+const openFolds = new Set();
+function foldSection(key, title, items) {
+  const open = () => openFolds.has(key);
   const body = h('div', { class: 'look-body' }, items);
-  body.hidden = !lookOpen;
-  const chev = icon('chevron', `ic chev ${lookOpen ? 'up' : 'down'}`);
-  const head = h('button', { class: 'admin-head look-head', type: 'button', 'aria-expanded': String(lookOpen), onClick: () => {
-    lookOpen = !lookOpen;
-    body.hidden = !lookOpen;
-    head.setAttribute('aria-expanded', String(lookOpen));
-    chev.setAttribute('class', `ic chev ${lookOpen ? 'up' : 'down'}`);
+  body.hidden = !open();
+  const chev = icon('chevron', `ic chev ${open() ? 'up' : 'down'}`);
+  const head = h('button', { class: 'admin-head look-head', type: 'button', 'aria-expanded': String(open()), onClick: () => {
+    if (open()) openFolds.delete(key); else openFolds.add(key);
+    body.hidden = !open();
+    head.setAttribute('aria-expanded', String(open()));
+    chev.setAttribute('class', `ic chev ${open() ? 'up' : 'down'}`);
     haptic();
-  } }, h('span', {}, t('lookTitle')), chev);
+  } }, h('span', {}, title), chev);
   return [head, body];
 }
+const lookSection = (items) => foldSection('look', t('lookTitle'), items);
 
 export async function renderSettings(app, params = {}) {
   // после изменения настройки — перерисовка на месте: без экрана загрузки и без прокрутки наверх
@@ -146,10 +149,9 @@ export async function renderSettings(app, params = {}) {
     ]),
 
     // ---------------------------------------------------------------- детский режим
-    h('h2', {}, t('kidsTitle')),
-    kidsSettingsCard(app),
+    foldSection('kids', t('kidsTitle'), [kidsSettingsCard(app)]),
 
-    h('h2', {}, t('intensity')),
+    foldSection('intensity', t('intensity'), [
     me.tier === 'free'
       ? h('p', { class: 'muted' }, t('freeIntensity'))
       : h('div', { class: 'radio-list' }, ['light', 'medium', 'intense'].map((v) =>
@@ -162,8 +164,9 @@ export async function renderSettings(app, params = {}) {
             h('span', { class: 'spacer' }, t(v === 'light' ? 'intLight' : v === 'medium' ? 'intMedium' : 'intIntense')),
             v !== 'light' && me.tier !== 'advanced' ? icon('lock') : null))),
     me.tier === 'basic' ? h('p', { class: 'small muted' }, t('basicIntensityNote')) : null,
+    ]),
 
-    h('h2', {}, t('remindTitle')),
+    foldSection('remind', t('remindTitle'), [
     h('div', { class: 'card remind-card' },
       h('button', { type: 'button', class: `remind-toggle ${remindOn ? 'on' : ''}`, onClick: () => save(null, { remind: !remindOn }) },
         h('div', {}, h('b', {}, t('remindDaily')), h('div', { class: 'small muted' }, t('remindHint'))),
@@ -174,12 +177,12 @@ export async function renderSettings(app, params = {}) {
       h('button', { type: 'button', class: `remind-toggle ${weeklyOn ? 'on' : ''}`, onClick: () => save(null, { weekly: !weeklyOn }) },
         h('div', {}, h('b', {}, t('weeklyMsg')), h('div', { class: 'small muted' }, t('weeklyMsgHint'))),
         h('span', { class: `switch ${weeklyOn ? 'on' : ''}` }, h('i')))),
+    ]),
 
-    FEATURES.COLLOQUIAL ? h('h2', {}, t('colloqTitle')) : null,
-    !FEATURES.COLLOQUIAL ? null : h('div', { class: 'card remind-card' },
+    !FEATURES.COLLOQUIAL ? null : foldSection('colloq', t('colloqTitle'), [h('div', { class: 'card remind-card' },
       h('button', { type: 'button', class: `remind-toggle ${colloqFirst ? 'on' : ''}`, onClick: () => save(null, { colloquial_first: !colloqFirst }) },
         h('div', {}, h('b', {}, t('colloqFirst')), h('div', { class: 'small muted' }, t('colloqFirstHint'))),
-        h('span', { class: `switch ${colloqFirst ? 'on' : ''}` }, h('i')))),
+        h('span', { class: `switch ${colloqFirst ? 'on' : ''}` }, h('i'))))]),
 
     h('h2', {}, t('weekGoalTitle')),
     seg([3, 4, 5, 6, 7].map((n) => [n, String(n)]), weekGoal, (v) => save(null, { week_goal: v })),

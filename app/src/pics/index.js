@@ -2,7 +2,7 @@
 import { currentLook } from '../look.js';
 import { picOf, drawPic, cellBg } from './draw.js';
 
-export { picOf, drawPic, cellBg, ruKey, kidsPics, kidsKeys, picTag } from './draw.js';
+export { picOf, drawPic, cellBg, ruKey, kidsPics, kidsKeys, picTag, picsReady } from './draw.js';
 
 export const picsOn = () => currentLook().pics;
 

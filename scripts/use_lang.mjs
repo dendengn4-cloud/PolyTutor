@@ -33,4 +33,13 @@ writeFileSync(join(dst, 'info.js'),
   `export const LANGS = ${JSON.stringify(all, null, 2)};\n` +
   // готовящиеся языки — в выборе языка с пометкой «скоро»
   `export const SOON = ${JSON.stringify(soon.filter((l) => !all.some((x) => x.code === l.code)).map(pick), null, 2)};\n`);
+// словарь интерфейса на изучаемом языке — только он попадает в сборку (остальные языки не грузятся)
+const nativeDict = join(ROOT, 'app', 'src', `i18n-${code}.js`);
+if (!existsSync(nativeDict)) {
+  console.error(`Нет словаря интерфейса ${nativeDict}`);
+  process.exit(1);
+}
+writeFileSync(join(dst, 'native.js'),
+  '// Создаётся scripts/use_lang.mjs — не редактировать.\n' +
+  `export { ${code} as NATIVE } from '../i18n-${code}.js';\n`);
 console.log(`app/src/lang ← langs/${code}`);

@@ -11,7 +11,7 @@ import { h, mount, spinner, haptic, sheet } from '../ui.js';
 import { icon } from '../icons.js';
 import { play, wordAudio } from '../audio.js';
 import { COLLATE } from '../lang/script.js';
-import { kidsKeys, picBox } from '../pics/index.js';
+import { kidsKeys, picBox, picsReady } from '../pics/index.js';
 import { pamuk } from '../kids/pamuk.js';
 
 export const KIDS_STYLES = ['outline', 'paper', 'crayon'];
@@ -42,6 +42,7 @@ const kidsStyle = (me) => (KIDS_STYLES.includes(me && me.settings && me.settings
 let wordsCache = null;
 async function loadWords(force = false) {
   if (wordsCache && !force) return wordsCache;
+  await picsReady;                                 // библиотека рисунков грузится отдельно от приложения
   const byKey = kidsKeys();                        // рисунок → русские значения
   const keyOf = {};
   for (const [k, list] of Object.entries(byKey)) for (const ru of list) keyOf[ru] = k;

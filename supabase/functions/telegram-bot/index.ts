@@ -33,7 +33,7 @@
 
 import { createClient } from "npm:@supabase/supabase-js@2";
 
-type Lang = "ru" | "hy" | "uz" | "sv" | "tr" | "en";
+type Lang = "ru" | "hy" | "uz" | "sv" | "tr" | "ko" | "en";
 
 const TEXT = {
   ru: {
@@ -176,6 +176,34 @@ const TEXT = {
       `Oluşturulan kod: ${n}\nAbonelik: ${tier === "basic" ? "Temel" : "Gelişmiş"}, ${months} ay\nKod başına etkinleştirme: ${uses}\n\nKodlar yalnızca bir kez gösterilir — kaydedin:`,
     error: "Komut yerine getirilemedi. Daha sonra tekrar deneyin.",
   },
+  ko: {
+    start: (name: string) =>
+      `안녕하세요, ${name}님! 👋\n\nPolytutor는 텔레그램에서 혼자 배우는 언어 강좌예요. 예문과 음성이 있는 단어, 테스트가 있는 문법, 생활 회화, 역사와 문화를 배울 수 있어요.\n\n아래 버튼을 누르고 언어를 선택하세요.`,
+    open: "앱 열기",
+    help: "명령어:\n/start — 앱 열기\n/paysupport — 결제 도움말\n/terms — 구독 약관\n/id — 내 텔레그램 ID\n/help — 도움말",
+    adminHelp: "\n\n관리자:\n/gencode basic|advanced 1|3|6|12 개수 [사용 횟수]\n/refund ID — 별 환불\n/grant ID|@username basic|advanced 개월 — 구독 부여\n/alphacode 개수 [개월] — 알파 테스터 코드",
+    tierName: (tier: string) => (tier === "basic" ? "베이직" : "어드밴스드"),
+    invoiceTitle: (tier: string, months: number) => `${tier === "basic" ? "베이직" : "어드밴스드"} 구독 · ${months}개월`,
+    invoiceDesc: (tier: string, months: number) =>
+      tier === "basic"
+        ? `${months}개월 동안 무제한 단어 학습, 연습, 게임, 문법.`
+        : `${months}개월 동안 베이직의 모든 기능 + 역사, 한국 사회, 문화, 단어 찾기, 상세 통계.`,
+    paid: (tier: string, until: string) => `결제가 완료되었어요 ✅\n${tier === "basic" ? "베이직" : "어드밴스드"} 구독은 ${until}까지 이용할 수 있어요.`,
+    payFailed: "결제는 완료되었지만 구독이 자동으로 연장되지 않았어요. /paysupport로 문의해 주세요.",
+    paySupport: (admin: string) =>
+      `결제 도움말.\n\n별이 차감되었는데 구독이 보이지 않거나 환불이 필요하면 관리자에게 연락하세요: ${admin}.\n결제 날짜를 함께 알려 주세요. 그룹 구독은 환불되지 않아요.`,
+    terms:
+      "구독 약관\n\n• 구독은 텔레그램 별로 1, 3, 6, 12개월 단위로 결제하며 자동으로 갱신되지 않아요.\n• 같은 등급을 다시 결제하면 종료일부터 연장돼요. 두 등급이 모두 있으면 어드밴스드를 먼저 사용하고, 남은 기간 동안 베이직이 이어서 적용돼요.\n• 내 링크로 친구를 초대하세요(설정 → 구독): 친구는 첫 결제 −5% 쿠폰을, 친구가 구독하면 나도 −5% 쿠폰을 받아요. 쿠폰은 본인만 사용할 수 있고 기한이 없어요. 쿠폰 1장은 (기간 할인이 적용된) 가격에서 5%를 더 할인해 줘요. 일반 구독에는 1장, 그룹 구독에는 최대 3장(참여자 1명 몫마다 −5%)까지 쓸 수 있어요.\n• 그룹 구독은 환불되지 않아요. 그래도 텔레그램이 별을 환불하면 구매자와 그룹 코드를 활성화한 모든 사람의 구독이 종료돼요. 계속하려면 개인 구독을 이용하세요.\n• 문의와 환불 — /paysupport.",
+    refundUsage: "형식: /refund ID",
+    refundDone: (stars: number) => `환불 완료: ${stars} ⭐.`,
+    refundFail: (e: string) => `환불 실패: ${e}`,
+    refundGroup: "그룹 구독이에요. 약관에 따라 환불되지 않아요. 환불하지 않았어요.",
+    notAdmin: "관리자만 사용할 수 있는 명령어예요.",
+    badArgs: "형식: /gencode basic|advanced 1|3|6|12 개수 [사용 횟수]",
+    codes: (tier: string, months: number, n: number, uses: number) =>
+      `생성된 코드: ${n}개\n구독: ${tier === "basic" ? "베이직" : "어드밴스드"}, ${months}개월\n코드당 사용 횟수: ${uses}\n\n코드는 한 번만 표시돼요. 꼭 저장하세요:`,
+    error: "명령을 실행하지 못했어요. 잠시 후 다시 시도해 주세요.",
+  },
   en: {
     start: (name: string) =>
       `Hi, ${name}! 👋\n\nThis is Polytutor — self-study language courses in Telegram: words with examples and audio, grammar with tests, everyday speech, history and culture.\n\nTap the button below and choose a language.`,
@@ -213,6 +241,7 @@ const GROUP_NOTE: Record<Lang, string> = {
   uz: "Guruh: sizga obuna va doʻstlar uchun 2 ta kod.",
   sv: "Grupp: en prenumeration till dig och 2 koder till vänner.",
   tr: "Grup: size bir abonelik ve arkadaşlar için 2 kod.",
+  ko: "그룹: 내 구독과 친구용 코드 2개.",
   en: "Group: your plan plus 2 codes for friends.",
 };
 // Подписка «Все языки» (тариф с all_langs = true)
@@ -222,6 +251,7 @@ const ALL_NOTE: Record<Lang, string> = {
   uz: "Barcha tillar: obuna ilovadagi barcha tillarda amal qiladi.",
   sv: "Alla språk: prenumerationen gäller i alla appens språk.",
   tr: "Bütün diller: abonelik uygulamanın bütün dillerinde geçerlidir.",
+  ko: "모든 언어: 앱의 모든 언어에서 구독을 이용할 수 있어요.",
   en: "All languages: the plan works in every language of the app.",
 };
 async function planIsAllLangs(db: any, planId: number): Promise<boolean> {
@@ -237,6 +267,7 @@ const GROUP_ENDED: Record<Lang, (tier: string, months: number, stars: number) =>
   uz: (tier, m, st) => `Guruh obunasi bekor qilindi: u uchun yulduzlar qaytarildi, shuning uchun kirish yopildi.\n\nDavom etish uchun «${tier}» shaxsiy obunasini ${m} oyga rasmiylashtiring — ${st} ⭐ (Sozlamalar → Obuna).`,
   sv: (tier, m, st) => `Gruppprenumerationen har avslutats eftersom stjärnorna för den återbetalades, så åtkomsten via den har upphört.\n\nFör att fortsätta kan du skaffa en egen prenumeration ${tier} för ${m} mån. – ${st} ⭐ (Inställningar → Prenumeration).`,
   tr: (tier, m, st) => `Grup aboneliği iptal edildi: yıldızları iade edildiği için erişim sona erdi.\n\nDevam etmek için ${m} aylık kişisel “${tier}” abonelik alın — ${st} ⭐ (Ayarlar → Abonelik).`,
+  ko: (tier, m, st) => `그룹 구독이 취소되었어요. 별이 환불되어 이용이 종료되었어요.\n\n계속하려면 ${m}개월 개인 「${tier}」 구독을 이용하세요 — ${st} ⭐ (설정 → 구독).`,
   en: (tier, m, st) => `Your group plan was cancelled because its stars were refunded, so access through it has ended.\n\nTo continue, take a personal “${tier}” plan for ${m} mo. — ${st} ⭐ (Settings → Subscription).`,
 };
 // Реферальная программа: купоны −5%
@@ -246,6 +277,7 @@ const COUPON_NOTE: Record<Lang, (n: number) => string> = {
   uz: (n) => `Qoʻllangan kuponlar: ${n}.`,
   sv: (n) => `Använda kuponger: ${n}.`,
   tr: (n) => `Kullanılan kupon: ${n}.`,
+  ko: (n) => `적용된 쿠폰: ${n}장.`,
   en: (n) => `Coupons applied: ${n}.`,
 };
 const REF_TEXT = {
@@ -269,6 +301,10 @@ const REF_TEXT = {
     welcome: "🎁 Bir arkadaşınızın davetiyle geldiniz — ilk abonelik ödemenize −%5 kupon. Uygulamada: Ayarlar → Abonelik.",
     earned: (n: number) => `🎉 Arkadaşınız bağlantınızla abone oldu — size −%5 kupon verildi. Kullanılabilir kupon: ${n}.\nKullanmak için: uygulama → Ayarlar → Abonelik.`,
   },
+  ko: {
+    welcome: "🎁 친구의 초대로 오셨어요 — 첫 구독 결제에 쓸 수 있는 −5% 쿠폰을 드려요. 앱에서 확인하세요: 설정 → 구독.",
+    earned: (n: number) => `🎉 친구가 내 링크로 구독했어요 — −5% 쿠폰을 받았어요. 사용 가능한 쿠폰: ${n}장.\n사용 방법: 앱 → 설정 → 구독.`,
+  },
   en: {
     welcome: "🎁 You joined through a friend’s invite — you get a −5% coupon for your first subscription payment. Find it in the app: Settings → Subscription.",
     earned: (n: number) => `🎉 Your friend subscribed through your link — you’ve earned a −5% coupon. Coupons available: ${n}.\nUse it: app → Settings → Subscription.`,
@@ -281,12 +317,13 @@ const GROUP_CODES: Record<Lang, string> = {
   uz: "Doʻstlar uchun kodlar (ilovada faollashtiriladi: Obuna → Obuna kodi; ular u yerda ham koʻrinadi):",
   sv: "Koder till vänner (aktiveras i appen: Prenumeration → Prenumerationskod; de visas också där):",
   tr: "Arkadaşlar için kodlar (uygulamada etkinleştirilir: Abonelik → Abonelik kodu; orada da görünür):",
+  ko: "친구용 코드 (앱에서 활성화: 구독 → 구독 코드, 그곳에서도 볼 수 있어요):",
   en: "Codes for friends (activate in the app: Subscription → Subscription code; also listed there):",
 };
 
 // Язык сообщений бота: язык интерфейса Telegram (ru / hy / uz / sv / tr), иначе английский
 export function asLang(v: unknown): Lang {
-  return v === "hy" || v === "uz" || v === "sv" || v === "tr" || v === "en" ? v : "ru";
+  return v === "hy" || v === "uz" || v === "sv" || v === "tr" || v === "ko" || v === "en" ? v : "ru";
 }
 function langOf(code?: string): Lang {
   if (!code) return "ru";
@@ -294,6 +331,7 @@ function langOf(code?: string): Lang {
   if (code.startsWith("uz")) return "uz";
   if (code.startsWith("sv")) return "sv";
   if (code.startsWith("tr")) return "tr";
+  if (code.startsWith("ko")) return "ko";
   if (code.startsWith("ru")) return "ru";
   return "en";
 }
@@ -302,21 +340,24 @@ function langOf(code?: string): Lang {
 type CourseNames = { flag: string; tz: string; acc: Record<Lang, string>; gen: Record<Lang, string> };
 const COURSE: Record<string, CourseNames> = {
   hy: { flag: "🇦🇲", tz: "Asia/Yerevan",
-        acc: { ru: "армянский", hy: "հայերեն", uz: "arman tilini", sv: "armeniska", tr: "Ermenice", en: "Armenian" },
-        gen: { ru: "армянского", hy: "հայերենի", uz: "Arman tilidan", sv: "armeniska", tr: "Ermenice", en: "Armenian" } },
+        acc: { ru: "армянский", hy: "հայերեն", uz: "arman tilini", sv: "armeniska", tr: "Ermenice", ko: "아르메니아어", en: "Armenian" },
+        gen: { ru: "армянского", hy: "հայերենի", uz: "Arman tilidan", sv: "armeniska", tr: "Ermenice", ko: "아르메니아어", en: "Armenian" } },
   uz: { flag: "🇺🇿", tz: "Asia/Tashkent",
-        acc: { ru: "узбекский", hy: "ուզբեկերեն", uz: "oʻzbek tilini", sv: "uzbekiska", tr: "Özbekçe", en: "Uzbek" },
-        gen: { ru: "узбекского", hy: "ուզբեկերենի", uz: "Oʻzbek tilidan", sv: "uzbekiska", tr: "Özbekçe", en: "Uzbek" } },
+        acc: { ru: "узбекский", hy: "ուզբեկերեն", uz: "oʻzbek tilini", sv: "uzbekiska", tr: "Özbekçe", ko: "우즈베크어", en: "Uzbek" },
+        gen: { ru: "узбекского", hy: "ուզբեկերենի", uz: "Oʻzbek tilidan", sv: "uzbekiska", tr: "Özbekçe", ko: "우즈베크어", en: "Uzbek" } },
   sv: { flag: "🇸🇪", tz: "Europe/Stockholm",
-        acc: { ru: "шведский", hy: "շվեդերեն", uz: "shved tilini", sv: "svenska", tr: "İsveççe", en: "Swedish" },
-        gen: { ru: "шведского", hy: "շվեդերենի", uz: "Shved tilidan", sv: "svenska", tr: "İsveççe", en: "Swedish" } },
+        acc: { ru: "шведский", hy: "շվեդերեն", uz: "shved tilini", sv: "svenska", tr: "İsveççe", ko: "스웨덴어", en: "Swedish" },
+        gen: { ru: "шведского", hy: "շվեդերենի", uz: "Shved tilidan", sv: "svenska", tr: "İsveççe", ko: "스웨덴어", en: "Swedish" } },
   tr: { flag: "🇹🇷", tz: "Europe/Istanbul",
-        acc: { ru: "турецкий", hy: "թուրքերեն", uz: "turk tilini", sv: "turkiska", tr: "Türkçe", en: "Turkish" },
-        gen: { ru: "турецкого", hy: "թուրքերենի", uz: "Turk tilidan", sv: "turkiska", tr: "Türkçe", en: "Turkish" } },
+        acc: { ru: "турецкий", hy: "թուրքերեն", uz: "turk tilini", sv: "turkiska", tr: "Türkçe", ko: "튀르키예어", en: "Turkish" },
+        gen: { ru: "турецкого", hy: "թուրքերենի", uz: "Turk tilidan", sv: "turkiska", tr: "Türkçe", ko: "튀르키예어", en: "Turkish" } },
+  ko: { flag: "🇰🇷", tz: "Asia/Seoul",
+        acc: { ru: "корейский", hy: "կորեերեն", uz: "koreys tilini", sv: "koreanska", tr: "Korece", ko: "한국어", en: "Korean" },
+        gen: { ru: "корейского", hy: "կորեերենի", uz: "Koreys tilidan", sv: "koreanska", tr: "Korece", ko: "한국어", en: "Korean" } },
 };
 const NO_COURSE: CourseNames = { flag: "🌍", tz: "Asia/Tashkent",
-  acc: { ru: "языки", hy: "լեզուներ", uz: "tillarni", sv: "språk", tr: "dil", en: "languages" },
-  gen: { ru: "языка", hy: "լեզվի", uz: "Til", sv: "språk", tr: "dil", en: "language" } };
+  acc: { ru: "языки", hy: "լեզուներ", uz: "tillarni", sv: "språk", tr: "dil", ko: "언어", en: "languages" },
+  gen: { ru: "языка", hy: "լեզվի", uz: "Til", sv: "språk", tr: "dil", ko: "언어", en: "language" } };
 export const courseOf = (schema: string): CourseNames => COURSE[schema] ?? NO_COURSE;
 
 function escapeHtml(s: string): string {
@@ -350,7 +391,7 @@ function json(body: unknown, status = 200): Response {
 
 function formatDate(iso: string, lang: Lang, tz = "Asia/Tashkent"): string {
   try {
-    return new Date(iso).toLocaleDateString(lang === "en" ? "en-GB" : lang === "hy" ? "hy-AM" : lang === "uz" ? "uz-Latn-UZ" : lang === "sv" ? "sv-SE" : lang === "tr" ? "tr-TR" : "ru-RU", { timeZone: tz });
+    return new Date(iso).toLocaleDateString(lang === "en" ? "en-GB" : lang === "hy" ? "hy-AM" : lang === "uz" ? "uz-Latn-UZ" : lang === "sv" ? "sv-SE" : lang === "tr" ? "tr-TR" : lang === "ko" ? "ko-KR" : "ru-RU", { timeZone: tz });
   } catch {
     return iso.slice(0, 10);
   }
@@ -456,6 +497,7 @@ const SHARE_TEXT: Record<Lang, { caption: (link: string, c: CourseNames) => stri
   uz: { caption: (l, c) => `Telegramda ${c.acc.uz} oʻrganyapman — qoʻshil! ${c.flag}\nMening havolam orqali obunaga 5% chegirma:\n${l}`, button: () => "Oʻrganishni boshlash" },
   sv: { caption: (l, c) => `Jag lär mig ${c.acc.sv} i Telegram – häng med! ${c.flag}\nMed min länk får du 5 % rabatt på prenumerationen:\n${l}`, button: (c) => `Lär dig ${c.acc.sv}` },
   tr: { caption: (l, c) => `Telegram’da ${c.acc.tr} öğreniyorum — sen de katıl! ${c.flag}\nBağlantımla aboneliğe %5 indirim:\n${l}`, button: (c) => `${c.acc.tr} öğren` },
+  ko: { caption: (l, c) => `텔레그램에서 ${c.acc.ko}를 배우고 있어요 — 같이 해요! ${c.flag}\n내 링크로 가입하면 구독 5% 할인:\n${l}`, button: (c) => `${c.acc.ko} 배우기` },
   en: { caption: (l, c) => `I’m learning ${c.acc.en} in Telegram — join me! ${c.flag}\nMy link gives you 5% off a subscription:\n${l}`, button: (c) => `Learn ${c.acc.en}` },
 };
 export function shareImageUrl(appUrl: string, image: string, lang: Lang): string {
@@ -656,6 +698,7 @@ const KIDS_RESET: Record<Lang, (code: string) => string> = {
   uz: (c) => `Bolalar rejimi PIN-kodini tiklash kodi: ${c}\n15 daqiqa amal qiladi. Agar soʻramagan boʻlsangiz — eʼtibor bermang.`,
   sv: (c) => `Kod för att återställa barnlägets PIN-kod: ${c}\nGäller i 15 minuter. Om du inte bad om den kan du strunta i det här.`,
   tr: (c) => `Çocuk modu PIN kodunu sıfırlama kodu: ${c}\n15 dakika geçerlidir. Siz istemediyseniz bu mesajı dikkate almayın.`,
+  ko: (c) => `어린이 모드 PIN 재설정 코드: ${c}\n15분 동안 유효해요. 요청하지 않았다면 이 메시지를 무시하세요.`,
   en: (c) => `Code to reset the kids mode PIN: ${c}\nValid for 15 minutes. If you did not ask for it, just ignore this message.`,
 };
 async function kidsReset(req: Request, token: string): Promise<Response> {
@@ -797,6 +840,18 @@ const REMIND = {
     subEnd: (tier: string, date: string) => `“${tier}” aboneliğiniz ${date} tarihinde bitiyor. Uygulamadan uzatabilirsiniz: Ayarlar → Abonelik.`,
     open: "Uygulamayı aç",
     tiers: { basic: "Temel", advanced: "Gelişmiş" } as Record<string, string>,
+  },
+  ko: {
+    hi: (name: string) => `안녕하세요${name ? `, ${name}님` : ""}! 👋`,
+    due: (n: number) => `오늘 복습할 단어가 ${n}개 있어요. 10분이면 기억에 오래 남아요.`,
+    fresh: "새 단어를 배울 시간이에요. 한 번 학습은 약 10분이에요.",
+    first: (c: CourseNames) => `첫 ${c.gen.ko} 수업을 시작해 보세요 — 약 10분이에요.`,
+    rdToday: "오늘은 금요일, 복습의 날이에요. 먼저 복습하고 그다음 새 단어가 열려요.",
+    rdTomorrow: "내일은 금요일, 복습의 날이에요.",
+    off: "알림 시간을 바꾸거나 끄려면: 앱의 설정.",
+    subEnd: (tier: string, date: string) => `「${tier}」 구독이 ${date}에 끝나요. 앱에서 연장할 수 있어요: 설정 → 구독.`,
+    open: "앱 열기",
+    tiers: { basic: "베이직", advanced: "어드밴스드" } as Record<string, string>,
   },
   en: {
     hi: (name: string) => `Hi${name ? `, ${name}` : ""}! 👋`,

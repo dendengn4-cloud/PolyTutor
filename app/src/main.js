@@ -41,6 +41,7 @@ export const app = {
   stack: [],
   async refreshMe() {
     this.me = await rpc('get_me');
+    this.meAt = Date.now();
     setLang(this.me && this.me.ui_lang);
     // режим внимания — до темы: в «Максимальной фокусировке» тема своя
     applyFocus(focusMode(this.me));
@@ -220,8 +221,9 @@ async function start() {
   mount(spinner(t('loading')));
   try {
     await login();
-    await app.refreshMe();
-    app.info = await rpc('get_app_info').catch(() => ({}));
+    // профиль и сведения о приложении — одновременно (раньше шли друг за другом и задерживали запуск)
+    const [, info] = await Promise.all([app.refreshMe(), rpc('get_app_info').catch(() => ({}))]);
+    app.info = info;
     // реферальная ссылка: код из ссылки на мини-приложение (startapp=ref_…) или запомненный ботом (/start ref_…)
     const startParam = (webApp.initDataUnsafe && webApp.initDataUnsafe.start_param) || null;
     rpc('apply_referral', { p_code: startParam && /^ref_/i.test(startParam) ? startParam : null }).catch(() => null);

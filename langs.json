@@ -53,6 +53,19 @@
       },
       "timezone": "Europe/Istanbul",
       "tts": "edge"
+    },
+    {
+      "code": "ko",
+      "base": "korean",
+      "enabled": true,
+      "flag": "🇰🇷",
+      "name": {
+        "ru": "Корейский",
+        "en": "Korean",
+        "native": "한국어"
+      },
+      "timezone": "Asia/Seoul",
+      "tts": "edge"
     }
   ],
   "_comment_soon": "Языки, которые готовятся: показываются в выборе языка с пометкой «скоро» (без перехода). Картинка — app/public/avatars/<code>.jpg.",
@@ -82,15 +95,6 @@
         "ru": "Тайский",
         "en": "Thai",
         "native": "ภาษาไทย"
-      }
-    },
-    {
-      "code": "ko",
-      "flag": "🇰🇷",
-      "name": {
-        "ru": "Корейский",
-        "en": "Korean",
-        "native": "한국어"
       }
     }
   ]

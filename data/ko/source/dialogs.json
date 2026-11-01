@@ -1,0 +1,2791 @@
+[
+ {
+  "n": 1,
+  "cefr": "A1",
+  "section": "Знакомство и общение",
+  "title_ru": "Знакомство",
+  "title_uz": "첫 만남",
+  "title_en": "Getting acquainted",
+  "intro_ru": "Анна учит корейский язык. В языковом институте в Сеуле она знакомится с Минсу.",
+  "intro_uz": "안나는 한국어를 배웁니다. 서울의 어학당에서 민수를 만납니다.",
+  "intro_en": "Anna is learning Korean. At a language institute in Seoul she meets Minsu.",
+  "speakers": {
+   "A": "민수",
+   "B": "안나"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "안녕하세요!",
+    "ru": "Здравствуйте!",
+    "en": "Hello!"
+   },
+   {
+    "who": "B",
+    "uz": "안녕하세요!",
+    "ru": "Здравствуйте!",
+    "en": "Hello!"
+   },
+   {
+    "who": "A",
+    "uz": "저는 김민수예요. 이름이 뭐예요?",
+    "ru": "Я Ким Минсу. Как вас зовут?",
+    "en": "I'm Kim Minsu. What's your name?"
+   },
+   {
+    "who": "B",
+    "uz": "제 이름은 안나예요. 만나서 반가워요!",
+    "ru": "Меня зовут Анна. Рада познакомиться!",
+    "en": "My name is Anna. Nice to meet you!"
+   },
+   {
+    "who": "A",
+    "uz": "저도 반가워요. 어느 나라 사람이에요?",
+    "ru": "Мне тоже приятно. Из какой вы страны?",
+    "en": "Nice to meet you too. Which country are you from?"
+   },
+   {
+    "who": "B",
+    "uz": "러시아 사람이에요. 모스크바에서 왔어요.",
+    "ru": "Я из России. Приехала из Москвы.",
+    "en": "I'm Russian. I came from Moscow."
+   },
+   {
+    "who": "A",
+    "uz": "와, 한국어를 잘하시네요!",
+    "ru": "Ого, вы хорошо говорите по-корейски!",
+    "en": "Wow, your Korean is good!"
+   },
+   {
+    "who": "B",
+    "uz": "아니에요, 아직 조금만 해요. 매일 공부해요.",
+    "ru": "Что вы, пока совсем немного. Занимаюсь каждый день.",
+    "en": "Not at all, only a little so far. I study every day."
+   }
+  ],
+  "vocab": [
+   "안녕하세요",
+   "이름",
+   "만나서 반갑습니다",
+   "나라",
+   "러시아",
+   "매일",
+   "공부하다"
+  ],
+  "note_ru": "«만나서 반가워요» — «рада познакомиться», ответ — «저도 반가워요». Вопрос о стране — «어느 나라 사람이에요?», ответ — название страны + 사람이에요. На комплимент корейцы обычно скромно отвечают «아니에요» — «что вы, нет».",
+  "note_uz": "\"만나서 반가워요\"에는 \"저도 반가워요\"라고 대답합니다. 나라를 물을 때는 \"어느 나라 사람이에요?\"라고 하고, 나라 이름 + \"사람이에요\"로 대답합니다. 칭찬을 들으면 겸손하게 \"아니에요\"라고 하는 경우가 많습니다.",
+  "note_en": "\"만나서 반가워요\" (nice to meet you) is answered with \"저도 반가워요\". You ask someone's country with \"어느 나라 사람이에요?\" and answer with the country + 사람이에요. Koreans usually answer a compliment modestly with \"아니에요\" — \"not at all\"."
+ },
+ {
+  "n": 2,
+  "cefr": "A1",
+  "section": "Покупки и еда",
+  "title_ru": "В кафе",
+  "title_uz": "카페에서",
+  "title_en": "At the café",
+  "intro_ru": "После занятий Анна заходит в кафе и заказывает кофе.",
+  "intro_uz": "수업이 끝나고 안나는 카페에 가서 커피를 주문합니다.",
+  "intro_en": "After class Anna goes into a café and orders coffee.",
+  "speakers": {
+   "A": "직원",
+   "B": "안나"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "어서 오세요! 주문하시겠어요?",
+    "ru": "Добро пожаловать! Будете заказывать?",
+    "en": "Welcome! Are you ready to order?"
+   },
+   {
+    "who": "B",
+    "uz": "아이스 아메리카노 한 잔 주세요.",
+    "ru": "Один айс-американо, пожалуйста.",
+    "en": "One iced Americano, please."
+   },
+   {
+    "who": "A",
+    "uz": "사이즈는 어떻게 해 드릴까요?",
+    "ru": "Какой размер вам сделать?",
+    "en": "What size would you like?"
+   },
+   {
+    "who": "B",
+    "uz": "큰 걸로 주세요. 그리고 이 케이크도 주세요.",
+    "ru": "Большой, пожалуйста. И ещё этот торт.",
+    "en": "A large one, please. And this cake too."
+   },
+   {
+    "who": "A",
+    "uz": "드시고 가세요? 가져가세요?",
+    "ru": "Здесь или с собой?",
+    "en": "For here or to go?"
+   },
+   {
+    "who": "B",
+    "uz": "여기서 먹을게요. 얼마예요?",
+    "ru": "Я здесь поем. Сколько с меня?",
+    "en": "I'll eat here. How much is it?"
+   },
+   {
+    "who": "A",
+    "uz": "모두 만 원입니다. 카드 되세요?",
+    "ru": "Всего десять тысяч вон. Картой?",
+    "en": "Ten thousand won in all. By card?"
+   },
+   {
+    "who": "B",
+    "uz": "네, 카드로 할게요. 감사합니다!",
+    "ru": "Да, картой. Спасибо!",
+    "en": "Yes, by card. Thank you!"
+   }
+  ],
+  "vocab": [
+   "커피",
+   "주문하다",
+   "잔",
+   "크다",
+   "케이크",
+   "얼마",
+   "카드"
+  ],
+  "note_ru": "«어서 오세요» — «добро пожаловать», так встречают в любом магазине. «드시고 가세요? 가져가세요?» — «здесь или с собой?». При заказе удобно говорить «… 주세요» — «дайте, пожалуйста». Счётное слово для чашек — 잔: 한 잔, 두 잔.",
+  "note_uz": "\"어서 오세요\"는 가게에서 손님을 맞는 인사입니다. \"드시고 가세요? 가져가세요?\"는 매장에서 먹을지 포장할지 묻는 말입니다. 주문할 때는 \"… 주세요\"라고 하면 됩니다. 컵은 \"잔\"으로 셉니다: 한 잔, 두 잔.",
+  "note_en": "\"어서 오세요\" (welcome) is how staff greet you in any shop. \"드시고 가세요? 가져가세요?\" means \"for here or to go?\". When ordering it's handy to say \"… 주세요\" — \"please give me\". The counter for cups is 잔: 한 잔, 두 잔."
+ },
+ {
+  "n": 3,
+  "cefr": "A1",
+  "section": "Город и транспорт",
+  "title_ru": "Где метро?",
+  "title_uz": "지하철역이 어디예요?",
+  "title_en": "Where is the subway?",
+  "intro_ru": "Анна ищет станцию метро и спрашивает дорогу у прохожей.",
+  "intro_uz": "안나는 지하철역을 찾다가 지나가는 사람에게 길을 묻습니다.",
+  "intro_en": "Anna is looking for the subway station and asks a passer-by for directions.",
+  "speakers": {
+   "A": "안나",
+   "B": "아주머니"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "저기요, 지하철역이 어디예요?",
+    "ru": "Извините, где станция метро?",
+    "en": "Excuse me, where is the subway station?"
+   },
+   {
+    "who": "B",
+    "uz": "쭉 가세요. 그리고 오른쪽으로 가세요.",
+    "ru": "Идите прямо. Потом направо.",
+    "en": "Go straight. Then go right."
+   },
+   {
+    "who": "A",
+    "uz": "멀어요?",
+    "ru": "Это далеко?",
+    "en": "Is it far?"
+   },
+   {
+    "who": "B",
+    "uz": "아니요, 가까워요. 걸어서 5분쯤 걸려요.",
+    "ru": "Нет, близко. Минут пять пешком.",
+    "en": "No, it's close. About five minutes on foot."
+   },
+   {
+    "who": "A",
+    "uz": "약국 옆에 있어요?",
+    "ru": "Она рядом с аптекой?",
+    "en": "Is it next to the pharmacy?"
+   },
+   {
+    "who": "B",
+    "uz": "네, 약국 앞에 있어요. 큰 간판이 있어요.",
+    "ru": "Да, перед аптекой. Там большая вывеска.",
+    "en": "Yes, in front of the pharmacy. There's a big sign."
+   },
+   {
+    "who": "A",
+    "uz": "정말 감사합니다!",
+    "ru": "Большое спасибо!",
+    "en": "Thank you so much!"
+   },
+   {
+    "who": "B",
+    "uz": "아니에요. 조심히 가세요!",
+    "ru": "Не за что. Осторожнее в пути!",
+    "en": "Not at all. Take care!"
+   }
+  ],
+  "vocab": [
+   "지하철",
+   "역",
+   "오른쪽",
+   "멀다",
+   "가깝다",
+   "약국"
+  ],
+  "note_ru": "Чтобы обратиться к незнакомому, говорят «저기요» — «извините». Направления: 오른쪽 — направо, 왼쪽 — налево, 쭉 — прямо. Расположение: 앞 — перед, 뒤 — за, 옆 — рядом. На «감사합니다» часто отвечают «아니에요» — «не за что».",
+  "note_uz": "모르는 사람을 부를 때는 \"저기요\"라고 합니다. 방향: 오른쪽, 왼쪽, 쭉. 위치: 앞, 뒤, 옆. \"감사합니다\"에는 \"아니에요\"라고 대답하는 경우가 많습니다.",
+  "note_en": "To address a stranger you say \"저기요\" — \"excuse me\". Directions: 오른쪽 — right, 왼쪽 — left, 쭉 — straight on. Location: 앞 — in front, 뒤 — behind, 옆 — next to. \"감사합니다\" is often answered with \"아니에요\" — \"not at all\"."
+ },
+ {
+  "n": 4,
+  "cefr": "A1",
+  "section": "Покупки и еда",
+  "title_ru": "В магазине у дома",
+  "title_uz": "편의점에서",
+  "title_en": "At the convenience store",
+  "intro_ru": "Вечером Анна покупает в 편의점 еду на завтрак.",
+  "intro_uz": "저녁에 안나는 편의점에서 아침에 먹을 음식을 삽니다.",
+  "intro_en": "In the evening Anna buys breakfast food at a convenience store.",
+  "speakers": {
+   "A": "안나",
+   "B": "직원"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "우유 있어요?",
+    "ru": "У вас есть молоко?",
+    "en": "Do you have milk?"
+   },
+   {
+    "who": "B",
+    "uz": "네, 저기 냉장고에 있어요.",
+    "ru": "Да, вон там, в холодильнике.",
+    "en": "Yes, over there in the fridge."
+   },
+   {
+    "who": "A",
+    "uz": "이 빵은 얼마예요?",
+    "ru": "Сколько стоит этот хлеб?",
+    "en": "How much is this bread?"
+   },
+   {
+    "who": "B",
+    "uz": "이천오백 원이에요. 지금 1+1이에요.",
+    "ru": "Две тысячи пятьсот вон. Сейчас акция «один плюс один».",
+    "en": "Two thousand five hundred won. It's buy-one-get-one now."
+   },
+   {
+    "who": "A",
+    "uz": "그럼 두 개 가져갈게요. 봉투도 주세요.",
+    "ru": "Тогда возьму два. И пакет, пожалуйста.",
+    "en": "Then I'll take two. A bag too, please."
+   },
+   {
+    "who": "B",
+    "uz": "봉투는 백 원이에요. 모두 사천백 원입니다.",
+    "ru": "Пакет — сто вон. Всего четыре тысячи сто вон.",
+    "en": "The bag is a hundred won. That's four thousand one hundred won in all."
+   },
+   {
+    "who": "A",
+    "uz": "여기 있어요. 영수증은 괜찮아요.",
+    "ru": "Вот, пожалуйста. Чек не нужен.",
+    "en": "Here you are. I don't need the receipt."
+   },
+   {
+    "who": "B",
+    "uz": "감사합니다. 안녕히 가세요!",
+    "ru": "Спасибо. До свидания!",
+    "en": "Thank you. Goodbye!"
+   }
+  ],
+  "vocab": [
+   "우유",
+   "냉장고",
+   "빵",
+   "봉투",
+   "영수증",
+   "괜찮다",
+   "가게"
+  ],
+  "note_ru": "«1+1» — акция «второй товар бесплатно». Цены называют китайскими числительными: 이천오백 원 — 2500 вон. «괜찮아요» здесь значит «не нужно, спасибо». Уходящему говорят «안녕히 가세요» («идите с миром»), а тот, кто остаётся, слышит «안녕히 계세요».",
+  "note_uz": "\"1+1\"은 하나를 사면 하나를 더 주는 행사입니다. 가격은 한자어 수로 말합니다: 이천오백 원. 여기서 \"괜찮아요\"는 \"필요 없어요\"라는 뜻입니다. 떠나는 사람에게는 \"안녕히 가세요\", 남는 사람에게는 \"안녕히 계세요\"라고 합니다.",
+  "note_en": "\"1+1\" is a buy-one-get-one-free deal. Prices use Sino-Korean numbers: 이천오백 원 — 2,500 won. \"괜찮아요\" here means \"no need, thanks\". To someone leaving you say \"안녕히 가세요\" (\"go in peace\"), while the one staying hears \"안녕히 계세요\"."
+ },
+ {
+  "n": 5,
+  "cefr": "A1",
+  "section": "Знакомство и общение",
+  "title_ru": "Моя семья",
+  "title_uz": "우리 가족",
+  "title_en": "My family",
+  "intro_ru": "Минсу показывает Анне фотографию своей семьи.",
+  "intro_uz": "민수가 안나에게 가족사진을 보여 줍니다.",
+  "intro_en": "Minsu shows Anna a photo of his family.",
+  "speakers": {
+   "A": "안나",
+   "B": "민수"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "이 사진 속 사람들은 누구예요?",
+    "ru": "Кто эти люди на фото?",
+    "en": "Who are the people in this photo?"
+   },
+   {
+    "who": "B",
+    "uz": "우리 가족이에요. 이분이 아버지, 이분이 어머니예요.",
+    "ru": "Это моя семья. Это папа, а это мама.",
+    "en": "This is my family. This is my father, and this is my mother."
+   },
+   {
+    "who": "A",
+    "uz": "이 사람은 누구예요?",
+    "ru": "А это кто?",
+    "en": "And who is this?"
+   },
+   {
+    "who": "B",
+    "uz": "제 누나예요. 은행에서 일해요.",
+    "ru": "Моя старшая сестра. Работает в банке.",
+    "en": "My older sister. She works at a bank."
+   },
+   {
+    "who": "A",
+    "uz": "형제가 몇 명이에요?",
+    "ru": "Сколько у вас братьев и сестёр?",
+    "en": "How many siblings do you have?"
+   },
+   {
+    "who": "B",
+    "uz": "누나 한 명, 남동생 한 명 있어요. 안나 씨는요?",
+    "ru": "Одна старшая сестра и один младший брат. А у вас, Анна?",
+    "en": "One older sister and one younger brother. And you, Anna?"
+   },
+   {
+    "who": "A",
+    "uz": "저는 외동이에요. 형제가 없어요.",
+    "ru": "Я единственный ребёнок. Братьев и сестёр нет.",
+    "en": "I'm an only child. I have no siblings."
+   },
+   {
+    "who": "B",
+    "uz": "그렇군요. 가족이 보고 싶겠어요.",
+    "ru": "Понятно. Наверное, скучаете по семье.",
+    "en": "I see. You must miss your family."
+   }
+  ],
+  "vocab": [
+   "사진",
+   "가족",
+   "아버지",
+   "어머니",
+   "은행",
+   "남동생",
+   "형제"
+  ],
+  "note_ru": "О своей семье корейцы говорят «우리 가족», «우리 엄마» — «наша» вместо «моя». О родителях вежливо: «이분» — «этот человек» (уважительно). Мужчина называет старшую сестру 누나, женщина — 언니. Счётное слово для людей — 명: 한 명, 두 명. «보고 싶다» значит и «хочу увидеть», и «скучаю».",
+  "note_uz": "자기 가족도 \"우리 가족\", \"우리 엄마\"라고 합니다. 부모님은 \"이분\"이라고 높여 말합니다. 남자는 손위 누이를 누나, 여자는 언니라고 부릅니다. 사람은 \"명\"으로 셉니다. \"보고 싶다\"는 그리움을 나타내기도 합니다.",
+  "note_en": "Koreans talk about their own family as \"우리 가족\", \"우리 엄마\" — \"our\" instead of \"my\". Parents are referred to politely as \"이분\" — \"this person\" (respectful). A man calls his older sister 누나, a woman 언니. The counter for people is 명: 한 명, 두 명. \"보고 싶다\" means both \"want to see\" and \"miss\"."
+ },
+ {
+  "n": 6,
+  "cefr": "A1",
+  "section": "Город и транспорт",
+  "title_ru": "В такси",
+  "title_uz": "택시에서",
+  "title_en": "In a taxi",
+  "intro_ru": "Анна опаздывает и едет на такси в институт.",
+  "intro_uz": "안나는 늦어서 택시를 타고 학교에 갑니다.",
+  "intro_en": "Anna is running late and takes a taxi to the institute.",
+  "speakers": {
+   "A": "기사",
+   "B": "안나"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "어서 오세요. 어디로 가세요?",
+    "ru": "Здравствуйте. Куда едем?",
+    "en": "Hello. Where to?"
+   },
+   {
+    "who": "B",
+    "uz": "서울대학교로 가 주세요.",
+    "ru": "В Сеульский университет, пожалуйста.",
+    "en": "To Seoul National University, please."
+   },
+   {
+    "who": "A",
+    "uz": "정문으로 갈까요?",
+    "ru": "К главным воротам?",
+    "en": "To the main gate?"
+   },
+   {
+    "who": "B",
+    "uz": "네, 정문 앞에서 내려 주세요. 얼마나 걸려요?",
+    "ru": "Да, высадите у главных ворот. Сколько ехать?",
+    "en": "Yes, drop me in front of the main gate. How long will it take?"
+   },
+   {
+    "who": "A",
+    "uz": "길이 막혀서 20분쯤 걸려요.",
+    "ru": "Пробки, так что минут двадцать.",
+    "en": "There's traffic, so about twenty minutes."
+   },
+   {
+    "who": "B",
+    "uz": "조금 빨리 가 주세요. 수업에 늦었어요.",
+    "ru": "Пожалуйста, побыстрее. Я опаздываю на занятие.",
+    "en": "Please go a bit faster. I'm late for class."
+   },
+   {
+    "who": "A",
+    "uz": "다 왔습니다. 만 이천 원입니다.",
+    "ru": "Приехали. Двенадцать тысяч вон.",
+    "en": "Here we are. Twelve thousand won."
+   },
+   {
+    "who": "B",
+    "uz": "카드로 할게요. 감사합니다!",
+    "ru": "Я картой. Спасибо!",
+    "en": "I'll pay by card. Thank you!"
+   }
+  ],
+  "vocab": [
+   "택시",
+   "대학교",
+   "내리다",
+   "수업",
+   "늦다",
+   "빨리"
+  ],
+  "note_ru": "Таксисту называют место + «로 가 주세요» — «поезжайте в…». «내려 주세요» — «высадите меня». «길이 막히다» — «дорога забита, пробка». Ночью (с 22:00) действует надбавка. Расплатиться можно картой или транспортной картой.",
+  "note_uz": "택시 기사에게는 장소 + \"(으)로 가 주세요\"라고 합니다. \"내려 주세요\"는 세워 달라는 말입니다. \"길이 막히다\"는 차가 많아 잘 못 간다는 뜻입니다. 밤 10시부터는 할증이 있습니다. 카드나 교통 카드로 낼 수 있습니다.",
+  "note_en": "You tell the driver the place + \"(으)로 가 주세요\" — \"please go to…\". \"내려 주세요\" — \"drop me off\". \"길이 막히다\" — \"the road is jammed\". A night surcharge applies from 22:00. You can pay by card or transit card."
+ },
+ {
+  "n": 7,
+  "cefr": "A1",
+  "section": "Знакомство и общение",
+  "title_ru": "Что вы делаете в выходные?",
+  "title_uz": "주말에 뭐 해요?",
+  "title_en": "What do you do at weekends?",
+  "intro_ru": "В пятницу Анна и Минсу говорят о планах на выходные.",
+  "intro_uz": "금요일에 안나와 민수가 주말 계획을 이야기합니다.",
+  "intro_en": "On Friday Anna and Minsu talk about their weekend plans.",
+  "speakers": {
+   "A": "민수",
+   "B": "안나"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "안나 씨, 주말에 뭐 해요?",
+    "ru": "Анна, что вы делаете в выходные?",
+    "en": "Anna, what are you doing this weekend?"
+   },
+   {
+    "who": "B",
+    "uz": "토요일에 친구하고 등산을 가요.",
+    "ru": "В субботу иду с подругой в горы.",
+    "en": "On Saturday I'm going hiking with a friend."
+   },
+   {
+    "who": "A",
+    "uz": "어느 산에 가요?",
+    "ru": "На какую гору?",
+    "en": "Which mountain?"
+   },
+   {
+    "who": "B",
+    "uz": "북한산에 가요. 민수 씨는 등산 좋아해요?",
+    "ru": "На Пукхансан. Минсу, вы любите походы?",
+    "en": "Bukhansan. Minsu, do you like hiking?"
+   },
+   {
+    "who": "A",
+    "uz": "아니요, 저는 집에서 영화 보는 걸 좋아해요.",
+    "ru": "Нет, я люблю смотреть фильмы дома.",
+    "en": "No, I like watching films at home."
+   },
+   {
+    "who": "B",
+    "uz": "그럼 일요일에 같이 영화 볼까요?",
+    "ru": "Тогда, может, в воскресенье вместе посмотрим фильм?",
+    "en": "Then shall we watch a film together on Sunday?"
+   },
+   {
+    "who": "A",
+    "uz": "좋아요! 몇 시에 만날까요?",
+    "ru": "Давайте! Во сколько встретимся?",
+    "en": "Great! What time shall we meet?"
+   },
+   {
+    "who": "B",
+    "uz": "세 시에 영화관 앞에서 만나요.",
+    "ru": "Встретимся в три у кинотеатра.",
+    "en": "Let's meet at three in front of the cinema."
+   }
+  ],
+  "vocab": [
+   "토요일",
+   "등산",
+   "산",
+   "영화",
+   "일요일",
+   "영화관"
+  ],
+  "note_ru": "«-(으)ㄹ까요?» — вежливое предложение: «볼까요?» — «посмотрим?». Ответ согласия — «좋아요!». Время: 세 시 — три часа (часы — исконными числами), 삼십 분 — тридцать минут (минуты — китайскими). Пукхансан — национальный парк на окраине Сеула.",
+  "note_uz": "\"-(으)ㄹ까요?\"는 함께 하자고 제안하는 말입니다. 좋다고 할 때는 \"좋아요!\"라고 합니다. 시간: 세 시(고유어 수), 삼십 분(한자어 수). 북한산은 서울 가장자리에 있는 국립 공원입니다.",
+  "note_en": "\"-(으)ㄹ까요?\" is a polite suggestion: \"볼까요?\" — \"shall we watch?\". Agreement: \"좋아요!\". Time: 세 시 — three o'clock (hours use native numbers), 삼십 분 — thirty minutes (minutes use Sino-Korean). Bukhansan is a national park on the edge of Seoul."
+ },
+ {
+  "n": 8,
+  "cefr": "A1",
+  "section": "Знакомство и общение",
+  "title_ru": "Обмен номерами",
+  "title_uz": "전화번호",
+  "title_en": "Exchanging numbers",
+  "intro_ru": "Анна знакомится с новой одногруппницей Джиён и хочет обменяться номерами.",
+  "intro_uz": "안나는 새 반 친구 지영과 인사하고 전화번호를 주고받으려고 합니다.",
+  "intro_en": "Anna meets a new classmate, Jiyoung, and wants to exchange numbers.",
+  "speakers": {
+   "A": "안나",
+   "B": "지영"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "지영 씨, 전화번호 좀 알려 주세요.",
+    "ru": "Джиён, дайте, пожалуйста, ваш номер телефона.",
+    "en": "Jiyoung, could you give me your phone number?"
+   },
+   {
+    "who": "B",
+    "uz": "네, 010-1234-5678이에요.",
+    "ru": "Да, ноль-один-ноль, один-два-три-четыре, пять-шесть-семь-восемь.",
+    "en": "Sure, it's 010-1234-5678."
+   },
+   {
+    "who": "A",
+    "uz": "카톡 해요?",
+    "ru": "Вы пользуетесь «Какао-ток»?",
+    "en": "Do you use KakaoTalk?"
+   },
+   {
+    "who": "B",
+    "uz": "네, 해요. 아이디는 jiyoung이에요.",
+    "ru": "Да. Мой ID — jiyoung.",
+    "en": "Yes. My ID is jiyoung."
+   },
+   {
+    "who": "A",
+    "uz": "지금 메시지 보냈어요. 받았어요?",
+    "ru": "Я сейчас отправила сообщение. Получили?",
+    "en": "I just sent you a message. Did you get it?"
+   },
+   {
+    "who": "B",
+    "uz": "네, 받았어요. 이따가 연락할게요.",
+    "ru": "Да, получила. Потом напишу.",
+    "en": "Yes, I got it. I'll be in touch later."
+   },
+   {
+    "who": "A",
+    "uz": "내일 수업 끝나고 같이 점심 먹어요.",
+    "ru": "Завтра после занятий давайте вместе пообедаем.",
+    "en": "Let's have lunch together after class tomorrow."
+   },
+   {
+    "who": "B",
+    "uz": "좋아요. 내일 봐요!",
+    "ru": "Хорошо. До завтра!",
+    "en": "Sounds good. See you tomorrow!"
+   }
+  ],
+  "vocab": [
+   "전화번호",
+   "메시지",
+   "보내다",
+   "받다",
+   "연락처",
+   "내일",
+   "점심"
+  ],
+  "note_ru": "Номера телефонов называют китайскими цифрами, ноль — «공»: 공일공. Почти все пользуются мессенджером «Какао-ток» (카톡). «이따가» — «чуть позже, сегодня же». «내일 봐요» — «до завтра», между друзьями — «내일 봐!».",
+  "note_uz": "전화번호는 한자어 수로 읽고 0은 \"공\"이라고 합니다: 공일공. 거의 모든 사람이 카카오톡(카톡)을 씁니다. \"이따가\"는 오늘 안의 조금 뒤를 뜻합니다. \"내일 봐요\", 친구끼리는 \"내일 봐!\"라고 합니다.",
+  "note_en": "Phone numbers are read with Sino-Korean digits, and zero is \"공\": 공일공. Almost everyone uses the KakaoTalk messenger (카톡). \"이따가\" means \"a bit later today\". \"내일 봐요\" — \"see you tomorrow\", between friends \"내일 봐!\"."
+ },
+ {
+  "n": 9,
+  "cefr": "A2",
+  "section": "Здоровье",
+  "title_ru": "У врача",
+  "title_uz": "병원에서",
+  "title_en": "At the doctor's",
+  "intro_ru": "Анна простудилась и пришла в небольшую клинику рядом с домом.",
+  "intro_uz": "안나는 감기에 걸려서 집 근처 내과에 왔습니다.",
+  "intro_en": "Anna has caught a cold and comes to a small clinic near her home.",
+  "speakers": {
+   "A": "의사",
+   "B": "안나"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "어디가 아프세요?",
+    "ru": "Что вас беспокоит?",
+    "en": "What seems to be the problem?"
+   },
+   {
+    "who": "B",
+    "uz": "어제부터 목이 아프고 열이 나요.",
+    "ru": "Со вчерашнего дня болит горло и температура.",
+    "en": "Since yesterday my throat hurts and I have a fever."
+   },
+   {
+    "who": "A",
+    "uz": "기침도 하세요?",
+    "ru": "Кашель тоже есть?",
+    "en": "Do you have a cough too?"
+   },
+   {
+    "who": "B",
+    "uz": "네, 밤에 기침을 많이 해요. 머리도 아파요.",
+    "ru": "Да, ночью сильно кашляю. И голова болит.",
+    "en": "Yes, I cough a lot at night. My head hurts too."
+   },
+   {
+    "who": "A",
+    "uz": "입을 벌려 보세요. 아, 목이 많이 부었네요. 감기예요.",
+    "ru": "Откройте рот. Да, горло сильно опухло. Это простуда.",
+    "en": "Open your mouth. Ah, your throat is very swollen. It's a cold."
+   },
+   {
+    "who": "B",
+    "uz": "약을 먹어야 해요?",
+    "ru": "Нужно пить лекарства?",
+    "en": "Do I need to take medicine?"
+   },
+   {
+    "who": "A",
+    "uz": "네, 처방전을 드릴게요. 하루에 세 번, 식사 후에 드세요.",
+    "ru": "Да, я выпишу рецепт. Три раза в день после еды.",
+    "en": "Yes, I'll give you a prescription. Three times a day after meals."
+   },
+   {
+    "who": "B",
+    "uz": "학교에 가도 돼요?",
+    "ru": "Мне можно ходить на занятия?",
+    "en": "Can I go to class?"
+   },
+   {
+    "who": "A",
+    "uz": "이틀 정도 집에서 쉬세요. 물을 많이 드시고요.",
+    "ru": "Дня два отдохните дома. И пейте много воды.",
+    "en": "Rest at home for about two days. And drink plenty of water."
+   },
+   {
+    "who": "B",
+    "uz": "알겠습니다. 감사합니다.",
+    "ru": "Понятно. Спасибо.",
+    "en": "I understand. Thank you."
+   }
+  ],
+  "vocab": [
+   "병원",
+   "아프다",
+   "열",
+   "기침",
+   "머리",
+   "감기",
+   "약",
+   "처방전",
+   "쉬다"
+  ],
+  "note_ru": "Врач спрашивает «어디가 아프세요?» — «где болит?». Болезнь описывают так: часть тела + 이/가 아파요 («болит…»), 열이 나요 («температура»), 기침을 해요 («кашляю»). «식사 후에» — «после еды». Лекарство по рецепту получают в аптеке рядом.",
+  "note_uz": "의사는 \"어디가 아프세요?\"라고 묻습니다. 증상은 \"목이 아파요\", \"열이 나요\", \"기침을 해요\"처럼 말합니다. \"식사 후에\"는 밥을 먹은 뒤라는 뜻입니다. 처방약은 근처 약국에서 받습니다.",
+  "note_en": "The doctor asks \"어디가 아프세요?\" — \"where does it hurt?\". Symptoms are described as body part + 이/가 아파요 (\"…hurts\"), 열이 나요 (\"I have a fever\"), 기침을 해요 (\"I cough\"). \"식사 후에\" means \"after meals\". Prescription medicine is collected from a nearby pharmacy."
+ },
+ {
+  "n": 10,
+  "cefr": "A2",
+  "section": "Здоровье",
+  "title_ru": "В аптеке",
+  "title_uz": "약국에서",
+  "title_en": "At the pharmacy",
+  "intro_ru": "С рецептом Анна приходит в аптеку на первом этаже того же здания.",
+  "intro_uz": "안나는 처방전을 가지고 같은 건물 1층 약국에 갑니다.",
+  "intro_en": "Anna brings her prescription to the pharmacy on the ground floor of the same building.",
+  "speakers": {
+   "A": "약사",
+   "B": "안나"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "처방전 주시겠어요?",
+    "ru": "Дайте, пожалуйста, рецепт.",
+    "en": "May I have your prescription?"
+   },
+   {
+    "who": "B",
+    "uz": "여기 있어요. 오래 걸려요?",
+    "ru": "Вот. Это долго?",
+    "en": "Here it is. Will it take long?"
+   },
+   {
+    "who": "A",
+    "uz": "5분만 기다리세요. 건강 보험 있으시죠?",
+    "ru": "Подождите пять минут. У вас ведь есть медстраховка?",
+    "en": "Just wait five minutes. You have health insurance, right?"
+   },
+   {
+    "who": "B",
+    "uz": "네, 외국인 등록증 여기 있어요.",
+    "ru": "Да, вот моя карта иностранца.",
+    "en": "Yes, here's my residence card."
+   },
+   {
+    "who": "A",
+    "uz": "이 약은 하루 세 번, 이 시럽은 자기 전에 드세요.",
+    "ru": "Эти таблетки — три раза в день, а сироп — перед сном.",
+    "en": "Take these pills three times a day, and the syrup before bed."
+   },
+   {
+    "who": "B",
+    "uz": "이 약을 먹으면 졸려요?",
+    "ru": "От этого лекарства клонит в сон?",
+    "en": "Will this medicine make me sleepy?"
+   },
+   {
+    "who": "A",
+    "uz": "조금 졸릴 수 있어요. 운전은 하지 마세요.",
+    "ru": "Может немного клонить в сон. Не садитесь за руль.",
+    "en": "It may make you a little sleepy. Don't drive."
+   },
+   {
+    "who": "B",
+    "uz": "알겠습니다. 그리고 마스크도 있어요?",
+    "ru": "Понятно. А маски у вас есть?",
+    "en": "I see. And do you have masks?"
+   },
+   {
+    "who": "A",
+    "uz": "네, 저기 있어요. 모두 육천 원입니다.",
+    "ru": "Да, вон там. Всего шесть тысяч вон.",
+    "en": "Yes, over there. Six thousand won in all."
+   },
+   {
+    "who": "B",
+    "uz": "카드로 계산할게요. 감사합니다.",
+    "ru": "Я заплачу картой. Спасибо.",
+    "en": "I'll pay by card. Thank you."
+   }
+  ],
+  "vocab": [
+   "약국",
+   "약",
+   "처방전",
+   "외국인 등록증",
+   "운전하다",
+   "자다",
+   "기다리다",
+   "카드로 계산하다"
+  ],
+  "note_ru": "В аптеке спрашивают о медстраховке: с ней лекарства по рецепту стоят дешевле. «자기 전에» — «перед сном», «식후» — «после еды», «식전» — «до еды». «-(으)ㄹ 수 있어요» здесь значит «может быть», а «-지 마세요» — «не делайте».",
+  "note_uz": "약국에서는 건강 보험이 있는지 묻습니다. 보험이 있으면 처방약이 쌉니다. \"자기 전에\", \"식후\", \"식전\"을 알아 두세요. 여기서 \"-(으)ㄹ 수 있어요\"는 그럴 가능성이 있다는 뜻이고, \"-지 마세요\"는 하지 말라는 뜻입니다.",
+  "note_en": "At the pharmacy you'll be asked about health insurance: with it, prescription drugs are cheaper. \"자기 전에\" — \"before bed\", \"식후\" — \"after meals\", \"식전\" — \"before meals\". \"-(으)ㄹ 수 있어요\" here means \"it may\", and \"-지 마세요\" means \"don't\"."
+ },
+ {
+  "n": 11,
+  "cefr": "A2",
+  "section": "Быт и услуги",
+  "title_ru": "В банке",
+  "title_uz": "은행에서",
+  "title_en": "At the bank",
+  "intro_ru": "Анна получила карту иностранца и пришла открыть счёт в банке.",
+  "intro_uz": "안나는 외국인 등록증을 받고 은행에 계좌를 만들러 왔습니다.",
+  "intro_en": "Anna has received her residence card and comes to open a bank account.",
+  "speakers": {
+   "A": "은행원",
+   "B": "안나"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "어떻게 오셨어요?",
+    "ru": "Чем могу помочь?",
+    "en": "How can I help you?"
+   },
+   {
+    "who": "B",
+    "uz": "통장을 만들고 싶어요.",
+    "ru": "Я хочу открыть счёт.",
+    "en": "I'd like to open an account."
+   },
+   {
+    "who": "A",
+    "uz": "외국인 등록증하고 여권 가져오셨어요?",
+    "ru": "Вы принесли карту иностранца и паспорт?",
+    "en": "Did you bring your residence card and passport?"
+   },
+   {
+    "who": "B",
+    "uz": "네, 여기 있어요. 학생증도 있어요.",
+    "ru": "Да, вот. Студенческий тоже есть.",
+    "en": "Yes, here they are. I have my student ID too."
+   },
+   {
+    "who": "A",
+    "uz": "이 신청서를 써 주세요. 주소와 전화번호를 쓰시면 돼요.",
+    "ru": "Заполните это заявление. Достаточно адреса и номера телефона.",
+    "en": "Please fill in this form. Just write your address and phone number."
+   },
+   {
+    "who": "B",
+    "uz": "체크카드도 만들 수 있어요?",
+    "ru": "Можно сделать и дебетовую карту?",
+    "en": "Can I get a debit card too?"
+   },
+   {
+    "who": "A",
+    "uz": "네, 오늘 바로 드릴게요. 비밀번호 네 자리를 눌러 주세요.",
+    "ru": "Да, выдам сегодня же. Введите четырёхзначный пароль.",
+    "en": "Yes, I'll give it to you today. Please enter a four-digit PIN."
+   },
+   {
+    "who": "B",
+    "uz": "해외로 송금도 할 수 있어요?",
+    "ru": "А переводы за границу можно делать?",
+    "en": "Can I also send money abroad?"
+   },
+   {
+    "who": "A",
+    "uz": "처음 석 달은 한도가 있어요. 앱에서 확인하세요.",
+    "ru": "Первые три месяца есть лимит. Посмотрите в приложении.",
+    "en": "There's a limit for the first three months. Check in the app."
+   },
+   {
+    "who": "B",
+    "uz": "알겠습니다. 친절하게 설명해 주셔서 감사합니다.",
+    "ru": "Понятно. Спасибо за подробное объяснение.",
+    "en": "I see. Thank you for explaining so kindly."
+   }
+  ],
+  "vocab": [
+   "은행",
+   "여권",
+   "신청하다",
+   "주소",
+   "비밀번호",
+   "송금",
+   "외국인 등록증",
+   "은행 카드"
+  ],
+  "note_ru": "«어떻게 오셨어요?» — вежливое «по какому вы делу?». «통장» — сберкнижка, а в разговоре и сам счёт. Новым клиентам-иностранцам часто ставят лимит на переводы. «-아/어 주셔서 감사합니다» — «спасибо, что вы…».",
+  "note_uz": "\"어떻게 오셨어요?\"는 무슨 일로 왔는지 공손하게 묻는 말입니다. 통장은 계좌라는 뜻으로도 씁니다. 새 외국인 고객은 송금 한도가 있는 경우가 많습니다. \"-아/어 주셔서 감사합니다\"는 해 준 일에 고마워하는 표현입니다.",
+  "note_en": "\"어떻게 오셨어요?\" is a polite \"what brings you here?\". \"통장\" is a bankbook, and in speech the account itself. New foreign customers often have transfer limits. \"-아/어 주셔서 감사합니다\" means \"thank you for…\"."
+ },
+ {
+  "n": 12,
+  "cefr": "A2",
+  "section": "Быт и услуги",
+  "title_ru": "Покупаем SIM-карту",
+  "title_uz": "휴대폰 개통",
+  "title_en": "Getting a phone plan",
+  "intro_ru": "Анна хочет оформить мобильную связь на своё имя.",
+  "intro_uz": "안나는 자기 이름으로 휴대폰을 개통하려고 합니다.",
+  "intro_en": "Anna wants to get a mobile plan in her own name.",
+  "speakers": {
+   "A": "직원",
+   "B": "안나"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "어서 오세요. 무엇을 도와드릴까요?",
+    "ru": "Добро пожаловать. Чем помочь?",
+    "en": "Welcome. How can I help?"
+   },
+   {
+    "who": "B",
+    "uz": "휴대폰을 개통하고 싶어요. 요금제를 보여 주세요.",
+    "ru": "Хочу подключить телефон. Покажите тарифы.",
+    "en": "I'd like to open a phone line. Please show me the plans."
+   },
+   {
+    "who": "A",
+    "uz": "데이터를 많이 쓰세요?",
+    "ru": "Вы много пользуетесь интернетом?",
+    "en": "Do you use a lot of data?"
+   },
+   {
+    "who": "B",
+    "uz": "네, 매일 영상을 봐요. 너무 비싼 건 싫어요.",
+    "ru": "Да, каждый день смотрю видео. Слишком дорогое не хочу.",
+    "en": "Yes, I watch videos every day. I don't want anything too expensive."
+   },
+   {
+    "who": "A",
+    "uz": "그럼 이 요금제가 좋아요. 한 달에 삼만 오천 원이에요.",
+    "ru": "Тогда вам подойдёт этот тариф. Тридцать пять тысяч вон в месяц.",
+    "en": "Then this plan is good. It's thirty-five thousand won a month."
+   },
+   {
+    "who": "B",
+    "uz": "약정이 있어요?",
+    "ru": "Есть ли обязательный срок договора?",
+    "en": "Is there a contract period?"
+   },
+   {
+    "who": "A",
+    "uz": "이건 약정이 없어요. 외국인 등록증 주시겠어요?",
+    "ru": "У этого нет. Дайте, пожалуйста, карту иностранца.",
+    "en": "This one has none. May I have your residence card?"
+   },
+   {
+    "who": "B",
+    "uz": "여기 있어요. 지금 쓰는 번호를 그대로 쓸 수 있어요?",
+    "ru": "Вот. Можно оставить мой нынешний номер?",
+    "en": "Here you are. Can I keep my current number?"
+   },
+   {
+    "who": "A",
+    "uz": "네, 번호 이동도 돼요. 30분 후에 개통됩니다.",
+    "ru": "Да, перенос номера возможен. Подключим через тридцать минут.",
+    "en": "Yes, you can transfer your number. It'll be activated in thirty minutes."
+   },
+   {
+    "who": "B",
+    "uz": "좋아요. 그럼 이걸로 할게요.",
+    "ru": "Хорошо. Тогда беру этот.",
+    "en": "Good. Then I'll take this one."
+   }
+  ],
+  "vocab": [
+   "휴대폰",
+   "요금제",
+   "데이터",
+   "비싸다",
+   "전화번호",
+   "외국인 등록증",
+   "달"
+  ],
+  "note_ru": "«개통하다» — «подключить телефон». «요금제» — тариф, «약정» — обязательный срок договора (часто 24 месяца со скидкой). Дешёвые операторы называются 알뜰폰. «-(으)ㄹ게요» — «я сделаю так», решение говорящего: 이걸로 할게요.",
+  "note_uz": "\"개통하다\"는 휴대폰을 쓸 수 있게 하는 것입니다. 요금제, 약정(보통 할인과 함께 24개월)을 확인하세요. 값싼 통신사는 알뜰폰이라고 합니다. \"-(으)ㄹ게요\"는 말하는 사람의 결정입니다: 이걸로 할게요.",
+  "note_en": "\"개통하다\" means \"to activate a phone line\". \"요금제\" is a plan, \"약정\" a minimum contract term (often 24 months with a discount). Budget carriers are called 알뜰폰. \"-(으)ㄹ게요\" expresses the speaker's decision: 이걸로 할게요 — \"I'll take this one\"."
+ },
+ {
+  "n": 13,
+  "cefr": "A2",
+  "section": "Быт и услуги",
+  "title_ru": "Ищем комнату",
+  "title_uz": "방 구하기",
+  "title_en": "Looking for a room",
+  "intro_ru": "Анна пришла к агенту по недвижимости, чтобы снять однокомнатную квартиру.",
+  "intro_uz": "안나는 원룸을 구하러 부동산에 왔습니다.",
+  "intro_en": "Anna comes to an estate agent to rent a studio.",
+  "speakers": {
+   "A": "중개사",
+   "B": "안나"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "어떤 방을 찾으세요?",
+    "ru": "Какую квартиру ищете?",
+    "en": "What kind of place are you looking for?"
+   },
+   {
+    "who": "B",
+    "uz": "학교 근처 원룸을 찾아요. 월세로요.",
+    "ru": "Ищу студию рядом с университетом. В аренду помесячно.",
+    "en": "I'm looking for a studio near the university. Monthly rent."
+   },
+   {
+    "who": "A",
+    "uz": "보증금은 얼마까지 생각하세요?",
+    "ru": "Какой залог вы рассматриваете?",
+    "en": "How much deposit are you thinking of?"
+   },
+   {
+    "who": "B",
+    "uz": "오백만 원 정도요. 월세는 오십만 원 이하면 좋겠어요.",
+    "ru": "Около пяти миллионов вон. Арендная плата — хорошо бы не больше пятисот тысяч.",
+    "en": "About five million won. Rent of five hundred thousand or less would be good."
+   },
+   {
+    "who": "A",
+    "uz": "마침 좋은 방이 있어요. 지하철역에서 걸어서 5분이에요.",
+    "ru": "Как раз есть хорошая квартира. Пять минут пешком от метро.",
+    "en": "There's a good one, as it happens. Five minutes' walk from the subway."
+   },
+   {
+    "who": "B",
+    "uz": "관리비는 따로 내요?",
+    "ru": "Плата за обслуживание отдельно?",
+    "en": "Is the maintenance fee separate?"
+   },
+   {
+    "who": "A",
+    "uz": "네, 한 달에 칠만 원이에요. 인터넷이 포함돼요.",
+    "ru": "Да, семьдесят тысяч в месяц. Интернет включён.",
+    "en": "Yes, seventy thousand a month. Internet is included."
+   },
+   {
+    "who": "B",
+    "uz": "오늘 방을 볼 수 있어요?",
+    "ru": "Можно посмотреть сегодня?",
+    "en": "Can I see it today?"
+   },
+   {
+    "who": "A",
+    "uz": "네, 지금 같이 가요. 계약하면 확정일자도 꼭 받으세요.",
+    "ru": "Да, пойдёмте сейчас. Если подпишете договор, обязательно получите отметку о дате.",
+    "en": "Yes, let's go now. If you sign, be sure to get the date stamp too."
+   },
+   {
+    "who": "B",
+    "uz": "네, 알려 주셔서 감사합니다.",
+    "ru": "Хорошо, спасибо, что подсказали.",
+    "en": "Yes, thank you for telling me."
+   }
+  ],
+  "vocab": [
+   "방",
+   "월세",
+   "보증",
+   "부동산",
+   "지하철",
+   "계약",
+   "인터넷",
+   "근처"
+  ],
+  "note_ru": "Суммы в корейском считают десятками тысяч (만): 오백만 원 — 5 000 000 вон, 오십만 원 — 500 000. «관리비» — плата за обслуживание дома. После подписания договора нужно сообщить адрес и получить 확정일자, чтобы защитить залог («Корея для иностранцев», урок 9).",
+  "note_uz": "한국어에서는 큰 돈을 \"만\" 단위로 셉니다: 오백만 원, 오십만 원. 관리비는 건물 관리에 드는 돈입니다. 계약 후에는 주소를 신고하고 확정일자를 받아 보증금을 지키세요(외국인을 위하여 9과).",
+  "note_en": "Korean counts large sums in units of ten thousand (만): 오백만 원 — 5,000,000 won, 오십만 원 — 500,000. \"관리비\" is the building maintenance fee. After signing you should report your address and get the 확정일자 to protect your deposit (\"Korea for foreigners\", lesson 9)."
+ },
+ {
+  "n": 14,
+  "cefr": "A2",
+  "section": "Покупки и еда",
+  "title_ru": "Ужин с самгёпсалем",
+  "title_uz": "삼겹살 집에서",
+  "title_en": "Dinner at a pork-belly restaurant",
+  "intro_ru": "Анна и Минсу ужинают в ресторане, где мясо жарят прямо на столе.",
+  "intro_uz": "안나와 민수가 식탁에서 고기를 굽는 식당에서 저녁을 먹습니다.",
+  "intro_en": "Anna and Minsu have dinner at a restaurant where meat is grilled at the table.",
+  "speakers": {
+   "A": "민수",
+   "B": "안나",
+   "C": "직원"
+  },
+  "lines": [
+   {
+    "who": "C",
+    "uz": "몇 분이세요?",
+    "ru": "Сколько вас?",
+    "en": "How many of you?"
+   },
+   {
+    "who": "A",
+    "uz": "두 명이에요. 삼겹살 2인분 주세요.",
+    "ru": "Двое. Две порции самгёпсаля, пожалуйста.",
+    "en": "Two. Two portions of samgyeopsal, please."
+   },
+   {
+    "who": "C",
+    "uz": "음료는 뭘로 드릴까요?",
+    "ru": "Что будете пить?",
+    "en": "What would you like to drink?"
+   },
+   {
+    "who": "B",
+    "uz": "저는 사이다 주세요.",
+    "ru": "Мне спрайт, пожалуйста.",
+    "en": "A lemonade for me, please."
+   },
+   {
+    "who": "A",
+    "uz": "저는 맥주 한 병 주세요. 안나 씨, 상추에 고기를 싸서 먹어 봐요.",
+    "ru": "А мне бутылку пива. Анна, попробуйте завернуть мясо в салат.",
+    "en": "A bottle of beer for me. Anna, try wrapping the meat in lettuce."
+   },
+   {
+    "who": "B",
+    "uz": "이렇게요? 와, 정말 맛있어요! 김치도 구워요?",
+    "ru": "Вот так? Ого, очень вкусно! А кимчхи тоже жарят?",
+    "en": "Like this? Wow, it's delicious! Do you grill the kimchi too?"
+   },
+   {
+    "who": "A",
+    "uz": "네, 고기 옆에서 구우면 더 맛있어요.",
+    "ru": "Да, если пожарить рядом с мясом, ещё вкуснее.",
+    "en": "Yes, it's even tastier grilled next to the meat."
+   },
+   {
+    "who": "B",
+    "uz": "저기요, 상추 좀 더 주세요.",
+    "ru": "Извините, можно ещё салата?",
+    "en": "Excuse me, could we have more lettuce?"
+   },
+   {
+    "who": "C",
+    "uz": "네, 금방 갖다 드릴게요.",
+    "ru": "Да, сейчас принесу.",
+    "en": "Sure, I'll bring it right away."
+   },
+   {
+    "who": "A",
+    "uz": "마지막에 볶음밥도 먹을까요?",
+    "ru": "А в конце поедим жареного риса?",
+    "en": "Shall we have fried rice at the end?"
+   }
+  ],
+  "vocab": [
+   "삼겹살",
+   "고기",
+   "맥주",
+   "채소",
+   "김치",
+   "맛있다",
+   "굽다"
+  ],
+  "note_ru": "Мясо заказывают порциями: 1인분, 2인분. Салат и закуски подают бесплатно и добавляют по просьбе «… 좀 더 주세요». В конце часто жарят на той же сковороде рис с остатками — 볶음밥. «사이다» в Корее — сладкая газировка, а не сидр.",
+  "note_uz": "고기는 1인분, 2인분으로 시킵니다. 상추와 반찬은 무료이고 \"… 좀 더 주세요\"라고 하면 더 줍니다. 마지막에 남은 재료로 볶음밥을 볶아 먹는 경우가 많습니다. 한국의 사이다는 달콤한 탄산음료입니다.",
+  "note_en": "Meat is ordered in portions: 1인분, 2인분. Lettuce and side dishes are free and refilled if you ask \"… 좀 더 주세요\". At the end people often fry rice with the leftovers on the same grill — 볶음밥. \"사이다\" in Korea is a sweet fizzy drink, not cider."
+ },
+ {
+  "n": 15,
+  "cefr": "A2",
+  "section": "Праздники и гости",
+  "title_ru": "Приглашение на Чхусок",
+  "title_uz": "추석 초대",
+  "title_en": "An invitation for Chuseok",
+  "intro_ru": "Джиён приглашает Анну провести Чхусок у её семьи в Чонджу.",
+  "intro_uz": "지영이 안나를 전주의 가족 집으로 추석에 초대합니다.",
+  "intro_en": "Jiyoung invites Anna to spend Chuseok with her family in Jeonju.",
+  "speakers": {
+   "A": "지영",
+   "B": "안나"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "안나 씨, 추석에 뭐 해요?",
+    "ru": "Анна, что вы делаете на Чхусок?",
+    "en": "Anna, what are you doing for Chuseok?"
+   },
+   {
+    "who": "B",
+    "uz": "아직 계획이 없어요. 기숙사에 있을 것 같아요.",
+    "ru": "Пока никаких планов. Наверное, останусь в общежитии.",
+    "en": "No plans yet. I think I'll stay in the dorm."
+   },
+   {
+    "who": "A",
+    "uz": "그럼 우리 집에 같이 가요. 부모님이 안나 씨를 초대하셨어요.",
+    "ru": "Тогда поехали к нам. Мои родители вас пригласили.",
+    "en": "Then come home with me. My parents have invited you."
+   },
+   {
+    "who": "B",
+    "uz": "정말요? 정말 고마워요! 뭘 가져가면 좋을까요?",
+    "ru": "Правда? Огромное спасибо! Что бы принести?",
+    "en": "Really? Thank you so much! What should I bring?"
+   },
+   {
+    "who": "A",
+    "uz": "과일이면 충분해요. 부모님이 배를 좋아하세요.",
+    "ru": "Фруктов достаточно. Родители любят груши.",
+    "en": "Fruit is enough. My parents like pears."
+   },
+   {
+    "who": "B",
+    "uz": "알겠어요. 송편도 만들어요?",
+    "ru": "Хорошо. А 송편 будете лепить?",
+    "en": "Got it. Will you make songpyeon too?"
+   },
+   {
+    "who": "A",
+    "uz": "네, 다 같이 만들어요. 예쁘게 만들면 예쁜 딸을 낳는대요.",
+    "ru": "Да, все вместе. Говорят, кто лепит красиво, родит красивую дочь.",
+    "en": "Yes, all together. They say if you make them pretty, you'll have a pretty daughter."
+   },
+   {
+    "who": "B",
+    "uz": "하하, 열심히 만들어야겠네요. 기차표는요?",
+    "ru": "Ха-ха, тогда придётся постараться. А билеты на поезд?",
+    "en": "Ha-ha, I'll have to try hard then. What about train tickets?"
+   },
+   {
+    "who": "A",
+    "uz": "제가 벌써 두 장 샀어요. 금요일 아침 기차예요.",
+    "ru": "Я уже купила два. Поезд в пятницу утром.",
+    "en": "I've already bought two. It's a Friday-morning train."
+   },
+   {
+    "who": "B",
+    "uz": "와, 벌써 기대돼요!",
+    "ru": "Ой, я уже предвкушаю!",
+    "en": "Wow, I'm looking forward to it already!"
+   }
+  ],
+  "vocab": [
+   "추석",
+   "계획하다",
+   "부모님",
+   "초대하다",
+   "배",
+   "송편",
+   "기차",
+   "표"
+  ],
+  "note_ru": "«-대요» — сокращение от «-다고 해요», «говорят, что…». В гости приносят фрукты, сладости или подарочный набор. «기대돼요» — «жду с нетерпением». Билеты на поезда на праздники продают заранее, и их раскупают очень быстро.",
+  "note_uz": "\"-대요\"는 \"-다고 해요\"를 줄인 말로 남에게 들은 말을 전합니다. 손님으로 갈 때는 과일, 과자, 선물 세트를 가져갑니다. \"기대돼요\"는 기다려진다는 뜻입니다. 명절 기차표는 미리 파는데 아주 빨리 팔립니다.",
+  "note_en": "\"-대요\" is short for \"-다고 해요\", \"they say that…\". Guests bring fruit, sweets or a gift set. \"기대돼요\" means \"I'm looking forward to it\". Holiday train tickets go on sale in advance and sell out very quickly."
+ },
+ {
+  "n": 16,
+  "cefr": "A2",
+  "section": "Город и транспорт",
+  "title_ru": "Билет на KTX",
+  "title_uz": "KTX 표 사기",
+  "title_en": "Buying a KTX ticket",
+  "intro_ru": "Анна покупает билет на скоростной поезд до Пусана на вокзале Сеул.",
+  "intro_uz": "안나는 서울역에서 부산 가는 KTX 표를 삽니다.",
+  "intro_en": "Anna buys a high-speed train ticket to Busan at Seoul Station.",
+  "speakers": {
+   "A": "안나",
+   "B": "역무원"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "부산 가는 KTX 표 한 장 주세요.",
+    "ru": "Один билет на KTX до Пусана, пожалуйста.",
+    "en": "One KTX ticket to Busan, please."
+   },
+   {
+    "who": "B",
+    "uz": "언제 출발하세요?",
+    "ru": "Когда отправление?",
+    "en": "When are you leaving?"
+   },
+   {
+    "who": "A",
+    "uz": "오늘 오후 두 시쯤이요.",
+    "ru": "Сегодня около двух часов дня.",
+    "en": "Today around two in the afternoon."
+   },
+   {
+    "who": "B",
+    "uz": "두 시 기차는 매진이에요. 두 시 반 기차는 어떠세요?",
+    "ru": "На два часа всё продано. Как насчёт поезда в половине третьего?",
+    "en": "The two o'clock train is sold out. How about the two-thirty?"
+   },
+   {
+    "who": "A",
+    "uz": "좋아요. 창가 자리로 주세요.",
+    "ru": "Хорошо. Место у окна, пожалуйста.",
+    "en": "Fine. A window seat, please."
+   },
+   {
+    "who": "B",
+    "uz": "편도로 드릴까요, 왕복으로 드릴까요?",
+    "ru": "Только туда или туда и обратно?",
+    "en": "One-way or return?"
+   },
+   {
+    "who": "A",
+    "uz": "편도로 주세요. 얼마예요?",
+    "ru": "Только туда. Сколько стоит?",
+    "en": "One-way, please. How much is it?"
+   },
+   {
+    "who": "B",
+    "uz": "오만 구천팔백 원입니다. 5호차 12A석이에요.",
+    "ru": "Пятьдесят девять тысяч восемьсот вон. Вагон 5, место 12A.",
+    "en": "Fifty-nine thousand eight hundred won. Car 5, seat 12A."
+   },
+   {
+    "who": "A",
+    "uz": "몇 시간 걸려요?",
+    "ru": "Сколько часов ехать?",
+    "en": "How many hours does it take?"
+   },
+   {
+    "who": "B",
+    "uz": "두 시간 반쯤 걸려요. 8번 타는 곳으로 가세요.",
+    "ru": "Около двух с половиной часов. Идите на восьмую платформу.",
+    "en": "About two and a half hours. Go to platform 8."
+   }
+  ],
+  "vocab": [
+   "기차",
+   "표",
+   "출발",
+   "오후",
+   "자리",
+   "시간"
+  ],
+  "note_ru": "«매진» — «все билеты проданы». «편도» — в одну сторону, «왕복» — туда и обратно. Вагон — «호차», место — «석», платформа — «타는 곳». Билеты удобнее покупать заранее в приложении Korail.",
+  "note_uz": "\"매진\"은 표가 다 팔렸다는 뜻입니다. 편도, 왕복을 구별하세요. 칸은 호차, 좌석은 석, 기차를 타는 곳은 \"타는 곳\"입니다. 표는 코레일 앱으로 미리 사면 편합니다.",
+  "note_en": "\"매진\" means \"sold out\". \"편도\" is one-way, \"왕복\" return. A carriage is \"호차\", a seat \"석\", a platform \"타는 곳\". It's easier to buy tickets in advance in the Korail app."
+ },
+ {
+  "n": 17,
+  "cefr": "B1",
+  "section": "Работа и учёба",
+  "title_ru": "Собеседование",
+  "title_uz": "면접",
+  "title_en": "A job interview",
+  "intro_ru": "Анна окончила магистратуру и пришла на собеседование в торговую компанию, которая работает с Россией.",
+  "intro_uz": "안나는 석사 과정을 마치고 러시아와 거래하는 무역 회사에 면접을 보러 왔습니다.",
+  "intro_en": "Anna has finished her master's degree and comes for an interview at a trading company that works with Russia.",
+  "speakers": {
+   "A": "면접관",
+   "B": "안나"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "안녕하세요. 먼저 간단하게 자기소개를 해 주시겠어요?",
+    "ru": "Здравствуйте. Для начала коротко расскажите о себе.",
+    "en": "Hello. First, could you briefly introduce yourself?"
+   },
+   {
+    "who": "B",
+    "uz": "안녕하십니까. 저는 러시아에서 온 안나 페트로바입니다. 서울에서 경영학 석사를 마쳤습니다.",
+    "ru": "Здравствуйте. Я Анна Петрова из России. Окончила магистратуру по менеджменту в Сеуле.",
+    "en": "Good afternoon. I'm Anna Petrova from Russia. I completed a master's in business in Seoul."
+   },
+   {
+    "who": "A",
+    "uz": "우리 회사에 지원한 이유가 무엇입니까?",
+    "ru": "Почему вы подали заявку в нашу компанию?",
+    "en": "Why did you apply to our company?"
+   },
+   {
+    "who": "B",
+    "uz": "귀사는 러시아와 중앙아시아 시장에서 경험이 많다고 들었습니다. 제 언어 능력을 살리고 싶습니다.",
+    "ru": "Я слышала, что у вашей компании большой опыт на рынках России и Средней Азии. Хочу применить свои языковые навыки.",
+    "en": "I've heard your company has extensive experience in the Russian and Central Asian markets. I'd like to put my language skills to use."
+   },
+   {
+    "who": "A",
+    "uz": "한국어는 어느 정도 하세요?",
+    "ru": "Насколько хорошо вы владеете корейским?",
+    "en": "How good is your Korean?"
+   },
+   {
+    "who": "B",
+    "uz": "토픽 5급이 있고, 인턴십 때 계약서 번역도 했습니다.",
+    "ru": "У меня TOPIK 5, и на стажировке я переводила договоры.",
+    "en": "I have TOPIK level 5, and during my internship I translated contracts."
+   },
+   {
+    "who": "A",
+    "uz": "업무가 많을 때는 야근도 해야 하는데 괜찮으세요?",
+    "ru": "Когда много работы, приходится задерживаться. Вас это устраивает?",
+    "en": "When there's a lot of work you'll need to stay late. Is that all right?"
+   },
+   {
+    "who": "B",
+    "uz": "네, 필요하면 하겠습니다. 다만 일과 생활의 균형도 중요하다고 생각합니다.",
+    "ru": "Да, если нужно, буду. Но считаю важным и баланс работы и жизни.",
+    "en": "Yes, I will if necessary. Though I think work-life balance matters too."
+   },
+   {
+    "who": "A",
+    "uz": "솔직하게 말해 주셔서 좋네요. 비자는 어떻게 되세요?",
+    "ru": "Хорошо, что вы откровенны. Как у вас с визой?",
+    "en": "I appreciate your honesty. What about your visa?"
+   },
+   {
+    "who": "B",
+    "uz": "지금 구직 비자(D-10)가 있고, 채용되면 E-7으로 바꿀 수 있습니다.",
+    "ru": "Сейчас у меня виза для поиска работы (D-10), а при приёме на работу её можно сменить на E-7.",
+    "en": "I currently have a job-seeking visa (D-10), and if hired I can change it to E-7."
+   },
+   {
+    "who": "A",
+    "uz": "알겠습니다. 결과는 다음 주에 이메일로 알려 드리겠습니다.",
+    "ru": "Понятно. О результате сообщим на следующей неделе по электронной почте.",
+    "en": "I see. We'll let you know the result by email next week."
+   },
+   {
+    "who": "B",
+    "uz": "시간 내 주셔서 감사합니다. 좋은 소식 기다리겠습니다.",
+    "ru": "Спасибо, что уделили время. Буду ждать хороших новостей.",
+    "en": "Thank you for your time. I'll look forward to good news."
+   }
+  ],
+  "vocab": [
+   "면접",
+   "회사",
+   "경험",
+   "계약",
+   "번역",
+   "비자",
+   "이메일",
+   "소식"
+  ],
+  "note_ru": "На собеседовании говорят в стиле 합니다: «안녕하십니까», «마쳤습니다». «귀사» — «ваша (уважаемая) компания», вежливое слово для чужой фирмы. «야근» — работа допоздна. Формула благодарности в конце: «시간 내 주셔서 감사합니다».",
+  "note_uz": "면접에서는 \"안녕하십니까\", \"마쳤습니다\" 같은 합쇼체로 말합니다. \"귀사\"는 상대 회사를 높이는 말입니다. \"야근\"은 밤늦게까지 일하는 것입니다. 끝으로 \"시간 내 주셔서 감사합니다\"라고 인사합니다.",
+  "note_en": "In an interview you speak in the 합니다 style: \"안녕하십니까\", \"마쳤습니다\". \"귀사\" — \"your (esteemed) company\" — is the polite word for someone else's firm. \"야근\" is working late. The closing thanks: \"시간 내 주셔서 감사합니다\"."
+ },
+ {
+  "n": 18,
+  "cefr": "B1",
+  "section": "Работа и учёба",
+  "title_ru": "Разговор с научным руководителем",
+  "title_uz": "지도 교수님과 상담",
+  "title_en": "A meeting with the supervisor",
+  "intro_ru": "Анна приходит к профессору обсудить тему курсовой работы.",
+  "intro_uz": "안나는 학기 말 보고서 주제를 의논하러 교수님 연구실에 갑니다.",
+  "intro_en": "Anna goes to her professor's office to discuss the topic of her term paper.",
+  "speakers": {
+   "A": "안나",
+   "B": "교수님"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "교수님, 안녕하세요. 지금 시간 괜찮으세요?",
+    "ru": "Профессор, здравствуйте. У вас сейчас есть время?",
+    "en": "Hello, Professor. Do you have time now?"
+   },
+   {
+    "who": "B",
+    "uz": "네, 들어와요. 무슨 일이에요?",
+    "ru": "Да, заходите. Что случилось?",
+    "en": "Yes, come in. What's up?"
+   },
+   {
+    "who": "A",
+    "uz": "기말 보고서 주제 때문에 상담을 받고 싶어서요.",
+    "ru": "Хотела посоветоваться насчёт темы итоговой работы.",
+    "en": "I'd like some advice about my final paper topic."
+   },
+   {
+    "who": "B",
+    "uz": "어떤 주제를 생각하고 있어요?",
+    "ru": "Какую тему вы рассматриваете?",
+    "en": "What topic are you considering?"
+   },
+   {
+    "who": "A",
+    "uz": "한국과 러시아의 고령화 정책을 비교하고 싶습니다.",
+    "ru": "Хочу сравнить политику Кореи и России в отношении старения населения.",
+    "en": "I'd like to compare Korean and Russian policies on population ageing."
+   },
+   {
+    "who": "B",
+    "uz": "좋은 주제네요. 그런데 범위가 너무 넓어요. 하나로 좁혀 보세요.",
+    "ru": "Хорошая тема. Но слишком широкая. Попробуйте сузить.",
+    "en": "A good topic. But it's too broad. Try narrowing it down."
+   },
+   {
+    "who": "A",
+    "uz": "그럼 노인 돌봄 서비스만 다루면 어떨까요?",
+    "ru": "Тогда, может, рассмотреть только услуги ухода за пожилыми?",
+    "en": "Then how about covering only elderly care services?"
+   },
+   {
+    "who": "B",
+    "uz": "그게 낫겠어요. 통계청 자료와 최근 논문을 참고하세요.",
+    "ru": "Так будет лучше. Используйте данные статуправления и недавние статьи.",
+    "en": "That would be better. Use Statistics Korea data and recent papers."
+   },
+   {
+    "who": "A",
+    "uz": "마감이 언제까지예요?",
+    "ru": "Какой срок сдачи?",
+    "en": "When is the deadline?"
+   },
+   {
+    "who": "B",
+    "uz": "12월 15일까지 이메일로 보내 주세요. 분량은 열 쪽 정도면 돼요.",
+    "ru": "До 15 декабря пришлите по почте. Объём — страниц десять.",
+    "en": "Email it by 15 December. About ten pages is fine."
+   },
+   {
+    "who": "A",
+    "uz": "알겠습니다. 초안을 쓰고 한번 보여 드려도 될까요?",
+    "ru": "Понятно. Можно я напишу черновик и покажу вам?",
+    "en": "I see. May I write a draft and show it to you?"
+   },
+   {
+    "who": "B",
+    "uz": "물론이죠. 다음 주 목요일 상담 시간에 와요.",
+    "ru": "Конечно. Приходите в следующий четверг в часы консультаций.",
+    "en": "Of course. Come during office hours next Thursday."
+   }
+  ],
+  "vocab": [
+   "교수",
+   "국내 정책",
+   "자료",
+   "논문",
+   "이메일",
+   "목요일"
+  ],
+  "note_ru": "К преподавателю обращаются «교수님», а о себе в разговоре со старшим говорят вежливо. «-아/어도 될까요?» — очень вежливая просьба о разрешении. «마감» — крайний срок. Профессора часто говорят студентам в стиле 해요 или даже 반말, а студенты отвечают уважительно.",
+  "note_uz": "교수에게는 \"교수님\"이라고 부릅니다. \"-아/어도 될까요?\"는 아주 공손하게 허락을 구하는 말입니다. \"마감\"은 끝내야 하는 날입니다. 교수는 학생에게 해요체나 반말을 쓰기도 하지만 학생은 높여 말합니다.",
+  "note_en": "A professor is addressed as \"교수님\". \"-아/어도 될까요?\" is a very polite request for permission. \"마감\" is a deadline. Professors often speak to students in the 해요 style or even 반말, while students answer respectfully."
+ },
+ {
+  "n": 19,
+  "cefr": "B1",
+  "section": "Работа и учёба",
+  "title_ru": "Первый корпоратив",
+  "title_uz": "첫 회식",
+  "title_en": "The first office dinner",
+  "intro_ru": "Анна работает в компании первую неделю. Начальник отдела приглашает всех на ужин.",
+  "intro_uz": "안나는 회사에 다닌 지 일주일이 되었습니다. 부장님이 모두를 회식에 초대합니다.",
+  "intro_en": "Anna is in her first week at the company. The department head invites everyone to dinner.",
+  "speakers": {
+   "A": "부장님",
+   "B": "안나",
+   "C": "선배"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "오늘 저녁에 안나 씨 환영 회식을 합시다. 다들 시간 괜찮죠?",
+    "ru": "Давайте сегодня вечером устроим ужин в честь Анны. Все свободны?",
+    "en": "Let's have a welcome dinner for Anna tonight. Everyone free?"
+   },
+   {
+    "who": "C",
+    "uz": "네, 좋습니다. 장소는 회사 앞 고깃집으로 예약할게요.",
+    "ru": "Да, отлично. Я забронирую мясной ресторан напротив офиса.",
+    "en": "Yes, great. I'll book the barbecue place across from the office."
+   },
+   {
+    "who": "B",
+    "uz": "저를 위해서 이렇게 해 주셔서 감사합니다.",
+    "ru": "Спасибо, что вы это устраиваете ради меня.",
+    "en": "Thank you for doing this for me."
+   },
+   {
+    "who": "A",
+    "uz": "자, 안나 씨, 한 잔 받으세요.",
+    "ru": "Ну, Анна, позвольте вам налить.",
+    "en": "Now, Anna, let me pour you a glass."
+   },
+   {
+    "who": "B",
+    "uz": "죄송합니다, 부장님. 제가 술을 잘 못 마셔서요. 음료수로 받아도 될까요?",
+    "ru": "Простите, начальник. Я плохо переношу алкоголь. Можно мне сока?",
+    "en": "I'm sorry, sir. I can't really drink. May I have a soft drink instead?"
+   },
+   {
+    "who": "A",
+    "uz": "그럼요, 괜찮아요. 요즘은 억지로 안 마셔요.",
+    "ru": "Конечно, ничего страшного. Сейчас никто не заставляет.",
+    "en": "Of course, that's fine. Nobody forces anyone these days."
+   },
+   {
+    "who": "C",
+    "uz": "안나 씨, 부장님 잔이 비었어요. 두 손으로 따라 드리세요.",
+    "ru": "Анна, у начальника пустой бокал. Налейте ему двумя руками.",
+    "en": "Anna, the boss's glass is empty. Pour for him with both hands."
+   },
+   {
+    "who": "B",
+    "uz": "아, 네. 부장님, 제가 따라 드릴게요.",
+    "ru": "Ой, да. Начальник, позвольте я налью.",
+    "en": "Oh, yes. Let me pour for you, sir."
+   },
+   {
+    "who": "A",
+    "uz": "고마워요. 우리 팀에 온 걸 환영해요. 건배!",
+    "ru": "Спасибо. Добро пожаловать в нашу команду. Будем!",
+    "en": "Thank you. Welcome to our team. Cheers!"
+   },
+   {
+    "who": "B",
+    "uz": "건배! 앞으로 열심히 하겠습니다.",
+    "ru": "Будем! Я буду стараться.",
+    "en": "Cheers! I'll do my best from now on."
+   },
+   {
+    "who": "C",
+    "uz": "2차로 노래방 갈 사람?",
+    "ru": "Кто со мной на второе — в караоке?",
+    "en": "Who's up for round two at karaoke?"
+   },
+   {
+    "who": "B",
+    "uz": "저는 내일 일찍 출근해야 해서 오늘은 먼저 들어가 보겠습니다.",
+    "ru": "Мне завтра рано на работу, так что сегодня я пойду первой.",
+    "en": "I have to be at work early tomorrow, so I'll head home first tonight."
+   }
+  ],
+  "vocab": [
+   "동료",
+   "저녁",
+   "예약하다",
+   "마시다",
+   "잔",
+   "출근하다",
+   "직장"
+  ],
+  "note_ru": "«선배» — старший коллега. Отказаться от алкоголя можно вежливо: «제가 술을 잘 못 마셔서요». Старшим наливают двумя руками. Уходя раньше других, говорят «먼저 들어가 보겠습니다» — «позвольте мне уйти». «-(으)ㄹ게요» и «-겠습니다» звучат как обещание.",
+  "note_uz": "선배는 먼저 들어온 동료입니다. 술을 거절할 때는 \"제가 술을 잘 못 마셔서요\"라고 공손하게 말합니다. 윗사람에게는 두 손으로 따릅니다. 먼저 갈 때는 \"먼저 들어가 보겠습니다\"라고 합니다. \"-(으)ㄹ게요\", \"-겠습니다\"는 약속처럼 들립니다.",
+  "note_en": "\"선배\" is a senior colleague. You can politely decline alcohol: \"제가 술을 잘 못 마셔서요\". Pour for seniors with both hands. Leaving before others, you say \"먼저 들어가 보겠습니다\" — \"I'll take my leave first\". \"-(으)ㄹ게요\" and \"-겠습니다\" sound like a promise."
+ },
+ {
+  "n": 20,
+  "cefr": "B1",
+  "section": "Быт и услуги",
+  "title_ru": "Продление визы",
+  "title_uz": "체류 기간 연장",
+  "title_en": "Extending a visa",
+  "intro_ru": "Срок пребывания Анны заканчивается через месяц. Она пришла в иммиграционное управление.",
+  "intro_uz": "안나의 체류 기간이 한 달 뒤에 끝납니다. 안나는 출입국·외국인청에 왔습니다.",
+  "intro_en": "Anna's period of stay ends in a month. She has come to the immigration office.",
+  "speakers": {
+   "A": "직원",
+   "B": "안나"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "예약 번호를 확인하겠습니다. 어떤 업무로 오셨어요?",
+    "ru": "Проверю номер записи. По какому вопросу?",
+    "en": "I'll check your booking number. What are you here for?"
+   },
+   {
+    "who": "B",
+    "uz": "체류 기간 연장을 신청하러 왔습니다.",
+    "ru": "Пришла подать на продление срока пребывания.",
+    "en": "I've come to apply to extend my period of stay."
+   },
+   {
+    "who": "A",
+    "uz": "서류 주시겠어요? 신청서, 여권, 외국인 등록증, 재학 증명서요.",
+    "ru": "Документы, пожалуйста. Заявление, паспорт, карта иностранца, справка об обучении.",
+    "en": "Your documents, please. The application, passport, residence card and enrolment certificate."
+   },
+   {
+    "who": "B",
+    "uz": "여기 있습니다. 성적 증명서도 필요해요?",
+    "ru": "Вот. Нужна ли выписка с оценками?",
+    "en": "Here they are. Do you need my transcript too?"
+   },
+   {
+    "who": "A",
+    "uz": "네, 출석률도 확인해야 해요. 그리고 주소가 바뀌었네요?",
+    "ru": "Да, нужно проверить и посещаемость. А у вас изменился адрес?",
+    "en": "Yes, we also need to check attendance. And your address has changed?"
+   },
+   {
+    "who": "B",
+    "uz": "네, 지난주에 이사했어요. 아직 신고를 못 했어요.",
+    "ru": "Да, на прошлой неделе переехала. Ещё не успела сообщить.",
+    "en": "Yes, I moved last week. I haven't reported it yet."
+   },
+   {
+    "who": "A",
+    "uz": "이사한 지 15일이 안 지났으니까 오늘 같이 하시면 돼요.",
+    "ru": "Раз прошло меньше пятнадцати дней, можно сделать сегодня вместе.",
+    "en": "Since it's been less than fifteen days, you can do it together today."
+   },
+   {
+    "who": "B",
+    "uz": "다행이네요. 임대차 계약서 사본도 있어요.",
+    "ru": "Хорошо, что так. Копия договора аренды у меня есть.",
+    "en": "What a relief. I have a copy of my lease too."
+   },
+   {
+    "who": "A",
+    "uz": "수수료는 육만 원입니다. 수입 인지를 사 오세요.",
+    "ru": "Пошлина — шестьдесят тысяч вон. Купите гербовую марку.",
+    "en": "The fee is sixty thousand won. Please buy a revenue stamp."
+   },
+   {
+    "who": "B",
+    "uz": "새 카드는 언제 받을 수 있어요?",
+    "ru": "Когда можно получить новую карту?",
+    "en": "When can I get the new card?"
+   },
+   {
+    "who": "A",
+    "uz": "3주쯤 걸리고, 문자로 알려 드립니다. 그동안은 이 접수증을 가지고 다니세요.",
+    "ru": "Примерно через три недели, сообщим по СМС. Пока носите с собой эту квитанцию.",
+    "en": "About three weeks; we'll text you. Meanwhile, carry this receipt with you."
+   },
+   {
+    "who": "B",
+    "uz": "네, 친절하게 안내해 주셔서 감사합니다.",
+    "ru": "Хорошо, спасибо за подробные объяснения.",
+    "en": "All right, thank you for the kind guidance."
+   }
+  ],
+  "vocab": [
+   "여권",
+   "외국인 등록증",
+   "신청하다",
+   "주소",
+   "이사",
+   "계약",
+   "수수료",
+   "문자를 보내다"
+  ],
+  "note_ru": "Для продления статуса студента обычно нужны справки об обучении и об успеваемости. О смене адреса сообщают в течение 15 дней — это можно сделать прямо при продлении. Пошлину платят гербовой маркой (수입 인지) или онлайн. «접수증» — квитанция о приёме документов.",
+  "note_uz": "유학생 연장에는 보통 재학 증명서와 성적 증명서가 필요합니다. 주소가 바뀌면 15일 안에 신고하는데, 연장할 때 함께 할 수도 있습니다. 수수료는 수입 인지나 온라인으로 냅니다. 접수증은 서류를 받았다는 증명입니다.",
+  "note_en": "A student extension usually requires enrolment and grade certificates. A change of address is reported within 15 days — it can be done at the same time as the extension. The fee is paid with a revenue stamp (수입 인지) or online. \"접수증\" is the receipt for submitted documents."
+ },
+ {
+  "n": 21,
+  "cefr": "B1",
+  "section": "Быт и услуги",
+  "title_ru": "Шум у соседей",
+  "title_uz": "층간 소음",
+  "title_en": "Noisy neighbours",
+  "intro_ru": "Сверху по ночам шумно. Анна решает поговорить с соседкой.",
+  "intro_uz": "밤마다 위층이 시끄럽습니다. 안나는 이웃과 이야기해 보기로 합니다.",
+  "intro_en": "It's noisy upstairs every night. Anna decides to talk to her neighbour.",
+  "speakers": {
+   "A": "안나",
+   "B": "이웃"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "안녕하세요. 저는 아래층 302호에 사는 사람이에요.",
+    "ru": "Здравствуйте. Я живу этажом ниже, в квартире 302.",
+    "en": "Hello. I live downstairs in 302."
+   },
+   {
+    "who": "B",
+    "uz": "아, 네. 무슨 일이세요?",
+    "ru": "А, да. Что случилось?",
+    "en": "Oh, yes. What's the matter?"
+   },
+   {
+    "who": "A",
+    "uz": "혹시 밤늦게 세탁기를 돌리세요? 소리가 꽤 크게 들려서요.",
+    "ru": "Вы, случайно, не стираете поздно ночью? Довольно громко слышно.",
+    "en": "Do you happen to run the washing machine late at night? It sounds quite loud."
+   },
+   {
+    "who": "B",
+    "uz": "아, 죄송해요. 퇴근이 늦어서 밤 11시쯤 빨래를 했어요.",
+    "ru": "Ой, простите. Я поздно прихожу с работы и стирала около одиннадцати.",
+    "en": "Oh, I'm sorry. I get home late from work, so I did the laundry around eleven."
+   },
+   {
+    "who": "A",
+    "uz": "이해해요. 그런데 아침에 일찍 일어나야 해서 잠을 못 자요.",
+    "ru": "Понимаю. Но мне рано вставать, и я не могу уснуть.",
+    "en": "I understand. But I have to get up early, so I can't sleep."
+   },
+   {
+    "who": "B",
+    "uz": "정말 몰랐어요. 앞으로는 열 시 전에 할게요.",
+    "ru": "Я правда не знала. Впредь буду до десяти.",
+    "en": "I really didn't know. From now on I'll do it before ten."
+   },
+   {
+    "who": "A",
+    "uz": "감사합니다. 그리고 가끔 쿵쿵 소리도 나는데요.",
+    "ru": "Спасибо. И ещё иногда слышен топот.",
+    "en": "Thank you. And sometimes there's a thumping sound too."
+   },
+   {
+    "who": "B",
+    "uz": "아이가 뛰어서 그럴 거예요. 매트를 깔아 볼게요.",
+    "ru": "Это, наверное, ребёнок бегает. Постелим коврик.",
+    "en": "That'll be my child running. I'll put down a mat."
+   },
+   {
+    "who": "A",
+    "uz": "정말 고맙습니다. 불편하게 해 드려서 죄송해요.",
+    "ru": "Большое спасибо. Простите, что побеспокоила.",
+    "en": "Thank you so much. Sorry to trouble you."
+   },
+   {
+    "who": "B",
+    "uz": "아니에요. 말씀해 주셔서 오히려 고마워요.",
+    "ru": "Что вы. Наоборот, спасибо, что сказали.",
+    "en": "Not at all. Actually, thank you for telling me."
+   },
+   {
+    "who": "A",
+    "uz": "이건 제가 만든 쿠키예요. 아이랑 같이 드세요.",
+    "ru": "Это печенье, которое я испекла. Угощайтесь вместе с ребёнком.",
+    "en": "These are cookies I made. Please share them with your child."
+   },
+   {
+    "who": "B",
+    "uz": "어머, 감사해요. 앞으로 잘 지내요!",
+    "ru": "Ой, спасибо. Давайте жить дружно!",
+    "en": "Oh my, thank you. Let's get along well!"
+   }
+  ],
+  "vocab": [
+   "이웃",
+   "세탁기",
+   "소리",
+   "일어나다",
+   "아이",
+   "뛰다",
+   "죄송합니다"
+  ],
+  "note_ru": "Межэтажный шум (층간 소음) — частая причина ссор, поэтому говорят мягко: «혹시…?» («случайно не…?»), «-아/어서요» (объяснение причины). Небольшой подарок помогает сохранить хорошие отношения. Если договориться не получается, можно обратиться к управляющему дома (관리사무소).",
+  "note_uz": "층간 소음은 이웃 다툼의 흔한 원인이라서 \"혹시…?\", \"-아/어서요\"처럼 부드럽게 말합니다. 작은 선물은 좋은 관계에 도움이 됩니다. 이야기가 잘 안 되면 관리사무소에 도움을 청할 수 있습니다.",
+  "note_en": "Noise between floors (층간 소음) is a frequent cause of disputes, so people speak gently: \"혹시…?\" (\"by any chance…?\"), \"-아/어서요\" (giving a reason). A small gift helps keep good relations. If you can't reach agreement, you can turn to the building management office (관리사무소)."
+ },
+ {
+  "n": 22,
+  "cefr": "B1",
+  "section": "Праздники и гости",
+  "title_ru": "Приглашение на свадьбу",
+  "title_uz": "청첩장",
+  "title_en": "A wedding invitation",
+  "intro_ru": "Коллега Анны, Сохён, выходит замуж и приносит приглашение.",
+  "intro_uz": "안나의 동료 서현이 결혼을 하게 되어 청첩장을 가져왔습니다.",
+  "intro_en": "Anna's colleague Seohyeon is getting married and brings an invitation.",
+  "speakers": {
+   "A": "서현",
+   "B": "안나"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "안나 씨, 저 다음 달에 결혼해요. 이거 청첩장이에요.",
+    "ru": "Анна, я в следующем месяце выхожу замуж. Вот приглашение.",
+    "en": "Anna, I'm getting married next month. Here's the invitation."
+   },
+   {
+    "who": "B",
+    "uz": "와, 축하해요! 정말 잘됐네요. 신랑은 어떤 분이에요?",
+    "ru": "Ого, поздравляю! Как здорово. А кто жених?",
+    "en": "Wow, congratulations! That's wonderful. What's the groom like?"
+   },
+   {
+    "who": "A",
+    "uz": "대학교 때 만난 사람이에요. 칠 년 동안 사귀었어요.",
+    "ru": "Мы познакомились в университете. Встречались семь лет.",
+    "en": "Someone I met at university. We dated for seven years."
+   },
+   {
+    "who": "B",
+    "uz": "오래 사귀었네요. 결혼식은 어디서 해요?",
+    "ru": "Долго же вы встречались. Где будет свадьба?",
+    "en": "That's a long time. Where's the wedding?"
+   },
+   {
+    "who": "A",
+    "uz": "강남에 있는 웨딩홀에서 토요일 열두 시에 해요. 식사도 준비했어요.",
+    "ru": "В свадебном зале в Каннаме, в субботу в двенадцать. Обед тоже будет.",
+    "en": "At a wedding hall in Gangnam, Saturday at twelve. There'll be a meal too."
+   },
+   {
+    "who": "B",
+    "uz": "꼭 갈게요. 그런데 한국 결혼식에는 뭘 입고 가요?",
+    "ru": "Обязательно приду. А в чём ходят на корейскую свадьбу?",
+    "en": "I'll definitely come. But what do people wear to a Korean wedding?"
+   },
+   {
+    "who": "A",
+    "uz": "단정하게 입으면 돼요. 흰옷만 피하세요. 신부 색이라서요.",
+    "ru": "Достаточно опрятной одежды. Только не белое — это цвет невесты.",
+    "en": "Just dress neatly. Only avoid white — it's the bride's colour."
+   },
+   {
+    "who": "B",
+    "uz": "알겠어요. 축의금은 얼마 정도 내면 돼요?",
+    "ru": "Поняла. А сколько обычно дарят денег?",
+    "en": "Got it. How much money do people usually give?"
+   },
+   {
+    "who": "A",
+    "uz": "부담 갖지 마세요. 와 주는 것만으로도 고마워요.",
+    "ru": "Не переживайте. Мне приятно уже то, что вы придёте.",
+    "en": "Don't worry about it. Just coming means a lot."
+   },
+   {
+    "who": "B",
+    "uz": "그래도 궁금해요. 보통 동료들은 얼마나 해요?",
+    "ru": "И всё же интересно. Сколько обычно дают коллеги?",
+    "en": "Still, I'm curious. How much do colleagues usually give?"
+   },
+   {
+    "who": "A",
+    "uz": "보통 오만 원에서 십만 원 정도 해요.",
+    "ru": "Обычно от пятидесяти до ста тысяч вон.",
+    "en": "Usually around fifty to a hundred thousand won."
+   },
+   {
+    "who": "B",
+    "uz": "그렇군요. 그날 행복하게 보내세요!",
+    "ru": "Понятно. Пусть этот день будет счастливым!",
+    "en": "I see. Have a happy day!"
+   }
+  ],
+  "vocab": [
+   "결혼식",
+   "결혼하다",
+   "신부",
+   "토요일",
+   "행복하다",
+   "축하하다",
+   "동료"
+  ],
+  "note_ru": "«청첩장» — свадебное приглашение; сегодня его часто присылают ссылкой в мессенджере. «사귀다» — «встречаться». О деньгах в подарок спрашивают осторожно; хозяйка вежливо отвечает «부담 갖지 마세요» — «не переживайте». Обычная сумма от коллеги — 50–100 тысяч вон.",
+  "note_uz": "청첩장은 결혼식 초대장으로 요즘은 모바일 청첩장도 많습니다. \"사귀다\"는 연인으로 만나는 것입니다. 축의금은 조심스럽게 묻고, 주인은 \"부담 갖지 마세요\"라고 공손하게 대답합니다. 동료는 보통 5만–10만 원을 냅니다.",
+  "note_en": "\"청첩장\" is a wedding invitation; today it is often sent as a link in a messenger. \"사귀다\" means \"to date\". People ask about gift money carefully; the host politely answers \"부담 갖지 마세요\" — \"don't worry about it\". A colleague usually gives 50,000–100,000 won."
+ },
+ {
+  "n": 23,
+  "cefr": "B1",
+  "section": "Быт и услуги",
+  "title_ru": "Потерявшаяся посылка",
+  "title_uz": "택배 분실",
+  "title_en": "A lost parcel",
+  "intro_ru": "Анна заказала обогреватель, но посылка не пришла, хотя в приложении написано «доставлено».",
+  "intro_uz": "안나는 히터를 주문했는데, 앱에는 \"배송 완료\"라고 나오지만 택배가 오지 않았습니다.",
+  "intro_en": "Anna ordered a heater, but the parcel hasn't arrived, although the app says \"delivered\".",
+  "speakers": {
+   "A": "상담원",
+   "B": "안나"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "고객센터입니다. 무엇을 도와드릴까요?",
+    "ru": "Служба поддержки. Чем помочь?",
+    "en": "Customer service. How can I help?"
+   },
+   {
+    "who": "B",
+    "uz": "어제 배송 완료라고 문자가 왔는데 물건을 못 받았어요.",
+    "ru": "Вчера пришло СМС, что доставлено, но я ничего не получила.",
+    "en": "Yesterday I got a text saying it was delivered, but I didn't receive anything."
+   },
+   {
+    "who": "A",
+    "uz": "주문 번호를 말씀해 주시겠어요?",
+    "ru": "Назовите, пожалуйста, номер заказа.",
+    "en": "Could you tell me your order number?"
+   },
+   {
+    "who": "B",
+    "uz": "2026-1015-3381이에요.",
+    "ru": "Двадцать двадцать шесть, десять пятнадцать, тридцать три восемьдесят один.",
+    "en": "It's 2026-1015-3381."
+   },
+   {
+    "who": "A",
+    "uz": "확인해 보니 기사님이 문 앞 사진을 올렸네요. 사진을 보내 드릴게요.",
+    "ru": "Вижу, курьер выложил фото у двери. Сейчас пришлю.",
+    "en": "I can see the driver uploaded a photo at the door. I'll send it to you."
+   },
+   {
+    "who": "B",
+    "uz": "이 사진은 우리 집 문이 아니에요. 다른 집에 배달한 것 같아요.",
+    "ru": "На фото не моя дверь. Кажется, доставили в другую квартиру.",
+    "en": "That's not my door in the photo. I think it was delivered to another flat."
+   },
+   {
+    "who": "A",
+    "uz": "정말 죄송합니다. 기사님께 바로 확인하겠습니다.",
+    "ru": "Приносим извинения. Сейчас же уточню у курьера.",
+    "en": "We're very sorry. I'll check with the driver right away."
+   },
+   {
+    "who": "B",
+    "uz": "오늘 안에 찾을 수 있을까요? 날씨가 추워서 꼭 필요해요.",
+    "ru": "Можно найти сегодня? Холодно, он мне очень нужен.",
+    "en": "Can it be found today? It's cold, and I really need it."
+   },
+   {
+    "who": "A",
+    "uz": "오늘 찾지 못하면 새 상품을 다시 보내 드리거나 환불해 드릴게요.",
+    "ru": "Если сегодня не найдём, пришлём новый товар или вернём деньги.",
+    "en": "If we can't find it today, we'll send a new item or give you a refund."
+   },
+   {
+    "who": "B",
+    "uz": "새 상품으로 보내 주세요. 다음에는 경비실에 맡겨 주시면 좋겠어요.",
+    "ru": "Пришлите, пожалуйста, новый. И в следующий раз лучше оставьте у охраны.",
+    "en": "Please send a new one. And next time I'd prefer you leave it at the security office."
+   },
+   {
+    "who": "A",
+    "uz": "네, 배송 요청 사항에 적어 두겠습니다. 불편을 드려 죄송합니다.",
+    "ru": "Хорошо, запишу в пожелания к доставке. Извините за неудобства.",
+    "en": "Certainly, I'll note it in the delivery instructions. Sorry for the inconvenience."
+   },
+   {
+    "who": "B",
+    "uz": "빨리 처리해 주셔서 감사합니다.",
+    "ru": "Спасибо, что быстро решили вопрос.",
+    "en": "Thank you for handling it quickly."
+   }
+  ],
+  "vocab": [
+   "택배 기사",
+   "주문하다",
+   "사진",
+   "배달",
+   "날씨",
+   "환불",
+   "문자를 보내다"
+  ],
+  "note_ru": "«배송 완료» — «доставлено». Курьеры оставляют посылки у двери и присылают фото. Если ошибка, служба поддержки (고객센터) обычно предлагает повторную отправку или возврат (환불). В многоквартирных домах посылки можно оставлять у охраны (경비실) или в постаматах.",
+  "note_uz": "\"배송 완료\"는 배달이 끝났다는 뜻입니다. 기사는 문 앞에 두고 사진을 보냅니다. 문제가 생기면 고객센터에서 보통 재배송이나 환불을 해 줍니다. 아파트에서는 경비실이나 무인 택배함에 맡길 수 있습니다.",
+  "note_en": "\"배송 완료\" means \"delivered\". Couriers leave parcels at the door and send a photo. If something goes wrong, customer service (고객센터) usually offers re-delivery or a refund (환불). In apartment blocks parcels can be left with security (경비실) or in parcel lockers."
+ },
+ {
+  "n": 24,
+  "cefr": "B1",
+  "section": "Здоровье",
+  "title_ru": "Медицинское обследование",
+  "title_uz": "건강검진",
+  "title_en": "A health check-up",
+  "intro_ru": "Компания отправила Анну на ежегодное обследование. Медсестра объясняет порядок.",
+  "intro_uz": "회사에서 안나를 건강검진에 보냈습니다. 간호사가 순서를 설명합니다.",
+  "intro_en": "The company has sent Anna for an annual check-up. A nurse explains the procedure.",
+  "speakers": {
+   "A": "간호사",
+   "B": "안나"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "어제 저녁 9시 이후로 아무것도 안 드셨죠?",
+    "ru": "Вы ведь ничего не ели после девяти вечера вчера?",
+    "en": "You haven't eaten anything since nine last night, right?"
+   },
+   {
+    "who": "B",
+    "uz": "네, 물도 안 마셨어요.",
+    "ru": "Да, даже воды не пила.",
+    "en": "That's right, not even water."
+   },
+   {
+    "who": "A",
+    "uz": "좋습니다. 먼저 이 옷으로 갈아입으시고 키와 몸무게를 재겠습니다.",
+    "ru": "Хорошо. Сначала переоденьтесь вот в это, потом измерим рост и вес.",
+    "en": "Good. First change into these clothes, then we'll measure your height and weight."
+   },
+   {
+    "who": "B",
+    "uz": "그다음에는 뭘 해요?",
+    "ru": "А что потом?",
+    "en": "What comes next?"
+   },
+   {
+    "who": "A",
+    "uz": "피 검사, 시력 검사, 엑스레이 순서예요. 마지막에 의사 선생님과 상담하세요.",
+    "ru": "Анализ крови, проверка зрения, рентген. В конце — консультация с врачом.",
+    "en": "A blood test, eye test, then an X-ray. At the end you'll see the doctor."
+   },
+   {
+    "who": "B",
+    "uz": "저는 피를 뽑을 때 좀 무서워요.",
+    "ru": "Я немного боюсь сдавать кровь.",
+    "en": "I'm a bit scared of having blood taken."
+   },
+   {
+    "who": "A",
+    "uz": "괜찮아요. 금방 끝나요. 누워서 하셔도 돼요.",
+    "ru": "Ничего страшного. Это быстро. Можно лёжа.",
+    "en": "It's all right. It's quick. You can lie down for it."
+   },
+   {
+    "who": "B",
+    "uz": "결과는 언제 나와요?",
+    "ru": "Когда будут результаты?",
+    "en": "When will the results be ready?"
+   },
+   {
+    "who": "A",
+    "uz": "2주 후에 우편이나 앱으로 받으실 수 있어요.",
+    "ru": "Через две недели — по почте или в приложении.",
+    "en": "In two weeks, by post or in the app."
+   },
+   {
+    "who": "B",
+    "uz": "혹시 문제가 있으면 어떻게 해요?",
+    "ru": "А если что-то найдут?",
+    "en": "And if there's a problem?"
+   },
+   {
+    "who": "A",
+    "uz": "병원에서 연락을 드리고 다시 진료를 예약해 드려요.",
+    "ru": "Больница свяжется с вами и запишет на повторный приём.",
+    "en": "The hospital will contact you and book a follow-up appointment."
+   },
+   {
+    "who": "B",
+    "uz": "알겠습니다. 끝나고 나서 밥을 먹어도 되죠?",
+    "ru": "Понятно. После всего можно поесть?",
+    "en": "I see. I can eat once it's over, right?"
+   }
+  ],
+  "vocab": [
+   "병원",
+   "검사",
+   "의사",
+   "피",
+   "결과",
+   "예약",
+   "무섭다"
+  ],
+  "note_ru": "Перед обследованием обычно нельзя есть с вечера (금식). Порядок: рост и вес (키, 몸무게), кровь (피 검사), зрение (시력), рентген. «-아/어도 돼요» — «можно», «-죠?» — «ведь…, да?» для уточнения. Работодатель обязан направлять сотрудников на обследование.",
+  "note_uz": "건강검진 전에는 보통 저녁부터 금식합니다. 순서: 키와 몸무게, 피 검사, 시력 검사, 엑스레이. \"-아/어도 돼요\"는 허락, \"-죠?\"는 확인하는 말입니다. 회사는 직원에게 건강검진을 받게 해야 합니다.",
+  "note_en": "Before a check-up you usually fast from the evening (금식). The order: height and weight (키, 몸무게), blood (피 검사), eyesight (시력), X-ray. \"-아/어도 돼요\" means \"it's OK to\", \"-죠?\" checks something \"…, right?\". Employers must send staff for check-ups."
+ },
+ {
+  "n": 25,
+  "cefr": "B2",
+  "section": "Знакомство и общение",
+  "title_ru": "Разговор о культурных различиях",
+  "title_uz": "문화 차이에 대한 대화",
+  "title_en": "A talk about cultural differences",
+  "intro_ru": "Анна прожила в Корее три года. За кофе она и Минсу обсуждают, что их удивило друг в друге.",
+  "intro_uz": "안나는 한국에서 삼 년을 살았습니다. 커피를 마시며 민수와 서로의 문화에서 놀란 점을 이야기합니다.",
+  "intro_en": "Anna has lived in Korea for three years. Over coffee she and Minsu discuss what surprised them about each other's cultures.",
+  "speakers": {
+   "A": "민수",
+   "B": "안나"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "안나 씨는 처음 한국에 왔을 때 뭐가 제일 신기했어요?",
+    "ru": "Анна, что вас больше всего удивило, когда вы впервые приехали в Корею?",
+    "en": "Anna, what amazed you most when you first came to Korea?"
+   },
+   {
+    "who": "B",
+    "uz": "처음 만나는 사람들이 나이를 묻는 게 신기했어요. 러시아에서는 좀 실례거든요.",
+    "ru": "Меня удивило, что при знакомстве спрашивают возраст. В России это немного невежливо.",
+    "en": "I was surprised that people ask your age when you first meet. In Russia that's a bit rude."
+   },
+   {
+    "who": "A",
+    "uz": "한국에서는 나이를 알아야 말을 어떻게 할지 정할 수 있어서 그래요.",
+    "ru": "В Корее нужно знать возраст, чтобы решить, как разговаривать.",
+    "en": "In Korea you need to know someone's age to decide how to speak to them."
+   },
+   {
+    "who": "B",
+    "uz": "이제는 이해해요. 그런데 아직도 반말을 언제 써야 할지 헷갈려요.",
+    "ru": "Теперь я понимаю. Но до сих пор путаюсь, когда переходить на «반말».",
+    "en": "I understand now. But I still get confused about when to use 반말."
+   },
+   {
+    "who": "A",
+    "uz": "보통 상대가 먼저 \"말 놓으세요\"라고 하면 그때부터 쓰면 돼요.",
+    "ru": "Обычно, когда собеседник первым говорит «давайте на ты», тогда и можно.",
+    "en": "Usually you can start once the other person says \"feel free to speak casually\"."
+   },
+   {
+    "who": "B",
+    "uz": "아, 그렇구나. 민수 씨는 러시아 친구들한테서 뭐가 놀라웠어요?",
+    "ru": "А, вот как. А вас, Минсу, что удивило в русских друзьях?",
+    "en": "Ah, I see. Minsu, what surprised you about your Russian friends?"
+   },
+   {
+    "who": "A",
+    "uz": "길에서 잘 안 웃는데 친해지면 정말 따뜻하다는 거요.",
+    "ru": "Что на улице они мало улыбаются, но, когда подружишься, очень тёплые.",
+    "en": "That they don't smile much on the street, but are really warm once you're friends."
+   },
+   {
+    "who": "B",
+    "uz": "맞아요. 러시아 사람들은 모르는 사람에게 웃는 걸 좀 어색해해요.",
+    "ru": "Верно. Русским немного неловко улыбаться незнакомым.",
+    "en": "True. Russians feel a bit awkward smiling at strangers."
+   },
+   {
+    "who": "A",
+    "uz": "그것도 한국의 \"정\"하고 비슷한 것 같아요. 천천히 깊어지는 마음이요.",
+    "ru": "По-моему, это похоже на корейское «чон» — привязанность, которая крепнет постепенно.",
+    "en": "I think that's similar to Korean \"jeong\" — a feeling that slowly deepens."
+   },
+   {
+    "who": "B",
+    "uz": "좋은 비교네요. 그리고 한국은 모든 게 정말 빨라요. 배달도, 인터넷도요.",
+    "ru": "Хорошее сравнение. И ещё в Корее всё очень быстро. И доставка, и интернет.",
+    "en": "Nice comparison. And everything in Korea is so fast. Deliveries, the internet."
+   },
+   {
+    "who": "A",
+    "uz": "\"빨리빨리\" 문화죠. 편하지만 가끔은 너무 바쁘게 사는 것 같아요.",
+    "ru": "Это культура «быстро-быстро». Удобно, но иногда кажется, что мы живём слишком суетливо.",
+    "en": "That's our \"quick-quick\" culture. It's convenient, but sometimes I think we live too hectically."
+   },
+   {
+    "who": "B",
+    "uz": "저는 러시아의 긴 여름 휴가가 가끔 그리워요.",
+    "ru": "А я иногда скучаю по долгому летнему отпуску в России.",
+    "en": "I sometimes miss the long summer holidays in Russia."
+   },
+   {
+    "who": "A",
+    "uz": "다음에 러시아에 같이 가요. 제가 다차에 가 보고 싶어요!",
+    "ru": "Давайте как-нибудь поедем в Россию вместе. Хочу побывать на даче!",
+    "en": "Let's go to Russia together sometime. I'd love to visit a dacha!"
+   }
+  ],
+  "vocab": [
+   "문화",
+   "차이",
+   "실례합니다",
+   "친하다",
+   "따뜻하다",
+   "웃다",
+   "낯선 사람",
+   "인터넷",
+   "여름"
+  ],
+  "note_ru": "«-거든요» объясняет причину, о которой собеседник мог не знать: «실례거든요» — «ведь это невежливо». «말 놓으세요» — «можете говорить со мной на ты». «-구나» — внезапное понимание («а, вот как»). «정» — тёплая привязанность, «빨리빨리» — любовь к скорости.",
+  "note_uz": "\"-거든요\"는 상대가 모를 수 있는 이유를 설명합니다. \"말 놓으세요\"는 반말을 써도 된다는 허락입니다. \"-구나\"는 새로 알게 된 느낌을 나타냅니다. \"정\"은 따뜻한 마음, \"빨리빨리\"는 빠른 것을 좋아하는 문화입니다.",
+  "note_en": "\"-거든요\" explains a reason the listener may not know: \"실례거든요\" — \"you see, it's rude\". \"말 놓으세요\" — \"feel free to speak casually with me\". \"-구나\" marks sudden realisation (\"ah, I see\"). \"정\" is warm attachment, \"빨리빨리\" the love of speed."
+ },
+ {
+  "n": 26,
+  "cefr": "B2",
+  "section": "Праздники и гости",
+  "title_ru": "Соллаль в корейской семье",
+  "title_uz": "한국 가정의 설날",
+  "title_en": "Seollal in a Korean family",
+  "intro_ru": "Анна встречает Соллаль в семье Джиён. Утром начинаются поклоны старшим.",
+  "intro_uz": "안나는 지영의 집에서 설날을 보냅니다. 아침에 세배가 시작됩니다.",
+  "intro_en": "Anna is spending Seollal with Jiyoung's family. In the morning the bows to the elders begin.",
+  "speakers": {
+   "A": "지영",
+   "B": "안나",
+   "C": "할머니"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "안나 씨, 이제 할머니께 세배 드릴 거예요. 제가 하는 걸 보고 따라 하세요.",
+    "ru": "Анна, сейчас будем кланяться бабушке. Смотрите на меня и повторяйте.",
+    "en": "Anna, now we'll bow to Grandma. Watch me and follow."
+   },
+   {
+    "who": "B",
+    "uz": "네, 너무 떨려요. 무릎을 꿇고 하는 거죠?",
+    "ru": "Хорошо, я очень волнуюсь. Это на коленях, да?",
+    "en": "All right, I'm so nervous. You kneel down for it, right?"
+   },
+   {
+    "who": "A",
+    "uz": "맞아요. 손을 모으고 천천히 절하면 돼요.",
+    "ru": "Да. Сложите руки и медленно поклонитесь.",
+    "en": "That's right. Put your hands together and bow slowly."
+   },
+   {
+    "who": "B",
+    "uz": "할머니, 새해 복 많이 받으세요. 건강하세요!",
+    "ru": "Бабушка, желаю вам много счастья в новом году. Будьте здоровы!",
+    "en": "Grandma, may you receive much good fortune in the new year. Stay healthy!"
+   },
+   {
+    "who": "C",
+    "uz": "아이고, 외국 손님이 세배를 다 하네. 한국말도 잘하고. 새해에는 좋은 일만 있어라.",
+    "ru": "Ох, гостья из-за границы, а как кланяется! И по-корейски хорошо говорит. Пусть в новом году будет только хорошее.",
+    "en": "Oh my, a guest from abroad doing the bow! And speaking Korean so well. May only good things happen to you this year."
+   },
+   {
+    "who": "B",
+    "uz": "감사합니다, 할머니.",
+    "ru": "Спасибо, бабушка.",
+    "en": "Thank you, Grandma."
+   },
+   {
+    "who": "C",
+    "uz": "이건 세뱃돈이야. 맛있는 거 사 먹어.",
+    "ru": "Вот тебе денежка на Новый год. Купи себе что-нибудь вкусное.",
+    "en": "Here's some New Year's money. Buy yourself something tasty."
+   },
+   {
+    "who": "B",
+    "uz": "어머, 제가 받아도 돼요? 정말 감사합니다.",
+    "ru": "Ой, а мне можно принять? Большое спасибо.",
+    "en": "Oh, is it all right for me to take this? Thank you so much."
+   },
+   {
+    "who": "A",
+    "uz": "그럼요. 이제 떡국 먹으러 가요. 떡국을 먹어야 한 살 더 먹는 거예요.",
+    "ru": "Конечно. Теперь пойдём есть ттоккук. Только съев его, становишься на год старше.",
+    "en": "Of course. Now let's go eat tteokguk. You only get a year older once you've eaten it."
+   },
+   {
+    "who": "B",
+    "uz": "그럼 저는 두 그릇 먹으면 안 되겠네요!",
+    "ru": "Тогда мне лучше не есть две тарелки!",
+    "en": "Then I'd better not eat two bowls!"
+   },
+   {
+    "who": "C",
+    "uz": "허허, 재미있는 아가씨네. 많이 먹어.",
+    "ru": "Ха-ха, весёлая девушка. Ешь побольше.",
+    "en": "Ha-ha, what a funny young lady. Eat plenty."
+   },
+   {
+    "who": "A",
+    "uz": "오후에는 윷놀이 해요. 지는 팀이 설거지예요!",
+    "ru": "А днём будем играть в ют. Проигравшая команда моет посуду!",
+    "en": "In the afternoon we'll play yut. The losing team does the dishes!"
+   },
+   {
+    "who": "B",
+    "uz": "그럼 열심히 해야겠어요. 규칙 좀 가르쳐 주세요.",
+    "ru": "Тогда придётся стараться. Объясните мне правила.",
+    "en": "Then I'll have to try hard. Please teach me the rules."
+   }
+  ],
+  "vocab": [
+   "설날",
+   "할머니",
+   "새해",
+   "건강하다",
+   "손님",
+   "떡국",
+   "규칙"
+  ],
+  "note_ru": "Бабушка говорит с младшими на 반말 — так естественно для старших. Пожелания на Новый год: «새해 복 많이 받으세요», «건강하세요». Старшие отвечают «덕담» — добрыми пожеланиями: «좋은 일만 있어라». «-아/어야 …-는 거예요» — «только если…, тогда…».",
+  "note_uz": "할머니는 아랫사람에게 반말을 씁니다. 새해 인사로는 \"새해 복 많이 받으세요\", \"건강하세요\"라고 합니다. 어른은 \"좋은 일만 있어라\" 같은 덕담으로 대답합니다. \"-아/어야 …-는 거예요\"는 조건을 강조하는 말입니다.",
+  "note_en": "Grandma speaks 반말 to the younger ones — natural for elders. New Year wishes: \"새해 복 많이 받으세요\", \"건강하세요\". Elders reply with 덕담 — kind wishes: \"좋은 일만 있어라\". \"-아/어야 …-는 거예요\" means \"only if…, then…\"."
+ },
+ {
+  "n": 27,
+  "cefr": "B2",
+  "section": "Город и транспорт",
+  "title_ru": "Бюро находок в метро",
+  "title_uz": "지하철 유실물 센터",
+  "title_en": "The subway lost-and-found",
+  "intro_ru": "Анна оставила сумку в вагоне метро и приходит в бюро находок.",
+  "intro_uz": "안나는 지하철에 가방을 두고 내려서 유실물 센터에 왔습니다.",
+  "intro_en": "Anna left her bag on a subway train and comes to the lost-and-found office.",
+  "speakers": {
+   "A": "안나",
+   "B": "직원"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "실례합니다. 오늘 아침에 지하철에 가방을 두고 내렸어요.",
+    "ru": "Извините. Сегодня утром я забыла сумку в метро.",
+    "en": "Excuse me. I left my bag on the subway this morning."
+   },
+   {
+    "who": "B",
+    "uz": "몇 호선, 어느 방향 열차였는지 기억나세요?",
+    "ru": "Помните, какая линия и в каком направлении шёл поезд?",
+    "en": "Do you remember which line and which direction the train was going?"
+   },
+   {
+    "who": "A",
+    "uz": "2호선이고 강남 방향이었어요. 여덟 시 반쯤 시청역에서 내렸어요.",
+    "ru": "Вторая линия, в сторону Каннама. Вышла около половины девятого на станции «Мэрия».",
+    "en": "Line 2, towards Gangnam. I got off at City Hall station around eight-thirty."
+   },
+   {
+    "who": "B",
+    "uz": "몇 번째 칸에 타셨어요?",
+    "ru": "В каком вагоне вы ехали?",
+    "en": "Which carriage were you in?"
+   },
+   {
+    "who": "A",
+    "uz": "잘 모르겠지만 앞쪽이었던 것 같아요. 문 옆 선반에 놓았어요.",
+    "ru": "Точно не знаю, но, кажется, в передней части. Положила на полку у двери.",
+    "en": "I'm not sure, but I think it was near the front. I put it on the rack by the door."
+   },
+   {
+    "who": "B",
+    "uz": "가방은 어떻게 생겼어요? 안에 뭐가 들어 있었어요?",
+    "ru": "Как выглядит сумка? Что в ней было?",
+    "en": "What does the bag look like? What was in it?"
+   },
+   {
+    "who": "A",
+    "uz": "검은색 배낭이고, 노트북하고 지갑이 들어 있어요. 지갑에 외국인 등록증도 있어요.",
+    "ru": "Чёрный рюкзак, в нём ноутбук и кошелёк. В кошельке карта иностранца.",
+    "en": "A black backpack with a laptop and a wallet. My residence card is in the wallet too."
+   },
+   {
+    "who": "B",
+    "uz": "잠시만요. 비슷한 가방이 한 시간 전에 종점에서 들어왔네요. 확인해 볼게요.",
+    "ru": "Минутку. Похожий рюкзак час назад поступил с конечной станции. Сейчас проверю.",
+    "en": "One moment. A similar bag came in from the terminus an hour ago. Let me check."
+   },
+   {
+    "who": "A",
+    "uz": "정말요? 제발 제 거였으면 좋겠어요.",
+    "ru": "Правда? Очень надеюсь, что это мой.",
+    "en": "Really? I really hope it's mine."
+   },
+   {
+    "who": "B",
+    "uz": "본인 확인을 위해서 지갑 안에 뭐가 있는지 말씀해 주시겠어요?",
+    "ru": "Чтобы подтвердить, что он ваш, скажите, что в кошельке?",
+    "en": "To confirm it's yours, could you tell me what's in the wallet?"
+   },
+   {
+    "who": "A",
+    "uz": "외국인 등록증하고 신용카드 두 장, 그리고 가족사진이 있어요.",
+    "ru": "Карта иностранца, две кредитки и семейная фотография.",
+    "en": "My residence card, two credit cards and a family photo."
+   },
+   {
+    "who": "B",
+    "uz": "맞네요. 여기 서명해 주시면 돌려 드릴게요. 다음부터는 \"lost112\" 사이트에서도 찾아보실 수 있어요.",
+    "ru": "Совпадает. Распишитесь здесь, и я верну. В следующий раз можно искать и на сайте lost112.",
+    "en": "That matches. Sign here and I'll return it. Next time you can also search on the lost112 site."
+   },
+   {
+    "who": "A",
+    "uz": "정말 감사합니다. 한국은 잃어버린 물건을 잘 찾을 수 있어서 놀라워요.",
+    "ru": "Огромное спасибо. Поразительно, что в Корее потерянные вещи так хорошо находятся.",
+    "en": "Thank you so much. It's amazing how well lost things turn up in Korea."
+   }
+  ],
+  "vocab": [
+   "지하철",
+   "가방",
+   "방향",
+   "노트북",
+   "지갑",
+   "외국인 등록증",
+   "기억하다",
+   "서명하다"
+  ],
+  "note_ru": "Линии метро называют «호선»: 2호선 — вторая линия. «두고 내리다» — «выйти, забыв вещь». «-(으)ㄴ 것 같아요» — «кажется, (было)…». Потерянные вещи можно искать на сайте полиции lost112.go.kr. «-았/었으면 좋겠어요» — «хорошо бы, если бы…».",
+  "note_uz": "지하철 노선은 \"호선\"으로 말합니다. \"두고 내리다\"는 물건을 놓고 내린다는 뜻입니다. \"-(으)ㄴ 것 같아요\"는 추측입니다. 잃어버린 물건은 경찰청 lost112.go.kr에서 찾을 수 있습니다. \"-았/었으면 좋겠어요\"는 바람을 나타냅니다.",
+  "note_en": "Subway lines are called \"호선\": 2호선 — line 2. \"두고 내리다\" — \"to get off leaving something behind\". \"-(으)ㄴ 것 같아요\" — \"I think it was…\". Lost property can be searched for on the police site lost112.go.kr. \"-았/었으면 좋겠어요\" — \"I wish / I hope…\"."
+ },
+ {
+  "n": 28,
+  "cefr": "B2",
+  "section": "Город и транспорт",
+  "title_ru": "Небольшая авария",
+  "title_uz": "접촉 사고",
+  "title_en": "A minor accident",
+  "intro_ru": "На парковке у торгового центра в машину Анны въехал другой автомобиль.",
+  "intro_uz": "백화점 주차장에서 다른 차가 안나의 차를 박았습니다.",
+  "intro_en": "In a shopping-centre car park another car bumps into Anna's.",
+  "speakers": {
+   "A": "운전자",
+   "B": "안나"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "괜찮으세요? 다친 데는 없으세요?",
+    "ru": "Вы в порядке? Не пострадали?",
+    "en": "Are you all right? Are you hurt anywhere?"
+   },
+   {
+    "who": "B",
+    "uz": "네, 저는 괜찮아요. 그런데 차 뒤쪽이 찌그러졌네요.",
+    "ru": "Да, я в порядке. Но задняя часть машины помята.",
+    "en": "Yes, I'm fine. But the back of the car is dented."
+   },
+   {
+    "who": "A",
+    "uz": "정말 죄송합니다. 후진하다가 미처 못 봤어요.",
+    "ru": "Простите, пожалуйста. Сдавал назад и не заметил.",
+    "en": "I'm terribly sorry. I was reversing and didn't see you."
+   },
+   {
+    "who": "B",
+    "uz": "일단 사진부터 찍을게요. 보험 회사에 연락하셔야 할 것 같아요.",
+    "ru": "Сначала сфотографирую. Думаю, вам нужно связаться со страховой.",
+    "en": "I'll take photos first. I think you'll need to contact your insurer."
+   },
+   {
+    "who": "A",
+    "uz": "네, 제가 지금 바로 보험사에 전화하겠습니다.",
+    "ru": "Да, я сейчас же позвоню в страховую.",
+    "en": "Yes, I'll call my insurance company right now."
+   },
+   {
+    "who": "B",
+    "uz": "연락처하고 차 번호를 알려 주시겠어요?",
+    "ru": "Дайте, пожалуйста, ваши контакты и номер машины.",
+    "en": "Could you give me your contact details and licence plate number?"
+   },
+   {
+    "who": "A",
+    "uz": "여기 명함이에요. 차 번호는 12가 3456입니다.",
+    "ru": "Вот моя визитка. Номер машины — 12가 3456.",
+    "en": "Here's my card. The plate is 12가 3456."
+   },
+   {
+    "who": "B",
+    "uz": "감사합니다. 저는 외국인이라 사고 처리를 잘 몰라요. 경찰을 불러야 해요?",
+    "ru": "Спасибо. Я иностранка и плохо знаю, как оформлять аварии. Нужно вызывать полицию?",
+    "en": "Thank you. I'm a foreigner and don't really know how accidents are handled. Do we need to call the police?"
+   },
+   {
+    "who": "A",
+    "uz": "다친 사람이 없고 과실을 인정하니까 보험사끼리 처리하면 돼요.",
+    "ru": "Пострадавших нет, я признаю вину, так что страховые разберутся между собой.",
+    "en": "Nobody's hurt and I admit fault, so the insurers can settle it between themselves."
+   },
+   {
+    "who": "B",
+    "uz": "그래도 혹시 모르니까 블랙박스 영상을 저장해 둘게요.",
+    "ru": "Всё-таки на всякий случай сохраню запись видеорегистратора.",
+    "en": "Still, just in case, I'll save the dashcam footage."
+   },
+   {
+    "who": "A",
+    "uz": "네, 그렇게 하세요. 보험사 직원이 곧 도착한대요.",
+    "ru": "Да, конечно. Сотрудник страховой, говорят, скоро приедет.",
+    "en": "Yes, do that. They say the insurance agent will arrive soon."
+   },
+   {
+    "who": "B",
+    "uz": "수리하는 동안 렌터카도 보험으로 처리되나요?",
+    "ru": "А машину напрокат на время ремонта страховка покроет?",
+    "en": "Will the insurance also cover a rental car during the repairs?"
+   },
+   {
+    "who": "A",
+    "uz": "네, 대부분 돼요. 직원에게 꼭 물어보세요. 다시 한번 죄송합니다.",
+    "ru": "Да, обычно покрывает. Обязательно спросите у сотрудника. Ещё раз простите.",
+    "en": "Yes, usually. Be sure to ask the agent. Sorry once again."
+   }
+  ],
+  "vocab": [
+   "사고",
+   "사진",
+   "보험",
+   "연락처",
+   "경찰",
+   "수리",
+   "주차장"
+  ],
+  "note_ru": "«접촉 사고» — мелкое ДТП без пострадавших. Сначала фотографируют место и обмениваются данными; если есть пострадавшие или спор — вызывают полицию (112). Почти в каждой машине стоит видеорегистратор (블랙박스). «-대요» — «говорят, что…». «과실» — вина в ДТП.",
+  "note_uz": "접촉 사고는 다친 사람이 없는 가벼운 사고입니다. 먼저 사진을 찍고 연락처를 주고받으며, 다친 사람이 있거나 다툼이 있으면 경찰(112)을 부릅니다. 거의 모든 차에 블랙박스가 있습니다. \"-대요\"는 들은 말을 전합니다. \"과실\"은 사고의 책임입니다.",
+  "note_en": "\"접촉 사고\" is a minor collision with no injuries. First you take photos and exchange details; if someone is hurt or there's a dispute, call the police (112). Almost every car has a dashcam (블랙박스). \"-대요\" means \"they say that…\". \"과실\" is fault in an accident."
+ },
+ {
+  "n": 29,
+  "cefr": "B2",
+  "section": "Покупки и еда",
+  "title_ru": "Возврат бракованного товара",
+  "title_uz": "불량품 환불",
+  "title_en": "Returning a faulty item",
+  "intro_ru": "Пылесос, который Анна купила в магазине электроники, сломался через три дня.",
+  "intro_uz": "안나가 전자 제품 매장에서 산 청소기가 사흘 만에 고장 났습니다.",
+  "intro_en": "The vacuum cleaner Anna bought at an electronics store broke after three days.",
+  "speakers": {
+   "A": "직원",
+   "B": "안나"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "어서 오세요. 무엇을 도와드릴까요?",
+    "ru": "Добро пожаловать. Чем могу помочь?",
+    "en": "Welcome. How can I help?"
+   },
+   {
+    "who": "B",
+    "uz": "지난주에 산 청소기가 갑자기 작동을 안 해요. 환불받고 싶어요.",
+    "ru": "Пылесос, купленный на прошлой неделе, вдруг перестал работать. Хочу вернуть деньги.",
+    "en": "The vacuum I bought last week suddenly stopped working. I'd like a refund."
+   },
+   {
+    "who": "A",
+    "uz": "영수증 가지고 오셨어요?",
+    "ru": "Чек с собой?",
+    "en": "Did you bring the receipt?"
+   },
+   {
+    "who": "B",
+    "uz": "네, 여기 있어요. 산 지 사흘밖에 안 됐어요.",
+    "ru": "Да, вот. Прошло всего три дня.",
+    "en": "Yes, here it is. It's only been three days since I bought it."
+   },
+   {
+    "who": "A",
+    "uz": "확인해 보겠습니다. 혹시 떨어뜨리거나 물에 젖은 적이 있나요?",
+    "ru": "Проверим. Вы его, случайно, не роняли и не мочили?",
+    "en": "Let me check. Did you drop it or get it wet by any chance?"
+   },
+   {
+    "who": "B",
+    "uz": "아니요, 설명서대로만 썼어요. 충전해도 불이 안 들어와요.",
+    "ru": "Нет, пользовалась строго по инструкции. Даже после зарядки индикатор не горит.",
+    "en": "No, I used it exactly as the manual says. Even after charging, the light won't come on."
+   },
+   {
+    "who": "A",
+    "uz": "그럼 수리를 먼저 받아 보시는 건 어떠세요? 일주일이면 돼요.",
+    "ru": "Тогда, может, сначала отдадим в ремонт? Это займёт неделю.",
+    "en": "Then how about getting it repaired first? It takes a week."
+   },
+   {
+    "who": "B",
+    "uz": "새 제품이 사흘 만에 고장 난 거라서 수리보다는 환불을 원해요.",
+    "ru": "Новый товар сломался через три дня, поэтому я хочу не ремонт, а возврат.",
+    "en": "A new product broke after three days, so I'd rather have a refund than a repair."
+   },
+   {
+    "who": "A",
+    "uz": "고객님 말씀도 이해합니다. 그럼 교환은 어떠세요? 같은 모델로 바로 바꿔 드릴 수 있어요.",
+    "ru": "Понимаю вас. Тогда, может, обмен? Можем сразу заменить на такую же модель.",
+    "en": "I understand. Then how about an exchange? We can swap it for the same model right away."
+   },
+   {
+    "who": "B",
+    "uz": "같은 모델이 또 고장 날까 봐 걱정돼요. 소비자 보호 규정에도 환불이 된다고 들었어요.",
+    "ru": "Боюсь, что такая же модель снова сломается. И я слышала, что по правилам защиты потребителей положен возврат.",
+    "en": "I'm worried the same model will break again. And I heard consumer protection rules allow a refund."
+   },
+   {
+    "who": "A",
+    "uz": "네, 구매 후 열흘 안에 생긴 중대한 결함은 환불이 가능합니다. 바로 처리해 드리겠습니다.",
+    "ru": "Да, при серьёзном дефекте в течение десяти дней после покупки возврат возможен. Сейчас оформлю.",
+    "en": "Yes, a major defect within ten days of purchase qualifies for a refund. I'll process it now."
+   },
+   {
+    "who": "B",
+    "uz": "감사합니다. 카드로 결제했는데 언제 취소돼요?",
+    "ru": "Спасибо. Я платила картой — когда отменится оплата?",
+    "en": "Thank you. I paid by card — when will it be cancelled?"
+   },
+   {
+    "who": "A",
+    "uz": "보통 3일에서 5일 정도 걸립니다. 불편을 드려서 죄송합니다.",
+    "ru": "Обычно от трёх до пяти дней. Извините за неудобства.",
+    "en": "It usually takes three to five days. Sorry for the inconvenience."
+   }
+  ],
+  "vocab": [
+   "영수증",
+   "환불",
+   "수리",
+   "사용 설명서",
+   "고장",
+   "교환",
+   "걱정하다",
+   "카드"
+  ],
+  "note_ru": "При возврате пригодятся слова «환불» (возврат денег), «교환» (обмен), «수리» (ремонт), «고장 나다» (сломаться). «-(으)ㄹ까 봐 걱정돼요» — «боюсь, как бы не…». Продавец часто сначала предлагает ремонт или обмен; если есть основания, можно вежливо настаивать. Помочь может линия защиты потребителей 1372.",
+  "note_uz": "환불, 교환, 수리, 고장 나다를 알아 두세요. \"-(으)ㄹ까 봐 걱정돼요\"는 나쁜 일이 생길까 걱정하는 말입니다. 직원은 먼저 수리나 교환을 권하는 경우가 많지만, 근거가 있으면 공손하게 환불을 요구할 수 있습니다. 소비자 상담 1372도 도움이 됩니다.",
+  "note_en": "Useful words: \"환불\" (refund), \"교환\" (exchange), \"수리\" (repair), \"고장 나다\" (to break down). \"-(으)ㄹ까 봐 걱정돼요\" — \"I'm afraid that… might\". Staff often offer repair or exchange first; if you have grounds, you can politely insist. The consumer line 1372 can also help."
+ },
+ {
+  "n": 30,
+  "cefr": "B2",
+  "section": "Быт и услуги",
+  "title_ru": "Возврат залога",
+  "title_uz": "보증금 돌려받기",
+  "title_en": "Getting the deposit back",
+  "intro_ru": "Договор аренды Анны закончился, но хозяин не спешит возвращать залог.",
+  "intro_uz": "안나의 임대 계약이 끝났지만 집주인은 보증금을 빨리 돌려주지 않습니다.",
+  "intro_en": "Anna's lease has ended, but the landlord is in no hurry to return the deposit.",
+  "speakers": {
+   "A": "안나",
+   "B": "집주인"
+  },
+  "lines": [
+   {
+    "who": "A",
+    "uz": "사장님, 안녕하세요. 계약이 지난주에 끝났는데 보증금은 언제 돌려주시나요?",
+    "ru": "Здравствуйте. Договор закончился на прошлой неделе — когда вы вернёте залог?",
+    "en": "Hello. The lease ended last week — when will you return my deposit?"
+   },
+   {
+    "who": "B",
+    "uz": "아, 다음 세입자가 들어와야 줄 수 있어요. 조금만 기다려 줘요.",
+    "ru": "А, смогу отдать, когда въедет следующий жилец. Подождите немного.",
+    "en": "Ah, I can pay it once the next tenant moves in. Just wait a little."
+   },
+   {
+    "who": "A",
+    "uz": "죄송하지만 저도 새집 계약금을 내야 해서 기다리기가 어려워요.",
+    "ru": "Простите, но мне нужно вносить задаток за новую квартиру, ждать мне трудно.",
+    "en": "I'm sorry, but I have to pay the deposit on my new place, so it's hard for me to wait."
+   },
+   {
+    "who": "B",
+    "uz": "그리고 벽지가 더러워져서 도배 비용을 빼야겠어요.",
+    "ru": "И обои испачкались, придётся вычесть стоимость переклейки.",
+    "en": "And the wallpaper's got dirty, so I'll have to deduct the cost of re-papering."
+   },
+   {
+    "who": "A",
+    "uz": "이사 올 때 찍은 사진이 있어요. 그때도 벽지에 얼룩이 있었어요.",
+    "ru": "У меня есть фото, сделанные при заселении. Пятна на обоях были и тогда.",
+    "en": "I have photos I took when I moved in. The stains were already there then."
+   },
+   {
+    "who": "B",
+    "uz": "그래요? 그래도 사 년을 살았으니 어느 정도는 내야죠.",
+    "ru": "Да? Но вы же прожили четыре года, так что хоть что-то заплатить надо.",
+    "en": "Really? Still, you lived here four years, so you should pay something."
+   },
+   {
+    "who": "A",
+    "uz": "오래 살아서 생긴 자연스러운 손상은 세입자 책임이 아니라고 알고 있어요.",
+    "ru": "Насколько я знаю, естественный износ от долгого проживания — не ответственность жильца.",
+    "en": "As far as I know, natural wear from long occupancy isn't the tenant's responsibility."
+   },
+   {
+    "who": "B",
+    "uz": "음… 그 부분은 제가 다시 생각해 볼게요. 돈은 다음 달 초에 줄게요.",
+    "ru": "Хм… это я ещё обдумаю. Деньги отдам в начале следующего месяца.",
+    "en": "Hmm… I'll reconsider that part. I'll give you the money early next month."
+   },
+   {
+    "who": "A",
+    "uz": "계약서에는 계약이 끝나는 날 돌려주시기로 되어 있어요. 이번 주 금요일까지 부탁드립니다.",
+    "ru": "По договору вы должны вернуть его в день окончания. Прошу до этой пятницы.",
+    "en": "The contract says you'll return it on the day it ends. I ask you to do so by this Friday."
+   },
+   {
+    "who": "B",
+    "uz": "너무 급하게 그러지 마요. 나도 사정이 있어요.",
+    "ru": "Не торопите так. У меня тоже обстоятельства.",
+    "en": "Don't rush me like this. I have my circumstances too."
+   },
+   {
+    "who": "A",
+    "uz": "이해합니다. 하지만 금요일까지 어려우시면 임대차 분쟁 조정 위원회에 상담을 신청할 수밖에 없어요.",
+    "ru": "Понимаю. Но если до пятницы не получится, мне придётся обратиться в комиссию по спорам об аренде.",
+    "en": "I understand. But if Friday is difficult, I'll have no choice but to apply to the rental dispute committee."
+   },
+   {
+    "who": "B",
+    "uz": "알았어요, 알았어. 금요일까지 계좌로 보낼게요.",
+    "ru": "Ладно, ладно. До пятницы переведу на счёт.",
+    "en": "All right, all right. I'll transfer it to your account by Friday."
+   },
+   {
+    "who": "A",
+    "uz": "감사합니다. 입금되면 문자로 확인 부탁드려요.",
+    "ru": "Спасибо. Когда переведёте, пожалуйста, подтвердите сообщением.",
+    "en": "Thank you. Please confirm by text once it's transferred."
+   }
+  ],
+  "vocab": [
+   "계약",
+   "보증",
+   "이사",
+   "사진",
+   "책임",
+   "월세",
+   "부동산",
+   "문자를 보내다"
+  ],
+  "note_ru": "Хозяина квартиры вежливо называют «사장님». «-(으)ㄹ 수밖에 없어요» — «придётся, ничего не остаётся, кроме…». «-기로 되어 있어요» — «по договорённости должно…». Естественный износ (자연스러운 손상) обычно не оплачивает жилец; спасают фотографии при заселении. При споре помогают комиссия по спорам об аренде и Корпорация юридической помощи (132).",
+  "note_uz": "집주인은 공손하게 \"사장님\"이라고 부르기도 합니다. \"-(으)ㄹ 수밖에 없어요\"는 다른 방법이 없다는 뜻이고, \"-기로 되어 있어요\"는 약속이나 규정을 말합니다. 오래 살아서 생긴 자연스러운 손상은 보통 세입자가 책임지지 않으며, 입주 때 찍은 사진이 도움이 됩니다. 분쟁이 생기면 임대차 분쟁 조정 위원회와 대한법률구조공단(132)이 도와줍니다.",
+  "note_en": "A landlord is politely addressed as \"사장님\". \"-(으)ㄹ 수밖에 없어요\" means \"I have no choice but to…\". \"-기로 되어 있어요\" — \"it is agreed / supposed to…\". Natural wear and tear (자연스러운 손상) is usually not the tenant's cost; move-in photos help. In a dispute, the rental dispute committee and the Korea Legal Aid Corporation (132) can help."
+ }
+]

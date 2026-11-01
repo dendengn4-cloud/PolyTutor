@@ -21,7 +21,9 @@ export function allowed(home, feature) {
 
 export async function renderHome(app) {
   mount(spinner(t('loading')));
-  const [me, home, stats, rec, week] = await Promise.all([app.refreshMe(), rpc('get_home'), rpc('get_stats', { p_days: 14 }),
+  const [me, home, stats, rec, week] = await Promise.all([
+    // профиль, загруженный при запуске секунду назад, второй раз не запрашиваем
+    app.me && Date.now() - (app.meAt || 0) < 5000 ? app.me : app.refreshMe(), rpc('get_home'), rpc('get_stats', { p_days: 14 }),
     rpc('get_next_step').catch(() => null), rpc('get_week').catch(() => null)]);
   app.homeData = home;
   // режим фокуса: мягкая серия — один пропущенный день серию не обрывает

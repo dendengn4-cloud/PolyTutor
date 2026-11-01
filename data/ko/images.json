@@ -1,0 +1,767 @@
+{
+ "history": {
+  "1": [
+   {
+    "q": "Gochang dolmen site Korea",
+    "must": [
+     "dolmen"
+    ],
+    "caption_ru": "Дольмены Кочхана",
+    "caption_uz": "고창 고인돌",
+    "caption_en": "Gochang dolmens"
+   }
+  ],
+  "2": [
+   {
+    "q": "Dangun portrait Korea",
+    "must": [
+     "dangun"
+    ],
+    "caption_ru": "Тангун на старинном портрете",
+    "caption_uz": "단군 영정",
+    "caption_en": "A portrait of Dangun"
+   }
+  ],
+  "3": [
+   {
+    "q": "Gwanggaeto Stele Ji'an",
+    "must": [
+     "stele"
+    ],
+    "caption_ru": "Стела Квангэтхо Великого",
+    "caption_uz": "광개토대왕릉비",
+    "caption_en": "The Gwanggaeto Stele"
+   }
+  ],
+  "4": [
+   {
+    "q": "Baekje gilt-bronze incense burner",
+    "must": [
+     "incense"
+    ],
+    "caption_ru": "Позолоченная курильница Пэкче",
+    "caption_uz": "백제 금동대향로",
+    "caption_en": "The Baekje gilt-bronze incense burner"
+   }
+  ],
+  "5": [
+   {
+    "q": "Kraskino Balhae settlement",
+    "must": [
+     "kraskino"
+    ],
+    "caption_ru": "Краскинское городище Пархэ",
+    "caption_uz": "크라스키노 발해 성터",
+    "caption_en": "The Balhae site at Kraskino"
+   }
+  ],
+  "6": [
+   {
+    "q": "Bulguksa temple Gyeongju",
+    "must": [
+     "bulguksa"
+    ],
+    "caption_ru": "Храм Пульгукса в Кёнджу",
+    "caption_uz": "경주 불국사",
+    "caption_en": "Bulguksa temple in Gyeongju"
+   }
+  ],
+  "7": [
+   {
+    "q": "Wang Geon statue Goryeo",
+    "must": [
+     "wang geon"
+    ],
+    "caption_ru": "Ван Гон, основатель Корё",
+    "caption_uz": "고려 태조 왕건",
+    "caption_en": "Wang Geon, founder of Goryeo"
+   }
+  ],
+  "8": [
+   {
+    "q": "Tripitaka Koreana woodblocks Haeinsa",
+    "must": [
+     "tripitaka"
+    ],
+    "caption_ru": "Доски «Трипитаки Кореаны»",
+    "caption_uz": "팔만대장경 목판",
+    "caption_en": "The Tripitaka Koreana woodblocks"
+   }
+  ],
+  "9": [
+   {
+    "q": "Gyeongbokgung palace Seoul",
+    "must": [
+     "gyeongbokgung"
+    ],
+    "caption_ru": "Дворец Кёнбоккун",
+    "caption_uz": "경복궁",
+    "caption_en": "Gyeongbokgung palace"
+   }
+  ],
+  "10": [
+   {
+    "q": "Hunminjeongeum Haerye manuscript",
+    "must": [
+     "hunminjeongeum"
+    ],
+    "caption_ru": "Рукопись «Хунмин чоным хэрепон»",
+    "caption_uz": "훈민정음 해례본",
+    "caption_en": "The Hunminjeongeum Haerye manuscript"
+   }
+  ],
+  "11": [
+   {
+    "q": "Turtle ship replica Korea",
+    "must": [
+     "turtle ship"
+    ],
+    "caption_ru": "Корабль-черепаха (реконструкция)",
+    "caption_uz": "거북선(복원)",
+    "caption_en": "A turtle ship (replica)"
+   }
+  ],
+  "12": [
+   {
+    "q": "Hwaseong Fortress Suwon",
+    "must": [
+     "hwaseong"
+    ],
+    "caption_ru": "Крепость Хвасон в Сувоне",
+    "caption_uz": "수원 화성",
+    "caption_en": "Hwaseong Fortress in Suwon"
+   }
+  ],
+  "13": [
+   {
+    "q": "Independence Gate Seoul",
+    "must": [
+     "independence gate"
+    ],
+    "caption_ru": "Ворота независимости в Сеуле",
+    "caption_uz": "독립문",
+    "caption_en": "The Independence Gate in Seoul"
+   }
+  ],
+  "14": [
+   {
+    "q": "Korean Declaration of Independence 1919",
+    "must": [
+     "declaration"
+    ],
+    "caption_ru": "Декларация независимости 1919 года",
+    "caption_uz": "기미 독립 선언서",
+    "caption_en": "The 1919 Declaration of Independence"
+   }
+  ],
+  "15": [
+   {
+    "q": "Koryo-saram Ushtobe memorial",
+    "must": [
+     "ushtobe"
+    ],
+    "caption_ru": "Памятник первым переселенцам в Уштобе",
+    "caption_uz": "우슈토베 고려인 기념비",
+    "caption_en": "A memorial to Korean settlers in Ushtobe"
+   }
+  ],
+  "16": [
+   {
+    "q": "Liberation Day Korea 1945",
+    "must": [
+     "1945"
+    ],
+    "caption_ru": "Освобождение Кореи, август 1945 года",
+    "caption_uz": "1945년 8월 광복",
+    "caption_en": "The liberation of Korea, August 1945"
+   }
+  ],
+  "17": [
+   {
+    "q": "Panmunjom Joint Security Area",
+    "must": [
+     "panmunjom"
+    ],
+    "caption_ru": "Пханмунджом",
+    "caption_uz": "판문점",
+    "caption_en": "Panmunjom"
+   }
+  ],
+  "18": [
+   {
+    "q": "Gyeongbu Expressway opening 1970",
+    "must": [
+     "gyeongbu"
+    ],
+    "caption_ru": "Скоростная дорога Сеул — Пусан",
+    "caption_uz": "경부 고속 도로",
+    "caption_en": "The Seoul–Busan expressway"
+   }
+  ],
+  "19": [
+   {
+    "q": "May 18 Memorial Gwangju",
+    "must": [
+     "gwangju"
+    ],
+    "caption_ru": "Мемориал 18 мая в Кванджу",
+    "caption_uz": "국립 5·18 민주 묘지",
+    "caption_en": "The May 18 cemetery in Gwangju"
+   }
+  ],
+  "20": [
+   {
+    "q": "2002 World Cup Seoul street cheering",
+    "must": [
+     "2002"
+    ],
+    "caption_ru": "Болельщики в Сеуле, 2002 год",
+    "caption_uz": "2002년 거리 응원",
+    "caption_en": "Street fans in Seoul, 2002"
+   }
+  ],
+  "21": [
+   {
+    "q": "DMZ Korea border",
+    "must": [
+     "dmz"
+    ],
+    "caption_ru": "Демилитаризованная зона",
+    "caption_uz": "비무장 지대",
+    "caption_en": "The demilitarised zone"
+   }
+  ],
+  "22": [
+   {
+    "q": "Gwanghwamun Square Seoul",
+    "must": [
+     "gwanghwamun"
+    ],
+    "caption_ru": "Площадь Кванхвамун",
+    "caption_uz": "광화문 광장",
+    "caption_en": "Gwanghwamun Square"
+   }
+  ]
+ },
+ "civics": {
+  "1": [
+   {
+    "q": "Flag of South Korea",
+    "must": [
+     "flag"
+    ],
+    "caption_ru": "Флаг Республики Корея",
+    "caption_uz": "태극기",
+    "caption_en": "The flag of South Korea"
+   }
+  ],
+  "2": [
+   {
+    "q": "National Assembly Proceeding Hall Seoul",
+    "must": [
+     "national assembly"
+    ],
+    "caption_ru": "Здание Национального собрания на Ёыйдо",
+    "caption_uz": "국회 의사당",
+    "caption_en": "The National Assembly building on Yeouido"
+   }
+  ],
+  "3": [
+   {
+    "q": "Sejong Government Complex",
+    "must": [
+     "sejong"
+    ],
+    "caption_ru": "Правительственный комплекс в Седжоне",
+    "caption_uz": "정부세종청사",
+    "caption_en": "The Sejong Government Complex"
+   }
+  ],
+  "4": [
+   {
+    "q": "National Human Rights Commission of Korea",
+    "must": [
+     "human rights"
+    ],
+    "caption_ru": "Национальная комиссия по правам человека",
+    "caption_uz": "국가인권위원회",
+    "caption_en": "The National Human Rights Commission"
+   }
+  ],
+  "5": [
+   {
+    "q": "Supreme Court of Korea building",
+    "must": [
+     "supreme court"
+    ],
+    "caption_ru": "Здание Верховного суда",
+    "caption_uz": "대법원",
+    "caption_en": "The Supreme Court building"
+   }
+  ],
+  "6": [
+   {
+    "q": "Korean traditional wedding",
+    "must": [
+     "wedding"
+    ],
+    "caption_ru": "Традиционная корейская свадьба",
+    "caption_uz": "전통 혼례",
+    "caption_en": "A traditional Korean wedding"
+   }
+  ],
+  "7": [
+   {
+    "q": "Seoul office workers",
+    "must": [
+     "office"
+    ],
+    "caption_ru": "Офисный район Сеула",
+    "caption_uz": "서울의 직장인",
+    "caption_en": "An office district in Seoul"
+   }
+  ],
+  "8": [
+   {
+    "q": "National Tax Service Korea",
+    "must": [
+     "tax"
+    ],
+    "caption_ru": "Национальная налоговая служба",
+    "caption_uz": "국세청",
+    "caption_en": "The National Tax Service"
+   }
+  ],
+  "9": [
+   {
+    "q": "Seoul apartment complex",
+    "must": [
+     "apartment"
+    ],
+    "caption_ru": "Многоквартирный комплекс в Сеуле",
+    "caption_uz": "서울의 아파트 단지",
+    "caption_en": "An apartment complex in Seoul"
+   }
+  ],
+  "10": [
+   {
+    "q": "Seoul National University Hospital",
+    "must": [
+     "hospital"
+    ],
+    "caption_ru": "Больница Сеульского университета",
+    "caption_uz": "서울대학교병원",
+    "caption_en": "Seoul National University Hospital"
+   }
+  ],
+  "11": [
+   {
+    "q": "Korean elementary school classroom",
+    "must": [
+     "school"
+    ],
+    "caption_ru": "Корейская школа",
+    "caption_uz": "한국의 학교",
+    "caption_en": "A Korean school"
+   }
+  ],
+  "12": [
+   {
+    "q": "National Pension Service Korea",
+    "must": [
+     "pension"
+    ],
+    "caption_ru": "Национальная пенсионная служба",
+    "caption_uz": "국민연금공단",
+    "caption_en": "The National Pension Service"
+   }
+  ],
+  "13": [
+   {
+    "q": "Seoul Metro train",
+    "must": [
+     "metro"
+    ],
+    "caption_ru": "Поезд сеульского метро",
+    "caption_uz": "서울 지하철",
+    "caption_en": "A Seoul subway train"
+   }
+  ],
+  "14": [
+   {
+    "q": "South Korean won banknotes",
+    "must": [
+     "won"
+    ],
+    "caption_ru": "Корейские вона",
+    "caption_uz": "원화 지폐",
+    "caption_en": "Korean won banknotes"
+   }
+  ],
+  "15": [
+   {
+    "q": "Incheon International Airport terminal",
+    "must": [
+     "incheon"
+    ],
+    "caption_ru": "Международный аэропорт Инчхон",
+    "caption_uz": "인천국제공항",
+    "caption_en": "Incheon International Airport"
+   }
+  ],
+  "16": [
+   {
+    "q": "Seoul Immigration Office",
+    "must": [
+     "immigration"
+    ],
+    "caption_ru": "Иммиграционная служба",
+    "caption_uz": "출입국·외국인청",
+    "caption_en": "The immigration office"
+   }
+  ],
+  "17": [
+   {
+    "q": "Ansan multicultural street",
+    "must": [
+     "ansan"
+    ],
+    "caption_ru": "Многокультурный район в Ансане",
+    "caption_uz": "안산 다문화 거리",
+    "caption_en": "The multicultural district in Ansan"
+   }
+  ],
+  "18": [
+   {
+    "q": "Korean passport",
+    "must": [
+     "passport"
+    ],
+    "caption_ru": "Паспорт Республики Корея",
+    "caption_uz": "대한민국 여권",
+    "caption_en": "A South Korean passport"
+   }
+  ],
+  "19": [
+   {
+    "q": "Korean language class foreigners",
+    "must": [
+     "class"
+    ],
+    "caption_ru": "Занятие корейским языком",
+    "caption_uz": "한국어 수업",
+    "caption_en": "A Korean class"
+   }
+  ],
+  "20": [
+   {
+    "q": "Seoul Global Center",
+    "must": [
+     "global center"
+    ],
+    "caption_ru": "Центр помощи иностранцам в Сеуле",
+    "caption_uz": "서울글로벌센터",
+    "caption_en": "The Seoul Global Center"
+   }
+  ],
+  "21": [
+   {
+    "q": "King Sejong Institute",
+    "must": [
+     "sejong institute"
+    ],
+    "caption_ru": "Институт короля Седжона",
+    "caption_uz": "세종학당",
+    "caption_en": "A King Sejong Institute"
+   }
+  ],
+  "22": [
+   {
+    "q": "Recycling bins Korea",
+    "must": [
+     "recycling"
+    ],
+    "caption_ru": "Сортировка мусора",
+    "caption_uz": "분리수거",
+    "caption_en": "Sorting rubbish"
+   }
+  ],
+  "23": [
+   {
+    "q": "Typhoon Korea satellite",
+    "must": [
+     "typhoon"
+    ],
+    "caption_ru": "Тайфун над Корейским полуостровом",
+    "caption_uz": "태풍",
+    "caption_en": "A typhoon over the Korean Peninsula"
+   }
+  ],
+  "24": [
+   {
+    "q": "Seoul Station",
+    "must": [
+     "seoul station"
+    ],
+    "caption_ru": "Вокзал Сеул",
+    "caption_uz": "서울역",
+    "caption_en": "Seoul Station"
+   }
+  ],
+  "25": [
+   {
+    "q": "Bowing Korea greeting",
+    "must": [
+     "bow"
+    ],
+    "caption_ru": "Поклон при встрече",
+    "caption_uz": "인사",
+    "caption_en": "A bow of greeting"
+   }
+  ]
+ },
+ "culture": {
+  "1": [
+   {
+    "q": "Kimchi varieties",
+    "must": [
+     "kimchi"
+    ],
+    "caption_ru": "Разные виды кимчхи",
+    "caption_uz": "여러 가지 김치",
+    "caption_en": "Different kinds of kimchi"
+   }
+  ],
+  "2": [
+   {
+    "q": "Bibimbap",
+    "must": [
+     "bibimbap"
+    ],
+    "caption_ru": "Пибимпап",
+    "caption_uz": "비빔밥",
+    "caption_en": "Bibimbap"
+   }
+  ],
+  "3": [
+   {
+    "q": "Soju bottles",
+    "must": [
+     "soju"
+    ],
+    "caption_ru": "Бутылки соджу",
+    "caption_uz": "소주",
+    "caption_en": "Bottles of soju"
+   }
+  ],
+  "4": [
+   {
+    "q": "Gwangjang Market Seoul",
+    "must": [
+     "gwangjang"
+    ],
+    "caption_ru": "Рынок Кванчжан в Сеуле",
+    "caption_uz": "광장시장",
+    "caption_en": "Gwangjang Market in Seoul"
+   }
+  ],
+  "5": [
+   {
+    "q": "Jjimjilbang Korea",
+    "must": [
+     "jjimjilbang"
+    ],
+    "caption_ru": "Корейская баня чимчильбан",
+    "caption_uz": "찜질방",
+    "caption_en": "A jjimjilbang"
+   }
+  ],
+  "6": [
+   {
+    "q": "Tteokguk",
+    "must": [
+     "tteokguk"
+    ],
+    "caption_ru": "Ттоккук — суп на Соллаль",
+    "caption_uz": "떡국",
+    "caption_en": "Tteokguk, the Seollal soup"
+   }
+  ],
+  "7": [
+   {
+    "q": "Songpyeon",
+    "must": [
+     "songpyeon"
+    ],
+    "caption_ru": "Рисовые пирожки 송편",
+    "caption_uz": "송편",
+    "caption_en": "Songpyeon rice cakes"
+   }
+  ],
+  "8": [
+   {
+    "q": "Lotus Lantern Festival Seoul",
+    "must": [
+     "lantern"
+    ],
+    "caption_ru": "Фонари ко дню рождения Будды",
+    "caption_uz": "연등",
+    "caption_en": "Lanterns for Buddha's Birthday"
+   }
+  ],
+  "9": [
+   {
+    "q": "Doljanchi first birthday Korea",
+    "must": [
+     "dol"
+    ],
+    "caption_ru": "Праздник первого дня рождения",
+    "caption_uz": "돌잔치",
+    "caption_en": "A first-birthday party"
+   }
+  ],
+  "10": [
+   {
+    "q": "Samgyetang",
+    "must": [
+     "samgyetang"
+    ],
+    "caption_ru": "Самгетхан",
+    "caption_uz": "삼계탕",
+    "caption_en": "Samgyetang"
+   }
+  ],
+  "11": [
+   {
+    "q": "Korean family hanbok",
+    "must": [
+     "family"
+    ],
+    "caption_ru": "Корейская семья в ханбоках",
+    "caption_uz": "한복을 입은 가족",
+    "caption_en": "A Korean family in hanbok"
+   }
+  ],
+  "12": [
+   {
+    "q": "Pyebaek ceremony",
+    "must": [
+     "pyebaek"
+    ],
+    "caption_ru": "Обряд пхебэк",
+    "caption_uz": "폐백",
+    "caption_en": "The pyebaek ceremony"
+   }
+  ],
+  "13": [
+   {
+    "q": "Jesa ancestral rite table",
+    "must": [
+     "jesa"
+    ],
+    "caption_ru": "Стол для поминального обряда",
+    "caption_uz": "제사상",
+    "caption_en": "An ancestral rite table"
+   }
+  ],
+  "14": [
+   {
+    "q": "Korean family name clan register",
+    "must": [
+     "jokbo"
+    ],
+    "caption_ru": "Родословная книга",
+    "caption_uz": "족보",
+    "caption_en": "A clan genealogy book"
+   }
+  ],
+  "15": [
+   {
+    "q": "Jangseung totem poles",
+    "must": [
+     "jangseung"
+    ],
+    "caption_ru": "Тотемы 장승",
+    "caption_uz": "장승",
+    "caption_en": "Jangseung totem poles"
+   }
+  ],
+  "16": [
+   {
+    "q": "Bukchon Hanok Village",
+    "must": [
+     "bukchon"
+    ],
+    "caption_ru": "Деревня ханоков Пукчхон",
+    "caption_uz": "북촌 한옥마을",
+    "caption_en": "Bukchon Hanok Village"
+   }
+  ],
+  "17": [
+   {
+    "q": "Gayageum",
+    "must": [
+     "gayageum"
+    ],
+    "caption_ru": "Каягым",
+    "caption_uz": "가야금",
+    "caption_en": "A gayageum"
+   }
+  ],
+  "18": [
+   {
+    "q": "Busan International Film Festival",
+    "must": [
+     "film festival"
+    ],
+    "caption_ru": "Кинофестиваль в Пусане",
+    "caption_uz": "부산국제영화제",
+    "caption_en": "The Busan International Film Festival"
+   }
+  ],
+  "19": [
+   {
+    "q": "Yun Dong-ju poetry",
+    "must": [
+     "yun dong"
+    ],
+    "caption_ru": "Поэт Юн Тонджу",
+    "caption_uz": "윤동주",
+    "caption_en": "The poet Yun Dong-ju"
+   }
+  ],
+  "20": [
+   {
+    "q": "Seokguram Buddha",
+    "must": [
+     "seokguram"
+    ],
+    "caption_ru": "Будда пещерного храма Соккурам",
+    "caption_uz": "석굴암 본존불",
+    "caption_en": "The Seokguram Buddha"
+   }
+  ],
+  "21": [
+   {
+    "q": "Jeju Island Seongsan Ilchulbong",
+    "must": [
+     "seongsan"
+    ],
+    "caption_ru": "Чеджу: пик Сонсан Ильчхульбон",
+    "caption_uz": "성산 일출봉",
+    "caption_en": "Jeju: Seongsan Ilchulbong"
+   }
+  ],
+  "22": [
+   {
+    "q": "Taekwondo demonstration",
+    "must": [
+     "taekwondo"
+    ],
+    "caption_ru": "Показательные выступления тхэквондо",
+    "caption_uz": "태권도 시범",
+    "caption_en": "A taekwondo demonstration"
+   }
+  ]
+ }
+}
