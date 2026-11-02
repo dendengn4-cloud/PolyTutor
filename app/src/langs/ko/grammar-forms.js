@@ -1,130 +1,187 @@
-// Блок «Как образуется» в темах турецкой грамматики: таблицы образования форм с примерами.
-// Номера — темы курса (data/tr/source/grammar.xlsx): 3 настоящее -(I)yor, 5 прошедшее -DI, 6 -mIş, 7 будущее,
-// 8 отрицание, 9 падежи, 10 принадлежность, 11 множественное число, 12 сравнение, 16 широкое время,
-// 17 повелительное и желательное, 18 возможность, 19 связка, 20 долженствование, 21 условие, 23 сложные времена.
-// Обозначения: A = a/e, I = ı/i/u/ü (гармония гласных), D = d/t (после глухих — t), C = c/ç.
+// Блок «Как образуется» в темах корейской грамматики: таблицы образования форм с примерами.
+// Номера — темы курса (data/ko/source/grammar.xlsx): 8 правила чтения, 11 이다, 12 은/는 и 이/가, 13 을/를, 14 에 и 에서,
+// 15 настоящее 해요, 16 прошедшее, 17 будущее, 18 отрицание, 20 числа, 22 -고 싶다, 23 возможность, 24 необходимость,
+// 25 просьба, 26 предложение, 27 -고 있다, 28 связки, 29 причина, 30 условие, 31 определения, 33 стили вежливости,
+// 34 уважительные формы, 35 частицы, 36 сравнение, 37 опыт и попытка, 38 неправильные основы, 41 косвенная речь.
+// Обозначения: «после согласной / гласной» — есть ли 받침 (конечная согласная) у последнего слога.
 import { h } from '../ui.js';
 import { getLang } from '../i18n.js';
 
-const L = () => (getLang() === 'en' ? 'en' : getLang() === 'tr' ? 'tr' : 'ru');
+const L = () => (getLang() === 'en' ? 'en' : getLang() === 'ko' ? 'ko' : 'ru');
 const T = {
-  title: { ru: 'Как образуется', tr: 'Nasıl yapılır', en: 'How it is formed' },
-  hint: { ru: 'A = a/e, I = ı/i/u/ü по гармонии гласных; D = d/t (после глухих согласных — t).',
-          tr: 'A = a/e, I = ı/i/u/ü (ünlü uyumu); D = d/t (sert ünsüzden sonra t).',
-          en: 'A = a/e, I = ı/i/u/ü by vowel harmony; D = d/t (t after voiceless consonants).' },
-  rule: { ru: 'Правило', tr: 'Kural', en: 'Rule' },
-  example: { ru: 'Пример', tr: 'Örnek', en: 'Example' },
+  title: { ru: 'Как образуется', ko: '만드는 법', en: 'How it is formed' },
+  hint: { ru: '받침 — конечная согласная слога. «Светлые» гласные ㅏ, ㅗ → -아-, остальные → -어-; 하다 → 해.',
+          ko: '받침은 음절 끝의 자음입니다. ㅏ, ㅗ 뒤에는 -아-, 그 밖에는 -어-, 하다는 해가 됩니다.',
+          en: '받침 is the final consonant of a syllable. Bright vowels ㅏ, ㅗ → -아-, others → -어-; 하다 → 해.' },
+  rule: { ru: 'Правило', ko: '규칙', en: 'Rule' },
+  example: { ru: 'Пример', ko: '보기', en: 'Example' },
 };
 const tr = (k) => T[k][L()];
 
-// [правило ru, tr, en], пример
-const PRES = [
-  [['основа + -Iyor + личное окончание', 'kök + -Iyor + kişi eki', 'stem + -Iyor + personal ending'], 'gel-iyor-um, bak-ıyor-sun, gör-üyor'],
-  [['основа на гласный: + -yor', 'ünlüyle biten kök: + -yor', 'stem ending in a vowel: + -yor'], 'oku-yor-uz, uyu-yor-lar'],
-  [['конечные -a/-e основы сужаются', 'kökün sonundaki -a/-e daralır', 'a final -a/-e of the stem narrows'], 'bekle → bekl-iyor, ara → ar-ıyor'],
-  [['окончания: -um, -sun, —, -uz, -sunuz, -lar', 'ekler: -um, -sun, —, -uz, -sunuz, -lar', 'endings: -um, -sun, —, -uz, -sunuz, -lar'], 'geliyorum, geliyorsun, geliyor, geliyoruz, geliyorsunuz, geliyorlar'],
-  [['git-, et-: t → d перед гласной', 'git-, et-: ünlüden önce t → d', 'git-, et-: t → d before a vowel'], 'git → gid-iyor, et → ed-iyor'],
-];
-const PAST = [
-  [['основа + -DI + -m, -n, —, -k, -nIz, -lAr', 'kök + -DI + -m, -n, —, -k, -nIz, -lAr', 'stem + -DI + -m, -n, —, -k, -nIz, -lAr'], 'geldim, geldin, geldi, geldik, geldiniz, geldiler'],
-  [['после глухих (ç f h k p s ş t): -tI', 'sert ünsüzden sonra: -tI', 'after voiceless consonants: -tI'], 'baktım, gittik, içtiniz'],
-  [['отрицание: основа + -mA + -DI', 'olumsuz: kök + -mA + -DI', 'negative: stem + -mA + -DI'], 'gelmedim, bakmadık'],
-];
-const MIS = [
-  [['основа + -mIş + личное окончание', 'kök + -mIş + kişi eki', 'stem + -mIş + personal ending'], 'gelmişim, gelmişsin, gelmiş'],
-  [['пересказ или вывод: «говорят», «оказывается»', 'duyulan ya da sonradan fark edilen olay', 'hearsay or inference: “apparently”'], 'Ali gelmiş. Hava soğukmuş.'],
-  [['мы / вы / они', 'biz / siz / onlar', 'we / you / they'], 'gelmişiz, gelmişsiniz, gelmişler'],
-];
-const FUT = [
-  [['основа + -(y)AcAk + личное окончание', 'kök + -(y)AcAk + kişi eki', 'stem + -(y)AcAk + personal ending'], 'geleceğim, geleceksin, gelecek'],
-  [['k → ğ перед гласной окончания', 'ünlüyle başlayan ekten önce k → ğ', 'k → ğ before a vowel ending'], 'gelecek → geleceğim, geleceğiz'],
-  [['основа на гласный: + -y-', 'ünlüyle biten kök: + -y-', 'stem ending in a vowel: + -y-'], 'oku → okuyacağım'],
-  [['отрицание: -mAyAcAk', 'olumsuz: -mAyAcAk', 'negative: -mAyAcAk'], 'gelmeyeceğim, bakmayacaksın'],
-];
-const NEG = [
-  [['глагол: основа + -mA', 'fiil: kök + -mA', 'verb: stem + -mA'], 'gel-me-di, bak-ma-yacak'],
-  [['с -Iyor: -mIyor', '-Iyor ile: -mIyor', 'with -Iyor: -mIyor'], 'gelmiyorum, bakmıyor'],
-  [['именное сказуемое: değil', 'isim cümlesi: değil', 'noun predicate: değil'], 'Öğrenci değilim.'],
-  [['«нет, не имеется»: yok', '“yok”: bulunmama', '“there is no”: yok'], 'Param yok. Evde kimse yok.'],
-];
-const CASES = [
-  [['направительный (куда?): -(y)A', 'yönelme (nereye?): -(y)A', 'dative (where to?): -(y)A'], 'ev → eve, okul → okula, Ankara → Ankara’ya'],
-  [['местный (где?): -DA', 'bulunma (nerede?): -DA', 'locative (where?): -DA'], 'evde, okulda, parkta'],
-  [['исходный (откуда?): -DAn', 'ayrılma (nereden?): -DAn', 'ablative (where from?): -DAn'], 'evden, okuldan, işten'],
-  [['винительный (определённый объект): -(y)I', 'belirtme: -(y)I', 'accusative (definite object): -(y)I'], 'evi, kitabı, arabayı'],
-  [['родительный (чей?): -(n)In', 'ilgi (kimin?): -(n)In', 'genitive (whose?): -(n)In'], 'Ali’nin, evin, arabanın'],
-  [['p ç t k → b c d ğ перед гласной', 'ünlüden önce p ç t k → b c d ğ', 'p ç t k → b c d ğ before a vowel'], 'kitap → kitabı, ağaç → ağaca, renk → rengi'],
-];
-const POSS = [
-  [['мой: -(I)m', 'benim: -(I)m', 'my: -(I)m'], 'evim, arabam'],
-  [['твой: -(I)n', 'senin: -(I)n', 'your: -(I)n'], 'evin, araban'],
-  [['его/её: -(s)I', 'onun: -(s)I', 'his/her: -(s)I'], 'evi, arabası'],
-  [['наш: -(I)mIz', 'bizim: -(I)mIz', 'our: -(I)mIz'], 'evimiz, arabamız'],
-  [['ваш: -(I)nIz', 'sizin: -(I)nIz', 'your (pl.): -(I)nIz'], 'eviniz, arabanız'],
-  [['их: -lArI', 'onların: -lArI', 'their: -lArI'], 'evleri, arabaları'],
-];
-const PL = [
-  [['после a ı o u: -lar', 'a ı o u’dan sonra: -lar', 'after a ı o u: -lar'], 'kitaplar, okullar'],
-  [['после e i ö ü: -ler', 'e i ö ü’den sonra: -ler', 'after e i ö ü: -ler'], 'evler, günler'],
-  [['после числа — без -lAr', 'sayıdan sonra -lAr yok', 'no -lAr after a number'], 'iki kitap, üç ev'],
-  [['порядок: основа + -lAr + принадлежность + падеж', 'sıra: kök + -lAr + iyelik + hâl', 'order: stem + -lAr + possessive + case'], 'ev-ler-imiz-de'],
-];
-const COMP = [
-  [['сравнительная: daha + прил., сравниваемое — в -DAn', 'karşılaştırma: daha + sıfat, -DAn ile', 'comparative: daha + adj., compared item in -DAn'], 'Ankara İzmir’den daha büyük.'],
-  [['превосходная: en + прил.', 'en üstünlük: en + sıfat', 'superlative: en + adj.'], 'en güzel, en büyük şehir'],
-  [['«такой же, как»: kadar', '“kadar” ile eşitlik', '“as … as”: kadar'], 'Ali kadar uzun'],
-];
-const AOR = [
-  [['односложная основа на согласный: -Ar', 'tek heceli, ünsüzle biten kök: -Ar', 'one-syllable stem ending in a consonant: -Ar'], 'yazar, yapar, içer'],
-  [['исключения на -Ir: al, bil, bul, dur, gel, gör, kal, ol, öl, san, ver, var, vur', 'istisnalar (-Ir): al, bil, bul, dur, gel, gör, kal, ol, öl, san, ver, var, vur', 'exceptions with -Ir: al, bil, bul, dur, gel, gör, kal, ol, öl, san, ver, var, vur'], 'alır, bilir, gelir, olur'],
-  [['многосложная основа на согласный: -Ir', 'çok heceli kök: -Ir', 'stem of several syllables: -Ir'], 'çalışır, konuşur'],
-  [['основа на гласный: -r', 'ünlüyle biten kök: -r', 'stem ending in a vowel: -r'], 'okur, bekler'],
-  [['отрицание: -mAz (я — -mAm, мы — -mAyIz)', 'olumsuz: -mAz (ben -mAm, biz -mAyIz)', 'negative: -mAz (I — -mAm, we — -mAyIz)'], 'gelmez, gelmem, gelmeyiz'],
-];
-const IMP = [
-  [['ты: основа', 'sen: kök', 'you: the stem'], 'Gel! Bak! Oku!'],
-  [['вы (вежливо): -(y)In / -(y)InIz', 'siz: -(y)In / -(y)InIz', 'you (polite): -(y)In / -(y)InIz'], 'Gelin! Oturunuz.'],
-  [['пусть он: -sIn', 'o: -sIn', 'let him/her: -sIn'], 'Gelsin.'],
-  [['давай(те): -(y)AlIm', 'biz: -(y)AlIm', 'let’s: -(y)AlIm'], 'Gidelim! Başlayalım.'],
-  [['отрицание: -mA', 'olumsuz: -mA', 'negative: -mA'], 'Gelme! Unutmayın.'],
-];
-const ABIL = [
-  [['могу: основа + -(y)Abil + время', 'yeterlilik: kök + -(y)Abil + zaman', 'can: stem + -(y)Abil + tense'], 'gelebilirim, okuyabildim'],
-  [['не могу: -(y)AmA + время', 'olumsuz: -(y)AmA + zaman', 'cannot: -(y)AmA + tense'], 'gelemem, okuyamadım'],
-  [['вежливая просьба', 'kibar rica', 'polite request'], 'Yardım edebilir misiniz?'],
+// [правило ru, ko, en], пример
+const READ = [
+  [['патчхим переходит на следующий слог с ㅇ', '받침은 ㅇ으로 시작하는 다음 음절로 넘어감 (연음)', 'a batchim moves to a following syllable starting with ㅇ'], '한국어 [한구거], 음악 [으막]'],
+  [['ㄱ ㄷ ㅂ перед ㄴ ㅁ → ㅇ ㄴ ㅁ', 'ㄱ ㄷ ㅂ + ㄴ ㅁ → ㅇ ㄴ ㅁ (비음화)', 'ㄱ ㄷ ㅂ before ㄴ ㅁ → ㅇ ㄴ ㅁ'], '합니다 [함니다], 국물 [궁물]'],
+  [['ㅎ + ㄱ ㄷ ㅈ → ㅋ ㅌ ㅊ', 'ㅎ + ㄱ ㄷ ㅈ → ㅋ ㅌ ㅊ (격음화)', 'ㅎ + ㄱ ㄷ ㅈ → ㅋ ㅌ ㅊ'], '좋다 [조타], 축하 [추카]'],
+  [['ㄴ + ㄹ → ㄹㄹ', 'ㄴ + ㄹ → ㄹㄹ (유음화)', 'ㄴ + ㄹ → ㄹㄹ'], '신라 [실라], 연락 [열락]'],
+  [['ㄷ ㅌ + 이 → 지 치', 'ㄷ ㅌ + 이 → 지 치 (구개음화)', 'ㄷ ㅌ + 이 → 지 치'], '같이 [가치], 굳이 [구지]'],
 ];
 const COP = [
-  [['я: -(y)Im', 'ben: -(y)Im', 'I am: -(y)Im'], 'öğrenciyim, doktorum'],
-  [['ты: -sIn', 'sen: -sIn', 'you are: -sIn'], 'öğrencisin'],
-  [['он: — (или -DIr)', 'o: — (ya da -DIr)', 'he/she is: — (or -DIr)'], 'O öğrenci(dir).'],
-  [['мы / вы / они: -(y)Iz, -sInIz, -lAr', 'biz / siz / onlar: -(y)Iz, -sInIz, -lAr', 'we / you / they: -(y)Iz, -sInIz, -lAr'], 'öğrenciyiz, öğrencisiniz, öğrenciler'],
-  [['прошедшее: -(y)DI', 'geçmiş: -(y)DI', 'past: -(y)DI'], 'evdeydim, hastaydı'],
+  [['после согласной: -이에요 / -입니다', '받침 있음: -이에요 / -입니다', 'after a consonant: -이에요 / -입니다'], '학생이에요, 학생입니다'],
+  [['после гласной: -예요 / -입니다', '받침 없음: -예요 / -입니다', 'after a vowel: -예요 / -입니다'], '의사예요, 의사입니다'],
+  [['отрицание: N이/가 아니에요', '부정: N이/가 아니에요', 'negative: N이/가 아니에요'], '학생이 아니에요, 의사가 아니에요'],
+  [['прошедшее: -이었어요 / -였어요', '과거: -이었어요 / -였어요', 'past: -이었어요 / -였어요'], '학생이었어요, 의사였어요'],
+];
+const TOPIC = [
+  [['тема: после согласной 은, после гласной 는', '주제: 받침 있음 은, 없음 는', 'topic: 은 after a consonant, 는 after a vowel'], '책은, 저는'],
+  [['подлежащее: после согласной 이, после гласной 가', '주어: 받침 있음 이, 없음 가', 'subject: 이 after a consonant, 가 after a vowel'], '책이, 친구가'],
+  [['나, 저, 너 + 가 → 내가, 제가, 네가', '나, 저, 너 + 가 → 내가, 제가, 네가', '나, 저, 너 + 가 → 내가, 제가, 네가'], '제가 할게요.'],
+  [['누구 + 가 → 누가', '누구 + 가 → 누가', '누구 + 가 → 누가'], '누가 왔어요?'],
+];
+const OBJ = [
+  [['после согласной 을, после гласной 를', '받침 있음 을, 없음 를', '을 after a consonant, 를 after a vowel'], '밥을 먹어요, 커피를 마셔요'],
+  [['в речи после гласной часто ㄹ', '말에서는 받침 없는 말 뒤에 ㄹ로 줄기도 함', 'in speech often shortened to ㄹ after a vowel'], '뭘 해요? (= 뭐를)'],
+];
+const LOC = [
+  [['에 — куда, где находится, когда', '에: 가는 곳, 있는 곳, 때', '에 — where to, where something is, when'], '학교에 가요, 집에 있어요, 세 시에'],
+  [['에서 — где происходит действие', '에서: 행동하는 곳', '에서 — where an action happens'], '도서관에서 공부해요'],
+  [['에서 — откуда', '에서: 출발점', '에서 — from where'], '러시아에서 왔어요'],
+];
+const PRES = [
+  [['основа на ㅏ, ㅗ: + 아요', 'ㅏ, ㅗ 어간: + 아요', 'stem with ㅏ, ㅗ: + 아요'], '앉다 → 앉아요, 좋다 → 좋아요'],
+  [['другие гласные: + 어요', '그 밖의 모음: + 어요', 'other vowels: + 어요'], '먹다 → 먹어요, 읽다 → 읽어요'],
+  [['하다 → 해요', '하다 → 해요', '하다 → 해요'], '공부하다 → 공부해요'],
+  [['гласные сливаются', '모음이 줄어듦', 'vowels merge'], '가다 → 가요, 오다 → 와요, 마시다 → 마셔요, 배우다 → 배워요'],
+  [['официально: -ㅂ니다 / -습니다', '합쇼체: -ㅂ니다 / -습니다', 'formal: -ㅂ니다 / -습니다'], '갑니다, 먹습니다'],
+];
+const PAST = [
+  [['форма -아/어 + ㅆ어요', '-아/어 + ㅆ어요', '-아/어 form + ㅆ어요'], '가요 → 갔어요, 먹어요 → 먹었어요'],
+  [['하다 → 했어요', '하다 → 했어요', '하다 → 했어요'], '일하다 → 일했어요'],
+  [['официально: -았/었습니다', '합쇼체: -았/었습니다', 'formal: -았/었습니다'], '갔습니다, 먹었습니다'],
+];
+const FUT = [
+  [['после гласной: -ㄹ 거예요', '받침 없음: -ㄹ 거예요', 'after a vowel: -ㄹ 거예요'], '가다 → 갈 거예요'],
+  [['после согласной: -을 거예요', '받침 있음: -을 거예요', 'after a consonant: -을 거예요'], '먹다 → 먹을 거예요'],
+  [['основа на ㄹ: + 거예요', 'ㄹ 어간: + 거예요', 'stem in ㄹ: + 거예요'], '살다 → 살 거예요'],
+  [['обещание: -(으)ㄹ게요', '약속: -(으)ㄹ게요', 'promise: -(으)ㄹ게요'], '내일 전화할게요'],
+];
+const NEG = [
+  [['안 + глагол', '안 + 용언', '안 + verb'], '안 가요, 안 먹어요'],
+  [['N하다: N 안 해요', 'N하다: N 안 해요', 'N하다: N 안 해요'], '공부 안 해요 (✗ 안 공부해요)'],
+  [['основа + 지 않아요', '어간 + 지 않아요', 'stem + 지 않아요'], '가지 않아요, 먹지 않아요'],
+  [['не могу: 못 / -지 못해요', '불가능: 못 / -지 못해요', 'cannot: 못 / -지 못해요'], '못 가요, 가지 못해요'],
+  [['있다 → 없다, 알다 → 모르다', '있다 → 없다, 알다 → 모르다', '있다 → 없다, 알다 → 모르다'], '시간이 없어요, 몰라요'],
+];
+const NUM = [
+  [['исконные: 하나, 둘, 셋, 넷 … 열', '고유어: 하나, 둘, 셋, 넷 … 열', 'native: 하나, 둘, 셋, 넷 … 열'], '사과 하나, 열 살'],
+  [['перед счётным словом: 한, 두, 세, 네, 스무', '단위 명사 앞: 한, 두, 세, 네, 스무', 'before a counter: 한, 두, 세, 네, 스무'], '한 개, 두 명, 세 시, 스무 살'],
+  [['китайские: 일, 이, 삼, 사, 오 … 십, 백, 천, 만', '한자어: 일, 이, 삼, 사, 오 … 십, 백, 천, 만', 'Sino-Korean: 일, 이, 삼, 사, 오 … 십, 백, 천, 만'], '삼십 분, 오천 원, 이 층'],
+  [['месяцы: 유월, 시월', '달 이름: 유월, 시월', 'months: 유월, 시월'], '유월 (✗ 육월), 시월 (✗ 십월)'],
+];
+const WANT = [
+  [['основа + 고 싶어요', '어간 + 고 싶어요', 'stem + 고 싶어요'], '가고 싶어요, 먹고 싶어요'],
+  [['о третьем лице: -고 싶어해요', '남의 바람: -고 싶어해요', 'third person: -고 싶어해요'], '동생이 가고 싶어해요'],
+  [['отрицание: -고 싶지 않아요', '부정: -고 싶지 않아요', 'negative: -고 싶지 않아요'], '가고 싶지 않아요'],
+];
+const ABIL = [
+  [['-(으)ㄹ 수 있어요 / 없어요', '-(으)ㄹ 수 있어요 / 없어요', '-(으)ㄹ 수 있어요 / 없어요'], '갈 수 있어요, 먹을 수 없어요'],
+  [['умею: -(으)ㄹ 줄 알아요 / 몰라요', '방법을 앎: -(으)ㄹ 줄 알아요 / 몰라요', 'know how: -(으)ㄹ 줄 알아요 / 몰라요'], '수영할 줄 알아요'],
 ];
 const NEC = [
-  [['основа + -mAlI + личное окончание', 'kök + -mAlI + kişi eki', 'stem + -mAlI + personal ending'], 'gitmeliyim, çalışmalısın'],
-  [['инфинитив + lazım / gerek', 'mastar + lazım / gerek', 'infinitive + lazım / gerek'], 'Gitmem lazım. Çalışmak gerek.'],
-  [['не нужно: -mAmAlI', 'olumsuz: -mAmAlI', 'must not: -mAmAlI'], 'Geç kalmamalısın.'],
+  [['надо: -아/어야 해요 (돼요)', '의무: -아/어야 해요 (돼요)', 'must: -아/어야 해요 (돼요)'], '가야 해요, 먹어야 돼요'],
+  [['можно: -아/어도 돼요', '허락: -아/어도 돼요', 'may: -아/어도 돼요'], '들어가도 돼요?'],
+  [['нельзя: -(으)면 안 돼요', '금지: -(으)면 안 돼요', 'must not: -(으)면 안 돼요'], '여기서 담배를 피우면 안 돼요'],
+];
+const IMP = [
+  [['после гласной: -세요', '받침 없음: -세요', 'after a vowel: -세요'], '가세요, 보세요'],
+  [['после согласной: -으세요', '받침 있음: -으세요', 'after a consonant: -으세요'], '앉으세요, 읽으세요'],
+  [['сделайте для меня: -아/어 주세요', '부탁: -아/어 주세요', 'please do for me: -아/어 주세요'], '도와주세요, 기다려 주세요'],
+  [['не делайте: -지 마세요', '금지: -지 마세요', 'don’t: -지 마세요'], '가지 마세요'],
+];
+const SUGG = [
+  [['давайте?: -(으)ㄹ까요?', '제안: -(으)ㄹ까요?', 'shall we?: -(으)ㄹ까요?'], '같이 갈까요? 먹을까요?'],
+  [['давайте (офиц.): -(으)ㅂ시다', '청유: -(으)ㅂ시다', 'let’s (formal): -(으)ㅂ시다'], '갑시다, 먹읍시다'],
+  [['давайте (вежливо): -아/어요', '해요체 청유: -아/어요', 'let’s (polite): -아/어요'], '같이 가요!'],
+  [['с друзьями: -자', '반말: -자', 'with friends: -자'], '가자, 먹자'],
+];
+const PROG = [
+  [['действие сейчас: основа + 고 있어요', '진행: 어간 + 고 있어요', 'ongoing action: stem + 고 있어요'], '먹고 있어요, 공부하고 있어요'],
+  [['состояние после действия: -아/어 있어요', '상태: -아/어 있어요', 'resulting state: -아/어 있어요'], '앉아 있어요, 문이 열려 있어요'],
+  [['надет, носит: -고 있어요', '착용: -고 있어요', 'wearing: -고 있어요'], '안경을 쓰고 있어요'],
+];
+const CONN = [
+  [['и: -고', '나열: -고', 'and: -고'], '밥을 먹고 커피를 마셔요'],
+  [['но: -지만', '대조: -지만', 'but: -지만'], '비싸지만 맛있어요'],
+  [['и потом / поэтому: -아/어서', '순서·이유: -아/어서', 'and then / so: -아/어서'], '가서 만나요, 늦어서 미안해요'],
+];
+const REASON = [
+  [['потому что: -(으)니까 (можно с просьбой)', '이유: -(으)니까 (명령·청유 가능)', 'because: -(으)니까 (can go with requests)'], '비가 오니까 우산을 가져가세요'],
+  [['-기 때문에 (письменно, объяснение)', '-기 때문에 (설명)', '-기 때문에 (explanatory, written)'], '바쁘기 때문에 못 가요'],
+  [['N 때문에 — из-за N', 'N 때문에', 'N 때문에 — because of N'], '감기 때문에 쉬었어요'],
 ];
 const COND = [
-  [['если: основа + -sA + -m, -n, —, -k, -nIz, -lAr', 'şart: kök + -sA + kişi eki', 'if: stem + -sA + personal ending'], 'gelsem, gelsen, gelse'],
-  [['реальное условие: время + -sA', 'gerçek şart: zaman eki + -sA', 'real condition: tense + -sA'], 'gelirsen, geldiyse'],
-  [['нереальное: -sAydI', 'gerçek dışı: -sAydI', 'unreal: -sAydI'], 'Bilseydim gelirdim.'],
-  [['имя: -(y)sA', 'isimle: -(y)sA', 'with a noun: -(y)sA'], 'Hastaysan dinlen.'],
+  [['если: -면 / -으면', '조건: -면 / -으면', 'if: -면 / -으면'], '가면, 먹으면, 살면'],
+  [['даже если: -아/어도', '양보: -아/어도', 'even if: -아/어도'], '비가 와도 가요'],
 ];
-const COMPOUND = [
-  [['прошедшее длительное: -Iyordu', 'şimdiki zamanın hikâyesi: -Iyordu', 'past continuous: -Iyordu'], 'geliyordum'],
-  [['давнопрошедшее: -mIştI', 'öğrenilen geçmişin hikâyesi: -mIştI', 'past perfect: -mIştI'], 'gelmiştim'],
-  [['будущее в прошедшем: -(y)AcAktI', 'geleceğin hikâyesi: -(y)AcAktI', 'future in the past: -(y)AcAktI'], 'gelecektim'],
-  [['привычка в прошлом: -(A/I)rdI', 'geniş zamanın hikâyesi: -(A/I)rdI', 'past habit: -(A/I)rdI'], 'gelirdim'],
+const MOD = [
+  [['глагол, настоящее: -는', '동사 현재: -는', 'verb, present: -는'], '먹는 사람, 사는 곳 (살다)'],
+  [['глагол, прошедшее: -(으)ㄴ', '동사 과거: -(으)ㄴ', 'verb, past: -(으)ㄴ'], '어제 본 영화, 읽은 책'],
+  [['будущее, предположение: -(으)ㄹ', '미래: -(으)ㄹ', 'future: -(으)ㄹ'], '내일 할 일, 먹을 음식'],
+  [['прилагательное: -(으)ㄴ', '형용사: -(으)ㄴ', 'adjective: -(으)ㄴ'], '큰 집, 좋은 사람'],
+  [['있다 / 없다: -는', '있다 / 없다: -는', '있다 / 없다: -는'], '맛있는 음식, 재미없는 영화'],
 ];
-const TOPICS = { 3: PRES, 5: PAST, 6: MIS, 7: FUT, 8: NEG, 9: CASES, 10: POSS, 11: PL, 12: COMP, 16: AOR, 17: IMP, 18: ABIL,
-  19: COP, 20: NEC, 21: COND, 23: COMPOUND };
+const LEVELS = [
+  [['официальный (합쇼체): -ㅂ니다 / -습니다', '합쇼체: -ㅂ니다 / -습니다', 'formal: -ㅂ니다 / -습니다'], '감사합니다, 갑니다'],
+  [['вежливый (해요체): -아/어요', '해요체: -아/어요', 'polite: -아/어요'], '감사해요, 가요'],
+  [['дружеский (반말): -아/어', '반말: -아/어', 'casual: -아/어'], '고마워, 가'],
+  [['вопрос: -ㅂ니까? / -아/어요? / -아/어?', '의문: -ㅂ니까? / -아/어요? / -아/어?', 'question: -ㅂ니까? / -아/어요? / -아/어?'], '갑니까? 가요? 가?'],
+];
+const HON = [
+  [['основа + (으)시 + окончание', '어간 + (으)시 + 어미', 'stem + (으)시 + ending'], '가세요, 읽으세요, 가셨어요'],
+  [['особые глаголы', '특수 어휘', 'special verbs'], '먹다 → 드시다, 자다 → 주무시다, 있다 → 계시다'],
+  [['частица подлежащего 께서, «кому» 께', '께서, 께', 'subject 께서, “to” 께'], '할머니께서 오셨어요, 선생님께 드려요'],
+];
+const PART = [
+  [['тоже: 도; только: 만', '도, 만', 'also: 도; only: 만'], '저도, 물만'],
+  [['чей: 의 (в речи [에])', '소유: 의', 'of: 의 (said [e])'], '친구의 책'],
+  [['и, с: 와/과 (письм.), 하고, (이)랑 (разг.)', '와/과, 하고, (이)랑', 'and, with: 와/과 (written), 하고, (이)랑 (spoken)'], '빵과 우유, 친구하고, 엄마랑'],
+  [['чем, на, в сторону: (으)로 (после ㄹ — 로)', '(으)로 (ㄹ 뒤에는 로)', 'by, towards: (으)로 (로 after ㄹ)'], '버스로, 손으로, 서울로'],
+  [['кому: 에게 (письм.), 한테 (разг.)', '에게, 한테', 'to whom: 에게 (written), 한테 (spoken)'], '친구에게, 동생한테'],
+];
+const COMP = [
+  [['N보다 (더) — больше, чем N', 'N보다 (더)', 'more than N: N보다 (더)'], '서울이 부산보다 커요'],
+  [['самый: 제일 / 가장', '최상급: 제일 / 가장', 'most: 제일 / 가장'], '제일 좋아요, 가장 높은 산'],
+  [['так же, как: N만큼', '동등: N만큼', 'as … as: N만큼'], '형만큼 키가 커요'],
+];
+const EXP = [
+  [['был опыт: -(으)ㄴ 적이 있어요', '경험: -(으)ㄴ 적이 있어요', 'have done: -(으)ㄴ 적이 있어요'], '가 본 적이 있어요, 먹은 적이 없어요'],
+  [['попробовать: -아/어 보다', '시도: -아/어 보다', 'try: -아/어 보다'], '먹어 보세요, 입어 봐도 돼요?'],
+];
+const IRR = [
+  [['ㅂ → 우 (돕다, 곱다 → 오)', 'ㅂ 불규칙: ㅂ → 우', 'ㅂ → 우'], '춥다 → 추워요, 돕다 → 도와요'],
+  [['ㄷ → ㄹ перед гласной', 'ㄷ 불규칙: ㄷ → ㄹ', 'ㄷ → ㄹ before a vowel'], '듣다 → 들어요, 걷다 → 걸어요'],
+  [['ㅅ выпадает перед гласной', 'ㅅ 불규칙: ㅅ 탈락', 'ㅅ drops before a vowel'], '짓다 → 지어요, 낫다 → 나아요'],
+  [['르 → ㄹ라 / ㄹ러', '르 불규칙', '르 → ㄹ라 / ㄹ러'], '모르다 → 몰라요, 부르다 → 불러요'],
+  [['ㅎ выпадает (прилагательные)', 'ㅎ 불규칙', 'ㅎ drops (adjectives)'], '빨갛다 → 빨개요, 빨간; 그렇다 → 그래요'],
+  [['ㄹ выпадает перед ㄴ ㅂ ㅅ', 'ㄹ 탈락: ㄴ ㅂ ㅅ 앞', 'ㄹ drops before ㄴ ㅂ ㅅ'], '살다 → 삽니다, 사는, 사세요'],
+  [['ㅡ выпадает', 'ㅡ 탈락', 'ㅡ drops'], '쓰다 → 써요, 바쁘다 → 바빠요'],
+];
+const REPORT = [
+  [['повествование: -다고 해요 (глагол -ㄴ/는다고)', '평서: -다고 해요', 'statement: -다고 해요 (verbs -ㄴ/는다고)'], '바쁘다고 해요, 간다고 해요, 먹는다고 해요'],
+  [['вопрос: -냐고 해요 (물어요)', '의문: -냐고 해요', 'question: -냐고 해요'], '어디 가냐고 물어요'],
+  [['предложение: -자고 해요', '청유: -자고 해요', 'suggestion: -자고 해요'], '같이 가자고 해요'],
+  [['просьба, приказ: -(으)라고 해요', '명령: -(으)라고 해요', 'request: -(으)라고 해요'], '기다리라고 해요, 먹으라고 해요'],
+  [['кратко в речи: -대요, -래요', '줄임: -대요, -래요', 'short spoken forms: -대요, -래요'], '바쁘대요, 학생이래요'],
+];
+const TOPICS = { 8: READ, 11: COP, 12: TOPIC, 13: OBJ, 14: LOC, 15: PRES, 16: PAST, 17: FUT, 18: NEG, 20: NUM, 22: WANT,
+  23: ABIL, 24: NEC, 25: IMP, 26: SUGG, 27: PROG, 28: CONN, 29: REASON, 30: COND, 31: MOD, 33: LEVELS, 34: HON, 35: PART,
+  36: COMP, 37: EXP, 38: IRR, 41: REPORT };
 
 export function grammarFormsBlock(unit) {
   if (!unit || unit.course_id !== 'grammar') return null;
   const spec = TOPICS[unit.n];
   if (!spec) return null;
-  const i = { ru: 0, tr: 1, en: 2 }[L()];
+  const i = { ru: 0, ko: 1, en: 2 }[L()];
   return h('div', {},
     h('h2', {}, tr('title')),
     h('p', { class: 'small muted' }, tr('hint')),

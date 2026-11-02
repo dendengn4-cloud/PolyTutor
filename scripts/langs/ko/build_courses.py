@@ -63,7 +63,12 @@ CYR = re.compile(r'[А-Яа-яЁё]')
 HANGUL = re.compile(r'^[가-힣 ]+$')
 
 
-def unit_terms(*texts):
+# В грамматике в скобках и перед переводом стоят формы (좋아요, 갔습니다), а не словарные слова: такие не берём,
+# иначе 좋아요 «хорошо» совпадёт со словом 좋아요 «лайк».
+INFLECTED = re.compile(r'(요|니다|니까|다고|냐고|자고|라고)$')
+
+
+def unit_terms(*texts, course=''):
     out = set()
     for text in texts:
         text = text or ''
@@ -75,13 +80,15 @@ def unit_terms(*texts):
                 part = part.strip(' «»"\'.')
                 if part and HANGUL.match(part) and len(part) <= 20:
                     out.add(key_uz(part))
-    return sorted(k for k in out if k and len(k) >= 2)
+    return sorted(k for k in out if k and len(k) >= 2 and not (course == 'grammar' and INFLECTED.search(k)))
 
 
 # Шаблоны поиска примеров в словаре (регулярные выражения PostgreSQL). Граница слова — «не хангыль» (B … E).
 _B = '(^|[^가-힣])'
 _E = '([^가-힣]|$)'
 H = '[가-힣]'
+SS = ''.join(chr(0xAC00 + i * 28 + 20) for i in range(399))   # все слоги с ㅆ внизу (갔, 었, 랐…): признак прошедшего
+SS16 = SS.replace('있', '').replace('겠', '')          # 있어요 — настоящее, 겠 — будущее
 GRAMMAR_PATTERNS = {
     1: r'^[가-힣]+ [가-힣]+[.?!]$',
     2: _B + r'(아이|오이|우유|아우|여우)',
@@ -94,11 +101,11 @@ GRAMMAR_PATTERNS = {
     9: r'(수 있|수 없|적이 있|적이 없|' + H + r' 씨' + _E + ')',
     10: _B + r'(편의점|약국|은행|출구|입구|지하철|버스|호텔|인터넷|핸드폰|노래방|아이스크림)',
     11: r'(이에요|예요|입니다|이 아니|가 아니|아니에요|아닙니다)',
-    12: H + r'(은|는|이|가) ',
-    13: H + r'(을|를) ',
-    14: H + r'(에서|에) ',
-    15: H + r'(아요|어요|해요|워요|와요|봐요|져요)[.?!]',
-    16: H + r'(았|었|했|웠|왔|봤|졌)(어요|습니다|어|다)',
+    12: _B + H + r'*(은|는|이|가) ',
+    13: _B + H + r'*(을|를) ',
+    14: _B + H + r'*(에서|에) ',
+    15: _B + H + r'*(?<![' + SS + r'])(아요|어요|해요|워요|와요|봐요|져요|줘요|셔요|려요|돼요)[.?!]',
+    16: _B + H + r'*[' + SS16 + r'](어요|습니다|어|다)' + _E,
     17: r'(거예요|거야|겠어요|겠습니다|' + H + r'게요)',
     18: _B + r'(안|못) ' + H + '|' + H + r'지 (않|못)',
     19: _B + r'(저는|저도|제가|나는|내가|너는|우리|저희|그는|그녀|이것|그것|저것|이거|그거|저거|여기|거기|저기)',
@@ -110,14 +117,14 @@ GRAMMAR_PATTERNS = {
     25: r'(주세요|세요[.!]|십시오)',
     26: r'(까요[?]|' + H + r'시다[.!])',
     27: r'(고 있|아 있|어 있|여 있)',
-    28: H + r'(고|지만|아서|어서|해서|워서|와서|봐서) ',
+    28: _B + H + r'*(고|지만|아서|어서|해서|워서|와서|봐서) ',
     29: r'(니까|때문에)',
-    30: H + r'(면|아도|어도|해도|워도) ',
+    30: _B + H + r'*(면|아도|어도|해도|워도) ',
     31: H + r'(는|던|을|할|갈|볼|올|간|온|본|한|산|된|큰|작은|좋은) (사람|것|곳|때|날|분|집|음식|시간|친구|거|적|수)' + _E,
     32: r'^[가-힣]+(은|는|이|가) [가-힣]+(을|를) [가-힣]+(요|다)[.]$',
     33: r'(니다[.?]|' + H + r'(어|아|야|지|자|해|냐)[.?!]$)',
     34: r'(셨|세요|십니다|께서|드세요|주무|계세|계십|드려|드립|말씀|진지|댁)',
-    35: H + r'(도|만|의|와|과|하고|랑|으로|로|에게|한테|께) ',
+    35: _B + H + r'*(도|만|의|와|과|하고|랑|으로|로|에게|한테|께) ',
     36: r'(보다|더 |제일|가장|만큼)',
     37: r'(적이 있|적이 없|어 보|아 보|해 보|워 보)',
     38: r'(더워|추워|어려워|쉬워|가까워|매워|무거워|들어요|걸어|물어|들었|나아|지어|그래요|어때요|몰라|빨라|달라|불러|만들어|바빠|아파|예뻐|써요|커요|기뻐)',
@@ -241,7 +248,7 @@ def build(src: Path):
                 + ', '.join(f'{k} = excluded.{k}' for k in vals) + ';')
             unit_sql = f"(select id from public.course_units where course_id = {q(course)} and source_no = {n})"
             sql.append(f"delete from public.unit_terms where unit_id = {unit_sql};")
-            for k in unit_terms(vals['express_ru'], vals['detailed_ru']):
+            for k in unit_terms(vals['express_ru'], vals['detailed_ru'], course=course):
                 sql.append(f"insert into public.unit_terms (unit_id, term_key) values ({unit_sql}, {q(k)}) on conflict do nothing;")
             for k, (ru, uz, en) in enumerate(tasks, 1):
                 pr, pu, pe = clean(r.get(ru)), clean(r.get(uz)), clean(r.get(en))
